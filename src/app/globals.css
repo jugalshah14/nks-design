@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-section-title {
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: Ivy Mode;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 100px;
+  letter-spacing: 0%;
+}
+
+.project-overview-title {
+  font-family: Ivy Mode;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 72px;
+  letter-spacing: 0%;
+  color: rgba(34, 37, 46, 1);
+}
+
+.orange-color {
+  color: rgba(222, 128, 75, 1);
+}
+
+.certification-section {
+  background: rgba(231, 237, 242, 1);
+}
+
+.bitmap {
+  background: linear-gradient(183.19deg, rgba(0, 0, 0, 0.6) 43.09%, rgba(0, 0, 0, 0) 97.36%);
+}
+
+.plans_slider_backdrop {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60.42%, rgba(0, 0, 0, 0.6) 79.17%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.text-gradient-1 {
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(119deg, #de804b 23%, #1e8bda 75%), linear-gradient(300deg, #fff 24%, rgba(255, 255, 255, .44) 52%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none;
+}
+
+.riverside-slider-content {
+  background: #FFFFFFB2;
+  backdrop-filter: blur(124px)
+}
+
+.transforming-text {
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(110deg, #DE804B 0%, #1E8BDA 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.4) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none;
+  font-family: Ivy Mode;
+}
+
+.honouring-lightbox-overlay {
+  background: linear-gradient(180deg, #B99680 0%, rgba(34, 37, 46, 0) 35.94%, #22252E 100%);
+}
+
+.honouring_component {
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.honouring_component>video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: 50%;
+  background-size: cover;
+  margin: auto;
+  position: absolute;
+  top: -100%;
+  bottom: -100%;
+  left: -100%;
+  right: -100%;
+}
+
+.waves-linear-bg {
+  background: #020c22;
+  opacity: 0.95;
+}
+
+.location-slide {
+  clip-path: polygon(11% 1%, 89% 0, 100% 98%, 0% 100%);
+}
+
+
+.form-label {
+  position: relative;
+  border: 1px solid #EDEDED;
+  display: flex;
+  height: 60px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 0px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.form-input::placeholder {
+  opacity: 0;
+}
+
+.form-label>span {
+  position: absolute;
+  top: 0;
+  transform: translateY(16px);
+  transition-duration: 300ms;
+  font-size: 16px;
+  color: #5C5F68;
+  font-weight: 400;
+}
+
+.form-label:focus-within>span,
+.form-input:not(:placeholder-shown)+span {
+  transform: translateY(6px);
+  font-size: 12px;
+  color: #1B0700;
+  font-weight: 700;
+}
+
+.form-label:focus-within {
+  border: 1px solid #1B0700;
+}
