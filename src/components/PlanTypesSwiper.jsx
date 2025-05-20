@@ -40,7 +40,7 @@ export default function PlanTypesSwiper() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const handleSlideChange = (swiper) => {
-        setActiveIndex(swiper.activeIndex);
+        setActiveIndex(swiper.realIndex);
     };
 
     const handleNext = () => {
@@ -61,6 +61,7 @@ export default function PlanTypesSwiper() {
                     setSwiperRef(swiper);
                 }}
                 slidesPerView={2}
+                loop={true}
                 spaceBetween={20}
                 breakpoints={{
                     768: {
@@ -75,7 +76,7 @@ export default function PlanTypesSwiper() {
                 }}
                 modules={[Pagination]}
                 className="mySwiper"
-                onActiveIndexChange={handleSlideChange}
+                onRealIndexChange={handleSlideChange}
             >
                 {data.map((slide, index) => (
                     <SwiperSlide key={index}>
@@ -98,7 +99,7 @@ export default function PlanTypesSwiper() {
                             <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className=" transform rotate-180" />
                         </button>
                     </div>
-                    <div className="flex gap-2 items-center">1 <div className="h-0.5 w-8 bg-[#D9D9D9]" /> 3</div>
+                    <div className="flex gap-2 items-center">{activeIndex+1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}</div>
                     <div className="h-full flex items-center justify-center">
                         <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
                             <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="" />

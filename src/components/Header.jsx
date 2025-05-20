@@ -2,9 +2,18 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
+const headerClass = {
+    '/': 'home-page-header'
+}
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [activeClass, setActiveClass] = useState('/');
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleDrawer = () => {
+        setIsOpen(!isOpen);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,44 +25,74 @@ const Header = () => {
         };
 
         window.addEventListener('scroll', handleScroll);
+        setActiveClass(headerClass[window.location.pathname] || '');
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#010b22] shadow-lg' : 'bg-transparent'}`}>
-            <div className="container max-w-7xl mx-auto py-4 flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
-                <div className="hidden md:flex items-center space-x-8">
-                    <nav className="hidden md:flex space-x-8">
-                        <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-white hover:text-[#de7f4a] transition-colors">Home</a>
-                        <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-white hover:text-[#de7f4a] transition-colors">About us</a>
-                        <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-white hover:text-[#de7f4a] transition-colors">Plans</a>
-                        <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-white hover:text-[#de7f4a] transition-colors">Blogs</a>
-                    </nav>
-                </div>
-
-                <div className="w-[95px] h-[44px] md:h-[75px] md:w-[161px] relative max-md:mr-auto">
-                    <Image
-                        className=""
-                        src="/assets/logo.svg"
-                        alt="Next.js logo"
-                        fill
-                        priority
-                    />
-                </div>
-
-                <div className="block">
-                    <div className="h-[48px] w-[168px] border-1 border-b-4  border-white relative rounded-xl">
-                        <p className="font-[Satoshi] font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-white absolute top-[13px] left-[32px]">Schedule a Visit</p>
+        <>
+            <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''} bg-white ${activeClass} ${activeClass && isScrolled && '!bg-[#010b22]'}`}>
+                <div className="container max-w-7xl mx-auto py-4 flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
+                    <div className="hidden md:flex items-center space-x-8">
+                        <nav className="hidden md:flex space-x-8">
+                            <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Home</a>
+                            <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">About us</a>
+                            <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Plans</a>
+                            <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Blogs</a>
+                        </nav>
                     </div>
+
+                    <div className="w-[95px] h-[44px] md:h-[75px] md:w-[161px] relative max-md:mr-auto">
+                        <Image
+                            className="invert-100 logo-image"
+                            src="/assets/logo.svg"
+                            alt="Next.js logo"
+                            fill
+                            priority
+                        />
+                    </div>
+
+                    <div className="block">
+                        <div className="h-[48px] w-[168px] border-1 border-b-4  border-[#22252E] relative rounded-sm action-button">
+                            <p className="font-[Satoshi] font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] absolute top-[13px] left-[32px]">Schedule a Visit</p>
+                        </div>
+                    </div>
+
+                    <button className="md:hidden text-[#22252E]" onClick={toggleDrawer}>
+                        <Image src="/assets/icons/menu.svg" height={24} width={24} alt="menu" className='invert-100 menu-button' />
+                    </button>
                 </div>
 
-                <button className="md:hidden text-white">
-                    <Image src="/assets/icons/menu.svg" height={24} width={24} alt="menu" />
+
+            </header>
+            {/*Drawer */}
+            <div
+                className={`block md:hidden !overflow-hidden z-99999 fixed top-0 left-0 w-[100vw] h-[100vh] bg-white shadow-lg
+                transition-transform transform ${isOpen ? "translate-x-0" :
+                        "-translate-x-full"}`}
+            >
+                <div className="p-4">
+                    <ul className="space-y-4">
+                        <li><a href="#" className="text-gray-800 hover:text-blue-500">
+                            Home</a></li>
+                        <li><a href="#" className="text-gray-800 hover:text-blue-500">
+                            Profile</a></li>
+                        <li><a href="#" className="text-gray-800 hover:text-blue-500">
+                            Settings</a></li>
+                        <li><a href="#" className="text-gray-800 hover:text-blue-500">
+                            Help</a></li>
+                    </ul>
+                </div>
+                <button
+                    onClick={toggleDrawer}
+                    className="absolute top-4 right-4 text-gray-600"
+                >
+                    Close
                 </button>
             </div>
-        </header>
+        </>
     );
 };
 

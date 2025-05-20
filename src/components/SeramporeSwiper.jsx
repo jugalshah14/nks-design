@@ -3,7 +3,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import { useRef, useState } from 'react'
 
@@ -39,7 +39,7 @@ export default function SeramporeSwiper() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const handleSlideChange = (swiper) => {
-        setActiveIndex(swiper.activeIndex);
+        setActiveIndex(swiper.realIndex);
     };
 
     const handleNext = () => {
@@ -60,9 +60,10 @@ export default function SeramporeSwiper() {
                 }}
                 slidesPerView={1.5}
                 spaceBetween={10}
+                loop={true}
                 breakpoints={{
                     768: {
-                        slidesPerView: 2,
+                        slidesPerView: 2.5,
                         spaceBetween: 10,
                     },
                 }}
@@ -71,22 +72,22 @@ export default function SeramporeSwiper() {
                     enabled: false,
                     clickable: true,
                 }}
-                modules={[Pagination]}
+                modules={[Pagination, Navigation]}
                 className="mySwiper"
-                onActiveIndexChange={handleSlideChange}
+                onRealIndexChange={handleSlideChange}
             >
                 {data.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className='relative flex items-start pt-15'>
+                        <div className='relative flex items-start pt-15 w-[100%]'>
                             <div className='relative min-h-[110px] min-w-[110px] md:min-h-[160px] md:min-w-[160px] overflow-hidden z-1'>
                                 <Image src={slide.src} alt="slide-0" fill className='object-cover' />
                             </div>
-                            <div className='location-slide relative top-5 -left-[100px] flex flex-col p-7 pl-30 pr-10 bg-[#F8F8F8]'>
-                                <Image src={slide.icon} height={48} width={48} alt="icon" className='max-md:!h-[33px] max-md:!w-[33px]' />
-                                <p className='md:min-w-[172px] mt-2 text-[14px] md:text-[20px] text-[#22252E] font-[700] leading-5 md:leading-[28px]'>
+                            <div className={`location-slide relative top-5 -left-[100px] flex flex-col p-7 pl-30 pr-10 ${+activeIndex === index ? 'bg-[#000E2D]' : 'bg-[#F8F8F8]'}`}>
+                                <Image src={slide.icon} height={48} width={48} alt="icon" className={`max-md:!h-[33px] max-md:!w-[33px] ${+activeIndex === index && 'invert-100'}`} />
+                                <p className={`md:min-w-[172px] mt-2 text-[14px] md:text-[20px] ${+activeIndex === index ? 'text-[#FFFFFF]' : 'text-[#22252E]'} font-[700] leading-5 md:leading-[28px]`}>
                                     {slide.title}
                                 </p>
-                                <p className='mb-1 text-[12px] md:text-[16px] text-[#22252E] opacity-60 font-[400] leading-4 md:leading-[20px]'>
+                                <p className={`mb-1 text-[12px] md:text-[16px] ${+activeIndex === index ? 'text-[#FFFFFF]' : 'text-[#22252E]'} opacity-60 font-[400] leading-4 md:leading-[20px]`}>
                                     {slide.description}
                                 </p>
                             </div>
@@ -100,7 +101,7 @@ export default function SeramporeSwiper() {
                         <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="invert-75 transform rotate-180" />
                     </button>
                 </div>
-                <div className="flex gap-2 items-center">1 <div className="h-0.5 w-8 bg-[#D9D9D9]" /> 3</div>
+                <div className="flex gap-2 items-center">{activeIndex+1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}</div>
                 <div className="h-full flex items-center justify-center">
                     <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
                         <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="" />

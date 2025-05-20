@@ -115,6 +115,11 @@ const Satoshi = localFont({
   ],
 })
 
+export const metadata = {
+  title: "New Kolkata",
+  description: "Alcove Realty presents New Kolkata Sangam a riverside project where the beauty of nature meets the artistry of modern architecture. Your dream home awaits by the riverside. Explore now!",
+  keywords: "Apartments/Flat In Serampore New Kolkata, Serampore Flats For Sale, Serampore Flat Price | Serampore Flat - New Kolkata",
+};
 
 export default function RootLayout({ children }) {
   return (

@@ -23,7 +23,7 @@ export default function ProjectViewSlides() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const handleSlideChange = (swiper) => {
-        setActiveIndex(swiper.activeIndex);
+        setActiveIndex(swiper.realIndex);
     };
 
     const handleNext = () => {
@@ -38,29 +38,30 @@ export default function ProjectViewSlides() {
 
 
     return (
-        <>
+        <div className='relative'>
+            <div className="absolute -top-[35px] flex justify-center z-9 w-[100%]">
+                <span className="transition-all text-[52px] font-[IvyMode] font-bold leading-[66px] text-[#de7f4a]">{activeIndex + 1}</span>
+                <span className="transition-all text-[52px] font-[IvyMode] font-bold leading-[66px] text-[#de7f4a]">/</span>
+                <span className="transition-all text-[52px] font-[IvyMode] font-bold leading-[66px] text-[#de7f4a]">{data.length}</span>
+            </div>
             <Swiper
                 onSwiper={(swiper) => {
                     setSwiperRef(swiper);
                 }}
                 slidesPerView={1}
                 centeredSlides={true}
+                loop={true}
                 spaceBetween={30}
                 pagination={{
                     enabled: false,
                     clickable: true,
                 }}
                 modules={[Pagination]}
-                className="mySwiper"
-                onActiveIndexChange={handleSlideChange}
+                className="mySwiper relative"
+                onRealIndexChange={handleSlideChange}
             >
                 {data.map((slide, index) => (
                     <SwiperSlide key={index} className='relative top-[-50px]'>
-                        <div className="relative top-[50px] flex justify-center z-1 mb-4">
-                            <span className="text-[52px] font-ivy-mode font-bold leading-[66px] text-[#de7f4a]">{activeIndex + 1}</span>
-                            <span className="text-[52px] font-ivy-mode font-bold leading-[66px] text-[#de7f4a]">/</span>
-                            <span className="text-[52px] font-ivy-mode font-bold leading-[66px] text-[#de7f4a]">{data.length}</span>
-                        </div>
                         <div className="flex justify-center relative h-[280px] md:h-[70vh]">
                             <Image
                                 src={slide.src}
@@ -94,6 +95,6 @@ export default function ProjectViewSlides() {
                     </button>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
