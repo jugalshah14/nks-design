@@ -54,7 +54,7 @@ export default function Testimonials() {
 
 
     return (
-        <div className="relative my-12">
+        <div className="relative max-md:mt-7 md:my-12">
             <Swiper
                 onSwiper={(swiper) => {
                     setSwiperRef(swiper);
@@ -72,19 +72,19 @@ export default function Testimonials() {
             >
                 {data.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div key={index} className='relative items-start pt-15'>
-                            <div className='absolute top-10 left-0 h-[241px] w-[186px] overflow-hidden'>
+                        <div key={index} className='relative max-md:flex max-md:justify-center items-start pt-7 md:pt-15'>
+                            <div className='testimonials-qt-center absolute md:top-10 md:left-0 h-[140px] w-[108] md:h-[241px] md:w-[186px] overflow-hidden'>
                                 <Image src={"/assets/icons/qt.svg"} alt="Quote" fill className='object-cover' />
                             </div>
 
-                            <div className="flex items-start ml-32 relative z-10">
-                                <div className='relative min-h-[84px] min-w-[84px] overflow-hidden rounded-full mr-6'>
+                            <div className="flex items-center md:items-start max-md:flex-col md:ml-32 max-md:px-5 relative z-10">
+                                <div className='max-md:mb-2 relative min-h-[40px] min-w-[40px] md:min-h-[84px] md:min-w-[84px] overflow-hidden rounded-full md:mr-6'>
                                     <Image src={slide.src} alt={slide.name} fill className='object-cover' />
                                 </div>
-                                <div>
-                                    <h3 className="text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mb-1">{slide.name}</h3>
-                                    <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e99] mb-6">{slide.position}</p>
-                                    <p className="text-[40px] font-satoshi font-normal leading-[48px] text-[#22252e] max-w-[80%]">
+                                <div className='max-md:flex max-md:flex-col max-md:items-center'>
+                                    <h3 className="max-md:text-center text-[16px] md:text-[24px] font-[Satoshi] font-[500] leading-6 md:leading-[33px] text-[#22252e] mb-1">{slide.name}</h3>
+                                    <p className="max-md:text-center text-[12px] md:text-[16px] font-[Satoshi] font-[500] leading-5 md:leading-[22px] text-[#22252e99] mb-6">{slide.position}</p>
+                                    <p className="max-md:text-center text-[24px] md:text-[40px] font-[Satoshi] italic font-[500] leading-8 md:leading-[48px] text-[#22252e] max-w-[80%]">
                                         {slide.description}
                                     </p>
                                 </div>
@@ -93,7 +93,7 @@ export default function Testimonials() {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <div className="relative transform bg-white flex gap-10 items-center justify-end mt-9 px-1 py-5">
+            <div className="relative transform bg-white flex gap-10 items-center justify-around md:justify-end mt-9 px-1 py-5">
                 <div className="h-full flex items-center justify-center">
                     <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>
                         <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="transform rotate-180" />

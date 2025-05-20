@@ -53,14 +53,20 @@ export default function SeramporeSwiper() {
     }
 
     return (
-        <div className='pt-10 mb-10'>
+        <div className='md:pt-10 mb-10'>
             <Swiper
                 onSwiper={(swiper) => {
                     setSwiperRef(swiper);
                 }}
-                slidesPerView={3}
-                centeredSlides={true}
+                slidesPerView={1.5}
                 spaceBetween={10}
+                breakpoints={{
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                }}
+                centeredSlides={true}
                 pagination={{
                     enabled: false,
                     clickable: true,
@@ -72,15 +78,15 @@ export default function SeramporeSwiper() {
                 {data.map((slide, index) => (
                     <SwiperSlide key={index}>
                         <div className='relative flex items-start pt-15'>
-                            <div className='relative min-h-[160px] min-w-[160px] overflow-hidden z-1'>
+                            <div className='relative min-h-[110px] min-w-[110px] md:min-h-[160px] md:min-w-[160px] overflow-hidden z-1'>
                                 <Image src={slide.src} alt="slide-0" fill className='object-cover' />
                             </div>
                             <div className='location-slide relative top-5 -left-[100px] flex flex-col p-7 pl-30 pr-10 bg-[#F8F8F8]'>
-                                <Image src={slide.icon} height={48} width={48} alt="icon" className='' />
-                                <p className='min-w-[172px] mt-2 text-[20px] text-[#22252E] font-[700] leading-[28px]'>
+                                <Image src={slide.icon} height={48} width={48} alt="icon" className='max-md:!h-[33px] max-md:!w-[33px]' />
+                                <p className='md:min-w-[172px] mt-2 text-[14px] md:text-[20px] text-[#22252E] font-[700] leading-5 md:leading-[28px]'>
                                     {slide.title}
                                 </p>
-                                <p className='mb-1 text-[16px] text-[#22252E] opacity-60 font-[400] leading-[20px]'>
+                                <p className='mb-1 text-[12px] md:text-[16px] text-[#22252E] opacity-60 font-[400] leading-4 md:leading-[20px]'>
                                     {slide.description}
                                 </p>
                             </div>

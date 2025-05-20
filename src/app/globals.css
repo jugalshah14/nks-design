@@ -12,13 +12,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -27,15 +20,16 @@ body {
 
 .hero-section-title {
   text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  font-family: Ivy Mode;
-  font-weight: 400;
-  font-size: 100px;
-  line-height: 100px;
-  letter-spacing: 0%;
+  font-family: IvyMode;
+}
+
+.hero-section-bg {
+  background: linear-gradient(180deg, rgba(79, 112, 175, 0) 59.25%, rgba(79, 112, 175, 0.78) 81.4%, #4F70AF 98.92%),
+    linear-gradient(180deg, rgba(79, 112, 175, 0.4) 28.62%, rgba(79, 112, 175, 0) 37.67%);
 }
 
 .project-overview-title {
-  font-family: Ivy Mode;
+  font-family: IvyMode;
   font-weight: 400;
   font-size: 56px;
   line-height: 72px;
@@ -78,11 +72,15 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   text-decoration: none;
-  font-family: Ivy Mode;
+  font-family: IvyMode;
 }
 
 .honouring-lightbox-overlay {
   background: linear-gradient(180deg, #B99680 0%, rgba(34, 37, 46, 0) 35.94%, #22252E 100%);
+}
+
+.honouring-lightbox-overlay-m {
+  background: linear-gradient(180deg, #B99680 0%, rgba(34, 37, 46, 0) 35.94%, #061026 100%);
 }
 
 .honouring_component {
@@ -153,4 +151,50 @@ body {
 
 .form-label:focus-within {
   border: 1px solid #1B0700;
+}
+
+
+.custom-box-shadow {
+  box-shadow: 0px 4px 170px 0px #00000040;
+}
+
+.plans-backdrop {
+  background: linear-gradient(183.19deg, rgba(0, 0, 0, 0) 2.64%, #061026 89.46%);
+}
+
+.enough-reasons-text {
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(110.39deg, #DE804B 12.02%, #1E8BDA 76.06%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none;
+  font-family: Satoshi;
+}
+
+.did-you-know-m {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none;
+  font-family: Satoshi;
+  background-image: linear-gradient(110deg, #DE804B 0%, #1E8BDA 100%);
+}
+
+.serampore-bg-overlay {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+}
+
+@media (width < 48rem
+  /* 768px */
+) {
+  .inset-center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .testimonials-qt-center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-41%, -22px);
+  }
 }

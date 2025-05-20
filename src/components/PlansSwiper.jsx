@@ -59,9 +59,15 @@ export default function PlansSwiper() {
                 onSwiper={(swiper) => {
                     setSwiperRef(swiper);
                 }}
-                slidesPerView={1}
+                slidesPerView={1.2}
+                spaceBetween={10}
+                breakpoints={{
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 30,
+                    },
+                }}
                 centeredSlides={true}
-                spaceBetween={30}
                 pagination={{
                     enabled: false,
                     clickable: true,
@@ -72,56 +78,61 @@ export default function PlansSwiper() {
             >
                 {data.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className='relative w-[80%] mx-auto'>
-                            <div className={`relative h-[520px]`}>
+                        <div className='relative w-[100%] md:w-[80%] mx-auto'>
+                            <div className={`relative h-[240px] md:h-[520px]`}>
                                 <div className='plans_slider_backdrop z-1 h-[100%] w-[100%] absolute top-0 left-0' />
                                 <Image src={slide.src} alt="slide-0" fill className='object-cover' />
                             </div>
-                            <div className="relative w-[80%] top-[-60px] right-[-14%] z-1 gap-20 flex bg-[#010b22] p-8">
+                            <div className="relative w-[95%] md:w-[80%] top-[-60px] -right-[5%] md:right-[-14%] z-1 gap-4 md:gap-20 flex max-md:flex-col bg-[#010b22] p-5 md:p-8">
                                 <div>
-                                    <h3 className="text-gradient-1 w-[60%] text-[40px] font-satoshi font-normal leading-[48px] text-white/40 mb-6">
+                                    <h3 className="text-gradient-1 md:w-[60%] text-[24px] md:text-[40px] font-[Satoshi] font-[400] leading-7 md:leading-[48px] text-white/40 md:mb-6">
                                         {slide.title}
                                     </h3>
-                                    <a className="flex items-center gap-2 text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] mb-4 mt-20">
+                                    <a className="hidden md:flex items-center gap-2 text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78] mb-4 mt-20">
                                         Let's Discuss Your Requirements
                                         <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} />
                                     </a>
                                 </div>
                                 <div className=''>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mb-8">
+                                    <div className="grid grid-cols-2 gap-20 mb-8">
                                         <div>
-                                            <p className="text-[16px] font-satoshi font-normal leading-[22px] text-white/50 mb-1">Tower</p>
-                                            <p className="text-[24px] font-satoshi font-normal leading-[33px] text-white">{slide.towers}</p>
+                                            <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">Tower</p>
+                                            <p className="text-[20px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">{slide.towers}</p>
                                         </div>
                                         <div>
-                                            <p className="text-[16px] font-satoshi font-normal leading-[22px] text-white/50 mb-1">BHK Type</p>
-                                            <p className="text-[24px] font-satoshi font-normal leading-[33px] text-white">{slide.bhkTypes}</p>
+                                            <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">BHK Type</p>
+                                            <p className="text-[20px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">{slide.bhkTypes}</p>
                                         </div>
                                     </div>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mb-8">
-                                        <div>
-                                            <p className="text-[16px] font-satoshi font-normal leading-[22px] text-white/50 mb-1">Carpet Area</p>
-                                            <p className="text-[24px] font-satoshi font-normal leading-[33px] text-white">{slide.carpetArea}</p>
+                                    <div className="grid grid-cols-2 gap-20 md:mb-8">
+                                        <div className='order-2 md:order-1'>
+                                            <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">Carpet Area</p>
+                                            <p className="text-[20px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">{slide.carpetArea}</p>
                                         </div>
 
-                                        <div>
-                                            <p className="text-[16px] font-satoshi font-normal leading-[22px] text-white/50 mb-1">Price</p>
+                                        <div className='order-1 md:order-2'>
+                                            <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">Price</p>
                                             <div className="flex items-center">
-                                                <p className="text-[24px] font-satoshi font-normal leading-[28px] text-white shadow-lg mr-2 blur-[6.5px]">{slide.price}</p>
-                                                <a href="#" className="text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] underline">
+                                                <p className="hidden md:inline text-[20px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white shadow-lg mr-2 blur-[6.5px]">{slide.price}</p>
+                                                <a href="#" className="text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78] underline">
                                                     Know price
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <hr className='block md:hidden border-[#D9D9D9] opacity-10' />
+                                <a className="flex md:hidden items-center gap-2 text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78]">
+                                    View Project
+                                    <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} />
+                                </a>
                             </div>
                         </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
             <div className='relative bottom-0 flex justify-end'>
-                <div className="w-[360px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around px-1 py-5">
+                <div className="w-[100%] md:w-[360px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around px-1 py-5">
                     <div className="h-full flex items-center justify-center">
                         <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>
                             <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="invert-100 transform rotate-180" />

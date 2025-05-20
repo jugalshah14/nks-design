@@ -33,16 +33,16 @@ const amenities = [
 export default function Amenities() {
     return (
         <div className="relative text-white py-12 ">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
                 {amenities.map((item, index) => (
                     <div
                         key={item.number}
                         className={`relative ${index % 2 !== 0 && 'top-10'} space-y-4 px-4`}
                     >
                         <div className='absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300'></div>
-                        <div className="text-orange-500 font-semibold text-lg">{item.number}</div>
-                        <h3 className="text-[#22252E] text-[24px] font-[700]">{item.title}</h3>
-                        <div className="w-full h-[240px] relative rounded-md overflow-hidden">
+                        <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">{item.number}</div>
+                        <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-[Satoshi]">{item.title}</h3>
+                        <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
                             <Image
                                 src={item.image}
                                 alt={item.title}
@@ -50,7 +50,7 @@ export default function Amenities() {
                                 className="object-cover"
                             />
                         </div>
-                        <p className="text-[16px] text-[#22252E] font-[400]">{item.description}</p>
+                        <p className="font-[Satoshi] text-[14px] md:text-[16px] text-[#22252E] font-[400]">{item.description}</p>
                     </div>
                 ))}
             </div>
@@ -65,11 +65,12 @@ export default function Amenities() {
                     </span>
                     65 more
                 </div>
-                <button className="bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden">
+                <button className="max-md:w-[90%] bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden">
                     <div className='px-6 py-3'>
-                        Explore the Riverside Sanctuary
+                        <span className='hidden md:inline'>Explore the Riverside Sanctuary</span>
+                        <span className='inline md:hidden'>Schedule a Visit</span>
                     </div>
-                    <span className="px-6 py-3 text-orange-500 bg-[#002F52] text-lg">↗</span>
+                    <span className="px-6 py-3 text-orange-500 bg-[#002F52] text-lg ml-auto">↗</span>
                 </button>
             </div>
 
@@ -77,7 +78,7 @@ export default function Amenities() {
                 <Image
                     src="/assets/AmenitiesBottomBackground.svg" // Replace with your actual image
                     alt="Decorative background"
-                    width={435}
+                    width={320}
                     height={200}
                 />
             </div>

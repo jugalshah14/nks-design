@@ -42,14 +42,19 @@ export default function RiversideLivingSwiper() {
 
 
     return (
-        <div className='pt-10'>
+        <div className='md:pt-10'>
             <Swiper
                 onSwiper={(swiper) => {
                     setSwiperRef(swiper);
                 }}
-                slidesPerView={2.6}
-                centeredSlides={true}
+                slidesPerView={1.3}
                 spaceBetween={20}
+                breakpoints={{
+                    768: {
+                        slidesPerView: 2.6,
+                        spaceBetween: 20,
+                    },
+                }}
                 pagination={{
                     enabled: false,
                     clickable: true,
@@ -61,12 +66,12 @@ export default function RiversideLivingSwiper() {
                 {data.map((slide, index) => (
                     <SwiperSlide key={index}>
                         <div className='relative flex flex-col items-center pt-15'>
-                            <span className='absolute top-[-10px] text-[#DE804B] font-[400] text-[90px] z-1 left-15'>{index + 1}</span>
-                            <div className={`relative h-[300px] w-full`}>
+                            <span className='absolute top-3 md:top-[-10px] text-[#DE804B] font-[IvyMode] font-[400] text-[58px] md:text-[90px] z-1 left-10 md:left-15'>{index + 1}</span>
+                            <div className={`relative h-[195px] md:h-[300px] w-full`}>
                                 <div className='plans_slider_backdrop z-1 h-[100%] w-[100%] absolute top-0 left-0' />
                                 <Image src={slide.src} alt="slide-0" fill className='object-cover' />
                             </div>
-                            <div className='relative h-[140px] top-[-30px] w-[80%] p-7 bg-[#FFFFFFB2] z-1 backdrop-filter backdrop-blur-[50px] bg-opacity-80 bg-clip-padding'>
+                            <div className='relative h-[140px] top-[-30px] w-[90%] md:w-[80%] p-4.5 md:p-7 bg-[#FFFFFFB2] z-1 backdrop-filter backdrop-blur-[50px] bg-opacity-80 bg-clip-padding'>
                                 {slide.title}
                             </div>
                         </div>
