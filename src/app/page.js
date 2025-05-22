@@ -35,7 +35,7 @@ export default function Home() {
         />
         <div className="md:hidden hero-section-bg absolute h-[100%] w-[100%] top-0 left-0" />
         <div className="absolute inset-0 flex flex-col justify-center">
-          <div className="container max-w-7xl mx-auto">
+          <div className="container mx-auto">
             <p className="block md:hidden text-center text-[#F2F2F2] font-[500] text-[14px] leading-8 uppercase">have you ever imagined</p>
             <h1 className="max-md:px-9 max-md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[100px] font-[400] md:leading-[100px] md:max-w-[635px]">
               Affordable Luxury by the Riverside
@@ -54,7 +54,7 @@ export default function Home() {
 
       {/* Project Overview */}
       <section className="pb-2 pt-16 md:py-16 bg-white">
-        <div className="container max-w-7xl mx-auto px-6">
+        <div className="container  mx-auto px-6">
           <div className="text-center mb-7 md:mb-16">
             <p className="text-[14px] leading-5 md:text-[16px] font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2">/ Magnificent</p>
             <h2 className="project-overview-title max-md:!text-[36px] max-md:!leading-11 max-md:font-[400] text-center">
@@ -63,13 +63,13 @@ export default function Home() {
               <span className="inline md:hidden"> View</span></h2>
           </div>
         </div>
-        <div className="container max-w-7xl mx-auto relative mb-16">
+        <div className="container  mx-auto relative mb-16">
           <div className="relative max-md:pt-5">
             <ProjectViewSlides />
           </div>
         </div>
 
-        <div className="container max-w-7xl py-7 px-4 md:px-10 mx-auto grid grid-cols-2 xl:grid-cols-4 gap-8 md:py-20 bg-white">
+        <div className="container  py-7 px-4 md:px-10 mx-auto grid grid-cols-2 xl:grid-cols-4 gap-8 md:py-20 bg-white">
           <div className="order-1 flex flex-col items-center">
             <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
               <Image src="/assets/icons/connectivity.svg" width={68} height={68} alt="Connectivity" className="" />
@@ -113,14 +113,14 @@ export default function Home() {
         <div className="relative certification-section pt-20 pb-30">
           <Image src="/assets/Rectangl_Left.png" width={80} height={307} alt="Rectangle_left" className="absolute top-0 h-[100%] left-0" />
           <Image src="/assets/Rectangle_right.png" width={80} height={307} alt="Rectangle_left" className="absolute top-0 h-[100%] right-0" />
-          <div className="relative max-w-7xl container mx-auto px-6">
+          <div className="relative  container mx-auto px-6">
             <div className="text-center">
               <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-[#22252e] mb-2">/ Trust</p>
               <h2 className="project-overview-title text-center"><span className="orange-color">Certified</span> by</h2>
             </div>
           </div>
         </div>
-        <div className="relative -top-[45px] lg:top-[-75px] container max-w-7xl mx-auto grid md:grid-cols-5 gap-8">
+        <div className="relative -top-[45px] lg:top-[-75px] container  mx-auto grid md:grid-cols-5 gap-8">
           <div className="flex flex-col items-center">
             <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
               <Image src="/assets/RERA.png" fill alt="RERA Approved" className="object-scale-down" />
@@ -169,7 +169,7 @@ export default function Home() {
 
         <Element name="section-Amenities">
           {/* Amenities */}
-          <section className="container max-w-7xl mx-auto mt-20">
+          <section className="container  mx-auto mt-20">
             <div className="hidden md:grid grid-cols-2 gap-10 px-24 mb-14">
               <div className="">
                 <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-[#22252e] mb-2">/ Podium</p>
@@ -186,7 +186,7 @@ export default function Home() {
               </h2>
             </div>
             <Amenities />
-            <div className="container max-w-7xl mx-auto relative md:mb-16">
+            <div className="container  mx-auto relative md:mb-16">
               <div className="hidden md:block relative">
                 <div className="flex w-full h-[558px] justify-center relative">
                   <Image
@@ -230,8 +230,8 @@ export default function Home() {
         <Element name="section-Plans">
           {/* Plans Section */}
           <div className="bg-[#020C22]">
-            <section className="container max-w-7xl mx-auto">
-              <div className="relative container max-w-7xl mx-auto md:px-6">
+            <section className="container  mx-auto">
+              <div className="relative container  mx-auto md:px-6">
                 <div className="hidden md:flex text-center pt-20 flex-col justify-center items-center">
                   <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-white mb-2">/ Plans</p>
                   <h2 className="w-[55%] project-overview-title !font-[300] text-center !text-white">The perfect sangam of <span className="orange-color">life</span> and <span className="orange-color">lifestyle</span></h2>
@@ -249,8 +249,8 @@ export default function Home() {
 
           {/* Plans Types */}
           <section className="bg-white">
-            <div className="max-w-7xl container mx-auto relative certification-section !bg-white pt-20">
-              <div className="relative max-w-7xl container mx-auto">
+            <div className=" container mx-auto relative certification-section !bg-white pt-20">
+              <div className="relative  container mx-auto">
                 <div className="text-center">
                   <p className="text-[14px] font-[Satoshi] leading-[20px] md:text-[16px] md:font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2">/ Subtitle</p>
                   <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-[IvyMode]"><span className="orange-color">Comfortable </span>living, simplified</h2>
@@ -316,7 +316,7 @@ export default function Home() {
               </div>
             </div>
             <RiversideLivingSwiper />
-            <div className="md:container max-w-7xl mx-auto relative flex flex-col items-center max-md:py-10 max-md:mt-7 max-md:bg-[#DE804B17]">
+            <div className="md:container  mx-auto relative flex flex-col items-center max-md:py-10 max-md:mt-7 max-md:bg-[#DE804B17]">
               <div className="hidden md:block relative px-17 pt-9 pb-16 mt-4">
                 <div className="absolute -left-[4.5%] top-0 w-[80%] h-[100%] bg-[#DE804B] -skew-x-12"></div>
                 <div className="absolute left-0 top-0 w-[100%] h-[100%] bg-[#020C22] skew-x-12"></div>
@@ -401,7 +401,7 @@ export default function Home() {
             <div className="hidden md:block relative p-5 overflow-hidden">
               <GangaWaves />
               <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
-              <div className="relative container max-w-7xl mx-auto py-15">
+              <div className="relative container  mx-auto py-15">
                 <div className="grid grid-cols-3 gap-4 ">
                   <div className="col-span-2 p-2">
                     <p className="text-[20px] font-[Satoshi] font-[700] text-white mb-4">Did you know?</p>
@@ -435,7 +435,7 @@ export default function Home() {
         {/* Why Serampore */}
         <Element name="section-WhySerampore">
           <section className="bg-white">
-            <div className="container max-w-7xl mx-auto relative certification-section !bg-white pt-10 md:pt-20">
+            <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
               <div className="grid grid-cols-2 gap-10 md:px-24">
                 <div className="max-md:col-span-2">
                   <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">/ Location</p>
@@ -464,7 +464,7 @@ export default function Home() {
           <GangaWaves />
           <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
           <div className="max-md:px-5">
-            <div className="relative md:px-24 container max-w-7xl mx-auto max-md:pt-10 md:py-15">
+            <div className="relative md:px-24 container  mx-auto max-md:pt-10 md:py-15">
               <div className="grid grid-cols-2 gap-4 ">
                 <div className="max-md:col-span-2 md:p-2">
                   <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">/ Connectivity</p>
@@ -533,7 +533,7 @@ export default function Home() {
 
       {/*  Testimonials */}
       <section className="bg-white">
-        <div className="container max-w-7xl mx-auto relative certification-section !bg-white pt-10 md:pt-20">
+        <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
           <div className="grid grid-cols-2 gap-10 md:px-24">
             <div className="max-md:col-span-2">
               <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">/ Testimonials</p>
@@ -557,7 +557,7 @@ export default function Home() {
         <div className="relative p-5 overflow-hidden">
           <GangaWaves />
           <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
-          <div className="relative md:px-24 container max-w-7xl mx-auto py-5 max-md:pb-15 md:py-15">
+          <div className="relative md:px-24 container  mx-auto py-5 max-md:pb-15 md:py-15">
             <div className="grid grid-cols-2 gap-4 ">
               <div className="max-md:col-span-2 md:p-2">
                 <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">/ Plans</p>

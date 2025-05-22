@@ -34,7 +34,7 @@ const Header = () => {
     return (
         <>
             <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''} bg-white ${activeClass} ${activeClass && isScrolled && '!bg-[#010b22]'}`}>
-                <div className="container max-w-7xl mx-auto py-4 flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
+                <div className="container mx-auto py-4 flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
                     <div className="hidden md:flex items-center space-x-8">
                         <nav className="hidden md:flex space-x-8">
                             <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Home</a>

@@ -26,7 +26,7 @@ export default function AmenitiesSwiper() {
 
     return (
         <div className='relative max-md:-top-15'>
-            <div className="container max-w-7xl mx-auto relative md:mb-16">
+            <div className="container mx-auto relative md:mb-16">
                 <div className="grid grid-cols-4 gap-10">
                     <div className="hidden md:block">
                         <h2 className="text-left project-overview-title text-[48px]">

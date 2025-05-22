@@ -283,3 +283,9 @@ body {
   /* backdrop-filter: blur(4px); */
   background: #ffffffd6;
 }
+
+@media (width >=80rem) and (width <=96rem) {
+  .container {
+    max-width: 75rem;
+  }
+}
