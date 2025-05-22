@@ -61,6 +61,15 @@ body {
   color: rgba(34, 37, 46, 1);
 }
 
+.page-hero-title {
+  font-family: Ivy Mode;
+  font-weight: 400;
+  font-size: 150px;
+  line-height: 150px;
+  letter-spacing: 0%;
+  color: rgba(34, 37, 46, 0.1);
+}
+
 .orange-color {
   color: rgba(222, 128, 75, 1);
 }
