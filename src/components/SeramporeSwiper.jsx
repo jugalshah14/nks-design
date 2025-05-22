@@ -62,12 +62,15 @@ export default function SeramporeSwiper() {
                 spaceBetween={10}
                 loop={true}
                 breakpoints={{
-                    768: {
+                    1023: {
                         slidesPerView: 2.5,
                         spaceBetween: 10,
                     },
+                    1400: {
+                        slidesPerView: 3.5,
+                        spaceBetween: 10,
+                    },
                 }}
-                centeredSlides={true}
                 pagination={{
                     enabled: false,
                     clickable: true,
@@ -78,7 +81,7 @@ export default function SeramporeSwiper() {
             >
                 {data.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className='relative flex items-start pt-15 w-[100%]'>
+                        <div className='relative flex items-start pt-15'>
                             <div className='relative min-h-[110px] min-w-[110px] md:min-h-[160px] md:min-w-[160px] overflow-hidden z-1'>
                                 <Image src={slide.src} alt="slide-0" fill className='object-cover' />
                             </div>

@@ -123,7 +123,7 @@ export default function Home() {
         <div className="relative -top-[45px] lg:top-[-75px] container max-w-7xl mx-auto grid md:grid-cols-5 gap-8">
           <div className="flex flex-col items-center">
             <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
-              <Image src="/assets/RERA.png" fill alt="RERA Approved" className="object-none" />
+              <Image src="/assets/RERA.png" fill alt="RERA Approved" className="object-scale-down" />
             </div>
             <h3 className="text-[18px] lg:text-[24px] font-[Satoshi] font-bold leading-[33px] text-[#22252e] m mt-autob-2 text-center">RERA Approved</h3>
             <Image height={24} width={24} src="/assets/icons/GreenCheck.svg" alt="Verified" className="mt-auto" />
@@ -131,7 +131,7 @@ export default function Home() {
 
           <div className="flex flex-col items-center">
             <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
-              <Image src="/assets/RERAAward.png" fill alt="RERA Approved" className="object-none" />
+              <Image src="/assets/RERAAward.png" fill alt="RERA Approved" className="object-scale-down" />
             </div>
             <h3 className="text-[18px] lg:text-[24px] font-[Satoshi] font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">RERA Approved</h3>
             <Image height={24} width={24} src="/assets/icons/GreenCheck.svg" alt="Verified" className="mt-auto" />
@@ -139,7 +139,7 @@ export default function Home() {
 
           <div className="flex flex-col items-center">
             <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
-              <Image src="/assets/WBHIRA.png" fill alt="WBHIRA Approved" className="object-none" />
+              <Image src="/assets/WBHIRA.png" fill alt="WBHIRA Approved" className="object-scale-down" />
             </div>
             <h3 className="text-[18px] lg:text-[24px] font-[Satoshi] font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">WBHIRA Approved</h3>
             <Image height={24} width={24} src="/assets/icons/GreenCheck.svg" alt="Verified" className="mt-auto" />
@@ -147,7 +147,7 @@ export default function Home() {
 
           <div className="flex flex-col items-center">
             <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
-              <Image src="/assets/IGBC.png" fill alt="IGBC Approved" className="object-none" />
+              <Image src="/assets/IGBC.png" fill alt="IGBC Approved" className="object-scale-down" />
             </div>
             <h3 className="text-[18px] lg:text-[24px] font-[Satoshi] font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">IGBC Certified</h3>
             <Image height={24} width={24} src="/assets/icons/GreenCheck.svg" alt="Verified" className="mt-auto" />
@@ -155,7 +155,7 @@ export default function Home() {
 
           <div className="flex flex-col items-center">
             <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
-              <Image src="/assets/RERA.png" fill alt="RERA Approved" className="object-none" />
+              <Image src="/assets/RERA.png" fill alt="RERA Approved" className="object-scale-down" />
             </div>
             <h3 className="text-[18px] lg:text-[24px] font-[Satoshi] font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">RERA Approved</h3>
             <Image height={24} width={24} src="/assets/icons/GreenCheck.svg" alt="Verified" className="mt-auto" />
@@ -179,7 +179,7 @@ export default function Home() {
                 <p className="text-[20px] font-[Satoshi] leading-[22px] text-[#22252E]">Experience a world of wonder and adventure. Our podium level is a playground for all ages!</p>
               </div>
             </div>
-            <div className="block md:hidden text-center mb-7 md:mb-16">
+            <div className="block md:hidden text-center mb-7 md:mb-16 px-5">
               <p className="text-[14px] leading-5 md:text-[16px] font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2">/ Amenities</p>
               <h2 className="project-overview-title max-md:!text-[36px] max-md:!leading-11 max-md:font-[400] text-center">
                 Enjoy <span className="orange-color">World-class Amenities</span> alongside Ganga
@@ -468,7 +468,7 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4 ">
                 <div className="max-md:col-span-2 md:p-2">
                   <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">/ Connectivity</p>
-                  <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:text-[56px] !text-white">
+                  <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
                     Serampore, next <br className="max-md:hidden" /><span className="orange-color">Investment hub</span>
                   </h2>
                   <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden">
@@ -537,7 +537,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-10 md:px-24">
             <div className="max-md:col-span-2">
               <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">/ Testimonials</p>
-              <h2 className="hidden md:block project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:text-[56px]">
+              <h2 className="hidden md:block project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
                 Building a <span className="orange-color">Brighter?</span><br />Tomorrow
               </h2>
               <h2 className="block md:hidden project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:text-[56px]">
@@ -561,7 +561,7 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4 ">
               <div className="max-md:col-span-2 md:p-2">
                 <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">/ Plans</p>
-                <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:text-[56px] !text-white">
+                <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
                   Your <span className="orange-color">Safety</span> &<br className="max-md:hidden" /> <span className="orange-color">Security</span>, Our<br className="max-md:hidden" /> Priority
                 </h2>
                 <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden">

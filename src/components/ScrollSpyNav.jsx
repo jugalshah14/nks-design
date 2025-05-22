@@ -16,7 +16,7 @@ export default function ScrollSpyNav() {
     };
 
     return (
-        <div className="max-md:w-[100vw] max-md:overflow-hidden sticky z-999 top-0 bg-white flex justify-center gap-10 space-x-8 border-t border-b border-[#22252e19] py-6 pb-6 md:py-10 md:pb-12">
+        <div className="max-md:w-[100%] max-md:overflow-hidden sticky z-999 top-0 bg-white flex justify-center gap-10 space-x-8 border-t border-b border-[#22252e19] py-6 pb-6 md:py-10 md:pb-12">
             <Swiper
                 onSwiper={(swiper) => {
                     setSwiperRef(swiper);

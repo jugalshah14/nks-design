@@ -38,7 +38,7 @@ export default function AmenitiesSwiper() {
                                     <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="invert-75 transform rotate-180" />
                                 </button>
                             </div>
-                            <div className="flex gap-2 items-center">1 <div className="h-0.5 w-8 bg-[#D9D9D9]" /> 3</div>
+                            <div className="flex gap-2 items-center">{activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> 5</div>
                             <div className="h-full flex items-center justify-center">
                                 <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
                                     <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="" />
@@ -56,13 +56,17 @@ export default function AmenitiesSwiper() {
                                 spaceBetween={10}
                                 loop={true}
                                 breakpoints={{
+                                    415:{
+                                        slidesPerView: 2.4,
+                                        spaceBetween: 20,
+                                    },
                                     556: {
                                         slidesPerView: 2.4,
                                         spaceBetween: 30,
                                         loop: false
                                     },
                                     768: {
-                                        slidesPerView: 4.4,
+                                        slidesPerView: 4.3,
                                         spaceBetween: 30,
                                     },
                                 }}
