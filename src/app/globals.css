@@ -225,6 +225,52 @@ body {
   color: #22252e;
 }
 
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-content-item {
+  position: relative;
+  left: 0%;
+  animation: swap 10s linear infinite;
+}
+
+@keyframes swap {
+
+  0%,
+  50% {
+    left: 0%;
+  }
+
+  50.01%,
+  100% {
+    left: 100%;
+  }
+}
+
+.marquee-content:hover {
+  animation-play-state: paused
+}
+
+
+/* Transition */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0)
+  }
+
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
 @media (width < 48rem
   /* 768px */
 ) {
@@ -240,10 +286,11 @@ body {
     transform: translate(-41%, -22px);
   }
 }
+
+
 .none-md{
   display: none;
 }
-
 /* MasterPlan responsive classes */
 @media (max-width: 768px) {
   .project-overview-title{
