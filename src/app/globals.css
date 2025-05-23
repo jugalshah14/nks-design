@@ -216,6 +216,11 @@ body {
   color: #22252e;
 }
 
+.responsive-image {
+  width: 100px;
+  height: 100px;
+}
+
 @media (width < 48rem
   /* 768px */
 ) {
@@ -229,5 +234,19 @@ body {
     position: absolute;
     left: 50%;
     transform: translate(-41%, -22px);
+  }
+
+  .project-overview-title {
+    font-family: Satoshi;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    letter-spacing: 0%;
+    color: rgba(34, 37, 46, 1);
+  }
+
+  .responsive-image {
+    width: 52px;
+    height: 52px;
   }
 }
