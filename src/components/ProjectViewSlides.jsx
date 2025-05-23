@@ -1,11 +1,10 @@
 'use client';
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import { useRef, useState } from 'react'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const data = [
     {
@@ -16,24 +15,31 @@ const data = [
         src: '/assets/Amenities1.png',
         title: 'Front view',
     },
-]
+];
+
+const settings = {
+    className: "project-overview-swiper center",
+    infinite: true,
+    centerPadding: "30px",
+    slidesToShow: 1,
+    speed: 600,
+    dots: false,
+    arrows: false,
+    initialSlide: 0,
+};
 
 export default function ProjectViewSlides() {
-    const [swiperRef, setSwiperRef] = useState();
     const [activeIndex, setActiveIndex] = useState(0);
-
-    const handleSlideChange = (swiper) => {
-        setActiveIndex(swiper.realIndex);
-    };
+    let swiperRef = useRef(null);
 
     const handleNext = () => {
         if (!swiperRef) return;
-        swiperRef.slideNext();
+        swiperRef.slickNext();
     }
 
     const handlePrev = () => {
         if (!swiperRef) return;
-        swiperRef.slidePrev();
+        swiperRef.slickPrev();
     }
 
 
@@ -44,24 +50,15 @@ export default function ProjectViewSlides() {
                 <span className="transition-all text-[52px] font-[IvyMode] font-bold leading-[66px] text-[#de7f4a]">/</span>
                 <span className="transition-all text-[52px] font-[IvyMode] font-bold leading-[66px] text-[#de7f4a]">{data.length}</span>
             </div>
-            <Swiper
-                onSwiper={(swiper) => {
-                    setSwiperRef(swiper);
+            <Slider
+                ref={slider => {
+                    swiperRef = slider;
                 }}
-                slidesPerView={1}
-                centeredSlides={true}
-                loop={true}
-                spaceBetween={30}
-                pagination={{
-                    enabled: false,
-                    clickable: true,
-                }}
-                modules={[Pagination]}
-                className="mySwiper relative"
-                onRealIndexChange={handleSlideChange}
+                {...settings}
+                afterChange={(current) => setActiveIndex(current)}
             >
                 {data.map((slide, index) => (
-                    <SwiperSlide key={index} className='relative top-[-50px]'>
+                    <div key={index} className='relative top-[-50px]'>
                         <div className="flex justify-center relative h-[280px] md:h-[70vh]">
                             <Image
                                 src={slide.src}
@@ -75,9 +72,9 @@ export default function ProjectViewSlides() {
                                 </h3>
                             </div>
                         </div>
-                    </SwiperSlide>
+                    </div>
                 ))}
-            </Swiper>
+            </Slider>
             <div className="absolute -bottom-10 md:bottom-[-0px] left-1/2 transform -translate-x-1/2 bg-white custom-box-shadow rounded-md flex items-center justify-between w-[121px] md:w-[260px] h-[48px] md:h-[96px] z-1">
                 <div className="w-1/2 h-full flex items-center justify-center">
                     <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>

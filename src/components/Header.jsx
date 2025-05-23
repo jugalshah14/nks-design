@@ -1,6 +1,8 @@
 "use client";
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation'
 
 const headerClass = {
     '/': 'home-page-header'
@@ -10,6 +12,7 @@ const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeClass, setActiveClass] = useState('/');
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
 
     const toggleDrawer = () => {
         setIsOpen(!isOpen);
@@ -25,11 +28,11 @@ const Header = () => {
         };
 
         window.addEventListener('scroll', handleScroll);
-        setActiveClass(headerClass[window.location.pathname] || '');
+        setActiveClass(headerClass[pathname] || '');
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [pathname]);
 
     return (
         <>
@@ -37,10 +40,10 @@ const Header = () => {
                 <div className="container mx-auto py-4 flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
                     <div className="hidden md:flex items-center space-x-8">
                         <nav className="hidden md:flex space-x-8">
-                            <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Home</a>
-                            <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">About us</a>
-                            <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Plans</a>
-                            <a href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Blogs</a>
+                            <Link href="/" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Home</Link>
+                            <Link href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">About us</Link>
+                            <Link href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Plans</Link>
+                            <Link href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Blogs</Link>
                         </nav>
                     </div>
 
@@ -75,14 +78,14 @@ const Header = () => {
             >
                 <div className="p-4">
                     <ul className="space-y-4">
-                        <li><a href="#" className="text-gray-800 hover:text-blue-500">
-                            Home</a></li>
-                        <li><a href="#" className="text-gray-800 hover:text-blue-500">
-                            Profile</a></li>
-                        <li><a href="#" className="text-gray-800 hover:text-blue-500">
-                            Settings</a></li>
-                        <li><a href="#" className="text-gray-800 hover:text-blue-500">
-                            Help</a></li>
+                        <li><Link href="/" className="text-gray-800 hover:text-blue-500">
+                            Home</Link></li>
+                        <li><Link href="#" className="text-gray-800 hover:text-blue-500">
+                            About Us</Link></li>
+                        <li><Link href="#" className="text-gray-800 hover:text-blue-500">
+                            Plans</Link></li>
+                        <li><Link href="#" className="text-gray-800 hover:text-blue-500">
+                            Blog</Link></li>
                     </ul>
                 </div>
                 <button

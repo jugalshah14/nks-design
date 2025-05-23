@@ -1,11 +1,12 @@
 'use client';
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import { useRef, useState } from 'react'
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const data = [
     {
@@ -26,85 +27,100 @@ const data = [
         title: 'Serampore Railway Station',
         description: '2.5km away'
     },
-    {
-        src: '/assets/shelby.jpg',
-        icon: '/assets/icons/hospital-building.svg',
-        title: 'Shelby Hospital',
-        description: '3.4km away'
-    }
+    // {
+    //     src: '/assets/shelby.jpg',
+    //     icon: '/assets/icons/hospital-building.svg',
+    //     title: 'Shelby Hospital',
+    //     description: '3.4km away'
+    // }
 ]
 
+const settings = {
+    className: "serampore-swiper center",
+    infinite: true,
+    centerPadding: "30px",
+    slidesToShow: 3,
+    speed: 600,
+    dots: false,
+    arrows: false,
+    initialSlide: 0,
+    responsive: [
+        {
+            breakpoint: 1240,
+            settings: {
+                centerMode: false,
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 926,
+            settings: {
+                centerMode: false,
+                slidesToShow: 1.2,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                centerMode: false,
+                slidesToShow: 1.2,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                centerMode: false,
+                slidesToShow: 1,
+            }
+        },
+    ]
+}
 export default function SeramporeSwiper() {
-    const [swiperRef, setSwiperRef] = useState();
     const [activeIndex, setActiveIndex] = useState(0);
-
-    const handleSlideChange = (swiper) => {
-        setActiveIndex(swiper.realIndex);
-    };
+    let swiperRef = useRef(null);
 
     const handleNext = () => {
         if (!swiperRef) return;
-        swiperRef.slideNext();
+        swiperRef.slickNext();
     }
 
     const handlePrev = () => {
         if (!swiperRef) return;
-        swiperRef.slidePrev();
+        swiperRef.slickPrev();
     }
 
     return (
         <div className='md:pt-10 mb-10'>
-            <Swiper
-                onSwiper={(swiper) => {
-                    setSwiperRef(swiper);
+            <Slider
+                ref={slider => {
+                    swiperRef = slider;
                 }}
-                slidesPerView={1.5}
-                spaceBetween={10}
-                loop={true}
-                breakpoints={{
-                    1023: {
-                        slidesPerView: 2.5,
-                        spaceBetween: 10,
-                    },
-                    1400: {
-                        slidesPerView: 3.5,
-                        spaceBetween: 10,
-                    },
-                }}
-                pagination={{
-                    enabled: false,
-                    clickable: true,
-                }}
-                modules={[Pagination, Navigation]}
-                className="mySwiper"
-                onRealIndexChange={handleSlideChange}
+                {...settings}
+                afterChange={(current) => setActiveIndex(current)}
             >
                 {data.map((slide, index) => (
-                    <SwiperSlide key={index}>
-                        <div className='relative flex items-start pt-15'>
-                            <div className='relative min-h-[110px] min-w-[110px] md:min-h-[160px] md:min-w-[160px] overflow-hidden z-1'>
-                                <Image src={slide.src} alt="slide-0" fill className='object-cover' />
-                            </div>
-                            <div className={`location-slide relative top-5 -left-[100px] flex flex-col p-7 pl-30 pr-10 ${+activeIndex === index ? 'bg-[#000E2D]' : 'bg-[#F8F8F8]'}`}>
-                                <Image src={slide.icon} height={48} width={48} alt="icon" className={`max-md:!h-[33px] max-md:!w-[33px] ${+activeIndex === index && 'invert-100'}`} />
-                                <p className={`md:min-w-[172px] mt-2 text-[14px] md:text-[20px] ${+activeIndex === index ? 'text-[#FFFFFF]' : 'text-[#22252E]'} font-[700] leading-5 md:leading-[28px]`}>
-                                    {slide.title}
-                                </p>
-                                <p className={`mb-1 text-[12px] md:text-[16px] ${+activeIndex === index ? 'text-[#FFFFFF]' : 'text-[#22252E]'} opacity-60 font-[400] leading-4 md:leading-[20px]`}>
-                                    {slide.description}
-                                </p>
-                            </div>
+                    <div key={index} className='relative !flex justify-center flex-nowrap pt-15 w-[100%] ml-[40px]'>
+                        <Image src={slide.src} alt="slide-0" height={160} width={160} className='relative !h-[110px] !w-[110px] md:!h-[160px] md:!w-[160px] z-1' />
+                        <div className={`w-fit relative flex flex-col p-7 pl-3 pt-10 max-sm:pr-30 pr-20 `}>
+                            <div className='location-slide bg-[#F8F8F8] top-6 -left-[70px] w-[100%] sm:w-[130%] h-[100%] absolute back-active' />
+                            <Image src={slide.icon} height={48} width={48} alt="icon" className={`max-md:!h-[33px] max-md:!w-[33px] image z-1`} />
+                            <p className={`max-md:!whitespace-nowrap md:!w-[172px] mt-2 text-[14px] md:text-[20px] text-[#22252E] font-[700] z-1 leading-5 md:leading-[28px] title`}>
+                                {slide.title}
+                            </p>
+                            <p className={`z-1 mb-1 text-[12px] md:text-[16px] text-[#22252E] opacity-60 font-[400] leading-4 md:leading-[20px] description`}>
+                                {slide.description}
+                            </p>
                         </div>
-                    </SwiperSlide>
+                    </div>
                 ))}
-            </Swiper>
+            </Slider>
             <div className="relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-5">
                 <div className="h-full flex items-center justify-center">
                     <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>
                         <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="invert-75 transform rotate-180" />
                     </button>
                 </div>
-                <div className="flex gap-2 items-center">{activeIndex+1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}</div>
+                <div className="flex gap-2 items-center">{activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}</div>
                 <div className="h-full flex items-center justify-center">
                     <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
                         <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="" />
