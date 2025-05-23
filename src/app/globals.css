@@ -240,3 +240,71 @@ body {
     transform: translate(-41%, -22px);
   }
 }
+.none-md{
+  display: none;
+}
+
+/* MasterPlan responsive classes */
+@media (max-width: 768px) {
+  .project-overview-title{
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .img-size{
+    height: 110px;
+    width: 100px;
+  }
+  .padding-top{
+    padding-top: 70px;
+    padding-bottom: 14px!important;
+  }
+  .none-md{
+  display: flex;
+}
+  .page-hero-title {
+  font-family: Ivy Mode;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: 0%;
+  color: rgba(34, 37, 46, 1);
+}
+  .plan-padding{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .no-negative-margin{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .mobile-title{
+    font-family: Satoshi;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 44px;
+    letter-spacing: 0%;
+    color: rgba(34, 37, 46, 1);
+  }
+  .sangam-title{
+    font-family: Satoshi;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: 0%;
+    color: rgba(34, 37, 46, 1);
+  }
+  .projectslide-title{
+    font-family: Satoshi;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0%;
+  }
+  .hide-triangle{
+    display: none;
+  }
+  .flex-sangam{
+    display: flex;
+    flex-direction: column;
+  }
+}

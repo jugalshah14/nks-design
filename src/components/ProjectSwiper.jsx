@@ -28,6 +28,13 @@ const data = [
         icon2: '/assets/project-icon2.svg',
         title: 'The 42 Kolkata',
         description: 'Enjoy the beauty of the lotus pond pavilion and unwind with a calming.'
+    },
+    {
+        src: '/assets/project3.jpg',
+        icon1: '/assets/project-icon1.svg',
+        icon2: '/assets/project-icon2.svg',
+        title: 'The 42 Kolkata',
+        description: 'Enjoy the beauty of the lotus pond pavilion and unwind with a calming.'
     }
 ]
 
@@ -50,21 +57,23 @@ export default function ProjectSwiper() {
     }
 
     return (
-        <div className='md:pt-10 mb-10'>
+        <div className='md:pt-10 mb-10 mx-[16px] md:mx-[0px]'>
             <Swiper
                 onSwiper={(swiper) => {
                     setSwiperRef(swiper);
                 }}
-                slidesPerView={1.5}
+                slidesPerView={1.1}
                 spaceBetween={10}
-                loop={true}
+                loop={false}
+                
                 breakpoints={{
                     768: {
-                        slidesPerView: 1.8,
+                        slidesPerView: 1.9,
                         spaceBetween: 10,
+                        slidesOffsetBefore: 120,
+                        slidesOffsetAfter: 60,
                     },
                 }}
-                centeredSlides={true}
                 pagination={{
                     enabled: false,
                     clickable: true,
@@ -75,8 +84,8 @@ export default function ProjectSwiper() {
             >
                 {data.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className='flex flex-row'>
-                           <div className='w-[340px] h-[468px] relative'>
+                        <div className='flex md:flex-row flex-col'>
+                           <div className='w-full md:w-[360px] h-[240px] md:h-[468px] relative'>
                             <Image 
                                 src={slide.src} 
                                 alt="slide-0" 
@@ -84,15 +93,15 @@ export default function ProjectSwiper() {
                                 className="object-cover" 
                             />
                             </div>
-                            <div className='w-[340px] flex flex-col bg-[#0C162B] mt-[40px]'>
+                            <div className='w-full md:w-[380px] flex flex-col bg-[#0C162B] md:mt-[40px]'>
                                 <div className='p-[36px] relative'>
-                                    <div className='absolute !w-auto left-[-60px] flex items-start justify-start mb-[28px] left-0 bg-transparent backdrop-filter backdrop-blur-[14px] bg-opacity-80'>
-                                        <div className='py-[20px] px-[27px] transforming-text font-[400] text-[40px] leading-[48px] whitespace-nowrap'>
+                                    <div className='absolute w-full top-[-65px] md:top-0 md:left-[-60px] flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[5px] bg-opacity-80'>
+                                        <div className='w-full projectslide-title py-[20px] px-[27px] transforming-text font-[400] text-[40px] leading-[48px] whitespace-nowrap'>
                                             {slide.title}
                                         </div>        
                                     </div>
 
-                                    <div className='pb-[28px] pt-[120px]'>
+                                    <div className='pb-[28px] md:pt-[120px]'>
                                         <p className="text-[14px] md:text-[14px] font-[Satoshi] font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">About Project</p>
                                         <p className="text-[16px] md:text-[16px] font-[Satoshi] font-[400] leading-6 md:leading-[20px] text-white">{slide.description}</p>
                                     </div>
