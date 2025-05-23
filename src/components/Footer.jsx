@@ -4,7 +4,7 @@ import React from 'react'
 export default function Footer() {
     return (
         <div className='relative'>
-            <div className='container mx-auto px-4 md:px-24 py-10 md:py-20 md:pb-30 bg-white relative'>
+            <div className='container mx-auto px-4 md:px-8 lg:px-24 py-10 md:py-20 md:pb-30 bg-white relative'>
                 <div className='grid grid-cols-2 md:gap-30'>
                     <div className='max-md:col-span-2 order-2 md:order-1'>
                         <h2 className="hidden md:block project-overview-title text-[56px] !text-[#22252E] mb-8">

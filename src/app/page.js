@@ -69,7 +69,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container  py-7 px-4 md:px-10 mx-auto grid grid-cols-2 xl:grid-cols-4 gap-8 md:py-20 bg-white">
+        <div className="container py-7 px-4 lg:px-10 mx-auto grid grid-cols-2 xl:grid-cols-4 gap-8 md:py-20 bg-white">
           <div className="order-1 flex flex-col items-center">
             <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
               <Image src="/assets/icons/connectivity.svg" width={68} height={68} alt="Connectivity" className="" />
@@ -170,7 +170,7 @@ export default function Home() {
         <Element name="section-Amenities">
           {/* Amenities */}
           <section className="container  mx-auto mt-20">
-            <div className="hidden md:grid grid-cols-2 gap-10 px-24 mb-14">
+            <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mb-14">
               <div className="">
                 <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-[#22252e] mb-2">/ Podium</p>
                 <h2 className="project-overview-title text-[56px]">Enjoy <span className="orange-color">world-class Amenities</span> by the Ganges</h2>
@@ -186,7 +186,7 @@ export default function Home() {
               </h2>
             </div>
             <Amenities />
-            <div className="container  mx-auto relative md:mb-16">
+            <div className="container mx-auto !w-[100%] relative md:mb-16">
               <div className="hidden md:block relative">
                 <div className="flex w-full h-[558px] justify-center relative">
                   <Image
@@ -234,7 +234,7 @@ export default function Home() {
               <div className="relative container  mx-auto md:px-6">
                 <div className="hidden md:flex text-center pt-20 flex-col justify-center items-center">
                   <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-white mb-2">/ Plans</p>
-                  <h2 className="w-[55%] project-overview-title !font-[300] text-center !text-white">The perfect sangam of <span className="orange-color">life</span> and <span className="orange-color">lifestyle</span></h2>
+                  <h2 className="w-[85%] lg:w-[55%] project-overview-title !font-[300] text-center !text-white">The perfect sangam of <span className="orange-color">life</span> and <span className="orange-color">lifestyle</span></h2>
                 </div>
                 <div className="flex md:hidden text-center pt-10 flex-col justify-center items-center px-4">
                   <p className="text-[14px] font-[satoshi] font-[400] leading-[20px] text-white mb-2">/ Amenities</p>
@@ -250,7 +250,7 @@ export default function Home() {
           {/* Plans Types */}
           <section className="bg-white">
             <div className=" container mx-auto relative certification-section !bg-white pt-20">
-              <div className="relative  container mx-auto">
+              <div className="relative container mx-auto">
                 <div className="text-center">
                   <p className="text-[14px] font-[Satoshi] leading-[20px] md:text-[16px] md:font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2">/ Subtitle</p>
                   <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-[IvyMode]"><span className="orange-color">Comfortable </span>living, simplified</h2>
@@ -297,7 +297,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="hidden md:grid grid-cols-2 gap-10 px-24 mt-20">
+              <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mt-20">
                 <div className="">
                   <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-[#22252e] mb-2">/Why Riverside Living</p>
                   <h2 className="project-overview-title text-[56px]">
@@ -317,10 +317,10 @@ export default function Home() {
             </div>
             <RiversideLivingSwiper />
             <div className="md:container  mx-auto relative flex flex-col items-center max-md:py-10 max-md:mt-7 max-md:bg-[#DE804B17]">
-              <div className="hidden md:block relative px-17 pt-9 pb-16 mt-4">
-                <div className="absolute -left-[4.5%] top-0 w-[80%] h-[100%] bg-[#DE804B] -skew-x-12"></div>
+              <div className="hidden md:block relative px-10 lg:px-17 pt-9 pb-16 mt-4">
+                <div className="absolute -left-[4.5%] top-0 w-[60%] h-[100%] lg:w-[80%] lg:h-[100%] bg-[#DE804B] -skew-x-12"></div>
                 <div className="absolute left-0 top-0 w-[100%] h-[100%] bg-[#020C22] skew-x-12"></div>
-                <p className="relative text-[40px] font-[400] transforming-text">Take the 1st step to transforming your life</p>
+                <p className="relative text-[36px] lg:text-[40px] font-[400] transforming-text text-center">Take the 1st step to transforming your life</p>
               </div>
               <p className="enough-reasons-text block md:hidden font-[400] text-[24px] leading-8 w-[85%] text-center mb-8">
                 Enough reasons to live by Ganges?
@@ -402,14 +402,14 @@ export default function Home() {
               <GangaWaves />
               <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
               <div className="relative container  mx-auto py-15">
-                <div className="grid grid-cols-3 gap-4 ">
+                <div className="grid grid-cols-4 lg:grid-cols-3 gap-4 ">
                   <div className="col-span-2 p-2">
                     <p className="text-[20px] font-[Satoshi] font-[700] text-white mb-4">Did you know?</p>
-                    <p className="w-[80%] transforming-text font-[400] text-[40px] leading-[48px]">
+                    <p className="w-[80%] transforming-text font-[400] text-[32px] lg:text-[40px] lg:leading-[48px]">
                       {`The Ganges River Dolphin (Platanista gangetica), also know locally as  "Susu", is one of only four freshwater dolphin species in the world and is often regarded as the ‘Tiger of the Ganges'.`}
                     </p>
                   </div>
-                  <div className="p-2 flex gap-10 items-center">
+                  <div className="max-lg:col-span-2 p-2 flex gap-10 items-center">
                     <div className="flex gap-14 items-center">
                       <div className="flex flex-col gap-3">
                         <Image src={'/assets/icons/verticalwaves.svg'} width={15} height={15} alt="verticalwaves" className="opacity-[0.15]" />
@@ -418,7 +418,7 @@ export default function Home() {
                       <div className="flex flex-col">
                         <p className="text-[20px] font-[Satoshi] font-[700] text-white mb-6">Want to Dive into Riverside Bliss?</p>
                         <button className="relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
-                          <div className='px-6 py-3 mr-20'>
+                          <div className='pl-4 py-3'>
                             Schedule a Visit
                           </div>
                           <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">↗</span>
@@ -436,7 +436,7 @@ export default function Home() {
         <Element name="section-WhySerampore">
           <section className="bg-white">
             <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
-              <div className="grid grid-cols-2 gap-10 md:px-24">
+              <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
                 <div className="max-md:col-span-2">
                   <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">/ Location</p>
                   <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
@@ -464,7 +464,7 @@ export default function Home() {
           <GangaWaves />
           <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
           <div className="max-md:px-5">
-            <div className="relative md:px-24 container  mx-auto max-md:pt-10 md:py-15">
+            <div className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-15">
               <div className="grid grid-cols-2 gap-4 ">
                 <div className="max-md:col-span-2 md:p-2">
                   <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">/ Connectivity</p>
@@ -534,7 +534,7 @@ export default function Home() {
       {/*  Testimonials */}
       <section className="bg-white">
         <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
-          <div className="grid grid-cols-2 gap-10 md:px-24">
+          <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
             <div className="max-md:col-span-2">
               <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">/ Testimonials</p>
               <h2 className="hidden md:block project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
@@ -557,7 +557,7 @@ export default function Home() {
         <div className="relative p-5 overflow-hidden">
           <GangaWaves />
           <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
-          <div className="relative md:px-24 container  mx-auto py-5 max-md:pb-15 md:py-15">
+          <div className="relative md:px-8 lg:px-24 container  mx-auto py-5 max-md:pb-15 md:py-15">
             <div className="grid grid-cols-2 gap-4 ">
               <div className="max-md:col-span-2 md:p-2">
                 <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">/ Plans</p>
