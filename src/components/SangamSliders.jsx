@@ -116,7 +116,7 @@ export default function SangamSliders() {
                         <h2 className="text-center md:text-left text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-1">
                             Views from 2BHK
                         </h2>
-                        <div className="hidden md:flex relative right-[-90px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding rounded-md flex items-center justify-around mt-9 px-1 py-5">
+                        <div className="hidden hide-triangle md:flex relative right-[-90px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding rounded-md flex items-center justify-around mt-9 px-1 py-5">
                             <div className="h-full flex items-center justify-center text-white">
                                 <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>
                                     <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="invert-100 transform rotate-180" />
