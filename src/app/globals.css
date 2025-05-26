@@ -221,6 +221,16 @@ body {
   height: 100px;
 }
 
+.responsive-IGBC-image {
+  width: 152px;
+  height: 152px;
+}
+
+.icon-image {
+  width: 92px;
+  height: 92px;
+}
+
 .marquee {
   width: 100%;
   overflow: hidden;
@@ -293,6 +303,15 @@ body {
   .responsive-image {
     width: 52px;
     height: 52px;
+  }
+
+  .responsive-IGBC-image {
+    width: 80px;
+    height: 80px;
+  }
+  .icon-image {
+    width: 60px;
+    height: 60px;
   }
 }
 
