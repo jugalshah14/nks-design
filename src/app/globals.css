@@ -65,15 +65,6 @@ body {
   color: rgba(34, 37, 46, 1);
 }
 
-.page-hero-title {
-  font-family: Ivy Mode;
-  font-weight: 400;
-  font-size: 150px;
-  line-height: 150px;
-  letter-spacing: 0%;
-  color: rgba(34, 37, 46, 0.1);
-}
-
 .orange-color {
   color: rgba(222, 128, 75, 1);
 }
@@ -295,7 +286,68 @@ body {
   }
 }
 
+.whatsapp-image {
+  box-shadow: 0px 4px 4px 0px #00000040;
+  /* backdrop-filter: blur(4px); */
+  background: #ffffffd6;
+}
 
+@media (width >=80rem) and (width <=96rem) {
+  .container {
+    max-width: 80rem;
+  }
+}
+
+.amenities-swiper .slick-list {
+  overflow: visible;
+}
+
+.amenities-swiper .slick-track {
+  display: flex;
+}
+
+.amenities-swiper .slick-slide {
+  min-width: 200px;
+  overflow: hidden;
+}
+
+.after-box::before {
+  content: '';
+  position: absolute;
+  background: white;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+}
+
+.plans-swiper .slick-track {
+  display: flex;
+  gap: 24px;
+}
+
+.serampore-swiper .slick-slide.slick-active.slick-current .description,
+.serampore-swiper .slick-slide.slick-active.slick-current .title {
+  color: #FFFFFF;
+}
+
+.serampore-swiper .slick-slide.slick-active.slick-current .image {
+  filter: invert(1);
+}
+
+.serampore-swiper .slick-slide.slick-active.slick-current .back-active {
+  background: #000E2D;
+}
+
+
+
+.page-hero-title {
+  font-family: Ivy Mode;
+  font-weight: 400;
+  font-size: 150px;
+  line-height: 150px;
+  letter-spacing: 0%;
+  color: rgba(34, 37, 46, 0.1);
+}
 .none-md{
   display: none;
 }
@@ -362,29 +414,4 @@ body {
     display: flex;
     flex-direction: column;
   }
-}
-
-.after-box::before {
-  content: '';
-  position: absolute;
-  background: white;
-  left: -100%;
-  height: 100%;
-  width: 100%;
-}
-
-.plans-swiper .slick-track {
-  display: flex;
-  gap: 24px;
-}
-
-.serampore-swiper .slick-slide.slick-active.slick-current .description,
-.serampore-swiper .slick-slide.slick-active.slick-current .title {
-  color: #FFFFFF;
-}
-.serampore-swiper .slick-slide.slick-active.slick-current .image {
-  filter: invert(1);
-}
-.serampore-swiper .slick-slide.slick-active.slick-current .back-active {
-  background: #000E2D;
 }
