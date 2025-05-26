@@ -266,7 +266,7 @@ export default function MasterPlan() {
 
       {/* Blogs Section */}
       <section className='relative'>
-        <div className='hide-triangle bg-[#F5F8FA] w-full absolute h-[374px] top-0'></div>
+        <div className='hide-triangle bg-[#F5F8FA] w-full absolute h-[374px] md:top-[-20px]'></div>
         <div className="container mx-auto  px-[16px] md:px-[0px]">
           <Blogs />
         </div>
