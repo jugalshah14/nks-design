@@ -231,12 +231,12 @@ export default function MasterPlan() {
               <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
             </div>
         </div>
-        <div className='relative pt-[30px] md:pt-[172px]'>
+        <div className='relative pt-[30px] md:pt-[100px]'>
             <div className="text-center w-full">
               <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</p>
               <h2 className="project-overview-title text-center pb-[28px] md:pb-[0px]"><span className="orange-color">Past</span> Projects</h2>
             </div>
-            <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-140'></div>
+            <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-120'></div>
         </div>
         <PastProjectSwiper />
         <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-5 md:pt-10 cursor-pointer">
