@@ -70,8 +70,8 @@ export default function ProjectSwiper() {
                     768: {
                         slidesPerView: 1.9,
                         spaceBetween: 10,
-                        slidesOffsetBefore: 120,
-                        slidesOffsetAfter: 60,
+                        slidesOffsetBefore: 80,
+                        slidesOffsetAfter: 20,
                     },
                 }}
                 pagination={{
@@ -95,7 +95,7 @@ export default function ProjectSwiper() {
                             </div>
                             <div className='w-full md:w-[380px] flex flex-col bg-[#0C162B] md:mt-[40px]'>
                                 <div className='p-[36px] relative'>
-                                    <div className='absolute w-full top-[-65px] md:top-0 md:left-[-60px] flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[5px] bg-opacity-80'>
+                                    <div className='md:mt-[32px] absolute w-full top-[-65px] md:top-0 md:left-[-60px] flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[5px] bg-opacity-80'>
                                         <div className='w-full projectslide-title py-[20px] px-[27px] transforming-text font-[400] text-[40px] leading-[48px] whitespace-nowrap'>
                                             {slide.title}
                                         </div>        

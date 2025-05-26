@@ -56,7 +56,7 @@ export default function TeamSwiper() {
 
   return (
     <div className="relative overflow-hidden pt-10">
-      <div className="container max-w-7xl mx-auto relative md:mb-16 overflow-visible px-[16px] md:px-[0px]">
+      <div className="container mx-auto relative md:mb-16 overflow-visible px-[16px] md:px-[0px]">
         <div className="flex flex-col md:grid md:grid-cols-4 gap-[32px] md:gap-10">
           <div className="">
             <h2 className="project-overview-title text-left pb-[28px] md:pb-[0px]">Meet The <span className="orange-color">Team</span></h2>
