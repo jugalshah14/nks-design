@@ -7,6 +7,7 @@ import SangamSliders from '@/components/SangamSliders';
 import ProjectSwiper from '@/components/ProjectSwiper';
 import Blogs from '@/components/Blogs';
 import ConstructionSlider from '@/components/ConstructionSlider';
+import PastProjectSwiper from '@/components/PastProjectSwiper';
 
 export default function MasterPlan() {
   return (
@@ -19,7 +20,7 @@ export default function MasterPlan() {
           <span className="mx-2">—</span>
           <span className="text-gray-400">Masterplans</span>
         </div>
-        <h1 className="relative -mb-5 page-hero-title no-negative-margin">
+        <h1 className="relative -mb-5 page-hero-title no-negative-margin select-none no-drag">
           Masterplans
         </h1>
       </section>
@@ -33,7 +34,7 @@ export default function MasterPlan() {
               src="/assets/masterplan-hero.png"
               alt="Hero-img"
               fill
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full select-none no-drag"
               priority
             />
         </div>
@@ -126,7 +127,7 @@ export default function MasterPlan() {
             src="/assets/map.png"
             alt="img"
             fill
-            className="object-cover"
+            className="object-cover select-none no-drag"
           />
         </div>
       </section>
@@ -211,20 +212,20 @@ export default function MasterPlan() {
             <h1 className='text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[150px] font-[400] md:leading-[150px]'>Sangam</h1>
         </div>
         <div className='w-full items-center justify-center flex flex-row  gap-4 md:gap-10 border-t border-b border-white/10 mb-[52px]'>
-          <div className='text-[16px] md:text-[20px] font-[Satoshi] font-normal leading-[28px] text-white/50 py-[20px]'>3BHK</div>
+          <div className='text-[16px] md:text-[20px] font-[Satoshi] font-normal leading-[28px] text-white/50 py-[20px] cursor-pointer'>3BHK</div>
           <Image src="/assets/dot.svg" width={10} height={10} alt="dot" />
-          <div className='text-[16px] md:text-[20px] font-[Satoshi] font-normal leading-[28px] text-white/50 py-[20px]'>2BHK</div>
+          <div className='text-[16px] md:text-[20px] font-[Satoshi] font-normal leading-[28px] text-white/50 py-[20px] cursor-pointer'>2BHK</div>
           <Image src="/assets/dot.svg" width={10} height={10} alt="dot" />
-          <div className='text-[16px] md:text-[20px] font-[Satoshi] font-normal leading-[28px] text-white/50 py-[20px]'>4BHK</div>
+          <div className='text-[16px] md:text-[20px] font-[Satoshi] font-normal leading-[28px] text-white/50 py-[20px] cursor-pointer'>4BHK</div>
         </div>
         <SangamSliders />
       </section>
 
       {/* Past Projects */}
       <section>
-        <div className="container mx-auto flex flex-row justify-center w-full mr-[16px] md:mr-[0px] md:pr-[200px] md:-mt-18 my-[30px] md:my-[0px]">
-            <Image src="/assets/house.png" width={180} height={144} alt="house" className='img-size' />
-            <div className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
+        <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-18">
+            <Image src="/assets/house.png" width={180} height={144} alt="house" className='img-size'/>
+            <div className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center cursor-pointer" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
               <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">Curious to see life @Alcove and world-class amenities?</h1>
               <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} className="absolute right-[10px] md:right-[40px]"/>
               <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
@@ -235,10 +236,10 @@ export default function MasterPlan() {
               <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</p>
               <h2 className="project-overview-title text-center pb-[28px] md:pb-[0px]"><span className="orange-color">Past</span> Projects</h2>
             </div>
-            <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-135'></div>
+            <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-140'></div>
         </div>
-        <ProjectSwiper/>
-        <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-5 md:pt-10">
+        <PastProjectSwiper />
+        <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-5 md:pt-10 cursor-pointer">
             <Image src="/assets/sport.png" width={180} height={144} alt="house" className='img-size'/>
             <div className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
               <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">Embrace the beauty of your surroundings, know our neighbourhood</h1>

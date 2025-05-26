@@ -339,6 +339,26 @@ body {
 }
 
 
+/* masterplan css */
+.sangam-after-box::before {
+  content: '';
+  position: absolute;
+  background: #020C22;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+}
+.no-drag {
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+.select-none {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
 
 .page-hero-title {
   font-family: Ivy Mode;

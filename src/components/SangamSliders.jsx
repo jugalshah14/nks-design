@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
+import SangamViewsSwiper from './SangamViewsSwiper';
 
 export default function SangamSliders() {
     const [swiperRef, setSwiperRef] = useState();
@@ -50,12 +51,12 @@ export default function SangamSliders() {
                                 <Image src="/assets/triangle-blue.png" width={65} height={65} alt="triangle" className='absolute right-0 hide-triangle'/>
                                 <div className='p-[10px] md:p-[69px] flex items-center justify-center'><Image src="/assets/3bhkk.png" width={500} height={500} alt="dot" /></div>
                                 <div className="flex items-center justify-between bg-white/5 p-[18px]">
-                                    <button className="pl-12 w-full text-white text-sm flex items-center gap-2 items-center justify-center">
+                                    <button className="cursor-pointer pl-12 w-full text-white text-sm flex items-center gap-2 items-center justify-center">
                                     Check Dimensions <Image src="/assets/whitearrow.svg" alt="1BHK" width={40} height={3} className='text-white'/>
                                     </button>
                                     <div className="flex items-center gap-2">
-                                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">‹</div>
-                                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">›</div>
+                                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center cursor-pointer">‹</div>
+                                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center cursor-pointer">›</div>
                                     </div>
                                 </div>
                             </div>
@@ -109,94 +110,10 @@ export default function SangamSliders() {
                         </div>
                     </div>
                 </div>
-
-                {/* sangam part2 */}
-                <div className="grid grid-cols-4 gap-10 mt-70 md:mt-[0px] flex-sangam">
-                    <div className="block md:block">
-                        <h2 className="text-center md:text-left text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-1">
-                            Views from 2BHK
-                        </h2>
-                        <div className="hidden hide-triangle md:flex relative right-[-90px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding rounded-md flex items-center justify-around mt-9 px-1 py-5">
-                            <div className="h-full flex items-center justify-center text-white">
-                                <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>
-                                    <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="invert-100 transform rotate-180" />
-                                </button>
-                            </div>
-                            <div className="flex gap-2 items-center text-white">1 <div className="h-0.5 w-8 bg-[#D9D9D9] text-white" /> 3</div>
-                            <div className="h-full flex items-center justify-center">
-                                <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
-                                    <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="invert-100" />
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-span-4 md:col-span-3">
-                        <div>
-                            <Swiper
-                                onSwiper={(swiper) => {
-                                    setSwiperRef(swiper);
-                                }}
-                                slidesPerView={1.8}
-                                spaceBetween={10}
-                                loop={true}
-                                breakpoints={{
-                                    556: {
-                                        slidesPerView: 1.8,
-                                        spaceBetween: 20,
-                                        loop: false
-                                    },
-                                    768: {
-                                        slidesPerView: 3.2,
-                                        spaceBetween: 20,
-                                    },
-                                }}
-                                centeredSlides={true}
-                                pagination={{
-                                    enabled: false,
-                                    clickable: true,
-                                }}
-                                modules={[Pagination]}
-                                className="mySwiper"
-                                onRealIndexChange={handleSlideChange}
-                            >
-                                <SwiperSlide>
-                                    <div className='relative w-[565px] h-[280px]'>
-                                        <Image src="/assets/sangam1.png" alt="slide-0" fill className='object-cover' />
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='relative w-[565px] h-[280px]'>
-                                        <Image src="/assets/sangam2.png" alt="slide-1" fill className='object-cover' />
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='relative w-[565px] h-[280px]'>
-                                        <Image src="/assets/sangam3.png" alt="slide-2" fill className='object-cover' />
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='relative w-[565px] h-[280px]'>
-                                        <Image src="/assets/sangam4.jpg" alt="slide-3" fill className='object-cover' />
-                                    </div>
-                                </SwiperSlide>
-                            </Swiper>
-                        </div>
-                        <div className="flex md:hidden relative z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding rounded-md flex items-center justify-around px-1 py-5">
-                            <div className="h-full flex items-center justify-center text-white">
-                                <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>
-                                    <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="invert-100 transform rotate-180" />
-                                </button>
-                            </div>
-                            <div className="flex gap-2 items-center text-white">1 <div className="h-0.5 w-8 bg-[#D9D9D9] text-white" /> 3</div>
-                            <div className="h-full flex items-center justify-center">
-                                <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
-                                    <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="invert-100" />
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    
             </div>
+            {/* sangam part2 */}
+            <SangamViewsSwiper />
         </div>
 
     )

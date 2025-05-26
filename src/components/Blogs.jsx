@@ -43,7 +43,7 @@ const Blogs = () => {
         <p className="text-[14px] leading-5 md:text-[16px] font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2 text-center md:text-start">/ Location</p>
         <h2 className="project-overview-title text-center md:text-start">Recent Blogs</h2>
         </div>
-        <button className="hide-triangle border border-gray-400 px-4 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap">
+        <button className="hide-triangle border border-gray-400 px-4 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap cursor-pointer">
           View All Blogs
         </button>
       </div>
