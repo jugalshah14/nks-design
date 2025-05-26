@@ -50,7 +50,7 @@ export default function MasterplanSwiper() {
 
   return (
     <div className="relative max-md:-top-15 overflow-hidden ">
-      <div className="container max-w-7xl mx-auto relative md:mb-16 overflow-visible px-[16px] md:px-[0px]">
+      <div className="container mx-auto relative md:mb-16 overflow-visible px-[16px] md:px-[0px]">
         <div className="flex flex-col md:grid md:grid-cols-4 gap-[32px] md:gap-10">
           <div className="">
             <h2 className="px-[60px] pt-[34px] md:px-[0px] md:pt-[0px] text-[28px] md:text-[40px] font-satoshi font-normal leading-[32px] md:leading-[54px] text-[#22252e] mb-1 text-center md:text-left">

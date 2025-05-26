@@ -70,8 +70,8 @@ export default function ProjectSwiper() {
                     768: {
                         slidesPerView: 1.9,
                         spaceBetween: 10,
-                        slidesOffsetBefore: 80,
-                        slidesOffsetAfter: 20,
+                        slidesOffsetBefore: 120,
+                        slidesOffsetAfter: 60,
                     },
                 }}
                 pagination={{

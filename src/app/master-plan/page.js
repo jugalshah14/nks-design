@@ -25,7 +25,7 @@ export default function MasterPlan() {
       </section>
 
       <section className='-mt-16 no-negative-margin'>
-        <div className="container max-w-7xl mx-auto">
+        <div className="container mx-auto">
           <div className="relative w-full h-[200px] md:h-[460px]">
           <Image src="/assets/tri1.svg" width={65} height={65} alt="img" className='absolute left-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px]'/>
           <Image src="/assets/tri2.svg" width={65} height={65} alt="img" className='absolute right-0 bottom-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px]'/>
@@ -47,7 +47,7 @@ export default function MasterPlan() {
 
       <section>
         <div className="">
-          <div className="container max-w-7xl px-[16px] md:px-10 mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 py-[60px] md:py-20 bg-white">
+          <div className="container px-[16px] md:px-10 mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 py-[60px] md:py-20 bg-white">
                 <div className="flex flex-col items-center">
                   <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                     <Image src="/assets/icons/connectivity.svg" width={68} height={68} alt="Connectivity" className="w-[52px] h-[52px] md:w-[68px] md:h-[68px]" />
@@ -87,7 +87,7 @@ export default function MasterPlan() {
       <section>
         <div className="relative certification-section pt-[40px] md:pt-20 mb-15">
             <Image src="/assets/Rectangl_Left.png" width={80} height={307} alt="Rectangle_left" className="absolute top-0 h-[100%] left-0 hide-triangle" />
-            <div className="flex flex-col md:flex-row justify-between relative container max-w-7xl mx-auto px-[16px] md:px-24 gap-[36px] md:gap-12">
+            <div className="flex flex-col md:flex-row justify-between relative container mx-auto px-[16px] md:px-24 gap-[36px] md:gap-12">
               <div className="text-center md:text-left w-full md:pb-30">
                 <p className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</p>
                 <h2 className="project-overview-title text-center md:text-left">From <br/><span className="orange-color"> Architect’s </span> Eye</h2>
@@ -115,7 +115,7 @@ export default function MasterPlan() {
 
       {/* map section */}
       <section>
-        <div className='container max-w-7xl px-10 mx-auto'>
+        <div className='container px-10 mx-auto'>
             <div className="text-center w-full pb-12">
                 <p className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[20px] md:leading-[22px] text-[#22252e] mb-2">/ Magnificent</p>
                 <h2 className="project-overview-title text-center">NewKolkata’s <span className="orange-color">Masterplan</span></h2>
@@ -133,7 +133,7 @@ export default function MasterPlan() {
 
       {/* specifications */}
       <section>
-        <div className='container max-w-7xl mx-auto py-20 gap-[37px] md:gap-12 flex flex-col'>
+        <div className='container mx-auto py-20 gap-[37px] md:gap-12 flex flex-col'>
           <div className="text-center w-full">
               <p className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[20px] md:leading-[22px] text-[#22252e] mb-2">/ Magnificent</p>
               <h2 className="project-overview-title text-center">NewKolkata’s <span className="orange-color">Specifications</span></h2>
@@ -222,7 +222,7 @@ export default function MasterPlan() {
 
       {/* Past Projects */}
       <section>
-        <div className="container max-w-7xl mx-auto flex flex-row justify-center w-full mr-[16px] md:mr-[0px] md:pr-[200px] md:-mt-18 my-[30px] md:my-[0px]">
+        <div className="container mx-auto flex flex-row justify-center w-full mr-[16px] md:mr-[0px] md:pr-[200px] md:-mt-18 my-[30px] md:my-[0px]">
             <Image src="/assets/house.png" width={180} height={144} alt="house" className='img-size' />
             <div className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
               <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">Curious to see life @Alcove and world-class amenities?</h1>
@@ -238,7 +238,7 @@ export default function MasterPlan() {
             <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-135'></div>
         </div>
         <ProjectSwiper/>
-        <div className="container max-w-7xl mx-auto flex flex-row justify-center w-full md:px-[200px] pt-5 md:pt-10">
+        <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-5 md:pt-10">
             <Image src="/assets/sport.png" width={180} height={144} alt="house" className='img-size'/>
             <div className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
               <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">Embrace the beauty of your surroundings, know our neighbourhood</h1>
@@ -250,13 +250,13 @@ export default function MasterPlan() {
 
       {/* Project Overview */}
       <section className="pb-2 md:py-20 bg-white pt-[60px] md:pt-[80px]">
-        <div className="container max-w-7xl mx-auto px-6">
+        <div className="container mx-auto px-6">
           <div className="text-center mb-7 md:mb-16">
             <p className="text-[14px] leading-5 md:text-[16px] font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2">/ Magnificent</p>
             <h2 className="project-overview-title text-center"><span className="orange-color">Image</span> Gallery</h2>
           </div>
         </div>
-        <div className="container max-w-7xl mx-auto relative">
+        <div className="container mx-auto relative">
           <div className="relative max-md:pt-5">
             <ProjectViewSlides />
           </div>
@@ -266,14 +266,14 @@ export default function MasterPlan() {
       {/* Blogs Section */}
       <section className='relative'>
         <div className='hide-triangle bg-[#F5F8FA] w-full absolute h-[374px] top-0'></div>
-        <div className="container max-w-7xl mx-auto  px-[16px] md:px-[0px]">
+        <div className="container mx-auto  px-[16px] md:px-[0px]">
           <Blogs />
         </div>
       </section>
 
       {/* Construction Updates Section */}
       <section className='bg-[#020C22] py-[80px]'>
-        <div className="container max-w-7xl mx-auto">
+        <div className="container mx-auto">
           <div className="flex ietms-center w-full md:items-end justify-between mb-[48px]">
             <div className='w-full'>
               <p className="text-center md:text-start text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">/ Amenities</p>              
