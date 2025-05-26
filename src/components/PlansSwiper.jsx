@@ -6,6 +6,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from 'next/link';
 
 const data = [
     {
@@ -83,10 +84,10 @@ export default function PlansSwiper() {
                                 <h3 className="text-gradient-1 md:w-[60%] text-[24px] md:text-[40px] font-[Satoshi] font-[400] leading-7 md:leading-[48px] text-white/40 md:mb-6">
                                     {slide.title}
                                 </h3>
-                                <a className="hidden md:flex items-center gap-2 text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78] mb-4 mt-20">
+                                <Link href={'#'} className="hidden md:flex items-center gap-2 text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78] mb-4 mt-20">
                                     Let's Discuss Your Requirements
                                     <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} />
-                                </a>
+                                </Link>
                             </div>
                             <div className=''>
                                 <div className="grid grid-cols-2 gap-20 mb-8">
@@ -109,18 +110,18 @@ export default function PlansSwiper() {
                                         <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">Price</p>
                                         <div className="flex items-center">
                                             <p className="hidden md:inline text-[20px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white shadow-lg mr-2 blur-[6.5px]">{slide.price}</p>
-                                            <a href="#" className="text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78] underline">
+                                            <Link href="#" className="text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78] underline">
                                                 Know price
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <hr className='block md:hidden border-[#D9D9D9] opacity-10' />
-                            <a className="flex md:hidden items-center gap-2 text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78]">
+                            <Link href={'#'} className="flex md:hidden items-center gap-2 text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78]">
                                 View Project
                                 <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 ))}
