@@ -72,8 +72,8 @@ const settings = {
     {
       breakpoint: 768,
       settings: {
-        centerMode: false,
         slidesToShow: 1.8,
+        infinite: false,
       },
     },
   ],
@@ -119,7 +119,7 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
                 </button>
               </div>
               <div className="flex gap-2 items-center text-white">
-                {activeIndex + 1}{" "}
+                {Math.ceil(activeIndex) + 1}{" "}
                 <div className="h-0.5 w-8 bg-[#D9D9D9] text-white" />{" "}
                 {data[activeBHK].length}
               </div>
@@ -184,7 +184,7 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
           </button>
         </div>
         <div className="flex gap-2 items-center text-white">
-          {activeIndex + 1}{" "}
+          {Math.ceil(activeIndex) + 1}{" "}
           <div className="h-0.5 w-8 bg-[#D9D9D9] text-white" />{" "}
           {data[activeBHK].length}
         </div>

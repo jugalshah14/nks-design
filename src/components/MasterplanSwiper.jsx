@@ -61,7 +61,7 @@ const settings = {
     },
   ],
 };
-export default function AmenitiesSwiper() {
+export default function MasterPlanSwiper() {
   const [activeIndex, setActiveIndex] = useState(0);
   let swiperRef = useRef(null);
 
