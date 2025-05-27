@@ -434,101 +434,104 @@ export default function Home() {
 
         {/* Why Serampore */}
         <Element name="section-WhySerampore">
-          <section className="bg-white">
-            <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
-              <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
-                <div className="max-md:col-span-2">
-                  <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">/ Location</p>
-                  <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
-                    Why <br className="max-md:hidden" /><span className="orange-color">Serampore?</span>
-                  </h2>
+          <>
+            <section className="bg-white overflow-x-hidden">
+              <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
+                <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
+                  <div className="max-md:col-span-2">
+                    <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">/ Location</p>
+                    <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
+                      Why <br className="max-md:hidden" /><span className="orange-color">Serampore?</span>
+                    </h2>
+                  </div>
+                  <div className="hidden md:flex items-end">
+                    <p className="text-[20px] text-[#22252E] font-[400]">Serampore is situated about 20 kilometers north of Kolkata, providing easy access to urban amenities, job opportunities, and transportation networks.</p>
+                  </div>
                 </div>
-                <div className="hidden md:flex items-end">
-                  <p className="text-[20px] text-[#22252E] font-[400]">Serampore is situated about 20 kilometers north of Kolkata, providing easy access to urban amenities, job opportunities, and transportation networks.</p>
+                <div className="relative md:mx-24 h-[280px] md:h-[400px] mt-7">
+                  <div className="serampore-bg-overlay max-md:block absolute top-0 left-0 h-[100%] w-[100%] z-1" />
+                  <Image src="/assets/seramporemap.png" fill className="object-cover" alt="serampore map" />
                 </div>
               </div>
-              <div className="relative md:mx-24 h-[280px] md:h-[400px] mt-7">
-                <div className="serampore-bg-overlay max-md:block absolute top-0 left-0 h-[100%] w-[100%] z-1" />
-                <Image src="/assets/seramporemap.png" fill className="object-cover" alt="serampore map" />
-              </div>
-            </div>
 
-            <SeramporeSwiper />
-          </section>
-        </Element>
-      </section>
-
-      {/* Connectivity */}
-      <div>
-        <div className="relative md:p-5 overflow-hidden max-md:pb-5">
-          <GangaWaves />
-          <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
-          <div className="max-md:px-5">
-            <div className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-15">
-              <div className="grid grid-cols-2 gap-4 ">
-                <div className="max-md:col-span-2 md:p-2">
-                  <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">/ Connectivity</p>
-                  <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
-                    Serampore, next <br className="max-md:hidden" /><span className="orange-color">Investment hub</span>
-                  </h2>
-                  <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
-                    <div className='px-6 py-3 mr-20'>
-                      Learn More
-                    </div>
-                    <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">↗</span>
-                  </button>
-                </div>
-                <div className="max-md:mt-5 max-md:col-span-2 md:p-2 flex max-md:px-7 gap-10 items-center">
-                  <div className="mb-12">
-                    <div className="space-y-11">
-                      <div className="flex items-center gap-9">
-                        <div className="relative w-[48px] h-[48px]">
-                          <Image src="/assets/icons/railroad-metro.svg" alt="metro" fill className="object-cover" />
-                        </div>
-                        <div>
-                          <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">Nearest Metro-station</p>
-                          <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">Dakshineshwar • 12km</p>
-                        </div>
+              <SeramporeSwiper />
+            </section>
+            {/* Connectivity */}
+            <div>
+              <div className="relative md:p-5 overflow-hidden max-md:pb-5">
+                <GangaWaves />
+                <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
+                <div className="max-md:px-5">
+                  <div className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-15">
+                    <div className="grid grid-cols-2 gap-4 ">
+                      <div className="max-md:col-span-2 md:p-2">
+                        <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">/ Connectivity</p>
+                        <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
+                          Serampore, next <br className="max-md:hidden" /><span className="orange-color">Investment hub</span>
+                        </h2>
+                        <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
+                          <div className='px-6 py-3 mr-20'>
+                            Learn More
+                          </div>
+                          <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">↗</span>
+                        </button>
                       </div>
+                      <div className="max-md:mt-5 max-md:col-span-2 md:p-2 flex max-md:px-7 gap-10 items-center">
+                        <div className="mb-12">
+                          <div className="space-y-11">
+                            <div className="flex items-center gap-9">
+                              <div className="relative w-[48px] h-[48px]">
+                                <Image src="/assets/icons/railroad-metro.svg" alt="metro" fill className="object-cover" />
+                              </div>
+                              <div>
+                                <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">Nearest Metro-station</p>
+                                <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">Dakshineshwar • 12km</p>
+                              </div>
+                            </div>
 
-                      <div className="flex items-center gap-9">
-                        <div className="relative w-[48px] h-[48px]">
-                          <Image src="/assets/icons/airport-road.svg" alt="metro" fill className="object-cover" />
-                        </div>
-                        <div>
-                          <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">Nearest Airport</p>
-                          <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">Airport • 21.4km</p>
-                        </div>
-                      </div>
+                            <div className="flex items-center gap-9">
+                              <div className="relative w-[48px] h-[48px]">
+                                <Image src="/assets/icons/airport-road.svg" alt="metro" fill className="object-cover" />
+                              </div>
+                              <div>
+                                <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">Nearest Airport</p>
+                                <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">Airport • 21.4km</p>
+                              </div>
+                            </div>
 
-                      <div className="flex items-center gap-9">
-                        <div className="relative w-[48px] h-[48px]">
-                          <Image src="/assets/icons/railroad-train.svg" alt="metro" fill className="object-cover" />
-                        </div>
-                        <div>
-                          <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">Nearest Railway Station</p>
-                          <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">Rishra • 1.8km</p>
-                          <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">Serampore • 2.4km</p>
+                            <div className="flex items-center gap-9">
+                              <div className="relative w-[48px] h-[48px]">
+                                <Image src="/assets/icons/railroad-train.svg" alt="metro" fill className="object-cover" />
+                              </div>
+                              <div>
+                                <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">Nearest Railway Station</p>
+                                <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">Rishra • 1.8km</p>
+                                <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">Serampore • 2.4km</p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <hr className="border-[#FFFFFF] opacity-10" />
+                <SeramporeMarqueeSlides />
+              </div>
+              <div className="flex md:hidden justify-center relative -top-7">
+                <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
+                  <div className='px-6 py-3 mr-20'>
+                    <span>Schedule a Visit</span>
+                  </div>
+                  <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">↗</span>
+                </button>
               </div>
             </div>
-          </div>
-          <hr className="border-[#FFFFFF] opacity-10" />
-          <SeramporeMarqueeSlides />
-        </div>
-        <div className="flex md:hidden justify-center relative -top-7">
-          <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
-            <div className='px-6 py-3 mr-20'>
-              <span>Schedule a Visit</span>
-            </div>
-            <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">↗</span>
-          </button>
-        </div>
-      </div>
+          </>
+        </Element>
+      </section>
+
+
 
 
       {/*  Testimonials */}
