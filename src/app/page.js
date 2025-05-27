@@ -80,11 +80,11 @@ export default function Home() {
             </SlideUp>
           </div>
         </div>
-        <AnimatedSection className="container  mx-auto relative mb-16">
+        <div className="container mx-auto relative mb-16">
           <div className="relative max-md:pt-5">
             <ProjectViewSlides />
           </div>
-        </AnimatedSection>
+        </div>
 
         <div className="container py-7 px-4 lg:px-10 mx-auto grid grid-cols-2 xl:grid-cols-4 gap-8 md:py-20 bg-white">
           <SlideUp delay={0.2} className="order-1 flex flex-col items-center">
