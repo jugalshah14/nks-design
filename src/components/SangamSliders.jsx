@@ -251,7 +251,7 @@ export default function SangamSliders() {
       </div>
 
       {/* sangam part2 */}
-      <SangamViewsSwiper />
+      <SangamViewsSwiper activeBHK={activeBHK} />
     </div>
   );
 }
