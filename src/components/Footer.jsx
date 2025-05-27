@@ -153,76 +153,7 @@ export default function Footer() {
             </form>
           </div>
         </div>
-
-        {/* Footer Bottom */}
-        <div className="mt-7 md:mt-30 max-md:flex-col flex justify-between items-center max-md:gap-9">
-          <div className="order-1 flex gap-10">
-            <a className="font-[500] text-[14px] leading-6 text-[#5C5F68]">
-              Terms of Service
-            </a>
-            <a className="font-[500] text-[14px] leading-6 text-[#5C5F68]">
-              Privacy Policy
-            </a>
-          </div>
-          <p className="order-3 md:order-2 font-[400] text-[14px] leading-5 text-[#5C5F68]">
-            All rights reserved © Alcove Realty
-          </p>
-          <div className="order-2 md:order-3 flex items-center gap-10">
-            <a className="relative h-6 w-6 flex justify-center items-center">
-              <Image
-                src="/assets/icons/social-youtube.svg"
-                height={16}
-                width={22}
-                className="object-cover"
-                alt="YouTube"
-              />
-            </a>
-            <a className="relative h-6 w-6 flex justify-center items-center">
-              <Image
-                src="/assets/icons/social-facebook.svg"
-                height={24}
-                width={24}
-                className="object-cover"
-                alt="Facebook"
-              />
-            </a>
-            <a className="relative h-6 w-6 flex justify-center items-center">
-              <Image
-                src="/assets/icons/social-twitter.svg"
-                height={19}
-                width={24}
-                className="object-cover"
-                alt="Twitter"
-              />
-            </a>
-            <a className="relative h-6 w-6 flex justify-center items-center">
-              <Image
-                src="/assets/icons/social-instagram.svg"
-                height={22}
-                width={22}
-                className="object-cover"
-                alt="Instagarm"
-              />
-            </a>
-          </div>
-        </div>
       </div>
-      <Image
-        src={"/assets/icons/footerwaves.svg"}
-        height={83}
-        width={990}
-        className="bottom-0 absolute !w-[100%] object-cover"
-        alt="waves"
-      />
-      <div className="block md:hidden fixed bottom-5 right-5 p-4 z-999 rounded-4xl whatsapp-image">
-        <Image
-          src={"/assets/icons/messaging-whatsapp.svg"}
-          height={24}
-          width={24}
-          className="h-[24px] w-[24px] object-cover"
-          alt="waves"
-        />
       </div>
-    </div>
-  );
+    )
 }
