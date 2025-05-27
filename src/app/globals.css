@@ -219,6 +219,7 @@ body::-webkit-scrollbar {
   border: 1px solid #ededed;
   display: flex;
   height: 60px;
+  overflow: hidden;
 }
 
 .form-input {
@@ -241,6 +242,7 @@ body::-webkit-scrollbar {
   font-size: 16px;
   color: #5c5f68;
   font-weight: 400;
+  width: calc(100% - 40px);
 }
 
 .form-label:focus-within > span,
@@ -451,4 +453,12 @@ body::-webkit-scrollbar {
 
 .serampore-swiper .slick-slide.slick-active.slick-current .back-active {
   background: #000e2d;
+}
+
+.contact-us-link:hover .orange-arrow-filter {
+  filter: brightness(0) saturate(100%) invert(51%) sepia(43%) saturate(6571%) hue-rotate(3deg) brightness(106%) contrast(105%);
+}
+
+.orange-arrow-filter {
+  filter: brightness(0) saturate(100%) invert(61%) sepia(26%) saturate(1239%) hue-rotate(333deg) brightness(94%) contrast(85%);
 }

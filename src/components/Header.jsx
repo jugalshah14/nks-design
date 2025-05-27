@@ -78,13 +78,13 @@ const Header = () => {
             >
                 <div className="p-4">
                     <ul className="space-y-4">
-                        <li><Link href="/" className="text-gray-800 hover:text-blue-500">
+                        <li onClick={toggleDrawer}><Link href="/" className="text-gray-800 hover:text-blue-500">
                             Home</Link></li>
-                        <li><Link href="#" className="text-gray-800 hover:text-blue-500">
+                        <li onClick={toggleDrawer}><Link href="#" className="text-gray-800 hover:text-blue-500">
                             About Us</Link></li>
-                        <li><Link href="#" className="text-gray-800 hover:text-blue-500">
+                        <li onClick={toggleDrawer}><Link href="#" className="text-gray-800 hover:text-blue-500">
                             Plans</Link></li>
-                        <li><Link href="#" className="text-gray-800 hover:text-blue-500">
+                        <li onClick={toggleDrawer}><Link href="#" className="text-gray-800 hover:text-blue-500">
                             Blog</Link></li>
                     </ul>
                 </div>

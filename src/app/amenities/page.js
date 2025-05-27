@@ -571,9 +571,22 @@ export default function Amenities() {
           {navTabs.map((tab, idx) => (
             <React.Fragment key={tab}>
               <button
-                onClick={() => setSelectedNav(tab)}
+                onClick={() => {
+                  setSelectedNav(tab);
+                  const element = document.getElementById(
+                    tab.toLowerCase().replace(/\s/g, "-")
+                  );
+                  if (element) {
+                    const yOffset = -107; // Offset from top
+                    const y =
+                      element.getBoundingClientRect().top +
+                      window.pageYOffset +
+                      yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                  }
+                }}
                 className={
-                  "relative md:px-8 flex flex-col items-center focus:outline-none" +
+                  "relative md:px-8 flex flex-col items-center focus:outline-none cursor-pointer" +
                   (selectedNav === tab
                     ? " text-white font-bold font-[Satoshi] text-[16px] leading-[24px] md:text-[20px] md:leading-[28px]"
                     : " text-white font-normal text-[16px] leading-[24px] md:text-[20px] md:leading-[28px] opacity-50 hover:text-white transition")
@@ -597,7 +610,10 @@ export default function Amenities() {
       </section>
 
       {/* Club house */}
-      <section className="relative -mt-20 md:mx-15 mx-1 md:pb-10 bg-white">
+      <section
+        id="club-house"
+        className="relative -mt-20 md:mx-15 mx-1 md:pb-10 bg-white"
+      >
         <div className="px-6 py-10">
           <div className="flex justify-center">
             <div className="absolute md:-top-12 -top-6">
@@ -691,10 +707,10 @@ export default function Amenities() {
         </div>
 
         {/* Horizontal Card Section */}
-        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-105 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
+        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
           <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
             <Image
-              src="/assets/clubBottom.png"
+              src="/assets/faqs-detail-gif.gif"
               alt="Room preview"
               fill
               className="object-cover"
@@ -719,7 +735,10 @@ export default function Amenities() {
       </section>
 
       {/* podium level */}
-      <section className="relative bg-[#E7EDF2] w-full py-2 px-1 md:py-20 md:px-15">
+      <section
+        id="podium-level"
+        className="relative bg-[#E7EDF2] w-full py-2 px-1 md:py-20 md:px-15"
+      >
         <div className="bg-white pb-12">
           <div className="flex justify-center">
             <div className=" hidden md:block absolute md:top-7">
@@ -820,10 +839,10 @@ export default function Amenities() {
           </div>
         </div>
         {/* Horizontal Card Section */}
-        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-105 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 md:h-[144px]">
+        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 md:h-[144px]">
           <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
             <Image
-              src="/assets/podiumBar.png"
+              src="/assets/sport-gif.gif"
               alt="Room preview"
               fill
               className="object-cover"
@@ -890,7 +909,10 @@ export default function Amenities() {
       </section>
 
       {/* Ground level */}
-      <section className="relative bg-white w-full md:py-20 md:px-15">
+      <section
+        id="ground-level"
+        className="relative bg-white w-full md:py-20 md:px-15"
+      >
         <div className="bg-white pb-12">
           <div className="flex justify-center">
             <div className="relative">
@@ -1076,10 +1098,10 @@ export default function Amenities() {
           </div>
         </div>
         {/* Horizontal Card Section */}
-        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-105 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 mt-20 md:h-[144px]">
+        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 mt-20 md:h-[144px]">
           <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
             <Image
-              src="/assets/podiumBar.png"
+              src="/assets/sport-gif.gif"
               alt="Room preview"
               fill
               className="object-cover"
@@ -1285,30 +1307,30 @@ export default function Amenities() {
             ))}
           </div>
         </div>
-        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-105 absolute border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 -bottom-13 md:h-[104px] z-1">
-  <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
-    <Image
-      src="/assets/podiumBar.png"
-      alt="Room preview"
-      fill
-      className="object-cover"
-    />
-  </div>
-  <div className="flex-1 md:px-11 md:py-8">
-    <p className="px-5 md:px-0 md:text-[24px] font-[Satoshi] font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-      Have more questions? Contact us now.
-    </p>
-  </div>
-  <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
-    <Image
-      src="/assets/icons/arrowlong.svg"
-      alt=""
-      width={40}
-      height={3}
-      className="absolute -ml-6"
-    />
-  </div>
-</div>
+        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 absolute border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 -bottom-13 md:h-[104px] z-1">
+          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+            <Image
+              src="/assets/faqs-detail-gif.gif"
+              alt="Room preview"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="flex-1 md:px-11 md:py-8">
+            <p className="px-5 md:px-0 md:text-[24px] font-[Satoshi] font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+              Have more questions? Contact us now.
+            </p>
+          </div>
+          <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
+            <Image
+              src="/assets/icons/arrowlong.svg"
+              alt=""
+              width={40}
+              height={3}
+              className="absolute -ml-6"
+            />
+          </div>
+        </div>
       </section>
     </main>
   );
