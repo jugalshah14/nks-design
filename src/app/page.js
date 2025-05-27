@@ -522,7 +522,7 @@ export default function Home() {
                         width={40}
                         height={3}
                       />
-                    </a>
+                    </Link>
                   </SlideUp>
                   <SlideUp delay={0.6} className="bg-[#fdf6f2] p-5">
                     <Image
