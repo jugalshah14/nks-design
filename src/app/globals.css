@@ -325,6 +325,10 @@ body {
   gap: 24px;
 }
 
+
+.serampore-swiper .slick-list {
+  overflow: visible;
+}
 .serampore-swiper .slick-slide.slick-active.slick-current .description,
 .serampore-swiper .slick-slide.slick-active.slick-current .title {
   color: #FFFFFF;
@@ -336,4 +340,16 @@ body {
 
 .serampore-swiper .slick-slide.slick-active.slick-current .back-active {
   background: #000E2D;
+}
+
+
+
+/* Hide scrollbar for all browsers */
+.hide-scrollbar {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* Internet Explorer and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, and Opera */
 }

@@ -1,4 +1,5 @@
 'use client';
+import useScrollSpySync from '@/hooks/useScrollSpySync';
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { Link as ScrollLink } from 'react-scroll';
@@ -6,31 +7,15 @@ import { Link as ScrollLink } from 'react-scroll';
 const SCROLL_AREA = {
     "amenities": 0,
     "projects": 30,
-    "ganga": 70,
-    "why-serampore": 200
+    "ganga": 100,
+    "why-serampore": 1000
 }
 
 export default function ScrollSpyNav() {
-
-    useEffect(() => {
-        window.addEventListener('scroll', (e) => {
-            const container = document.getElementById('scroll-spy');
-            const element = document.getElementsByClassName('spy-link-active')?.[0];
-
-            if (element) {
-                container.scroll({
-                    left: SCROLL_AREA[element.id],
-                    behavior: "smooth",
-                });
-            }
-        })
-        return () => {
-            window.removeEventListener('scroll', () => 0);
-        }
-    }, []);
+    useScrollSpySync({ SCROLL_AREA, containerId: 'scroll-spy', spyActiveLinkClass: 'spy-link-active' });
 
     return (
-        <div className="max-md:w-[100%] overflow-hidden sticky z-999 top-0 bg-white flex gap-2 space-x-5 border-t border-b border-[#22252e19] py-6 pb-6 md:py-10 md:pb-12" id="scroll-spy">
+        <div className="hide-scrollbar max-md:w-[100%] overflow-auto sticky z-999 top-0 bg-white flex gap-2 space-x-5 border-t border-b border-[#22252e19] py-6 pb-6 max-md:px-5 md:py-10 md:pb-12" id="scroll-spy">
             <div className='!flex items-center ml-auto justify-center'>
                 <ScrollLink
                     activeClass="spy-link-active"
@@ -38,7 +23,7 @@ export default function ScrollSpyNav() {
                     spy={true}
                     className="default-theme-text-color-1"
                     smooth={true}
-                    offset={-200}
+                    offset={-160}
                     duration={500}
                     id="amenities"
                 >
