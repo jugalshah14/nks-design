@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const SlideUp = ({
   children,
   delay = 0,
-  duration = 0.6,
+  duration = 0.7,
   once = true,
   className = "",
 }) => (
@@ -14,7 +14,7 @@ const SlideUp = ({
     transition={{
       duration,
       delay,
-      ease: [0.16, 1, 0.3, 1],
+      ease: [0.5, 0, 0.5, 1.2],
     }}
     className={`will-change-transform transform-gpu ${className}`}
   >

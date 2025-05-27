@@ -18,13 +18,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -ms-overflow-style: none;
   /* IE and Edge */
-  overflow-x: hidden;
-  -ms-overflow-style: none;
   scrollbar-width: none;
+  /* Firefox */
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+  overscroll-behavior-y: none;
 }
 
 body::-webkit-scrollbar {
   display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
 }
 
 @layer utilities {
@@ -64,6 +69,11 @@ body::-webkit-scrollbar {
 
 .home-page-header .link-item {
   color: white;
+}
+
+.home-page-header .link-item:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .home-page-header .logo-image {
@@ -278,6 +288,12 @@ body::-webkit-scrollbar {
   background: radial-gradient(62% 76%, #fff0 0%, #fff 100%);
 }
 
+@media (width < 48rem) {
+  .serampore-bg-overlay {
+    background: none;
+  }
+}
+
 .spy-link-active .bottom-line {
   display: block;
 }
@@ -450,6 +466,14 @@ body::-webkit-scrollbar {
   overflow: visible;
 }
 
+.serampore-swiper .slick-track {
+  display: flex;
+  margin: 0 -15px;
+}
+
+.serampore-swiper .slick-slide {
+  margin: 0 15px;
+}
 
 .serampore-swiper .slick-list {
   overflow: visible;
@@ -467,6 +491,7 @@ body::-webkit-scrollbar {
 .serampore-swiper .slick-slide.slick-active.slick-current .back-active {
   background: #000e2d;
 }
+
 
 .contact-us-link:hover .orange-arrow-filter {
   filter: brightness(0) saturate(100%) invert(51%) sepia(43%) saturate(6571%) hue-rotate(3deg) brightness(106%) contrast(105%);
