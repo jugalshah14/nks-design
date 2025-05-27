@@ -72,7 +72,7 @@ const Blogs = () => {
                 <p className="text-[14px] leading-[20px] font-semibold font-inter text-[#5C5C5C] pt-[32px] pb-[12px]">
                     {post.date}
                 </p>
-                <h3 className="text-[#22252E] text-[22px] md:text-[24px] font-[700] pb-[12px]">
+                <h3 className="text-[#22252E] text-[19px] md:text-[24px] font-[700] pb-[12px]">
                     {post.title}
                 </h3>
                 <p className="text-[15px] md:text-[16px] leading-[20px] font-normal font-satoshi text-[#5C5C5C] pb-[12px]">
