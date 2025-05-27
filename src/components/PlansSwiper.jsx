@@ -78,7 +78,7 @@ export default function PlansSwiper() {
                             <div className='plans_slider_backdrop z-1 h-[100%] w-[100%] absolute top-0 left-0' />
                             <Image src={slide.src} alt="slide-0" fill className='object-cover' />
                         </div>
-                        <div className="relative w-[95%] md:w-[80%] top-[-60px] -right-[5%] md:right-[-14%] z-1 gap-4 md:gap-20 flex max-md:flex-col bg-[#010b22] p-5 md:p-8">
+                        <div className="relative w-[95%] md:w-[60%] top-[-60px] left-1/2 -translate-x-1/2 z-1 gap-4 md:gap-20 flex max-md:flex-col bg-[#010b22] p-5 md:p-8">
                             <div>
                                 <h3 className="text-gradient-1 md:w-[60%] text-[24px] md:text-[40px] font-[Satoshi] font-[400] leading-7 md:leading-[48px] text-white/40 md:mb-6">
                                     {slide.title}

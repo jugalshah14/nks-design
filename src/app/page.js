@@ -325,9 +325,9 @@ export default function Home() {
               <p className="enough-reasons-text block md:hidden font-[400] text-[24px] leading-8 w-[85%] text-center mb-8">
                 Enough reasons to live by Ganges?
               </p>
-              <button className="relative md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
+              <button className="relative md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
                 <div className='px-6 py-3 mr-20'>
-                  Schedule a Visit
+                  <span>Schedule a Visit</span>
                 </div>
                 <span className="px-6 py-3 text-orange-500 bg-[#002F52] text-lg">↗</span>
               </button>
@@ -417,9 +417,9 @@ export default function Home() {
                       </div>
                       <div className="flex flex-col">
                         <p className="text-[20px] font-[Satoshi] font-[700] text-white mb-6">Want to Dive into Riverside Bliss?</p>
-                        <button className="relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
+                        <button className="relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
                           <div className='pl-4 py-3'>
-                            Schedule a Visit
+                            <span>Schedule a Visit</span>
                           </div>
                           <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">↗</span>
                         </button>
@@ -471,7 +471,7 @@ export default function Home() {
                   <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
                     Serampore, next <br className="max-md:hidden" /><span className="orange-color">Investment hub</span>
                   </h2>
-                  <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden">
+                  <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                     <div className='px-6 py-3 mr-20'>
                       Learn More
                     </div>
@@ -521,9 +521,9 @@ export default function Home() {
           <SeramporeMarqueeSlides />
         </div>
         <div className="flex md:hidden justify-center relative -top-7">
-          <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden">
+          <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
             <div className='px-6 py-3 mr-20'>
-              Schedule a Visit
+              <span>Schedule a Visit</span>
             </div>
             <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">↗</span>
           </button>
@@ -564,9 +564,9 @@ export default function Home() {
                 <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
                   Your <span className="orange-color">Safety</span> &<br className="max-md:hidden" /> <span className="orange-color">Security</span>, Our<br className="max-md:hidden" /> Priority
                 </h2>
-                <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden">
+                <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                   <div className='px-6 py-3 mr-20'>
-                    Schedule a Visit
+                    <span>Schedule a Visit</span>
                   </div>
                   <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">↗</span>
                 </button>
@@ -604,9 +604,9 @@ export default function Home() {
           </div>
         </div>
         <div className="flex md:hidden justify-center relative -top-7">
-          <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden">
+          <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
             <div className='px-6 py-3 mr-20'>
-              Schedule a Visit
+              <span>Schedule a Visit</span>
             </div>
             <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">↗</span>
           </button>
