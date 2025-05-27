@@ -1,6 +1,10 @@
 'use client';
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import Image from 'next/image';
+import { motion, useScroll, useTransform, easeInOut } from 'framer-motion';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const data = [
     {
@@ -17,21 +21,97 @@ const data = [
     }
 ]
 
+const settings = {
+    className: "riverside-swiper center",
+    infinite: true,
+    slidesToShow: 1.05,
+    speed: 600,
+    dots: false,
+    arrows: false,
+    initialSlide: 0,
+};
+
 export default function RiversideLivingSwiper() {
+    const containerRef = useRef(null);
+    const cardsContainerRef = useRef(null);
+    const [translateWidth, setTranslateWidth] = useState(0);
+
+    useEffect(() => {
+        const calculateTranslateWidth = () => {
+            if (cardsContainerRef.current && containerRef.current) {
+                const containerWidth = containerRef.current.offsetWidth;
+                const cardWidth = 600; // Width of each card
+                const gap = 20; // Gap between cards
+                
+                // Calculate total content width
+                const contentWidth = (cardWidth + gap) * data.length - gap;
+                
+                // Calculate translation needed (how much extra space we have to scroll)
+                const translateX = Math.max(0, contentWidth - containerWidth);
+                
+                setTranslateWidth(-translateX);
+            }
+        };
+
+        calculateTranslateWidth();
+        window.addEventListener('resize', calculateTranslateWidth);
+
+        return () => {
+            window.removeEventListener('resize', calculateTranslateWidth);
+        };
+    }, []);
+
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    const x = useTransform(
+        scrollYProgress,
+        [0, 1],
+        [0, translateWidth],
+        {
+            ease: easeInOut
+        }
+    );
+
+    const renderCard = (slide, index) => (
+        <div key={index} className='relative flex flex-col items-center pt-15 md:!min-w-[600px]'>
+            <span className='absolute top-3 md:top-[-10px] text-[#DE804B] font-[IvyMode] font-[400] text-[58px] md:text-[90px] z-1 left-10 md:left-15'>{index + 1}</span>
+            <div className={`relative h-[195px] md:h-[300px] w-full`}>
+                <div className='plans_slider_backdrop z-1 h-[100%] w-[100%] absolute top-0 left-0' />
+                <Image src={slide.src} alt="slide-0" fill className='object-cover' />
+            </div>
+            <div className='relative h-[140px] top-[-30px] left-7 md:left-0 w-[90%] md:w-[80%] p-4.5 md:p-7 bg-[#FFFFFFB2] z-1 backdrop-filter backdrop-blur-[50px] bg-opacity-80 bg-clip-padding'>
+                {slide.title}
+            </div>
+        </div>
+    );
+
     return (
-        <div className='md:pt-10 flex gap-5 overflow-hidden'>
-            {data.map((slide, index) => (
-                <div key={index} className='relative flex flex-col items-center pt-15 !min-w-[500px]'>
-                    <span className='absolute top-3 md:top-[-10px] text-[#DE804B] font-[IvyMode] font-[400] text-[58px] md:text-[90px] z-1 left-10 md:left-15'>{index + 1}</span>
-                    <div className={`relative h-[195px] md:h-[300px] w-full`}>
-                        <div className='plans_slider_backdrop z-1 h-[100%] w-[100%] absolute top-0 left-0' />
-                        <Image src={slide.src} alt="slide-0" fill className='object-cover' />
-                    </div>
-                    <div className='relative h-[140px] top-[-30px] w-[90%] md:w-[80%] p-4.5 md:p-7 bg-[#FFFFFFB2] z-1 backdrop-filter backdrop-blur-[50px] bg-opacity-80 bg-clip-padding'>
-                        {slide.title}
-                    </div>
+        <div ref={containerRef} className="relative md:h-[170vh] container mx-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {/* Desktop Scroll Animation */}
+            <div className="hidden md:block sticky top-20 h-screen">
+                <div className="overflow-visible">
+                    <motion.div 
+                        ref={cardsContainerRef}
+                        style={{ x }} 
+                        className='md:pt-10 flex gap-5'
+                    >
+                        {data.map(renderCard)}
+                    </motion.div>
                 </div>
-            ))}
-        </div >
+            </div>
+
+            {/* Mobile Slider */}
+            <div className="md:hidden pt-10 px-4">
+                <Slider
+                    {...settings}
+                >
+                    {data.map(renderCard)}
+                </Slider>
+                
+            </div>
+        </div>
     )
 };
