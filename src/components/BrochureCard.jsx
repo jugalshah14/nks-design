@@ -5,9 +5,9 @@ export default function BrochureSection() {
   return (
     <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 flex flex-col align-end justify-end">
       <div className="flex flex-row justify-center w-full pl-[0px] md:pl-[200px] pr-[16px] md:pr-[350px]">
-        <Image src="/assets/faqs-detail-gif.gif" width={180} height={144} alt="house" className="img-size"/>
+        <Image src="/assets/faqs-detail-gif.gif" width={144} height={144} alt="house" className="img-size md:h-[144px] md:w-[144px]"/>
         <div className="relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
-          <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[350px] p-[13px] md:p-6">Want to know more about Lobby, Toilets, Wall Finish, Lift, Balcony, Doors etc.?</h1>
+          <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[350px] p-[13px] md:px-6 md:py-4">Want to know more about Lobby, Toilets, Wall Finish, Lift, Balcony, Doors etc.?</h1>
           <div className="bg-[#E7EDF2] w-[10px] md:w-[54px] h-full"></div>
           <button className="absolute right-[-150px] bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
             <div className='px-6 py-3'>

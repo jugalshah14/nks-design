@@ -375,13 +375,13 @@ export default function MasterPlan() {
         <SangamSliders />
       </section>
 
-      <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-18">
+      <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-18 group cursor-pointer transform transition-transform duration-300 hover:scale-101">
         <Image
           src="/assets/faqs-detail-gif.gif"
-          width={180}
+          width={144}
           height={144}
           alt="house"
-          className="img-size"
+          className="img-size  md:h-[144px] md:w-[144px]"
         />
         <div
           className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center cursor-pointer"
@@ -420,7 +420,7 @@ export default function MasterPlan() {
             width={144}
             height={144}
             alt="house"
-            className="img-size"
+            className="img-size md:h-[144px] md:w-[144px]"
           />
           <div
             className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"
