@@ -16,7 +16,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none; /* IE and Edge */
   overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -26,28 +26,28 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-
 @layer utilities {
   .button-primary {
     @apply hover:bg-[#020c22] cursor-pointer duration-500;
   }
 
   .button-primary > div > * {
-    @apply transition-all duration-300
+    @apply transition-all duration-300;
   }
 
-  .button-primary:hover > div > span, .button-primary:hover > div {
+  .button-primary:hover > div > span,
+  .button-primary:hover > div {
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(119deg, #de804b 23%, #1e8bda 75%),
       linear-gradient(300deg, #fff 24%, rgba(255, 255, 255, 0.44) 52%);
     -webkit-background-clip: text;
     background-clip: text;
   }
-.button-primary > span {
-  @apply transition-all duration-300
-}
+  .button-primary > span {
+    @apply transition-all duration-300;
+  }
   .button-primary:hover > span {
-    @apply bg-[#144D78]
+    @apply bg-[#144D78];
   }
 }
 
@@ -426,7 +426,8 @@ body::-webkit-scrollbar {
   }
 }
 
-.amenities-swiper .slick-list {
+.amenities-swiper .slick-list,
+.construction-swiper .slick-list {
   overflow: visible;
 }
 
@@ -448,12 +449,13 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 
-.plans-swiper .slick-track, .riverside-swiper .slick-track {
+.plans-swiper .slick-track,
+.riverside-swiper .slick-track {
   display: flex;
   gap: 24px;
 }
 
-.riverside-swiper .slick-list{
+.riverside-swiper .slick-list {
   overflow: visible;
 }
 
@@ -471,17 +473,18 @@ body::-webkit-scrollbar {
 }
 
 .contact-us-link:hover .orange-arrow-filter {
-  filter: brightness(0) saturate(100%) invert(51%) sepia(43%) saturate(6571%) hue-rotate(3deg) brightness(106%) contrast(105%);
+  filter: brightness(0) saturate(100%) invert(51%) sepia(43%) saturate(6571%)
+    hue-rotate(3deg) brightness(106%) contrast(105%);
 }
 
 .orange-arrow-filter {
-  filter: brightness(0) saturate(100%) invert(61%) sepia(26%) saturate(1239%) hue-rotate(333deg) brightness(94%) contrast(85%);
+  filter: brightness(0) saturate(100%) invert(61%) sepia(26%) saturate(1239%)
+    hue-rotate(333deg) brightness(94%) contrast(85%);
 }
 
-
-
 /* Sanya css */
-.plans-swiper .slick-track, .riverside-swiper .slick-track {
+.plans-swiper .slick-track,
+.riverside-swiper .slick-track {
   display: flex;
   gap: 24px;
 }
@@ -506,31 +509,30 @@ body::-webkit-scrollbar {
   }
 
   .button-secondary > div > * {
-    @apply transition-all duration-300
+    @apply transition-all duration-300;
   }
 
-  .button-secondary:hover > div > span, .button-secondary:hover > div {
+  .button-secondary:hover > div > span,
+  .button-secondary:hover > div {
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(119deg, #de804b 23%, #1e8bda 75%),
       linear-gradient(300deg, #fff 24%, rgba(255, 255, 255, 0.44) 52%);
     -webkit-background-clip: text;
     background-clip: text;
   }
-.button-secondary > span {
-  @apply transition-all duration-300
-}
+  .button-secondary > span {
+    @apply transition-all duration-300;
+  }
   .button-secondary:hover > span {
-    @apply bg-[#144D78]
+    @apply bg-[#144D78];
   }
 }
 
-
-
 /* masterplan css */
 .sangam-after-box::before {
-  content: '';
+  content: "";
   position: absolute;
-  background: #020C22;
+  background: #020c22;
   left: -100%;
   height: 100%;
   width: 100%;
@@ -555,43 +557,43 @@ body::-webkit-scrollbar {
   letter-spacing: 0%;
   color: rgba(34, 37, 46, 0.1);
 }
-.none-md{
+.none-md {
   display: none;
 }
 /* MasterPlan responsive classes */
 @media (max-width: 768px) {
-  .project-overview-title{
+  .project-overview-title {
     font-size: 36px;
     line-height: 44px;
   }
-  .img-size{
+  .img-size {
     height: 110px;
     width: 100px;
   }
-  .padding-top{
+  .padding-top {
     padding-top: 70px;
-    padding-bottom: 14px!important;
+    padding-bottom: 14px !important;
   }
-  .none-md{
-  display: flex;
-}
+  .none-md {
+    display: flex;
+  }
   .page-hero-title {
-  font-family: Ivy Mode;
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 52px;
-  letter-spacing: 0%;
-  color: rgba(34, 37, 46, 1);
+    font-family: Ivy Mode;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: 0%;
+    color: rgba(34, 37, 46, 1);
   }
-  .plan-padding{
+  .plan-padding {
     padding-left: 16px;
     padding-right: 16px;
   }
-  .no-negative-margin{
+  .no-negative-margin {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  .mobile-title{
+  .mobile-title {
     font-family: Satoshi;
     font-weight: 400;
     font-size: 30px;
@@ -599,7 +601,7 @@ body::-webkit-scrollbar {
     letter-spacing: 0%;
     color: rgba(34, 37, 46, 1);
   }
-  .sangam-title{
+  .sangam-title {
     font-family: Satoshi;
     font-weight: 400;
     font-size: 28px;
@@ -607,22 +609,23 @@ body::-webkit-scrollbar {
     letter-spacing: 0%;
     color: rgba(34, 37, 46, 1);
   }
-  .projectslide-title{
+  .projectslide-title {
     font-family: Satoshi;
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
     letter-spacing: 0%;
   }
-  .hide-triangle{
+  .hide-triangle {
     display: none;
   }
-  .flex-sangam{
+  .flex-sangam {
     display: flex;
     flex-direction: column;
   }
-}/* Sanya css */
-.plans-swiper .slick-track, .riverside-swiper .slick-track {
+} /* Sanya css */
+.plans-swiper .slick-track,
+.riverside-swiper .slick-track {
   display: flex;
   gap: 24px;
 }
@@ -647,31 +650,30 @@ body::-webkit-scrollbar {
   }
 
   .button-secondary > div > * {
-    @apply transition-all duration-300
+    @apply transition-all duration-300;
   }
 
-  .button-secondary:hover > div > span, .button-secondary:hover > div {
+  .button-secondary:hover > div > span,
+  .button-secondary:hover > div {
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(119deg, #de804b 23%, #1e8bda 75%),
       linear-gradient(300deg, #fff 24%, rgba(255, 255, 255, 0.44) 52%);
     -webkit-background-clip: text;
     background-clip: text;
   }
-.button-secondary > span {
-  @apply transition-all duration-300
-}
+  .button-secondary > span {
+    @apply transition-all duration-300;
+  }
   .button-secondary:hover > span {
-    @apply bg-[#144D78]
+    @apply bg-[#144D78];
   }
 }
 
-
-
 /* masterplan css */
 .sangam-after-box::before {
-  content: '';
+  content: "";
   position: absolute;
-  background: #020C22;
+  background: #020c22;
   left: -100%;
   height: 100%;
   width: 100%;
@@ -696,43 +698,43 @@ body::-webkit-scrollbar {
   letter-spacing: 0%;
   color: rgba(34, 37, 46, 0.1);
 }
-.none-md{
+.none-md {
   display: none;
 }
 /* MasterPlan responsive classes */
 @media (max-width: 768px) {
-  .project-overview-title{
+  .project-overview-title {
     font-size: 36px;
     line-height: 44px;
   }
-  .img-size{
+  .img-size {
     height: 110px;
     width: 100px;
   }
-  .padding-top{
+  .padding-top {
     padding-top: 70px;
-    padding-bottom: 14px!important;
+    padding-bottom: 14px !important;
   }
-  .none-md{
-  display: flex;
-}
+  .none-md {
+    display: flex;
+  }
   .page-hero-title {
-  font-family: Ivy Mode;
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 52px;
-  letter-spacing: 0%;
-  color: rgba(34, 37, 46, 1);
+    font-family: Ivy Mode;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: 0%;
+    color: rgba(34, 37, 46, 1);
   }
-  .plan-padding{
+  .plan-padding {
     padding-left: 16px;
     padding-right: 16px;
   }
-  .no-negative-margin{
+  .no-negative-margin {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  .mobile-title{
+  .mobile-title {
     font-family: Satoshi;
     font-weight: 400;
     font-size: 30px;
@@ -740,7 +742,7 @@ body::-webkit-scrollbar {
     letter-spacing: 0%;
     color: rgba(34, 37, 46, 1);
   }
-  .sangam-title{
+  .sangam-title {
     font-family: Satoshi;
     font-weight: 400;
     font-size: 28px;
@@ -748,17 +750,17 @@ body::-webkit-scrollbar {
     letter-spacing: 0%;
     color: rgba(34, 37, 46, 1);
   }
-  .projectslide-title{
+  .projectslide-title {
     font-family: Satoshi;
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
     letter-spacing: 0%;
   }
-  .hide-triangle{
+  .hide-triangle {
     display: none;
   }
-  .flex-sangam{
+  .flex-sangam {
     display: flex;
     flex-direction: column;
   }
