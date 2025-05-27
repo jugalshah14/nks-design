@@ -129,7 +129,7 @@ export default function MasterPlanSwiper() {
                 {data.map((slide, i) => (
                   <div
                     key={i}
-                    className="mx-2 !w-[100%] !overflow-hidden md:border-l md:border-dashed md:border-gray-300 bg-white"
+                    className="mx-2 !w-[100%] !overflow-hidden border-l border-dashed border-gray-300 bg-white"
                   >
                     <div className="top-[60px] md:top-[0px] relative !w-[100%] h-[470px] px-[16px] md:px-[28px]  gap-[15px] md:gap-[24px] flex flex-col transition-transform duration-300 transform hover:scale-95">
                       <h2 className="text-[#22252E] text-[20px] md:text-[24px] font-[700]">
