@@ -109,7 +109,7 @@ export default function SangamSliders() {
             </React.Fragment>
         ))}
         </div>
-      <div className="container max-w-7xl mx-auto relative md:mb-16">
+      <div className="container mx-auto relative md:mb-16">
 
         {/* sangam part1 */}
         <div className='relative w-full pb-[60px]'>
