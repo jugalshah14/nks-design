@@ -36,45 +36,44 @@ const data = [
 ];
 
 const settings = {
-  className: "serampore-swiper center",
-  infinite: true,
-  centerPadding: "30px",
-  slidesToShow: 3.2,
-  speed: 600,
-  dots: false,
-  arrows: false,
-  initialSlide: 0,
-  responsive: [
-    {
-      breakpoint: 1240,
-      settings: {
-        centerMode: false,
-        slidesToShow: 2,
-      },
-    },
-    {
-      breakpoint: 926,
-      settings: {
-        centerMode: false,
-        slidesToShow: 1.2,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        centerMode: false,
-        slidesToShow: 1.2,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        centerMode: false,
-        slidesToShow: 1,
-      },
-    },
-  ],
-};
+    className: "serampore-swiper overflow-x-visible",
+    infinite: false,
+    slidesToShow: 3.2,
+    speed: 600,
+    dots: false,
+    arrows: false,
+    initialSlide: 0,
+    responsive: [
+        {
+            breakpoint: 1440,
+            settings: {
+                centerMode: false,
+                slidesToShow: 2.5,
+            }
+        },
+        {
+            breakpoint: 1300,
+            settings: {
+                centerMode: false,
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 1024,
+            settings: {
+                centerMode: false,
+                slidesToShow: 1.6,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                centerMode: false,
+                slidesToShow: 1.1,
+            }
+        },
+    ]
+}
 export default function SeramporeSwiper() {
   const [activeIndex, setActiveIndex] = useState(0);
   let swiperRef = useRef(null);
