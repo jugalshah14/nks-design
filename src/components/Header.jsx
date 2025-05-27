@@ -40,10 +40,10 @@ const Header = () => {
                 <div className="container mx-auto py-4 flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
                     <div className="hidden md:flex items-center space-x-8">
                         <nav className="hidden md:flex space-x-8">
-                            <Link href="/" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Home</Link>
-                            <Link href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">About us</Link>
-                            <Link href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Plans</Link>
-                            <Link href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item">Blogs</Link>
+                            <Link href="/" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item hover:underline underline-offset-2">Home</Link>
+                            <Link href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item hover:underline underline-offset-2">About us</Link>
+                            <Link href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item hover:underline underline-offset-2">Plans</Link>
+                            <Link href="#" className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item hover:underline underline-offset-2">Blogs</Link>
                         </nav>
                     </div>
 
@@ -58,8 +58,8 @@ const Header = () => {
                     </div>
 
                     <div className="block">
-                        <div className="h-[48px] w-[168px] border-1 border-b-4  border-[#22252E] relative rounded-sm action-button">
-                            <p className="font-[Satoshi] font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] absolute top-[13px] left-[32px]">Schedule a Visit</p>
+                        <div className="h-[48px] w-[168px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-sm action-button">
+                            <p className="font-[Satoshi] font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22] absolute top-[13px] left-[32px]">Schedule a Visit</p>
                         </div>
                     </div>
 

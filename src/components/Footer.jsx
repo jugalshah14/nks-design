@@ -74,7 +74,7 @@ export default function Footer() {
                                     </label>
                                 </div>
                             </div>
-                            <button type='submit' className="max-md:mx-auto w-[90%] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
+                            <button type='submit' className="max-md:mx-auto w-[90%] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
                                 <div className='px-6 py-3 mr-20'>
                                     Submit
                                 </div>
