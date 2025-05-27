@@ -1,6 +1,7 @@
 "use client";
 import Amenities from "@/components/Amenities";
 import AmenitiesSwiper from "@/components/AmenitiesSwiper";
+import { SlideUp } from "@/components/animations";
 import GangaWaves from "@/components/GangaWaves";
 import HeroSectionWaves from "@/components/HeroSectionWaves";
 import PlansSwiper from "@/components/PlansSwiper";
