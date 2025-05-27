@@ -455,10 +455,22 @@ body::-webkit-scrollbar {
   background: #000e2d;
 }
 
+/* Hide scrollbar for all browsers */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
 .contact-us-link:hover .orange-arrow-filter {
-  filter: brightness(0) saturate(100%) invert(51%) sepia(43%) saturate(6571%) hue-rotate(3deg) brightness(106%) contrast(105%);
+  filter: brightness(0) saturate(100%) invert(51%) sepia(43%) saturate(6571%)
+    hue-rotate(3deg) brightness(106%) contrast(105%);
 }
 
 .orange-arrow-filter {
-  filter: brightness(0) saturate(100%) invert(61%) sepia(26%) saturate(1239%) hue-rotate(333deg) brightness(94%) contrast(85%);
+  filter: brightness(0) saturate(100%) invert(61%) sepia(26%) saturate(1239%)
+    hue-rotate(333deg) brightness(94%) contrast(85%);
 }

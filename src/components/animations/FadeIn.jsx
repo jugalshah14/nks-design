@@ -11,7 +11,7 @@ const FadeIn = ({
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once, margin: "-50px 0px -50px 0px" }}
-    transition={{ duration, delay, ease: "easeOut" }}
+    transition={{ duration, delay, ease: [0.5, 0, 0.5, 1.5] }}
     className={`will-change-opacity ${className}`}
   >
     {children}

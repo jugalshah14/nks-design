@@ -257,42 +257,114 @@ export default function Home() {
                   <PlanTypesSwiper />
                 </div>
                 <div className="hidden md:grid grid-cols-4 gap-4 mt-12">
-                  <div className="bg-[#fdf6f2] p-5">
-                    <Image src="/assets/icons/1bhk.svg" alt="1BHK" width={36} height={36} className="mb-12" />
-                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">1BHK</h3>
-                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">314 - 645 sq. ft.</p>
-                    <Link href="#" className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]">
+                  <SlideUp delay={0.4} className="bg-[#fdf6f2] p-5">
+                    <Image
+                      src="/assets/icons/1bhk.svg"
+                      alt="1BHK"
+                      width={36}
+                      height={36}
+                      className="mb-12"
+                    />
+                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">
+                      1BHK
+                    </h3>
+                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">
+                      314 - 645 sq. ft.
+                    </p>
+                    <Link
+                      href="#"
+                      className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]"
+                    >
                       View
-                      <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} />
+                      <Image
+                        src="/assets/icons/arrowlong.svg"
+                        alt="1BHK"
+                        width={40}
+                        height={3}
+                      />
                     </Link>
-                  </div>
-                  <div className="bg-[#fdf6f2] p-5">
-                    <Image src="/assets/icons/2bhk.svg" alt="2BHK" width={36} height={36} className="mb-12" />
-                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">1BHK</h3>
-                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">314 - 645 sq. ft.</p>
-                    <Link href="#" className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]">
+                  </SlideUp>
+                  <SlideUp delay={0.6} className="bg-[#fdf6f2] p-5">
+                    <Image
+                      src="/assets/icons/2bhk.svg"
+                      alt="2BHK"
+                      width={36}
+                      height={36}
+                      className="mb-12"
+                    />
+                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">
+                      1BHK
+                    </h3>
+                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">
+                      314 - 645 sq. ft.
+                    </p>
+                    <a
+                      href="#"
+                      className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]"
+                    >
                       View
-                      <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} />
-                    </Link>
-                  </div>
-                  <div className="bg-[#fdf6f2] p-5">
-                    <Image src="/assets/icons/3bhk.svg" alt="3BHK" width={37} height={40} className="mb-12" />
-                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">1BHK</h3>
-                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">314 - 645 sq. ft.</p>
-                    <Link href="#" className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]">
+                      <Image
+                        src="/assets/icons/arrowlong.svg"
+                        alt="1BHK"
+                        width={40}
+                        height={3}
+                      />
+                    </a>
+                  </SlideUp>
+                  <SlideUp delay={0.8} className="bg-[#fdf6f2] p-5">
+                    <Image
+                      src="/assets/icons/3bhk.svg"
+                      alt="3BHK"
+                      width={37}
+                      height={40}
+                      className="mb-12"
+                    />
+                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">
+                      1BHK
+                    </h3>
+                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">
+                      314 - 645 sq. ft.
+                    </p>
+                    <a
+                      href="#"
+                      className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]"
+                    >
                       View
-                      <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} />
-                    </Link>
-                  </div>
-                  <div className="bg-[#fdf6f2] p-5">
-                    <Image src="/assets/icons/4bhk.svg" alt="4BHK" width={43} height={39} className="mb-12" />
-                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">1BHK</h3>
-                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">314 - 645 sq. ft.</p>
-                    <Link href="#" className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]">
+                      <Image
+                        src="/assets/icons/arrowlong.svg"
+                        alt="1BHK"
+                        width={40}
+                        height={3}
+                      />
+                    </a>
+                  </SlideUp>
+                  <SlideUp delay={1} className="bg-[#fdf6f2] p-5">
+                    <Image
+                      src="/assets/icons/4bhk.svg"
+                      alt="4BHK"
+                      width={43}
+                      height={39}
+                      className="mb-12"
+                    />
+                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">
+                      1BHK
+                    </h3>
+                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">
+                      314 - 645 sq. ft.
+                    </p>
+                    <a
+                      href="#"
+                      className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]"
+                    >
                       View
-                      <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} />
-                    </Link>
-                  </div>
+                      <Image
+                        src="/assets/icons/arrowlong.svg"
+                        alt="1BHK"
+                        width={40}
+                        height={3}
+                      />
+                    </a>
+                  </SlideUp>
                 </div>
               </div>
               <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mt-20">
@@ -344,9 +416,20 @@ export default function Home() {
                   muted
                   loop
                 >
-                  <source src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4" type="video/mp4" />
-                  <source src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.webm" type="video/webm" />
-                  <p>{`Sorry, Your Browser Doesn't Support Videos. Here's the`} <Link href="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4">Link to the video</Link></p>
+                  <source
+                    src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4"
+                    type="video/mp4"
+                  />
+                  <source
+                    src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.webm"
+                    type="video/webm"
+                  />
+                  <p>
+                    {`Sorry, Your Browser Doesn't Support Videos. Here's the`}{" "}
+                    <a href="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4">
+                      Link to the video
+                    </a>
+                  </p>
                 </video>
                 <div className="honouring-lightbox-overlay h-[100%] w-[100%] absolute top-0 left-0" />
                 <div className="relative z-1 flex justify-center items-center flex-col">
@@ -370,9 +453,20 @@ export default function Home() {
                   muted
                   loop
                 >
-                  <source src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4" type="video/mp4" />
-                  <source src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.webm" type="video/webm" />
-                  <p>{`Sorry, Your Browser Doesn't Support Videos. Here's the`} <Link href="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4">Link to the video</Link></p>
+                  <source
+                    src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4"
+                    type="video/mp4"
+                  />
+                  <source
+                    src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.webm"
+                    type="video/webm"
+                  />
+                  <p>
+                    {`Sorry, Your Browser Doesn't Support Videos. Here's the`}{" "}
+                    <a href="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4">
+                      Link to the video
+                    </a>
+                  </p>
                 </video>
                 <div className="honouring-lightbox-overlay-m h-[100%] w-[100%] absolute top-0 left-0" />
               </div>

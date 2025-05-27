@@ -552,28 +552,35 @@ export default function Amenities() {
                 className="relative flex flex-col items-center w-1/4"
               >
                 {/* Line segment to the right (except last) */}
-                {index < tabs.length - 1 && (
                   <div
                     className={`absolute top-1/2 left-1/2 h-0.5 z-0`}
                     style={{
                       width: "100%",
                       backgroundColor:
-                        index < tabs.findIndex((t) => t.id === selectedTab)
+                        index < tabs.findIndex((t) => t.id === selectedTab) || index === tabs.findIndex((t) => t.id === selectedTab)
                           ? "#ffffff"
                           : "rgba(255, 255, 255, 0.3)",
                       transform: "translateX(0%)",
                     }}
                   ></div>
+                  
+                {index === 0 && (
+                  <div
+                    className={`absolute top-1/2 left-0 h-0.5 z-0 w-1/2 bg-white`}
+                  ></div>
                 )}
+                
 
                 {/* Dot */}
+                <div className="relative z-1 flex justify-center items-center w-15 bg-[#010922]">
                 <div
                   className={`w-4 h-4 rounded-full z-10 ${
-                    selectedTab === tab.id
+                    index <= tabs.findIndex((t) => t.id === selectedTab)
                       ? "bg-white"
                       : "border-2 border-white bg-transparent"
                   }`}
-                ></div>
+                  ></div>
+                  </div>
               </div>
             ))}
           </div>
