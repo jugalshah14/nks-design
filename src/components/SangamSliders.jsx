@@ -229,19 +229,11 @@ export default function SangamSliders() {
               </div>
 
               <div className='w-full mt-[20px] md:mt-[0px]'>
-                <button className="flex justify-between w-full group cursor-pointer bg-[#144D78] hover:bg-[#0e3a5a] transition-all duration-300 text-white font-medium items-center overflow-hidden">
-                  <div className="p-[15px] md:p-[25px] group-hover:text-orange-400 transition-all duration-300">
-                    <span>Schedule a Visit</span>
+                <button className="w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
+                  <div className='px-6 py-3 w-full flex justify-start'>
+                      <span className='text-left hidden md:inline'>Schedule a Visit</span>
                   </div>
-                  <div className="bg-[#002F52] p-[20px] md:p-[30px] flex items-center justify-center transition-all duration-300 group-hover:bg-[#003d6b]">
-                    <Image
-                      src="/assets/arrow.png"
-                      width={15}
-                      height={15}
-                      alt="arrow"
-                      className="transition-transform duration-300 group-hover:rotate-45"
-                    />
-                  </div>
+                      <span className="px-6 py-4 text-orange-500 bg-[#002F52] text-lg ml-auto">↗</span>
                 </button>
               </div>
             </div>

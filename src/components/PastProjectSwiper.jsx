@@ -40,9 +40,9 @@ const data = [
 ]
 
 const settings = {
-    className: "serampore-swiper center",
-    infinite: true,
-    slidesToShow: 1.9,
+    className: "project-swiper center",
+    infinite: false,
+    slidesToShow: 1.6,
     speed: 600,
     dots: false,
     arrows: false,
@@ -52,28 +52,21 @@ const settings = {
             breakpoint: 1240,
             settings: {
                 centerMode: false,
-                slidesToShow: 1.9,
+                slidesToShow: 1.2,
             }
         },
         {
             breakpoint: 926,
             settings: {
                 centerMode: false,
-                slidesToShow: 1.2,
+                slidesToShow: 1.1,
             }
         },
         {
             breakpoint: 768,
             settings: {
                 centerMode: false,
-                slidesToShow: 1.2,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                centerMode: false,
-                slidesToShow: 1,
+                slidesToShow: 1.1,
             }
         },
     ]
@@ -93,7 +86,7 @@ export default function PastProjectSwiper() {
     }
 
     return (
-        <div className='mb-10 mx-[16px] md:mx-[0px]'>
+        <div className='container mx-auto mb-10 px-4 md:px-0'>
             <Slider
                 ref={slider => {
                     swiperRef = slider;
@@ -103,8 +96,8 @@ export default function PastProjectSwiper() {
             >
                 {data.map((slide, index) => (
                     <div key={index} className='relative !flex justify-center flex-nowrap pt-15 w-[100%]'>
-                        <div className='flex md:flex-row flex-col'>
-                           <div className='w-full md:w-[360px] h-[240px] md:h-[468px] relative'>
+                        <div className='w-full flex md:flex-row flex-col'>
+                           <div className='w-full md:w-[80%] h-[240px] md:h-[468px] relative'>
                             <Image 
                                 src={slide.src} 
                                 alt="slide-0" 
@@ -112,7 +105,7 @@ export default function PastProjectSwiper() {
                                 className="object-cover" 
                             />
                             </div>
-                            <div className='w-full md:w-[380px] flex flex-col bg-[#0C162B] md:mt-[40px]'>
+                            <div className='w-full flex flex-col bg-[#0C162B] md:mt-[40px]'>
                                 <div className='p-[36px] relative'>
                                     <div className='md:mt-[32px] absolute w-full top-[-65px] md:top-0 md:left-[-60px] flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[5px] bg-opacity-80'>
                                         <div className='w-full projectslide-title py-[20px] px-[27px] transforming-text font-[400] text-[40px] leading-[48px] whitespace-nowrap'>
@@ -151,14 +144,34 @@ export default function PastProjectSwiper() {
             <div className='w-full ietms-center justify-center flex'>
                 <div className="w-full relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-5 max-w-[366px] shadow-[0px_4px_170px_rgba(0,0,0,0.25)]">
                     <div className="h-full flex items-center justify-center">
-                        <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>
-                            <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="invert-75 transform rotate-180" />
+                        <button 
+                            className={`focus:outline-none cursor-pointer transition-all duration-300 ${activeIndex === 0 ? 'opacity-30' : 'opacity-100'}`}
+                            onClick={handlePrev}
+                            disabled={activeIndex === 0}
+                        >
+                            <Image 
+                                src="/assets/arrow.svg" 
+                                alt="Previous" 
+                                height={20} 
+                                width={19} 
+                                className="transform rotate-180" 
+                            />
                         </button>
                     </div>
-                    <div className="flex gap-2 items-center">{activeIndex+1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}</div>
+                    <div className="flex gap-2 items-center text-[20px] leading-[28px] font-[700]">{Math.ceil(activeIndex+1)} <div className="h-0.5 w-8 bg-black/30 mx-2" /><div className='text-black/30'>{data.length}</div> </div>
                     <div className="h-full flex items-center justify-center">
-                        <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
-                            <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="" />
+                        <button 
+                            className={`focus:outline-none cursor-pointer transition-all duration-300 ${Math.ceil(activeIndex+1) >= data.length ? 'opacity-30' : 'opacity-100'}`}
+                            onClick={handleNext}
+                            disabled={Math.ceil(activeIndex+1) >= data.length}
+                        >
+                            <Image 
+                                src="/assets/arrow.svg" 
+                                alt="Next" 
+                                height={20} 
+                                width={19} 
+                                className="" 
+                            />
                         </button>
                     </div>
                 </div>

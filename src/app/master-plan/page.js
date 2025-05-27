@@ -214,16 +214,16 @@ export default function MasterPlan() {
         <SangamSliders />
       </section>
 
-      {/* Past Projects */}
-      <section>
-        <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-18">
+      <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-18">
             <Image src="/assets/house.png" width={180} height={144} alt="house" className='img-size'/>
             <div className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center cursor-pointer" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
               <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">Curious to see life @Alcove and world-class amenities?</h1>
               <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} className="absolute right-[10px] md:right-[40px]"/>
               <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
             </div>
-        </div>
+      </div>
+      {/* Past Projects */}
+      <section className='overflow-x-hidden'>
         <div className='relative pt-[30px] md:pt-[100px]'>
             <div className="text-center w-full">
               <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</p>
