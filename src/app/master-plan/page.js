@@ -469,7 +469,7 @@ export default function MasterPlan() {
       </section>
 
       {/* Construction Updates Section */}
-      <section className="bg-[#020C22] py-[80px]">
+      <section className="bg-[#020C22] md:py-[80px] pt-[40px]">
         <div className="container mx-auto">
           <div className="flex ietms-center w-full md:items-end justify-between mb-[48px]">
             <div className="w-full">
