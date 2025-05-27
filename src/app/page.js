@@ -56,13 +56,6 @@ export default function Home() {
             </SlideUp>
           </div>
         </div>
-        <div className="inset-center absolute backdrop-blur-[20px] -bottom-[150px] md:bottom-[-60px] z-10 md:right-8 bg-[#FFFFFF33] rounded-full w-[133px] h-[133px] flex flex-col items-center justify-center">
-          <FadeIn delay={0.6}>
-            <p className="text-white text-[16px] font-[Satoshi] font-bold leading-[20px] text-center max-w-[93px]">
-              Why Riverside Living?
-            </p>
-          </FadeIn>
-        </div>
         <WhyRiversideFloatingButton />
       </section>
       <section className="relative">

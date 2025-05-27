@@ -17,7 +17,7 @@ const SlideIn = ({
       initial={{ x, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once }}
-      transition={{ duration, delay }}
+      transition={{ duration, delay, ease: [0.5, 0, 0.5, 1] }}
       className={`will-change-transform ${className}`}
     >
       {children}
