@@ -39,7 +39,7 @@ const settings = {
     className: "serampore-swiper center",
     infinite: true,
     centerPadding: "30px",
-    slidesToShow: 3,
+    slidesToShow: 3.2,
     speed: 600,
     dots: false,
     arrows: false,

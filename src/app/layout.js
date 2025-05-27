@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import localFont from 'next/font/local'
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -77,7 +78,7 @@ const Satoshi = localFont({
       weight: 'bold',
       style: 'normal',
     },
-     {
+    {
       path: '../fonts/Satoshi-BoldItalic.woff',
       weight: 'bold',
       style: 'italic',
@@ -87,12 +88,12 @@ const Satoshi = localFont({
       weight: 'normal',
       style: 'italic',
     },
-     {
+    {
       path: '../fonts/Satoshi-Light.woff',
       weight: '300',
       style: 'normal',
     },
-     {
+    {
       path: '../fonts/Satoshi-LightItalic.woff',
       weight: '300',
       style: 'italic',
@@ -127,9 +128,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${IvyMode.className} ${Satoshi.className} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <React.Suspense fallback={<div>Loading......</div>}>
+          <Header />
+          {children}
+          <Footer />
+        </React.Suspense>
       </body>
     </html>
   );
