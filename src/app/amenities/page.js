@@ -691,7 +691,7 @@ export default function Amenities() {
         </div>
 
         {/* Horizontal Card Section */}
-        <div className="border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
+        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-105 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
           <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
             <Image
               src="/assets/clubBottom.png"
@@ -820,7 +820,7 @@ export default function Amenities() {
           </div>
         </div>
         {/* Horizontal Card Section */}
-        <div className="border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 md:h-[144px]">
+        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-105 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 md:h-[144px]">
           <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
             <Image
               src="/assets/podiumBar.png"
@@ -984,37 +984,39 @@ export default function Amenities() {
 
       {/* ferry ride */}
       <section className="relative w-full h-full flex flex-col-reverse md:flex-row overflow-hidden shadow-lg bg-white pb-15 md:pb-0 rounded-none">
-  {/* Image (bottom on mobile, left on desktop) */}
-  <div className="w-full md:w-1/2 h-[300px] md:h-[524px] relative">
-    <Image
-      src="/assets/ferry-ride.png"
-      alt="Ferry Ride"
-      fill
-      className="object-cover"
-      priority
-    />
-    <div className="absolute -inset-1 bg-[linear-gradient(180deg,#0a1628_9.69%,rgba(2,12,34,0)_93.16%)] md:bg-[linear-gradient(267.36deg,#0a1628_9.69%,rgba(2,12,34,0)_93.16%)]" />
-  </div>
+        {/* Image (bottom on mobile, left on desktop) */}
+        <div className="w-full md:w-1/2 h-[300px] md:h-[524px] relative">
+          <Image
+            src="/assets/ferry-ride.png"
+            alt="Ferry Ride"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute -inset-1 bg-[linear-gradient(180deg,#0a1628_9.69%,rgba(2,12,34,0)_93.16%)] md:bg-[linear-gradient(267.36deg,#0a1628_9.69%,rgba(2,12,34,0)_93.16%)]" />
+        </div>
 
-  {/* Text Content (top on mobile, right on desktop) */}
-  <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center py-10 px-4 md:px-6 md:py-[74px] md:pr-[100px] bg-[#0a1628] text-center md:text-left">
-    <h2 className="text-[36px] leading-[44px] md:text-[56px] font-[IvyMode] text-white font-light leading-[40px] md:leading-[72px] mb-6 md:mb-7">
-      Indulge in the <span className="text-[#DE804B]">ferry ride </span><br className="hidden md:block" />
-      departing from our <br className="hidden md:block" />
-      location.
-    </h2>
-    <p className="text-white font-[Satoshi] font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] mb-6 md:mb-7">
-      Ferry solely for potential clients and current customers.
-    </p>
-    <button className="bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
-      <div className="px-15 py-3 md:px-20 md:py-6">Book Now</div>
-      <span className="px-6 py-3 md:px-8 md:py-6 ml-auto text-orange-500 bg-[#002F52] text-lg">
-        ↗
-      </span>
-    </button>
-  </div>
-</section>
-
+        {/* Text Content (top on mobile, right on desktop) */}
+        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center py-10 px-4 md:px-6 md:py-[74px] md:pr-[100px] bg-[#0a1628] text-center md:text-left">
+          <h2 className="text-[36px] leading-[44px] md:text-[56px] font-[IvyMode] text-white font-light leading-[40px] md:leading-[72px] mb-6 md:mb-7">
+            Indulge in the <span className="text-[#DE804B]">ferry ride </span>
+            <br className="hidden md:block" />
+            departing from our <br className="hidden md:block" />
+            location.
+          </h2>
+          <p className="text-white font-[Satoshi] font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] mb-6 md:mb-7">
+            Ferry solely for potential clients and current customers.
+          </p>
+          <button className="bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
+            <div className="px-15 py-3 md:px-20 md:py-6 font-[Satoshi] font-bold text-[16px]">
+              Book Now
+            </div>
+            <span className="px-6 py-3 md:px-8 md:py-6 ml-auto text-orange-500 bg-[#002F52] text-lg">
+              ↗
+            </span>
+          </button>
+        </div>
+      </section>
 
       {/* certified section */}
       <section className="relative w-full bg-[#E7F2EB] py-1 px-2 md:py-20 md:px-15">
@@ -1065,7 +1067,7 @@ export default function Amenities() {
 
           {/* View Certification Button */}
           <div className="flex justify-center relative bottom-7 md:bottom-0 md:top-27">
-            <button className="absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex gap-2 overflow-hidden mb-0">
+            <button className="absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex gap-2 overflow-hidden mb-0 button-primary">
               <div className="pl-8 pr-15 py-4">View Certification</div>
               <span className="px-8 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
                 ↗
@@ -1074,7 +1076,7 @@ export default function Amenities() {
           </div>
         </div>
         {/* Horizontal Card Section */}
-        <div className="border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 mt-20 md:h-[144px]">
+        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-105 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 mt-20 md:h-[144px]">
           <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
             <Image
               src="/assets/podiumBar.png"
@@ -1117,7 +1119,7 @@ export default function Amenities() {
                   <span className="orange-color">Security</span>, Our
                   <br className="max-md:hidden" /> Priority
                 </h2>
-                <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden mb-0">
+                <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium md:inline-flex items-center gap-2 overflow-hidden mb-0 button-primary">
                   <div className="px-6 py-3 mr-20">Schedule a Visit</div>
                   <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
                     ↗
@@ -1181,7 +1183,7 @@ export default function Amenities() {
           </div>
         </div>
         <div className="flex md:hidden justify-center relative -top-7">
-          <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden mb-0">
+          <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden mb-0 button-primary">
             <div className="px-6 py-3 mr-20">Schedule a Visit</div>
             <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
               ↗
@@ -1224,19 +1226,15 @@ export default function Amenities() {
               </button>
             </div>
             {accordionData.map((item, index) => (
-              <div
-                key={index}
-                className={`mb-4 rounded-md bg-white p-4 ${
-                  activeIndex === index ? "shadow-md" : ""
-                }`}
-              >
+              <div key={index} className={`mb-4 rounded-md bg-white p-4`}>
                 <button
-                  className="w-full flex justify-between items-center font-[Satoshi] font-bold text-left text-gray-900"
+                  className="w-full flex justify-between items-center font-[Satoshi] font-bold text-left text-gray-900 cursor-pointer"
                   onClick={() => toggleIndex(index)}
                 >
                   <span>{item.question}</span>
                   <span>
                     {activeIndex === index ? (
+                      // Down arrow when active
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5 text-orange-600"
@@ -1248,10 +1246,11 @@ export default function Amenities() {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          d="M6 18L18 6M6 6l12 12"
+                          d="M19 9l-7 7-7-7"
                         />
                       </svg>
                     ) : (
+                      // Right arrow when collapsed
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5 text-orange-600"
@@ -1269,39 +1268,47 @@ export default function Amenities() {
                     )}
                   </span>
                 </button>
-                {activeIndex === index && item.answer && (
+
+                {/* Animated answer container */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    activeIndex === index
+                      ? "max-h-40 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
                   <p className="mt-2 text-gray-500 text-sm font-[Satoshi]">
                     {item.answer}
                   </p>
-                )}
+                </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="absolute border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 -bottom-13 md:h-[104px] z-1">
-          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
-            <Image
-              src="/assets/podiumBar.png"
-              alt="Room preview"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="flex-1 md:px-11 md:py-8">
-            <p className="px-5 md:px-0 md:text-[24px] font-[Satoshi] font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-              Have more questions? Contact us now.
-            </p>
-          </div>
-          <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
-            <Image
-              src="/assets/icons/arrowlong.svg"
-              alt=""
-              width={40}
-              height={3}
-              className="absolute -ml-6"
-            />
-          </div>
-        </div>
+        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-105 absolute border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 -bottom-13 md:h-[104px] z-1">
+  <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+    <Image
+      src="/assets/podiumBar.png"
+      alt="Room preview"
+      fill
+      className="object-cover"
+    />
+  </div>
+  <div className="flex-1 md:px-11 md:py-8">
+    <p className="px-5 md:px-0 md:text-[24px] font-[Satoshi] font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+      Have more questions? Contact us now.
+    </p>
+  </div>
+  <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
+    <Image
+      src="/assets/icons/arrowlong.svg"
+      alt=""
+      width={40}
+      height={3}
+      className="absolute -ml-6"
+    />
+  </div>
+</div>
       </section>
     </main>
   );
