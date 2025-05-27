@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import SangamViewsSwiper from './SangamViewsSwiper';
+import { AnimatedSection } from './animations';
 
 const flatsData = {
   '3BHK': {
@@ -243,7 +244,9 @@ export default function SangamSliders() {
       </div>
 
       {/* sangam part2 */}
-      <SangamViewsSwiper activeBHK={activeBHK} />
+      <AnimatedSection delay={0.4}>
+        <SangamViewsSwiper activeBHK={activeBHK} />
+      </AnimatedSection>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { SlideUp } from './animations';
 
 
 const data = {
@@ -104,9 +105,9 @@ export default function SangamViewsSwiper({ activeBHK = '3BHK' }) {
             <div className="container mx-auto relative md:mb-16 bg-[#020C22]">
                 <div className="grid grid-cols-4 gap-0">
                     <div className="!flex !flex-col justify-center hidden md:block bg-[#020C22] z-2 sangam-after-box pr-10 md:col-span-2 lg:col-span-1">
-                        <h2 className="text-center md:text-left text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-1">
+                        <SlideUp delay={0.6} className="text-center md:text-left text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-1">
                             Views from {activeBHK}
-                        </h2>
+                        </SlideUp>
                         <div className="relative w-[366px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
                             <div className="h-full flex items-center justify-center">
                                 <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>
@@ -131,7 +132,7 @@ export default function SangamViewsSwiper({ activeBHK = '3BHK' }) {
                                 afterChange={(current) => setActiveIndex(current)}
                             >
                                 {data[activeBHK].map((slide, i) => (
-                                    <div key={i} className='mx-5 !w-[100%] !overflow-hidden'>
+                                    <div key={i} className='mx-5 !w-[100%] !overflow-hidden transition-transform duration-300 transform hover:scale-95'>
                                         <div className='relative !w-[100%] h-[350px]'>
                                             <Image src={slide.src} alt={`${activeBHK}-view-${i}`} fill className='object-cover' />
                                         </div>
