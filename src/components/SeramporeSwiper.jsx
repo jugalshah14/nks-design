@@ -27,18 +27,17 @@ const data = [
         title: 'Serampore Railway Station',
         description: '2.5km away'
     },
-    // {
-    //     src: '/assets/shelby.jpg',
-    //     icon: '/assets/icons/hospital-building.svg',
-    //     title: 'Shelby Hospital',
-    //     description: '3.4km away'
-    // }
+    {
+        src: '/assets/shelby.jpg',
+        icon: '/assets/icons/hospital-building.svg',
+        title: 'Shelby Hospital',
+        description: '3.4km away'
+    }
 ]
 
 const settings = {
-    className: "serampore-swiper center",
-    infinite: true,
-    centerPadding: "30px",
+    className: "serampore-swiper overflow-x-visible",
+    infinite: false,
     slidesToShow: 3.2,
     speed: 600,
     dots: false,
@@ -46,31 +45,31 @@ const settings = {
     initialSlide: 0,
     responsive: [
         {
-            breakpoint: 1240,
+            breakpoint: 1440,
+            settings: {
+                centerMode: false,
+                slidesToShow: 2.5,
+            }
+        },
+        {
+            breakpoint: 1300,
             settings: {
                 centerMode: false,
                 slidesToShow: 2,
             }
         },
         {
-            breakpoint: 926,
+            breakpoint: 1024,
             settings: {
                 centerMode: false,
-                slidesToShow: 1.2,
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                centerMode: false,
-                slidesToShow: 1.2,
+                slidesToShow: 1.6,
             }
         },
         {
             breakpoint: 600,
             settings: {
                 centerMode: false,
-                slidesToShow: 1,
+                slidesToShow: 1.1,
             }
         },
     ]
@@ -90,16 +89,18 @@ export default function SeramporeSwiper() {
     }
 
     return (
-        <div className='md:pt-10 mb-10'>
+        <div className='md:pt-10 mb-10 container mx-auto overflow-x-visible max-sm:px-5'>
             <Slider
                 ref={slider => {
                     swiperRef = slider;
                 }}
                 {...settings}
-                afterChange={(current) => setActiveIndex(current)}
+                afterChange={(current) => {
+                    setActiveIndex(+document.getElementsByClassName('serampore-swiper')?.[0].getElementsByClassName('slick-current')?.[0]?.getAttribute("data-index") || current);
+                }}
             >
                 {data.map((slide, index) => (
-                    <div key={index} className='relative !flex justify-center flex-nowrap pt-15 w-[100%] ml-[40px]'>
+                    <div key={index} className='relative !flex flex-nowrap pt-15 w-[100%]'>
                         <Image src={slide.src} alt="slide-0" height={160} width={160} className='relative !h-[110px] !w-[110px] md:!h-[160px] md:!w-[160px] z-1' />
                         <div className={`w-fit relative flex flex-col p-7 pl-3 pt-10 max-sm:pr-30 pr-20 `}>
                             <div className='location-slide bg-[#F8F8F8] top-6 -left-[70px] w-[100%] sm:w-[130%] h-[100%] absolute back-active' />
@@ -117,13 +118,13 @@ export default function SeramporeSwiper() {
             <div className="relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-5">
                 <div className="h-full flex items-center justify-center">
                     <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>
-                        <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="invert-75 transform rotate-180" />
+                        <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className={`${!activeIndex && 'invert-75'} transform rotate-180`} />
                     </button>
                 </div>
-                <div className="flex gap-2 items-center">{activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}</div>
+                <div className="flex gap-2 items-center">{Math.ceil(activeIndex + 1)} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}</div>
                 <div className="h-full flex items-center justify-center">
                     <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
-                        <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="" />
+                        <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className={`${Math.ceil(activeIndex + 1) === data.length && 'invert-75'}`} />
                     </button>
                 </div>
             </div>

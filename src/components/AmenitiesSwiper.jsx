@@ -46,7 +46,7 @@ const settings = {
             breakpoint: 768,
             settings: {
                 centerMode: false,
-                slidesToShow: 3,
+                slidesToShow: 2,
             }
         },
         {
