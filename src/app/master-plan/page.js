@@ -211,13 +211,6 @@ export default function MasterPlan() {
             <p className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">/ Amenities</p>
             <h1 className='text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[150px] font-[400] md:leading-[150px]'>Sangam</h1>
         </div>
-        <div className='w-full items-center justify-center flex flex-row  gap-4 md:gap-10 border-t border-b border-white/10 mb-[52px]'>
-          <div className='text-[16px] md:text-[20px] font-[Satoshi] font-normal leading-[28px] text-white/50 py-[20px] cursor-pointer'>3BHK</div>
-          <Image src="/assets/dot.svg" width={10} height={10} alt="dot" />
-          <div className='text-[16px] md:text-[20px] font-[Satoshi] font-normal leading-[28px] text-white/50 py-[20px] cursor-pointer'>2BHK</div>
-          <Image src="/assets/dot.svg" width={10} height={10} alt="dot" />
-          <div className='text-[16px] md:text-[20px] font-[Satoshi] font-normal leading-[28px] text-white/50 py-[20px] cursor-pointer'>4BHK</div>
-        </div>
         <SangamSliders />
       </section>
 
