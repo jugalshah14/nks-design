@@ -215,7 +215,7 @@ export default function MasterPlan() {
       </section>
 
       <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-18">
-            <Image src="/assets/house.png" width={180} height={144} alt="house" className='img-size'/>
+            <Image src="/assets/faqs-detail-gif.gif" width={180} height={144} alt="house" className='img-size'/>
             <div className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center cursor-pointer" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
               <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">Curious to see life @Alcove and world-class amenities?</h1>
               <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} className="absolute right-[10px] md:right-[40px]"/>
@@ -233,7 +233,7 @@ export default function MasterPlan() {
         </div>
         <PastProjectSwiper />
         <div className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-5 md:pt-10 cursor-pointer">
-            <Image src="/assets/sport.png" width={180} height={144} alt="house" className='img-size'/>
+            <Image src="/assets/sport-gif.gif" width={144} height={144} alt="house" className='img-size'/>
             <div className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
               <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">Embrace the beauty of your surroundings, know our neighbourhood</h1>
               <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} className="absolute right-[10px] md:right-[40px]"/>

@@ -314,6 +314,21 @@ body::-webkit-scrollbar {
   height: 92px;
 }
 
+.responsive-image {
+  width: 100px;
+  height: 100px;
+}
+
+.responsive-IGBC-image {
+  width: 152px;
+  height: 152px;
+}
+
+.icon-image {
+  width: 92px;
+  height: 92px;
+}
+
 .marquee {
   width: 100%;
   overflow: hidden;
