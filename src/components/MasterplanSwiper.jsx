@@ -51,14 +51,14 @@ const settings = {
             breakpoint: 768,
             settings: {
                 centerMode: false,
-                slidesToShow: 3,
+                slidesToShow: 1.4,
             }
         },
         {
             breakpoint: 425,
             settings: {
-                centerMode: true,
-                slidesToShow: 1,
+                centerMode: false,
+                slidesToShow: 1.4,
             }
         },
     ]
@@ -110,8 +110,8 @@ export default function AmenitiesSwiper() {
                             >
                                 {data.map((slide, i) => (
                                     <div key={i} className='mx-2 !w-[100%] !overflow-hidden md:border-l md:border-dashed md:border-gray-300 bg-white'>
-                                        <div className='relative !w-[100%] h-[470px] px-[28px] gap-[24px] flex flex-col transition-transform duration-300 transform hover:scale-95'>
-                                          <h2 className="text-[#22252E] text-[24px] font-[700]">{slide.title}</h2>
+                                        <div className='top-[60px] md:top-[0px] relative !w-[100%] h-[470px] px-[16px] md:px-[28px]  gap-[15px] md:gap-[24px] flex flex-col transition-transform duration-300 transform hover:scale-95'>
+                                          <h2 className="text-[#22252E] text-[20px] md:text-[24px] font-[700]">{slide.title}</h2>
                                           <Image src={slide.image} width={240} height={250} alt="img" className='w-full min-h-[250px] max-h-auto' />
                                           <p className="text-[16px] text-[#22252E] font-[400]">{slide.desc}</p>
                                         </div>

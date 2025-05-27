@@ -9,7 +9,7 @@ export default function BrochureSection() {
         <div className="relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
           <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[350px] p-[13px] md:px-6 md:py-4">Want to know more about Lobby, Toilets, Wall Finish, Lift, Balcony, Doors etc.?</h1>
           <div className="bg-[#E7EDF2] w-[10px] md:w-[54px] h-full"></div>
-          <button className="absolute right-[-150px] bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
+          <button className="hide-triangle absolute right-[-150px] bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
             <div className='px-6 py-3'>
                 <span className='hidden md:inline'>Download our Brochure</span>
             </div>

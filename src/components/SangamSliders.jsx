@@ -90,7 +90,7 @@ export default function SangamSliders() {
 
   return (
     <div className='relative max-md:-top-15'>
-      <div className='w-full items-center justify-center flex flex-row gap-4 md:gap-10 border-t border-b border-white/10 mb-[52px]'>
+      <div className='w-full items-center justify-center mt-[80px] md:mt-[0px] flex flex-row gap-4 md:gap-10 border-t border-b border-white/10 mb-[52px]'>
         {['3BHK', '2BHK', '4BHK'].map((bhk, index) => (
             <React.Fragment key={bhk}>
             <div
@@ -114,7 +114,7 @@ export default function SangamSliders() {
 
         {/* sangam part1 */}
         <div className='relative w-full pb-[60px]'>
-          <div className={`absolute top-0 md:top-12 h-[500px] md:h-[445px] bg-[#0E1727] w-full transition-all duration-500 ${bhkFade ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}></div>
+          <div className={`absolute top-0 md:top-12 h-[400px] md:h-[445px] bg-[#0E1727] w-full transition-all duration-500 ${bhkFade ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}></div>
           <div className='flex flex-row md:flex-col gap-3 md:gap-[0px] items-baseline md:items-center justify-center w-full py-[27px] md:py-[0px]'>
             <div className='relative md:w-full items-center flex justify-center'>
               <Image src="/assets/sangam-icon.png" width={100} height={100} alt="dot" className='hide-triangle' />
@@ -129,7 +129,7 @@ export default function SangamSliders() {
               <div className={`bg-[#111B2F] relative transition-all duration-500 ${bhkFade ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}>
 
                 {/* Tabs */}
-                <div className='absolute z-[10] mx-[16px] md:mx-[0px] flex flex-row md:flex-col items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-[340px] md:w-[72px] m-1 absolute left-0 top-[-50px] md:top-0 transition-all duration-300'>
+                <div className='absolute z-[10] md:mx-[0px] flex flex-row md:flex-col items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full md:w-[72px] m-1 absolute left-0 top-[-50px] md:top-0 transition-all duration-300'>
                  {flatsData[activeBHK].tabs.map(tab => (
                     <div
                       key={tab}
@@ -178,7 +178,7 @@ export default function SangamSliders() {
                 </div>
 
                 {/* Navigation Buttons */}
-                <div className="flex items-center justify-between bg-white/5 p-[18px] transition-all duration-300">
+                <div className="flex items-center justify-between bg-white/5 p-[18px] transition-all duration-300 mt-[-60px] md:mt-[0px]">
                   <button className="pl-12 w-full text-white text-sm flex items-center gap-2 justify-center transition-all duration-300 hover:gap-4">
                     Check Dimensions <Image src="/assets/whitearrow.svg" alt="1BHK" width={40} height={3} className="transition-transform duration-300 group-hover:translate-x-2" />
                   </button>
@@ -232,7 +232,7 @@ export default function SangamSliders() {
               <div className='w-full mt-[20px] md:mt-[0px]'>
                 <button className="w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
                   <div className='px-6 py-3 w-full flex justify-start'>
-                      <span className='text-left hidden md:inline'>Schedule a Visit</span>
+                      <span className='text-left inline md:inline'>Schedule a Visit</span>
                   </div>
                       <span className="px-6 py-4 text-orange-500 bg-[#002F52] text-lg ml-auto">↗</span>
                 </button>

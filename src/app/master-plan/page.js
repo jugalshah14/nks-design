@@ -41,14 +41,14 @@ export default function MasterPlan() {
                 width={65}
                 height={65}
                 alt="img"
-                className="absolute left-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px]"
+                className="absolute left-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px] select-none no-drag"
               />
               <Image
                 src="/assets/tri2.svg"
                 width={65}
                 height={65}
                 alt="img"
-                className="absolute right-0 bottom-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px]"
+                className="absolute right-0 bottom-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px] select-none no-drag"
               />
               <Image
                 src="/assets/masterplan-hero.png"
@@ -365,7 +365,7 @@ export default function MasterPlan() {
       </section>
 
       {/* sangam */}
-      <section className="bg-[#020C22] md:pb-[80px]">
+      <section className="bg-[#020C22]  mb-[100px] md:mb-[0px] md:pb-[80px]">
         <div className="text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
           <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">
             / Amenities
@@ -409,10 +409,10 @@ export default function MasterPlan() {
       <section className="overflow-x-hidden">
         <div className="relative pt-[30px] md:pt-[100px]">
           <div className="text-center w-full">
-            <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">
+            <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2  pt-[20px] md:pt-[0px]">
               / Amenities
             </SlideUp>
-            <SlideUp delay={0.4} className="project-overview-title text-center pb-[28px] md:pb-[0px]">
+            <SlideUp delay={0.4} className="project-overview-title text-center">
               <span className="orange-color">Past</span> Projects
             </SlideUp>
           </div>
@@ -421,7 +421,7 @@ export default function MasterPlan() {
         <AnimatedSection>
           <PastProjectSwiper />
         </AnimatedSection>
-        <FadeIn delay={0.4} className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-5 md:pt-0 cursor-pointer">
+        <FadeIn delay={0.4} className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-0 md:pt-0 cursor-pointer">
           <Image
             src="/assets/sport-gif.gif"
             width={144}
@@ -464,7 +464,7 @@ export default function MasterPlan() {
           </div>
         </div>
         <div className="container mx-auto relative">
-          <AnimatedSection delay={0.6} className="relative max-md:pt-5">
+          <AnimatedSection delay={0.6} className="relative max-md:pt-5 !overflow-visible">
             <ProjectViewSlides />
           </AnimatedSection>
         </div>
