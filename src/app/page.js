@@ -17,7 +17,9 @@ import ScrollSpyNav from "@/components/ScrollSpyNav";
 import SeramporeMarqueeSlides from "@/components/SeramporeMarqueeSlides";
 import SeramporeSwiper from "@/components/SeramporeSwiper";
 import Testimonials from "@/components/Testimonials";
+import WhyRiversideFloatingButton from "@/components/WhyRiversideFloatingButton";
 import Image from "next/image";
+import Link from "next/link";
 import { Element } from "react-scroll";
 
 export default function Home() {
@@ -61,6 +63,7 @@ export default function Home() {
             </p>
           </FadeIn>
         </div>
+        <WhyRiversideFloatingButton />
       </section>
       <section className="relative">
         <HeroSectionWaves />
@@ -508,7 +511,7 @@ export default function Home() {
                     <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">
                       314 - 645 sq. ft.
                     </p>
-                    <a
+                    <Link
                       href="#"
                       className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]"
                     >

@@ -6,6 +6,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from 'next/link';
 const data = [
     {
         icon: '/assets/icons/1bhk.svg',
@@ -98,10 +99,10 @@ export default function PlanTypesSwiper() {
                         <Image src={slide.icon} alt={slide.title} width={36} height={36} className="mb-12" />
                         <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">{slide.title}</h3>
                         <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">{slide.desc}</p>
-                        <a href={slide.link} className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]">
+                        <Link href={slide.link} className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]">
                             View
                             <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} />
-                        </a>
+                        </Link>
                     </div>
                 ))}
             </Slider>

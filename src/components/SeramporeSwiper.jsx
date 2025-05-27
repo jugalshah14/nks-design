@@ -36,40 +36,41 @@ const data = [
 ];
 
 const settings = {
-  className: "serampore-swiper overflow-x-visible",
-  infinite: false,
-  slidesToShow: 3.05,
+  className: "serampore-swiper center",
+  infinite: true,
+  centerPadding: "30px",
+  slidesToShow: 3.2,
   speed: 600,
   dots: false,
   arrows: false,
   initialSlide: 0,
   responsive: [
     {
-      breakpoint: 1440,
-      settings: {
-        centerMode: false,
-        slidesToShow: 2.2,
-      },
-    },
-    {
-      breakpoint: 1300,
+      breakpoint: 1240,
       settings: {
         centerMode: false,
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: 1024,
+      breakpoint: 926,
       settings: {
         centerMode: false,
-        slidesToShow: 1.6,
+        slidesToShow: 1.2,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        centerMode: false,
+        slidesToShow: 1.2,
       },
     },
     {
       breakpoint: 600,
       settings: {
         centerMode: false,
-        slidesToShow: 1.1,
+        slidesToShow: 1,
       },
     },
   ],
