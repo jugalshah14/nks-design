@@ -788,6 +788,11 @@ body::-webkit-scrollbar {
     margin-top: 0px;
     margin-bottom: 0px;
   }
+  .height-member{
+    height: 330px;
+    max-height: 330px;
+    min-height: 330px;
+  }
 
   .mobile-title {
     font-family: Satoshi;

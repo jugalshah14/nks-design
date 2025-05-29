@@ -5,7 +5,6 @@ import MasterplanSwiper from "@/components/MasterplanSwiper";
 import BrochureSection from "@/components/BrochureCard";
 import ProjectViewSlides from "@/components/ProjectViewSlides";
 import SangamSliders from "@/components/SangamSliders";
-import ProjectSwiper from "@/components/ProjectSwiper";
 import Blogs from "@/components/Blogs";
 import ConstructionSlider from "@/components/ConstructionSlider";
 import PastProjectSwiper from "@/components/PastProjectSwiper";
