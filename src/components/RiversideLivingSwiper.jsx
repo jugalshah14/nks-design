@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform, easeInOut } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { SlideUp } from "./animations";
 
 const data = [
   {
@@ -75,8 +74,7 @@ export default function RiversideLivingSwiper() {
   });
 
   const renderCard = (slide, index) => (
-    <SlideUp
-      delay={0.2 * index}
+    <div
       key={index}
       className="relative flex flex-col items-center pt-15 md:!min-w-[600px]"
     >
@@ -90,16 +88,16 @@ export default function RiversideLivingSwiper() {
       <div className="relative h-[140px] top-[-30px] left-7 md:left-0 w-[90%] md:w-[80%] p-4.5 md:p-7 bg-[#FFFFFFB2] z-1 backdrop-filter backdrop-blur-[50px] bg-opacity-80 bg-clip-padding">
         {slide.title}
       </div>
-    </SlideUp>
+    </div>
   );
 
   return (
     <div
       ref={containerRef}
-      className="relative md:h-[200vh] container mx-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+      className="relative md:h-[170vh] container mx-auto "
     >
       {/* Desktop Scroll Animation */}
-      <div className="hidden md:block sticky top-40">
+      <div className="hidden md:block sticky top-20 h-screen">
         <div className="overflow-visible">
           <motion.div
             ref={cardsContainerRef}

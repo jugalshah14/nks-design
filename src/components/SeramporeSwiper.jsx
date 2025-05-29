@@ -6,7 +6,6 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { SlideUp } from "./animations";
 
 const data = [
   {
@@ -27,53 +26,53 @@ const data = [
     title: "Serampore Railway Station",
     description: "2.5km away",
   },
-  {
-    src: "/assets/shelby.jpg",
-    icon: "/assets/icons/hospital-building.svg",
-    title: "Shelby Hospital",
-    description: "3.4km away",
-  },
+  // {
+  //     src: '/assets/shelby.jpg',
+  //     icon: '/assets/icons/hospital-building.svg',
+  //     title: 'Shelby Hospital',
+  //     description: '3.4km away'
+  // }
 ];
 
 const settings = {
-    className: "serampore-swiper overflow-x-visible",
-    infinite: false,
-    slidesToShow: 3.2,
-    speed: 600,
-    dots: false,
-    arrows: false,
-    initialSlide: 0,
-    responsive: [
-        {
-            breakpoint: 1440,
-            settings: {
-                centerMode: false,
-                slidesToShow: 2.5,
-            }
-        },
-        {
-            breakpoint: 1300,
-            settings: {
-                centerMode: false,
-                slidesToShow: 2,
-            }
-        },
-        {
-            breakpoint: 1024,
-            settings: {
-                centerMode: false,
-                slidesToShow: 1.6,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                centerMode: false,
-                slidesToShow: 1.1,
-            }
-        },
-    ]
-}
+  className: "serampore-swiper overflow-x-visible",
+  infinite: false,
+  slidesToShow: 3.2,
+  speed: 600,
+  dots: false,
+  arrows: false,
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1440,
+      settings: {
+        centerMode: false,
+        slidesToShow: 2.5,
+      },
+    },
+    {
+      breakpoint: 1300,
+      settings: {
+        centerMode: false,
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        centerMode: false,
+        slidesToShow: 1.6,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        centerMode: false,
+        slidesToShow: 1.1,
+      },
+    },
+  ],
+};
 export default function SeramporeSwiper() {
   const [activeIndex, setActiveIndex] = useState(0);
   let swiperRef = useRef(null);
@@ -89,26 +88,18 @@ export default function SeramporeSwiper() {
   };
 
   return (
-    <div className="md:pt-10 mb-10 container mx-auto overflow-x-visible max-sm:px-5">
+    <div className="md:pt-10 mb-10 overflow-hidden">
       <Slider
         ref={(slider) => {
           swiperRef = slider;
         }}
         {...settings}
-        afterChange={(current) => {
-          setActiveIndex(
-            +document
-              .getElementsByClassName("serampore-swiper")?.[0]
-              .getElementsByClassName("slick-current")?.[0]
-              ?.getAttribute("data-index") || current
-          );
-        }}
+        afterChange={(current) => setActiveIndex(current)}
       >
         {data.map((slide, index) => (
-          <SlideUp
-            delay={0.2 * index}
+          <div
             key={index}
-            className="relative !flex flex-nowrap pt-15 w-[100%]"
+            className="relative !flex justify-center flex-nowrap pt-15 w-[100%] ml-[40px]"
           >
             <Image
               src={slide.src}
@@ -120,7 +111,7 @@ export default function SeramporeSwiper() {
             <div
               className={`w-fit relative flex flex-col p-7 pl-3 pt-10 max-sm:pr-30 pr-20 `}
             >
-              <div className="location-slide bg-[#F8F8F8] top-6 -left-[70px] w-[100%] sm:w-[120%] h-[100%] absolute back-active" />
+              <div className="location-slide bg-[#F8F8F8] top-6 -left-[70px] w-[100%] sm:w-[130%] h-[100%] absolute back-active" />
               <Image
                 src={slide.icon}
                 height={48}
@@ -139,7 +130,7 @@ export default function SeramporeSwiper() {
                 {slide.description}
               </p>
             </div>
-          </SlideUp>
+          </div>
         ))}
       </Slider>
       <div className="relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-5">
@@ -153,12 +144,12 @@ export default function SeramporeSwiper() {
               alt="Previous"
               height={20}
               width={19}
-              className={`${!activeIndex && "invert-75"} transform rotate-180`}
+              className="invert-75 transform rotate-180"
             />
           </button>
         </div>
         <div className="flex gap-2 items-center">
-          {Math.ceil(activeIndex + 1)}{" "}
+          {Math.ceil(activeIndex) + 1}{" "}
           <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}
         </div>
         <div className="h-full flex items-center justify-center">
@@ -171,9 +162,7 @@ export default function SeramporeSwiper() {
               alt="Next"
               height={20}
               width={19}
-              className={`${
-                Math.ceil(activeIndex + 1) === data.length && "invert-75"
-              }`}
+              className=""
             />
           </button>
         </div>

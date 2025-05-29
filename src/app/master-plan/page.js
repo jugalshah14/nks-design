@@ -157,10 +157,16 @@ export default function MasterPlan() {
           />
           <div className="flex flex-col md:flex-row justify-between relative container mx-auto px-[16px] md:px-24 gap-[36px] md:gap-12">
             <div className="text-center md:text-left w-full md:pb-30">
-              <SlideUp delay={0.2} className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">
+              <SlideUp
+                delay={0.2}
+                className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2"
+              >
                 / Amenities
               </SlideUp>
-              <SlideUp delay={0.4} className="project-overview-title text-center md:text-left">
+              <SlideUp
+                delay={0.4}
+                className="project-overview-title text-center md:text-left"
+              >
                 From <br />
                 <span className="orange-color"> Architect’s </span> Eye
               </SlideUp>
@@ -192,17 +198,20 @@ export default function MasterPlan() {
                     </p>
                   </div>
                 </SlideUp>
-                <SlideUp delay={1} className="text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] mb-2 py-[20px] md:pt-10">
+                <SlideUp
+                  delay={1}
+                  className="text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] mb-2 py-[20px] md:pt-10"
+                >
                   As being architect of New Kolkata, I recommend this place as
-                  nice place to live. we're architecture notes. learn about the
-                  systems you use everyday from the engineers who built them
+                  nice place to live. we&apos;re architecture notes. learn about
+                  the systems you use everyday from the engineers who built them
                 </SlideUp>
               </div>
             </SlideUp>
           </div>
         </div>
       </section>
-      <AnimatedSection>   
+      <AnimatedSection>
         <MasterplanSwiper />
       </AnimatedSection>
 
@@ -210,7 +219,10 @@ export default function MasterPlan() {
       <section>
         <div className="container px-10 mx-auto">
           <div className="text-center w-full pb-12">
-            <SlideUp delay={0.2} className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[20px] md:leading-[22px] text-[#22252e] mb-2">
+            <SlideUp
+              delay={0.2}
+              className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[20px] md:leading-[22px] text-[#22252e] mb-2"
+            >
               / Magnificent
             </SlideUp>
             <SlideUp delay={0.4} className="project-overview-title text-center">
@@ -232,7 +244,10 @@ export default function MasterPlan() {
       <section>
         <div className="container mx-auto py-20 gap-[37px] md:gap-12 flex flex-col">
           <div className="text-center w-full">
-            <SlideUp delay={0.2} className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[20px] md:leading-[22px] text-[#22252e] mb-2">
+            <SlideUp
+              delay={0.2}
+              className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[20px] md:leading-[22px] text-[#22252e] mb-2"
+            >
               / Magnificent
             </SlideUp>
             <SlideUp delay={0.4} className="project-overview-title text-center">
@@ -243,7 +258,10 @@ export default function MasterPlan() {
             {/* Grid Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[10px] md:gap-10">
               {/* Structure */}
-              <SlideUp delay={0.6} className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300">
+              <SlideUp
+                delay={0.6}
+                className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300"
+              >
                 <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
                   <Image
                     src="/assets/icons/connectivity.svg"
@@ -263,7 +281,10 @@ export default function MasterPlan() {
               </SlideUp>
 
               {/* Electricals */}
-              <SlideUp delay={0.8} className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300">
+              <SlideUp
+                delay={0.8}
+                className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300"
+              >
                 <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
                   <Image
                     src="/assets/icons/connectivity.svg"
@@ -295,7 +316,10 @@ export default function MasterPlan() {
               </SlideUp>
 
               {/* Kitchen */}
-              <SlideUp delay={1} className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300">
+              <SlideUp
+                delay={1}
+                className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300"
+              >
                 <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
                   <Image
                     src="/assets/icons/area_of_project.svg"
@@ -323,7 +347,10 @@ export default function MasterPlan() {
               </SlideUp>
 
               {/* Flooring */}
-              <SlideUp delay={1.2} className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300">
+              <SlideUp
+                delay={1.2}
+                className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300"
+              >
                 <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
                   <Image
                     src="/assets/icons/connectivity.svg"
@@ -347,11 +374,12 @@ export default function MasterPlan() {
                   </li>
                   <li>
                     Ceramic Tiles in Balcony attached to bedroom, if any (Size –
-                    16" X 16”)
+                    16&quot; X 16&quot;)
                   </li>
                   <li>
                     Vitrified Mat finish tiles in Balcony attached to
-                    living/dining space, if any (Size – 24" X 24”)
+                    living/dining space, if any (Size &quot; 24&quot; X
+                    24&quot;)
                   </li>
                 </ul>
               </SlideUp>
@@ -366,10 +394,16 @@ export default function MasterPlan() {
       {/* sangam */}
       <section className="bg-[#020C22]  mb-[100px] md:mb-[0px] md:pb-[80px]">
         <div className="text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
-          <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">
+          <SlideUp
+            delay={0.2}
+            className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2"
+          >
             / Amenities
           </SlideUp>
-          <SlideUp delay={0.4} className="text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[150px] font-[400] md:leading-[150px]">
+          <SlideUp
+            delay={0.4}
+            className="text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[150px] font-[400] md:leading-[150px]"
+          >
             Sangam
           </SlideUp>
         </div>
@@ -378,7 +412,10 @@ export default function MasterPlan() {
         </AnimatedSection>
       </section>
 
-      <SlideUp delay={0.2} className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-18 group cursor-pointer transform transition-transform duration-300 hover:scale-101">
+      <SlideUp
+        delay={0.2}
+        className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-18 group cursor-pointer transform transition-transform duration-300 hover:scale-101"
+      >
         <Image
           src="/assets/faqs-detail-gif.gif"
           width={144}
@@ -408,7 +445,10 @@ export default function MasterPlan() {
       <section className="overflow-x-hidden">
         <div className="relative pt-[30px] md:pt-[100px]">
           <div className="text-center w-full">
-            <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2  pt-[20px] md:pt-[0px]">
+            <SlideUp
+              delay={0.2}
+              className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2  pt-[20px] md:pt-[0px]"
+            >
               / Amenities
             </SlideUp>
             <SlideUp delay={0.4} className="project-overview-title text-center">
@@ -420,7 +460,10 @@ export default function MasterPlan() {
         <AnimatedSection>
           <PastProjectSwiper />
         </AnimatedSection>
-        <FadeIn delay={0.4} className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-0 md:pt-0 cursor-pointer">
+        <FadeIn
+          delay={0.4}
+          className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-0 md:pt-0 cursor-pointer"
+        >
           <Image
             src="/assets/sport-gif.gif"
             width={144}
@@ -445,16 +488,17 @@ export default function MasterPlan() {
             <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
           </div>
         </FadeIn>
-        <div>
-          
-        </div>
+        <div></div>
       </section>
 
       {/* Project Overview */}
       <section className="pb-2 md:py-20 bg-white pt-[60px] md:pt-[80px]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-7 md:mb-16">
-            <SlideUp delay={0.2} className="text-[14px] leading-5 md:text-[16px] font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2">
+            <SlideUp
+              delay={0.2}
+              className="text-[14px] leading-5 md:text-[16px] font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2"
+            >
               / Magnificent
             </SlideUp>
             <SlideUp delay={0.4} className="project-overview-title text-center">
@@ -463,7 +507,10 @@ export default function MasterPlan() {
           </div>
         </div>
         <div className="container mx-auto relative">
-          <AnimatedSection delay={0.6} className="relative max-md:pt-5 !overflow-visible">
+          <AnimatedSection
+            delay={0.6}
+            className="relative max-md:pt-5 !overflow-visible"
+          >
             <ProjectViewSlides />
           </AnimatedSection>
         </div>
@@ -482,17 +529,26 @@ export default function MasterPlan() {
         <div className="container mx-auto">
           <div className="flex ietms-center w-full md:items-end justify-between mb-[48px]">
             <div className="w-full">
-              <SlideUp delay={0.2} className="text-center md:text-start text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">
+              <SlideUp
+                delay={0.2}
+                className="text-center md:text-start text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2"
+              >
                 / Amenities
               </SlideUp>
-              <SlideUp delay={0.4} className="project-overview-title text-center md:text-left !text-white">
+              <SlideUp
+                delay={0.4}
+                className="project-overview-title text-center md:text-left !text-white"
+              >
                 <span className="orange-color">
                   Construction <br />
                 </span>
                 Updates
               </SlideUp>
             </div>
-            <SlideUp delay={0.4} className="hide-triangle text-[20px] md:text-[20px] font-[Satoshi] font-[400] leading-5 md:leading-[28px] text-white/50 max-w-[400px]">
+            <SlideUp
+              delay={0.4}
+              className="hide-triangle text-[20px] md:text-[20px] font-[Satoshi] font-[400] leading-5 md:leading-[28px] text-white/50 max-w-[400px]"
+            >
               Experience a world of wonder and adventure. Our podium level is a
               playground for all ages!
             </SlideUp>

@@ -1,9 +1,8 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { AnimatedSection, SlideIn } from "./animations";
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation'
 
 const headerClass = {
   "/": "home-page-header",

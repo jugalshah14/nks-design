@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import { useRef, useState } from "react";
+'use client';
+import React from 'react'
+import Image from 'next/image';
+import { useRef, useState } from 'react'
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -10,56 +10,58 @@ import Link from "next/link";
 import { AnimatedSection } from "./animations";
 
 const data = [
-  {
-    src: "/assets/plans_image_1.jpg",
-    title: "Sangam Serenity",
-    towers: "5,6,7,13,14,15,16",
-    carpetArea: "314 - 645 sq. ft.",
-    bhkTypes: "1,2,3",
-    price: "****",
-  },
-  {
-    src: "/assets/plans_image_2.jpg",
-    title: "Sangam Serenity",
-    towers: "5,6,7,13,14,15,16",
-    carpetArea: "314 - 645 sq. ft.",
-    bhkTypes: "1,2,3",
-    price: "****",
-  },
-  {
-    src: "/assets/plans_image_3.jpg",
-    title: "Sangam Serenity",
-    towers: "5,6,7,13,14,15,16",
-    carpetArea: "314 - 645 sq. ft.",
-    bhkTypes: "1,2,3",
-    price: "****",
-  },
+    {
+        src: '/assets/plans_image_1.jpg',
+        title: 'Sangam Serenity',
+        towers: '5,6,7,13,14,15,16',
+        carpetArea: '314 - 645 sq. ft.',
+        bhkTypes: '1,2,3',
+        price: '****',
+    },
+    {
+        src: '/assets/plans_image_2.jpg',
+        title: 'Sangam Serenity',
+        towers: '5,6,7,13,14,15,16',
+        carpetArea: '314 - 645 sq. ft.',
+        bhkTypes: '1,2,3',
+        price: '****',
+    },
+    {
+        src: '/assets/plans_image_3.jpg',
+        title: 'Sangam Serenity',
+        towers: '5,6,7,13,14,15,16',
+        carpetArea: '314 - 645 sq. ft.',
+        bhkTypes: '1,2,3',
+        price: '****',
+    }
 ];
 
+
 const settings = {
-  className: "plans-swiper center",
-  infinite: true,
-  centerMode: true,
-  slidesToShow: 1,
-  speed: 600,
-  dots: false,
-  arrows: false,
-  initialSlide: 0,
-};
+    className: "plans-swiper center",
+    infinite: true,
+    centerPadding: "30px",
+    centerMode: true,
+    slidesToShow: 1.01,
+    speed: 600,
+    dots: false,
+    arrows: false,
+    initialSlide: 0,
+}
 
 export default function PlansSwiper() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  let swiperRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+    let swiperRef = useRef(null);
 
-  const handleNext = () => {
-    if (!swiperRef) return;
-    swiperRef.slickNext();
-  };
+    const handleNext = () => {
+        if (!swiperRef) return;
+        swiperRef.slickNext();
+    }
 
-  const handlePrev = () => {
-    if (!swiperRef) return;
-    swiperRef.slickPrev();
-  };
+    const handlePrev = () => {
+        if (!swiperRef) return;
+        swiperRef.slickPrev();
+    }
 
   return (
     <AnimatedSection className="pt-10">
@@ -198,8 +200,8 @@ export default function PlansSwiper() {
               />
             </button>
           </div>
-        </div>
-      </div>
-    </AnimatedSection>
-  );
+              </div>
+              </div>
+              </AnimatedSection>
+    )
 }
