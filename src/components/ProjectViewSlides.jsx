@@ -12,7 +12,7 @@ const data = [
         title: 'Aerial view',
     },
     {
-        src: '/assets/Amenities1.png',
+        src: '/assets/project_overview_image_2.png',
         title: 'Front view',
     },
 ];

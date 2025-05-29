@@ -65,7 +65,7 @@ export default function Amenities() {
                     </span>
                     65 more
                 </div>
-                <button className="max-md:w-[90%] bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden">
+                <button className="max-md:w-[90%] bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
                     <div className='px-6 py-3'>
                         <span className='hidden md:inline'>Explore the Riverside Sanctuary</span>
                         <span className='inline md:hidden'>Schedule a Visit</span>
