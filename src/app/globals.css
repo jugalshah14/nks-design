@@ -744,6 +744,15 @@ body::-webkit-scrollbar {
 .none-md {
   display: none;
 }
+.with-before::before {
+  content: '';
+  background-color: #020C22; 
+}
+.custom-gradient {
+  background: linear-gradient(90deg, #F0F3FA 0%, #FDF9F6 100%);
+}
+
+
 
 /* MasterPlan responsive classes */
 @media (max-width: 768px) {
