@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AlocveSwiper from "@/components/AlocveSwiper";
 
 export default function lifeAtAlcove() {
   return (
@@ -35,49 +36,31 @@ export default function lifeAtAlcove() {
         </div>
       </section>
 
-      <section className="bg-[#020C22] text-white py-20">
+      <section className="bg-[#020C22] text-white py-20 h-auto">
         <div className="flex justify-center font-[Satoshi] font-normal text-[16px] leading-[20px]">
           / Amenities
         </div>
-        <h2 className="flex justify-center font-[IvyMode] font-normal md:text-[100px] md:leading-[120px] md:mt-4">
-          <span className="orange-color">Elevated</span> &nbsp;Life @Alcove
+        <h2 className="flex md:flex-row flex-col items-center md:justify-center font-[IvyMode] font-normal text-[48px] leading-[52px] md:text-[100px] md:leading-[120px] md:mt-4 md-px-0 px-[13px]">
+          <span className="orange-color">Elevated</span>&nbsp;Life @Alcove
         </h2>
-        <div className="container mb-10 h-[570px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 mt-12">
+        <AlocveSwiper/>
+        
+        {/* <div className="container md:mb-10 md:h-[570px] mx-auto flex flex-col lg:flex-row items-center md:justify-between md:gap-8 mt-12">
           <div className="relative w-full">
-            {/* <Carousel className="w-full">
-            <CarouselContent>
-              <CarouselItem> */}
-            <div className="relative md:w-[804px] md:h-[570px]">
+            <div className="relative w-full h-[268px] md:w-[804px] md:h-[570px]">
               <Image
                 src="/assets/fitness.png"
                 alt="Fitness center with people working out"
                 className="object-cover rounded-md"
                 fill
               />
-              <div className="absolute bottom-0 left-0 p-4 backdrop-blur-[34px] w-full">
-                <p className="text-white text-lg">
+              <div className="text-center md:text-start absolute bottom-0 left-0 p-4 backdrop-blur-[34px] w-full">
+                <p className="text-white md:font-bold md:text-[24px] md:leading-[28px] text-[18px] leading-[24px] font-[Satoshi]">
                   Fitness events to enhance your fitness level.
                 </p>
               </div>
             </div>
-            {/* </CarouselItem>
-              <CarouselItem>
-                <div className="relative">
-                  <Image
-                    src="/assets/fitness.png"
-                    alt="Yoga class"
-                              className="w-full h-[350px] object-cover rounded-md"
-                              fill
-                  />
-                  <div className="absolute bottom-0 left-0 p-4 bg-black/50 w-full">
-                    <p className="text-white text-lg">
-                      Regular yoga sessions for mental peace.
-                    </p>
-                  </div>
-                </div>
-              </CarouselItem>
-            </CarouselContent> */}
-            <div className="absolute bottom-4 right-15 flex gap-1">
+            <div className="md:flex hidden absolute bottom-4 right-15 flex gap-1">
               <button className="bg-gray-600/50 hover:bg-gray-700/70 rounded-full p-1.5 flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -111,57 +94,36 @@ export default function lifeAtAlcove() {
                 </svg>
               </button>
             </div>
-            {/* </Carousel> */}
           </div>
 
           <div className="w-full px-4">
-            <div className="w-[476px] relative bg-[#020C22] top-36 right-22 p-10">
-              <h2 className="text-3xl mb-4 font-normal text-[40px] leading-[48px] font-[Satoshi]">
+            <div className="text-center md:text-start w -full md:w-[476px] relative bg-[#020C22] md:top-36 md:right-22 md:p-10 top-0 right-0 p-5">
+              <h2 className="mb-4 font-normal text-[24px] leading-[28px] md:text-[40px] md:leading-[48px] font-[Satoshi]">
                 Make everyday living effortless with our{" "}
                 <span className="orange-color">Convenience</span> for Residence
                 scheme.
               </h2>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Nature Section */}
-        <div className="container mx-auto flex flex-col lg:flex-row-reverse items-center justify-between gap-8 py-10">
+        {/* <div className="container mx-auto flex flex-col lg:flex-row-reverse items-center justify-between md:gap-8 md:py-10">
           <div className="relative w-full">
-            {/* <Carousel className="w-full">
-            <CarouselContent>
-              <CarouselItem> */}
-            <div className="relative md:w-[804px] md:h-[570px]">
+            <div className="relative w-full h-[268px] md:w-[804px] md:h-[570px]">
               <Image
                 src="/assets/gangaGhat.png"
                 alt="Residential complex exterior"
                 className="object-cover rounded-md"
                 fill
               />
-              <div className="absolute bottom-0 left-0 p-4 pl-12 backdrop-blur-[34px] w-full">
-                <p className="text-white text-lg">
+              <div className="text-center md:text-start absolute bottom-0 left-0 p-4 md:pl-12 backdrop-blur-[34px] w-full">
+                <p className="text-white md:font-bold md:text-[24px] md:leading-[28px] text-[18px] leading-[24px] font-[Satoshi]">
                   Experience the thrill of our nature exploring events!
                 </p>
               </div>
             </div>
-            {/* </CarouselItem>
-              <CarouselItem>
-                <div className="relative">
-                  <Image
-                    src="/placeholder.svg"
-                    alt="Garden area"
-                              className="w-full h-[350px] object-cover rounded-md"
-                              fill
-                  />
-                  <div className="absolute bottom-0 left-0 p-4 bg-black/50 w-full">
-                    <p className="text-white text-lg">
-                      Beautiful garden spaces to relax.
-                    </p>
-                  </div>
-                </div>
-              </CarouselItem>
-            </CarouselContent> */}
-            <div className="absolute bottom-4 right-4 flex gap-1">
+            <div className="md:flex hidden absolute bottom-4 right-4 flex gap-1">
               <button className="bg-gray-600/50 hover:bg-gray-700/70 rounded-full p-1.5 flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -195,54 +157,34 @@ export default function lifeAtAlcove() {
                 </svg>
               </button>
             </div>
-            {/* </Carousel> */}
           </div>
-
           <div className="w-full px-4">
-            <div className="w-[476px] relative bg-[#020C22] top-29.5 left-22 p-10">
-              <h2 className="text-3xl mb-4 font-normal text-[40px] leading-[48px] font-[Satoshi]">
+            <div className="text-center md:text-start w-full md:w-[476px] relative bg-[#020C22] md:top-29.5 left-0 md:left-22 md:p-10 p-5">
+              <h2 className="mb-4 font-normal text-[24px] leading-[28px] md:text-[40px] md:leading-[48px] font-[Satoshi]">
                 Embrace the beauty of nature with us, where modern living meets{" "}
                 <span className="orange-color">natural wonders</span>
               </h2>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Activities Section */}
-        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 py-12">
+        {/* <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between md:gap-8 md:py-12">
           <div className="relative w-full">
-            {/* <Carousel className="w-full">
-            <CarouselContent>
-              <CarouselItem> */}
-            <div className="relative md:w-[804px] md:h-[570px]">
+            <div className="relative w-full h-[268px] md:w-[804px] md:h-[570px]">
               <Image
                 src="/assets/box-cricket.png"
                 alt="Box cricket tournament"
                 className="object-cover rounded-md"
                 fill
               />
-              <div className="absolute bottom-0 left-0 p-4 bg-black/50 w-full">
-                <p className="text-white text-lg">Box cricket tournament</p>
+              <div className="text-center md:text-start absolute bottom-0 left-0 p-4 bg-black/50 w-full">
+                <p className="text-white md:font-bold md:text-[24px] md:leading-[28px] text-[18px] leading-[24px] font-[Satoshi]">
+                  Box cricket tournament
+                </p>
               </div>
             </div>
-            {/* </CarouselItem>
-              <CarouselItem>
-                <div className="relative">
-                  <Image
-                    src="/placeholder.svg"
-                    alt="Sports activities"
-                              className="w-full h-[350px] object-cover rounded-md"
-                              fill
-                  />
-                  <div className="absolute bottom-0 left-0 p-4 bg-black/50 w-full">
-                    <p className="text-white text-lg">
-                      Various sports facilities available.
-                    </p>
-                  </div>
-                </div>
-              </CarouselItem>
-            </CarouselContent> */}
-            <div className="absolute bottom-4 right-15 flex gap-1">
+            <div className="md:flex hidden absolute bottom-4 right-15 flex gap-1">
               <button className="bg-gray-600/50 hover:bg-gray-700/70 rounded-full p-1.5 flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -276,19 +218,19 @@ export default function lifeAtAlcove() {
                 </svg>
               </button>
             </div>
-            {/* </Carousel> */}
           </div>
 
           <div className="w-full px-4">
-            <div className="w-[476px] relative bg-[#020C22] top-36 right-22 p-10">
-              <h2 className="text-3xl mb-4 font-normal text-[40px] leading-[48px] font-[Satoshi]">
+            <div className="flex text-center md:text-start w-full md:w-[476px] relative bg-[#020C22] md:top-36 md:right-22 md:p-10 top-0 right-0 p-5">
+              <h2 className="mb-4 font-normal text-[24px] leading-[28px] md:text-[40px] md:leading-[48px] font-[Satoshi]">
                 Join the fun and make memories with our{" "}
                 <span className="orange-color">exciting activities</span> for
                 everyone
               </h2>
             </div>
           </div>
-        </div>
+        </div> */}
+
         <div className="relative border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto -bottom-33 md:h-[104px] z-1">
           <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
             <Image
@@ -322,12 +264,12 @@ export default function lifeAtAlcove() {
         </div>
 
         {/* Section Title */}
-        <h2 className="flex justify-center font-[IvyMode] font-normal md:text-[56px] md:leading-[72px] md:mt-4 text-center">
+        <h2 className="flex justify-center font-[IvyMode] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] mt-4 text-center">
           <span className="text-orange-500">Event</span>&nbsp;Gallery
         </h2>
 
         {/* Image Grid */}
-        <div className="mt-12 h-[466px] grid md:grid-cols-4 gap-4 px-19">
+        <div className="mt-12 h-[466px] grid grid-cols-4 gap-4 md:px-19">
           {/* Image 1 */}
           <div className="relative overflow-hidden">
             <Image
