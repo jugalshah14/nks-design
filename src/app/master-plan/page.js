@@ -23,11 +23,11 @@ export default function MasterPlan() {
               <span className="text-gray-400">Masterplans</span>
             </div>
           </SlideUp>
-          <FadeIn delay={0.6}>
+          <SlideUp delay={0.6}>
             <h1 className="relative -mb-5 page-hero-title no-negative-margin select-none no-drag">
               Masterplans
             </h1>
-          </FadeIn>
+          </SlideUp>
         </section>
       </SlideUp>
 

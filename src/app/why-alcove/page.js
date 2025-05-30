@@ -1,35 +1,37 @@
+'use client';
 import React from 'react'
 import Image from "next/image";
 import TeamSwiper from '@/components/TeamSwiper';
 import PastProjectSwiper from '@/components/PastProjectSwiper';
 import LogoSection from '@/components/LogoSection';
+import { SlideUp } from '@/components/animations';
 
 export default function MasterPlan() {
   return (
     <main>
 
         {/* Hero Section */}
-        <section className="bg-[#F3F6F8] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
-            <div className="text-sm px-4 pt-6 text-center text-gray-500">
-            <span className="text-black-700 font-semibold">• Home</span>
-            <span className="mx-2">—</span>
-            <span className="text-gray-400">Why Alcove</span>
-            </div>
-            <h1 className="relative -mb-5 page-hero-title no-negative-margin">
+        <SlideUp className="bg-[#F3F6F8] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
+            <SlideUp delay={0.4} className="text-sm px-4 pt-6 text-center text-gray-500">
+                <span className="text-black-700 font-semibold">• Home</span>
+                <span className="mx-2">—</span>
+                <span className="text-gray-400">Why Alcove</span>
+            </SlideUp>
+            <SlideUp delay={0.6} className="relative -mb-5 page-hero-title no-negative-margin">
             Why Alcove
-            </h1>
-        </section>
+            </SlideUp>
+        </SlideUp>
 
         <section className='-mt-16 no-negative-margin pb-[40px] md:pb-[0px]'>
-            <div className="container mx-auto">
+            <SlideUp delay={0.8} className="container mx-auto">
             <div className="relative w-full h-[200px] md:h-[460px]">
-            <Image src="/assets/blue-triangle.svg" width={65} height={65} alt="img" className='absolute left-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px]'/>
-            <Image src="/assets/tri2.svg" width={65} height={65} alt="img" className='absolute right-0 bottom-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px]'/>
+            <Image src="/assets/blue-triangle.svg" width={65} height={65} alt="img" className='absolute left-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px] select-none no-drag'/>
+            <Image src="/assets/tri2.svg" width={65} height={65} alt="img" className='absolute right-0 bottom-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px] select-none no-drag'/>
             <Image
                 src="/assets/alcove-hero.png"
                 alt="Hero-img"
                 fill
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full select-none no-drag"
                 priority
                 />
             </div>
@@ -38,7 +40,7 @@ export default function MasterPlan() {
                 Where <span className="orange-color">luxury </span>meets <span className="orange-color">affordability </span>
                 </h2>
             </div>
-            </div>
+            </SlideUp>
         </section>
 
         {/* Founder's desk */}
