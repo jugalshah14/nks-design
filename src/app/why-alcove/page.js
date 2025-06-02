@@ -49,12 +49,12 @@ export default function MasterPlan() {
                 <Image src="/assets/Rectangl_Left.png" width={80} height={307} alt="Rectangle_left" className="absolute top-0 h-[100%] left-0" />
                 <div className="flex flex-col md:flex-row justify-between relative container mx-auto px-[16px] md:px-24 gap-[12px] md:gap-[36px] md:gap-12">
                   <div className="text-center md:text-left w-full md:pb-15">
-                    <p className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</p>
-                    <h2 className="project-overview-title text-center md:text-left">From <br/><span className="orange-color"> Founder’s </span>Desk</h2>
-                    <p className="max-w-[409px] text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[20px] md:pt-10">As being architect of New Kolkata, I recommend this place as nice place to live. we're architecture notes. learn about the systems you use everyday from the engineers who built them</p>
+                    <SlideUp className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
+                    <SlideUp delay={0.2} className="project-overview-title text-center md:text-left">From <br/><span className="orange-color"> Founder’s </span>Desk</SlideUp>
+                    <SlideUp delay={0.4} className="max-w-[409px] text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[20px] md:pt-10">As being architect of New Kolkata, I recommend this place as nice place to live. we're architecture notes. learn about the systems you use everyday from the engineers who built them</SlideUp>
 
                   </div>
-                  <div className='flex flex-row w-full items-streach'>
+                  <SlideUp delay={0.6} className='flex flex-row w-full items-streach'>
                     <Image src="/assets/white-triangle.svg" width={38} height={430} alt="Rectangle_left" className="pt-7 hide-triangle flex items-end" />
                     <div className='bg-white pb-0 w-full justify-center'>
                         <div className='relative'>
@@ -69,7 +69,7 @@ export default function MasterPlan() {
                             </div>
                         </div>
                     </div>
-                  </div>
+                  </SlideUp>
                 </div>
             </div>  
         </section>
@@ -79,16 +79,16 @@ export default function MasterPlan() {
             <div className='container mx-auto md:pt-[149px] pb-[30px] md:pb-[70px] z-[1] relative px-[16px] md:px-[0px]'>
                 {/* mission */}
                <div className='flex flex-col justify-center items-center  pt-[60px] pb-[28px] none-md'>
-                    <p className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</p>
-                    <h2 className="page-hero-title !text-[36px] !leading-[44px] text-center md:text-left">Our <span className="orange-color">Mission</span></h2>
+                    <SlideUp delay={0.2} className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
+                    <SlideUp delay={0.4} className="page-hero-title !text-[36px] !leading-[44px] text-center md:text-left">Our <span className="orange-color">Mission</span></SlideUp>
                </div>
                 <div className='flex flex-col md:flex-row justify-between gap-[10px]'>
-                    <div className='w-full'>
+                    <SlideUp className='w-full'>
                         <Image src="/assets/mission.svg" width={450} height={460} alt="mission" className="" />
-                     </div>
+                     </SlideUp>
                     <div className='w-full pt-[28px] md:pt-[0px]'>
-                        <h2 className="hide-triangle text-left pb-[48px] project-overview-title text-center mobile-title max-w-[800px]">Our <span className="orange-color">Mission </span></h2>
-                        <div className='flex flex-row w-full items-start'>
+                        <SlideUp delay={0.2} className="hide-triangle text-left pb-[48px] project-overview-title text-center mobile-title max-w-[800px]">Our <span className="orange-color">Mission </span></SlideUp>
+                        <SlideUp delay={0.4} className='flex flex-row w-full items-start'>
                             <Image src="/assets/blue-tri.svg" width={28} height={88} alt="blue triangle" className="" />
                             <div className='bg-[#F3F6F8] p-[32px] flex flex-row gap-5 items-start mb-[16px]'>
                                 <Image src="/assets/mission-icon1.svg" width={40} height={30} alt="house" className="mt-2" />
@@ -97,8 +97,8 @@ export default function MasterPlan() {
                                     <p className='pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]'>To provide affordable housing options for people from all walks of life.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className='md:pl-[74px] flex flex-row w-full items-end md:items-start'>
+                        </SlideUp>
+                        <SlideUp delay={0.6} className='md:pl-[74px] flex flex-row w-full items-end md:items-start'>
                             <Image src="/assets/pink-tri.svg" width={28} height={88} alt="blue triangle" className="hide-triangle" />
                             <div className='bg-[#FDF9F6] p-[32px] flex flex-row gap-5 items-start'>
                                 <Image src="/assets/mission-icon2.svg" width={40} height={30} alt="house" className="mt-2" />
@@ -108,19 +108,19 @@ export default function MasterPlan() {
                                 </div>
                             </div>
                             <Image src="/assets/pink-tri.svg" width={28} height={88} alt="blue triangle" className="rotate-180 none-md" />
-                        </div>
+                        </SlideUp>
                     </div>
                 </div>
 
                 {/* vision */}
                 <div className='flex flex-col justify-center items-center  pt-[60px] pb-[28px] none-md'>
-                    <p className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</p>
-                    <h2 className="page-hero-title !text-[36px] !leading-[44px] text-center md:text-left">Our <span className="orange-color">Vision</span></h2>
+                    <SlideUp delay={0.2} className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
+                    <SlideUp delay={0.4} className="page-hero-title !text-[36px] !leading-[44px] text-center md:text-left">Our <span className="orange-color">Vision</span></SlideUp>
                </div>
                 <div className='flex flex-col-reverse md:flex-row justify-between gap-[10px] md:pt-[70px] items-center w-full'>
                     <div className='w-full pb-[28px] md:pb-[0px]'>
-                        <h2 className="hide-triangle text-left pb-[48px] project-overview-title text-center mobile-title max-w-[800px]">Our <span className="orange-color">Vision </span></h2>
-                        <div className='flex flex-row w-full items-start'>
+                        <SlideUp delay={0.4} className="hide-triangle text-left pb-[48px] project-overview-title text-center mobile-title max-w-[800px]">Our <span className="orange-color">Vision </span></SlideUp>
+                        <SlideUp delay={0.6} className='flex flex-row w-full items-start'>
                             <Image src="/assets/blue-tri.svg" width={28} height={88} alt="blue triangle" className="" />
                             <div className='bg-[#F3F6F8] p-[32px] flex flex-row gap-5 items-start mb-[16px]'>
                                 <Image src="/assets/mission-icon1.svg" width={40} height={30} alt="house" className="mt-2" />
@@ -129,23 +129,23 @@ export default function MasterPlan() {
                                     <p className='pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]'>As being architect of New Kolkata, I recommend this place as nice place to live. we're architecture notes. learn about the systems you use everyday from the engineers who built them</p>
                                 </div>
                             </div>
-                        </div>
+                        </SlideUp>
                     </div>
-                    <div className='w-full flex justify-end pb-[28px] md:pb-[0px]'>
+                    <SlideUp delay={0.2} className='w-full flex justify-end pb-[28px] md:pb-[0px]'>
                         <Image src="/assets/mission.svg" width={450} height={460} alt="mission" className="" />
-                     </div>
+                     </SlideUp>
                 </div>
             </div>
             <div className='relative pb-[80px]'>
                 <Image src="/assets/bg-top.svg" width={180} height={245} alt="bg" className='absolute img-size !w-full top-[-85px] md:top-[-180px]'/>
-                <div className="bg-[#f3f6f8] md:bg-transparent relative container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]">
+                <SlideUp delay={0.2} className="bg-[#f3f6f8] md:bg-transparent relative container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]">
                     <Image src="/assets/sport-gif.gif" width={144} height={144} alt="house" className='img-size md:h-[144px] md:w-[144px]'/>
                     <div className="mr-[16px] md:mr-[0px] bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
                         <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">Curious to see life @Alcove and world-class amenities?</h1>
                         <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} className="absolute right-[10px] md:right-[40px]"/>
                         <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
                     </div>
-                </div>
+                </SlideUp>
                 <Image src="/assets/bg-bottom.svg" width={180} height={245} alt="bg" className='absolute img-size !w-full top-[79px]'/>
             </div>
         </section>
@@ -154,26 +154,28 @@ export default function MasterPlan() {
         <section className="overflow-x-hidden">
             <div className='relative'>
                 <div className="text-center w-full">
-                  <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</p>
-                  <h2 className="project-overview-title text-center md:pb-[28px] md:pb-[0px]"><span className="orange-color">Past</span> Projects</h2>
+                  <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
+                  <SlideUp delay={0.4} className="project-overview-title text-center md:pb-[28px] md:pb-[0px]"><span className="orange-color">Past</span> Projects</SlideUp>
                 </div>
                 <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-110 md:top-95'></div>
             </div>
-            <PastProjectSwiper/>
+            <SlideUp delay={0.6}>
+                <PastProjectSwiper/>
+            </SlideUp>
         </section>
 
         {/* slider */}
         <section className='realtive pt-6'>
-            <h2 className="project-overview-title text-center md:pb-[28px] md:pb-[0px] md:none py-[30px]">Meet The <br/><span className="orange-color">Team</span></h2>
-            <TeamSwiper />
-            <div className="mr-[16px] md:mr-[0px] md:ml-[100px] absolute container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]">
+            <h2 className="project-overview-title text-center md:pb-[28px] md:pb-[0px] none-md py-[30px]">Meet The <br/><span className="orange-color">Team</span></h2>
+            <SlideUp delay={0.4}><TeamSwiper /></SlideUp>
+            <SlideUp delay={0.6} className="mr-[16px] md:mr-[0px] md:ml-[100px] absolute container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]">
                 <Image src="/assets/faqs-detail-gif.gif" width={180} height={144} alt="house" className='img-size md:h-[144px] md:w-[144px]' />
                 <div className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
                     <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">Embrace the beauty of your surroundings, know our neighbourhood</h1>
                     <Image src="/assets/icons/arrowlong.svg" alt="1BHK" width={40} height={3} className="absolute right-[10px] md:right-[40px]"/>
                     <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
                 </div>
-            </div>
+            </SlideUp>
         </section>
 
         {/* Blue section */}
@@ -181,12 +183,12 @@ export default function MasterPlan() {
             <div className="container mx-auto">
                 <div className="flex ietms-center w-full md:items-end justify-between mb-[48px]">
                     <div className='w-full'>
-                    <p className="text-center md:text-start text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">/ Amenities</p>              
-                    <h2 className="project-overview-title text-center md:text-left !text-white"><span className="orange-color">Awards <br/></span>& Recognitions</h2>
+                    <SlideUp className="text-center md:text-start text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">/ Amenities</SlideUp>              
+                    <SlideUp delay={0.2} className="project-overview-title text-center md:text-left !text-white"><span className="orange-color">Awards <br/></span>& Recognitions</SlideUp>
                     </div>
-                    <p className="hide-triangle text-[20px] md:text-[20px] font-[Satoshi] font-[400] leading-5 md:leading-[28px] text-white/50 max-w-[400px]">Experience a world of wonder and adventure. Our podium level is a playground for all ages!</p>
+                    <SlideUp delay={0.4} className="hide-triangle text-[20px] md:text-[20px] font-[Satoshi] font-[400] leading-5 md:leading-[28px] text-white/50 max-w-[400px]">Experience a world of wonder and adventure. Our podium level is a playground for all ages!</SlideUp>
                 </div>
-                <div className='flex flex-col md:flex-row w-full gap-[32px]'>
+                <SlideUp delay={0.6} className='flex flex-col md:flex-row w-full gap-[32px]'>
                     <div className='relative w-full'>
                         <Image src="/assets/award.svg" width={504} height={490} alt="award" className='w-full h-[313px] md:h-[490px] object-cover' />
                         <div className='absolute right-0 bottom-0 p-[12px] md:p-[28px] flex flex-col gap-[12px] bg-[#020C22] justify-center'>
@@ -217,7 +219,7 @@ export default function MasterPlan() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </SlideUp>
             </div>
       </section>
 

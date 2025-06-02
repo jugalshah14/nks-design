@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
+import { FadeIn } from './animations';
 
 const logos = [
   { src: "/assets/logo1.svg", width: 243, height: 64 },
@@ -41,12 +42,12 @@ export default function LogoSection() {
   return (
     <section className='bg-[#E7EDF2]'>
       <div className='py-[44px] container mx-auto'>
-        <p className='pb-[28px] text-center text-[16px] font-satoshi font-[400] leading-[20px] text-[#22252E]'>
+        <FadeIn className='pb-[28px] text-center text-[16px] font-satoshi font-[400] leading-[20px] text-[#22252E]'>
           In the news
-        </p>
+        </FadeIn>
 
         {/* Desktop View */}
-        <div className='w-full gap-[48px] justify-between hidden md:flex'>
+        <FadeIn delay={0.1} className='w-full gap-[48px] justify-between hidden md:flex'>
           {logos.map((logo, i) => (
             <Image
               key={i}
@@ -56,7 +57,7 @@ export default function LogoSection() {
               alt="logo"
             />
           ))}
-        </div>
+        </FadeIn>
 
         {/* Mobile Slider */}
         <div className="block md:hidden">

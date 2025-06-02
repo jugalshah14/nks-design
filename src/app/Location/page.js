@@ -81,19 +81,23 @@ export default function MasterPlan() {
               >
                 New Kolkata <span className="orange-color">Triveni </span>
               </SlideUp>
-                <SlideUp delay={0.4} className="pt-[80px] relative flex flex-row items-end">
-                    <div className="w-[60%] bg-white relative">
-                        <Image src="/assets/icons/tri-blue.svg" width={65} height={65} alt="triangle" className='z-[10] absolute right-0 top-0' />
+                <SlideUp delay={0.4} className="pt-[28px] md:pt-[80px] relative flex flex-col md:flex-row items-end">
+                    <div className="w-full md:w-[60%] bg-white relative">
+                        <Image src="/assets/icons/tri-blue.svg" width={65} height={65} alt="triangle" className='md:right-[-10px] z-[10] absolute right-0 top-0 w-[35px] h-[35px] md:w-[70] md:h-[70px]' />
                         <Image src="/assets/trivant-header.png"  alt="trivant"  width={800} height={500} className=""/>
                     </div>
-                    <SlideUp delay={0.6} className="w-[40%] bg-[#020C22] p-[40px] absolute right-[40px]">
-                        <h2 className="text-left font-satoshi text-[40px] leading-[48px] font-[400] text-white">Make everyday living effortless with our {""}
+                    <SlideUp delay={0.6} className="w-full md:w-[40%] bg-[#020C22] p-[20px] md:p-[40px] md:absolute md:right-[40px]">
+                        <h2 className="text-center md:text-left font-satoshi text-[22px] md:text-[40px] leading-[28px] md:leading-[48px] font-[400] text-white">Make everyday living effortless with our {""}
                             <span className="orange-color">Convenience  </span>for Residence scheme.
                         </h2>
                     </SlideUp>
                 </SlideUp>
             </div>
-            
+            <div className="none-md px-[16px] flex flex-row justify-center items-center w-full">
+              <Image src="/assets/line.svg"  alt="line"  width={100} height={1} className="!w-[100%]"/>
+              <h1 className="text-center text-white w-[100%] text-[16px] leading-[20px] font-[700] font-satoshi">Attractions at<br/> Triveni</h1>
+              <Image src="/assets/line.svg"  alt="line"  width={100} height={1} className="!w-[100%]"/>
+            </div>
             <AnimatedSection delay={0.6} className="mt-[60px]">
               <TriventSliders />
             </AnimatedSection>
@@ -101,56 +105,56 @@ export default function MasterPlan() {
 
       {/* Logo Cards Section */}
       <section>
-        <div className="container mx-auto bg-white p-[40px] flex flex-col gap-[48px] mt-[-60px]">
-            <h1 className="text-center font-satoshi text-[40px] leading-[48px]">Soon you will also see:)</h1>
-            <div className="w-full">                
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-[40px] w-full">
+        <section className="container mx-auto bg-white p-[16px] md:p-[40px] flex flex-col gap-[48px] mt-[-60px]">
+            <SlideUp delay={0.2} className="text-center font-satoshi text-[24px] md:text-[40px] leading-[28px] md:leading-[48px]">Soon you will also see:)</SlideUp>
+            <SlideUp delay={0.4} className="w-full">                
+                <div className="grid grid-cols-2 md:grid-cols-3 md:gap-[40px] w-full">
                     {/* Card 1 */}
-                    <div class="flex items-center flex flex-row gap-[28px]">
-                        <div className="p-[22px] rounded-full bg-[#F0F3FA] flex items-center justify-center">
-                            <Image src="/assets/icons/connectivity.svg" alt="icon" className="w-[48px] h-[48px]" width={48} height={48} />
+                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                        <div className="p-[16px] md:p-[22px] rounded-full bg-[#F0F3FA] flex items-center justify-center">
+                            <Image src="/assets/icons/connectivity.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
-                        <p className="text-left font-satoshi text-[24px] leading-[28px] font-[700]">Landscaped to<br/> perfection</p>
+                        <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Landscaped to perfection</p>
                     </div> 
                     {/* Card 2 */}
-                    <div class="flex items-center flex flex-row gap-[28px]">
-                        <div className="p-[22px] rounded-full bg-[#FDF9F6] flex items-center justify-center">
-                            <Image src="/assets/icons/residential.svg" alt="icon" className="w-[48px] h-[48px]" width={48} height={48} />
+                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                        <div className="p-[16px] md:p-[22px] rounded-full bg-[#FDF9F6] flex items-center justify-center">
+                            <Image src="/assets/icons/residential.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
-                        <p className="text-left font-satoshi text-[24px] leading-[28px] font-[700]">Multiple relaxation <br/>zones</p>
+                        <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Multiple relaxation zones</p>
                     </div> 
                     {/* Card 3 */}
-                    <div class="flex items-center flex flex-row gap-[28px]">
-                        <div className="p-[22px] rounded-full custom-gradient flex items-center justify-center">
-                            <Image src="/assets/icons/connectivity.svg" alt="icon" className="w-[48px] h-[48px]" width={48} height={48} />
+                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                        <div className="p-[16px] md:p-[22px] rounded-full custom-gradient flex items-center justify-center">
+                            <Image src="/assets/icons/connectivity.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
-                        <p className="text-left font-satoshi text-[24px] leading-[28px] font-[700]">Fountain plaza and <br/>Amphitheater</p>
+                        <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Fountain plaza and Amphitheater</p>
                     </div> 
                     {/* Card 4 */}
-                    <div class="flex items-center flex flex-row gap-[28px]">
-                        <div className="p-[22px] rounded-full custom-gradient flex items-center justify-center">
-                            <Image src="/assets/icons/area_of_project.svg" alt="icon" className="w-[48px] h-[48px]" width={48} height={48} />
+                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                        <div className="p-[16px] md:p-[22px] rounded-full custom-gradient flex items-center justify-center">
+                            <Image src="/assets/icons/area_of_project.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
-                        <p className="text-left font-satoshi text-[24px] leading-[28px] font-[700]">Landscaped to<br/> perfection</p>
+                        <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Landscaped to perfection</p>
                     </div> 
                     {/* Card 5 */}
-                    <div class="flex items-center flex flex-row gap-[28px]">
-                        <div className="p-[22px] rounded-full bg-[#F0F3FA] flex items-center justify-center">
-                            <Image src="/assets/icons/residential.svg" alt="icon" className="w-[48px] h-[48px]" width={48} height={48} />
+                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                        <div className="p-[16px] md:p-[22px] rounded-full bg-[#F0F3FA] flex items-center justify-center">
+                            <Image src="/assets/icons/residential.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
-                        <p className="text-left font-satoshi text-[24px] leading-[28px] font-[700]">Multiple relaxation <br/>zones</p>
+                        <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Multiple relaxation zones</p>
                     </div> 
                     {/* Card 6 */}
-                    <div class="flex items-center flex flex-row gap-[28px]">
-                        <div className="p-[22px] rounded-full bg-[#FDF9F6] flex items-center justify-center">
-                            <Image src="/assets/icons/jetty.svg" alt="icon" className="w-[48px] h-[48px]" width={48} height={48} />
+                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                        <div className="p-[16px] md:p-[22px] rounded-full bg-[#FDF9F6] flex items-center justify-center">
+                            <Image src="/assets/icons/jetty.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
-                        <p className="text-left font-satoshi text-[24px] leading-[28px] font-[700]">Fountain plaza and <br/>Amphitheater</p>
+                        <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Fountain plaza and Amphitheater</p>
                     </div>       
                 </div>
                 
-            </div>
-        </div>
+            </SlideUp>
+        </section>
       </section>
 
       {/* Location Benifits */}
@@ -159,20 +163,20 @@ export default function MasterPlan() {
                   <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
                     <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
                       <div className="max-md:col-span-2">
-                        <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
+                        <SlideUp delay={0.2} className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
                           / Location
-                        </p>
-                        <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
+                        </SlideUp>
+                        <SlideUp delay={0.4} className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
                           Location <span className="orange-color">Benefits</span>
-                        </h2>
+                        </SlideUp>
                       </div>
                       <div className="hidden md:flex items-end">
-                        <p className="text-[20px] text-[#22252E] font-[400]">
+                        <SlideUp delay={0.6} className="text-[20px] text-[#22252E] font-[400]">
                           Serampore is situated about 20 kilometers north of Kolkata, providing easy access to urban amenities, job opportunities, and transportation networks.
-                        </p>
+                        </SlideUp>
                       </div>
                     </div>
-                    <div className="relative md:mx-24 h-[280px] md:h-[400px] mt-7">
+                    <SlideUp delay={0.8} className="relative md:mx-24 h-[280px] md:h-[400px] mt-7">
                       <div className="serampore-bg-overlay max-md:block absolute top-0 left-0 h-[100%] w-[100%] z-1" />
                       <Image
                         src="/assets/seramporemap.png"
@@ -180,10 +184,12 @@ export default function MasterPlan() {
                         className="object-cover"
                         alt="serampore map"
                       />
-                    </div>
+                    </SlideUp>
                   </div>
       
-                  <SeramporeSwiperLocation />
+                  <SlideUp delay={0.6}>
+                    <SeramporeSwiperLocation />
+                  </SlideUp>
                 </section>
       </Element>
 
@@ -218,7 +224,7 @@ export default function MasterPlan() {
           <GangaWaves />
           <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
           <div className="max-md:px-5">
-            <div className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-15">
+            <SlideUp delay={0.2} className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-15">
               <div className="grid grid-cols-2 gap-4 ">
                 <div className="max-md:col-span-2 md:p-2">
                   <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">
@@ -301,7 +307,7 @@ export default function MasterPlan() {
                   </div>
                 </div>
               </div>
-            </div>
+            </SlideUp>
           </div>
           <hr className="border-[#FFFFFF] opacity-10" />
           <SeramporeMarqueeSlides />
