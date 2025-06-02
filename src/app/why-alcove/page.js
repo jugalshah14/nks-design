@@ -5,6 +5,9 @@ import TeamSwiper from '@/components/TeamSwiper';
 import PastProjectSwiper from '@/components/PastProjectSwiper';
 import LogoSection from '@/components/LogoSection';
 import { SlideUp } from '@/components/animations';
+import Amenities from '../amenities/page';
+import AmenitiesSwiper from '@/components/AmenitiesSwiper';
+import SocialSection from '@/components/SocialSection';
 
 export default function MasterPlan() {
   return (
@@ -168,6 +171,14 @@ export default function MasterPlan() {
         <section className='realtive pt-6'>
             <h2 className="project-overview-title text-center md:pb-[28px] md:pb-[0px] none-md py-[30px]">Meet The <br/><span className="orange-color">Team</span></h2>
             <SlideUp delay={0.4}><TeamSwiper /></SlideUp>
+        </section>
+
+        <section className='relative'>
+            <div className="text-center w-full pt-[40px] md:pt-0">
+                  <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
+                  <SlideUp delay={0.4} className="project-overview-title text-center md:pb-[28px] md:pb-[0px]">Corporate Social <span className="orange-color">Responsibility </span></SlideUp>
+            </div>
+            <SocialSection/>
             <SlideUp delay={0.6} className="mr-[16px] md:mr-[0px] md:ml-[100px] absolute container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]">
                 <Image src="/assets/faqs-detail-gif.gif" width={180} height={144} alt="house" className='img-size md:h-[144px] md:w-[144px]' />
                 <div className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
