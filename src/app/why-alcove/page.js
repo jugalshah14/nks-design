@@ -9,7 +9,7 @@ import Amenities from '../amenities/page';
 import AmenitiesSwiper from '@/components/AmenitiesSwiper';
 import SocialSection from '@/components/SocialSection';
 
-export default function MasterPlan() {
+export default function WhyAlcove() {
   return (
     <main>
 

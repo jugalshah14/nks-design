@@ -4,12 +4,11 @@ import Image from "next/image";
 import { AnimatedSection, FadeIn, SlideUp } from "@/components/animations";
 import TriventSliders from "@/components/TriventSliders";
 import { Element } from "react-scroll";
-import SeramporeSwiper from "@/components/SeramporeSwiper";
 import SeramporeSwiperLocation from "@/components/SeramporeSwiperLocation";
 import GangaWaves from "@/components/GangaWaves";
 import SeramporeMarqueeSlides from "@/components/SeramporeMarqueeSlides";
 
-export default function MasterPlan() {
+export default function Location() {
   return (
     <main>
       {/* Hero Section */}
