@@ -417,7 +417,7 @@ export default function MasterPlan() {
 
       <SlideUp
         delay={0.2}
-        className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-18 group cursor-pointer transform transition-transform duration-300 hover:scale-101"
+        className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-[170px] group cursor-pointer transform transition-transform duration-300 hover:scale-101"
       >
         <Image
           src="/assets/faqs-detail-gif.gif"
