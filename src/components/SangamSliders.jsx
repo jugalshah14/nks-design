@@ -184,13 +184,13 @@ export default function SangamSliders() {
                   </button>
                   <div className="flex items-center gap-2">
                     <div
-                      className={`w-6 h-6 rounded-full flex items-center justify-center cursor-pointer select-none transition-all duration-300 ${
+                      className={`w-6 md:w-[27px] h-6 md:h-[27px] rounded-full flex items-center justify-center cursor-pointer select-none transition-all duration-300 ${
                         activeIndex > 0 ? 'bg-white text-black hover:scale-110' : 'bg-white/20 text-white/50'
                       }`} onClick={handlePrev}>
                       ‹
                     </div>
                     <div
-                      className={`w-6 h-6 rounded-full flex items-center justify-center cursor-pointer select-none transition-all duration-300 ${
+                      className={`w-6 md:w-[27px] h-6 md:h-[27px] rounded-full flex items-center justify-center cursor-pointer select-none transition-all duration-300 ${
                         activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? 'bg-white text-black hover:scale-110' : 'bg-white/20 text-white/50'
                       }`} onClick={handleNext}>
                       ›
@@ -230,7 +230,7 @@ export default function SangamSliders() {
               </div>
 
               <div className='w-full mt-[20px] md:mt-[0px]'>
-                <button className="w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
+                <button className="md:rounded-sm w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
                   <div className='px-6 py-3 w-full flex justify-start'>
                       <span className='text-left inline md:inline'>Schedule a Visit</span>
                   </div>

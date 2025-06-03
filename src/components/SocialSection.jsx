@@ -54,7 +54,7 @@ export default function SocialSection() {
                                 className="object-cover"
                             />
                         </div>
-                        <p className="font-[Satoshi] text-[14px] md:text-[16px] text-[#22252E] font-[400]">{item.description}</p>
+                        <p className="font-[Satoshi] text-[14px] md:text-[16px] text-[#22252E]/60 md:text-[#22252E] font-[400] text-center md:text-left">{item.description}</p>
                     </div>
                 ))}
             </div>
