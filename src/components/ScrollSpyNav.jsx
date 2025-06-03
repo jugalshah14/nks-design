@@ -30,7 +30,7 @@ export default function ScrollSpyNav() {
     }, []);
 
     return (
-        <div className="max-md:w-[100%] overflow-hidden sticky z-999 top-0 bg-white flex gap-2 space-x-5 border-t border-b border-[#22252e19] py-6 pb-6 md:py-10 md:pb-12" id="scroll-spy">
+        <div className="max-md:w-[100%] overflow-hidden sticky z-999 top-0 bg-white flex gap-2 space-x-5 border-t border-b border-[#22252e19] py-6 pb-6 px-4 md:px-0 md:py-10 md:pb-12" id="scroll-spy">
             <div className='!flex items-center ml-auto justify-center'>
                 <ScrollLink
                     activeClass="spy-link-active"

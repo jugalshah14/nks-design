@@ -516,25 +516,25 @@ export default function Amenities() {
         </div>
 
         {/* Tabs */}
-        <AnimatedSection className="relative flex flex-col items-center w-[90%] mx-auto mb-12">
-          <div className="flex justify-between w-full items-center">
+        <AnimatedSection className="relative flex flex-col items-center w-full md:w-[90%] mx-auto mb-12">
+          <div className="flex justify-between w-full items-center overflow-x-auto gap-2">
             {tabs.map(({ id, label, image }) => (
               <div
                 key={id}
-                className="flex flex-col items-center cursor-pointer w-1/4 z-20"
+                className="flex flex-col md:items-center items-start cursor-pointer w-1/4 z-20"
                 onClick={() => setSelectedTab(id)}
               >
-                <div className="relative w-12 h-12 mb-1">
+                <div className="relative mb-1">
                   <Image
                     src={image}
                     alt={label}
                     width={48}
                     height={48}
-                    className="rounded object-cover"
+                    className="rounded object-cover md:w-12 md:h-12 w-8 h-8"
                   />
                 </div>
                 <span
-                  className={`font-semibold text-[20px] mt-1 transition-all 
+                  className={`font-semibold text-[16px] md:text-[20px] mt-1 transition-all whitespace-nowrap
                 ${selectedTab === id ? "text-white" : "text-white opacity-40"}
               `}
                 >
@@ -549,11 +549,11 @@ export default function Amenities() {
             {tabs.map((tab, index) => (
               <div
                 key={tab.id}
-                className="relative flex flex-col items-center w-1/4"
+                className="relative flex flex-col items-start md:items-center w-1/4"
               >
                 {/* Line segment to the right (except last) */}
                   <div
-                    className={`absolute top-1/2 left-1/2 h-0.5 z-0`}
+                    className={`absolute top-1/2 md:left-1/2 left-0 h-0.5 z-0`}
                     style={{
                       width: "100%",
                       backgroundColor:
@@ -566,15 +566,15 @@ export default function Amenities() {
                   
                 {index === 0 && (
                   <div
-                    className={`absolute top-1/2 left-0 h-0.5 z-0 w-1/2 bg-white`}
+                    className={`hidden md:block absolute top-1/2 left-0 h-0.5 z-0 w-1/2 bg-white`}
                   ></div>
                 )}
                 
 
                 {/* Dot */}
-                <div className="relative z-1 flex justify-center items-center w-15 bg-[#010922]">
+                <div className="relative z-1 flex justify-center items-center w-5 md:w-15 bg-[#010922]">
                 <div
-                  className={`w-4 h-4 rounded-full z-10 ${
+                  className={`md:w-4 md:h-4 w-2 h-2 rounded-full z-10 ${
                     index <= tabs.findIndex((t) => t.id === selectedTab)
                       ? "bg-white"
                       : "border-2 border-white bg-transparent"
@@ -1179,7 +1179,7 @@ export default function Amenities() {
 
       {/* certified section */}
       <AnimatedSection>
-        <section className="relative w-full bg-[#E7F2EB] py-1 px-2 md:py-20 md:px-15">
+        <section className="hidden md:block relative w-full bg-[#E7F2EB] py-1 px-2 md:py-20 md:px-15">
           <div className="bg-white relative w-full md:py-20 md:px-10 mb:mt-12 text-center">
             {/* IGBC Logo */}
             <div className="flex justify-center">

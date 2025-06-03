@@ -84,11 +84,11 @@ const Header = () => {
           </div>
 
           <div className="block">
-            <div className="h-[48px] w-[168px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-sm action-button">
-              <p className="font-[Satoshi] font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22] absolute top-[13px] left-[32px]">
+            <button className="md:px-9 px-4 md:py-3 py-2 border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-md action-button">
+              <p className="font-[Satoshi] font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22]">
                 Schedule a Visit
               </p>
-            </div>
+            </button>
           </div>
 
           <button className="md:hidden text-[#22252E]" onClick={toggleDrawer}>
