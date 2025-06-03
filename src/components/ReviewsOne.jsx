@@ -49,6 +49,11 @@ export default function ReviewsOne() {
     <div>
         {/* Section 1 for 3BHK */}
         <div>
+             {/* optional */}
+            <div className='relative bg-[#020C22] w-full h-[37px] flex items-end justify-center hide-triangle'>
+                <div className="absolute top-[37px] left-0 h-[37px] bg-[#020C22] w-[calc((100vw-85%)/2)]"></div>
+                <div className="absolute top-[37px] right-0 h-[37px] bg-[#020C22] w-[calc((100vw-85%)/2)]"></div>
+            </div>
             {/* review 1 */}
             <div className='relative'>
                 <div className='z-[-1] bg-[#F3F6F8] w-[100%] md:w-[53%] h-[360px] md:h-[248px] absolute bottom-[70px] md:bottom-0 left-0'></div>

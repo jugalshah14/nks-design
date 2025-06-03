@@ -33,7 +33,7 @@ const slides = [
 
 const settings = {
   className: "amenities-swiper !overflow-visible center",
-  infinite: false,
+  infinite: true,
   centerPadding: "30px",
   slidesToShow: 2.1,
   speed: 600,
@@ -51,16 +51,9 @@ const settings = {
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
-        infinite: false,
+        infinite: true,
       },
-    },
-    {
-      breakpoint: 425,
-      settings: {
-        slidesToShow: 1,
-        infinite: false,
-      },
-    },
+    }
   ],
 };
 
@@ -121,7 +114,7 @@ export default function ReviewSliderOne() {
                   key={i}
                   className="mx-2 !w-full !overflow-hidden"
                 >
-                  <div className="relative flex flex-col mx-[16px] md:mx-0">
+                  <div className="relative flex flex-col mx-[16px] md:mx-0  md:pl-[40px]">
                     <div className="w-[50px] h-[50px] md:w-[100px] md:h-[100px] rounded-full overflow-hidden mb-[12px] md:mb-[24px]">
                       <Image
                         src={slide.image}
@@ -138,7 +131,7 @@ export default function ReviewSliderOne() {
                     <p className="text-[14px] md:text-[16px] font-satoshi font-[400] text-black/50 leading-[20px] mb-[12px] md:mb-[24px]">
                         {slide.designation}
                     </p>
-                    <p className="w-full md:max-w-[420px] italic font-satoshi text-[14px] md:text-[20px] font-[400] leading-[28px] mb-[12px] md:mb-[24px]">
+                    <p className="w-full italic font-satoshi text-[14px] md:text-[20px] font-[400] leading-[28px] mb-[12px] md:mb-[24px]">
                         {slide.para}
                     </p>
                     <h3 className="text-[14px] md:text-[16px] font-satoshi font-[400] text-black/50 leading-[20px]">

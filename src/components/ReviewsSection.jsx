@@ -126,11 +126,6 @@ export default function ReviewsSection() {
                     </React.Fragment>
                 ))}
             </div>
-            {/* optional */}
-            <div className='relative bg-[#020C22] w-full h-[37px] flex items-end justify-center hide-triangle'>
-                <div className="absolute top-[37px] left-0 h-[37px] bg-[#020C22] w-[calc((100vw-85%)/2)]"></div>
-                <div className="absolute top-[37px] right-0 h-[37px] bg-[#020C22] w-[calc((100vw-85%)/2)]"></div>
-            </div>
         </div>
         
         <div ref={sectionRefs['3BHK']}>
