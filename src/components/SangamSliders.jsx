@@ -89,8 +89,9 @@ export default function SangamSliders() {
   };
 
   return (
+    <>
     <div className='relative max-md:-top-15'>
-      <div className='w-full items-center justify-center mt-[80px] md:mt-[0px] flex flex-row gap-4 md:gap-10 border-t border-b border-white/10 mb-[52px]'>
+      <div className='w-full items-center justify-center mt-[80px] md:mt-[0px] flex flex-row gap-4 md:gap-10 border-t border-b border-white/10 md:mb-[52px]'>
         {['3BHK', '2BHK', '4BHK'].map((bhk, index) => (
             <React.Fragment key={bhk}>
             <div
@@ -178,25 +179,61 @@ export default function SangamSliders() {
                 </div>
 
                 {/* Navigation Buttons */}
-                <div className="flex items-center justify-between bg-white/5 p-[18px] transition-all duration-300 mt-[-60px] md:mt-[0px]">
-                  <button className="pl-12 w-full text-white text-sm flex items-center gap-2 justify-center transition-all duration-300 hover:gap-4">
-                    Check Dimensions <Image src="/assets/whitearrow.svg" alt="1BHK" width={40} height={3} className="transition-transform duration-300 group-hover:translate-x-2" />
-                  </button>
-                  <div className="flex items-center gap-2">
-                    <div
-                      className={`w-6 md:w-[27px] h-6 md:h-[27px] rounded-full flex items-center justify-center cursor-pointer select-none transition-all duration-300 ${
-                        activeIndex > 0 ? 'bg-white text-black hover:scale-110' : 'bg-white/20 text-white/50'
-                      }`} onClick={handlePrev}>
-                      ‹
-                    </div>
-                    <div
-                      className={`w-6 md:w-[27px] h-6 md:h-[27px] rounded-full flex items-center justify-center cursor-pointer select-none transition-all duration-300 ${
-                        activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? 'bg-white text-black hover:scale-110' : 'bg-white/20 text-white/50'
-                      }`} onClick={handleNext}>
-                      ›
-                    </div>
+
+                <div className="relative md:static flex items-center justify-between bg-[#0E1727] md:bg-white/5 p-[18px] transition-all duration-300 mt-[-60px] md:mt-0">
+                {/* CTA Button */}
+                <button className="pl-12 w-full text-orange-500 md:text-white text-sm flex items-center gap-2 justify-center transition-all duration-300 hover:gap-4">
+                   Check Dimensions 
+                   <Image src="/assets/whitearrow.svg" alt="1BHK" width={40} height={3} className="hide-triangle transition-transform duration-300 group-hover:translate-x-2" />
+                   <Image src="/assets/orange-arrow.svg" alt="1BHK" width={25} height={1} className="none-md transition-transform duration-300 group-hover:translate-x-2" />
+                </button>
+
+                {/* Desktop Navigation Arrows */}
+                <div className="hidden md:flex items-center gap-2">
+                  <div
+                    className={`w-6 md:w-[27px] h-6 md:h-[27px] rounded-full flex items-center justify-center cursor-pointer select-none transition-all duration-300 ${
+                      activeIndex > 0 ? 'bg-white text-black hover:scale-110' : 'bg-white/20 text-white/50 pointer-events-none'
+                    }`}
+                    onClick={activeIndex > 0 ? handlePrev : undefined}
+                  >
+                    ‹
+                  </div>
+                  <div
+                    className={`w-6 md:w-[27px] h-6 md:h-[27px] rounded-full flex items-center justify-center cursor-pointer select-none transition-all duration-300 ${
+                      activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? 'bg-white text-black hover:scale-110' : 'bg-white/20 text-white/50 pointer-events-none'
+                    }`}
+                    onClick={
+                      activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? handleNext : undefined
+                    }
+                  >
+                    ›
                   </div>
                 </div>
+
+                {/* Mobile Absolute Arrows */}
+                <div className="md:hidden">
+                  <div
+                    className={`absolute left-2 top-[-3px] -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
+                      activeIndex > 0 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
+                    }`}
+                    onClick={activeIndex > 0 ? handlePrev : undefined}
+                  >
+                    ‹
+                  </div>
+                  <div
+                    className={`absolute right-2 top-[-3px] -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
+                      activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
+                    }`}
+                    onClick={
+                      activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? handleNext : undefined
+                    }
+                  >
+                    ›
+                  </div>
+                </div>
+              </div>
+
+
               </div>
             </div>
 
@@ -242,11 +279,10 @@ export default function SangamSliders() {
         </div>
 
       </div>
-
-      {/* sangam part2 */}
-      <AnimatedSection delay={0.4}>
-        <SangamViewsSwiper activeBHK={activeBHK} />
-      </AnimatedSection>
     </div>
+
+    {/* sangam part2 */}     
+      <SangamViewsSwiper activeBHK={activeBHK} />
+    </>
   );
 }

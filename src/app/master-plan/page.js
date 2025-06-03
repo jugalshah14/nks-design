@@ -211,7 +211,10 @@ export default function MasterPlan() {
           </div>
         </div>
       </section>
-      <AnimatedSection>
+      <SlideUp delay={0.2} className='w-full flex justify-center items-center none-md'>
+        <h1 className="text-center text-[28px] leading-[32px] font-satoshi font-[400] pb-[36px]">Primary goals<br/> we were having</h1>
+      </SlideUp>
+      <AnimatedSection delay={0.4}>
         <MasterplanSwiper />
       </AnimatedSection>
 
@@ -392,7 +395,7 @@ export default function MasterPlan() {
       </section>
 
       {/* sangam */}
-      <section className="bg-[#020C22]  mb-[100px] md:mb-[0px] md:pb-[80px]">
+      <section className="bg-[#020C22] mb-[160px] md:mb-[100px] md:mb-[0px] md:pb-[80px]">
         <div className="text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
           <SlideUp
             delay={0.2}
@@ -407,9 +410,9 @@ export default function MasterPlan() {
             Sangam
           </SlideUp>
         </div>
-        <AnimatedSection delay={0.6}>
+        <SlideUp delay={0.6}>
           <SangamSliders />
-        </AnimatedSection>
+        </SlideUp>
       </section>
 
       <SlideUp

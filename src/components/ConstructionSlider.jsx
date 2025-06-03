@@ -109,7 +109,7 @@ const ConstructionSlider = () => {
                 </div>
 
                 <div
-                  className={`md:ml-2 px-[16px] md:px-[40px] w-full md:border-l md:border-dashed md:border-gray-300 ${
+                  className={`ml-1 md:ml-2 px-[16px] md:px-[40px] w-full border-l border-dashed border-gray-300 ${
                     slideIdx === activeIndex
                       ? "opacity-100 cursor-pointer"
                       : "opacity-30"
@@ -123,7 +123,7 @@ const ConstructionSlider = () => {
                     <h2 className="text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[48px] text-white mb-[24px]">
                       {slide.month}
                     </h2>
-                    <div className="relative h-[250px] md:h-[450px] w-[95%]">
+                    <div className="relative h-[250px] md:h-[450px] w-[90%] md:w-[95%]">
                       {images.map((img, i) => (
                         <Image
                           key={i}
