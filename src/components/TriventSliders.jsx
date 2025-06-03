@@ -130,7 +130,7 @@ export default function TriventSliders() {
                 {data.map((slide, i) => (
                   <div
                     key={i}
-                    className="mx-2 !w-[100%] !overflow-hidden md:border-l md:border-dashed md:border-gray-300 bg-[#020C22] h-[450px] md:h-auto"
+                    className="mx-2 !w-[100%] !overflow-hidden md:border-l md:border-dashed md:border-[rgba(255,255,255,0.2)] bg-[#020C22] h-[450px] md:h-auto"
                   >
                     <div className="top-[60px] md:top-[0px] relative !w-[100%] h-auto px-[16px] md:px-[28px]  gap-[15px] md:gap-[24px] flex flex-col transition-transform duration-300 transform hover:scale-95">
                       <h2 className="hide-triangle text-white text-[20px] md:text-[24px] font-[700]">
@@ -158,7 +158,7 @@ export default function TriventSliders() {
         </div>
       </div>
     </div>
-    <div className="absolute w-full top-0 h-[48px] flex md:hidden relative !z-11 transform bg-[#021642] items-center justify-around px-1 py-5">
+    <div className="absolute w-full top-[-40px] h-[48px] flex md:hidden relative !z-11 transform bg-[#021642] items-center justify-around px-1 py-5">
         <div className="h-full flex items-center justify-center">
           <button
             className="focus:outline-none  cursor-pointer"

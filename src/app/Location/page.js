@@ -92,14 +92,14 @@ export default function Location() {
                     </SlideUp>
                 </SlideUp>
             </div>
-            <div className="none-md px-[16px] flex flex-row justify-center items-center w-full">
+            <div className="gap-0.5 none-md px-[16px] flex flex-row justify-center items-center w-full">
               <Image src="/assets/line.svg"  alt="line"  width={100} height={1} className="!w-[100%]"/>
               <h1 className="text-center text-white w-[100%] text-[16px] leading-[20px] font-[700] font-satoshi">Attractions at<br/> Triveni</h1>
               <Image src="/assets/line.svg"  alt="line"  width={100} height={1} className="!w-[100%]"/>
             </div>
-            <AnimatedSection delay={0.6} className="mt-[60px]">
-              <TriventSliders />
-            </AnimatedSection>
+              <AnimatedSection delay={0.6} className="relative top-[50px] md:top-0 md:mt-[60px]">
+                <TriventSliders />
+              </AnimatedSection>
       </section>
 
       {/* Logo Cards Section */}
@@ -170,7 +170,7 @@ export default function Location() {
                         </SlideUp>
                       </div>
                       <div className="hidden md:flex items-end">
-                        <SlideUp delay={0.6} className="text-[20px] text-[#22252E] font-[400]">
+                        <SlideUp delay={0.6} className="text-[20px] text-[#22252E]/60 font-[400]">
                           Serampore is situated about 20 kilometers north of Kolkata, providing easy access to urban amenities, job opportunities, and transportation networks.
                         </SlideUp>
                       </div>
@@ -178,9 +178,15 @@ export default function Location() {
                     <SlideUp delay={0.8} className="relative md:mx-24 h-[280px] md:h-[400px] mt-7">
                       <div className="serampore-bg-overlay max-md:block absolute top-0 left-0 h-[100%] w-[100%] z-1" />
                       <Image
-                        src="/assets/seramporemap.png"
+                        src="/assets/map-benefits.svg"
                         fill
-                        className="object-cover"
+                        className="object-cover hide-triangle"
+                        alt="serampore map "
+                      />
+                      <Image
+                        src="/assets/benefit-map-mobile.svg"
+                        fill
+                        className="object-cover none-md"
                         alt="serampore map"
                       />
                     </SlideUp>
@@ -212,7 +218,14 @@ export default function Location() {
                     src="/assets/loc-mapp.png"
                     alt="img"
                     fill
-                    className="select-none no-drag"
+                    className="select-none no-drag hide-triangle"
+                />
+                <Image
+                    src="/assets/mobile-map.png"
+                    alt="img"
+                    width={300}
+                    height={400}
+                    className="select-none no-drag none-md w-full"
                 />
             </FadeIn>
         </section>
@@ -312,7 +325,7 @@ export default function Location() {
           <SeramporeMarqueeSlides />
         </div>
         <div className="flex md:hidden justify-center relative -top-7">
-          <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
+          <button className="rounded-sm inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
             <div className="px-6 py-3 mr-20">
               <span>Schedule a Visit</span>
             </div>
