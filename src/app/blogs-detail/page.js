@@ -63,7 +63,7 @@ export default function BlogsDetail() {
                   src={featuredImage.src}
                   alt={featuredImage.alt}
                   fill
-                  className="object-cover rounded-lg"
+                  className=" rounded-lg"
                 />
               </div>
             </SlideUp>
@@ -111,7 +111,6 @@ export default function BlogsDetail() {
                         src={section.image.src}
                         alt={section.image.alt}
                         fill
-                        className="object-cover rounded-lg"
                       />
                     </div>
                   )}
@@ -134,7 +133,7 @@ export default function BlogsDetail() {
                       alt={meta.author.name}
                       width={36}
                       height={36}
-                      className="rounded-full object-cover"
+                      className="rounded-full"
                     />
                     <span className="block font-semibold text-gray-800">
                       {meta.author.name}
@@ -293,7 +292,7 @@ export default function BlogsDetail() {
       </section>
 
       {/* You may also like to read Section */}
-      <section className="bg-[#f7fafc] py-12 md:py-16 h-auto md:h-[374px] mb-40 md:mb-80">
+      <section className="bg-[#f7fafc] py-12 md:py-16 h-auto md:h-[374px] md:mb-80">
         <div className="max-w-7xl mx-auto px-4 md:px-7 lg:px-0">
           <SlideUp delay={0.2}>
             <div className="text-[#22252E] text-[14px] md:text-[16px] mb-2 font-normal">/ Location</div>
