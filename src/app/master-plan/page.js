@@ -5,7 +5,6 @@ import MasterplanSwiper from "@/components/MasterplanSwiper";
 import BrochureSection from "@/components/BrochureCard";
 import ProjectViewSlides from "@/components/ProjectViewSlides";
 import SangamSliders from "@/components/SangamSliders";
-import ProjectSwiper from "@/components/ProjectSwiper";
 import Blogs from "@/components/Blogs";
 import ConstructionSlider from "@/components/ConstructionSlider";
 import PastProjectSwiper from "@/components/PastProjectSwiper";
@@ -18,37 +17,37 @@ export default function MasterPlan() {
       <SlideUp>
         <section className="bg-[#FDF9F6] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
           <SlideUp delay={0.4}>
-            <div className="text-sm px-4 pt-6 text-center text-gray-500">
-              <span className="text-black-700 font-semibold">• Home</span>
+            <div className="text-sm px-4 pt-6 text-center text-gray-500 mb-2">
+              <span className="text-black-700 font-semibold text-[#22252E]">• Home</span>
               <span className="mx-2">—</span>
               <span className="text-gray-400">Masterplans</span>
             </div>
           </SlideUp>
-          <FadeIn delay={0.6}>
+          <SlideUp delay={0.6}>
             <h1 className="relative -mb-5 page-hero-title no-negative-margin select-none no-drag">
               Masterplans
             </h1>
-          </FadeIn>
+          </SlideUp>
         </section>
       </SlideUp>
 
       <section className="-mt-16 no-negative-margin">
         <SlideUp delay={0.8}>
           <div className="container mx-auto">
-            <div className="relative w-full h-[200px] md:h-[460px]">
+            <div className="relative w-full h-[265px] md:h-[460px]">
               <Image
                 src="/assets/tri1.svg"
                 width={65}
                 height={65}
                 alt="img"
-                className="absolute left-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px] select-none no-drag"
+                className="absolute left-0 z-10 w-[18px] h-[18px] md:w-[65px] md:h-[65px] select-none no-drag"
               />
               <Image
                 src="/assets/tri2.svg"
                 width={65}
                 height={65}
                 alt="img"
-                className="absolute right-0 bottom-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px] select-none no-drag"
+                className="absolute right-0 bottom-0 z-10 w-[18px] h-[18px] md:w-[65px] md:h-[65px] select-none no-drag"
               />
               <Image
                 src="/assets/masterplan-hero.png"
@@ -212,7 +211,10 @@ export default function MasterPlan() {
           </div>
         </div>
       </section>
-      <AnimatedSection>
+      <SlideUp delay={0.2} className='w-full flex justify-center items-center none-md'>
+        <h1 className="text-center text-[28px] leading-[32px] font-satoshi font-[400] pb-[36px]">Primary goals<br/> we were having</h1>
+      </SlideUp>
+      <AnimatedSection delay={0.4}>
         <MasterplanSwiper />
       </AnimatedSection>
 
@@ -393,7 +395,7 @@ export default function MasterPlan() {
       </section>
 
       {/* sangam */}
-      <section className="bg-[#020C22]  mb-[100px] md:mb-[0px] md:pb-[80px]">
+      <section className="bg-[#020C22] mb-[160px] md:mb-[100px] md:mb-[0px] md:pb-[80px]">
         <div className="text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
           <SlideUp
             delay={0.2}
@@ -408,14 +410,14 @@ export default function MasterPlan() {
             Sangam
           </SlideUp>
         </div>
-        <AnimatedSection delay={0.6}>
+        <SlideUp delay={0.6}>
           <SangamSliders />
-        </AnimatedSection>
+        </SlideUp>
       </section>
 
       <SlideUp
         delay={0.2}
-        className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-18 group cursor-pointer transform transition-transform duration-300 hover:scale-101"
+        className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-[170px] group cursor-pointer transform transition-transform duration-300 hover:scale-101"
       >
         <Image
           src="/assets/faqs-detail-gif.gif"

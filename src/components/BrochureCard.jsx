@@ -17,7 +17,7 @@ export default function BrochureSection() {
           </button>
         </div>
       </div>
-      <button className="mt-[-4px] flex flex-row justify-between ml-[28px] mr-[16px] none-md group cursor-pointer bg-[#144D78] hover:bg-[#0e3a5a] transition text-white font-medium inline-flex items-center gap-2 overflow-hidden">
+      <button className="mt-[-3px] flex flex-row justify-between ml-[28px] mr-[16px] none-md group cursor-pointer bg-[#144D78] hover:bg-[#0e3a5a] transition text-white font-medium inline-flex items-center gap-2 overflow-hidden">
             <div className="p-[25px] group-hover:text-orange-400 transition-colors duration-300">
                 <span className="inline md:inline">Download our Brochure</span>
             </div>

@@ -8,23 +8,23 @@ import "slick-carousel/slick/slick-theme.css";
 
 const data = [
   {
-    title: "Concept for entrance Plaza",
-    image: "/assets/goal1.png",
+    title: "New exclusive mall",
+    image: "/assets/trivent1.jpg",
     desc: "Immerse yourself in the tranquility of the lush landscape garden",
   },
   {
-    title: "Concept for entrance lobby",
-    image: "/assets/goal2.png",
+    title: "Famous clothing brands",
+    image: "/assets/trivent2.jpg",
     desc: "Immerse yourself in the tranquility of the lush landscape garden",
   },
   {
-    title: "Concept for the masterplan",
-    image: "/assets/goal3.png",
+    title: "Famous food",
+    image: "/assets/trivent3.jpg",
     desc: "Immerse yourself in the tranquility of the lush landscape garden",
   },
   {
-    title: "Concept for private garden flats",
-    image: "/assets/goal4.jpg",
+    title: "Gaming zone for everyone",
+    image: "/assets/trivent4.jpg",
     desc: "Immerse yourself in the tranquility of the lush landscape garden",
   },
 ];
@@ -61,7 +61,7 @@ const settings = {
     },
   ],
 };
-export default function MasterPlanSwiper() {
+export default function TriventSliders() {
   const [activeIndex, setActiveIndex] = useState(0);
   let swiperRef = useRef(null);
 
@@ -76,29 +76,30 @@ export default function MasterPlanSwiper() {
   };
 
   return (
+    <>
     <div className="relative max-md:-top-15 overflow-hidden">
       <div className="container mx-auto relative md:mb-16">
         <div className="grid grid-cols-4 gap-0">
-          <div className="hidden md:block bg-white z-2 after-box pr-10 md:col-span-2 lg:col-span-1">
-            <h2 className="px-[60px] pt-[34px] md:px-[0px] md:pt-[0px] text-[28px] md:text-[40px] font-satoshi font-normal leading-[32px] md:leading-[54px] text-[#22252e] mb-1 text-center md:text-left">
-              Primary goals we were having
+          <div className="hidden md:flex flex-col bg-[#020C22] z-2 after-box pr-10 md:col-span-2 lg:col-span-1 with-before justify-center items-center">
+            <h2 className="px-[60px] pt-[34px] md:px-[0px] md:pt-[0px] text-[28px] md:text-[40px] font-satoshi font-normal leading-[32px] md:leading-[54px] text-[#22252e] mb-1 text-center md:text-left text-white">
+              Attractions at Triveni
             </h2>
-            <div className="relative right-[-90px] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding rounded-md flex items-center justify-around mt-9 px-1 py-5">
+            <div className="w-full relative right-[-50px] z-11 transform bg-[#021642] flex items-center justify-around mt-9 px-1 py-5 !w-[366px]">
               <div className="h-full flex items-center justify-center">
                 <button
                   className="focus:outline-none  cursor-pointer"
                   onClick={handlePrev}
                 >
-                  <Image
+                <Image
                     src="/assets/icons/arrow-right.svg"
                     alt="Previous"
                     height={20}
                     width={19}
-                    className="transform rotate-180"
-                  />
+                    className="transform rotate-180 invert-100"
+                />
                 </button>
               </div>
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center text-white">
                 {activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> 4
               </div>
               <div className="h-full flex items-center justify-center">
@@ -106,13 +107,13 @@ export default function MasterPlanSwiper() {
                   className="focus:outline-none cursor-pointer"
                   onClick={handleNext}
                 >
-                  <Image
+                <Image
                     src="/assets/icons/arrow-right.svg"
                     alt="Next"
                     height={20}
                     width={19}
-                    className=""
-                  />
+                    className="invert-100"
+                />
                 </button>
               </div>
             </div>
@@ -129,10 +130,10 @@ export default function MasterPlanSwiper() {
                 {data.map((slide, i) => (
                   <div
                     key={i}
-                    className="mx-2 !w-[100%] !overflow-hidden border-l border-dashed border-gray-300 bg-white"
+                    className="mx-2 !w-[100%] !overflow-hidden md:border-l md:border-dashed md:border-[rgba(255,255,255,0.2)] bg-[#020C22] h-[450px] md:h-auto"
                   >
-                    <div className="top-[60px] md:top-[0px] relative !w-[100%] h-[470px] px-[16px] md:px-[28px]  gap-[15px] md:gap-[24px] flex flex-col transition-transform duration-300 transform hover:scale-95">
-                      <h2 className="text-[#22252E] text-[20px] md:text-[24px] font-[700]">
+                    <div className="top-[60px] md:top-[0px] relative !w-[100%] h-auto px-[16px] md:px-[28px]  gap-[15px] md:gap-[24px] flex flex-col transition-transform duration-300 transform hover:scale-95">
+                      <h2 className="hide-triangle text-white text-[20px] md:text-[24px] font-[700]">
                         {slide.title}
                       </h2>
                       <Image
@@ -142,7 +143,10 @@ export default function MasterPlanSwiper() {
                         alt="img"
                         className="w-full min-h-[250px] max-h-auto"
                       />
-                      <p className="text-[16px] text-[#22252E] font-[400]">
+                      <h2 className="none-md text-white text-[20px] md:text-[24px] font-[700]">
+                        {slide.title}
+                      </h2>
+                      <p className="text-[16px] text-white/50 font-[400]">
                         {slide.desc}
                       </p>
                     </div>
@@ -153,22 +157,23 @@ export default function MasterPlanSwiper() {
           </div>
         </div>
       </div>
-      <div className="flex md:hidden relative -top-3 z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding items-center justify-around px-1 py-5">
+    </div>
+    <div className="absolute w-full top-[-40px] h-[48px] flex md:hidden relative !z-11 transform bg-[#021642] items-center justify-around px-1 py-5">
         <div className="h-full flex items-center justify-center">
           <button
             className="focus:outline-none  cursor-pointer"
             onClick={handlePrev}
           >
             <Image
-              src="/assets/icons/arrow-right.svg"
-              alt="Previous"
-              height={20}
-              width={19}
-              className="transform rotate-180"
-            />
+                    src="/assets/icons/arrow-right.svg"
+                    alt="Previous"
+                    height={20}
+                    width={19}
+                    className="transform rotate-180 invert-100"
+                />
           </button>
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-white">
           {Math.ceil(activeIndex) + 1}{" "}
           <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}
         </div>
@@ -178,15 +183,15 @@ export default function MasterPlanSwiper() {
             onClick={handleNext}
           >
             <Image
-              src="/assets/icons/arrow-right.svg"
-              alt="Next"
-              height={20}
-              width={19}
-              className=""
-            />
+                    src="/assets/icons/arrow-right.svg"
+                    alt="Next"
+                    height={20}
+                    width={19}
+                    className="invert-100"
+                />
           </button>
         </div>
-      </div>
     </div>
+    </>
   );
 }
