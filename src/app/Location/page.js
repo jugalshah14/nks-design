@@ -15,8 +15,8 @@ export default function Location() {
       <SlideUp>
         <section className="bg-[#FDF9F6] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
           <SlideUp delay={0.4}>
-            <div className="text-sm px-4 pt-6 text-center text-gray-500">
-              <span className="text-black-700 font-semibold">• Home</span>
+            <div className="text-sm px-4 pt-6 text-center text-gray-500 mb-2">
+              <span className="text-black-700 font-semibold text-[#22252E]">• Home</span>
               <span className="mx-2">—</span>
               <span className="text-gray-400">Location</span>
             </div>
@@ -56,7 +56,7 @@ export default function Location() {
               />
             </div>
             <div className="z-20 flex text-center items-center justify-center relative p-[10px] -mt-12 mx-2 md:mx-[80px]  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
-              <h2 className="text-center project-overview-title text-center mobile-title max-w-[800px]">
+              <h2 className="text-center project-overview-title mobile-title max-w-[800px]">
                 Embrace the{" "}
                 <span className="orange-color">beauty </span>of your <span className="orange-color">surroundings </span>.
               </h2>
@@ -76,7 +76,7 @@ export default function Location() {
               </SlideUp>
               <SlideUp
                 delay={0.4}
-                className="text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[100px] font-[400] md:leading-[120px]"
+                className="text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[100px] font-[400] md:leading-[120px] px-4"
               >
                 New Kolkata <span className="orange-color">Triveni </span>
               </SlideUp>
@@ -176,7 +176,7 @@ export default function Location() {
                       </div>
                     </div>
                     <SlideUp delay={0.8} className="relative md:mx-24 h-[280px] md:h-[400px] mt-7">
-                      <div className="serampore-bg-overlay max-md:block absolute top-0 left-0 h-[100%] w-[100%] z-1" />
+                      <div className="max-md:block absolute top-0 left-0 h-[100%] w-[100%] z-1" />
                       <Image
                         src="/assets/map-benefits.svg"
                         fill

@@ -15,7 +15,7 @@ export default function WhyAlcove() {
 
         {/* Hero Section */}
         <SlideUp className="bg-[#F3F6F8] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
-            <SlideUp delay={0.4} className="text-sm px-4 pt-6 text-center text-gray-500">
+            <SlideUp delay={0.4} className="text-sm px-4 pt-6 text-center text-gray-500 mb-2">
                 <span className="text-[#22252E] font-satoshi font-[700]">• Home</span>
                 <span className="mx-2">—</span>
                 <span className="text-gray-400">Why Alcove</span>
@@ -50,7 +50,7 @@ export default function WhyAlcove() {
                     />
             </div>
             <div className="z-20 flex text-center items-center justify-center relative p-[10px] -mt-12 mx-2 md:mx-[80px]  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
-                <h2 className="text-center project-overview-title text-center mobile-title max-w-[800px]">
+                <h2 className="text-center project-overview-title mobile-title max-w-[800px]">
                 Where <span className="orange-color">luxury </span>meets <span className="orange-color">affordability </span>
                 </h2>
             </div>
@@ -64,7 +64,7 @@ export default function WhyAlcove() {
                 <div className="flex flex-col md:flex-row justify-between relative container mx-auto px-[16px] md:px-24 gap-[12px] md:gap-[36px] md:gap-12">
                   <div className="text-center md:text-left w-full md:pb-15">
                     <SlideUp className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
-                    <SlideUp delay={0.2} className="project-overview-title text-center md:text-left">From <br/><span className="orange-color"> Founder’s </span>Desk</SlideUp>
+                    <SlideUp delay={0.2} className="project-overview-title text-center md:text-left !font-[IvyMode]">From <br/><span className="orange-color"> Founder’s </span>Desk</SlideUp>
                     <SlideUp delay={0.4} className="max-w-[409px] text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[20px] md:pt-10">As being architect of New Kolkata, I recommend this place as nice place to live. we're architecture notes. learn about the systems you use everyday from the engineers who built them</SlideUp>
 
                   </div>

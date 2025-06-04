@@ -196,7 +196,20 @@ export default function SangamSliders() {
                     }`}
                     onClick={activeIndex > 0 ? handlePrev : undefined}
                   >
-                    ‹
+                   <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-[#22252E] rotate-180"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
                   </div>
                   <div
                     className={`w-6 md:w-[27px] h-6 md:h-[27px] rounded-full flex items-center justify-center cursor-pointer select-none transition-all duration-300 ${
@@ -206,7 +219,20 @@ export default function SangamSliders() {
                       activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? handleNext : undefined
                     }
                   >
-                    ›
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-[#22252E]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
                   </div>
                 </div>
 
