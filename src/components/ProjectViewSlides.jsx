@@ -60,13 +60,14 @@ export default function ProjectViewSlides() {
                 {data.map((slide, index) => (
                     <div key={index} className='relative top-[-50px]'>
                         <div className="flex justify-center relative h-[280px] md:h-[70vh]">
+                            <div className="absolute inset-0 rounded-lg bg-black/20 w-full h-full z-1"></div>
                             <Image
                                 src={slide.src}
                                 alt={slide.title}
                                 className="object-cover"
                                 fill
                             />
-                            <div className="absolute inset-0 rounded-lg">
+                            <div className="absolute inset-0 rounded-lg z-2">
                                 <h3 className="max-md:w-[100%] max-md:text-center bottom-4 absolute md:bottom-16 md:left-11 text-[28px] md:text-[48px] font-[Satoshi] font-[400] leading-8 md:leading-[65px] text-white">
                                     {slide.title}
                                 </h3>
