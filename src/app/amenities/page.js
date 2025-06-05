@@ -492,7 +492,7 @@ export default function Amenities() {
         </SlideUp>
       </section>
 
-      <section className="bg-[#010922] text-white md:px-6 py-12 w-full relative">
+      <section className="bg-[#010922] text-white md:px-16 py-12 w-full relative">
         <div className="flex w-full md:justify-between justify-center md:max-w-7xl md:mx-auto md:text-left text-center md:h-[180px] md:mb-12">
           <div className="md:mb-10 mb-5">
             <SlideUp delay={0.2}>
@@ -587,17 +587,17 @@ export default function Amenities() {
         </AnimatedSection>
 
         {/* Content Grid for selected tab */}
-        <div className="relative text-white md:py-12 px-4 md:px-0">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+        <div className="relative text-white md:pt-10 px-4 md:px-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
             {amenities[selectedTab].map((item, index) => (
               <SlideUp
                 delay={index * 0.2}
                 key={index}
                 className={`relative ${
                   index % 2 !== 0 && "top-10"
-                } space-y-4 md:px-4 px-0`}
+                } space-y-4 md:px-5 px-0`}
               >
-                <div className="absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300 opacity-20"></div>
+                <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300 opacity-20"></div>
                 <div className="text-[20px] font-[IvyMode] leading-7 text-orange-500 font-normal md:text-lg md:mb-6 mb-3">
                   {index + 1}
                 </div>
@@ -727,17 +727,17 @@ export default function Amenities() {
               Club-house
             </h1>
           </SlideUp>
-          <div className="relative text-white md:py-12 py-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+          <div className="relative text-white md:py-10 py-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
               {clubhouseData.map((item, index) => (
                 <SlideUp
                   delay={index * 0.2}
                   key={index}
                   className={`relative ${
                     index % 2 !== 0 && "top-10"
-                  } md:space-y-4 space-y-3 md:px-4 px-0`}
+                  } md:space-y-4 md:px-5 px-0`}
                 >
-                  <div className="absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300"></div>
+                  <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
                   <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">
                     {index + 1}
                   </div>
@@ -876,17 +876,17 @@ export default function Amenities() {
             </h1>
           </SlideUp>
 
-          <div className="relative text-white md:px-8 md:py-12 py-4 px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+          <div className="relative text-white md:px-8 md:py-10 py-4 px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
               {PodiumData.map((item, index) => (
                 <SlideUp
                   delay={index * 0.2}
                   key={index}
                   className={`relative ${
                     index % 2 !== 0 && "top-10"
-                  } md:space-y-4 md:px-4 space-y-2 px-0`}
+                  } md:space-y-4 md:px-5 px-0`}
                 >
-                  <div className="absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300"></div>
+                  <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
                   <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">
                     {index + 1}
                   </div>
@@ -989,9 +989,9 @@ export default function Amenities() {
 
       {/* ganga ghat */}
       <AnimatedSection>
-        <section className="relative w-full md:h-[524px] md:flex md:overflow-hidden my-12 rounded-none shadow-lg bg-[#010922]  justify-end items-end">
+        <section className="relative w-full h-[524px] md:flex md:overflow-hidden md:my-0 my-12 rounded-none shadow-lg bg-[#010922]  justify-end items-end">
           {/* Text container */}
-          <div className="w-full flex py-6 md:py-[74px] px-4 md:px-0 absolute container mx-auto z-1 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+          <div className=" flex py-6 md:py-[74px] px-4 md:px-0 absolute md:container md:w-[90%] w-full justify-center md:justify-start mx-auto z-1 md:top-1/2 top-2 md:-translate-y-1/2 left-1/2 -translate-x-1/2">
             <h2
               className="font-[IvyMode] font-light text-white leading-[44px] md:leading-[72px] text-center md:text-left
       text-[36px] md:text-[56px]"
@@ -1006,7 +1006,7 @@ export default function Amenities() {
           </div>
 
           {/* Image container */}
-          <div className="hidden md:flex w-full md:w-[65%] h-[300px] md:h-full relative">
+          <div className="hidden md:flex w-full md:w-[65%] h-full relative">
             <Image
               src="/assets/gangaGhat.png"
               alt="Ferry Ride"
@@ -1018,7 +1018,7 @@ export default function Amenities() {
             <div className="absolute inset-0 md:bg-[linear-gradient(87.36deg,#010922_9.69%,rgba(2,12,34,0)_93.16%)]" />
           </div>
           {/* responsive */}
-          <div className="md:hidden w-full md:w-1/2 h-[396px] md:h-full relative">
+          <div className="md:hidden w-full md:w-1/2 h-full relative">
             <Image
               src="/assets/ganga-responsive.png"
               alt="Ferry Ride"
@@ -1027,7 +1027,7 @@ export default function Amenities() {
               priority
             />
             {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,#0010922_1.69%,rgba(2,12,34,0)_93.16%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,#010922_20.69%,rgba(2,12,34,0)_93.16%)]" />
           </div>
         </section>
       </AnimatedSection>
@@ -1035,7 +1035,7 @@ export default function Amenities() {
       {/* Ground level */}
       <section
         id="ground-level"
-        className="relative bg-white w-full md:py-20 md:px-15"
+        className="relative bg-white w-full md:py-12 md:px-15"
       >
         <div className="bg-white pb-12">
           <div className="flex justify-center">
@@ -1055,17 +1055,17 @@ export default function Amenities() {
             </h1>
           </SlideUp>
 
-          <div className="relative text-white md:py-12 py-6 px-4 md:px-0">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+          <div className="relative text-white md:py-10 py-6 px-4 md:px-0">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
               {groundData.map((item, index) => (
                 <SlideUp
                   delay={index * 0.2}
                   key={index}
                   className={`relative ${
                     index % 2 !== 0 && "top-10"
-                  } md:space-y-4 md:px-4 space-y-3 px-0`}
+                  } md:space-y-4 md:px-5 px-0`}
                 >
-                  <div className="absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300"></div>
+                  <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
                   <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">
                     {index + 1}
                   </div>
@@ -1156,7 +1156,7 @@ export default function Amenities() {
 
           {/* Text Content (top on mobile, right on desktop) */}
           <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center py-10 px-4 md:px-6 md:py-[74px] md:pr-[100px] bg-[#0a1628] text-center md:text-left">
-            <h2 className="text-[36px] leading-[44px] md:text-[56px] font-[IvyMode] text-white font-light leading-[40px] md:leading-[72px] mb-6 md:mb-7">
+            <h2 className="text-[36px] md:text-[56px] font-[IvyMode] text-white font-light leading-[40px] md:leading-[72px] mb-6 md:mb-7">
               Indulge in the <span className="text-[#DE804B]">ferry ride </span>
               <br className="hidden md:block" />
               departing from our <br className="hidden md:block" />
@@ -1165,21 +1165,21 @@ export default function Amenities() {
             <p className="text-white font-[Satoshi] font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] mb-6 md:mb-7">
               Ferry solely for potential clients and current customers.
             </p>
-            <button className="bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
-              <div className="px-15 py-3 md:px-20 md:py-6 font-[Satoshi] font-bold text-[16px]">
-                Book Now
-              </div>
-              <span className="px-6 py-3 md:px-8 md:py-6 ml-auto text-orange-500 bg-[#002F52] text-lg">
-                ↗
-              </span>
-            </button>
+            <button className="md:min-h-[4rem] min-h-[3.5rem] h-full md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
+                <div className="px-6 py-3 mr-20">
+                  <span>Book Now</span>
+                </div>
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
+                  ↗
+                </span>
+              </button>
           </div>
         </section>
       </AnimatedSection>
 
       {/* certified section */}
       <AnimatedSection className="overflow-visible">
-        <section className="block relative w-full bg-[#E7F2EB] py-1 px-2 md:py-20 md:px-15">
+        <section className="block relative w-full bg-[#E7F2EB] px-2 md:pt-[130px] md:pb-20 pt-1 pb-1 md:px-15">
           <div className="bg-white relative w-full md:py-20 md:px-10 mb:mt-12 text-center">
             {/* IGBC Logo */}
             <div className="flex justify-center">
@@ -1285,7 +1285,7 @@ export default function Amenities() {
           </div>
           {/* Horizontal Card Section */}
           <AnimatedSection>
-            <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 mt-20 md:h-[144px]">
+            <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
               <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
                 <Image
                   src="/assets/sport-gif.gif"
@@ -1314,7 +1314,7 @@ export default function Amenities() {
       </AnimatedSection>
 
       {/* Plans */}
-      <AnimatedSection>
+      <AnimatedSection className="overflow-visible">
         <div className="relative p-5 overflow-hidden mb-0">
           <GangaWaves />
           <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
@@ -1328,7 +1328,7 @@ export default function Amenities() {
                   / Plans
                 </SlideUp>
                 <SlideUp delay={0.4}>
-                  <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:text-[56px] !text-white">
+                  <h2 className="font-[ivyMode] text-[36px] md:leading-[72px] max-md:text-center md:font-[300] md:text-[56px] text-white">
                     Your <span className="orange-color">Safety</span> &
                     <br className="max-md:hidden" />{" "}
                     <span className="orange-color">Security</span>, Our
@@ -1413,7 +1413,7 @@ export default function Amenities() {
       {/* Question Section */}
       <section className="relative w-full bg-[#F8FAFB] md:py-20 md:px-25 flex justify-center h-[650px] md:h-full mb-[50px] md:mb-0">
         <div className="flex md:flex-row flex-col w-[100%] md:justify-between">
-          <div className="max-md:col-span-2 md:p-2">
+          <div className="max-md:col-span-2 md:p-2 pt-10 md:pt-0">
             <SlideUp
               delay={0.2}
               className="max-md:text-center text-[16px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-black mb-2"
@@ -1421,7 +1421,7 @@ export default function Amenities() {
               / Amenities
             </SlideUp>
             <SlideUp delay={0.4}>
-              <h2 className="!font-[ivyMode] project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:text-[56px] text-black">
+              <h2 className="font-[ivyMode] text-[36px] max-md:text-center md:leading-[72px] md:font-[400] md:text-[56px] text-black">
                 Frequently
                 <br className="max-md:hidden" /> Asked
                 <br className="max-md:hidden" />{" "}
