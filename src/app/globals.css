@@ -405,6 +405,11 @@ body::-webkit-scrollbar {
     height: 52px;
   }
 
+  .responsive-image-amenities {
+    width: 58px;
+    height: 58px;
+  }
+
   .responsive-IGBC-image {
     width: 80px;
     height: 80px;

@@ -492,16 +492,16 @@ export default function Amenities() {
         </SlideUp>
       </section>
 
-      <section className="bg-[#010922] text-white px-6 py-12 w-full relative">
+      <section className="bg-[#010922] text-white md:px-6 py-12 w-full relative">
         <div className="flex w-full md:justify-between justify-center md:max-w-7xl md:mx-auto md:text-left text-center md:h-[180px] md:mb-12">
-          <div className="mb-10">
+          <div className="md:mb-10 mb-5">
             <SlideUp delay={0.2}>
-              <p className="text-white font-[Satoshi] font-normal text-[16px] leading-[20px] mb-4">
+              <p className="text-white font-[Satoshi] font-normal text-[16px] leading-[20px] md:mb-4 mb-2">
                 / Amenities
               </p>
             </SlideUp>
             <SlideUp delay={0.4}>
-              <h2 className="md:text-[56px] text-[36px] font-[IvyMode] font-normal leading-[72px]">
+              <h2 className="md:text-[56px] text-[36px] leading-[44px] font-[IvyMode] font-normal md:leading-[72px]">
                 <span className="text-[#DE804B]">Streamline</span> Your <br />
                 Daily-routine
               </h2>
@@ -516,7 +516,7 @@ export default function Amenities() {
         </div>
 
         {/* Tabs */}
-        <AnimatedSection className="relative flex flex-col items-center w-full md:w-[90%] mx-auto mb-12">
+        <AnimatedSection className="relative flex flex-col items-center px-4 md:px-0 md:w-[90%] mx-auto md:mb-12 mb-6">
           <div className="flex justify-between w-full items-center overflow-x-auto gap-2">
             {tabs.map(({ id, label, image }) => (
               <div
@@ -552,42 +552,42 @@ export default function Amenities() {
                 className="relative flex flex-col items-start md:items-center w-1/4"
               >
                 {/* Line segment to the right (except last) */}
-                  <div
-                    className={`absolute top-1/2 md:left-1/2 left-0 h-0.5 z-0`}
-                    style={{
-                      width: "100%",
-                      backgroundColor:
-                        index < tabs.findIndex((t) => t.id === selectedTab) || index === tabs.findIndex((t) => t.id === selectedTab)
-                          ? "#ffffff"
-                          : "rgba(255, 255, 255, 0.3)",
-                      transform: "translateX(0%)",
-                    }}
-                  ></div>
-                  
+                <div
+                  className={`absolute top-1/2 md:left-1/2 left-0 h-0.5 z-0`}
+                  style={{
+                    width: "100%",
+                    backgroundColor:
+                      index < tabs.findIndex((t) => t.id === selectedTab) ||
+                      index === tabs.findIndex((t) => t.id === selectedTab)
+                        ? "#ffffff"
+                        : "rgba(255, 255, 255, 0.3)",
+                    transform: "translateX(0%)",
+                  }}
+                ></div>
+
                 {index === 0 && (
                   <div
                     className={`hidden md:block absolute top-1/2 left-0 h-0.5 z-0 w-1/2 bg-white`}
                   ></div>
                 )}
-                
 
                 {/* Dot */}
                 <div className="relative z-1 flex justify-center items-center w-5 md:w-15 bg-[#010922]">
-                <div
-                  className={`md:w-4 md:h-4 w-2 h-2 rounded-full z-10 ${
-                    index <= tabs.findIndex((t) => t.id === selectedTab)
-                      ? "bg-white"
-                      : "border-2 border-white bg-transparent"
-                  }`}
+                  <div
+                    className={`md:w-4 md:h-4 w-2 h-2 rounded-full z-10 ${
+                      index <= tabs.findIndex((t) => t.id === selectedTab)
+                        ? "bg-white"
+                        : "border-2 border-white bg-transparent"
+                    }`}
                   ></div>
-                  </div>
+                </div>
               </div>
             ))}
           </div>
         </AnimatedSection>
 
         {/* Content Grid for selected tab */}
-        <div className="relative text-white py-12 ">
+        <div className="relative text-white md:py-12 px-4 md:px-0">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
             {amenities[selectedTab].map((item, index) => (
               <SlideUp
@@ -595,13 +595,13 @@ export default function Amenities() {
                 key={index}
                 className={`relative ${
                   index % 2 !== 0 && "top-10"
-                } space-y-4 px-4`}
+                } space-y-4 md:px-4 px-0`}
               >
                 <div className="absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300 opacity-20"></div>
-                <div className="text-[20px] font-[IvyMode] leading-7 text-orange-500 font-normal md:text-lg mb-6">
+                <div className="text-[20px] font-[IvyMode] leading-7 text-orange-500 font-normal md:text-lg md:mb-6 mb-3">
                   {index + 1}
                 </div>
-                <h3 className="text-white text-left text-[18px] md:text-[24px] font-bold font-[Satoshi] mb-6">
+                <h3 className="text-white text-left text-[18px] md:text-[24px] font-bold font-[Satoshi] md:mb-6 mb-3">
                   {item.title}
                 </h3>
                 <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
@@ -612,7 +612,7 @@ export default function Amenities() {
                     className="object-cover"
                   />
                 </div>
-                <p className="font-[Satoshi] text-[14px] md:text-[16px] text-white font-normal mt-6 opacity-50">
+                <p className="font-[Satoshi] text-[14px] md:text-[16px] text-white font-normal md:mt-6 mt-3 opacity-50">
                   {item.description}
                 </p>
               </SlideUp>
@@ -662,7 +662,7 @@ export default function Amenities() {
 
         {/* Navigation buttons */}
         <AnimatedSection delay={0.8}>
-          <nav className="mb-30 relative w-full mt-9 flex justify-center items-center border-t border-b border-[#232c3d] py-4 md:py-6">
+          <nav className="mb-30 relative w-full mt-9 flex justify-center items-center border-t border-b border-[#232c3d] px-1 md:px-0 py-4 md:py-6">
             {navTabs.map((tab, idx) => (
               <React.Fragment key={tab}>
                 <button
@@ -710,7 +710,7 @@ export default function Amenities() {
         id="club-house"
         className="relative -mt-20 md:mx-15 mx-1 md:pb-10 bg-white"
       >
-        <div className="px-6 py-10">
+        <div className="md:px-6 px-3 py-10">
           <div className="flex justify-center">
             <SlideUp delay={0.2} className="absolute md:-top-12 -top-6">
               <Image
@@ -718,7 +718,7 @@ export default function Amenities() {
                 alt=""
                 width={100}
                 height={100}
-                className="responsive-image"
+                className="responsive-image-amenities"
               />
             </SlideUp>
           </div>
@@ -735,7 +735,7 @@ export default function Amenities() {
                   key={index}
                   className={`relative ${
                     index % 2 !== 0 && "top-10"
-                  } space-y-4 px-4`}
+                  } md:space-y-4 space-y-3 md:px-4 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300"></div>
                   <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">
@@ -856,7 +856,7 @@ export default function Amenities() {
                 alt=""
                 width={100}
                 height={100}
-                className="responsive-image"
+                className="responsive-image-amenities"
               />
             </SlideUp>
             {/* responsive */}
@@ -866,7 +866,7 @@ export default function Amenities() {
                 alt=""
                 width={100}
                 height={100}
-                className="responsive-image"
+                className="responsive-image-amenities"
               />
             </div>
           </div>
@@ -876,7 +876,7 @@ export default function Amenities() {
             </h1>
           </SlideUp>
 
-          <div className="relative text-white md:px-8 md:py-12 py-6">
+          <div className="relative text-white md:px-8 md:py-12 py-4 px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
               {PodiumData.map((item, index) => (
                 <SlideUp
@@ -884,7 +884,7 @@ export default function Amenities() {
                   key={index}
                   className={`relative ${
                     index % 2 !== 0 && "top-10"
-                  } space-y-4 px-4`}
+                  } md:space-y-4 md:px-4 space-y-2 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300"></div>
                   <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">
@@ -1045,17 +1045,17 @@ export default function Amenities() {
                 alt=""
                 width={100}
                 height={100}
-                className="responsive-image"
+                className="responsive-image-amenities"
               />
             </SlideUp>
           </div>
           <SlideUp delay={0.4}>
-            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-[ivyMode] md:my-12 my-3 mt-10 md:mt-0">
+            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-[ivyMode] md:my-12 my-3 mt-5 md:mt-0">
               Ground Level
             </h1>
           </SlideUp>
 
-          <div className="relative text-white md:py-12 py-6">
+          <div className="relative text-white md:py-12 py-6 px-4 md:px-0">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
               {groundData.map((item, index) => (
                 <SlideUp
@@ -1063,7 +1063,7 @@ export default function Amenities() {
                   key={index}
                   className={`relative ${
                     index % 2 !== 0 && "top-10"
-                  } space-y-4 px-4`}
+                  } md:space-y-4 md:px-4 space-y-3 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300"></div>
                   <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">
@@ -1111,7 +1111,7 @@ export default function Amenities() {
             ))}
           </div>
           {/* responsive */}
-          <div className="md:hidden flex max-w-7xl mx-auto grid grid-cols-2 gap-5">
+          <div className="md:hidden flex max-w-7xl mx-auto grid grid-cols-2 gap-5 px-4">
             {ClubIconsRes.map(({ label, image }, idx) => (
               <SlideUp
                 delay={idx * 0.1}
@@ -1387,30 +1387,32 @@ export default function Amenities() {
           <div className="flex flex-col md:w-[70%] w-full">
             {/* Category Buttons */}
             <div className="flex gap-5 md:gap-10 items-center mb-8 mt-6 md:mt-0 text-gray-400 relative py-4 px-6 md:py-0 md:px-0 md:border-none border-y-1 border-dashed border-[#ebedef]">
-  {["Category 1", "Category 2", "Category 3"].map((label, idx, arr) => (
-    <React.Fragment key={idx}>
-      <button
-        className={`relative font-semibold pb-1 cursor-pointer transition-colors duration-200 ${
-          activeCategory === idx ? "text-black" : "text-gray-400"
-        }`}
-        onClick={() => {
-          setActiveCategory(idx);
-          setActiveIndex(null); // Reset open accordion
-        }}
-      >
-        {label}
-        {activeCategory === idx && (
-          <span className="absolute left-0 -bottom-[17px] w-[30px] h-[2px] bg-[#4F70AF] rounded-sm"></span>
-        )}
-      </button>
+              {["Category 1", "Category 2", "Category 3"].map(
+                (label, idx, arr) => (
+                  <React.Fragment key={idx}>
+                    <button
+                      className={`relative font-semibold pb-1 cursor-pointer transition-colors duration-200 ${
+                        activeCategory === idx ? "text-black" : "text-gray-400"
+                      }`}
+                      onClick={() => {
+                        setActiveCategory(idx);
+                        setActiveIndex(null); // Reset open accordion
+                      }}
+                    >
+                      {label}
+                      {activeCategory === idx && (
+                        <span className="absolute left-0 -bottom-[17px] w-[30px] h-[2px] bg-[#4F70AF] rounded-sm"></span>
+                      )}
+                    </button>
 
-      {/* CSS Diamond */}
-      {idx < arr.length - 1 && (
-        <span className="w-1 h-1 border border-black rotate-45 mx-[12px]"></span>
-      )}
-    </React.Fragment>
-  ))}
-</div>
+                    {/* CSS Diamond */}
+                    {idx < arr.length - 1 && (
+                      <span className="w-1 h-1 border border-black rotate-45 mx-[12px]"></span>
+                    )}
+                  </React.Fragment>
+                )
+              )}
+            </div>
 
             {/* Accordion Items */}
             {accordionData[activeCategory].map((item, index) => (
