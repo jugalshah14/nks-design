@@ -989,9 +989,9 @@ export default function Amenities() {
 
       {/* ganga ghat */}
       <AnimatedSection>
-        <section className="relative w-full md:h-[524px] md:flex md:overflow-hidden my-12 rounded-none shadow-lg">
+        <section className="relative w-full md:h-[524px] md:flex md:overflow-hidden my-12 rounded-none shadow-lg bg-[#010922]  justify-end items-end">
           {/* Text container */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center py-6 md:py-[74px] bg-[#0a1628] px-4 md:px-0">
+          <div className="w-full flex py-6 md:py-[74px] px-4 md:px-0 absolute container mx-auto z-1 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
             <h2
               className="font-[IvyMode] font-light text-white leading-[44px] md:leading-[72px] text-center md:text-left
       text-[36px] md:text-[56px]"
@@ -1006,7 +1006,7 @@ export default function Amenities() {
           </div>
 
           {/* Image container */}
-          <div className="hidden md:flex w-full md:w-1/2 h-[300px] md:h-full relative">
+          <div className="hidden md:flex w-full md:w-[65%] h-[300px] md:h-full relative">
             <Image
               src="/assets/gangaGhat.png"
               alt="Ferry Ride"
@@ -1015,7 +1015,7 @@ export default function Amenities() {
               priority
             />
             {/* Dark gradient overlay */}
-            <div className="absolute inset-0 md:bg-[linear-gradient(87.36deg,#0a1628_9.69%,rgba(2,12,34,0)_93.16%)]" />
+            <div className="absolute inset-0 md:bg-[linear-gradient(87.36deg,#010922_9.69%,rgba(2,12,34,0)_93.16%)]" />
           </div>
           {/* responsive */}
           <div className="md:hidden w-full md:w-1/2 h-[396px] md:h-full relative">
@@ -1027,7 +1027,7 @@ export default function Amenities() {
               priority
             />
             {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,#0a1628_1.69%,rgba(2,12,34,0)_93.16%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,#0010922_1.69%,rgba(2,12,34,0)_93.16%)]" />
           </div>
         </section>
       </AnimatedSection>
@@ -1237,7 +1237,9 @@ export default function Amenities() {
                   className="flex flex-col items-center text-center"
                 >
                   <Image src={image} alt={title} width={60} height={60} />
-                  <p className="mt-3 font-[Satoshi] font-bold text-[16px] leading-[24px] text-[#22252E]">{title}</p>
+                  <p className="mt-3 font-[Satoshi] font-bold text-[16px] leading-[24px] text-[#22252E]">
+                    {title}
+                  </p>
                 </SlideUp>
               ))}
               {features.slice(2, 4).map(({ image, title }, i) => (
@@ -1247,7 +1249,9 @@ export default function Amenities() {
                   className="flex flex-col items-center text-center"
                 >
                   <Image src={image} alt={title} width={60} height={60} />
-                  <p className="mt-3 font-[Satoshi] font-bold text-[16px] leading-[24px] text-[#22252E]">{title}</p>
+                  <p className="mt-3 font-[Satoshi] font-bold text-[16px] leading-[24px] text-[#22252E]">
+                    {title}
+                  </p>
                 </SlideUp>
               ))}
               {/* Center the last item */}
@@ -1256,8 +1260,15 @@ export default function Amenities() {
                   delay={4 * 0.2}
                   className="flex flex-col items-center text-center"
                 >
-                  <Image src={features[4].image} alt={features[4].title} width={60} height={60} />
-                  <p className="mt-3 font-[Satoshi] font-bold px-15 text-[16px] leading-[24px] text-[#22252E]">{features[4].title}</p>
+                  <Image
+                    src={features[4].image}
+                    alt={features[4].title}
+                    width={60}
+                    height={60}
+                  />
+                  <p className="mt-3 font-[Satoshi] font-bold px-15 text-[16px] leading-[24px] text-[#22252E]">
+                    {features[4].title}
+                  </p>
                 </SlideUp>
               </div>
             </div>
