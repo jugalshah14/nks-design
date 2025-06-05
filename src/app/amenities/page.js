@@ -37,7 +37,7 @@ const amenities = {
     {
       title: "Escape into a tranquil sanctuary of books and relaxation.",
       description:
-        "Let your little ones frolic at the children’s play area or the splash pool while you lounge or take a stroll",
+        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
       image: "/assets/noon1.png",
     },
     {
@@ -65,7 +65,7 @@ const amenities = {
       title:
         "Indulge in opulent travel with our private ferry service, redefining luxury and convenience.",
       description:
-        "Let your little ones frolic at the children’s play area or the splash pool while you lounge or take a stroll",
+        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
       image: "/assets/evening1.png",
     },
     {
@@ -92,7 +92,7 @@ const amenities = {
       title:
         "Indulge in the grandeur of exquisite architecture, luxurious seating & captivating artwork.",
       description:
-        "Let your little ones frolic at the children’s play area or the splash pool while you lounge or take a stroll",
+        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
       image: "/assets/night1.png",
     },
     {
@@ -909,7 +909,7 @@ export default function Amenities() {
             </div>
           </div>
 
-          <div className="hidden md:grid max-w-7xl mx-auto md:grid-cols-3 gap-10">
+          <div className="hidden md:grid max-w-7xl mx-auto md:grid-cols-3 gap-10 px-8 ">
             {PodiumIcons.map(({ label, image }, idx) => (
               <SlideUp
                 delay={idx * 0.2}
@@ -1178,8 +1178,8 @@ export default function Amenities() {
       </AnimatedSection>
 
       {/* certified section */}
-      <AnimatedSection>
-        <section className="hidden md:block relative w-full bg-[#E7F2EB] py-1 px-2 md:py-20 md:px-15">
+      <AnimatedSection className="overflow-visible">
+        <section className="block relative w-full bg-[#E7F2EB] py-1 px-2 md:py-20 md:px-15">
           <div className="bg-white relative w-full md:py-20 md:px-10 mb:mt-12 text-center">
             {/* IGBC Logo */}
             <div className="flex justify-center">
@@ -1197,20 +1197,20 @@ export default function Amenities() {
 
             {/* Heading */}
             <SlideUp delay={0.8}>
-              <h2 className="md:text-[56px] text-[36px] leading-[44px] font-[ivyMode] font-normal md:leading-[72px] mt-10 mb-10">
+              <h2 className="md:text-[56px] text-[36px] leading-[44px] font-[ivyMode] font-normal md:leading-[72px] my-10">
                 Pre-Certified <br />
                 Platinum-Rated by <br />
                 <span className="text-[#DE804B]">IGBC</span>
               </h2>
             </SlideUp>
 
-            {/* Features List */}
-            <div className="md:flex justify-between w-full gap-20 pb-20 md:pb-0">
-              {features.map(({ image, title, bgColor }, i) => (
+            {/* Features List - Desktop */}
+            <div className="hidden md:flex justify-between w-full gap-20 pb-20 md:pb-0">
+              {features.map(({ image, title }, i) => (
                 <SlideUp
                   delay={i * 0.2}
                   key={i}
-                  className="flex flex-col items-center space-y-4 text-center max-w-[235px]"
+                  className="flex flex-col items-center md:space-y-4 px-4 md:px-0 text-center max-w-[235px]"
                 >
                   <div className="flex-shrink-0 flex items-center justify-center rounded-full mb-0">
                     <Image
@@ -1228,8 +1228,42 @@ export default function Amenities() {
               ))}
             </div>
 
+            {/* Features List - Mobile */}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:hidden pb-15 px-3">
+              {features.slice(0, 2).map(({ image, title }, i) => (
+                <SlideUp
+                  delay={i * 0.2}
+                  key={i}
+                  className="flex flex-col items-center text-center"
+                >
+                  <Image src={image} alt={title} width={60} height={60} />
+                  <p className="mt-3 font-[Satoshi] font-bold text-[16px] leading-[24px] text-[#22252E]">{title}</p>
+                </SlideUp>
+              ))}
+              {features.slice(2, 4).map(({ image, title }, i) => (
+                <SlideUp
+                  delay={(i + 2) * 0.2}
+                  key={i + 2}
+                  className="flex flex-col items-center text-center"
+                >
+                  <Image src={image} alt={title} width={60} height={60} />
+                  <p className="mt-3 font-[Satoshi] font-bold text-[16px] leading-[24px] text-[#22252E]">{title}</p>
+                </SlideUp>
+              ))}
+              {/* Center the last item */}
+              <div className="col-span-2 flex justify-center">
+                <SlideUp
+                  delay={4 * 0.2}
+                  className="flex flex-col items-center text-center"
+                >
+                  <Image src={features[4].image} alt={features[4].title} width={60} height={60} />
+                  <p className="mt-3 font-[Satoshi] font-bold px-15 text-[16px] leading-[24px] text-[#22252E]">{features[4].title}</p>
+                </SlideUp>
+              </div>
+            </div>
+
             {/* View Certification Button */}
-            <AnimatedSection className="flex justify-center relative bottom-7 md:bottom-0 md:top-27">
+            <AnimatedSection className="flex justify-center relative bottom-7 md:bottom-0 md:top-27 overflow-visible">
               <button className="absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex gap-2 overflow-hidden mb-0 button-primary">
                 <div className="pl-8 pr-15 py-4">View Certification</div>
                 <span className="px-8 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
