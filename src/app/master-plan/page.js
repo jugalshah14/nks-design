@@ -500,7 +500,7 @@ export default function MasterPlan() {
           <div className="text-center mb-7 md:mb-16">
             <SlideUp
               delay={0.2}
-              className="text-[14px] leading-5 md:text-[16px] font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2"
+              className="text-[14px] leading-5 md:text-[16px] font-satoshi font-[400] md:leading-[22px] text-[#22252e] mb-2"
             >
               / Magnificent
             </SlideUp>
@@ -550,7 +550,7 @@ export default function MasterPlan() {
             </div>
             <SlideUp
               delay={0.4}
-              className="hide-triangle text-[20px] md:text-[20px] font-[Satoshi] font-[400] leading-5 md:leading-[28px] text-white/50 max-w-[400px]"
+              className="hide-triangle text-[20px] md:text-[20px] font-satoshi font-[400] leading-5 md:leading-[28px] text-white/50 max-w-[400px]"
             >
               Experience a world of wonder and adventure. Our podium level is a
               playground for all ages!

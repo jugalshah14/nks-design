@@ -91,15 +91,15 @@ export default function PlanTypesSwiper() {
               height={36}
               className="mb-12"
             />
-            <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">
+            <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
               {slide.title}
             </h3>
-            <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">
+            <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
               {slide.desc}
             </p>
             <Link
               href={slide.link}
-              className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]"
+              className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78]"
             >
               View
               <Image

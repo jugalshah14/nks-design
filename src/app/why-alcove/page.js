@@ -64,7 +64,7 @@ export default function WhyAlcove() {
                 <div className="flex flex-col md:flex-row justify-between relative container mx-auto px-[16px] md:px-24 gap-[12px] md:gap-[36px] md:gap-12">
                   <div className="text-center md:text-left w-full md:pb-15">
                     <SlideUp className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
-                    <SlideUp delay={0.2} className="project-overview-title text-center md:text-left !font-[IvyMode]">From <br/><span className="orange-color"> Founder’s </span>Desk</SlideUp>
+                    <SlideUp delay={0.2} className="project-overview-title text-center md:text-left !font-cormorant">From <br/><span className="orange-color"> Founder’s </span>Desk</SlideUp>
                     <SlideUp delay={0.4} className="max-w-[409px] text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[20px] md:pt-10">As being architect of New Kolkata, I recommend this place as nice place to live. we're architecture notes. learn about the systems you use everyday from the engineers who built them</SlideUp>
 
                   </div>
@@ -171,7 +171,7 @@ export default function WhyAlcove() {
                   <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
                   <SlideUp delay={0.4} className="project-overview-title text-center md:pb-[28px] md:pb-[0px]"><span className="orange-color">Past</span> Projects</SlideUp>
                 </div>
-                <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-110 md:top-95'></div>
+                <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-110 md:top-100'></div>
             </div>
             <SlideUp delay={0.6}>
                 <PastProjectSwiper/>
@@ -210,7 +210,7 @@ export default function WhyAlcove() {
                     <SlideUp className="text-center md:text-start text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">/ Amenities</SlideUp>              
                     <SlideUp delay={0.2} className="project-overview-title text-center md:text-left !text-white"><span className="orange-color">Awards <br/></span>& Recognitions</SlideUp>
                     </div>
-                    <SlideUp delay={0.4} className="hide-triangle text-[20px] md:text-[20px] font-[Satoshi] font-[400] leading-5 md:leading-[28px] text-white/50 max-w-[400px]">Experience a world of wonder and adventure. Our podium level is a playground for all ages!</SlideUp>
+                    <SlideUp delay={0.4} className="hide-triangle text-[20px] md:text-[20px] font-satoshi font-[400] leading-5 md:leading-[28px] text-white/50 max-w-[400px]">Experience a world of wonder and adventure. Our podium level is a playground for all ages!</SlideUp>
                 </div>
                 <SlideUp delay={0.6} className='flex flex-col md:flex-row w-full gap-[32px]'>
                     <div className='relative w-full'>

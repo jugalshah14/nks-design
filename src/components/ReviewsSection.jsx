@@ -111,7 +111,7 @@ export default function ReviewsSection() {
                     <React.Fragment key={bhk}>
                     <div
                         onClick={() => handleBHKChange(bhk)}
-                        className={`text-[16px] md:text-[20px] font-[Satoshi] font-normal leading-[28px] py-[20px] cursor-pointer transition-all duration-300 relative ${
+                        className={`text-[16px] md:text-[20px] font-satoshi font-normal leading-[28px] py-[20px] cursor-pointer transition-all duration-300 relative ${
                         activeBHK === bhk ? 'text-white' : 'text-white/50'
                         }`}
                     >

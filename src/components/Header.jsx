@@ -48,31 +48,31 @@ const Header = () => {
             <nav className="hidden md:flex space-x-8">
               <Link
                 href="/why-alcove"
-                className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
               >
                 Why Alcove
               </Link>
               <Link
                 href="/master-plan"
-                className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
               >
                 Master Plans
               </Link>
               <Link
                 href="/amenities"
-                className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
               >
                 Amenities
               </Link>
               <Link
                 href="/Location"
-                className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
               >
                 Location
               </Link>
               <Link
                 href="/life-@-alcove"
-                className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
               >
                 Life @Alcove
               </Link>
@@ -92,13 +92,13 @@ const Header = () => {
           <div className="flex items-center gap-6">
             <Link
                 href="/blogs"
-                className="font-[Satoshi] font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
               >
                 Blogs
             </Link>
             <p>Schedule Visit</p>
             <div className="h-[48px] w-[100px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-sm action-button">
-              <p className="font-[Satoshi] font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22] absolute top-[13px] left-[22px]">
+              <p className="font-satoshi font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22] absolute top-[13px] left-[22px]">
                 call Now
               </p>
             </div>
