@@ -1275,9 +1275,9 @@ export default function Amenities() {
 
             {/* View Certification Button */}
             <AnimatedSection className="flex justify-center relative bottom-7 md:bottom-0 md:top-27 overflow-visible">
-              <button className="absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex gap-2 overflow-hidden mb-0 button-primary">
-                <div className="pl-8 pr-15 py-4">View Certification</div>
-                <span className="px-8 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
+              <button className="md:min-h-[4rem] min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden mb-0 button-primary">
+                <div className="px-6 py-3 mr-20">View Certification</div>
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
                   ↗
                 </span>
               </button>

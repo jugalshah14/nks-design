@@ -237,7 +237,7 @@ export default function lifeAtAlcove() {
       {/* Residential Section */}
       <section
         id="residential"
-        className="relative w-full md:py-20 py-10 bg-[#F3F6F8]"
+        className="relative w-full pt-10 pb-10 md:pt-20 md:pb-0 bg-[#F3F6F8]"
       >
         <div className="text-center mb-12">
           <SlideUp>
@@ -346,30 +346,32 @@ export default function lifeAtAlcove() {
             </div>
           </SlideUp>
         </div>
-        <div className="relative border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:-bottom-33 -bottom-16 md:h-[104px] z-10">
-          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
-            <Image
-              src="/assets/neighbour.png"
-              alt="Room preview"
-              fill
-              className="object-cover"
-            />
+        <AnimatedSection className="overflow-visible">
+          <div className="relative group cursor-pointer transform transition-transform duration-300 hover:scale-101 md:-bottom-18 -bottom-10 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:h-[144px]">
+            <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+              <Image
+                src="/assets/blogs-hr.png"
+                alt="Room preview"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="flex-1 md:px-11 md:py-8">
+              <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+                Curious to see life @Alcove and world-class amenities?{" "}
+              </p>
+            </div>
+            <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
+              <Image
+                src="/assets/icons/arrowlong.svg"
+                alt=""
+                width={40}
+                height={3}
+                className="absolute -ml-6"
+              />
+            </div>
           </div>
-          <div className="flex-1 md:px-11 md:py-8">
-            <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-              Embrace the beauty of your surroundings, know our neighbourhood
-            </p>
-          </div>
-          <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
-            <Image
-              src="/assets/icons/arrowlong.svg"
-              alt=""
-              width={40}
-              height={3}
-              className="absolute -ml-6"
-            />
-          </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* Construction Section */}
@@ -484,8 +486,8 @@ export default function lifeAtAlcove() {
             </div>
           </SlideUp>
         </div>
-        <AnimatedSection>
-          <div className="border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto -bottom-33 md:h-[104px] z-10">
+        <AnimatedSection className="overflow-visible">
+          <div className="relative group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
                 src="/assets/neighbour.png"

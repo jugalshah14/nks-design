@@ -46,7 +46,7 @@ export default function lifeAtAlcove() {
         </SlideUp>
       </section>
 
-      <section className="bg-[#020C22] text-white py-20 h-auto">
+      <section className="bg-[#020C22] relative text-white md-pt-20 md:pb-20 pt-20 pb-0 h-auto">
         <SlideUp delay={0.2}>
           <div className="flex justify-center font-satoshi font-normal text-[16px] leading-[20px]">
             / Amenities
@@ -61,8 +61,8 @@ export default function lifeAtAlcove() {
           <AlocveSwiper/>
         </AnimatedSection>
         <AnimatedSection className="overflow-visible">
-          <div className="relative border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto -bottom-33 md:h-[104px] z-1">
-            <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+          <div className="md:relative absolute group cursor-pointer transform transition-transform duration-300 hover:scale-101 -bottom-38 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
+              <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
                 src="/assets/neighbour.png"
                 alt="Room preview"
@@ -71,11 +71,11 @@ export default function lifeAtAlcove() {
               />
             </div>
             <div className="flex-1 md:px-11 md:py-8">
-              <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+                <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
                 Embrace the beauty of your surroundings, know our neighbourhood
               </p>
             </div>
-            <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
+              <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
               <Image
                 src="/assets/icons/arrowlong.svg"
                 alt=""
@@ -88,7 +88,7 @@ export default function lifeAtAlcove() {
         </AnimatedSection>
       </section>
 
-      <section className="py-20 pb-0 bg-white">
+      <section className="py-20 pb-0 mt-20 md:mt-0 bg-white">
         <SlideUp delay={0.2}>
           <div className="mt-10 flex text-black justify-center font-satoshi font-normal text-[16px] leading-[20px]">
             / Magnificent
