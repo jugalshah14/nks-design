@@ -47,28 +47,34 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-8">
             <nav className="hidden md:flex space-x-8">
               <Link
-                href="/"
+                href="/why-alcove"
                 className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
               >
-                Home
+                Why Alcove
               </Link>
               <Link
-                href="#"
+                href="/master-plan"
                 className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
               >
-                About us
+                Master Plans
               </Link>
               <Link
-                href="#"
+                href="/amenities"
                 className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
               >
-                Plans
+                Amenities
               </Link>
               <Link
-                href="#"
+                href="/Location"
                 className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
               >
-                Blogs
+                Location
+              </Link>
+              <Link
+                href="/life-@-alcove"
+                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+              >
+                Life @Alcove
               </Link>
             </nav>
           </div>
@@ -83,10 +89,17 @@ const Header = () => {
             />
           </div>
 
-          <div className="block">
-            <div className="h-[48px] w-[168px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-sm action-button">
-              <p className="font-satoshi font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22] absolute top-[13px] left-[32px]">
-                Schedule a Visit
+          <div className="flex items-center gap-6">
+            <Link
+                href="/blogs"
+                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+              >
+                Blogs
+            </Link>
+            <p>Schedule Visit</p>
+            <div className="h-[48px] w-[100px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-sm action-button">
+              <p className="font-satoshi font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22] absolute top-[13px] left-[22px]">
+                call Now
               </p>
             </div>
           </div>
