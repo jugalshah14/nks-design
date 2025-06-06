@@ -111,7 +111,7 @@ function FitnessSwiper() {
         </div>
         {/* Text Section */}
         <div className="w-full bg-[#020C22] px-4 py-6 flex flex-col items-center">
-          <div className="text-white text-center text-[24px] leading-7 font-[Satoshi] font-normal">
+          <div className="text-white text-center text-[24px] leading-7 font-satoshi font-normal">
             Make everyday living effortless
             <br />
             with our <span className="text-orange-500">Convenience</span> for
@@ -162,7 +162,7 @@ function FitnessSwiper() {
           </div>
         </div>
         <div className="flex flex-col justify-center lg:justify-center h-full">
-          <div className="z-10 right-17 -bottom-37.5 relative max-w-md bg-[#020C22] p-8 md:p-10 text-white font-[Satoshi] text-[40px] leading-[48px] text-left flex h-auto">
+          <div className="z-10 right-17 -bottom-37.5 relative max-w-md bg-[#020C22] p-8 md:p-10 text-white font-satoshi text-[40px] leading-[48px] text-left flex h-auto">
           <span>
             Make everyday living effortless with our{" "}
             <span className="text-orange-500">Convenience</span> for Residence
@@ -208,7 +208,7 @@ function NatureSwiper() {
         </div>
         {/* Text Section (white bg) */}
         <div className="w-full bg-white px-4 py-6 flex flex-col items-center">
-          <div className="text-black text-center text-[24px] leading-7 font-[Satoshi] font-normal">
+          <div className="text-black text-center text-[24px] leading-7 font-satoshi font-normal">
             Embrace the beauty of nature with us, where modern living meets{" "}
             <span className="text-orange-500">natural wonders</span>
           </div>
@@ -233,7 +233,7 @@ function NatureSwiper() {
       {/* Desktop View */}
       <div className="container nature-swiper md:mb-10 w-full h-[280px] md:h-[570px] mx-auto flex-col lg:flex-row items-center lg:items-center mt-12 hidden md:flex">
         <div className="flex flex-col justify-center lg:justify-center h-full">
-          <div className="z-10 relative top-100 md:top-29.5 md:left-10 max-w-md bg-[#020C22] p-6 md:p-10 text-white font-[Satoshi] text-[40px] leading-[48px] text-left self-center lg:self-end mt-4">
+          <div className="z-10 relative top-100 md:top-29.5 md:left-10 max-w-md bg-[#020C22] p-6 md:p-10 text-white font-satoshi text-[40px] leading-[48px] text-left self-center lg:self-end mt-4">
             Embrace the beauty of nature with us, where modern living meets{" "}
             <span className="text-orange-500">natural wonders</span>
           </div>
@@ -299,7 +299,7 @@ function CricketSwiper() {
         </div>
         {/* Text Section */}
         <div className="w-full bg-[#020C22] px-4 py-6 flex flex-col items-center">
-          <div className="text-white text-center text-[24px] leading-7 font-[Satoshi] font-normal">
+          <div className="text-white text-center text-[24px] leading-7 font-satoshi font-normal">
             Join the fun and make memories with our{" "}
             <span className="text-orange-500">exciting activities</span> for
             everyone
@@ -347,7 +347,7 @@ function CricketSwiper() {
           </div>
         </div>
         <div className="flex flex-col justify-center lg:justify-center h-full">
-          <div className="z-10 right-10 -bottom-37.5 relative max-w-md bg-[#020C22] p-8 md:p-10 text-white font-[Satoshi] text-[40px] leading-[48px] text-left flex h-auto">
+          <div className="z-10 right-10 -bottom-37.5 relative max-w-md bg-[#020C22] p-8 md:p-10 text-white font-satoshi text-[40px] leading-[48px] text-left flex h-auto">
             <span>
               Join the fun and make memories with our{" "}
               <span className="text-orange-500">exciting activities</span> for

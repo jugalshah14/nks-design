@@ -470,7 +470,7 @@ export default function Amenities() {
             </div>
           </SlideUp>
           <SlideUp delay={0.6}>
-            <h1 className="text-[48px] text-black leading-[52px] md:text-[#dee2e4] md:text-[150px] md:leading-[150px] font-[IvyMode]">
+            <h1 className="text-[48px] text-black leading-[52px] md:text-[#dee2e4] md:text-[150px] md:leading-[150px] font-cormorant">
               Amenities
             </h1>
           </SlideUp>
@@ -496,19 +496,19 @@ export default function Amenities() {
         <div className="flex w-full md:justify-between justify-center md:max-w-7xl md:mx-auto md:text-left text-center md:h-[180px] md:mb-12">
           <div className="md:mb-10 mb-5">
             <SlideUp delay={0.2}>
-              <p className="text-white font-[Satoshi] font-normal text-[16px] leading-[20px] md:mb-4 mb-2">
+              <p className="text-white font-satoshi font-normal text-[16px] leading-[20px] md:mb-4 mb-2">
                 / Amenities
               </p>
             </SlideUp>
             <SlideUp delay={0.4}>
-              <h2 className="md:text-[56px] text-[36px] leading-[44px] font-[IvyMode] font-normal md:leading-[72px]">
+              <h2 className="md:text-[56px] text-[36px] leading-[44px] font-cormorant font-normal md:leading-[72px]">
                 <span className="text-[#DE804B]">Streamline</span> Your <br />
                 Daily-routine
               </h2>
             </SlideUp>
           </div>
           <SlideUp delay={0.6} className="hidden md:flex md:items-end">
-            <p className="md:w-[400px] md:text-[20px] md:leading-[28px] md:text-white md:opacity-60 md:font-normal md:font-[Satoshi]">
+            <p className="md:w-[400px] md:text-[20px] md:leading-[28px] md:text-white md:opacity-60 md:font-normal md:font-satoshi">
               Experience a world of wonder and adventure. Our podium level is a
               playground for all ages!
             </p>
@@ -598,10 +598,10 @@ export default function Amenities() {
                 } space-y-4 md:px-5 px-0`}
               >
                 <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300 opacity-20"></div>
-                <div className="text-[20px] font-[IvyMode] leading-7 text-orange-500 font-normal md:text-lg md:mb-6 mb-3">
+                <div className="text-[20px] font-cormorant leading-7 text-orange-500 font-normal md:text-lg md:mb-6 mb-3">
                   {index + 1}
                 </div>
-                <h3 className="text-white text-left text-[18px] md:text-[24px] font-bold font-[Satoshi] md:mb-6 mb-3">
+                <h3 className="text-white text-left text-[18px] md:text-[24px] font-bold font-satoshi md:mb-6 mb-3">
                   {item.title}
                 </h3>
                 <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
@@ -612,7 +612,7 @@ export default function Amenities() {
                     className="object-cover"
                   />
                 </div>
-                <p className="font-[Satoshi] text-[14px] md:text-[16px] text-white font-normal md:mt-6 mt-3 opacity-50">
+                <p className="font-satoshi text-[14px] md:text-[16px] text-white font-normal md:mt-6 mt-3 opacity-50">
                   {item.description}
                 </p>
               </SlideUp>
@@ -624,13 +624,13 @@ export default function Amenities() {
         <div className="hidden md:flex flex-col text-center">
           <SlideUp
             delay={0.4}
-            className="text-[150px] text-[#DE804B] font-[IvyMode] leading-[150px] font-bold"
+            className="text-[150px] text-[#DE804B] font-cormorant leading-[150px] font-bold"
           >
             65+
           </SlideUp>
           <SlideUp
             delay={0.6}
-            className="text-[48px] font-[IvyMode] leading-[60px] font-normal text-white"
+            className="text-[48px] font-cormorant leading-[60px] font-normal text-white"
           >
             World-class Amenities
           </SlideUp>
@@ -652,10 +652,10 @@ export default function Amenities() {
           </div>
 
           {/* Text content with spacing to clear lines */}
-          <p className="text-[16px] font-[Satoshi] font-bold leading-[20px] relative z-10">
+          <p className="text-[16px] font-satoshi font-bold leading-[20px] relative z-10">
             65+
           </p>
-          <p className="text-[16px] font-[Satoshi] font-bold leading-[20px] relative z-10">
+          <p className="text-[16px] font-satoshi font-bold leading-[20px] relative z-10">
             World-class <br /> Amenities
           </p>
         </SlideUp>
@@ -683,7 +683,7 @@ export default function Amenities() {
                   className={
                     "relative md:px-8 flex flex-col items-center focus:outline-none cursor-pointer" +
                     (selectedNav === tab
-                      ? " text-white font-bold font-[Satoshi] text-[16px] leading-[24px] md:text-[20px] md:leading-[28px]"
+                      ? " text-white font-bold font-satoshi text-[16px] leading-[24px] md:text-[20px] md:leading-[28px]"
                       : " text-white font-normal text-[16px] leading-[24px] md:text-[20px] md:leading-[28px] opacity-50 hover:text-white transition")
                   }
                 >
@@ -723,7 +723,7 @@ export default function Amenities() {
             </SlideUp>
           </div>
           <SlideUp delay={0.4}>
-            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-[ivyMode] md:my-12 my-3">
+            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3">
               Club-house
             </h1>
           </SlideUp>
@@ -738,10 +738,10 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">
+                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">
                     {index + 1}
                   </div>
-                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-[Satoshi]">
+                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
@@ -752,7 +752,7 @@ export default function Amenities() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="font-[Satoshi] text-[14px] md:text-[16px] text-[#22252E] font-[400]">
+                  <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E] font-[400]">
                     {item.description}
                   </p>
                 </SlideUp>
@@ -779,7 +779,7 @@ export default function Amenities() {
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-bold text-[24px] leading-[28px] font-[Satoshi] text-[#22252E] text-center ml-7">
+                <p className="font-bold text-[24px] leading-[28px] font-satoshi text-[#22252E] text-center ml-7">
                   {label}
                 </p>
               </SlideUp>
@@ -805,7 +805,7 @@ export default function Amenities() {
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal text-[18px] leading-[24px] font-[Satoshi] text-[#22252E] text-center">
+                <p className="font-normal text-[18px] leading-[24px] font-satoshi text-[#22252E] text-center">
                   {label}
                 </p>
               </SlideUp>
@@ -825,7 +825,7 @@ export default function Amenities() {
               />
             </div>
             <div className="flex-1 md:px-11 md:py-8">
-              <p className="px-5 md:px-0 md:text-[24px] font-[Satoshi] font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+              <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
                 Seamless living in a thoughtfully designed Masterplans, check
                 floor plans.
               </p>
@@ -871,7 +871,7 @@ export default function Amenities() {
             </div>
           </div>
           <SlideUp delay={0.4}>
-            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-[ivyMode] md:my-12 my-3 mt-10">
+            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3 mt-10">
               Podium Level
             </h1>
           </SlideUp>
@@ -887,10 +887,10 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">
+                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">
                     {index + 1}
                   </div>
-                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-[Satoshi]">
+                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
@@ -901,7 +901,7 @@ export default function Amenities() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="font-[Satoshi] text-[14px] md:text-[16px] text-[#22252E] font-[400]">
+                  <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E] font-[400]">
                     {item.description}
                   </p>
                 </SlideUp>
@@ -925,7 +925,7 @@ export default function Amenities() {
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-bold text-[24px] leading-[28px] font-[Satoshi] text-[#22252E]">
+                <p className="font-bold text-[24px] leading-[28px] font-satoshi text-[#22252E]">
                   {label}
                 </p>
               </SlideUp>
@@ -951,7 +951,7 @@ export default function Amenities() {
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal text-[18px] leading-[24px] font-[Satoshi] text-[#22252E] text-center">
+                <p className="font-normal text-[18px] leading-[24px] font-satoshi text-[#22252E] text-center">
                   {label}
                 </p>
               </SlideUp>
@@ -970,7 +970,7 @@ export default function Amenities() {
               />
             </div>
             <div className="flex-1 md:px-11 md:py-8">
-              <p className="px-5 md:px-0 md:text-[24px] font-[Satoshi] font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+              <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
                 Curious to see life @Alcove and world-class amenities?
               </p>
             </div>
@@ -993,7 +993,7 @@ export default function Amenities() {
           {/* Text container */}
           <div className=" flex py-6 md:py-[74px] px-4 md:px-0 absolute md:container md:w-[90%] w-full justify-center md:justify-start mx-auto z-1 md:top-1/2 top-2 md:-translate-y-1/2 left-1/2 -translate-x-1/2">
             <h2
-              className="font-[IvyMode] font-light text-white leading-[44px] md:leading-[72px] text-center md:text-left
+              className="font-cormorant font-light text-white leading-[44px] md:leading-[72px] text-center md:text-left
       text-[36px] md:text-[56px]"
             >
               <span className="text-[#DE804B]">Devote </span>
@@ -1050,7 +1050,7 @@ export default function Amenities() {
             </SlideUp>
           </div>
           <SlideUp delay={0.4}>
-            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-[ivyMode] md:my-12 my-3 mt-5 md:mt-0">
+            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3 mt-5 md:mt-0">
               Ground Level
             </h1>
           </SlideUp>
@@ -1066,10 +1066,10 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">
+                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">
                     {index + 1}
                   </div>
-                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-[Satoshi]">
+                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
@@ -1080,7 +1080,7 @@ export default function Amenities() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="font-[Satoshi] text-[14px] md:text-[16px] text-[#22252E] font-[400]">
+                  <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E] font-[400]">
                     {item.description}
                   </p>
                 </SlideUp>
@@ -1104,7 +1104,7 @@ export default function Amenities() {
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-bold text-[24px] leading-[28px] font-[Satoshi] text-[#22252E]">
+                <p className="font-bold text-[24px] leading-[28px] font-satoshi text-[#22252E]">
                   {label}
                 </p>
               </SlideUp>
@@ -1130,7 +1130,7 @@ export default function Amenities() {
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal text-[18px] leading-[24px] font-[Satoshi] text-[#22252E] text-center">
+                <p className="font-normal text-[18px] leading-[24px] font-satoshi text-[#22252E] text-center">
                   {label}
                 </p>
               </SlideUp>
@@ -1156,13 +1156,13 @@ export default function Amenities() {
 
           {/* Text Content (top on mobile, right on desktop) */}
           <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center py-10 px-4 md:px-6 md:py-[74px] md:pr-[100px] bg-[#0a1628] text-center md:text-left">
-            <h2 className="text-[36px] md:text-[56px] font-[IvyMode] text-white font-light leading-[40px] md:leading-[72px] mb-6 md:mb-7">
+            <h2 className="text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px] mb-6 md:mb-7">
               Indulge in the <span className="text-[#DE804B]">ferry ride </span>
               <br className="hidden md:block" />
               departing from our <br className="hidden md:block" />
               location.
             </h2>
-            <p className="text-white font-[Satoshi] font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] mb-6 md:mb-7">
+            <p className="text-white font-satoshi font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] mb-6 md:mb-7">
               Ferry solely for potential clients and current customers.
             </p>
             <button className="md:min-h-[4rem] min-h-[3.5rem] h-full md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
@@ -1197,7 +1197,7 @@ export default function Amenities() {
 
             {/* Heading */}
             <SlideUp delay={0.8}>
-              <h2 className="md:text-[56px] text-[36px] leading-[44px] font-[ivyMode] font-normal md:leading-[72px] my-10">
+              <h2 className="md:text-[56px] text-[36px] leading-[44px] font-cormorant font-normal md:leading-[72px] my-10">
                 Pre-Certified <br />
                 Platinum-Rated by <br />
                 <span className="text-[#DE804B]">IGBC</span>
@@ -1221,7 +1221,7 @@ export default function Amenities() {
                       className="icon-image"
                     />
                   </div>
-                  <p className="md:mt-7 mt-4 font-[Satoshi] font-bold text-[16px] md:text-[20px] leading:6 md:leading-7 text-[#22252E]">
+                  <p className="md:mt-7 mt-4 font-satoshi font-bold text-[16px] md:text-[20px] leading:6 md:leading-7 text-[#22252E]">
                     {title}
                   </p>
                 </SlideUp>
@@ -1237,7 +1237,7 @@ export default function Amenities() {
                   className="flex flex-col items-center text-center"
                 >
                   <Image src={image} alt={title} width={60} height={60} />
-                  <p className="mt-3 font-[Satoshi] font-bold text-[16px] leading-[24px] text-[#22252E]">
+                  <p className="mt-3 font-satoshi font-bold text-[16px] leading-[24px] text-[#22252E]">
                     {title}
                   </p>
                 </SlideUp>
@@ -1249,7 +1249,7 @@ export default function Amenities() {
                   className="flex flex-col items-center text-center"
                 >
                   <Image src={image} alt={title} width={60} height={60} />
-                  <p className="mt-3 font-[Satoshi] font-bold text-[16px] leading-[24px] text-[#22252E]">
+                  <p className="mt-3 font-satoshi font-bold text-[16px] leading-[24px] text-[#22252E]">
                     {title}
                   </p>
                 </SlideUp>
@@ -1266,7 +1266,7 @@ export default function Amenities() {
                     width={60}
                     height={60}
                   />
-                  <p className="mt-3 font-[Satoshi] font-bold px-15 text-[16px] leading-[24px] text-[#22252E]">
+                  <p className="mt-3 font-satoshi font-bold px-15 text-[16px] leading-[24px] text-[#22252E]">
                     {features[4].title}
                   </p>
                 </SlideUp>
@@ -1295,7 +1295,7 @@ export default function Amenities() {
                 />
               </div>
               <div className="flex-1 md:px-11 md:py-8">
-                <p className="px-5 md:px-0 md:text-[24px] font-[Satoshi] font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+                <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
                   Curious to see life @Alcove and world-class amenities?
                 </p>
               </div>
@@ -1323,12 +1323,12 @@ export default function Amenities() {
               <div className="max-md:col-span-2 md:p-2">
                 <SlideUp
                   delay={0.2}
-                  className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2"
+                  className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] !text-white mb-2"
                 >
                   / Plans
                 </SlideUp>
                 <SlideUp delay={0.4}>
-                  <h2 className="font-[ivyMode] text-[36px] md:leading-[72px] max-md:text-center md:font-[300] md:text-[56px] text-white">
+                  <h2 className="font-cormorant text-[36px] md:leading-[72px] max-md:text-center md:font-[300] md:text-[56px] text-white">
                     Your <span className="orange-color">Safety</span> &
                     <br className="max-md:hidden" />{" "}
                     <span className="orange-color">Security</span>, Our
@@ -1353,7 +1353,7 @@ export default function Amenities() {
                     alt="Security Systems"
                     className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
                   />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-[Satoshi] font-[400] leading-6 md:leading-[28px] text-white text-center">
+                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                     24 hours security systems
                   </p>
                 </SlideUp>
@@ -1366,7 +1366,7 @@ export default function Amenities() {
                     alt="Monitoring Systems"
                     className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
                   />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-[Satoshi] font-[400] leading-6 md:leading-[28px] text-white text-center">
+                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                     Central monitoring systems
                   </p>
                 </SlideUp>
@@ -1379,7 +1379,7 @@ export default function Amenities() {
                     alt="Surveillance"
                     className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
                   />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-[Satoshi] font-[400] leading-6 md:leading-[28px] text-white text-center">
+                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                     24 hours surveillance
                   </p>
                 </SlideUp>
@@ -1392,7 +1392,7 @@ export default function Amenities() {
                     alt="Emergency Buttons"
                     className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
                   />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-[Satoshi] font-[400] leading-6 md:leading-[28px] text-white text-center">
+                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                     Emergency Buttons
                   </p>
                 </SlideUp>
@@ -1416,12 +1416,12 @@ export default function Amenities() {
           <div className="max-md:col-span-2 md:p-2 pt-10 md:pt-0">
             <SlideUp
               delay={0.2}
-              className="max-md:text-center text-[16px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-black mb-2"
+              className="max-md:text-center text-[16px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black mb-2"
             >
               / Amenities
             </SlideUp>
             <SlideUp delay={0.4}>
-              <h2 className="font-[ivyMode] text-[36px] max-md:text-center md:leading-[72px] md:font-[400] md:text-[56px] text-black">
+              <h2 className="font-cormorant text-[36px] max-md:text-center md:leading-[72px] md:font-[400] md:text-[56px] text-black">
                 Frequently
                 <br className="max-md:hidden" /> Asked
                 <br className="max-md:hidden" />{" "}
@@ -1463,7 +1463,7 @@ export default function Amenities() {
             {accordionData[activeCategory].map((item, index) => (
               <div key={index} className="mb-4 rounded-md bg-white p-4">
                 <button
-                  className="w-full flex justify-between items-center font-[Satoshi] font-bold text-left text-gray-900 cursor-pointer"
+                  className="w-full flex justify-between items-center font-satoshi font-bold text-left text-gray-900 cursor-pointer"
                   onClick={() => toggleIndex(index)}
                 >
                   <span>{item.question}</span>
@@ -1511,7 +1511,7 @@ export default function Amenities() {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="mt-2 text-gray-500 text-sm font-[Satoshi]">
+                  <p className="mt-2 text-gray-500 text-sm font-satoshi">
                     {item.answer}
                   </p>
                 </div>
@@ -1529,7 +1529,7 @@ export default function Amenities() {
             />
           </div>
           <div className="flex-1 md:px-11 md:py-8">
-            <p className="px-5 md:px-0 md:text-[24px] font-[Satoshi] font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+            <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
               Have more questions? Contact us now.
             </p>
           </div>

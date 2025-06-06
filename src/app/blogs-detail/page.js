@@ -52,7 +52,7 @@ export default function BlogsDetail() {
             </SlideUp>
             {/* Title */}
             <SlideUp delay={0.4}>
-              <h2 className="font-normal text-[32px] md:text-[56px] leading-[40px] md:leading-[72px] font-[IvyMode] mb-6">
+              <h2 className="font-normal text-[32px] md:text-[56px] leading-[40px] md:leading-[72px] font-cormorant mb-6">
                 {title}
               </h2>
             </SlideUp>
@@ -70,10 +70,10 @@ export default function BlogsDetail() {
             {/* Key Takeaways */}
             <SlideUp delay={0.8}>
               <div className="mb-6">
-                <h2 className="font-bold font-[Satoshi] text-[20px] md:text-[24px] leading-[24px] md:leading-[28px] mb-4 md:mb-5">
+                <h2 className="font-bold font-satoshi text-[20px] md:text-[24px] leading-[24px] md:leading-[28px] mb-4 md:mb-5">
                   {keyTakeaways.title}
                 </h2>
-                <div className="mb-8 md:mb-10 font-[Satoshi] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] font-normal text-[#555770]">
+                <div className="mb-8 md:mb-10 font-satoshi text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] font-normal text-[#555770]">
                   <p className="mb-3">{keyTakeaways.description}</p>
                   <ul className="list-disc pl-4 space-y-1">
                     {keyTakeaways.points.map((point, index) => (
@@ -87,21 +87,21 @@ export default function BlogsDetail() {
             {content.map((section, index) => (
               <SlideUp key={index} delay={1 + index * 0.2}>
                 <div>
-                  <h3 className="font-bold font-[Satoshi] text-[20px] md:text-[24px] leading-[24px] md:leading-[28px] mb-4 md:mb-5">
+                  <h3 className="font-bold font-satoshi text-[20px] md:text-[24px] leading-[24px] md:leading-[28px] mb-4 md:mb-5">
                     {section.title}
                   </h3>
-                  <p className="mb-8 md:mb-10 font-[Satoshi] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] font-normal text-[#555770]">
+                  <p className="mb-8 md:mb-10 font-satoshi text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] font-normal text-[#555770]">
                     {section.text}
                   </p>
                   {section.list && (
-                    <ul className="list-disc pl-4 md:pl-6 mb-6 font-[Satoshi] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#555770]">
+                    <ul className="list-disc pl-4 md:pl-6 mb-6 font-satoshi text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#555770]">
                       {section.list.map((item, idx) => (
                         <li key={idx}>{item}</li>
                       ))}
                     </ul>
                   )}
                   {section.additionalText?.map((text, idx) => (
-                    <p key={idx} className="mb-6 font-[Satoshi] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] font-normal text-[#555770]">
+                    <p key={idx} className="mb-6 font-satoshi text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] font-normal text-[#555770]">
                       {text}
                     </p>
                   ))}
@@ -300,13 +300,13 @@ export default function BlogsDetail() {
           <SlideUp delay={0.4}>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0 mb-8 md:mb-10">
               <div>
-                <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-[IvyMode] text-black leading-[1.1]">
+                <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-cormorant text-black leading-[1.1]">
                   You may also like to read
                 </h2>
               </div>
               <a
                 href="/blogs"
-                className="border border-[#22252E] rounded-md px-4 md:px-6 py-2 md:py-3 font-[Satoshi] text-[14px] md:text-[16px] font-medium hover:bg-[#22252E] hover:text-white transition"
+                className="border border-[#22252E] rounded-md px-4 md:px-6 py-2 md:py-3 font-satoshi text-[14px] md:text-[16px] font-medium hover:bg-[#22252E] hover:text-white transition"
               >
                 View All Blogs
               </a>
@@ -337,7 +337,7 @@ export default function BlogsDetail() {
                     <p className="text-[#5C5F68] text-[14px] md:text-base leading-[18px] md:leading-[20px] font-normal">
                       {post.description}
                     </p>
-                    <span className="w-fit font-[Satoshi] bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[12px] md:text-[14px] leading-[18px] md:leading-[20px] font-medium">
+                    <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[12px] md:text-[14px] leading-[18px] md:leading-[20px] font-medium">
                       {post.category}
                     </span>
                   </div>

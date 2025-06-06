@@ -24,7 +24,7 @@ export default function lifeAtAlcove() {
             </div>
           </SlideUp>
           <SlideUp delay={0.6}>
-            <h1 className="text-[48px] text-black leading-[52px] md:text-[#dee2e4] md:text-[150px] md:leading-[150px] font-[IvyMode]">
+            <h1 className="text-[48px] text-black leading-[52px] md:text-[#dee2e4] md:text-[150px] md:leading-[150px] font-cormorant">
               Blogs
             </h1>
           </SlideUp>
@@ -54,7 +54,7 @@ export default function lifeAtAlcove() {
                 className={
                   "relative md:px-8 flex flex-col items-center focus:outline-none cursor-pointer" +
                   (selectedNav === tab
-                    ? " text-black font-bold font-[Satoshi] text-[16px] leading-[24px] md:text-[20px] md:leading-[28px]"
+                    ? " text-black font-bold font-satoshi text-[16px] leading-[24px] md:text-[20px] md:leading-[28px]"
                     : " text-black font-normal text-[16px] leading-[24px] md:text-[20px] md:leading-[28px] opacity-50 hover:text-grey transition")
                 }
               >
@@ -92,15 +92,15 @@ export default function lifeAtAlcove() {
             </div>
             <SlideUp delay={0.1}>
               <div className="my-7 flex flex-col gap-6">
-                <div className="flex items-center gap-3 font-[Satoshi]">
-                  <span className="font-[Satoshi] bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
+                <div className="flex items-center gap-3 font-satoshi">
+                  <span className="font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
                     Construction Update
                   </span>
                   <span className="text-[#22252E] text-sm font-medium">
                     • 5 min read
                   </span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-[IvyMode] text-black leading-[44px] font-normal">
+                <h2 className="text-3xl md:text-4xl font-cormorant text-black leading-[44px] font-normal">
                   Your passport to the web3 economy
                 </h2>
                 <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
@@ -124,7 +124,7 @@ export default function lifeAtAlcove() {
           <div className="flex flex-col gap-6">
             {/* Card 1 */}
             <SlideUp delay={0.8}>
-              <div className="flex flex-col mx-7 md:mx-0 md:flex-row gap-4 items-stretch font-[Satoshi]">
+              <div className="flex flex-col mx-7 md:mx-0 md:flex-row gap-4 items-stretch font-satoshi">
                 <div className="rounded-lg relative md:min-w-[272px] md:w-[272px] h-[201px] overflow-hidden">
                   <Image
                     src="/assets/blogs-2.png"
@@ -156,7 +156,7 @@ export default function lifeAtAlcove() {
             </SlideUp>
             {/* Card 2 */}
             <SlideUp delay={1}>
-              <div className="flex flex-col md:flex-row mx-7 md:mx-0 gap-4 items-stretch font-[Satoshi]">
+              <div className="flex flex-col md:flex-row mx-7 md:mx-0 gap-4 items-stretch font-satoshi">
                 <div className="rounded-lg relative md:min-w-[272px] md:w-[272px] h-[201px] overflow-hidden">
                   <Image
                     src="/assets/blogs-3.png"
@@ -194,7 +194,7 @@ export default function lifeAtAlcove() {
             </SlideUp>
             {/* Card 3 */}
             <SlideUp delay={0.12}>
-              <div className="flex flex-col md:flex-row mx-7 md:mx-0  gap-4 items-stretch font-[Satoshi]">
+              <div className="flex flex-col md:flex-row mx-7 md:mx-0  gap-4 items-stretch font-satoshi">
                 <div className="rounded-lg relative md:min-w-[272px] md:w-[272px] h-[201px] overflow-hidden">
                   <Image
                     src="/assets/blogs-4.png"
@@ -246,7 +246,7 @@ export default function lifeAtAlcove() {
             </div>
           </SlideUp>
           <SlideUp delay={0.8}>
-            <h2 className="text-[56px] leading-[72px] font-normal font-[IvyMode] text-black">
+            <h2 className="text-[56px] leading-[72px] font-normal font-cormorant text-black">
               Residential
             </h2>
           </SlideUp>
@@ -277,7 +277,7 @@ export default function lifeAtAlcove() {
                   Like to know the secrets of transforming a 2-14 team into a 3x
                   Super Bowl winning Dynasty?
                 </p>
-                <span className="w-fit font-[Satoshi] bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
+                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
                   Construction Update
                 </span>
               </div>
@@ -308,7 +308,7 @@ export default function lifeAtAlcove() {
                   Mental models are simple expressions of complex processes or
                   relationships.
                 </p>
-                <span className="w-fit font-[Satoshi] bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
+                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
                   New Tower Launch
                 </span>
               </div>
@@ -339,7 +339,7 @@ export default function lifeAtAlcove() {
                   Introduction to Wireframing and its Principles. Learn from the
                   best in the industry.
                 </p>
-                <span className="w-fit font-[Satoshi] bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
+                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
                   Product
                 </span>
               </div>
@@ -356,7 +356,7 @@ export default function lifeAtAlcove() {
             />
           </div>
           <div className="flex-1 md:px-11 md:py-8">
-            <p className="px-5 md:px-0 md:text-[24px] font-[Satoshi] font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+            <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
               Embrace the beauty of your surroundings, know our neighbourhood
             </p>
           </div>
@@ -384,7 +384,7 @@ export default function lifeAtAlcove() {
             </div>
           </SlideUp>
           <SlideUp delay={0.8}>
-            <h2 className="text-[56px] leading-[72px] font-normal font-[IvyMode] text-black">
+            <h2 className="text-[56px] leading-[72px] font-normal font-cormorant text-black">
               Construction
             </h2>
           </SlideUp>
@@ -415,7 +415,7 @@ export default function lifeAtAlcove() {
                   Like to know the secrets of transforming a 2-14 team into a 3x
                   Super Bowl winning Dynasty?
                 </p>
-                <span className="w-fit font-[Satoshi] bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
+                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
                   Construction Update
                 </span>
               </div>
@@ -446,7 +446,7 @@ export default function lifeAtAlcove() {
                   Mental models are simple expressions of complex processes or
                   relationships.
                 </p>
-                <span className="w-fit font-[Satoshi] bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
+                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
                   New Tower Launch
                 </span>
               </div>
@@ -477,7 +477,7 @@ export default function lifeAtAlcove() {
                   Introduction to Wireframing and its Principles. Learn from the
                   best in the industry.
                 </p>
-                <span className="w-fit font-[Satoshi] bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
+                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
                   Product
                 </span>
               </div>
@@ -495,7 +495,7 @@ export default function lifeAtAlcove() {
               />
             </div>
             <div className="flex-1 md:px-11 md:py-8">
-              <p className="px-5 md:px-0 md:text-[24px] font-[Satoshi] font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+              <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
                 Embrace the beauty of your surroundings, know our neighbourhood
               </p>
             </div>
