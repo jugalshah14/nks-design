@@ -11,7 +11,7 @@ export default function page() {
                     <span className="mx-2">—</span>
                     <span className="text-gray-400">Contact Us</span>
                 </div>
-                <h1 className="text-[#22252E] font-[IvyMode] font-[400] text-[56px] sm:text-[80px] md:text-[100px] md:leading-[100px] lg:text-[150px] lg:leading-[150px] text-center opacity-10">
+                <h1 className="text-[#22252E] font-cormorant font-[400] text-[56px] sm:text-[80px] md:text-[100px] md:leading-[100px] lg:text-[150px] lg:leading-[150px] text-center opacity-10">
                     Contact Us
                 </h1>
             </section>
@@ -61,9 +61,9 @@ export default function page() {
                         </form>
                     </div>
                     <div className='max-lg:mt-15 col-span-4 lg:col-span-2 xl:col-span-2'>
-                        <p className='font-[Satoshi] block text-[#222222] font-[700] text-[20px] leading-7 mb-7'>Office</p>
-                        <p className='font-[Satoshi] block text-[#5C5F68] font-[400] text-[16px] leading-5 mb-12'>Ganapati 68/2, Harish Mukherjee Road, Bhowanipore, Kolkata, West Bengal 700025</p>
-                        <p className='font-[Satoshi] block text-[#222222] font-[700] text-[20px] leading-7 mb-7'>For quick inquiries</p>
+                        <p className='font-satoshi block text-[#222222] font-[700] text-[20px] leading-7 mb-7'>Office</p>
+                        <p className='font-satoshi block text-[#5C5F68] font-[400] text-[16px] leading-5 mb-12'>Ganapati 68/2, Harish Mukherjee Road, Bhowanipore, Kolkata, West Bengal 700025</p>
+                        <p className='font-satoshi block text-[#222222] font-[700] text-[20px] leading-7 mb-7'>For quick inquiries</p>
                         <Link href={"tel:918017012374"} className='flex items-center gap-4 px-4 py-3 border border-[#EDEDED] mt-8 cursor-pointer'>
                             <div className='relative h-[24px] w-[24px] md:h-[32px] md:w-[32px] overflow-hidden'>
                                 <Image src="/assets/icons/call.svg" fill alt="call" className="object-center" />
@@ -78,7 +78,7 @@ export default function page() {
                             <span className='font-[700] text-[16px] leading-5 text-[#22252E]'>Mail Us</span>
                             <span className='text-[18px] leading-5 ml-auto font-[400] md:text-[20px] md:leading-7 text-[#144D78]'>inquire@alcove.in</span>
                         </Link>
-                        <p className='font-[Satoshi] block text-[#222222] font-[700] text-[20px] leading-7 mt-12'>Join our newsletter</p>
+                        <p className='font-satoshi block text-[#222222] font-[700] text-[20px] leading-7 mt-12'>Join our newsletter</p>
                         <div className='mt-7 flex sm:w-[80%]'>
                             <label htmlFor="newsletter-email" className='form-label px-4 py-2 flex-1'>
                                 <input className='form-input mt-2' type="text" id="newsletter-email" placeholder="Your Email Address*" />

@@ -79,9 +79,9 @@ export default function Testimonials() {
                                 <Image src={slide.src} alt={slide.name} fill className='object-cover' />
                             </div>
                             <div className='max-md:flex max-md:flex-col max-md:items-center'>
-                                <h3 className="max-md:text-center text-[16px] md:text-[24px] font-[Satoshi] font-[500] leading-6 md:leading-[33px] text-[#22252e] mb-1">{slide.name}</h3>
-                                <p className="max-md:text-center text-[12px] md:text-[16px] font-[Satoshi] font-[500] leading-5 md:leading-[22px] text-[#22252e99] mb-6">{slide.position}</p>
-                                <p className="max-md:text-center text-[24px] md:text-[40px] font-[Satoshi] italic font-[500] leading-8 md:leading-[48px] text-[#22252e] max-w-[80%]">
+                                <h3 className="max-md:text-center text-[16px] md:text-[24px] font-satoshi font-[500] leading-6 md:leading-[33px] text-[#22252e] mb-1">{slide.name}</h3>
+                                <p className="max-md:text-center text-[12px] md:text-[16px] font-satoshi font-[500] leading-5 md:leading-[22px] text-[#22252e99] mb-6">{slide.position}</p>
+                                <p className="max-md:text-center text-[24px] md:text-[40px] font-satoshi italic font-[500] leading-8 md:leading-[48px] text-[#22252e] max-w-[80%]">
                                     {slide.description}
                                 </p>
                             </div>

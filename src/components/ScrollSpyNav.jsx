@@ -42,7 +42,7 @@ export default function ScrollSpyNav() {
                     duration={500}
                     id="amenities"
                 >
-                    <div className="spy-label py-2 cursor-pointer flex flex-col justify-center items-center gap-2 text-[16px] md:text-[20px] font-[Satoshi] font-[700] whitespace-nowrap leading-6 md:leading-[27px] text-[#22252e7f] relative m-0 hover:text-[#22252e] transition-all duration-300">
+                    <div className="spy-label py-2 cursor-pointer flex flex-col justify-center items-center gap-2 text-[16px] md:text-[20px] font-satoshi font-[700] whitespace-nowrap leading-6 md:leading-[27px] text-[#22252e7f] relative m-0 hover:text-[#22252e] transition-all duration-300">
                         Amenities
                         <div className="hidden bottom-line absolute bottom-0 w-[38px] h-1 bg-[#4f70af]"></div>
                     </div>
@@ -61,7 +61,7 @@ export default function ScrollSpyNav() {
                     id="projects"
                 >
 
-                    <div className="spy-label py-2 cursor-pointer flex flex-col justify-center items-center gap-2 text-[16px] md:text-[20px] font-[Satoshi] font-[700] whitespace-nowrap leading-6 md:leading-[27px] text-[#22252e7f] relative m-0 hover:text-[#22252e] transition-all duration-300">
+                    <div className="spy-label py-2 cursor-pointer flex flex-col justify-center items-center gap-2 text-[16px] md:text-[20px] font-satoshi font-[700] whitespace-nowrap leading-6 md:leading-[27px] text-[#22252e7f] relative m-0 hover:text-[#22252e] transition-all duration-300">
                         Project Plans
                         <div className="hidden bottom-line absolute bottom-0 w-[38px] h-1 bg-[#4f70af]"></div>
                     </div>
@@ -80,7 +80,7 @@ export default function ScrollSpyNav() {
                     id="ganga"
                 >
 
-                    <div className="spy-label py-2 cursor-pointer flex flex-col justify-center items-center gap-2 text-[16px] md:text-[20px] font-[Satoshi] font-[700] whitespace-nowrap leading-6 md:leading-[27px] text-[#22252e7f] relative m-0 hover:text-[#22252e] transition-all duration-300">
+                    <div className="spy-label py-2 cursor-pointer flex flex-col justify-center items-center gap-2 text-[16px] md:text-[20px] font-satoshi font-[700] whitespace-nowrap leading-6 md:leading-[27px] text-[#22252e7f] relative m-0 hover:text-[#22252e] transition-all duration-300">
                         Ganga
                         <div className="hidden bottom-line absolute bottom-0 w-[38px] h-1 bg-[#4f70af]"></div>
                     </div>
@@ -98,7 +98,7 @@ export default function ScrollSpyNav() {
                     duration={500}
                     id="why-serampore"
                 >
-                    <div className="spy-label py-2 cursor-pointer flex flex-col justify-center items-center gap-2 text-[16px] md:text-[20px] font-[Satoshi] font-[700] whitespace-nowrap leading-6 md:leading-[27px] text-[#22252e7f] relative m-0 hover:text-[#22252e] transition-all duration-300">
+                    <div className="spy-label py-2 cursor-pointer flex flex-col justify-center items-center gap-2 text-[16px] md:text-[20px] font-satoshi font-[700] whitespace-nowrap leading-6 md:leading-[27px] text-[#22252e7f] relative m-0 hover:text-[#22252e] transition-all duration-300">
                         Why Serampore?
                         <div className="hidden bottom-line absolute bottom-0 w-[38px] h-1 bg-[#4f70af]"></div>
                     </div>

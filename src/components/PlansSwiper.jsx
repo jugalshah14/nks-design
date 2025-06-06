@@ -86,50 +86,50 @@ export default function PlansSwiper() {
             <div className="relative w-[95%] md:w-[60%] top-[-60px] left-1/2 -translate-x-1/2 z-1 bg-[#010b22] ">
               <div className="flex max-md:flex-col p-5 md:p-8 gap-4 md:gap-20 !pb-0">
                 <div>
-                  <h3 className="text-gradient-1 md:w-[60%] text-[24px] md:text-[40px] font-[Satoshi] font-[400] leading-7 md:leading-[48px] text-white/40 md:mb-6">
+                  <h3 className="text-gradient-1 md:w-[60%] text-[24px] md:text-[40px] font-satoshi font-[400] leading-7 md:leading-[48px] text-white/40 md:mb-6">
                     {slide.title}
                   </h3>
                 </div>
                 <div className="">
                   <div className="grid grid-cols-2 gap-20 mb-8">
                     <div>
-                      <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
+                      <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                         Tower
                       </p>
-                      <p className="text-[20px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                      <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                         {slide.towers}
                       </p>
                     </div>
                     <div>
-                      <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
+                      <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                         BHK Type
                       </p>
-                      <p className="text-[20px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                      <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                         {slide.bhkTypes}
                       </p>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-20 md:mb-8">
                     <div className="order-2 md:order-1">
-                      <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
+                      <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                         Carpet Area
                       </p>
-                      <p className="text-[20px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                      <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                         {slide.carpetArea}
                       </p>
                     </div>
 
                     <div className="order-1 md:order-2">
-                      <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
+                      <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                         Price
                       </p>
                       <div className="flex items-center">
-                        <p className="hidden md:inline text-[20px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white shadow-lg mr-2 blur-[6.5px]">
+                        <p className="hidden md:inline text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white shadow-lg mr-2 blur-[6.5px]">
                           {slide.price}
                         </p>
                         <a
                           href="#"
-                          className="text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78] underline"
+                          className="text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] underline"
                         >
                           Know price
                         </a>
@@ -138,7 +138,7 @@ export default function PlansSwiper() {
                   </div>
                 </div>
                 <hr className="block md:hidden border-[#D9D9D9] opacity-10" />
-                <a className="flex md:hidden items-center gap-2 text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78]">
+                <a className="flex md:hidden items-center gap-2 text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78]">
                   View Project
                   <Image
                     src="/assets/icons/arrowlong.svg"
@@ -148,7 +148,7 @@ export default function PlansSwiper() {
                   />
                 </a>
               </div>
-              <a className="hidden cursor-pointer md:flex items-center w-full gap-2 group/discuss-btn relative text-[14px] font-[Satoshi] font-bold leading-[19px] text-[#134c78] mb-4 p-5">
+              <a className="hidden cursor-pointer md:flex items-center w-full gap-2 group/discuss-btn relative text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] mb-4 p-5">
                 <div className="absolute z-0 w-0 left-0 top-0 h-full bg-[#144D78] group-hover/discuss-btn:w-full transition-all duration-700"></div>
                 <div className="w-full flex gap-4 items-center relative z-1 group-hover/discuss-btn:text-white transition-all duration-300">
                   Let's Discuss Your Requirements

@@ -162,7 +162,7 @@ export default function Location() {
                   <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
                     <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
                       <div className="max-md:col-span-2">
-                        <SlideUp delay={0.2} className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
+                        <SlideUp delay={0.2} className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
                           / Location
                         </SlideUp>
                         <SlideUp delay={0.4} className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
@@ -236,7 +236,7 @@ export default function Location() {
             <SlideUp delay={0.2} className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-15">
               <div className="grid grid-cols-2 gap-4 ">
                 <div className="max-md:col-span-2 md:p-2">
-                  <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">
+                  <p className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] !text-white mb-2">
                     / Connectivity
                   </p>
                   <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
@@ -263,10 +263,10 @@ export default function Location() {
                           />
                         </div>
                         <div>
-                          <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
+                          <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                             Nearest Metro-station
                           </p>
-                          <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                          <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                             Dakshineshwar • 12km
                           </p>
                         </div>
@@ -282,10 +282,10 @@ export default function Location() {
                           />
                         </div>
                         <div>
-                          <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
+                          <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                             Nearest Airport
                           </p>
-                          <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                          <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                             Airport • 21.4km
                           </p>
                         </div>
@@ -301,13 +301,13 @@ export default function Location() {
                           />
                         </div>
                         <div>
-                          <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
+                          <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                             Nearest Railway Station
                           </p>
-                          <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                          <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                             Rishra • 1.8km
                           </p>
-                          <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                          <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                             Serampore • 2.4km
                           </p>
                         </div>

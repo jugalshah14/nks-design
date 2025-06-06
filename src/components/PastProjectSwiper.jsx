@@ -114,16 +114,16 @@ export default function PastProjectSwiper() {
                                     </div>
 
                                     <div className='pb-[28px] md:pt-[120px]'>
-                                        <p className="text-[14px] md:text-[14px] font-[Satoshi] font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">About Project</p>
-                                        <p className="text-[16px] md:text-[16px] font-[Satoshi] font-[400] leading-6 md:leading-[20px] text-white">{slide.description}</p>
+                                        <p className="text-[14px] md:text-[14px] font-satoshi font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">About Project</p>
+                                        <p className="text-[16px] md:text-[16px] font-satoshi font-[400] leading-6 md:leading-[20px] text-white">{slide.description}</p>
                                     </div>
                                     <div className='flex flex-row gap-4 pb-[24px]'>
                                         <div>
                                             <Image src={slide.icon1} alt="slide-0" width={28} height={28}/>
                                         </div>
                                         <div>
-                                            <p className="text-[14px] md:text-[14px] font-[Satoshi] font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">Project Category</p>
-                                            <p className="text-[16px] md:text-[16px] font-[Satoshi] font-[400] leading-6 md:leading-[20px] text-white">Luxurious Flats</p>
+                                            <p className="text-[14px] md:text-[14px] font-satoshi font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">Project Category</p>
+                                            <p className="text-[16px] md:text-[16px] font-satoshi font-[400] leading-6 md:leading-[20px] text-white">Luxurious Flats</p>
                                         </div>
                                     </div>
                                     <div className='flex flex-row gap-4'>
@@ -131,8 +131,8 @@ export default function PastProjectSwiper() {
                                             <Image src={slide.icon2} alt="slide-0" width={28} height={28}/>
                                         </div>
                                         <div>
-                                            <p className="text-[14px] md:text-[14px] font-[Satoshi] font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">Location</p>
-                                            <p className="text-[16px] md:text-[16px] font-[Satoshi] font-[400] leading-6 md:leading-[20px] text-white">Serampore, Kolkata</p>
+                                            <p className="text-[14px] md:text-[14px] font-satoshi font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">Location</p>
+                                            <p className="text-[16px] md:text-[16px] font-satoshi font-[400] leading-6 md:leading-[20px] text-white">Serampore, Kolkata</p>
                                         </div>
                                     </div>
                                 </div>

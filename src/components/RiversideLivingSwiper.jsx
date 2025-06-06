@@ -78,7 +78,7 @@ export default function RiversideLivingSwiper() {
       key={index}
       className="relative flex flex-col items-center pt-15 md:!min-w-[600px]"
     >
-      <span className="absolute top-3 md:top-[-10px] text-[#DE804B] font-[IvyMode] font-[400] text-[58px] md:text-[90px] z-1 left-10 md:left-15">
+      <span className="absolute top-3 md:top-[-10px] text-[#DE804B] font-cormorant font-[400] text-[58px] md:text-[90px] z-1 left-10 md:left-15">
         {index + 1}
       </span>
       <div className={`relative h-[195px] md:h-[300px] w-full`}>
