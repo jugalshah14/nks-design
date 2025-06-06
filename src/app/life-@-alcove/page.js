@@ -139,7 +139,7 @@ export default function lifeAtAlcove() {
           <div className="md:hidden w-full overflow-hidden mt-12">
             <div className="mobile-marquee flex whitespace-nowrap min-w-[900px]">
               {[1,2].map((_, idx) => (
-                <div key={idx} className="h-[466px] grid grid-cols-4 gap-4 px-4" style={{width: '900px'}}>
+                <div key={idx} className="h-[300px] grid grid-cols-4 gap-4 px-4 w-[900px]">
                   <div className="relative overflow-hidden">
                     <Image src="/assets/gellary1.png" alt="Event 1" fill className="object-cover" />
                   </div>
