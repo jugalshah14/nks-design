@@ -101,7 +101,7 @@ const Header = () => {
               <p className="font-satoshi font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22] absolute top-[13px] left-[22px]">
                 call Now
               </p>
-            </button>
+            </div>
           </div>
 
           <button className="md:hidden text-[#22252E]" onClick={toggleDrawer}>
