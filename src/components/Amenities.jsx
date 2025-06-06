@@ -41,7 +41,7 @@ export default function Amenities() {
                     >
                         <div className='absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300'></div>
                         <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">{item.number}</div>
-                        <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-[Satoshi]">{item.title}</h3>
+                        <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">{item.title}</h3>
                         <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
                             <Image
                                 src={item.image}
@@ -50,7 +50,7 @@ export default function Amenities() {
                                 className="object-cover"
                             />
                         </div>
-                        <p className="font-[Satoshi] text-[14px] md:text-[16px] text-[#22252E] font-[400]">{item.description}</p>
+                        <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E] font-[400]">{item.description}</p>
                     </div>
                 ))}
             </div>
