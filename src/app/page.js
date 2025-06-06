@@ -56,7 +56,7 @@ export default function Home() {
         </div>
         <div className="inset-center absolute backdrop-blur-[20px] -bottom-[150px] md:bottom-[-60px] z-10 md:right-8 bg-[#FFFFFF33] rounded-full w-[133px] h-[133px] flex flex-col items-center justify-center">
           <FadeIn delay={0.6}>
-            <p className="text-white text-[16px] font-[Satoshi] font-bold leading-[20px] text-center max-w-[93px]">
+            <p className="text-white text-[16px] font-satoshi font-bold leading-[20px] text-center max-w-[93px]">
               Why Riverside Living?
             </p>
           </FadeIn>
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="container  mx-auto px-6">
           <div className="text-center mb-7 md:mb-16">
             <SlideUp delay={0.2}>
-              <p className="text-[14px] leading-5 md:text-[16px] font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2">
+              <p className="text-[14px] leading-5 md:text-[16px] font-satoshi font-[400] md:leading-[22px] text-[#22252e] mb-2">
                 / Magnificent
               </p>
             </SlideUp>
@@ -101,13 +101,13 @@ export default function Home() {
                 className=""
               />
             </div>
-            <h3 className="hidden md:block text-[40px] font-[Satoshi] font-[400] leading-[54px] text-[#22252e] mb-1">
+            <h3 className="hidden md:block text-[40px] font-satoshi font-[400] leading-[54px] text-[#22252e] mb-1">
               3 way
             </h3>
-            <p className="hidden md:block text-[20px] font-[Satoshi] font-[400] leading-[27px] text-[#22252e] text-center">
+            <p className="hidden md:block text-[20px] font-satoshi font-[400] leading-[27px] text-[#22252e] text-center">
               Connectivity
             </p>
-            <p className="block md:hidden text-[18px] font-[Satoshi] font-[400] leading-6 text-[#22252e] text-center">
+            <p className="block md:hidden text-[18px] font-satoshi font-[400] leading-6 text-[#22252e] text-center">
               Tallest towers of Bengal
             </p>
           </SlideUp>
@@ -122,11 +122,11 @@ export default function Home() {
                 className=""
               />
             </div>
-            <h3 className="hidden md:block text-[40px] font-[Satoshi] font-[400] leading-[54px] text-[#22252e] mb-1">
+            <h3 className="hidden md:block text-[40px] font-satoshi font-[400] leading-[54px] text-[#22252e] mb-1">
               56,000 sq.ft.
             </h3>
-            <p className="hidden md:block text-[20px] font-[Satoshi] font-[400] leading-[28px] text-[#22252e] text-center">{`Hooghly's largest Residential Clubhouse`}</p>
-            <p className="block md:hidden text-[18px] font-[Satoshi] font-[400] leading-6 text-[#22252e] text-center">
+            <p className="hidden md:block text-[20px] font-satoshi font-[400] leading-[28px] text-[#22252e] text-center">{`Hooghly's largest Residential Clubhouse`}</p>
+            <p className="block md:hidden text-[18px] font-satoshi font-[400] leading-6 text-[#22252e] text-center">
               Largest clubhouse in Hooghly 56,000 Sq. ft.
             </p>
           </SlideUp>
@@ -144,13 +144,13 @@ export default function Home() {
                 className=""
               />
             </div>
-            <h3 className="hidden md:block text-[40px] font-[Satoshi] font-[400] leading-[54px] text-[#22252e] mb-1">
+            <h3 className="hidden md:block text-[40px] font-satoshi font-[400] leading-[54px] text-[#22252e] mb-1">
               19 acres
             </h3>
-            <p className="hidden md:block text-[20px] font-[Satoshi] font-[400] leading-[27px] text-[#22252e] text-center">
+            <p className="hidden md:block text-[20px] font-satoshi font-[400] leading-[27px] text-[#22252e] text-center">
               Area of Project
             </p>
-            <p className="block md:hidden text-[18px] font-[Satoshi] font-[400] leading-6 text-[#22252e] text-center">
+            <p className="block md:hidden text-[18px] font-satoshi font-[400] leading-6 text-[#22252e] text-center">
               Mini-theatre & Amphi-theatre
             </p>
           </SlideUp>
@@ -168,13 +168,13 @@ export default function Home() {
                 className=""
               />
             </div>
-            <h3 className="hidden md:block text-[40px] font-[Satoshi] font-[400] leading-[54px] text-[#22252e] mb-1">
+            <h3 className="hidden md:block text-[40px] font-satoshi font-[400] leading-[54px] text-[#22252e] mb-1">
               50,000 sq.ft.
             </h3>
-            <p className="hidden md:block text-[20px] font-[Satoshi] font-[400] leading-[28px] text-[#22252e] text-center">
+            <p className="hidden md:block text-[20px] font-satoshi font-[400] leading-[28px] text-[#22252e] text-center">
               of Garden and Ghat by the Ganges
             </p>
-            <p className="block md:hidden text-[18px] font-[Satoshi] font-[400] leading-6 text-[#22252e] text-center">
+            <p className="block md:hidden text-[18px] font-satoshi font-[400] leading-6 text-[#22252e] text-center">
               Private Ganga Ghat, Ferry & Jetty Services
             </p>
           </SlideUp>
@@ -201,7 +201,7 @@ export default function Home() {
           <div className="relative  container mx-auto px-6">
             <div className="text-center">
               <SlideUp delay={0.2}>
-                <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-[#22252e] mb-2">
+                <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">
                   / Trust
                 </p>
               </SlideUp>
@@ -223,7 +223,7 @@ export default function Home() {
                 className="object-scale-down"
               />
             </div>
-            <h3 className="text-[18px] lg:text-[24px] font-[Satoshi] font-bold leading-[33px] text-[#22252e] m mt-autob-2 text-center">
+            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] m mt-autob-2 text-center">
               RERA Approved
             </h3>
             <Image
@@ -244,7 +244,7 @@ export default function Home() {
                 className="object-scale-down"
               />
             </div>
-            <h3 className="text-[18px] lg:text-[24px] font-[Satoshi] font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
+            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
               RERA Approved
             </h3>
             <Image
@@ -265,7 +265,7 @@ export default function Home() {
                 className="object-scale-down"
               />
             </div>
-            <h3 className="text-[18px] lg:text-[24px] font-[Satoshi] font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
+            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
               WBHIRA Approved
             </h3>
             <Image
@@ -286,7 +286,7 @@ export default function Home() {
                 className="object-scale-down"
               />
             </div>
-            <h3 className="text-[18px] lg:text-[24px] font-[Satoshi] font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
+            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
               IGBC Certified
             </h3>
             <Image
@@ -307,7 +307,7 @@ export default function Home() {
                 className="object-scale-down"
               />
             </div>
-            <h3 className="text-[18px] lg:text-[24px] font-[Satoshi] font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
+            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
               RERA Approved
             </h3>
             <Image
@@ -331,7 +331,7 @@ export default function Home() {
             <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mb-14">
               <div className="">
                 <SlideUp delay={0.2}>
-                  <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-[#22252e] mb-2">
+                  <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">
                     / Podium
                   </p>
                 </SlideUp>
@@ -345,7 +345,7 @@ export default function Home() {
               </div>
               <div className="flex items-end">
                 <SlideUp delay={0.6}>
-                  <p className="text-[20px] font-[Satoshi] leading-[22px] text-[#22252E]">
+                  <p className="text-[20px] font-satoshi leading-[22px] text-[#22252E]">
                     Experience a world of wonder and adventure. Our podium level
                     is a playground for all ages!
                   </p>
@@ -354,7 +354,7 @@ export default function Home() {
             </div>
             <div className="block md:hidden text-center mb-7 md:mb-16 px-5">
               <SlideUp delay={0.2}>
-                <p className="text-[14px] leading-5 md:text-[16px] font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2">
+                <p className="text-[14px] leading-5 md:text-[16px] font-satoshi font-[400] md:leading-[22px] text-[#22252e] mb-2">
                   / Amenities
                 </p>
               </SlideUp>
@@ -378,7 +378,7 @@ export default function Home() {
                   />
                   <div className="flex flex-col justify-center items-center bitmap absolute inset-0 rounded-lg">
                     <SlideUp delay={0.2}>
-                      <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-white mb-2">
+                      <p className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">
                         / Podium
                       </p>
                     </SlideUp>
@@ -403,12 +403,12 @@ export default function Home() {
                   <div className="plans-backdrop absolute top-0 left-0 h-[100%] w-[100%]" />
                   <div className="h-[100%] flex flex-col justify-center items-center bitmap absolute inset-0 w-[100%]">
                     <SlideUp delay={0.2}>
-                      <p className="text-[16px] font-[Satoshi] font-normal leading-[24px] text-white mb-2">
+                      <p className="text-[16px] font-satoshi font-normal leading-[24px] text-white mb-2">
                         / Plans
                       </p>
                     </SlideUp>
                     <SlideUp delay={0.4}>
-                      <h2 className="w-[90%] text-center project-overview-title !text-white !text-[36px] !leading-11 font-[400] !font-[IvyMode]">
+                      <h2 className="w-[90%] text-center project-overview-title !text-white !text-[36px] !leading-11 font-[400] !font-cormorant">
                         Largest <span className="orange-color">Clubhouse</span>{" "}
                         in Kolkata
                       </h2>
@@ -419,7 +419,7 @@ export default function Home() {
                   <div className="flex justify-center items-center">
                     <hr className="border-[#FFFFFF] w-[100%] opacity-20 absolute" />
                     <SlideUp delay={0.6}>
-                      <p className="p-2 z-1 bg-[#061026] font-[Satoshi] text-[16px] font-[700] leading-6 text-center text-white">
+                      <p className="p-2 z-1 bg-[#061026] font-satoshi text-[16px] font-[700] leading-6 text-center text-white">
                         65+ <br />
                         World-class <br />
                         Amenities
@@ -440,7 +440,7 @@ export default function Home() {
               <div className="relative container  mx-auto md:px-6">
                 <div className="hidden md:flex text-center pt-20 flex-col justify-center items-center">
                   <SlideUp delay={0.2}>
-                    <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-white mb-2">
+                    <p className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">
                       / Plans
                     </p>
                   </SlideUp>
@@ -457,12 +457,12 @@ export default function Home() {
                 </div>
                 <div className="flex md:hidden text-center pt-10 flex-col justify-center items-center px-4">
                   <SlideUp delay={0.2}>
-                    <p className="text-[14px] font-[satoshi] font-[400] leading-[20px] text-white mb-2">
+                    <p className="text-[14px] font-satoshi font-[400] leading-[20px] text-white mb-2">
                       / Amenities
                     </p>
                   </SlideUp>
                   <SlideUp delay={0.4}>
-                    <h2 className="w-[100%] project-overview-title !text-center !text-white !text-[36px] !leading-11 font-[IvyMode]">
+                    <h2 className="w-[100%] project-overview-title !text-center !text-white !text-[36px] !leading-11 font-cormorant">
                       {`We've got something for`}{" "}
                       <span className="orange-color">{`Everyone's need`}</span>
                     </h2>
@@ -479,12 +479,12 @@ export default function Home() {
               <div className="relative container mx-auto">
                 <div className="text-center">
                   <SlideUp delay={0.2}>
-                    <p className="text-[14px] font-[Satoshi] leading-[20px] md:text-[16px] md:font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2">
+                    <p className="text-[14px] font-satoshi leading-[20px] md:text-[16px] md:font-satoshi font-[400] md:leading-[22px] text-[#22252e] mb-2">
                       / Subtitle
                     </p>
                   </SlideUp>
                   <SlideUp delay={0.4}>
-                    <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-[IvyMode]">
+                    <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-cormorant">
                       <span className="orange-color">Comfortable </span>living,
                       simplified
                     </h2>
@@ -502,15 +502,15 @@ export default function Home() {
                       height={36}
                       className="mb-12"
                     />
-                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">
+                    <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
                       1BHK
                     </h3>
-                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">
+                    <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
                       314 - 645 sq. ft.
                     </p>
                     <a
                       href="#"
-                      className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]"
+                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78]"
                     >
                       View
                       <Image
@@ -529,15 +529,15 @@ export default function Home() {
                       height={36}
                       className="mb-12"
                     />
-                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">
+                    <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
                       1BHK
                     </h3>
-                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">
+                    <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
                       314 - 645 sq. ft.
                     </p>
                     <a
                       href="#"
-                      className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]"
+                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78]"
                     >
                       View
                       <Image
@@ -556,15 +556,15 @@ export default function Home() {
                       height={40}
                       className="mb-12"
                     />
-                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">
+                    <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
                       1BHK
                     </h3>
-                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">
+                    <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
                       314 - 645 sq. ft.
                     </p>
                     <a
                       href="#"
-                      className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]"
+                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78]"
                     >
                       View
                       <Image
@@ -583,15 +583,15 @@ export default function Home() {
                       height={39}
                       className="mb-12"
                     />
-                    <h3 className="text-[40px] font-[Satoshi] font-normal leading-[54px] text-[#22252e] mb-2">
+                    <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
                       1BHK
                     </h3>
-                    <p className="text-[20px] font-[Satoshi] font-normal leading-[27px] text-[#22252eb2] mb-8">
+                    <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
                       314 - 645 sq. ft.
                     </p>
                     <a
                       href="#"
-                      className="flex items-center gap-2 text-[16px] font-[Satoshi] font-bold leading-[22px] text-[#134c78]"
+                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78]"
                     >
                       View
                       <Image
@@ -607,7 +607,7 @@ export default function Home() {
               <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mt-20">
                 <div className="">
                   <SlideUp delay={0.2}>
-                    <p className="text-[16px] font-[Satoshi] font-normal leading-[22px] text-[#22252e] mb-2">
+                    <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">
                       /Why Riverside Living
                     </p>
                   </SlideUp>
@@ -636,12 +636,12 @@ export default function Home() {
               </div>
               <div className="block md:hidden mt-10 text-center">
                 <SlideUp delay={0.2}>
-                  <p className="text-[14px] font-[Satoshi] leading-[20px] md:text-[16px] md:font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2">
+                  <p className="text-[14px] font-satoshi leading-[20px] md:text-[16px] md:font-satoshi font-[400] md:leading-[22px] text-[#22252e] mb-2">
                     / Amenities
                   </p>
                 </SlideUp>
                 <SlideUp delay={0.4}>
-                  <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-[IvyMode]">
+                  <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-cormorant">
                     Cherish the{" "}
                     <span className="orange-color">benefits of Ganga</span> on
                     your wellbeing!
@@ -701,10 +701,10 @@ export default function Home() {
                 </video>
                 <div className="honouring-lightbox-overlay h-[100%] w-[100%] absolute top-0 left-0" />
                 <div className="relative z-1 flex justify-center items-center flex-col">
-                  <p className="text-[14px] font-[Satoshi] leading-[20px] md:text-[16px] md:font-[Satoshi] font-[400] md:leading-[22px] text-white mb-2">
+                  <p className="text-[14px] font-satoshi leading-[20px] md:text-[16px] md:font-satoshi font-[400] md:leading-[22px] text-white mb-2">
                     / Amenities
                   </p>
-                  <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-[IvyMode] text-[56px] !text-white">
+                  <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-cormorant text-[56px] !text-white">
                     <span className="orange-color">Honouring Ganga,</span>
                     <br />
                     The mother of mankind
@@ -749,7 +749,7 @@ export default function Home() {
               <div className="bg-[#020C22] py-8">
                 <div className="h-[100%] flex flex-col justify-center items-center inset-0 w-[100%]">
                   <SlideUp delay={0.2}>
-                    <p className="text-[16px] font-[Satoshi] font-normal leading-[24px] text-white mb-2">
+                    <p className="text-[16px] font-satoshi font-normal leading-[24px] text-white mb-2">
                       /Amenities
                     </p>
                   </SlideUp>
@@ -757,7 +757,7 @@ export default function Home() {
                     delay={0.4}
                     className="flex justify-center items-center w-full"
                   >
-                    <h2 className="w-[90%] text-center project-overview-title !text-white !text-[36px] !leading-11 font-[400] !font-[IvyMode]">
+                    <h2 className="w-[90%] text-center project-overview-title !text-white !text-[36px] !leading-11 font-[400] !font-cormorant">
                       <span className="orange-color">Honouring Ganga</span> The
                       mother of mankind
                     </h2>
@@ -766,7 +766,7 @@ export default function Home() {
                 <div className="mt-14 flex justify-center items-center">
                   <hr className="border-[#FFFFFF] w-[100%] opacity-20 absolute" />
                   <SlideUp delay={0.6}>
-                    <p className="p-2 z-1 bg-[#020C22] font-[Satoshi] text-[16px] font-[700] leading-6 text-center text-white">
+                    <p className="p-2 z-1 bg-[#020C22] font-satoshi text-[16px] font-[700] leading-6 text-center text-white">
                       Did you know?
                     </p>
                   </SlideUp>
@@ -783,11 +783,11 @@ export default function Home() {
                 className="flex justify-center items-center w-full"
               >
                 <button className="md:min-h-[4.75rem] min-h-[3.5rem] h-full -top-9 mx-auto relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden rounded-md">
-                <div className="px-6 py-3 mr-20">Be a part of it</div>
-                <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-                  ↗
-                </span>
-              </button>
+                  <div className="px-6 py-3 mr-20">Be a part of it</div>
+                  <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                    ↗
+                  </span>
+                </button>
               </SlideUp>
             </div>
             <div className="hidden md:block relative p-5 overflow-hidden">
@@ -797,7 +797,7 @@ export default function Home() {
                 <div className="grid grid-cols-4 lg:grid-cols-3 gap-4 ">
                   <div className="col-span-2 p-2">
                     <SlideUp delay={0.2}>
-                      <p className="text-[20px] font-[Satoshi] font-[700] text-white mb-4">
+                      <p className="text-[20px] font-satoshi font-[700] text-white mb-4">
                         Did you know?
                       </p>
                     </SlideUp>
@@ -827,19 +827,19 @@ export default function Home() {
                       </div>
                       <div className="flex flex-col">
                         <SlideUp delay={0.6}>
-                          <p className="text-[20px] font-[Satoshi] font-[700] text-white mb-6">
+                          <p className="text-[20px] font-satoshi font-[700] text-white mb-6">
                             Want to Dive into Riverside Bliss?
                           </p>
                         </SlideUp>
                         <SlideUp delay={0.8} className="w-full">
-                        <button className="w-full md:min-h-[4rem] min-h-[3.5rem] h-full relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
-                          <div className="px-6 py-3">
-                            <span>Schedule a Visit</span>
-                          </div>
-                          <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-                            ↗
-                          </span>
-                        </button>
+                          <button className="w-full md:min-h-[4rem] min-h-[3.5rem] h-full relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
+                            <div className="px-6 py-3">
+                              <span>Schedule a Visit</span>
+                            </div>
+                            <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                              ↗
+                            </span>
+                          </button>
                         </SlideUp>
                       </div>
                     </div>
@@ -858,7 +858,7 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
                   <div className="max-md:col-span-2">
                     <SlideUp delay={0.2}>
-                      <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
+                      <p className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
                         / Location
                       </p>
                     </SlideUp>
@@ -908,7 +908,7 @@ export default function Home() {
                     <div className="grid grid-cols-2 gap-4 ">
                       <div className="max-md:col-span-2 md:p-2">
                         <SlideUp delay={0.2}>
-                          <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">
+                          <p className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] !text-white mb-2">
                             / Connectivity
                           </p>
                         </SlideUp>
@@ -919,12 +919,12 @@ export default function Home() {
                           </h2>
                         </SlideUp>
                         <SlideUp delay={0.6}>
-                        <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
-                    <div className="px-6 py-3 mr-20">Learn More</div>
-                    <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-                      ↗
-                    </span>
-                  </button>
+                          <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
+                            <div className="px-6 py-3 mr-20">Learn More</div>
+                            <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                              ↗
+                            </span>
+                          </button>
                         </SlideUp>
                       </div>
                       <div className="max-md:mt-5 max-md:col-span-2 md:p-2 flex max-md:px-7 gap-10 items-center">
@@ -944,10 +944,10 @@ export default function Home() {
                                 />
                               </div>
                               <div>
-                                <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
+                                <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                                   Nearest Metro-station
                                 </p>
-                                <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                                <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                                   Dakshineshwar • 12km
                                 </p>
                               </div>
@@ -967,10 +967,10 @@ export default function Home() {
                                 />
                               </div>
                               <div>
-                                <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
+                                <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                                   Nearest Airport
                                 </p>
-                                <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                                <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                                   Airport • 21.4km
                                 </p>
                               </div>
@@ -990,13 +990,13 @@ export default function Home() {
                                 />
                               </div>
                               <div>
-                                <p className="text-[12px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
+                                <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                                   Nearest Railway Station
                                 </p>
-                                <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                                <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                                   Rishra • 1.8km
                                 </p>
-                                <p className="text-[16px] md:text-[24px] font-[Satoshi] font-[400] leading-6 md:leading-[33px] text-white">
+                                <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
                                   Serampore • 2.4km
                                 </p>
                               </div>
@@ -1012,14 +1012,14 @@ export default function Home() {
               </div>
               <SlideUp delay={0.8}>
                 <div className="flex md:hidden justify-center relative -top-7">
-                <button className="md:min-h-[4rem] min-h-[3.5rem] h-full inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
-            <div className="px-6 py-3 mr-20">
-              <span>Schedule a Visit</span>
-            </div>
-            <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-              ↗
-            </span>
-          </button>
+                  <button className="md:min-h-[4rem] min-h-[3.5rem] h-full inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
+                    <div className="px-6 py-3 mr-20">
+                      <span>Schedule a Visit</span>
+                    </div>
+                    <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                      ↗
+                    </span>
+                  </button>
                 </div>
               </SlideUp>
             </div>
@@ -1033,7 +1033,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
             <div className="max-md:col-span-2">
               <SlideUp delay={0.2}>
-                <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
+                <p className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
                   / Testimonials
                 </p>
               </SlideUp>
@@ -1069,7 +1069,7 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4 ">
               <div className="max-md:col-span-2 md:p-2">
                 <SlideUp delay={0.2}>
-                  <p className="max-md:text-center text-[14px] md:text-[16px] font-[Satoshi] font-[400] leading-5 md:leading-[22px] !text-white mb-2">
+                  <p className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] !text-white mb-2">
                     / Plans
                   </p>
                 </SlideUp>
@@ -1082,14 +1082,14 @@ export default function Home() {
                   </h2>
                 </SlideUp>
                 <SlideUp delay={0.6}>
-                <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
-                  <div className="px-6 py-3 mr-20">
-                    <span>Schedule a Visit</span>
-                  </div>
-                  <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-                    ↗
-                  </span>
-                </button>
+                  <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
+                    <div className="px-6 py-3 mr-20">
+                      <span>Schedule a Visit</span>
+                    </div>
+                    <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                      ↗
+                    </span>
+                  </button>
                 </SlideUp>
               </div>
               <div className="max-md:col-span-2 grid grid-cols-2 md:gap-x-20 gap-y-9 md:gap-y-12 mt-9 md:mt-6">
@@ -1101,7 +1101,7 @@ export default function Home() {
                     alt="Security Systems"
                     className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
                   />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-[Satoshi] font-[400] leading-6 md:leading-[28px] text-white text-center">
+                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                     24 hours security systems
                   </p>
                 </FadeIn>
@@ -1114,7 +1114,7 @@ export default function Home() {
                     alt="Monitoring Systems"
                     className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
                   />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-[Satoshi] font-[400] leading-6 md:leading-[28px] text-white text-center">
+                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                     Central monitoring systems
                   </p>
                 </FadeIn>
@@ -1127,7 +1127,7 @@ export default function Home() {
                     alt="Surveillance"
                     className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
                   />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-[Satoshi] font-[400] leading-6 md:leading-[28px] text-white text-center">
+                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                     24 hours surveillance
                   </p>
                 </FadeIn>
@@ -1140,7 +1140,7 @@ export default function Home() {
                     alt="Emergency Buttons"
                     className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
                   />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-[Satoshi] font-[400] leading-6 md:leading-[28px] text-white text-center">
+                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                     Emergency Buttons
                   </p>
                 </FadeIn>
