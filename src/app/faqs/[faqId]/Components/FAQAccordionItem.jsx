@@ -20,7 +20,7 @@ const FAQAccordionItem = ({
           aria-controls={`panel-${id}`}
         >
           <div className="flex flex-wrap flex-1 shrink gap-4 items-center self-stretch my-auto w-full basis-0 min-w-60">
-            <h3 className="flex-1 shrink self-stretch my-auto text-[#000000] font-[Satoshi] font-[700] text-[20px] leading-7 basis-0 min-w-60">
+            <h3 className="flex-1 shrink self-stretch my-auto text-[#000000] font-satoshi font-[700] text-[20px] leading-7 basis-0 min-w-60">
               {title}
             </h3>
             <div className="flex gap-2.5 items-start self-stretch my-auto w-4">
@@ -40,7 +40,7 @@ const FAQAccordionItem = ({
             id={`panel-${id}`}
             role="region"
             aria-labelledby={`heading-${id}`}
-            className="px-6 pb-5 w-full text-[#5C5F68] font-[Satoshi] font-[400] text-[18px] leading-6"
+            className="px-6 pb-5 w-full text-[#5C5F68] font-satoshi font-[400] text-[18px] leading-6"
           >
             {content}
           </div>

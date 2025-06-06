@@ -7,7 +7,7 @@ export default function Searchbox({ containerClassName = "", inputProps = {} }) 
       <Image src="/assets/icons/Search.svg" height={24} width={24} className='h-[24px] w-[24px]' alt="SearchIcon"/>
       <input
         placeholder='Search'
-        className='outline-0 font-[Satoshi] font-[400] text-[16px] flex-1 truncate'
+        className='outline-0 font-satoshi font-[400] text-[16px] flex-1 truncate'
         {...inputProps} />
     </div>
   )

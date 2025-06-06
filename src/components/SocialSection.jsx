@@ -41,8 +41,8 @@ export default function SocialSection() {
                         className={`relative ${index % 2 !== 0 ? 'md:top-14' : ''} space-y-4 md:space-y-5 px-4`}
                     >
                         <div className='absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300'></div>
-                        <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">{item.number}</div>
-                     <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-[Satoshi] leading-[24px] h-[40px] md:h-auto flex items-center">
+                        <div className="max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">{item.number}</div>
+                     <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi leading-[24px] h-[40px] md:h-auto flex items-center">
                     {item.title}
                     </h3>
 
@@ -54,7 +54,7 @@ export default function SocialSection() {
                                 className="object-cover"
                             />
                         </div>
-                        <p className="font-[Satoshi] text-[14px] md:text-[16px] text-[#22252E]/60 md:text-[#22252E] font-[400] text-center md:text-left">{item.description}</p>
+                        <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E]/60 md:text-[#22252E] font-[400] text-center md:text-left">{item.description}</p>
                     </div>
                 ))}
             </div>

@@ -15,7 +15,7 @@ export default function WhyRiversideFloatingButton() {
             id="amenities"
         >
             <div className="cursor-pointer inset-center absolute backdrop-blur-[20px] -bottom-[150px] md:bottom-[-60px] z-10 md:right-8 bg-[#FFFFFF33] rounded-full w-[133px] h-[133px] flex flex-col items-center justify-center">
-                <p className="text-white text-[16px] font-[Satoshi] font-bold leading-[20px] text-center max-w-[93px]">
+                <p className="text-white text-[16px] font-satoshi font-bold leading-[20px] text-center max-w-[93px]">
                     Why Riverside Living?
                 </p>
             </div>
