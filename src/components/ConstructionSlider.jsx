@@ -72,7 +72,6 @@ const ConstructionSlider = () => {
   };
 
   const handleSlideChange = (currentSlide) => {
-    // Calculate the actual active index based on slidesToShow
     const slidesToShow =
       window.innerWidth >= 1024 ? 2.5 : window.innerWidth >= 768 ? 2.5 : 1;
     const activeSlide = Math.round(currentSlide * slidesToShow);
@@ -153,11 +152,33 @@ const ConstructionSlider = () => {
           })}
         </Slider>
       </div>
+
+      {/* Desktop Navigation Arrows */}
+      <div className="hidden md:flex gap-4 mt-[56px] w-full justify-center items-center">
+        <div
+          className={`w-[28px] h-[28px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
+            activeIndex > 0 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
+          }`}
+          onClick={activeIndex > 0 ? handlePrev : undefined}
+        >
+          ‹
+        </div>
+        <div
+          className={`w-[28px] h-[28px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
+            activeIndex < sliderData.length - 1 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
+          }`}
+          onClick={activeIndex < sliderData.length - 1 ? handleNext : undefined}
+        >
+          ›
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
       <div className="relative bottom-0 flex justify-end md:hidden">
         <div className="w-[100%] md:w-[360px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around px-1 py-5">
           <div className="h-full flex items-center justify-center">
             <button
-              className="focus:outline-none  cursor-pointer"
+              className="focus:outline-none cursor-pointer"
               onClick={handlePrev}
             >
               <Image

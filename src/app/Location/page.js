@@ -214,18 +214,15 @@ export default function Location() {
                 </div>
             </div>
             <FadeIn delay={0.6} className="relative w-full h-[auto] aspect-[2/1]">
-                <Image
-                    src="/assets/loc-mapp.png"
-                    alt="img"
-                    fill
-                    className="select-none no-drag hide-triangle"
-                />
-                <Image
-                    src="/assets/mobile-map.png"
-                    alt="img"
-                    width={300}
-                    height={400}
-                    className="select-none no-drag none-md w-full"
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.7621588861452!2d88.35402567513168!3d22.737079979374972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89b1d8d11144b%3A0x436932be30b5b9c2!2sNew%20Kolkata%20Sangam!5e0!3m2!1sen!2sin!4v1749182902387!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className=""
                 />
             </FadeIn>
         </section>

@@ -171,7 +171,7 @@ export default function WhyAlcove() {
                   <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
                   <SlideUp delay={0.4} className="project-overview-title text-center md:pb-[28px] md:pb-[0px]"><span className="orange-color">Past</span> Projects</SlideUp>
                 </div>
-                <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-110 md:top-95'></div>
+                <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-110 md:top-100'></div>
             </div>
             <SlideUp delay={0.6}>
                 <PastProjectSwiper/>
