@@ -130,7 +130,7 @@ export default function SangamSliders() {
               <div className={`bg-[#111B2F] relative transition-all duration-500 ${bhkFade ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}>
 
                 {/* Tabs */}
-                <div className='absolute z-[10] md:mx-[0px] flex flex-row md:flex-col items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full md:w-[72px] m-1 absolute left-0 top-[-50px] md:top-0 transition-all duration-300'>
+                <div className='absolute z-[10] md:mx-[0px] flex flex-row md:flex-col items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full md:w-[72px] absolute left-0 top-[-50px] md:top-0 transition-all duration-300'>
                  {flatsData[activeBHK].tabs.map(tab => (
                     <div
                       key={tab}
