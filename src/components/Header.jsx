@@ -1,8 +1,8 @@
 "use client";
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation'
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const headerClass = {
   "/": "home-page-header",
@@ -91,15 +91,20 @@ const Header = () => {
 
           <div className="flex items-center gap-6">
             <Link
-                href="/blogs"
-                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
-              >
-                Blogs
+              href="/blogs"
+              className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Blogs
             </Link>
-            <p>Schedule Visit</p>
+            <Link
+              href="/"
+              className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Schedule Visit
+            </Link>{" "}
             <div className="h-[48px] w-[100px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-sm action-button">
               <p className="font-satoshi font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22] absolute top-[13px] left-[22px]">
-                call Now
+                Call Now
               </p>
             </div>
           </div>
@@ -125,23 +130,53 @@ const Header = () => {
         <div className="p-4">
           <ul className="space-y-4">
             <li>
-              <Link href="/" className="text-gray-800 hover:text-blue-500">
-                Home
+              <Link
+                href="/why-alcove"
+                className="text-gray-800 hover:text-blue-500"
+              >
+                Why Alcove
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/master-plan"
+                className="text-gray-800 hover:text-blue-500"
+              >
+                Master Plans
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/amenities"
+                className="text-gray-800 hover:text-blue-500"
+              >
+                Amenities
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Location"
+                className="text-gray-800 hover:text-blue-500"
+              >
+                Location
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/life-@-alcove"
+                className="text-gray-800 hover:text-blue-500"
+              >
+                Life @Alcove
+              </Link>
+            </li>
+            <li>
+              <Link href="/blogs" className="text-gray-800 hover:text-blue-500">
+                Blogs
               </Link>
             </li>
             <li>
               <Link href="#" className="text-gray-800 hover:text-blue-500">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="text-gray-800 hover:text-blue-500">
-                Plans
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="text-gray-800 hover:text-blue-500">
-                Blog
+                Schedule Visit
               </Link>
             </li>
           </ul>
