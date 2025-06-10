@@ -65,12 +65,12 @@ export default function Amenities() {
                     </span>
                     65 more
                 </div>
-                <button className="max-md:w-[90%] bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
+                <button className="md:min-h-[4.75rem] min-h-[3.5rem] h-full max-md:w-[90%] bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
                     <div className='px-6 py-3'>
                         <span className='hidden md:inline'>Explore the Riverside Sanctuary</span>
                         <span className='inline md:hidden'>Schedule a Visit</span>
                     </div>
-                    <span className="px-6 py-3 text-orange-500 bg-[#002F52] text-lg ml-auto">↗</span>
+                    <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg ml-auto">↗</span>
                 </button>
             </div>
 
@@ -78,7 +78,7 @@ export default function Amenities() {
                 <Image
                     src="/assets/AmenitiesBottomBackground.svg" // Replace with your actual image
                     alt="Decorative background"
-                    width={320}
+                    width={500}
                     height={200}
                 />
             </div>

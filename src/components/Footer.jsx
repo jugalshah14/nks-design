@@ -143,10 +143,10 @@ export default function Footer() {
               </div>
               <button
                 type="submit"
-                className="max-lg:mx-auto w-[90%] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden"
+                className="min-h-[4rem] h-full max-lg:mx-auto w-[90%] mt-10 relative bg-[#144D78] button-primary transition-all duration-300 rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden"
               >
                 <div className="px-6 py-3 mr-20">Submit</div>
-                <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
+                <span className="px-6 flex items-center justify-center min-h-[4rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
                   ↗
                 </span>
               </button>
