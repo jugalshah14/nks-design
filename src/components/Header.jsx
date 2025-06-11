@@ -43,8 +43,8 @@ const Header = () => {
           activeClass && isScrolled && "!bg-[#010b22]"
         }`}
       >
-        <div className="container mx-auto py-4 flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
-          <div className="hidden md:flex items-center space-x-8">
+        <div className="container mx-auto py-4 md:grid md:grid-cols-3 md:items-center flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
+          <div className="hidden md:flex items-center space-x-8 justify-start">
             <nav className="hidden md:flex space-x-8">
               <Link
                 href="/why-alcove"
@@ -79,17 +79,19 @@ const Header = () => {
             </nav>
           </div>
 
-          <div className="w-[95px] h-[44px] md:h-[75px] md:w-[161px] relative max-md:mr-auto">
-            <Image
-              className="invert-100 logo-image"
-              src="/assets/logo.svg"
-              alt="Next.js logo"
-              fill
-              priority
-            />
+          <div className="w-[95px] h-[44px] md:h-[75px] md:w-[161px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">
+            <Link href="/">
+              <Image
+                className="invert-100 logo-image"
+                src="/assets/logo.png"
+                alt="Next.js logo"
+                fill
+                priority
+              />
+            </Link>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 md:justify-end">
             <Link
               href="/blogs"
               className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
@@ -127,6 +129,40 @@ const Header = () => {
                   isOpen ? "translate-x-0" : "-translate-x-full"
                 }`}
       >
+        <div className="flex items-center justify-between p-4 border-b border-gray-200">
+          <div className="w-[60px] h-[30px] relative">
+            <Link href="/">
+              <Image
+                src="/assets/logo.png"
+                alt="Logo"
+                fill
+                className=" invert-100 object-contain"
+                priority
+              />
+            </Link>
+          </div>
+          <button
+            onClick={toggleDrawer}
+            className="text-gray-600"
+            aria-label="Close menu"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
         <div className="p-4">
           <ul className="space-y-4">
             <li>
@@ -181,12 +217,6 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <button
-          onClick={toggleDrawer}
-          className="absolute top-4 right-4 text-gray-600"
-        >
-          Close
-        </button>
       </div>
     </>
   );
