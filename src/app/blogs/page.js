@@ -240,11 +240,6 @@ export default function lifeAtAlcove() {
         className="relative w-full pt-10 pb-10 md:pt-20 md:pb-0 bg-[#F3F6F8]"
       >
         <div className="text-center mb-12">
-          <SlideUp>
-            <div className="text-[#22252E] text-[16px] leading-[20px] mb-4 font-normal">
-              / Magnificent
-            </div>
-          </SlideUp>
           <SlideUp delay={0.8}>
             <h2 className="text-[56px] leading-[72px] font-normal font-cormorant text-black">
               Residential
@@ -380,11 +375,6 @@ export default function lifeAtAlcove() {
         className="relative w-full md:mt-20 py-20 bg-white"
       >
         <div className="text-center mb-12">
-          <SlideUp>
-            <div className="text-[#22252E] text-[16px] leading-[20px] mb-4 font-normal">
-              / Magnificent
-            </div>
-          </SlideUp>
           <SlideUp delay={0.8}>
             <h2 className="text-[56px] leading-[72px] font-normal font-cormorant text-black">
               Construction

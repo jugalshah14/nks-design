@@ -69,12 +69,6 @@ export default function Location() {
       <section className="bg-[#020C22]  mb-[100px] md:mb-[0px] md:pb-[80px]">
             <div className="container mx-auto text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
               <SlideUp
-                delay={0.2}
-                className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2"
-              >
-                / Amenities
-              </SlideUp>
-              <SlideUp
                 delay={0.4}
                 className="text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[100px] font-[400] md:leading-[120px] px-4"
               >
@@ -162,9 +156,6 @@ export default function Location() {
                   <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
                     <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
                       <div className="max-md:col-span-2">
-                        <SlideUp delay={0.2} className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
-                          / Location
-                        </SlideUp>
                         <SlideUp delay={0.4} className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
                           Location <span className="orange-color">Benefits</span>
                         </SlideUp>
@@ -202,12 +193,6 @@ export default function Location() {
         <section>
             <div className="container px-10 mx-auto pt-[40px]">
                 <div className="text-center w-full pb-12">
-                    <SlideUp
-                      delay={0.2}
-                      className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[20px] md:leading-[22px] text-[#22252e] mb-2"
-                    >
-                      / Magnificent
-                    </SlideUp>
                     <SlideUp delay={0.4} className="project-overview-title text-center">
                       Our <span className="orange-color">Neighbourhood</span>
                     </SlideUp>
@@ -236,9 +221,6 @@ export default function Location() {
             <SlideUp delay={0.2} className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-15">
               <div className="grid grid-cols-2 gap-4 ">
                 <div className="max-md:col-span-2 md:p-2">
-                  <p className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] !text-white mb-2">
-                    / Connectivity
-                  </p>
                   <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
                     Serampore, next <br className="max-md:hidden" />
                     <span className="orange-color">Investment hub</span>

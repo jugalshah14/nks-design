@@ -54,7 +54,6 @@ export default function ReviewsOne() {
                 <div className='z-[-1] bg-[#F3F6F8] w-[100%] md:w-[53%] h-[360px] md:h-[248px] absolute bottom-[70px] md:bottom-0 left-0'></div>
                 <div className='container mx-auto'>
                     <div className="relative z-10 text-center w-full p-[48px] bg-white">
-                        <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Magnificent</SlideUp>
                         <SlideUp delay={0.4} className="project-overview-title text-center md:pb-[28px] md:pb-[0px]"><span className="orange-color">4 BHK's </span>Customers </SlideUp>
                     </div>
                     <SlideUp delay={0.6}>

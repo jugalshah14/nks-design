@@ -294,9 +294,6 @@ export default function BlogsDetail() {
       {/* You may also like to read Section */}
       <section className="bg-[#f7fafc] py-12 md:py-16 h-auto md:h-[374px] md:mb-80">
         <div className="max-w-7xl mx-auto px-4 md:px-7 lg:px-0">
-          <SlideUp delay={0.2}>
-            <div className="text-[#22252E] text-[14px] md:text-[16px] mb-2 font-normal">/ Location</div>
-          </SlideUp>
           <SlideUp delay={0.4}>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0 mb-8 md:mb-10">
               <div>

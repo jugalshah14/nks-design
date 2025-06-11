@@ -158,12 +158,6 @@ export default function MasterPlan() {
           <div className="flex flex-col md:flex-row justify-between relative container mx-auto px-[16px] md:px-24 gap-[36px] md:gap-12">
             <div className="text-center md:text-left w-full md:pb-30">
               <SlideUp
-                delay={0.2}
-                className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2"
-              >
-                / Amenities
-              </SlideUp>
-              <SlideUp
                 delay={0.4}
                 className="project-overview-title text-center md:text-left"
               >
@@ -222,12 +216,6 @@ export default function MasterPlan() {
       <section>
         <div className="container px-10 mx-auto">
           <div className="text-center w-full pb-12">
-            <SlideUp
-              delay={0.2}
-              className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[20px] md:leading-[22px] text-[#22252e] mb-2"
-            >
-              / Magnificent
-            </SlideUp>
             <SlideUp delay={0.4} className="project-overview-title text-center">
               NewKolkata’s <span className="orange-color">Masterplan</span>
             </SlideUp>
@@ -247,12 +235,6 @@ export default function MasterPlan() {
       <section>
         <div className="container mx-auto py-20 gap-[37px] md:gap-12 flex flex-col">
           <div className="text-center w-full">
-            <SlideUp
-              delay={0.2}
-              className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[20px] md:leading-[22px] text-[#22252e] mb-2"
-            >
-              / Magnificent
-            </SlideUp>
             <SlideUp delay={0.4} className="project-overview-title text-center">
               NewKolkata’s <span className="orange-color">Specifications</span>
             </SlideUp>
@@ -398,12 +380,6 @@ export default function MasterPlan() {
       <section className="bg-[#020C22] mb-[160px] md:mb-[100px] md:mb-[0px] md:pb-[80px]">
         <div className="text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
           <SlideUp
-            delay={0.2}
-            className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2"
-          >
-            / Amenities
-          </SlideUp>
-          <SlideUp
             delay={0.4}
             className="text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[150px] font-[400] md:leading-[150px]"
           >
@@ -448,12 +424,6 @@ export default function MasterPlan() {
       <section className="overflow-x-hidden">
         <div className="relative pt-[30px] md:pt-[100px]">
           <div className="text-center w-full">
-            <SlideUp
-              delay={0.2}
-              className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2  pt-[20px] md:pt-[0px]"
-            >
-              / Amenities
-            </SlideUp>
             <SlideUp delay={0.4} className="project-overview-title text-center">
               <span className="orange-color">Past</span> Projects
             </SlideUp>
@@ -498,12 +468,6 @@ export default function MasterPlan() {
       <section className="pb-2 md:py-20 bg-white pt-[60px] md:pt-[80px]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-7 md:mb-16">
-            <SlideUp
-              delay={0.2}
-              className="text-[14px] leading-5 md:text-[16px] font-satoshi font-[400] md:leading-[22px] text-[#22252e] mb-2"
-            >
-              / Magnificent
-            </SlideUp>
             <SlideUp delay={0.4} className="project-overview-title text-center">
               <span className="orange-color">Image</span> Gallery
             </SlideUp>
@@ -532,12 +496,6 @@ export default function MasterPlan() {
         <div className="container mx-auto">
           <div className="flex ietms-center w-full md:items-end justify-between mb-[48px]">
             <div className="w-full">
-              <SlideUp
-                delay={0.2}
-                className="text-center md:text-start text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2"
-              >
-                / Amenities
-              </SlideUp>
               <SlideUp
                 delay={0.4}
                 className="project-overview-title text-center md:text-left !text-white"

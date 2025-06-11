@@ -47,11 +47,6 @@ export default function lifeAtAlcove() {
       </section>
 
       <section className="bg-[#020C22] relative text-white md-pt-20 md:pb-20 pt-20 pb-0 h-auto">
-        <SlideUp delay={0.2}>
-          <div className="flex justify-center font-satoshi font-normal text-[16px] leading-[20px]">
-            / Amenities
-          </div>
-        </SlideUp>
         <SlideUp delay={0.4}>
           <h2 className="flex md:flex-row flex-col items-center md:justify-center font-cormorant font-normal text-[48px] leading-[52px] md:text-[100px] md:leading-[120px] md:mt-4 md-px-0 px-[13px]">
             <span className="orange-color">Elevated</span>&nbsp;Life @Alcove
@@ -89,11 +84,6 @@ export default function lifeAtAlcove() {
       </section>
 
       <section className="py-20 pb-0 mt-20 md:mt-0 bg-white">
-        <SlideUp delay={0.2}>
-          <div className="mt-10 flex text-black justify-center font-satoshi font-normal text-[16px] leading-[20px]">
-            / Magnificent
-          </div>
-        </SlideUp>
 
         <SlideUp delay={0.4}>
           <h2 className="flex justify-center font-cormorant font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] mt-4 text-center">
