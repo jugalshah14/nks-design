@@ -8,6 +8,16 @@ const headerClass = {
   "/": "home-page-header",
 };
 
+const NAV_ITEMS = [
+  { href: "/why-alcove", label: "Why Alcove" },
+  { href: "/master-plan", label: "Master Plans" },
+  { href: "/amenities", label: "Amenities" },
+  { href: "/Location", label: "Location" },
+  { href: "/life-@-alcove", label: "Life @Alcove" },
+  { href: "/blogs", label: "Blogs" },
+  { href: "/", label: "Schedule Visit" },
+];
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeClass, setActiveClass] = useState("/");
@@ -40,42 +50,25 @@ const Header = () => {
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled ? "shadow-lg" : ""
         } bg-white ${activeClass} ${
-          activeClass && isScrolled && "!bg-[#010b22]"
+          activeClass &&
+          isScrolled &&
+          "!bg-white !backdrop-blur-sm has-scrolled"
         }`}
       >
         <div className="container mx-auto py-4 md:grid md:grid-cols-3 md:items-center flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
           <div className="hidden md:flex items-center space-x-8 justify-start">
-            <nav className="hidden md:flex space-x-8">
-              <Link
-                href="/why-alcove"
-                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
-              >
-                Why Alcove
-              </Link>
-              <Link
-                href="/master-plan"
-                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
-              >
-                Master Plans
-              </Link>
-              <Link
-                href="/amenities"
-                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
-              >
-                Amenities
-              </Link>
-              <Link
-                href="/Location"
-                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
-              >
-                Location
-              </Link>
-              <Link
-                href="/life-@-alcove"
-                className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
-              >
-                Life @Alcove
-              </Link>
+            <nav className="hidden md:flex gap-8">
+              {NAV_ITEMS.slice(0, 5)?.map((item, index) => {
+                return (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="font-satoshi font-medium whitespace-nowrap text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
 

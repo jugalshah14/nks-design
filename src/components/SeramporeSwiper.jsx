@@ -26,42 +26,28 @@ const data = [
     title: "Serampore Railway Station",
     description: "2.5km away",
   },
-  // {
-  //     src: '/assets/shelby.jpg',
-  //     icon: '/assets/icons/hospital-building.svg',
-  //     title: 'Shelby Hospital',
-  //     description: '3.4km away'
-  // }
+  {
+    src: "/assets/shelby.jpg",
+    icon: "/assets/icons/hospital-building.svg",
+    title: "Shelby Hospital",
+    description: "3.4km away",
+  },
 ];
 
 const settings = {
   className: "serampore-swiper overflow-x-visible",
   infinite: false,
-  slidesToShow: 3.2,
+  slidesToShow: 3.1,
   speed: 600,
   dots: false,
   arrows: false,
   initialSlide: 0,
   responsive: [
     {
-      breakpoint: 1440,
-      settings: {
-        centerMode: false,
-        slidesToShow: 2.5,
-      },
-    },
-    {
-      breakpoint: 1300,
-      settings: {
-        centerMode: false,
-        slidesToShow: 2,
-      },
-    },
-    {
       breakpoint: 1024,
       settings: {
         centerMode: false,
-        slidesToShow: 1.6,
+        slidesToShow: 3.1,
       },
     },
     {
@@ -74,7 +60,7 @@ const settings = {
   ],
 };
 export default function SeramporeSwiper() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   let swiperRef = useRef(null);
 
   const handleNext = () => {
@@ -88,18 +74,22 @@ export default function SeramporeSwiper() {
   };
 
   return (
-    <div className="md:pt-10 mb-10 overflow-hidden">
+    <div className="md:pt-10 mb-10 container mx-auto px-4 md:px-0">
       <Slider
         ref={(slider) => {
           swiperRef = slider;
         }}
         {...settings}
-        afterChange={(current) => setActiveIndex(current)}
+        afterChange={(current) => {
+          // Round to nearest whole number to avoid decimal indices
+          const newIndex = Math.round(current) + 1;
+          setActiveIndex(Math.min(newIndex, data.length));
+        }}
       >
         {data.map((slide, index) => (
           <div
             key={index}
-            className="relative !flex justify-center flex-nowrap pt-15 w-[100%] ml-[40px]"
+            className="relative !flex justify-center flex-nowrap pt-15"
           >
             <Image
               src={slide.src}
@@ -111,7 +101,7 @@ export default function SeramporeSwiper() {
             <div
               className={`w-fit relative flex flex-col p-7 pl-3 pt-10 max-sm:pr-30 pr-20 `}
             >
-              <div className="location-slide bg-[#F8F8F8] top-6 -left-[70px] w-[100%] sm:w-[130%] h-[100%] absolute back-active" />
+              <div className="location-slide bg-[#F8F8F8] top-6 -left-[70px] w-[100%] sm:w-[110%] h-[100%] absolute back-active" />
               <Image
                 src={slide.icon}
                 height={48}
@@ -144,13 +134,14 @@ export default function SeramporeSwiper() {
               alt="Previous"
               height={20}
               width={19}
-              className="invert-75 transform rotate-180"
+              className={`${
+                activeIndex === 1 && "invert-75"
+              } transform rotate-180`}
             />
           </button>
         </div>
         <div className="flex gap-2 items-center">
-          {Math.ceil(activeIndex) + 1}{" "}
-          <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}
+          {activeIndex} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}
         </div>
         <div className="h-full flex items-center justify-center">
           <button
@@ -162,7 +153,7 @@ export default function SeramporeSwiper() {
               alt="Next"
               height={20}
               width={19}
-              className=""
+              className={activeIndex === data.length && "invert-75"}
             />
           </button>
         </div>
