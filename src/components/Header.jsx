@@ -129,14 +129,14 @@ const Header = () => {
                   isOpen ? "translate-x-0" : "-translate-x-full"
                 }`}
       >
-        <div className="flex items-center justify-between p-4 border-b">
+        <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <div className="w-[60px] h-[30px] relative">
             <Link href="/">
               <Image
                 src="/assets/logo.png"
                 alt="Logo"
                 fill
-                className="object-contain"
+                className=" invert-100 object-contain"
                 priority
               />
             </Link>
