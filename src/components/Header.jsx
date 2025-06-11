@@ -43,8 +43,8 @@ const Header = () => {
           activeClass && isScrolled && "!bg-[#010b22]"
         }`}
       >
-        <div className="container mx-auto py-4 flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
-          <div className="hidden md:flex items-center space-x-8">
+        <div className="container mx-auto py-4 md:grid md:grid-cols-3 md:items-center flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
+          <div className="hidden md:flex items-center space-x-8 justify-start">
             <nav className="hidden md:flex space-x-8">
               <Link
                 href="/why-alcove"
@@ -79,17 +79,19 @@ const Header = () => {
             </nav>
           </div>
 
-          <div className="w-[95px] h-[44px] md:h-[75px] md:w-[161px] relative max-md:mr-auto">
-            <Image
-              className="invert-100 logo-image"
-              src="/assets/logo.svg"
-              alt="Next.js logo"
-              fill
-              priority
-            />
+          <div className="w-[95px] h-[44px] md:h-[75px] md:w-[161px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">
+            <Link href="/">
+              <Image
+                className="invert-100 logo-image"
+                src="/assets/logo.svg"
+                alt="Next.js logo"
+                fill
+                priority
+              />
+            </Link>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 md:justify-end">
             <Link
               href="/blogs"
               className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
