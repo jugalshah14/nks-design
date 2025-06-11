@@ -65,7 +65,7 @@ export default function WhyAlcove() {
                   <div className="text-center md:text-left w-full md:pb-15">
                     <SlideUp className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
                     <SlideUp delay={0.2} className="project-overview-title text-center md:text-left !font-cormorant">From <br/><span className="orange-color"> Founder’s </span>Desk</SlideUp>
-                    <SlideUp delay={0.4} className="max-w-[409px] text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[20px] md:pt-10">As being architect of New Kolkata, I recommend this place as nice place to live. we're architecture notes. learn about the systems you use everyday from the engineers who built them</SlideUp>
+                    <SlideUp delay={0.4} className="max-w-[409px] text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[20px] md:pt-10">As being architect of New Kolkata, I recommend this place as nice place to live. we&apos;re architecture notes. learn about the systems you use everyday from the engineers who built them</SlideUp>
 
                   </div>
                   <SlideUp delay={0.6} className='flex flex-row w-full items-streach'>
@@ -118,7 +118,7 @@ export default function WhyAlcove() {
                                 <Image src="/assets/mission-icon2.svg" width={40} height={30} alt="house" className="mt-2" />
                                 <div className='flex flex-col items-baseline h-full'>
                                     <h2 className='text-[18px] leading-[24px] md:text-[24px] md:leading-[28px] font-satoshi font-[700]'>Mission 2</h2>
-                                    <p className='pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]'>To offer high-quality amenities and services that enhance residents' quality of life.</p>
+                                    <p className='pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]'>To offer high-quality amenities and services that enhance residents&apos; quality of life.</p>
                                 </div>
                             </div>
                             <Image src="/assets/pink-tri.svg" width={28} height={88} alt="blue triangle" className="rotate-180 none-md" />
@@ -140,7 +140,7 @@ export default function WhyAlcove() {
                                 <Image src="/assets/mission-icon1.svg" width={40} height={30} alt="house" className="mt-2" />
                                 <div className='flex flex-col items-baseline h-full'>
                                     <h2 className='text-[18px] leading-[24px] md:text-[24px] md:leading-[28px] font-satoshi font-[700]'>Vision Title</h2>
-                                    <p className='pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]'>As being architect of New Kolkata, I recommend this place as nice place to live. we're architecture notes. learn about the systems you use everyday from the engineers who built them</p>
+                                    <p className='pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]'>As being architect of New Kolkata, I recommend this place as nice place to live. we&apos;re architecture notes. learn about the systems you use everyday from the engineers who built them</p>
                                 </div>
                             </div>
                         </SlideUp>

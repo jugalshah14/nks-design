@@ -1,10 +1,9 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
-import { AnimatedSection, FadeIn, SlideUp } from "@/components/animations";
+
+import { AnimatedSection, SlideUp } from "@/components/animations";
 import GangaWaves from "@/components/GangaWaves";
 import Image from "next/image";
 import React, { useState } from "react";
-import Slider from "react-slick";
 
 const amenities = {
   morning: [
@@ -1166,13 +1165,13 @@ export default function Amenities() {
               Ferry solely for potential clients and current customers.
             </p>
             <button className="md:min-h-[4rem] min-h-[3.5rem] h-full md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
-                <div className="px-6 py-3 mr-20">
-                  <span>Book Now</span>
-                </div>
-                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
-                  ↗
-                </span>
-              </button>
+              <div className="px-6 py-3 mr-20">
+                <span>Book Now</span>
+              </div>
+              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
+                ↗
+              </span>
+            </button>
           </div>
         </section>
       </AnimatedSection>

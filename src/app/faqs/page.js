@@ -1,4 +1,5 @@
 "use client";
+
 import Searchbox from '@/components/Searchbox'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -52,7 +53,7 @@ const faqsData = [
     },
 ];
 
-export default function page() {
+const FaqPage = () => {
     const [searchQ, setSearchQ] = useState('');
 
     return (
@@ -119,3 +120,5 @@ export default function page() {
         </main>
     )
 }
+
+export default FaqPage;
