@@ -83,7 +83,7 @@ const Header = () => {
             <Link href="/">
               <Image
                 className="invert-100 logo-image"
-                src="/assets/logo.svg"
+                src="/assets/logo.png"
                 alt="Next.js logo"
                 fill
                 priority
@@ -129,6 +129,40 @@ const Header = () => {
                   isOpen ? "translate-x-0" : "-translate-x-full"
                 }`}
       >
+        <div className="flex items-center justify-between p-4 border-b">
+          <div className="w-[60px] h-[30px] relative">
+            <Link href="/">
+              <Image
+                src="/assets/logo.png"
+                alt="Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </Link>
+          </div>
+          <button
+            onClick={toggleDrawer}
+            className="text-gray-600"
+            aria-label="Close menu"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
         <div className="p-4">
           <ul className="space-y-4">
             <li>
@@ -183,12 +217,6 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <button
-          onClick={toggleDrawer}
-          className="absolute top-4 right-4 text-gray-600"
-        >
-          Close
-        </button>
       </div>
     </>
   );
