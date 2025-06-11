@@ -494,11 +494,6 @@ export default function Amenities() {
       <section className="bg-[#010922] text-white md:px-16 py-12 w-full relative">
         <div className="flex w-full md:justify-between justify-center md:max-w-7xl md:mx-auto md:text-left text-center md:h-[180px] md:mb-12">
           <div className="md:mb-10 mb-5">
-            <SlideUp delay={0.2}>
-              <p className="text-white font-satoshi font-normal text-[16px] leading-[20px] md:mb-4 mb-2">
-                / Amenities
-              </p>
-            </SlideUp>
             <SlideUp delay={0.4}>
               <h2 className="md:text-[56px] text-[36px] leading-[44px] font-cormorant font-normal md:leading-[72px]">
                 <span className="text-[#DE804B]">Streamline</span> Your <br />
@@ -1320,12 +1315,6 @@ export default function Amenities() {
           <div className="relative md:px-24 container max-w-7xl mx-auto py-5 max-md:pb-15 md:py-15">
             <div className="grid grid-cols-2 gap-4 ">
               <div className="max-md:col-span-2 md:p-2">
-                <SlideUp
-                  delay={0.2}
-                  className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] !text-white mb-2"
-                >
-                  / Plans
-                </SlideUp>
                 <SlideUp delay={0.4}>
                   <h2 className="font-cormorant text-[36px] md:leading-[72px] max-md:text-center md:font-[300] md:text-[56px] text-white">
                     Your <span className="orange-color">Safety</span> &
@@ -1413,12 +1402,6 @@ export default function Amenities() {
       <section className="relative w-full bg-[#F8FAFB] md:py-20 md:px-25 flex justify-center h-[650px] md:h-full mb-[50px] md:mb-0">
         <div className="flex md:flex-row flex-col w-[100%] md:justify-between">
           <div className="max-md:col-span-2 md:p-2 pt-10 md:pt-0">
-            <SlideUp
-              delay={0.2}
-              className="max-md:text-center text-[16px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black mb-2"
-            >
-              / Amenities
-            </SlideUp>
             <SlideUp delay={0.4}>
               <h2 className="font-cormorant text-[36px] max-md:text-center md:leading-[72px] md:font-[400] md:text-[56px] text-black">
                 Frequently

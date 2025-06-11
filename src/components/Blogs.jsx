@@ -41,7 +41,6 @@ const Blogs = () => {
     <section className="py-[80px] relative items-center md:justify-between justify-center flex flex-col">
       <div className="flex items-center justify-between md:justify-between mb-[50px] w-full">
       <div className="w-full">
-        <SlideUp delay={0.2} className="text-[14px] leading-5 md:text-[16px] font-[Satoshi] font-[400] md:leading-[22px] text-[#22252e] mb-2 text-center md:text-start">/ Location</SlideUp>
         <SlideUp delay={0.6} className="project-overview-title text-center md:text-start">Recent Blogs</SlideUp>
         </div>
         <SlideUp delay={0.8}>

@@ -40,12 +40,6 @@ export default function Testimonials() {
       <section className="">
         <div className="bg-[#020C22] text-center w-full pb-12 pt-[60px] md:pt-[80px] md:pb-[20px] md:pb-[52px]">
           <SlideUp
-            delay={0.2}
-            className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2"
-          >
-          / Amenities
-          </SlideUp>
-          <SlideUp
             delay={0.4}
             className="text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[150px] font-[400] md:leading-[150px] md:pb-[52px]"
           >

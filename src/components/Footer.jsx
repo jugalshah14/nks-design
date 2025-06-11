@@ -73,9 +73,6 @@ export default function Footer() {
             <p className="hidden lg:block text-[#222222] font-[700] text-[20px] leading-7 mb-7">
               Write to us
             </p>
-            <p className="block lg:hidden text-[#22252E] font-[400] text-[14px] leading-5 text-center">
-              / Amenities
-            </p>
             <h2 className="block lg:hidden project-overview-title font-[400] text-[36px] !text-[#22252E] mb-8 text-center">
               <span className="orange-color">Contact </span>Us
             </h2>

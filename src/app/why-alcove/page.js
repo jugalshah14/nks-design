@@ -63,7 +63,6 @@ export default function WhyAlcove() {
                 <Image src="/assets/Rectangl_Left.png" width={80} height={307} alt="Rectangle_left" className="absolute top-0 h-[100%] left-0" />
                 <div className="flex flex-col md:flex-row justify-between relative container mx-auto px-[16px] md:px-24 gap-[12px] md:gap-[36px] md:gap-12">
                   <div className="text-center md:text-left w-full md:pb-15">
-                    <SlideUp className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
                     <SlideUp delay={0.2} className="project-overview-title text-center md:text-left !font-cormorant">From <br/><span className="orange-color"> Founder’s </span>Desk</SlideUp>
                     <SlideUp delay={0.4} className="max-w-[409px] text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[20px] md:pt-10">As being architect of New Kolkata, I recommend this place as nice place to live. we&apos;re architecture notes. learn about the systems you use everyday from the engineers who built them</SlideUp>
 
@@ -93,7 +92,6 @@ export default function WhyAlcove() {
             <div className='container mx-auto md:pt-[149px] pb-[30px] md:pb-[70px] z-[1] relative px-[16px] md:px-[0px]'>
                 {/* mission */}
                <div className='flex flex-col justify-center items-center  pt-[60px] pb-[28px] none-md'>
-                    <SlideUp delay={0.2} className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
                     <SlideUp delay={0.4} className="page-hero-title !text-[36px] !leading-[44px] text-center md:text-left">Our <span className="orange-color">Mission</span></SlideUp>
                </div>
                 <div className='flex flex-col md:flex-row justify-between gap-[10px]'>
@@ -128,7 +126,6 @@ export default function WhyAlcove() {
 
                 {/* vision */}
                 <div className='flex flex-col justify-center items-center  pt-[60px] pb-[28px] none-md'>
-                    <SlideUp delay={0.2} className="text-[14px] md:text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
                     <SlideUp delay={0.4} className="page-hero-title !text-[36px] !leading-[44px] text-center md:text-left">Our <span className="orange-color">Vision</span></SlideUp>
                </div>
                 <div className='flex flex-col-reverse md:flex-row justify-between gap-[10px] md:pt-[70px] items-center w-full'>
@@ -168,7 +165,6 @@ export default function WhyAlcove() {
         <section className="overflow-x-hidden">
             <div className='relative'>
                 <div className="text-center w-full">
-                  <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
                   <SlideUp delay={0.4} className="project-overview-title text-center md:pb-[28px] md:pb-[0px]"><span className="orange-color">Past</span> Projects</SlideUp>
                 </div>
                 <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-110 md:top-100'></div>
@@ -188,7 +184,6 @@ export default function WhyAlcove() {
 
         <section className='relative'>
             <div className="text-center w-full pt-[40px] md:pt-0">
-                  <SlideUp delay={0.2} className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">/ Amenities</SlideUp>
                   <SlideUp delay={0.4} className="project-overview-title text-center md:pb-[28px] md:pb-[0px]">Corporate Social <span className="orange-color">Responsibility </span></SlideUp>
             </div>
             <SocialSection/>
@@ -207,7 +202,6 @@ export default function WhyAlcove() {
             <div className="container mx-auto">
                 <div className="flex ietms-center w-full md:items-end justify-between mb-[48px]">
                     <div className='w-full'>
-                    <SlideUp className="text-center md:text-start text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">/ Amenities</SlideUp>              
                     <SlideUp delay={0.2} className="project-overview-title text-center md:text-left !text-white"><span className="orange-color">Awards <br/></span>& Recognitions</SlideUp>
                     </div>
                     <SlideUp delay={0.4} className="hide-triangle text-[20px] md:text-[20px] font-satoshi font-[400] leading-5 md:leading-[28px] text-white/50 max-w-[400px]">Experience a world of wonder and adventure. Our podium level is a playground for all ages!</SlideUp>

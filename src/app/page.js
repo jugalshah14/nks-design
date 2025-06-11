@@ -18,6 +18,7 @@ import SeramporeMarqueeSlides from "@/components/SeramporeMarqueeSlides";
 import SeramporeSwiper from "@/components/SeramporeSwiper";
 import Testimonials from "@/components/Testimonials";
 import Image from "next/image";
+import Link from "next/link";
 import { Element } from "react-scroll";
 
 export default function Home() {
@@ -70,11 +71,6 @@ export default function Home() {
       <section className="pb-2 pt-16 md:py-16 bg-white">
         <div className="container  mx-auto px-6">
           <div className="text-center mb-7 md:mb-16">
-            <SlideUp delay={0.2}>
-              <p className="text-[14px] leading-5 md:text-[16px] font-satoshi font-[400] md:leading-[22px] text-[#22252e] mb-2">
-                / Magnificent
-              </p>
-            </SlideUp>
             <SlideUp delay={0.4}>
               <h2 className="project-overview-title max-md:!text-[36px] max-md:!leading-11 max-md:font-[400] text-center">
                 Project
@@ -169,13 +165,13 @@ export default function Home() {
               />
             </div>
             <h3 className="hidden md:block text-[40px] font-satoshi font-[400] leading-[54px] text-[#22252e] mb-1">
-              50,000 sq.ft.
+              24 x 7
             </h3>
             <p className="hidden md:block text-[20px] font-satoshi font-[400] leading-[28px] text-[#22252e] text-center">
-              of Garden and Ghat by the Ganges
+              Security
             </p>
             <p className="block md:hidden text-[18px] font-satoshi font-[400] leading-6 text-[#22252e] text-center">
-              Private Ganga Ghat, Ferry & Jetty Services
+              Security
             </p>
           </SlideUp>
         </div>
@@ -200,11 +196,6 @@ export default function Home() {
           />
           <div className="relative  container mx-auto px-6">
             <div className="text-center">
-              <SlideUp delay={0.2}>
-                <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">
-                  / Trust
-                </p>
-              </SlideUp>
               <SlideUp delay={0.4}>
                 <h2 className="project-overview-title text-center">
                   <span className="orange-color">Certified</span> by
@@ -328,13 +319,8 @@ export default function Home() {
         <Element name="section-Amenities">
           {/* Amenities */}
           <section className="container  mx-auto mt-20">
-            <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mb-14">
+            {/* <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mb-14">
               <div className="">
-                <SlideUp delay={0.2}>
-                  <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">
-                    / Podium
-                  </p>
-                </SlideUp>
                 <SlideUp delay={0.4}>
                   <h2 className="project-overview-title text-[56px]">
                     Enjoy{" "}
@@ -353,11 +339,6 @@ export default function Home() {
               </div>
             </div>
             <div className="block md:hidden text-center mb-7 md:mb-16 px-5">
-              <SlideUp delay={0.2}>
-                <p className="text-[14px] leading-5 md:text-[16px] font-satoshi font-[400] md:leading-[22px] text-[#22252e] mb-2">
-                  / Amenities
-                </p>
-              </SlideUp>
               <SlideUp delay={0.4}>
                 <h2 className="project-overview-title max-md:!text-[36px] max-md:!leading-11 max-md:font-[400] text-center">
                   Enjoy{" "}
@@ -366,8 +347,17 @@ export default function Home() {
                 </h2>
               </SlideUp>
             </div>
-            <Amenities />
+            <Amenities /> */}
             <div className="container mx-auto !w-[100%] relative md:mb-16">
+              <div className="flex flex-col justify-center items-center pb-20">
+                <SlideUp delay={0.4}>
+                  <h2 className="w-full text-center text-black text-[56px] font-cormorant leading-[72px] font-[300]">
+                    Elevate to{" "}
+                    <span className="orange-color">Award winning</span>{" "}
+                    Architectural Brilliance
+                  </h2>
+                </SlideUp>
+              </div>
               <AnimatedSection className="hidden md:block relative">
                 <div className="flex w-full h-[558px] justify-center relative">
                   <Image
@@ -376,20 +366,6 @@ export default function Home() {
                     alt="Aerial view of Riverside Residences"
                     className="rounded-lg object-cover"
                   />
-                  <div className="flex flex-col justify-center items-center bitmap absolute inset-0 rounded-lg">
-                    <SlideUp delay={0.2}>
-                      <p className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">
-                        / Podium
-                      </p>
-                    </SlideUp>
-                    <SlideUp delay={0.4}>
-                      <h2 className="w-[50%] text-center project-overview-title !text-white text-[56px]">
-                        Elevate to{" "}
-                        <span className="orange-color">Award winning</span>{" "}
-                        Architectural Brilliance
-                      </h2>
-                    </SlideUp>
-                  </div>
                 </div>
               </AnimatedSection>
               <div className="block md:hidden relative">
@@ -402,11 +378,6 @@ export default function Home() {
                   />
                   <div className="plans-backdrop absolute top-0 left-0 h-[100%] w-[100%]" />
                   <div className="h-[100%] flex flex-col justify-center items-center bitmap absolute inset-0 w-[100%]">
-                    <SlideUp delay={0.2}>
-                      <p className="text-[16px] font-satoshi font-normal leading-[24px] text-white mb-2">
-                        / Plans
-                      </p>
-                    </SlideUp>
                     <SlideUp delay={0.4}>
                       <h2 className="w-[90%] text-center project-overview-title !text-white !text-[36px] !leading-11 font-[400] !font-cormorant">
                         Largest <span className="orange-color">Clubhouse</span>{" "}
@@ -439,11 +410,6 @@ export default function Home() {
             <section className="container  mx-auto">
               <div className="relative container  mx-auto md:px-6">
                 <div className="hidden md:flex text-center pt-20 flex-col justify-center items-center">
-                  <SlideUp delay={0.2}>
-                    <p className="text-[16px] font-satoshi font-normal leading-[22px] text-white mb-2">
-                      / Plans
-                    </p>
-                  </SlideUp>
                   <SlideUp
                     delay={0.4}
                     className="flex justify-center items-center"
@@ -456,11 +422,6 @@ export default function Home() {
                   </SlideUp>
                 </div>
                 <div className="flex md:hidden text-center pt-10 flex-col justify-center items-center px-4">
-                  <SlideUp delay={0.2}>
-                    <p className="text-[14px] font-satoshi font-[400] leading-[20px] text-white mb-2">
-                      / Amenities
-                    </p>
-                  </SlideUp>
                   <SlideUp delay={0.4}>
                     <h2 className="w-[100%] project-overview-title !text-center !text-white !text-[36px] !leading-11 font-cormorant">
                       {`We've got something for`}{" "}
@@ -478,11 +439,6 @@ export default function Home() {
             <div className=" container mx-auto relative certification-section !bg-white pt-20">
               <div className="relative container mx-auto">
                 <div className="text-center">
-                  <SlideUp delay={0.2}>
-                    <p className="text-[14px] font-satoshi leading-[20px] md:text-[16px] md:font-satoshi font-[400] md:leading-[22px] text-[#22252e] mb-2">
-                      / Subtitle
-                    </p>
-                  </SlideUp>
                   <SlideUp delay={0.4}>
                     <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-cormorant">
                       <span className="orange-color">Comfortable </span>living,
@@ -606,11 +562,6 @@ export default function Home() {
               </div>
               <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mt-20">
                 <div className="">
-                  <SlideUp delay={0.2}>
-                    <p className="text-[16px] font-satoshi font-normal leading-[22px] text-[#22252e] mb-2">
-                      /Why Riverside Living
-                    </p>
-                  </SlideUp>
                   <SlideUp delay={0.4}>
                     <h2 className="project-overview-title text-[56px]">
                       Discover yourself by the{" "}
@@ -635,11 +586,6 @@ export default function Home() {
                 </div>
               </div>
               <div className="block md:hidden mt-10 text-center">
-                <SlideUp delay={0.2}>
-                  <p className="text-[14px] font-satoshi leading-[20px] md:text-[16px] md:font-satoshi font-[400] md:leading-[22px] text-[#22252e] mb-2">
-                    / Amenities
-                  </p>
-                </SlideUp>
                 <SlideUp delay={0.4}>
                   <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-cormorant">
                     Cherish the{" "}
@@ -661,14 +607,16 @@ export default function Home() {
               <p className="enough-reasons-text block md:hidden font-[400] text-[24px] leading-8 w-[85%] text-center mb-8">
                 Enough reasons to live by Ganges?
               </p>
-              <button className="md:min-h-[4rem] min-h-[3.5rem] h-full relative md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
-                <div className="px-6 py-3 mr-20">
-                  <span>Schedule a Visit</span>
-                </div>
-                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
-                  ↗
-                </span>
-              </button>
+              <Link href="/contact-us">
+                <button className="md:min-h-[4rem] min-h-[3.5rem] h-full relative md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
+                  <div className="px-6 py-3 mr-20">
+                    <span>Schedule a Visit</span>
+                  </div>
+                  <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
+                    ↗
+                  </span>
+                </button>
+              </Link>
             </AnimatedSection>
           </section>
         </Element>
@@ -701,9 +649,6 @@ export default function Home() {
                 </video>
                 <div className="honouring-lightbox-overlay h-[100%] w-[100%] absolute top-0 left-0" />
                 <div className="relative z-1 flex justify-center items-center flex-col">
-                  <p className="text-[14px] font-satoshi leading-[20px] md:text-[16px] md:font-satoshi font-[400] md:leading-[22px] text-white mb-2">
-                    / Amenities
-                  </p>
                   <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-cormorant text-[56px] !text-white">
                     <span className="orange-color">Honouring Ganga,</span>
                     <br />
@@ -765,16 +710,10 @@ export default function Home() {
                 </div>
                 <div className="mt-14 flex justify-center items-center">
                   <hr className="border-[#FFFFFF] w-[100%] opacity-20 absolute" />
-                  <SlideUp delay={0.6}>
-                    <p className="p-2 z-1 bg-[#020C22] font-satoshi text-[16px] font-[700] leading-6 text-center text-white">
-                      Did you know?
-                    </p>
-                  </SlideUp>
                 </div>
                 <SlideUp delay={0.8}>
-                  <p className="did-you-know-m w-[85%] mx-auto text-center font-[400] text-[24px] leading-7 mb-4">
-                    More than 50lacs people of India supported by the freshwater
-                    of Ganga basin daily!
+                  <p className="did-you-know-m w-[85%] mx-auto text-center font-[400] text-[24px] leading-7 mb-4 pt-4">
+                    Feel the divine aura of Banaras — now in Serampore!
                   </p>
                 </SlideUp>
               </div>
@@ -796,14 +735,9 @@ export default function Home() {
               <div className="relative container  mx-auto py-15">
                 <div className="grid grid-cols-4 lg:grid-cols-3 gap-4 ">
                   <div className="col-span-2 p-2">
-                    <SlideUp delay={0.2}>
-                      <p className="text-[20px] font-satoshi font-[700] text-white mb-4">
-                        Did you know?
-                      </p>
-                    </SlideUp>
                     <SlideUp delay={0.4}>
-                      <p className="w-[80%] transforming-text font-[400] text-[32px] lg:text-[40px] lg:leading-[48px]">
-                        {`The Ganges River Dolphin (Platanista gangetica), also know locally as  "Susu", is one of only four freshwater dolphin species in the world and is often regarded as the ‘Tiger of the Ganges'.`}
+                      <p className="w-[80%] transforming-text font-[300] text-[56px] leading-[72px] lg:text-[40px] lg:leading-[48px]">
+                        {`Feel the divine aura of Banaras — now in Serampore!`}
                       </p>
                     </SlideUp>
                   </div>
@@ -832,14 +766,16 @@ export default function Home() {
                           </p>
                         </SlideUp>
                         <SlideUp delay={0.8} className="w-full">
-                          <button className="w-full md:min-h-[4rem] min-h-[3.5rem] h-full relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
-                            <div className="px-6 py-3">
-                              <span>Schedule a Visit</span>
-                            </div>
-                            <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-                              ↗
-                            </span>
-                          </button>
+                          <Link href="/contact-us">
+                            <button className="w-full md:min-h-[4rem] min-h-[3.5rem] h-full relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
+                              <div className="px-6 py-3">
+                                <span>Schedule a Visit</span>
+                              </div>
+                              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                                ↗
+                              </span>
+                            </button>
+                          </Link>
                         </SlideUp>
                       </div>
                     </div>
@@ -857,11 +793,6 @@ export default function Home() {
               <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
                 <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
                   <div className="max-md:col-span-2">
-                    <SlideUp delay={0.2}>
-                      <p className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
-                        / Location
-                      </p>
-                    </SlideUp>
                     <SlideUp delay={0.4}>
                       <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
                         Why <br className="max-md:hidden" />
@@ -907,11 +838,6 @@ export default function Home() {
                   <div className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-15">
                     <div className="grid grid-cols-2 gap-4 ">
                       <div className="max-md:col-span-2 md:p-2">
-                        <SlideUp delay={0.2}>
-                          <p className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] !text-white mb-2">
-                            / Connectivity
-                          </p>
-                        </SlideUp>
                         <SlideUp delay={0.4}>
                           <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
                             Serampore, next <br className="max-md:hidden" />
@@ -919,12 +845,14 @@ export default function Home() {
                           </h2>
                         </SlideUp>
                         <SlideUp delay={0.6}>
+                          <Link href="/location">
                           <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                             <div className="px-6 py-3 mr-20">Learn More</div>
                             <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
                               ↗
                             </span>
-                          </button>
+                            </button>
+                            </Link>
                         </SlideUp>
                       </div>
                       <div className="max-md:mt-5 max-md:col-span-2 md:p-2 flex max-md:px-7 gap-10 items-center">
@@ -948,7 +876,7 @@ export default function Home() {
                                   Nearest Metro-station
                                 </p>
                                 <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
-                                  Dakshineshwar • 12km
+                                  Dakshineshwar • 37 min
                                 </p>
                               </div>
                             </SlideIn>
@@ -971,7 +899,7 @@ export default function Home() {
                                   Nearest Airport
                                 </p>
                                 <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
-                                  Airport • 21.4km
+                                  Airport • 45 min
                                 </p>
                               </div>
                             </SlideIn>
@@ -994,10 +922,10 @@ export default function Home() {
                                   Nearest Railway Station
                                 </p>
                                 <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
-                                  Rishra • 1.8km
+                                  Rishra • 11 min
                                 </p>
                                 <p className="text-[16px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white">
-                                  Serampore • 2.4km
+                                  Serampore • 13 min
                                 </p>
                               </div>
                             </SlideIn>
@@ -1032,11 +960,6 @@ export default function Home() {
         <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
           <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
             <div className="max-md:col-span-2">
-              <SlideUp delay={0.2}>
-                <p className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-[#22252e] mb-2">
-                  / Testimonials
-                </p>
-              </SlideUp>
               <SlideUp delay={0.4}>
                 <h2 className="hidden md:block project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
                   Building a <span className="orange-color">Brighter?</span>
@@ -1068,11 +991,6 @@ export default function Home() {
           <div className="relative md:px-8 lg:px-24 container  mx-auto py-5 max-md:pb-15 md:py-15">
             <div className="grid grid-cols-2 gap-4 ">
               <div className="max-md:col-span-2 md:p-2">
-                <SlideUp delay={0.2}>
-                  <p className="max-md:text-center text-[14px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] !text-white mb-2">
-                    / Plans
-                  </p>
-                </SlideUp>
                 <SlideUp delay={0.4}>
                   <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
                     Your <span className="orange-color">Safety</span> &
@@ -1082,14 +1000,16 @@ export default function Home() {
                   </h2>
                 </SlideUp>
                 <SlideUp delay={0.6}>
-                  <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
-                    <div className="px-6 py-3 mr-20">
-                      <span>Schedule a Visit</span>
-                    </div>
-                    <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-                      ↗
-                    </span>
-                  </button>
+                  <Link href="/contact-us">
+                    <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
+                      <div className="px-6 py-3 mr-20">
+                        <span>Schedule a Visit</span>
+                      </div>
+                      <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                        ↗
+                      </span>
+                    </button>
+                  </Link>
                 </SlideUp>
               </div>
               <div className="max-md:col-span-2 grid grid-cols-2 md:gap-x-20 gap-y-9 md:gap-y-12 mt-9 md:mt-6">
