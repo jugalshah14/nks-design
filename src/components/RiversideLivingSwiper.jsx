@@ -18,7 +18,7 @@ const data = [
       "Proximity to water bodies can lead to cooler air and better air quality, as the water absorbs and dissipates heat.",
   },
   {
-    src: "/assets/riverside2.png",
+    src: "/assets/riverside3.png",
     title:
       "Properties located near rivers often have higher market values due to their scenic appeal and recreational opportunities.",
   },

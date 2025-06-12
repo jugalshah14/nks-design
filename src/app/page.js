@@ -211,22 +211,18 @@ export default function Home() {
           <SlideUp delay={0.2} className="flex flex-col items-center">
             <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
               <Image
-                src="/assets/RERA.png"
+                src="/assets/award01.png"
                 fill
-                alt="RERA Approved"
+                alt="award"
                 className="object-scale-down"
               />
             </div>
-            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] m mt-autob-2 text-center">
-              RERA Approved
+            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mt-auto-2 text-center">
+              The Economic Times Real Estate Conclave
             </h3>
-            <Image
-              height={24}
-              width={24}
-              src="/assets/icons/GreenCheck.svg"
-              alt="Verified"
-              className="mt-auto"
-            />
+            <p className="text-[14px] leading-5 font-satoshi text-[#5C5F68] mt-2 text-center">
+              Residential Project - Developer <br /> (Metro)
+            </p>
           </SlideUp>
 
           <SlideUp delay={0.4} className="flex flex-col items-center">
@@ -238,79 +234,63 @@ export default function Home() {
                 className="object-scale-down"
               />
             </div>
-            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
-              RERA Approved
+            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] text-center">
+              REALTY +
             </h3>
-            <Image
-              height={24}
-              width={24}
-              src="/assets/icons/GreenCheck.svg"
-              alt="Verified"
-              className="mt-auto"
-            />
+            <p className="text-[14px] leading-5 font-satoshi text-[#5C5F68] mt-2 text-center">
+              Affordable Housing Project of the Year
+            </p>
           </SlideUp>
 
           <SlideUp delay={0.6} className="flex flex-col items-center">
             <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
               <Image
-                src="/assets/WBHIRA.png"
+                src="/assets/award03.png"
                 fill
                 alt="WBHIRA Approved"
                 className="object-scale-down"
               />
             </div>
-            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
-              WBHIRA Approved
+            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] text-center">
+              PMAY
             </h3>
-            <Image
-              height={24}
-              width={24}
-              src="/assets/icons/GreenCheck.svg"
-              alt="Verified"
-              className="mt-auto"
-            />
+            <p className="text-[14px] leading-5 font-satoshi text-[#5C5F68] mt-2 text-center">
+              Best Affordable EWS/LIG Housing Project
+            </p>
           </SlideUp>
 
           <SlideUp delay={0.8} className="flex flex-col items-center">
             <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
               <Image
-                src="/assets/IGBC.png"
+                src="/assets/award4.png"
                 fill
                 alt="IGBC Approved"
                 className="object-scale-down"
               />
             </div>
-            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
-              IGBC Certified
+            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] text-center">
+              Credai Howrah- Hooghly
             </h3>
-            <Image
-              height={24}
-              width={24}
-              src="/assets/icons/GreenCheck.svg"
-              alt="Verified"
-              className="mt-auto"
-            />
+            <p className="text-[14px] leading-5 font-satoshi text-[#5C5F68] mt-2 text-center">
+              Best Ongoing Residential Project (Above 2 lakh sq.ft)
+            </p>
           </SlideUp>
 
           <SlideUp delay={1} className="flex flex-col items-center">
             <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
               <Image
-                src="/assets/RERA.png"
+                src="/assets/award5.png"
                 fill
                 alt="RERA Approved"
                 className="object-scale-down"
               />
             </div>
-            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mb-2 text-center mt-auto">
-              RERA Approved
+            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] text-center">
+              Real Estate Conclave
             </h3>
-            <Image
-              height={24}
-              width={24}
-              src="/assets/icons/GreenCheck.svg"
-              alt="Verified"
-              className="mt-auto"
-            />
+            <p className="text-[14px] leading-5 font-satoshi text-[#5C5F68] mt-2 text-center">
+              Certificate of Excellence
+            </p>
           </SlideUp>
         </div>
       </section>
@@ -321,7 +301,7 @@ export default function Home() {
 
         <Element name="section-Amenities" id="Amenities">
           {/* Amenities */}
-          <section className="container  mx-auto mt-20">
+          <section className="container  mx-auto mt-5">
             {/* <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mb-14">
               <div className="">
                 <SlideUp delay={0.4}>
@@ -352,11 +332,12 @@ export default function Home() {
             </div>
             <Amenities /> */}
             <div className="container mx-auto !w-[100%] relative md:mb-16">
-              <div className="flex flex-col justify-center items-center pb-20">
+              <div className="flex flex-col justify-center items-center pb-5">
                 <SlideUp delay={0.4}>
                   <h2 className="w-full text-center text-black text-[56px] font-cormorant leading-[72px] font-[300]">
                     Elevate to{" "}
-                    <span className="orange-color">Award winning</span>{" "}
+                    <span className="orange-color">Award winning</span>
+                    <br />
                     Architectural Brilliance
                   </h2>
                 </SlideUp>
@@ -710,7 +691,7 @@ export default function Home() {
                     </SlideUp>
                   </div>
                 </div>
-                <AnimatedSection className="relative md:mx-24 h-[280px] md:h-[400px] mt-7">
+                {/* <AnimatedSection className="relative md:mx-24 h-[280px] md:h-[400px] mt-7">
                   <div className="serampore-bg-overlay max-md:block absolute top-0 left-0 h-[100%] w-[100%] z-1" />
                   <Image
                     src="/assets/seramporemap.png"
@@ -724,7 +705,7 @@ export default function Home() {
                     className="object-cover md:hidden"
                     alt="serampore map"
                   />
-                </AnimatedSection>
+                </AnimatedSection> */}
               </div>
 
               <SeramporeSwiper />
@@ -959,7 +940,7 @@ export default function Home() {
                   <Image
                     height={68}
                     width={68}
-                    src="/assets/icons/surveillance-cctv.svg"
+                    src="/assets/icons/sos.svg"
                     alt="Emergency Buttons"
                     className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
                   />
