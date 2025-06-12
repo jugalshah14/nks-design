@@ -532,6 +532,10 @@ body::-webkit-scrollbar {
   overflow: visible;
 }
 
+.yt-background .ytp-show-cards-title {
+  display: none !important;
+}
+
 @layer utilities {
   .button-secondary {
     @apply hover:bg-[#002F52] cursor-pointer duration-500;

@@ -1,5 +1,5 @@
 "use client";
-import Amenities from "@/components/Amenities";
+
 import AmenitiesSwiper from "@/components/AmenitiesSwiper";
 import {
   AnimatedSection,
@@ -7,6 +7,7 @@ import {
   SlideIn,
   SlideUp,
 } from "@/components/animations";
+import GangaVideoSection from "@/components/GangaVideoSection";
 import GangaWaves from "@/components/GangaWaves";
 import HeroSectionWaves from "@/components/HeroSectionWaves";
 import PlansSwiper from "@/components/PlansSwiper";
@@ -63,7 +64,7 @@ export default function Home() {
             </p>
           </FadeIn>
         </a> */}
-        <WhyRiversideFloatingButton/>
+        <WhyRiversideFloatingButton />
       </section>
       <section className="relative">
         <HeroSectionWaves />
@@ -626,111 +627,8 @@ export default function Home() {
         <Element name="section-Ganga">
           {/* Ganga Video */}
           <div className="md:mt-10">
-            <div className="hidden md:block ">
-              <AnimatedSection className="flex justify-center items-end p-10 relative h-[90vh] honouring_component">
-                <video
-                  src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4"
-                  autoPlay
-                  muted
-                  loop
-                >
-                  <source
-                    src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4"
-                    type="video/mp4"
-                  />
-                  <source
-                    src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.webm"
-                    type="video/webm"
-                  />
-                  <p>
-                    {`Sorry, Your Browser Doesn't Support Videos. Here's the`}{" "}
-                    <a href="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4">
-                      Link to the video
-                    </a>
-                  </p>
-                </video>
-                <div className="honouring-lightbox-overlay h-[100%] w-[100%] absolute top-0 left-0" />
-                <div className="relative z-1 flex justify-center items-center flex-col">
-                  <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-cormorant text-[56px] !text-white">
-                    <span className="orange-color">Honouring Ganga,</span>
-                    <br />
-                    The mother of mankind
-                  </h2>
-                </div>
-                <div className="absolute backdrop-blur-[20px] bottom-[35px] z-10 right-8 bg-[#FFFFFF33] rounded-full w-[79px] h-[79px] flex flex-col items-center justify-center">
-                  <Image
-                    src="/assets/icons/play.svg"
-                    height={13.2}
-                    width={11.43}
-                    className=""
-                    alt="play"
-                  />
-                </div>
-              </AnimatedSection>
-            </div>
-            <div className="relative flex flex-col md:hidden">
-              <AnimatedSection className="flex w-full h-[280px] justify-center relative honouring_component">
-                <video
-                  src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4"
-                  autoPlay
-                  muted
-                  loop
-                >
-                  <source
-                    src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4"
-                    type="video/mp4"
-                  />
-                  <source
-                    src="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.webm"
-                    type="video/webm"
-                  />
-                  <p>
-                    {`Sorry, Your Browser Doesn't Support Videos. Here's the`}{" "}
-                    <a href="https://cdn.prod.website-files.com/646f15c1aa7d264b3d897823/646f15c1aa7d264b3d89786e_Alcove%20Realty%20%20-%20Ganga%20Arti-transcode.mp4">
-                      Link to the video
-                    </a>
-                  </p>
-                </video>
-                <div className="honouring-lightbox-overlay-m h-[100%] w-[100%] absolute top-0 left-0" />
-              </AnimatedSection>
-              <div className="bg-[#020C22] py-8">
-                <div className="h-[100%] flex flex-col justify-center items-center inset-0 w-[100%]">
-                  <SlideUp delay={0.2}>
-                    <p className="text-[16px] font-satoshi font-normal leading-[24px] text-white mb-2">
-                      /Amenities
-                    </p>
-                  </SlideUp>
-                  <SlideUp
-                    delay={0.4}
-                    className="flex justify-center items-center w-full"
-                  >
-                    <h2 className="w-[90%] text-center project-overview-title !text-white !text-[36px] !leading-11 font-[400] !font-cormorant">
-                      <span className="orange-color">Honouring Ganga</span> The
-                      mother of mankind
-                    </h2>
-                  </SlideUp>
-                </div>
-                <div className="mt-14 flex justify-center items-center">
-                  <hr className="border-[#FFFFFF] w-[100%] opacity-20 absolute" />
-                </div>
-                <SlideUp delay={0.8}>
-                  <p className="did-you-know-m w-[85%] mx-auto text-center font-[400] text-[24px] leading-7 mb-4 pt-4">
-                    Feel the divine aura of Banaras — now in Serampore!
-                  </p>
-                </SlideUp>
-              </div>
-              <SlideUp
-                delay={1}
-                className="flex justify-center items-center w-full"
-              >
-                <button className="md:min-h-[4.75rem] min-h-[3.5rem] h-full -top-9 mx-auto relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden rounded-md">
-                  <div className="px-6 py-3 mr-20">Be a part of it</div>
-                  <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-                    ↗
-                  </span>
-                </button>
-              </SlideUp>
-            </div>
+            <GangaVideoSection />
+
             <div className="hidden md:block relative p-5 overflow-hidden">
               <GangaWaves />
               <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
@@ -848,13 +746,13 @@ export default function Home() {
                         </SlideUp>
                         <SlideUp delay={0.6}>
                           <Link href="/location">
-                          <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
-                            <div className="px-6 py-3 mr-20">Learn More</div>
-                            <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-                              ↗
-                            </span>
+                            <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
+                              <div className="px-6 py-3 mr-20">Learn More</div>
+                              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                                ↗
+                              </span>
                             </button>
-                            </Link>
+                          </Link>
                         </SlideUp>
                       </div>
                       <div className="max-md:mt-5 max-md:col-span-2 md:p-2 flex max-md:px-7 gap-10 items-center">
@@ -942,7 +840,10 @@ export default function Home() {
               </div>
               <SlideUp delay={0.8}>
                 <div className="flex md:hidden justify-center relative -top-7">
-                  <button href='/contact-us' className="md:min-h-[4rem] min-h-[3.5rem] h-full inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
+                  <button
+                    href="/contact-us"
+                    className="md:min-h-[4rem] min-h-[3.5rem] h-full inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary"
+                  >
                     <div className="px-6 py-3 mr-20">
                       <span>Schedule a Visit</span>
                     </div>

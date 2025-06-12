@@ -51,10 +51,10 @@ const settings = {
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 768,
       settings: {
         centerMode: false,
-        slidesToShow: 1.1,
+        slidesToShow: 1.05,
       },
     },
   ],
@@ -80,10 +80,17 @@ export default function SeramporeSwiper() {
           swiperRef = slider;
         }}
         {...settings}
-        afterChange={(current) => {
-          // Round to nearest whole number to avoid decimal indices
-          const newIndex = Math.round(current) + 1;
-          setActiveIndex(Math.min(newIndex, data.length));
+        afterChange={() => {
+          const slides = document.querySelectorAll(
+            ".serampore-swiper .slick-slide"
+          );
+
+          for (let i = 0; i < slides.length; i++) {
+            if (slides[i].classList.contains("slick-current")) {
+              setActiveIndex(i + 1);
+              break;
+            }
+          }
         }}
       >
         {data.map((slide, index) => (
@@ -96,12 +103,12 @@ export default function SeramporeSwiper() {
               alt="slide-0"
               height={160}
               width={160}
-              className="relative !h-[110px] !w-[110px] md:!h-[160px] md:!w-[160px] z-1"
+              className="relative !h-[100px] !w-[100px] md:!h-[180px] md:!w-[180px] z-1"
             />
             <div
-              className={`w-fit relative flex flex-col p-7 pl-3 pt-10 max-sm:pr-30 pr-20 `}
+              className={`w-fit relative flex flex-col md:p-7 md:pb-0 p-2 pl-3 pt-10 md:pt-12 pr-20 `}
             >
-              <div className="location-slide bg-[#F8F8F8] top-6 -left-[70px] w-[100%] sm:w-[110%] h-[100%] absolute back-active" />
+              <div className="location-slide bg-[#F8F8F8] top-6 -left-[70px] min-w-[120%] md:min-w-full sm:w-[120%] h-[100%] absolute back-active" />
               <Image
                 src={slide.icon}
                 height={48}
@@ -110,7 +117,7 @@ export default function SeramporeSwiper() {
                 className={`max-md:!h-[33px] max-md:!w-[33px] image z-1`}
               />
               <p
-                className={`max-md:!whitespace-nowrap md:!w-[172px] mt-2 text-[14px] md:text-[20px] text-[#22252E] font-[700] z-1 leading-5 md:leading-[28px] title`}
+                className={`md:!w-[172px] mt-2 text-[14px] md:text-[20px] text-[#22252E] font-[700] z-1 leading-5 md:leading-[28px] title`}
               >
                 {slide.title}
               </p>
@@ -126,8 +133,9 @@ export default function SeramporeSwiper() {
       <div className="relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-5">
         <div className="h-full flex items-center justify-center">
           <button
-            className="focus:outline-none  cursor-pointer"
+            className="focus:outline-none cursor-pointer disabled:cursor-auto"
             onClick={handlePrev}
+            disabled={activeIndex === 1}
           >
             <Image
               src="/assets/icons/arrow-right.svg"
@@ -143,10 +151,11 @@ export default function SeramporeSwiper() {
         <div className="flex gap-2 items-center">
           {activeIndex} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}
         </div>
-        <div className="h-full flex items-center justify-center">
+        <div className="h-full flex items-center justify-center disabled:cursor-auto">
           <button
             className="focus:outline-none cursor-pointer"
             onClick={handleNext}
+            disabled={activeIndex === data.length}
           >
             <Image
               src="/assets/icons/arrow-right.svg"
