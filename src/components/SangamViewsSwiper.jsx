@@ -97,19 +97,18 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
       <div className="container mx-auto relative md:mb-16 bg-[#020C22]">
         {/* Only for mobile */}
         <div className="flex items-center justify-center">
-          <SlideUp delay={0.2} className="none-md text-center text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0">
+          <div className="none-md text-center text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0">
             Views from {activeBHK}
-          </SlideUp>
+          </div>
         </div>
 
         <div className="grid grid-cols-4 gap-0">
           <div className="!flex !flex-col justify-center bg-[#020C22] z-2 sangam-after-box pr-10 md:col-span-2 lg:col-span-1">
-            <SlideUp
-              delay={0.6}
+            <div
               className="hide-triangle text-center md:text-left text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0"
             >
               Views from {activeBHK}
-            </SlideUp>
+            </div>
             <div className="hidden md:flex relative w-[366px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
               <div className="h-full flex items-center justify-center">
                 <button

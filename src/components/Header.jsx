@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { href: "/why-alcove", label: "Why Alcove" },
   { href: "/master-plan", label: "Master Plans" },
   { href: "/amenities", label: "Amenities" },
-  { href: "/Location", label: "Location" },
+  { href: "/location", label: "Location" },
   { href: "/life-@-alcove", label: "Life @Alcove" },
   { href: "/blogs", label: "Blogs" },
   { href: "/", label: "Schedule Visit" },
@@ -184,7 +184,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/Location"
+                href="/location"
                 className="text-gray-800 hover:text-blue-500"
               >
                 Location

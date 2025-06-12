@@ -12,26 +12,26 @@ import { AnimatedSection } from "./animations";
 const data = [
     {
         src: '/assets/plans_image_1.jpg',
-        title: 'Sangam Serenity',
-        towers: '5,6,7,13,14,15,16',
-        carpetArea: '314 - 645 sq. ft.',
-        bhkTypes: '1,2,3',
+        title: 'Sangam Signature',
+        towers: '1, 2, 3, 9, 10, 11',
+        carpetArea: '887 - 1039 sq.ft.',
+        bhkTypes: '2 , 3',
         price: '****',
     },
     {
         src: '/assets/plans_image_2.jpg',
-        title: 'Sangam Serenity',
-        towers: '5,6,7,13,14,15,16',
-        carpetArea: '314 - 645 sq. ft.',
-        bhkTypes: '1,2,3',
+        title: 'Sangam Suites',
+        towers: '4, 12',
+        carpetArea: '1400 - 2085 sq. ft.',
+        bhkTypes: '3 , 4',
         price: '****',
     },
     {
         src: '/assets/plans_image_3.jpg',
         title: 'Sangam Serenity',
-        towers: '5,6,7,13,14,15,16',
-        carpetArea: '314 - 645 sq. ft.',
-        bhkTypes: '1,2,3',
+        towers: '5, 6, 7, 13, 14, 15, 16',
+        carpetArea: '567 - 1039 sq. ft.',
+        bhkTypes: '1 , 2 , 3',
         price: '****',
     }
 ];
@@ -91,7 +91,7 @@ export default function PlansSwiper() {
                   </h3>
                 </div>
                 <div className="">
-                  <div className="grid grid-cols-2 gap-20 mb-8">
+                  <div className="grid grid-cols-2 gap-10 mb-8">
                     <div>
                       <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                         Tower
@@ -109,7 +109,7 @@ export default function PlansSwiper() {
                       </p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-20 md:mb-8">
+                  <div className="grid grid-cols-2 gap-10 md:mb-8">
                     <div className="order-2 md:order-1">
                       <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-white/50 mb-1">
                         Carpet Area
@@ -148,7 +148,7 @@ export default function PlansSwiper() {
                   />
                 </a>
               </div>
-              <a className="hidden cursor-pointer md:flex items-center w-full gap-2 group/discuss-btn relative text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] mb-4 p-5">
+              <a className="hidden cursor-pointer md:flex items-center w-full gap-2 group/discuss-btn relative text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] mb-4 p-5" href='/contact-us'>
                 <div className="absolute z-0 w-0 left-0 top-0 h-full bg-[#144D78] group-hover/discuss-btn:w-full transition-all duration-700"></div>
                 <div className="w-full flex gap-4 items-center relative z-1 group-hover/discuss-btn:text-white transition-all duration-300">
                   Let's Discuss Your Requirements

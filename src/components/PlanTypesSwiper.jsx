@@ -8,29 +8,29 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 const data = [
-  {
-    icon: "/assets/icons/1bhk.svg",
-    title: "1BHK",
-    desc: "Starts from 15.99lacs",
-    link: "",
-  },
+  // {
+  //   icon: "/assets/icons/1bhk.svg",
+  //   title: "1BHK",
+  //   desc: "Starts from 15.99lacs",
+  //   link: "",
+  // },
   {
     icon: "/assets/icons/2bhk.svg",
     title: "2BHK",
     desc: "Starts from 23.99lacs",
-    link: "",
+    link: "/master-plan?section=sangam&bhk=2BHK",
   },
   {
     icon: "/assets/icons/3bhk.svg",
     title: "3BHK",
     desc: "Starts from 33.99lacs",
-    link: "",
+    link: "/master-plan?section=sangam&bhk=3BHK",
   },
   {
     icon: "/assets/icons/4bhk.svg",
     title: "4BHK",
     desc: "Starts from 44.99lacs",
-    link: "",
+    link: "/master-plan?section=sangam&bhk=4BHK",
   },
 ];
 

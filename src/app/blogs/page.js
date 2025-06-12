@@ -110,7 +110,7 @@ export default function lifeAtAlcove() {
                   explain more below
                 </p>
                 <a
-                  href="#"
+                  href="/blogs-detail"
                   className="orange-color leading-[20px] font-bold flex items-center gap-2 text-base "
                 >
                   Read Article <span className="ml-2">→</span>

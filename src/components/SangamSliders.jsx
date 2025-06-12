@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -7,6 +7,7 @@ import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import SangamViewsSwiper from './SangamViewsSwiper';
 import { AnimatedSection } from './animations';
+import { useSearchParams } from 'next/navigation';
 
 const flatsData = {
   '3BHK': {
@@ -45,6 +46,7 @@ const flatsData = {
 
 
 export default function SangamSliders() {
+  const searchParams = useSearchParams();
   const [swiperRef, setSwiperRef] = useState();
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeTab, setActiveTab] = useState('2D');
@@ -52,6 +54,29 @@ export default function SangamSliders() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [activeBHK, setActiveBHK] = useState('3BHK');
   const [bhkFade, setBhkFade] = useState(false);
+
+  useEffect(() => {
+    const bhkParam = searchParams.get('bhk');
+    const sectionParam = searchParams.get('section');
+    
+    if (sectionParam === 'sangam') {
+      const element = document.getElementById('sangam-section');
+      if (element) {
+        const offset = window.innerWidth < 768 ? -110 : -180;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    if (bhkParam && ['2BHK', '3BHK', '4BHK'].includes(bhkParam)) {
+      handleBHKChange(bhkParam);
+    }
+  }, [searchParams]);
 
   const handleNext = () => {
     if (!swiperRef) return;
