@@ -23,6 +23,27 @@ const data = [
     {
         src: '/assets/amenities-slides-4.png'
     },
+    {
+        src: '/assets/amenities-slides-5.png'
+    },
+    {
+        src: '/assets/amenities-slides-6.png'
+    },
+    {
+        src: '/assets/amenities-slides-7.png'
+    },
+    {
+        src: '/assets/amenities-slides-8.png'
+    },
+    {
+        src: '/assets/amenities-slides-9.png'
+    },
+    {
+        src: '/assets/amenities-slides-10.png'
+    },
+    {
+        src: '/assets/amenities-slides-11.png'
+    },
 ];
 
 const settings = {
@@ -86,7 +107,6 @@ export default function AmenitiesSwiper() {
                                     <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="transform rotate-180" />
                                 </button>
                             </div>
-                            <div className="flex gap-2 items-center">{activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> 5</div>
                             <div className="h-full flex items-center justify-center">
                                 <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
                                     <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="" />
