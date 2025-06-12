@@ -17,6 +17,7 @@ import ScrollSpyNav from "@/components/ScrollSpyNav";
 import SeramporeMarqueeSlides from "@/components/SeramporeMarqueeSlides";
 import SeramporeSwiper from "@/components/SeramporeSwiper";
 import Testimonials from "@/components/Testimonials";
+import WhyRiversideFloatingButton from "@/components/WhyRiversideFloatingButton";
 import Image from "next/image";
 import Link from "next/link";
 import { Element } from "react-scroll";
@@ -55,13 +56,14 @@ export default function Home() {
             </SlideUp>
           </div>
         </div>
-        <div className="inset-center absolute backdrop-blur-[20px] -bottom-[150px] md:bottom-[-60px] z-10 md:right-8 bg-[#FFFFFF33] rounded-full w-[133px] h-[133px] flex flex-col items-center justify-center">
+        {/* <a href="#Amenities" className="cursor-pointer inset-center absolute backdrop-blur-[20px] -bottom-[150px] md:bottom-[-60px] z-10 md:right-8 bg-[#FFFFFF33] rounded-full w-[133px] h-[133px] flex flex-col items-center justify-center">
           <FadeIn delay={0.6}>
             <p className="text-white text-[16px] font-satoshi font-bold leading-[20px] text-center max-w-[93px]">
               Why Riverside Living?
             </p>
           </FadeIn>
-        </div>
+        </a> */}
+        <WhyRiversideFloatingButton/>
       </section>
       <section className="relative">
         <HeroSectionWaves />
@@ -316,7 +318,7 @@ export default function Home() {
         {/* Subnav with scroll spy*/}
         <ScrollSpyNav />
 
-        <Element name="section-Amenities">
+        <Element name="section-Amenities" id="Amenities">
           {/* Amenities */}
           <section className="container  mx-auto mt-20">
             {/* <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mb-14">
@@ -449,8 +451,8 @@ export default function Home() {
                 <AnimatedSection className="block md:hidden">
                   <PlanTypesSwiper />
                 </AnimatedSection>
-                <div className="hidden md:grid grid-cols-4 gap-4 mt-12">
-                  <SlideUp delay={0.4} className="bg-[#fdf6f2] p-5">
+                <div className="hidden md:grid grid-cols-3 gap-4 mt-12">
+                  {/* <SlideUp delay={0.4} className="bg-[#fdf6f2] p-5">
                     <Image
                       src="/assets/icons/1bhk.svg"
                       alt="1BHK"
@@ -476,7 +478,7 @@ export default function Home() {
                         height={3}
                       />
                     </a>
-                  </SlideUp>
+                  </SlideUp> */}
                   <SlideUp delay={0.6} className="bg-[#fdf6f2] p-5">
                     <Image
                       src="/assets/icons/2bhk.svg"
@@ -486,14 +488,14 @@ export default function Home() {
                       className="mb-12"
                     />
                     <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
-                      1BHK
+                      2BHK
                     </h3>
                     <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
                       314 - 645 sq. ft.
                     </p>
                     <a
-                      href="#"
-                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78]"
+                      href="/master-plan?section=sangam&bhk=2BHK"
+                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78] hover:gap-4 transition-all duration-300"
                     >
                       View
                       <Image
@@ -513,14 +515,14 @@ export default function Home() {
                       className="mb-12"
                     />
                     <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
-                      1BHK
+                      3BHK
                     </h3>
                     <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
                       314 - 645 sq. ft.
                     </p>
                     <a
-                      href="#"
-                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78]"
+                      href="/master-plan?section=sangam&bhk=3BHK"
+                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78] hover:gap-4 transition-all duration-300"
                     >
                       View
                       <Image
@@ -540,14 +542,14 @@ export default function Home() {
                       className="mb-12"
                     />
                     <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
-                      1BHK
+                      4BHK
                     </h3>
                     <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
                       314 - 645 sq. ft.
                     </p>
                     <a
-                      href="#"
-                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78]"
+                      href="/master-plan?section=sangam&bhk=4BHK"
+                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78] hover:gap-4 transition-all duration-300"
                     >
                       View
                       <Image
@@ -940,7 +942,7 @@ export default function Home() {
               </div>
               <SlideUp delay={0.8}>
                 <div className="flex md:hidden justify-center relative -top-7">
-                  <button className="md:min-h-[4rem] min-h-[3.5rem] h-full inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
+                  <button href='/contact-us' className="md:min-h-[4rem] min-h-[3.5rem] h-full inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
                     <div className="px-6 py-3 mr-20">
                       <span>Schedule a Visit</span>
                     </div>

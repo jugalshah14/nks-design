@@ -11,7 +11,7 @@ export default function Footer() {
 
   return (
     <div className="relative">
-      <div className="container mx-auto px-4 lg:px-8 lg:px-24 py-10 lg:py-20 lg:pb-30 bg-white relative">
+      <div className="container mx-auto px-4 lg:px-8 lg:px-24 bg-white relative pt-[60px] md:pt-[80px]">
         <div className="grid grid-cols-2 lg:gap-30">
           <div className="max-lg:col-span-2 order-2 lg:order-1">
             <h2 className="hidden lg:block project-overview-title text-[56px] !text-[#22252E] mb-8">
@@ -31,7 +31,7 @@ export default function Footer() {
               Bengal 700025
             </p>
             <Link
-              href={"tel:918017012374"}
+              href={"tel:918101881018"}
               className="flex items-center gap-4 px-4 py-3 border border-[#EDEDED] mt-8 cursor-pointer"
             >
               <div className="relative h-[24px] w-[24px] lg:h-[32px] lg:w-[32px] overflow-hidden">
@@ -45,8 +45,8 @@ export default function Footer() {
               <span className="font-[700] text-[16px] leading-5 text-[#22252E]">
                 Call Us
               </span>
-              <span className="text-[18px] leading-5 ml-auto font-[400] lg:text-[20px] lg:leading-7 text-[#144D78]">
-                +91 80124 13411
+              <span className="text-[17px] leading-5 ml-auto font-[400] lg:text-[20px] lg:leading-7 text-[#144D78]">
+                +91 81018 81018
               </span>
             </Link>
             <Link
@@ -64,8 +64,8 @@ export default function Footer() {
               <span className="font-[700] text-[16px] leading-5 text-[#22252E]">
                 Mail Us
               </span>
-              <span className="text-[18px] leading-5 ml-auto font-[400] lg:text-[20px] lg:leading-7 text-[#144D78]">
-                inquire@alcove.in
+              <span className="text-[17px] leading-5 ml-auto font-[400] lg:text-[20px] lg:leading-7 text-[#144D78]">
+                marketing@alcoverealty.in
               </span>
             </Link>
           </div>
@@ -150,7 +150,31 @@ export default function Footer() {
             </form>
           </div>
         </div>
+
+        <div>
+          <div className="flex flex-col md:flex-row justify-between items-center pt-[36px] md:pt-[128px] gap-[36px] md:gap-0">
+            <div className="flex flex-row gap-[20px]">
+              <a className="cursor-pointer" href="/testimonials"><div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">Testimonials</div></a>
+              <a className="cursor-pointer" href="/faqs"><div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">FAQs</div></a>
+              <a className="cursor-pointer" href=""><div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">Privacy Policy</div></a>
+              <a className="cursor-pointer" href=""><div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">T&C</div></a>
+            </div>
+            <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68] hidden md:inline">
+              All rights reserved © Alcove Realty
+            </div>
+            <div className="flex flex-row gap-[48px] md:gap-[24px]">
+              <a className="cursor-pointer" href="https://www.youtube.com/@NewKolkatasangam" target="_blank" rel="noopener noreferrer"><Image src="/assets/youtube.svg" alt="you-tube icon" width={24} height={24} className=""/></a>
+              <a className="cursor-pointer" href="https://www.facebook.com/NewKolkata" target="_blank" rel="noopener noreferrer"><Image src="/assets/fb.svg" alt="facebook icon" width={24} height={24} className=""/></a>
+              <a className="cursor-pointer" href="https://x.com/new_kolkata" target="_blank" rel="noopener noreferrer"><Image src="/assets/twitter.svg" alt="twitter icon" width={24} height={24} className=""/></a>
+              <a className="cursor-pointer" href="https://www.instagram.com/new_kolkata/" target="_blank" rel="noopener noreferrer"><Image src="/assets/insta.svg" alt="insta icon" width={24} height={24} className=""/></a>
+            </div>
+            <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68] pb-[80px] inline md:hidden">
+              All rights reserved © Alcove Realty
+            </div>
+          </div>
+        </div>
       </div>
+      <Image src="/assets/contact-waves.svg" alt="waves" width={100} height={100} className="w-full"/>      
       </div>
     )
 }

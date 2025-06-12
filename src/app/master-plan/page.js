@@ -377,7 +377,7 @@ export default function MasterPlan() {
       </section>
 
       {/* sangam */}
-      <section className="bg-[#020C22] mb-[160px] md:mb-[100px] md:mb-[0px] md:pb-[80px]">
+      <section id="sangam-section" className="bg-[#020C22] mb-[160px] md:mb-[100px] md:mb-[0px] md:pb-[80px]">
         <div className="text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
           <SlideUp
             delay={0.4}
