@@ -8,6 +8,7 @@ import Image from 'next/image';
 import SangamViewsSwiper from './SangamViewsSwiper';
 import { AnimatedSection } from './animations';
 import { useSearchParams } from 'next/navigation';
+import Link from "next/link";
 
 const flatsData = {
   '3BHK': {
@@ -269,7 +270,20 @@ export default function SangamSliders() {
                     }`}
                     onClick={activeIndex > 0 ? handlePrev : undefined}
                   >
-                    ‹
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-[#22252E] rotate-180"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
                   </div>
                   <div
                     className={`absolute right-2 top-[-3px] -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
@@ -279,7 +293,20 @@ export default function SangamSliders() {
                       activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? handleNext : undefined
                     }
                   >
-                    ›
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-[#22252E]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
                   </div>
                 </div>
               </div>
@@ -318,12 +345,14 @@ export default function SangamSliders() {
               </div>
 
               <div className='w-full mt-[20px] md:mt-[0px]'>
+                <Link href="/contact-us">
                 <button className="md:rounded-sm w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
                   <div className='px-6 py-3 w-full flex justify-start'>
                       <span className='text-left inline md:inline'>Schedule a Visit</span>
                   </div>
                       <span className="px-6 py-4 text-orange-500 bg-[#002F52] text-lg ml-auto">↗</span>
                 </button>
+                </Link>
               </div>
             </div>
           </div>

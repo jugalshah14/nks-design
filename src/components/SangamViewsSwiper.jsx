@@ -54,7 +54,7 @@ const data = {
 
 const settings = {
   className: "amenities-swiper !overflow-visible center",
-  infinite: true,
+  infinite: false,
   centerPadding: "30px",
   slidesToShow: 3,
   speed: 600,
@@ -92,6 +92,9 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
     swiperRef.slickPrev();
   };
 
+  const isPrevDisabled = activeIndex === 0;
+  const isNextDisabled = activeIndex >= data[activeBHK].length - settings.slidesToShow;
+
   return (
     <div className="relative top-[100px] md:-top-15 overflow-x-hidden bg-[#020C22]">
       <div className="container mx-auto relative md:mb-16 bg-[#020C22]">
@@ -109,14 +112,15 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
             >
               Views from {activeBHK}
             </div>
-            <div className="hidden md:flex relative w-[366px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
+            <div className="hidden md:flex relative max-w-[190px] w-[366px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
               <div className="h-full flex items-center justify-center">
                 <button
-                  className="focus:outline-none  cursor-pointer"
+                  className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`}
                   onClick={handlePrev}
+                  disabled={isPrevDisabled}
                 >
                   <Image
-                    src="/assets/icons/arrow-right.svg"
+                    src="/assets/arrow-main.svg"
                     alt="Previous"
                     height={20}
                     width={19}
@@ -124,18 +128,14 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
                   />
                 </button>
               </div>
-              <div className="flex gap-2 items-center text-white">
-                {Math.ceil(activeIndex) + 1}{" "}
-                <div className="h-0.5 w-8 bg-[#D9D9D9] text-white" />{" "}
-                {data[activeBHK].length}
-              </div>
               <div className="h-full flex items-center justify-center">
                 <button
-                  className="focus:outline-none cursor-pointer"
+                  className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`}
                   onClick={handleNext}
+                  disabled={isNextDisabled}
                 >
                   <Image
-                    src="/assets/icons/arrow-right.svg"
+                    src="/assets/arrow-main.svg"
                     alt="Next"
                     height={20}
                     width={19}

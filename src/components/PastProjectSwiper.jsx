@@ -108,7 +108,7 @@ export default function PastProjectSwiper() {
                             />
                             </div>
                             <div className='w-full flex flex-col bg-[#0C162B] md:mt-[40px]'>
-                                <div className='p-[36px] relative'>
+                                <div className='p-[16px] md:p-[36px] relative'>
                                     <div className='md:mt-[32px] absolute w-full top-[-65px] md:top-0 md:left-[-60px] flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[5px] bg-opacity-80'>
                                         <div className='w-full projectslide-title py-[20px] px-[27px] transforming-text font-[400] text-[40px] leading-[48px] whitespace-nowrap'>
                                             {slide.title}
@@ -116,6 +116,7 @@ export default function PastProjectSwiper() {
                                     </div>
 
                                     <div className='pb-[28px] md:pt-[120px]'>
+                                        <hr className='w-full h-1 text-white/30 mt-[10px] pb-[16px] none-md'/>
                                         <p className="text-[14px] md:text-[14px] font-satoshi font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">About Project</p>
                                         <p className="text-[16px] md:text-[16px] font-satoshi font-[400] leading-6 md:leading-[20px] text-white">{slide.description}</p>
                                     </div>

@@ -165,7 +165,7 @@ export default function MasterPlan() {
             className="absolute top-0 h-[100%] left-0 hide-triangle"
           />
           <div className="flex flex-col md:flex-row justify-between relative container mx-auto px-[16px] md:px-24 gap-[36px] md:gap-12">
-            <div className="text-center md:text-left w-full md:pb-30">
+            <div className="text-center md:text-left w-full md:pt-10">
               <SlideUp
                 delay={0.4}
                 className="project-overview-title text-center md:text-left"
@@ -214,8 +214,10 @@ export default function MasterPlan() {
           </div>
         </div>
       </section>
-      <SlideUp delay={0.2} className='w-full flex justify-center items-center none-md'>
-        <h1 className="text-center text-[28px] leading-[32px] font-satoshi font-[400] pb-[36px]">Primary goals<br/> we were having</h1>
+      <SlideUp delay={0.2} className='w-full flex justify-center items-center none-md flex-row gap-4 justify-between items-center  pb-[36px]'>
+        <Image src="/assets/line1.svg" alt="Previous" height={20} width={10} className="w-[60px]"/>
+        <h1 className="text-center text-[28px] leading-[32px] font-satoshi font-[400]">Primary goals<br/> we were having</h1>
+        <Image src="/assets/line1.svg" alt="Previous" height={20} width={10} className="w-[60px]"/>
       </SlideUp>
       <AnimatedSection delay={0.4}>
         <MasterplanSwiper />
@@ -400,9 +402,10 @@ export default function MasterPlan() {
         </SlideUp>
       </section>
 
+      <section className="container mx-auto md:px-[200px] pr-[16px] md:pr-[200px]">
       <SlideUp
         delay={0.2}
-        className="container mx-auto flex flex-row justify-center w-full md:px-[200px] md:-mt-[170px] group cursor-pointer transform transition-transform duration-300 hover:scale-101"
+        className="flex flex-row justify-center w-full md:-mt-[170px] group cursor-pointer transform transition-transform duration-300 hover:scale-101"
       >
         <Image
           src="/assets/faqs-detail-gif.gif"
@@ -428,12 +431,14 @@ export default function MasterPlan() {
           <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
         </div>
       </SlideUp>
+      </section>
+
 
       {/* Past Projects */}
-      <section className="overflow-x-hidden">
+      <section className="md:overflow-x-hidden overflow-hidden">
         <div className="relative pt-[30px] md:pt-[100px]">
           <div className="text-center w-full">
-            <SlideUp delay={0.4} className="project-overview-title text-center">
+            <SlideUp delay={0.4} className="project-overview-title text-center pt-4">
               <span className="orange-color">Past</span> Projects
             </SlideUp>
           </div>
@@ -442,9 +447,13 @@ export default function MasterPlan() {
         <AnimatedSection>
           <PastProjectSwiper />
         </AnimatedSection>
-        <FadeIn
+        </section>
+
+
+      <section className="container mx-auto md:px-[200px] pr-[16px] md:pr-[200px]">
+      <FadeIn
           delay={0.4}
-          className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-12 md:pt-0 cursor-pointer"
+          className="flex flex-row justify-center w-full pt-12 md:pt-0 cursor-pointer transform transition-transform duration-300 hover:scale-101"
         >
           <Image
             src="/assets/sport-gif.gif"
@@ -469,8 +478,7 @@ export default function MasterPlan() {
             />
             <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
           </div>
-        </FadeIn>
-        <div></div>
+      </FadeIn>
       </section>
 
       {/* Project Overview */}
