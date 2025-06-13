@@ -18,7 +18,7 @@ const data = [
       "Proximity to water bodies can lead to cooler air and better air quality, as the water absorbs and dissipates heat.",
   },
   {
-    src: "/assets/riverside2.png",
+    src: "/assets/riverside3.png",
     title:
       "Properties located near rivers often have higher market values due to their scenic appeal and recreational opportunities.",
   },
@@ -69,7 +69,7 @@ export default function RiversideLivingSwiper() {
     offset: ["start start", "end end"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], [0, translateWidth], {
+  const x = useTransform(scrollYProgress, [0, 1], [0, translateWidth - 160], {
     ease: easeInOut,
   });
 
@@ -92,13 +92,10 @@ export default function RiversideLivingSwiper() {
   );
 
   return (
-    <div
-      ref={containerRef}
-      className="relative md:h-[170vh] container mx-auto md:mt-10"
-    >
+    <div ref={containerRef} className="relative md:h-[170vh] md:mt-10">
       {/* Desktop Scroll Animation */}
       <div className="hidden md:block md:sticky md:top-20 lg:top-50">
-        <div className="overflow-visible">
+        <div className="overflow-hidden pl-20">
           <motion.div
             ref={cardsContainerRef}
             style={{ x }}
