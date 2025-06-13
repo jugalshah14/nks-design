@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 import { AnimatedSection } from "./animations";
+import ScheduleVisitModal from './ScheduleVisitModal';
 
 const data = [
     {
@@ -52,6 +53,7 @@ const settings = {
 export default function PlansSwiper() {
     const [activeIndex, setActiveIndex] = useState(0);
     let swiperRef = useRef(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleNext = () => {
         if (!swiperRef) return;
@@ -62,6 +64,11 @@ export default function PlansSwiper() {
         if (!swiperRef) return;
         swiperRef.slickPrev();
     }
+
+    const handleKnowPriceClick = (e) => {
+      e.preventDefault();
+      setIsModalOpen(true);
+    };
 
   return (
     <AnimatedSection className="pt-10">
@@ -127,12 +134,12 @@ export default function PlansSwiper() {
                         <p className="hidden md:inline text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-white shadow-lg mr-2 blur-[6.5px]">
                           {slide.price}
                         </p>
-                        <a
-                          href="#"
-                          className="text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] underline"
+                        <button
+                          onClick={handleKnowPriceClick}
+                          className="cursor-pointer text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] underline"
                         >
                           Know price
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -202,6 +209,7 @@ export default function PlansSwiper() {
           </div>
               </div>
               </div>
-              </AnimatedSection>
+      <ScheduleVisitModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </AnimatedSection>
     )
 }

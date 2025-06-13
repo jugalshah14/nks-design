@@ -370,7 +370,7 @@ export default function Home() {
             </div>
             <Amenities /> */}
             <div className="container mx-auto !w-[100%] relative md:mb-16">
-              <div className="flex flex-col justify-center items-center pb-5">
+              <div className="hidden md:flex flex-col justify-center items-center pb-5">
                 <SlideUp delay={0.4}>
                   <h2 className="w-full text-center text-black text-[56px] font-cormorant leading-[72px] font-[300]">
                     Elevate to{" "}
