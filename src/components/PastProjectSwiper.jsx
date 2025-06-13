@@ -86,7 +86,9 @@ export default function PastProjectSwiper() {
     }
 
     return (
-        <div className='container mx-auto mb-10 px-4 md:px-0'>
+        <>
+        <div className='px-4 md:px-0 !overflow-x-hidden'>
+            <div className='container mx-auto'>
             <Slider
                 ref={slider => {
                     swiperRef = slider;
@@ -141,7 +143,9 @@ export default function PastProjectSwiper() {
                     </div>
                 ))}
             </Slider>
-            <div className='w-full ietms-center justify-center flex'>
+            </div>
+        </div>
+        <div className='w-full ietms-center justify-center flex md:mb-10 px-4 pt-2 md:pt-0'>
                 <div className="w-full relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-2 md:py-5 max-w-[366px] shadow-[0px_4px_170px_rgba(0,0,0,0.25)]">
                     <div className="h-full flex items-center justify-center">
                         <button 
@@ -176,6 +180,6 @@ export default function PastProjectSwiper() {
                     </div>
                 </div>
             </div>
-        </div>
+            </>
     )
 };

@@ -34,7 +34,16 @@ export default function MasterPlan() {
       <section className="-mt-16 no-negative-margin">
         <SlideUp delay={0.8}>
           <div className="container mx-auto">
-            <div className="relative w-full h-[265px] md:h-[460px]">
+            <div className="relative w-full md:h-[460px] h-[265px] hide-triangle">
+              <Image
+                src="/assets/masterplan-hero.png"
+                alt="Hero-img"
+                fill
+                priority
+                className='select-none no-drag'
+            />
+            </div>
+            <div className="relative w-full h-[265px] md:h-[460px] none-md">
               <Image
                 src="/assets/tri1.svg"
                 width={65}
@@ -428,14 +437,14 @@ export default function MasterPlan() {
               <span className="orange-color">Past</span> Projects
             </SlideUp>
           </div>
-          <div className="bg-[#F5F8FA] w-full absolute h-[315px] top-120"></div>
+          <div className="bg-[#F5F8FA] w-full absolute h-[315px] top-115"></div>
         </div>
         <AnimatedSection>
           <PastProjectSwiper />
         </AnimatedSection>
         <FadeIn
           delay={0.4}
-          className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-0 md:pt-0 cursor-pointer"
+          className="container mx-auto flex flex-row justify-center w-full md:px-[200px] pt-12 md:pt-0 cursor-pointer"
         >
           <Image
             src="/assets/sport-gif.gif"

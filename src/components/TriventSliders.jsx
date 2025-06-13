@@ -31,7 +31,7 @@ const data = [
 
 const settings = {
   className: "amenities-swiper !overflow-visible center",
-  infinite: true,
+  infinite: false,
   centerPadding: "30px",
   slidesToShow: 3,
   speed: 600,
@@ -75,23 +75,27 @@ export default function TriventSliders() {
     swiperRef.slickPrev();
   };
 
+  const isPrevDisabled = activeIndex === 0;
+  const isNextDisabled = activeIndex >= data.length - settings.slidesToShow;
+
   return (
     <>
     <div className="relative max-md:-top-15 overflow-hidden">
       <div className="container mx-auto relative md:mb-16">
         <div className="grid grid-cols-4 gap-0">
-          <div className="hidden md:flex flex-col bg-[#020C22] z-2 after-box pr-10 md:col-span-2 lg:col-span-1 with-before justify-center items-center">
+          <div className="hidden md:flex flex-col bg-[#020C22] z-2 after-box pr-10 md:col-span-2 lg:col-span-1 with-before justify-center items-left">
             <h2 className="px-[60px] pt-[34px] md:px-[0px] md:pt-[0px] text-[28px] md:text-[40px] font-satoshi font-normal leading-[32px] md:leading-[54px] text-[#22252e] mb-1 text-center md:text-left text-white">
               Attractions at Triveni
             </h2>
-            <div className="w-full relative right-[-50px] z-11 transform bg-[#021642] flex items-center justify-around mt-9 px-1 py-5 !w-[366px]">
+            <div className="w-full relative max-w-[190px] z-11 transform bg-[#021642] flex items-center justify-around mt-9 px-1 py-5">
               <div className="h-full flex items-center justify-center">
                 <button
-                  className="focus:outline-none  cursor-pointer"
+                  className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`}
                   onClick={handlePrev}
+                  disabled={isPrevDisabled}
                 >
                 <Image
-                    src="/assets/icons/arrow-right.svg"
+                    src="/assets/arrow-main.svg"
                     alt="Previous"
                     height={20}
                     width={19}
@@ -99,16 +103,14 @@ export default function TriventSliders() {
                 />
                 </button>
               </div>
-              <div className="flex gap-2 items-center text-white">
-                {activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> 4
-              </div>
               <div className="h-full flex items-center justify-center">
                 <button
-                  className="focus:outline-none cursor-pointer"
+                  className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`}
                   onClick={handleNext}
+                  disabled={isNextDisabled}
                 >
                 <Image
-                    src="/assets/icons/arrow-right.svg"
+                    src="/assets/arrow-main.svg"
                     alt="Next"
                     height={20}
                     width={19}
@@ -163,6 +165,7 @@ export default function TriventSliders() {
           <button
             className="focus:outline-none  cursor-pointer"
             onClick={handlePrev}
+            disabled={isPrevDisabled}
           >
             <Image
                     src="/assets/icons/arrow-right.svg"
