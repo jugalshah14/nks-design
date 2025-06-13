@@ -100,7 +100,7 @@ const Header = () => {
             </Link>
             <button
               onClick={handleScheduleVisit}
-              className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+              className="cursor-pointer max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
             >
               Schedule Visit
             </button>
