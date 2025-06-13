@@ -8,44 +8,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AnimatedSection } from "./animations";
 
-const data = [
-  {
-    src: "/assets/collage.png",
-    icon: "/assets/icons/graduation-hat.svg",
-    title: "Serampore College",
-    description: "1.85km away",
-    backgroundImage: "/assets/SRP-College.png"
-  },
-  {
-    src: "/assets/hospital.png",
-    icon: "/assets/icons/hospital-building.svg",
-    title: "Serampore Hospital",
-    description: "3.1km away",
-    backgroundImage: "/assets/hospital-bg.png"
-  },
-  {
-    src: "/assets/railwaystation.png",
-    icon: "/assets/icons/shopping-bag-tag.svg",
-    title: "Serampore Railway Station",
-    description: "2.5km away",
-    backgroundImage: "/assets/railway-bg.png"
-  },
-  {
-    src: "/assets/shelby.jpg",
-    icon: "/assets/icons/hospital-building.svg",
-    title: "Serampore Court",
-    description: "2.5km away",
-    backgroundImage: "/assets/court.png"
-  },
-  {
-    src: "/assets/shelby.jpg",
-    icon: "/assets/icons/hospital-building.svg",
-    title: "Mahesh Temple",
-    description: "2.5km away",
-    backgroundImage: "/assets/shelby-bg.png"
-  },
-];
-
 const settings = {
   className: "serampore-swiper overflow-x-visible",
   infinite: false,
@@ -74,7 +36,7 @@ const settings = {
   ],
 };
 
-export default function SeramporeSwiper() {
+export default function SeramporeSwiper({ data }) {
   const [activeIndex, setActiveIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   let swiperRef = useRef(null);
@@ -99,11 +61,11 @@ export default function SeramporeSwiper() {
 
   return (
     <><AnimatedSection className="container mx-auto relative certification-section !bg-white pt-10 md:pt-20 mt-7">
-      <div className="h-[400px] z-1" />
+      <div className="md:h-[400px] md:w-full h-[150px] w-[90%] z-1" />
       <Image
         src={data[activeIndex - 1].backgroundImage}
         fill
-        className={`object-contain hidden md:block transition-opacity duration-100 ${isTransitioning ? "opacity-80" : "opacity-100"}`}
+        className={`object-contain md:block transition-opacity duration-100 ${isTransitioning ? "opacity-80" : "opacity-100"}`}
         alt="serampore map" />
     </AnimatedSection>
       <div className="md:pt-10 mb-10 container mx-auto px-4 md:px-0">
@@ -129,7 +91,8 @@ export default function SeramporeSwiper() {
           {data.map((slide, index) => (
             <div
               key={index}
-              className="relative !flex justify-center flex-nowrap pt-15"
+              className="relative !flex justify-center flex-nowrap pt-15 cursor-pointer"
+              onClick={() => handleSlideClick(index)}
             >
               <Image
                 src={slide.src}
