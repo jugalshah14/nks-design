@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import ScheduleVisitModal from "./ScheduleVisitModal";
 
 const headerClass = {
   "/": "home-page-header",
@@ -22,10 +23,16 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeClass, setActiveClass] = useState("/");
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname();
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleScheduleVisit = (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
   };
 
   useEffect(() => {
@@ -91,12 +98,12 @@ const Header = () => {
             >
               Blogs
             </Link>
-            <Link
-              href="/"
-              className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            <button
+              onClick={handleScheduleVisit}
+              className="cursor-pointer max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
             >
               Schedule Visit
-            </Link>{" "}
+            </button>
             <div className="h-[40px] w-[100px] md:h-[48px] md:w-[100px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-sm action-button flex items-center justify-center">
               <p className="font-satoshi font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22]">
                 Call Now
@@ -204,13 +211,18 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="#" className="text-gray-800 hover:text-blue-500">
+              <button
+                onClick={handleScheduleVisit}
+                className="text-gray-800 hover:text-blue-500"
+              >
                 Schedule Visit
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
       </div>
+
+      <ScheduleVisitModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 };
