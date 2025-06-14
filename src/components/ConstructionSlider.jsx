@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -52,16 +52,58 @@ const settings = {
 
 const ConstructionSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [imageIndexes, setImageIndexes] = useState(sliderData.map(() => 0));
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false);
+  const [isInView, setIsInView] = useState(false);
   let swiperRef = useRef(null);
+  let progressInterval = useRef(null);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            setIsAutoPlaying(true);
+          } else {
+            setIsInView(false);
+            setIsAutoPlaying(false);
+            if (progressInterval.current) {
+              clearTimeout(progressInterval.current);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the section is visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+      if (progressInterval.current) {
+        clearTimeout(progressInterval.current);
+      }
+    };
+  }, []);
 
   const handleNext = () => {
     if (!swiperRef) return;
+    setIsTransitioning(true);
     swiperRef.slickNext();
   };
 
   const handlePrev = () => {
     if (!swiperRef) return;
+    setIsTransitioning(true);
     swiperRef.slickPrev();
   };
 
@@ -71,22 +113,40 @@ const ConstructionSlider = () => {
     setImageIndexes(newIndexes);
   };
 
-  const handleSlideChange = (currentSlide) => {
-    const slidesToShow =
-      window.innerWidth >= 1024 ? 2.5 : window.innerWidth >= 768 ? 2.5 : 1;
-    const activeSlide = Math.round(currentSlide * slidesToShow);
-    setActiveIndex(activeSlide);
-  };
+  useEffect(() => {
+    if (isAutoPlaying && isInView) {
+      progressInterval.current = setTimeout(() => {
+        handleNext();
+      }, 6000);
+    }
+    return () => {
+      if (progressInterval.current) {
+        clearTimeout(progressInterval.current);
+      }
+    };
+  }, [activeIndex, isAutoPlaying, isInView]);
 
   return (
-    <section className="bg-[#020C22] overflow-x-hidden relative select-none pointer-events-auto">
+    <section ref={sectionRef} className="bg-[#020C22] overflow-x-hidden relative select-none pointer-events-auto">
       <div className="md:px-8 px-4 pb-[40px] md:pb-0">
         <Slider
           ref={(slider) => {
             swiperRef = slider;
           }}
           {...settings}
-          beforeChange={(_, newIndex) => handleSlideChange(newIndex)}
+          afterChange={() => {
+            const slides = document.querySelectorAll(
+              ".construction-swiper .slick-slide"
+            );
+
+            for (let i = 0; i < slides.length; i++) {
+              if (slides[i].classList.contains("slick-current")) {
+                setActiveIndex(i);
+                break;
+              }
+            }
+            setIsTransitioning(false);
+          }}
         >
           {sliderData.map((slide, slideIdx) => {
             const index = imageIndexes[slideIdx];
@@ -104,7 +164,17 @@ const ConstructionSlider = () => {
                       slideIdx === activeIndex ? "bg-white" : ""
                     }`}
                   />
-                  <div className="h-px bg-white/20 w-[88%]" />
+                  <div className="h-px bg-white/20 w-[88%] relative overflow-hidden">
+                    <div 
+                      className={`absolute left-0 top-0 h-full bg-white transition-all duration-[6000ms] ease-linear ${
+                        slideIdx === activeIndex && isInView ? 'animate-timeline' : ''
+                      }`}
+                      style={{
+                        width: slideIdx === activeIndex && isInView ? '100%' : '0%',
+                        animation: slideIdx === activeIndex && isInView ? 'timeline 6s linear forwards' : 'none'
+                      }}
+                    />
+                  </div>
                 </div>
 
                 <div
@@ -159,7 +229,10 @@ const ConstructionSlider = () => {
           className={`w-[28px] h-[28px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
             activeIndex > 0 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
           }`}
-          onClick={activeIndex > 0 ? handlePrev : undefined}
+          onClick={() => {
+            setIsAutoPlaying(false);
+            handlePrev();
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -168,11 +241,11 @@ const ConstructionSlider = () => {
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2}
-            >
+          >
             <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 5l7 7-7 7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
             />
           </svg>
         </div>
@@ -180,21 +253,24 @@ const ConstructionSlider = () => {
           className={`w-[28px] h-[28px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
             activeIndex < sliderData.length - 1 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
           }`}
-          onClick={activeIndex < sliderData.length - 1 ? handleNext : undefined}
+          onClick={() => {
+            setIsAutoPlaying(false);
+            handleNext();
+          }}
         >
           <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-[#22252E]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              >
-             <path
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 text-[#22252E]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
               strokeLinecap="round"
               strokeLinejoin="round"
               d="M9 5l7 7-7 7"
-              />
+            />
           </svg>
         </div>
       </div>
@@ -205,7 +281,10 @@ const ConstructionSlider = () => {
           <div className="h-full flex items-center justify-center">
             <button
               className="focus:outline-none cursor-pointer"
-              onClick={handlePrev}
+              onClick={() => {
+                setIsAutoPlaying(false);
+                handlePrev();
+              }}
             >
               <Image
                 src="/assets/icons/arrow-right.svg"
@@ -223,7 +302,10 @@ const ConstructionSlider = () => {
           <div className="h-full flex items-center justify-center">
             <button
               className="focus:outline-none cursor-pointer"
-              onClick={handleNext}
+              onClick={() => {
+                setIsAutoPlaying(false);
+                handleNext();
+              }}
             >
               <Image
                 src="/assets/icons/arrow-right.svg"
@@ -236,6 +318,17 @@ const ConstructionSlider = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes timeline {
+          from {
+            width: 0%;
+          }
+          to {
+            width: 100%;
+          }
+        }
+      `}</style>
     </section>
   );
 };
