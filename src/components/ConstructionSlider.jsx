@@ -8,17 +8,17 @@ import "slick-carousel/slick/slick-theme.css";
 const sliderData = [
   {
     month: "June 2023",
-    images: ["/assets/const2.png", "/assets/const1.jpg", "/assets/const1.jpg"],
+    images: ["/assets/c11.png", "/assets/c12.png", "/assets/c13.png"],
     description: "Everybody longs for a lifestyle that relishes their body.",
   },
   {
     month: "April 2023",
-    images: ["/assets/const2.png", "/assets/const1.jpg", "/assets/const1.jpg"],
+    images: ["/assets/c21.png", "/assets/c22.png", "/assets/c23.png"],
     description: "Everybody longs for a lifestyle that relishes their body.",
   },
   {
     month: "May 2023",
-    images: ["/assets/const1.jpg", "/assets/const2.png", "/assets/const1.jpg"],
+    images: ["/assets/c31.png", "/assets/c32.png", "/assets/c33.png"],
     description: "Everybody longs for a lifestyle that relishes their body.",
   },
 ];

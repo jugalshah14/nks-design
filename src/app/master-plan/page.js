@@ -36,7 +36,7 @@ export default function MasterPlan() {
           <div className="container mx-auto">
             <div className="relative w-full md:h-[460px] h-[265px] hide-triangle">
               <Image
-                src="/assets/masterplan-hero.png"
+                src="/assets/master-plan.png"
                 alt="Hero-img"
                 fill
                 priority

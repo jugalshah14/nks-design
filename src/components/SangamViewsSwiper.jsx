@@ -24,16 +24,16 @@ const data = {
   ],
   "2BHK": [
     {
-      src: "/assets/sangam1.png",
+      src: "/assets/mp1.png",
     },
     {
-      src: "/assets/sangam2.png",
+      src: "/assets/mp2.png",
     },
     {
-      src: "/assets/sangam3.png",
+      src: "/assets/mp3.png",
     },
     {
-      src: "/assets/sangam4.jpg",
+      src: "/assets/mp4.png",
     },
   ],
   "4BHK": [
@@ -94,6 +94,11 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
 
   const isPrevDisabled = activeIndex === 0;
   const isNextDisabled = activeIndex >= data[activeBHK].length - settings.slidesToShow;
+
+  // Mobile navigation logic
+  const mobileIndex = Math.ceil(activeIndex);
+  const isMobilePrevDisabled = mobileIndex === 0;
+  const isMobileNextDisabled = mobileIndex >= data[activeBHK].length - 1;
 
   return (
     <div className="relative top-[100px] md:-top-15 overflow-x-hidden bg-[#020C22]">
@@ -177,8 +182,9 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
       <div className="w-full absolute bottom-0 flex md:hidden relative z-111 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
         <div className="h-full flex items-center justify-center">
           <button
-            className="focus:outline-none  cursor-pointer"
+            className={`focus:outline-none cursor-pointer ${isMobilePrevDisabled ? 'opacity-30' : ''}`}
             onClick={handlePrev}
+            disabled={isMobilePrevDisabled}
           >
             <Image
               src="/assets/icons/arrow-right.svg"
@@ -196,8 +202,9 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
         </div>
         <div className="h-full flex items-center justify-center">
           <button
-            className="focus:outline-none cursor-pointer"
+            className={`focus:outline-none cursor-pointer ${isMobileNextDisabled ? 'opacity-30' : ''}`}
             onClick={handleNext}
+            disabled={isMobileNextDisabled}
           >
             <Image
               src="/assets/icons/arrow-right.svg"
