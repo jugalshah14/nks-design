@@ -113,11 +113,23 @@ const ConstructionSlider = () => {
     setImageIndexes(newIndexes);
   };
 
+  const startAutoSlide = () => {
+    if (progressInterval.current) {
+      clearTimeout(progressInterval.current);
+    }
+    progressInterval.current = setTimeout(() => {
+      if (activeIndex >= sliderData.length - 1) {
+        // If we're at the last slide, go back to first slide
+        swiperRef.slickGoTo(0);
+      } else {
+        handleNext();
+      }
+    }, 6000);
+  };
+
   useEffect(() => {
     if (isAutoPlaying && isInView) {
-      progressInterval.current = setTimeout(() => {
-        handleNext();
-      }, 6000);
+      startAutoSlide();
     }
     return () => {
       if (progressInterval.current) {
@@ -125,6 +137,11 @@ const ConstructionSlider = () => {
       }
     };
   }, [activeIndex, isAutoPlaying, isInView]);
+
+  // Mobile navigation logic
+  const mobileIndex = Math.ceil(activeIndex);
+  const isMobilePrevDisabled = mobileIndex === 0;
+  const isMobileNextDisabled = mobileIndex >= sliderData.length - 1;
 
   return (
     <section ref={sectionRef} className="bg-[#020C22] overflow-x-hidden relative select-none pointer-events-auto">
@@ -146,6 +163,10 @@ const ConstructionSlider = () => {
               }
             }
             setIsTransitioning(false);
+            // Restart auto-sliding after any slide change
+            if (isAutoPlaying && isInView) {
+              startAutoSlide();
+            }
           }}
         >
           {sliderData.map((slide, slideIdx) => {
@@ -230,7 +251,6 @@ const ConstructionSlider = () => {
             activeIndex > 0 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
           }`}
           onClick={() => {
-            setIsAutoPlaying(false);
             handlePrev();
           }}
         >
@@ -254,7 +274,6 @@ const ConstructionSlider = () => {
             activeIndex < sliderData.length - 1 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
           }`}
           onClick={() => {
-            setIsAutoPlaying(false);
             handleNext();
           }}
         >
@@ -280,11 +299,9 @@ const ConstructionSlider = () => {
         <div className="w-[100%] md:w-[360px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around px-1 py-5">
           <div className="h-full flex items-center justify-center">
             <button
-              className="focus:outline-none cursor-pointer"
-              onClick={() => {
-                setIsAutoPlaying(false);
-                handlePrev();
-              }}
+              className={`focus:outline-none cursor-pointer ${isMobilePrevDisabled ? 'opacity-30' : ''}`}
+              onClick={handlePrev}
+              disabled={isMobilePrevDisabled}
             >
               <Image
                 src="/assets/icons/arrow-right.svg"
@@ -296,16 +313,14 @@ const ConstructionSlider = () => {
             </button>
           </div>
           <div className="flex gap-2 items-center text-[#D9D9D9]">
-            {activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" />{" "}
+            {mobileIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" />{" "}
             {sliderData.length}
           </div>
           <div className="h-full flex items-center justify-center">
             <button
-              className="focus:outline-none cursor-pointer"
-              onClick={() => {
-                setIsAutoPlaying(false);
-                handleNext();
-              }}
+              className={`focus:outline-none cursor-pointer ${isMobileNextDisabled ? 'opacity-30' : ''}`}
+              onClick={handleNext}
+              disabled={isMobileNextDisabled}
             >
               <Image
                 src="/assets/icons/arrow-right.svg"
