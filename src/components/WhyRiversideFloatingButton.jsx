@@ -10,7 +10,7 @@ export default function WhyRiversideFloatingButton() {
             spy={true}
             className="default-theme-text-color-1"
             smooth={true}
-            offset={-200}
+            offset={-100}
             duration={500}
             id="amenities"
         >

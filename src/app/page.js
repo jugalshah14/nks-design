@@ -40,24 +40,24 @@ const seramporeData = [
   },
   {
     src: "/assets/railwaystation.png",
-    icon: "/assets/icons/shopping-bag-tag.svg",
+    icon: "/assets/icons/railway.svg",
     title: "Serampore Railway Station",
     description: "2.5km away",
     backgroundImage: "/assets/railway-bg.png"
   },
   {
-    src: "/assets/shelby.jpg",
-    icon: "/assets/icons/hospital-building.svg",
+    src: "/assets/court.png",
+    icon: "/assets/icons/court.svg",
     title: "Serampore Court",
-    description: "2.5km away",
-    backgroundImage: "/assets/court.png"
+    description: "2km away",
+    backgroundImage: "/assets/court-bg.png"
   },
   {
-    src: "/assets/shelby.jpg",
-    icon: "/assets/icons/hospital-building.svg",
+    src: "/assets/temple.png",
+    icon: "/assets/icons/temple.svg",
     title: "Mahesh Temple",
-    description: "2.5km away",
-    backgroundImage: "/assets/shelby-bg.png"
+    description: "350mtr away",
+    backgroundImage: "/assets/mahesh-temple.png"
   },
 ];
 
@@ -198,7 +198,7 @@ export default function Home() {
           >
             <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
               <Image
-                src="/assets/icons/jetty.svg"
+                src="/assets/icons/cctv.svg"
                 width={68}
                 height={68}
                 alt="Garden and Ghat"
@@ -370,7 +370,7 @@ export default function Home() {
             </div>
             <Amenities /> */}
             <div className="container mx-auto !w-[100%] relative md:mb-16">
-              <div className="flex flex-col justify-center items-center pb-5">
+              <div className="hidden md:flex flex-col justify-center items-center pb-5">
                 <SlideUp delay={0.4}>
                   <h2 className="w-full text-center text-black text-[56px] font-cormorant leading-[72px] font-[300]">
                     Elevate to{" "}

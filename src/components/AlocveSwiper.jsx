@@ -133,7 +133,7 @@ function FitnessSwiper() {
                 <button
                   onClick={handlePrev}
                   aria-label="Previous Slide"
-                  className={`cursor-pointer bg-white/40 hover:bg-white/70 text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
+                  className={`cursor-pointer bg-white text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
                     activeIndex > 0
                       ? "opacity-100"
                       : "opacity-50 pointer-events-none"
@@ -157,7 +157,7 @@ function FitnessSwiper() {
                 <button
                   onClick={handleNext}
                   aria-label="Next Slide"
-                  className={`cursor-pointer bg-white/40 hover:bg-white/70 text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
+                  className={`cursor-pointer bg-white text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
                     activeIndex < fitnessSlides.length - 1
                       ? "opacity-100"
                       : "opacity-50 pointer-events-none"
@@ -299,7 +299,7 @@ function NatureSwiper() {
                 <button
                   onClick={handlePrev}
                   aria-label="Previous Slide"
-                  className={`cursor-pointer bg-white/40 hover:bg-white/70 text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
+                  className={`cursor-pointer bg-white text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
                     activeIndex > 0
                       ? "opacity-100"
                       : "opacity-50 pointer-events-none"
@@ -323,7 +323,7 @@ function NatureSwiper() {
                 <button
                   onClick={handleNext}
                   aria-label="Next Slide"
-                  className={`cursor-pointer bg-white/40 hover:bg-white/70 text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
+                  className={`cursor-pointer bg-white text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
                     activeIndex < natureSlides.length - 1
                       ? "opacity-100"
                       : "opacity-50 pointer-events-none"
@@ -464,7 +464,7 @@ function CricketSwiper() {
                 <button
                   onClick={handlePrev}
                   aria-label="Previous Slide"
-                  className={`cursor-pointer bg-white/40 hover:bg-white/70 text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
+                  className={`cursor-pointer bg-white text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
                     activeIndex > 0
                       ? "opacity-100"
                       : "opacity-50 pointer-events-none"
@@ -488,7 +488,7 @@ function CricketSwiper() {
                 <button
                   onClick={handleNext}
                   aria-label="Next Slide"
-                  className={`cursor-pointer bg-white/40 hover:bg-white/70 text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
+                  className={`cursor-pointer bg-white text-black rounded-full w-8 h-8 flex items-center justify-center transition shadow ${
                     activeIndex < cricketSlides.length - 1
                       ? "opacity-100"
                       : "opacity-50 pointer-events-none"
