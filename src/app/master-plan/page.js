@@ -59,7 +59,7 @@ export default function MasterPlan() {
                 className="absolute right-0 bottom-0 z-10 w-[18px] h-[18px] md:w-[65px] md:h-[65px] select-none no-drag"
               />
               <Image
-                src="/assets/masterplan-hero.png"
+                src="/assets/master-plan.png"
                 alt="Hero-img"
                 fill
                 className="object-cover w-full h-full select-none no-drag"
