@@ -86,7 +86,9 @@ export default function PastProjectSwiper() {
     }
 
     return (
-        <div className='container mx-auto mb-10 px-4 md:px-0'>
+        <>
+        <div className='px-4 md:px-0 !overflow-x-hidden'>
+            <div className='container mx-auto'>
             <Slider
                 ref={slider => {
                     swiperRef = slider;
@@ -106,7 +108,7 @@ export default function PastProjectSwiper() {
                             />
                             </div>
                             <div className='w-full flex flex-col bg-[#0C162B] md:mt-[40px]'>
-                                <div className='p-[36px] relative'>
+                                <div className='p-[16px] md:p-[36px] relative'>
                                     <div className='md:mt-[32px] absolute w-full top-[-65px] md:top-0 md:left-[-60px] flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[5px] bg-opacity-80'>
                                         <div className='w-full projectslide-title py-[20px] px-[27px] transforming-text font-[400] text-[40px] leading-[48px] whitespace-nowrap'>
                                             {slide.title}
@@ -114,6 +116,7 @@ export default function PastProjectSwiper() {
                                     </div>
 
                                     <div className='pb-[28px] md:pt-[120px]'>
+                                        <hr className='w-full h-1 text-white/30 mt-[10px] pb-[16px] none-md'/>
                                         <p className="text-[14px] md:text-[14px] font-satoshi font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">About Project</p>
                                         <p className="text-[16px] md:text-[16px] font-satoshi font-[400] leading-6 md:leading-[20px] text-white">{slide.description}</p>
                                     </div>
@@ -141,7 +144,9 @@ export default function PastProjectSwiper() {
                     </div>
                 ))}
             </Slider>
-            <div className='w-full ietms-center justify-center flex'>
+            </div>
+        </div>
+        <div className='w-full ietms-center justify-center flex md:mb-10 px-4 pt-2 md:pt-0'>
                 <div className="w-full relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-2 md:py-5 max-w-[366px] shadow-[0px_4px_170px_rgba(0,0,0,0.25)]">
                     <div className="h-full flex items-center justify-center">
                         <button 
@@ -176,6 +181,6 @@ export default function PastProjectSwiper() {
                     </div>
                 </div>
             </div>
-        </div>
+            </>
     )
 };

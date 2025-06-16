@@ -14,7 +14,7 @@ export default function WhyAlcove() {
     <main>
 
         {/* Hero Section */}
-        <SlideUp className="bg-[#F3F6F8] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
+        <SlideUp className="bg-[#E7EDF2] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
             <SlideUp delay={0.4} className="text-sm px-4 pt-6 text-center text-gray-500 mb-2">
                 <span className="text-[#22252E] font-satoshi font-[700]">• Home</span>
                 <span className="mx-2">—</span>
@@ -27,15 +27,13 @@ export default function WhyAlcove() {
 
         <section className='-mt-16 no-negative-margin pb-[40px] md:pb-[0px]'>
             <SlideUp delay={0.8} className="container mx-auto">
-            <div className="relative w-full h-[262px] md:h-[460px] hide-triangle">
-            <Image src="/assets/blue-triangle.svg" width={65} height={65} alt="img" className='absolute left-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px] select-none no-drag'/>
-            <Image src="/assets/tri2.svg" width={65} height={65} alt="img" className='absolute right-0 bottom-0 z-10 w-[35px] h-[35px] md:w-[65px] md:h-[65px] select-none no-drag'/>
-            <Image
-                src="/assets/alcove-hero.png"
-                alt="Hero-img"
-                fill
-                className="object-cover w-full h-full select-none no-drag"
-                priority
+            <div className="relative w-full md:h-[460px] h-[265px] hide-triangle">
+                <Image
+                    src="/assets/alcove-hero.png"
+                    alt="Hero-img"
+                    fill
+                    priority
+                    className='select-none no-drag'
                 />
             </div>
             <div className="relative w-full h-[262px] none-md">
@@ -148,7 +146,10 @@ export default function WhyAlcove() {
                 </div>
             </div>
             <div className='relative pb-[80px]'>
-                <Image src="/assets/bg-top.svg" width={180} height={245} alt="bg" className='absolute img-size !w-full top-[-85px] md:top-[-180px]'/>
+                <div className='absolute top-[-50px] md:top-[-170px] w-full'>
+                    <Image src="/assets/bg-top.svg" width={180} height={245} alt="bg" className='img-size !w-full select-none no-drag mb-[-1px]'/>
+                    <Image src="/assets/bg-bottom.svg" width={180} height={245} alt="bg" className='img-size !w-full select-none no-drag'/>
+                </div>
                 <SlideUp delay={0.2} className="bg-[#f3f6f8] md:bg-transparent relative container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]">
                     <Image src="/assets/sport-gif.gif" width={144} height={144} alt="house" className='img-size md:h-[144px] md:w-[144px]'/>
                     <div className="mr-[16px] md:mr-[0px] bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center" style={{ borderTopWidth: '1px', borderBottomWidth: '4px' }}>
@@ -157,17 +158,16 @@ export default function WhyAlcove() {
                         <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
                     </div>
                 </SlideUp>
-                <Image src="/assets/bg-bottom.svg" width={180} height={245} alt="bg" className='absolute img-size !w-full top-[79px]'/>
             </div>
         </section>
 
         {/* Past Projects */}
-        <section className="overflow-x-hidden">
+        <section>
             <div className='relative'>
                 <div className="text-center w-full">
                   <SlideUp delay={0.4} className="project-overview-title text-center md:pb-[28px] md:pb-[0px]"><span className="orange-color">Past</span> Projects</SlideUp>
                 </div>
-                <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-110 md:top-100'></div>
+                <div className='bg-[#F5F8FA] w-full absolute h-[315px] top-100 md:top-95'></div>
             </div>
             <SlideUp delay={0.6}>
                 <PastProjectSwiper/>
@@ -177,7 +177,7 @@ export default function WhyAlcove() {
         {/* slider */}
         <section className='realtive pt-6'>
             <div className='w-full flex justify-center items-center none-md'>
-                <h1 className="project-overview-title !text-center md:pb-[28px] md:pb-[0px] none-md py-[30px]">Meet The <br/><span className="orange-color">Team</span></h1>
+                <h1 className="project-overview-title !text-center md:pb-[28px] md:pb-[0px] none-md py-[30px]">Meet The {""}<span className="orange-color pl-2"> Team</span></h1>
             </div>
             <SlideUp delay={0.4}><TeamSwiper /></SlideUp>
         </section>

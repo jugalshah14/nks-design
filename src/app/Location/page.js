@@ -4,10 +4,47 @@ import Image from "next/image";
 import { AnimatedSection, FadeIn, SlideUp } from "@/components/animations";
 import TriventSliders from "@/components/TriventSliders";
 import { Element } from "react-scroll";
-import SeramporeSwiperLocation from "@/components/SeramporeSwiperLocation";
 import GangaWaves from "@/components/GangaWaves";
 import SeramporeMarqueeSlides from "@/components/SeramporeMarqueeSlides";
+import SeramporeSwiper from "@/components/SeramporeSwiper";
 
+const seramporeData = [
+  {
+    src: "/assets/collage.png",
+    icon: "/assets/icons/graduation-hat.svg",
+    title: "Serampore College",
+    description: "1.85km away",
+    backgroundImage: "/assets/SRP-College.png"
+  },
+  {
+    src: "/assets/hospital.png",
+    icon: "/assets/icons/hospital-building.svg",
+    title: "Serampore Hospital",
+    description: "3.1km away",
+    backgroundImage: "/assets/hospital-bg.png"
+  },
+  {
+    src: "/assets/railwaystation.png",
+    icon: "/assets/icons/shopping-bag-tag.svg",
+    title: "Serampore Railway Station",
+    description: "2.5km away",
+    backgroundImage: "/assets/railway-bg.png"
+  },
+  {
+    src: "/assets/shelby.jpg",
+    icon: "/assets/icons/hospital-building.svg",
+    title: "Serampore Court",
+    description: "2.5km away",
+    backgroundImage: "/assets/court.png"
+  },
+  {
+    src: "/assets/shelby.jpg",
+    icon: "/assets/icons/hospital-building.svg",
+    title: "Mahesh Temple",
+    description: "2.5km away",
+    backgroundImage: "/assets/shelby-bg.png"
+  },
+];
 export default function Location() {
   return (
     <main>
@@ -166,32 +203,17 @@ export default function Location() {
                         </SlideUp>
                       </div>
                     </div>
-                    <SlideUp delay={0.8} className="relative md:mx-24 h-[280px] md:h-[400px] mt-7">
-                      <div className="max-md:block absolute top-0 left-0 h-[100%] w-[100%] z-1" />
-                      <Image
-                        src="/assets/map-benefits.svg"
-                        fill
-                        className="object-cover hide-triangle"
-                        alt="serampore map "
-                      />
-                      <Image
-                        src="/assets/benefit-map-mobile.svg"
-                        fill
-                        className="object-cover none-md"
-                        alt="serampore map"
-                      />
-                    </SlideUp>
                   </div>
       
-                  <SlideUp delay={0.6}>
-                    <SeramporeSwiperLocation />
+                  <SlideUp delay={0.6} className="overflow-x-hidden">
+                    <SeramporeSwiper data={seramporeData} />
                   </SlideUp>
                 </section>
       </Element>
 
         {/* Maps */}
         <section>
-            <div className="container px-10 mx-auto pt-[40px]">
+            <div className="container px-10 mx-auto md:pt-[40px]">
                 <div className="text-center w-full pb-12">
                     <SlideUp delay={0.4} className="project-overview-title text-center">
                       Our <span className="orange-color">Neighbourhood</span>

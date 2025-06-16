@@ -8,6 +8,7 @@ import Image from 'next/image';
 import SangamViewsSwiper from './SangamViewsSwiper';
 import { AnimatedSection } from './animations';
 import { useSearchParams } from 'next/navigation';
+import Link from "next/link";
 
 const flatsData = {
   '3BHK': {
@@ -155,7 +156,24 @@ export default function SangamSliders() {
               <div className={`bg-[#111B2F] relative transition-all duration-500 ${bhkFade ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}>
 
                 {/* Tabs */}
-                <div className='absolute z-[10] md:mx-[0px] flex flex-row md:flex-col items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full md:w-[72px] absolute left-0 top-[-50px] md:top-0 transition-all duration-300'>
+                {/* Mobile Tabs */}
+                <div className="px-4 none-md flex w-full absolute z-[10] top-[-50px]">
+                  <div className="flex flex-1 flex-row items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full transition-all duration-300 overflow-hidden">
+                    {flatsData[activeBHK].tabs.map(tab => (
+                      <div
+                        key={tab}
+                        onClick={() => handleTabChange(tab)}
+                        className={`flex-1 text-center text-white text-sm py-[7px] cursor-pointer transition-all duration-300 
+                          ${activeTab === tab ? 'bg-[#144D78]' : 'hover:bg-[#144D78]'}`}
+                      >
+                        {tab}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Dashboard tabs */}
+                <div className='hide-triangle absolute z-[10] md:mx-[0px] flex flex-row md:flex-col items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full md:w-[72px] absolute left-0 top-[-50px] md:top-0 transition-all duration-300'>
                  {flatsData[activeBHK].tabs.map(tab => (
                     <div
                       key={tab}
@@ -195,7 +213,7 @@ export default function SangamSliders() {
                             width={500}
                             height={500}
                             alt={`${activeTab}-${index}`}
-                            className="object-contain w-full h-[350px] transition-transform duration-500 hover:scale-105"
+                            className="pb-10 md:pb-0 object-contain w-full h-[350px] transition-transform duration-500 hover:scale-105"
                             />
                         </div>
                         </SwiperSlide>
@@ -269,7 +287,20 @@ export default function SangamSliders() {
                     }`}
                     onClick={activeIndex > 0 ? handlePrev : undefined}
                   >
-                    ‹
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-[#22252E] rotate-180"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
                   </div>
                   <div
                     className={`absolute right-2 top-[-3px] -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
@@ -279,7 +310,20 @@ export default function SangamSliders() {
                       activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? handleNext : undefined
                     }
                   >
-                    ›
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-[#22252E]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
                   </div>
                 </div>
               </div>
@@ -318,12 +362,14 @@ export default function SangamSliders() {
               </div>
 
               <div className='w-full mt-[20px] md:mt-[0px]'>
+                <Link href="/contact-us">
                 <button className="md:rounded-sm w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
                   <div className='px-6 py-3 w-full flex justify-start'>
                       <span className='text-left inline md:inline'>Schedule a Visit</span>
                   </div>
                       <span className="px-6 py-4 text-orange-500 bg-[#002F52] text-lg ml-auto">↗</span>
                 </button>
+                </Link>
               </div>
             </div>
           </div>

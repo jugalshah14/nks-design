@@ -31,7 +31,7 @@ const data = [
 
 const settings = {
   className: "amenities-swiper !overflow-visible center",
-  infinite: true,
+  infinite: false,
   centerPadding: "30px",
   slidesToShow: 3,
   speed: 600,
@@ -75,22 +75,32 @@ export default function MasterPlanSwiper() {
     swiperRef.slickPrev();
   };
 
+  // Desktop navigation logic
+  const isDesktopPrevDisabled = activeIndex === 0;
+  const isDesktopNextDisabled = activeIndex >= data.length - settings.slidesToShow;
+
+  // Mobile navigation logic
+  const mobileIndex = Math.ceil(activeIndex);
+  const isMobilePrevDisabled = mobileIndex === 0;
+  const isMobileNextDisabled = mobileIndex >= data.length - 1;
+
   return (
     <div className="relative max-md:-top-15 overflow-hidden">
-      <div className="container mx-auto relative md:mb-16">
+      <div className="container mx-auto relative md:mb-16 mb-9">
         <div className="grid grid-cols-4 gap-0">
-          <div className="hidden md:block bg-white z-2 after-box pr-10 md:col-span-2 lg:col-span-1">
+          <div className="hidden md:flex flex-col pt-10 bg-white z-2 after-box pr-10 md:col-span-2 lg:col-span-1">
             <h2 className="px-[60px] pt-[34px] md:px-[0px] md:pt-[0px] text-[28px] md:text-[40px] font-satoshi font-normal leading-[32px] md:leading-[54px] text-[#22252e] mb-1 text-center md:text-left">
-              Primary goals we were having
+              Primary<br/> goals we <br/>were having
             </h2>
-            <div className="relative right-[-90px] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding rounded-md flex items-center justify-around mt-9 px-1 py-5">
+            <div className="relative max-w-[190px] border border-[rgba(0,0,0,0.2)] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
               <div className="h-full flex items-center justify-center">
                 <button
-                  className="focus:outline-none  cursor-pointer"
+                  className={`focus:outline-none cursor-pointer ${isDesktopPrevDisabled ? 'opacity-30' : ''}`}
                   onClick={handlePrev}
+                  disabled={isDesktopPrevDisabled}
                 >
                   <Image
-                    src="/assets/icons/arrow-right.svg"
+                    src="/assets/arrow-main.svg"
                     alt="Previous"
                     height={20}
                     width={19}
@@ -98,16 +108,14 @@ export default function MasterPlanSwiper() {
                   />
                 </button>
               </div>
-              <div className="flex gap-2 items-center">
-                {activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> 4
-              </div>
               <div className="h-full flex items-center justify-center">
                 <button
-                  className="focus:outline-none cursor-pointer"
+                  className={`focus:outline-none cursor-pointer ${isDesktopNextDisabled ? 'opacity-30' : ''}`}
                   onClick={handleNext}
+                  disabled={isDesktopNextDisabled}
                 >
                   <Image
-                    src="/assets/icons/arrow-right.svg"
+                    src="/assets/arrow-main.svg"
                     alt="Next"
                     height={20}
                     width={19}
@@ -153,14 +161,15 @@ export default function MasterPlanSwiper() {
           </div>
         </div>
       </div>
-      <div className="flex md:hidden relative -top-3 z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding items-center justify-around px-1 py-5">
+      <div className="flex md:hidden relative top-0 z-11 transform bg-[#e7edf2] bg-clip-padding items-center justify-around px-1 py-4">
         <div className="h-full flex items-center justify-center">
           <button
-            className="focus:outline-none  cursor-pointer"
+            className={`focus:outline-none cursor-pointer ${isMobilePrevDisabled ? 'opacity-30' : ''}`}
             onClick={handlePrev}
+            disabled={isMobilePrevDisabled}
           >
             <Image
-              src="/assets/icons/arrow-right.svg"
+              src="/assets/arrow-main.svg"
               alt="Previous"
               height={20}
               width={19}
@@ -168,17 +177,18 @@ export default function MasterPlanSwiper() {
             />
           </button>
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center font-[600]">
           {Math.ceil(activeIndex) + 1}{" "}
-          <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}
+          <div className="h-0.5 w-8 bg-[#D9D9D9]" /> <div className="text-black/30">{data.length}</div>
         </div>
         <div className="h-full flex items-center justify-center">
           <button
-            className="focus:outline-none cursor-pointer"
+            className={`focus:outline-none cursor-pointer ${isMobileNextDisabled ? 'opacity-30' : ''}`}
             onClick={handleNext}
+            disabled={isMobileNextDisabled}
           >
             <Image
-              src="/assets/icons/arrow-right.svg"
+              src="/assets/arrow-main.svg"
               alt="Next"
               height={20}
               width={19}

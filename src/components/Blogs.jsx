@@ -91,8 +91,8 @@ const Blogs = () => {
       </SlideUp>
 
       <SlideUp delay={0.4}>
-        <button className="none-md mt-[28px] border border-b-4 border-gray-400 px-4 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105">
-          View All Blogs
+        <button className="flex items-center justify-center min-w-[129px] none-md mt-[28px] border border-b-4 border-black px-4 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105">
+          View All
         </button>
       </SlideUp>
     </section>

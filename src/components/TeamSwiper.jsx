@@ -36,7 +36,7 @@ const slides = [
 
 const settings = {
   className: "amenities-swiper !overflow-visible center",
-  infinite: true,
+  infinite: false,
   centerPadding: "30px",
   slidesToShow: 3,
   speed: 600,
@@ -79,6 +79,9 @@ export default function TeamSwiper() {
     swiperRef.current?.slickPrev();
   };
 
+  const isPrevDisabled = activeIndex === 0;
+  const isNextDisabled = activeIndex >= slides.length - settings.slidesToShow;
+
   return (
     <div className="relative  overflow-hidden">
       <div className="container mx-auto relative md:mb-16">
@@ -88,22 +91,27 @@ export default function TeamSwiper() {
             <h2 className="project-overview-title text-left pb-[28px] md:pb-[0px]">
               Meet The <span className="orange-color">Team</span>
             </h2>
-            <div className="relative right-[-90px] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding rounded-md flex items-center justify-around mt-9 px-1 py-5">
-              <button className="focus:outline-none cursor-pointer" onClick={handlePrev}>
+            <div className="max-w-[190px] relative border border-[rgba(0,0,0,0.2)] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 flex items-center justify-around mt-9 px-1 py-5">
+              <button 
+                className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`} 
+                onClick={handlePrev}
+                disabled={isPrevDisabled}
+              >
                 <Image
-                  src="/assets/icons/arrow-right.svg"
+                  src="/assets/arrow-main.svg"
                   alt="Previous"
                   height={20}
                   width={19}
                   className="transform rotate-180"
                 />
               </button>
-              <div className="flex gap-2 items-center">
-                {activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {slides.length}
-              </div>
-              <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
+              <button 
+                className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`} 
+                onClick={handleNext}
+                disabled={isNextDisabled}
+              >
                 <Image
-                  src="/assets/icons/arrow-right.svg"
+                  src="/assets/arrow-main.svg"
                   alt="Next"
                   height={20}
                   width={19}
@@ -122,7 +130,7 @@ export default function TeamSwiper() {
               {slides.map((slide, i) => (
                 <div
                   key={i}
-                  className="mx-2 !w-full !overflow-hidden"
+                  className="mx-2 md:mx-6 !w-full !overflow-hidden"
                 >
                   <div className="relative gap-2 flex flex-col min-h-[400px]">
                     <Image
@@ -130,7 +138,7 @@ export default function TeamSwiper() {
                       width={280}
                       height={240}
                       alt={slide.title}
-                      className="height-member"
+                      className="height-member w-full !h-[400] object-cover"
                     />
                     <div className="p-4 absolute bottom-0 bg-white/90 backdrop-filter backdrop-blur-[14px] bg-opacity-80 w-full gap-2 flex flex-col">
                       <h2 className="text-[#22252E] font-satoshi text-[24px] font-bold leading-[28px]">
@@ -150,7 +158,11 @@ export default function TeamSwiper() {
 
       {/* Bottom arrows and pagination (mobile only) */}
       <div className="pt-8 flex md:hidden relative -top-2 z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding items-center justify-around px-1 py-5">
-        <button className="focus:outline-none cursor-pointer" onClick={handlePrev}>
+        <button 
+          className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) === 0 ? 'opacity-30' : ''}`} 
+          onClick={handlePrev}
+          disabled={Math.ceil(activeIndex) === 0}
+        >
           <Image
             src="/assets/icons/arrow-right.svg"
             alt="Previous"
@@ -163,7 +175,11 @@ export default function TeamSwiper() {
           {Math.ceil(activeIndex) + 1}
           <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {slides.length}
         </div>
-        <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
+        <button 
+          className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) >= slides.length - 1 ? 'opacity-30' : ''}`} 
+          onClick={handleNext}
+          disabled={Math.ceil(activeIndex) >= slides.length - 1}
+        >
           <Image
             src="/assets/icons/arrow-right.svg"
             alt="Next"
