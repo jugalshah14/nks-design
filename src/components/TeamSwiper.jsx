@@ -158,7 +158,11 @@ export default function TeamSwiper() {
 
       {/* Bottom arrows and pagination (mobile only) */}
       <div className="pt-8 flex md:hidden relative -top-2 z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding items-center justify-around px-1 py-5">
-        <button className="focus:outline-none cursor-pointer" onClick={handlePrev}>
+        <button 
+          className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) === 0 ? 'opacity-30' : ''}`} 
+          onClick={handlePrev}
+          disabled={Math.ceil(activeIndex) === 0}
+        >
           <Image
             src="/assets/icons/arrow-right.svg"
             alt="Previous"
@@ -171,7 +175,11 @@ export default function TeamSwiper() {
           {Math.ceil(activeIndex) + 1}
           <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {slides.length}
         </div>
-        <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
+        <button 
+          className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) >= slides.length - 1 ? 'opacity-30' : ''}`} 
+          onClick={handleNext}
+          disabled={Math.ceil(activeIndex) >= slides.length - 1}
+        >
           <Image
             src="/assets/icons/arrow-right.svg"
             alt="Next"

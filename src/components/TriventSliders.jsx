@@ -163,9 +163,9 @@ export default function TriventSliders() {
     <div className="absolute w-full top-[-40px] h-[48px] flex md:hidden relative !z-11 transform bg-[#021642] items-center justify-around px-1 py-5">
         <div className="h-full flex items-center justify-center">
           <button
-            className="focus:outline-none  cursor-pointer"
+            className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) === 0 ? 'opacity-30' : ''}`}
             onClick={handlePrev}
-            disabled={isPrevDisabled}
+            disabled={Math.ceil(activeIndex) === 0}
           >
             <Image
                     src="/assets/icons/arrow-right.svg"
@@ -182,8 +182,9 @@ export default function TriventSliders() {
         </div>
         <div className="h-full flex items-center justify-center">
           <button
-            className="focus:outline-none cursor-pointer"
+            className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) >= data.length - 1 ? 'opacity-30' : ''}`}
             onClick={handleNext}
+            disabled={Math.ceil(activeIndex) >= data.length - 1}
           >
             <Image
                     src="/assets/icons/arrow-right.svg"
