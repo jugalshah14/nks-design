@@ -159,9 +159,9 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-md appearance-none pr-10 outline-none"
                   >
                     <option value="">My Choice*</option>
-                    <option value="2BHK">2 BHK (EMI starts from 26.3k*)</option>
-                    <option value="3BHK">3 BHK (EMI starts from 30.5k*)</option>
-                    <option value="4BHK">4 BHK (EMI starts from 55.8k*)</option>
+                    <option value="2BHK">2 BHK</option>
+                    <option value="3BHK">3 BHK</option>
+                    <option value="4BHK">4 BHK</option>
                   </select>
                   <div className="pointer-events-none absolute top-1/2 right-0 -translate-y-1/2 flex items-center px-2 text-gray-700">
                     <svg className="fill-current h-4 w-4" viewBox="0 0 20 20">

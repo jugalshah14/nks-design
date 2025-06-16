@@ -60,21 +60,23 @@ export default function LogoSection() {
         </FadeIn>
 
         {/* Mobile Slider */}
-        <div className="block md:hidden">
+        <div className="inline md:hidden">
           <Slider {...sliderSettings}>
             {logos.map((logo, i) => (
-              <div key={i} className="flex justify-center items-center px-4">
+              <div key={i} className="!flex justify-center items-center px-4">
                 <Image
                   src={logo.src}
                   width={logo.width}
                   height={logo.height}
                   alt="logo"
+                  className='!h-[60px]'
                 />
               </div>
             ))}
           </Slider>
         </div>
       </div>
+      
     </section>
   );
 }

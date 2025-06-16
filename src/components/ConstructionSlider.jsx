@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -8,17 +8,17 @@ import "slick-carousel/slick/slick-theme.css";
 const sliderData = [
   {
     month: "June 2023",
-    images: ["/assets/const2.png", "/assets/const1.jpg", "/assets/const1.jpg"],
+    images: ["/assets/c11.png", "/assets/c12.png", "/assets/c13.png"],
     description: "Everybody longs for a lifestyle that relishes their body.",
   },
   {
     month: "April 2023",
-    images: ["/assets/const2.png", "/assets/const1.jpg", "/assets/const1.jpg"],
+    images: ["/assets/c21.png", "/assets/c22.png", "/assets/c23.png"],
     description: "Everybody longs for a lifestyle that relishes their body.",
   },
   {
     month: "May 2023",
-    images: ["/assets/const1.jpg", "/assets/const2.png", "/assets/const1.jpg"],
+    images: ["/assets/c31.png", "/assets/c32.png", "/assets/c33.png"],
     description: "Everybody longs for a lifestyle that relishes their body.",
   },
 ];
@@ -52,16 +52,58 @@ const settings = {
 
 const ConstructionSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [imageIndexes, setImageIndexes] = useState(sliderData.map(() => 0));
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false);
+  const [isInView, setIsInView] = useState(false);
   let swiperRef = useRef(null);
+  let progressInterval = useRef(null);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            setIsAutoPlaying(true);
+          } else {
+            setIsInView(false);
+            setIsAutoPlaying(false);
+            if (progressInterval.current) {
+              clearTimeout(progressInterval.current);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the section is visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+      if (progressInterval.current) {
+        clearTimeout(progressInterval.current);
+      }
+    };
+  }, []);
 
   const handleNext = () => {
     if (!swiperRef) return;
+    setIsTransitioning(true);
     swiperRef.slickNext();
   };
 
   const handlePrev = () => {
     if (!swiperRef) return;
+    setIsTransitioning(true);
     swiperRef.slickPrev();
   };
 
@@ -71,22 +113,61 @@ const ConstructionSlider = () => {
     setImageIndexes(newIndexes);
   };
 
-  const handleSlideChange = (currentSlide) => {
-    const slidesToShow =
-      window.innerWidth >= 1024 ? 2.5 : window.innerWidth >= 768 ? 2.5 : 1;
-    const activeSlide = Math.round(currentSlide * slidesToShow);
-    setActiveIndex(activeSlide);
+  const startAutoSlide = () => {
+    if (progressInterval.current) {
+      clearTimeout(progressInterval.current);
+    }
+    progressInterval.current = setTimeout(() => {
+      if (activeIndex >= sliderData.length - 1) {
+        // If we're at the last slide, go back to first slide
+        swiperRef.slickGoTo(0);
+      } else {
+        handleNext();
+      }
+    }, 6000);
   };
 
+  useEffect(() => {
+    if (isAutoPlaying && isInView) {
+      startAutoSlide();
+    }
+    return () => {
+      if (progressInterval.current) {
+        clearTimeout(progressInterval.current);
+      }
+    };
+  }, [activeIndex, isAutoPlaying, isInView]);
+
+  // Mobile navigation logic
+  const mobileIndex = Math.ceil(activeIndex);
+  const isMobilePrevDisabled = mobileIndex === 0;
+  const isMobileNextDisabled = mobileIndex >= sliderData.length - 1;
+
   return (
-    <section className="bg-[#020C22] overflow-x-hidden relative select-none pointer-events-auto">
+    <section ref={sectionRef} className="bg-[#020C22] overflow-x-hidden relative select-none pointer-events-auto">
       <div className="md:px-8 px-4 pb-[40px] md:pb-0">
         <Slider
           ref={(slider) => {
             swiperRef = slider;
           }}
           {...settings}
-          beforeChange={(_, newIndex) => handleSlideChange(newIndex)}
+          afterChange={() => {
+            const slides = document.querySelectorAll(
+              ".construction-swiper .slick-slide"
+            );
+
+            for (let i = 0; i < slides.length; i++) {
+              if (slides[i].classList.contains("slick-current")) {
+                setActiveIndex(i);
+                break;
+              }
+            }
+            setIsTransitioning(false);
+            // Restart auto-sliding after any slide change
+            if (isAutoPlaying && isInView) {
+              startAutoSlide();
+            }
+          }}
         >
           {sliderData.map((slide, slideIdx) => {
             const index = imageIndexes[slideIdx];
@@ -104,7 +185,17 @@ const ConstructionSlider = () => {
                       slideIdx === activeIndex ? "bg-white" : ""
                     }`}
                   />
-                  <div className="h-px bg-white/20 w-[88%]" />
+                  <div className="h-px bg-white/20 w-[88%] relative overflow-hidden">
+                    <div 
+                      className={`absolute left-0 top-0 h-full bg-white transition-all duration-[6000ms] ease-linear ${
+                        slideIdx === activeIndex && isInView ? 'animate-timeline' : ''
+                      }`}
+                      style={{
+                        width: slideIdx === activeIndex && isInView ? '100%' : '0%',
+                        animation: slideIdx === activeIndex && isInView ? 'timeline 6s linear forwards' : 'none'
+                      }}
+                    />
+                  </div>
                 </div>
 
                 <div
@@ -159,17 +250,47 @@ const ConstructionSlider = () => {
           className={`w-[28px] h-[28px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
             activeIndex > 0 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
           }`}
-          onClick={activeIndex > 0 ? handlePrev : undefined}
+          onClick={() => {
+            handlePrev();
+          }}
         >
-          ‹
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 text-[#22252E] rotate-180"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
         </div>
         <div
           className={`w-[28px] h-[28px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
             activeIndex < sliderData.length - 1 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
           }`}
-          onClick={activeIndex < sliderData.length - 1 ? handleNext : undefined}
+          onClick={() => {
+            handleNext();
+          }}
         >
-          ›
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 text-[#22252E]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
         </div>
       </div>
 
@@ -178,8 +299,9 @@ const ConstructionSlider = () => {
         <div className="w-[100%] md:w-[360px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around px-1 py-5">
           <div className="h-full flex items-center justify-center">
             <button
-              className="focus:outline-none cursor-pointer"
+              className={`focus:outline-none cursor-pointer ${isMobilePrevDisabled ? 'opacity-30' : ''}`}
               onClick={handlePrev}
+              disabled={isMobilePrevDisabled}
             >
               <Image
                 src="/assets/icons/arrow-right.svg"
@@ -191,13 +313,14 @@ const ConstructionSlider = () => {
             </button>
           </div>
           <div className="flex gap-2 items-center text-[#D9D9D9]">
-            {activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" />{" "}
+            {mobileIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" />{" "}
             {sliderData.length}
           </div>
           <div className="h-full flex items-center justify-center">
             <button
-              className="focus:outline-none cursor-pointer"
+              className={`focus:outline-none cursor-pointer ${isMobileNextDisabled ? 'opacity-30' : ''}`}
               onClick={handleNext}
+              disabled={isMobileNextDisabled}
             >
               <Image
                 src="/assets/icons/arrow-right.svg"
@@ -210,6 +333,17 @@ const ConstructionSlider = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes timeline {
+          from {
+            width: 0%;
+          }
+          to {
+            width: 100%;
+          }
+        }
+      `}</style>
     </section>
   );
 };
