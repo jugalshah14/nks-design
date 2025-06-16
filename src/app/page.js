@@ -80,7 +80,7 @@ export default function Home() {
           layout="fill"
           priority
         />
-        <div className="md:hidden hero-section-bg absolute h-[100%] w-[100%] top-0 left-0" />
+        <div className="md:hidden hero-section-bg h-[100%] w-[100%] top-0 left-0" />
         <div className="absolute inset-0 flex flex-col justify-center">
           <div className="container mx-auto">
             <SlideUp delay={0.2}>
