@@ -201,15 +201,16 @@ const ConstructionSlider = () => {
                 <div
                   className={`ml-1 md:ml-2 px-[16px] md:px-[40px] w-full border-l border-dashed border-gray-300 ${
                     slideIdx === activeIndex
-                      ? "opacity-100 cursor-pointer"
+                      ? "opacity-100"
                       : "opacity-30"
                   }`}
                 >
-                  <div
+                  {/* <div
                     onClick={() =>
                       slideIdx === activeIndex && cycleImage(slideIdx)
                     }
-                  >
+                  > */}
+                    <div>
                     <h2 className="text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[48px] text-white mb-[24px]">
                       {slide.month}
                     </h2>

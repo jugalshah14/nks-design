@@ -114,7 +114,7 @@ export default function Location() {
                 <SlideUp delay={0.4} className="pt-[28px] md:pt-[80px] relative flex flex-col md:flex-row items-end">
                     <div className="w-full md:w-[60%] bg-white relative">
                         <Image src="/assets/icons/tri-blue.svg" width={65} height={65} alt="triangle" className='md:right-[-10px] z-[10] absolute right-0 top-0 w-[35px] h-[35px] md:w-[70] md:h-[70px]' />
-                        <Image src="/assets/trivant-header.png"  alt="trivant"  width={800} height={500} className=""/>
+                        <Image src="/assets/trivant-header.png"  alt="trivant"  width={800} height={500} className="w-full object-cover"/>
                     </div>
                     <SlideUp delay={0.6} className="w-full md:w-[40%] bg-[#020C22] p-[20px] md:p-[40px] md:absolute md:right-[40px]">
                         <h2 className="text-center md:text-left font-satoshi text-[22px] md:text-[40px] leading-[28px] md:leading-[48px] font-[400] text-white">Make everyday living effortless with our {""}
