@@ -68,7 +68,7 @@ const Blogs = () => {
               />
             </div>
             <div className="flex flex-col items-start text-left">
-                <p className="text-[14px] leading-[20px] font-semibold font-inter text-[#5C5C5C] pt-[32px] pb-[12px]">
+                <p className="text-[14px] leading-[20px] font-semibold font-inter text-[#4F70AF] pt-[32px] pb-[12px]">
                     {post.date}
                 </p>
                 <h3 className="text-[#22252E] text-[19px] md:text-[24px] font-[700] pb-[12px]">

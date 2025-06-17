@@ -14,7 +14,7 @@ export default function WhyAlcove() {
     <main>
 
         {/* Hero Section */}
-        <SlideUp className="bg-[#E7EDF2] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
+        <SlideUp className="bg-[#F3F6F8] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
             <SlideUp delay={0.4} className="text-sm px-4 pt-6 text-center text-gray-500 mb-2">
                 <span className="text-[#22252E] font-satoshi font-[700]">• Home</span>
                 <span className="mx-2">—</span>
