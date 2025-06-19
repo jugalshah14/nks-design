@@ -436,10 +436,11 @@ export default function Home() {
                     delay={0.4}
                     className="flex justify-center items-center"
                   >
-                    <h2 className="w-[85%] lg:w-[55%] project-overview-title !font-[300] text-center !text-white">
+                    <h2 className="w-[100%] lg:w-[100%] project-overview-title !font-[300] text-center !text-white">
                       The perfect sangam of{" "}
-                      <span className="orange-color">life</span> and{" "}
-                      <span className="orange-color">lifestyle</span>
+                      <span className="orange-color">life {' '}</span><br />
+                      and{" "}
+                      <span className="orange-color">lifestyle</span>.
                     </h2>
                   </SlideUp>
                 </div>

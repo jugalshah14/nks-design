@@ -16,7 +16,7 @@ const data = [
         title: 'Sangam Signature',
         towers: '1, 2, 3, 9, 10, 11',
         carpetArea: '887 - 1039 sq.ft.',
-        bhkTypes: '2 , 3',
+        bhkTypes: '2,3',
         price: '****',
     },
     {
@@ -24,7 +24,7 @@ const data = [
         title: 'Sangam Suites',
         towers: '4, 12',
         carpetArea: '1400 - 2085 sq. ft.',
-        bhkTypes: '3 , 4',
+        bhkTypes: '3,4',
         price: '****',
     },
     {
@@ -32,7 +32,7 @@ const data = [
         title: 'Sangam Serenity',
         towers: '5, 6, 7, 13, 14, 15, 16',
         carpetArea: '567 - 1039 sq. ft.',
-        bhkTypes: '1 , 2 , 3',
+        bhkTypes: '1,2,3',
         price: '****',
     }
 ];

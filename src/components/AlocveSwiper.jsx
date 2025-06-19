@@ -117,6 +117,7 @@ function FitnessSwiper() {
               {fitnessSlides.map((slide, index) => (
                 <SwiperSlide key={index}>
                   <div className="md:relative w-full h-[268px] md:h-[570px]">
+                    <Image src="/assets/triangle-blue.png" width={65} height={65} alt="triangle" className='absolute right-1 z-10' />
                     <Image
                       src={slide.src}
                       alt={slide.alt}
@@ -283,6 +284,8 @@ function NatureSwiper() {
               {natureSlides.map((slide, index) => (
                 <SwiperSlide key={index}>
                   <div className="md:relative w-full h-[268px] md:h-[570px]">
+                    <Image src="/assets/triangle-blue.png" width={65} height={65} alt="triangle" className='hidden md:block absolute left-0 -top-1 -rotate-90 z-10' />
+                    <Image src="/assets/white-tri.png" width={65} height={65} alt="triangle" className='md:hidden absolute left-0 z-10' />
                     <Image
                       src={slide.src}
                       alt={slide.alt}
@@ -448,6 +451,8 @@ function CricketSwiper() {
               {cricketSlides.map((slide, index) => (
                 <SwiperSlide key={index}>
                   <div className="md:relative w-full h-[268px] md:h-[570px]">
+                    <Image src="/assets/triangle-blue.png" width={65} height={65} alt="triangle" className='hidden md:block absolute right-0 z-10' />
+                    <Image src="/assets/white-tri.png" width={65} height={65} alt="triangle" className='md:hidden absolute right-0 -top-1 rotate-90 z-10' />
                     <Image
                       src={slide.src}
                       alt={slide.alt}
