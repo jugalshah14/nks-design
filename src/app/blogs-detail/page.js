@@ -124,7 +124,7 @@ export default function BlogsDetail() {
                 {/* Author Info */}
                 <div className="flex items-center w-full justify-between mb-4 md:mb-6">
                   <span className="block text-xs text-gray-500">Author</span>
-                  <span className="text-xs text-gray-500 mr-2">Share on</span>
+                  <span className="text-xs text-gray-500 w-[75px]">Share on</span>
                 </div>
                 <div className="flex items-center w-full justify-between">
                   <div className="flex items-center gap-3">
@@ -224,7 +224,7 @@ export default function BlogsDetail() {
           </div>
 
           {/* Sidebar */}
-          <aside className="flex flex-col gap-8 md:gap-[57px] mt-8 md:mt-[70px]">
+          <aside className="flex sticky flex-col gap-8 md:gap-[57px] mt-8 md:mt-[70px]">
             {/* Author Card */}
             <SlideUp delay={0.4}>
               <div className="flex flex-col items-start">
