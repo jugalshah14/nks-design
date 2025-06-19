@@ -47,8 +47,9 @@ export default function ReviewsOne() {
 
   return (
     <div>
-        {/* Section 1 for 2BHK */}
+        {/* Section 1 for 3BHK */}
         <div>
+            
             {/* review 1 */}
             <div className='relative'>
                 <div className='z-[-1] bg-[#F3F6F8] w-[100%] md:w-[53%] h-[360px] md:h-[248px] absolute bottom-[70px] md:bottom-0 left-0'></div>
@@ -59,24 +60,41 @@ export default function ReviewsOne() {
                     <SlideUp delay={0.6}>
                         <div className='flex flex-col md:flex-row px-[30px] pb-[100px]'>
                             <div className='flex flex-col md:flex-row w-full justify-between'>
-                                <div className='relative flex flex-col pl-0 md:pl-[50px] p-[20px] md:p-[50px] gap-[10px] md:gap-[32px] !pb-0'>
+                                <div className='relative flex flex-col pl-0 md:pl-[50px] pt-[20px] md:pt-[50px] p-[0px] md:p-[50px] gap-[10px] md:gap-[32px] !pb-0'>
                                     <Image src="/assets/linee.svg" alt="line" width={140} height={3} className="absolute top-0 left-0"/>
                                     <div>
                                         <h1 className='text-left text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi font-[700]'>Siddharth Das</h1>
                                         <p className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>Owner of flat in Serenity</p>
                                     </div>
-                                    <div>
+                                    <div className='hide-triangle'>
                                         <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>BHK Type</h1>
                                         <p className='text-left text-[18px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>3BHK</p>
                                     </div>
-                                    <div>
+                                    <div className='hide-triangle'>
                                         <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>No of Family Members</h1>
                                         <p className='text-left text-[18px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>5</p>
                                     </div>
-                                    <div>
+                                    <div className='hide-triangle'>
                                         <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>Unit area</h1>
                                         <p className='text-left text-[18px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>56 m2  - 76 m2</p>
                                     </div>
+
+                                    {/* mobile section  */}
+                                    <div className='flex flex-row none-md justify-between'>
+                                        <div className='w-full'>
+                                            <p className='text-left text-[14px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>5</p>
+                                            <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>No of Family Members</h1>
+                                        </div>
+                                        <div className='w-full'>                                            
+                                            <p className='text-left text-[14px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>3BHK</p>
+                                            <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>BHK Type</h1>
+                                        </div>
+                                        <div className='w-full'>
+                                            <p className='text-left text-[14px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>56 m2  - 76 m2</p>
+                                            <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>Unit area</h1>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <Image src="/assets/rev1.png" alt="people" width={321} height={357} className="object-cover object-[40%_50%] my-[30px] md:my-0"/>
                                 
@@ -104,23 +122,39 @@ export default function ReviewsOne() {
                             </div>
                             <div className='md:pl-[64px] flex flex-col-reverse md:flex-row w-full justify-between'>
                                 <Image src="/assets/Neha.png" alt="people" width={321} height={357} className="object-cover object-[60%_50%] my-[30px] md:my-0"/>
-                                <div className='relative flex flex-col pl-0 md:pl-[50px] p-[20px] md:p-[50px] gap-[10px] md:gap-[32px] !pb-0'>
+                                <div className='relative flex flex-col pl-0 md:pl-[50px] p-[0px] pt-[20px] md:pt-[50px] md:p-[50px] gap-[10px] md:gap-[32px] !pb-0'>
                                     <Image src="/assets/linee.svg" alt="line" width={140} height={3} className="absolute top-0 left-0"/>
                                     <div>
                                         <h1 className='text-left text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi font-[700]'>Neha Mohapatra</h1>
                                         <p className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>Owner of flat in Serenity</p>
                                     </div>
-                                    <div>
+                                    <div className='hide-triangle'>
                                         <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>BHK Type</h1>
                                         <p className='text-left text-[18px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>3BHK</p>
                                     </div>
-                                    <div>
+                                    <div className='hide-triangle'>
                                         <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>No of Family Members</h1>
                                         <p className='text-left text-[18px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>5</p>
                                     </div>
-                                    <div>
+                                    <div className='hide-triangle'>
                                         <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>Unit area</h1>
                                         <p className='text-left text-[18px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>56 m2  - 76 m2</p>
+                                    </div>
+
+                                    {/* mobile section  */}
+                                    <div className='flex flex-row none-md justify-between'>
+                                        <div className='w-full'>
+                                            <p className='text-left text-[14px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>5</p>
+                                            <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>No of Family Members</h1>
+                                        </div>
+                                        <div className='w-full'>                                            
+                                            <p className='text-left text-[14px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>3BHK</p>
+                                            <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>BHK Type</h1>
+                                        </div>
+                                        <div className='w-full'>
+                                            <p className='text-left text-[14px] md:text-[24px] leading-[28px] font-satoshi font-[400]'>56 m2  - 76 m2</p>
+                                            <h1 className='text-black/50 text-left text-[14px] md:text-[16px] leading-[20px] font-satoshi font-[400]'>Unit area</h1>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -172,7 +206,7 @@ export default function ReviewsOne() {
                 </div>
             </SlideUp>
         </div>
-        {/* Section 2 end */}
+        {/* Section 1 end */}
         
     </div>
   );
