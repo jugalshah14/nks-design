@@ -93,7 +93,7 @@ export default function lifeAtAlcove() {
 
         <AnimatedSection>
           {/* Desktop Grid View (unchanged) */}
-          <div className="hidden md:grid mt-12 h-[466px] grid-cols-4 gap-4 md:px-19">
+          <div className="!w-full hidden md:grid mt-12 h-[466px] grid-cols-4 gap-4 md:px-19">
             {/* Image 1 */}
             <div className="relative overflow-hidden">
               <Image src="/assets/gellary1.png" alt="Event 1" fill className="object-cover" />

@@ -33,7 +33,7 @@ export default function lifeAtAlcove() {
 
       {/* Navigation buttons */}
       <AnimatedSection delay={0.8}>
-        <nav className="mb-10 mt-30 relative w-full mt-9 flex justify-between md:justify-center items-center border-t border-b border-[#22252e19] py-4 md:py-6 px-7 md:px-0">
+        <nav className="mb-10 md:mt-30 relative w-full mt-10 flex justify-between md:justify-center items-center border-t border-b border-[#22252e19] py-4 md:py-6 px-7 md:px-0">
           {navTabs.map((tab, idx) => (
             <React.Fragment key={tab}>
               <button
@@ -239,7 +239,7 @@ export default function lifeAtAlcove() {
         id="residential"
         className="relative w-full pt-10 pb-10 md:pt-20 md:pb-0 bg-[#F3F6F8]"
       >
-        <div className="text-center mb-12">
+        <div className="text-center md:mb-12 mb-6">
           <SlideUp delay={0.8}>
             <h2 className="text-[56px] leading-[72px] font-normal font-cormorant text-black">
               Residential
@@ -372,7 +372,7 @@ export default function lifeAtAlcove() {
       {/* Construction Section */}
       <section
         id="construction"
-        className="relative w-full md:mt-20 py-20 bg-white"
+        className="relative w-full md:mt-20 md:py-20 pt-10 bg-white"
       >
         <div className="text-center mb-12">
           <SlideUp delay={0.8}>
@@ -381,7 +381,7 @@ export default function lifeAtAlcove() {
             </h2>
           </SlideUp>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-10 px-7 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto md:mb-10 px-7 md:px-0">
           {/* Card 1 */}
           <SlideUp delay={0.7}>
             <div className="flex flex-col">
@@ -477,7 +477,7 @@ export default function lifeAtAlcove() {
           </SlideUp>
         </div>
         <AnimatedSection className="overflow-visible">
-          <div className="relative group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
+          <div className="relative group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:mt-20 md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
                 src="/assets/neighbour.png"
