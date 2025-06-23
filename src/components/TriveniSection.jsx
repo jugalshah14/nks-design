@@ -7,7 +7,7 @@ const amenities = [
     {
         number: "1",
         title: "Established Residential Hub",
-        description: "An integral part of two landmark projects—New Kolkata Prayag and Sangam—offering a ready audience and sustained commercial growth.",
+        description: "An integral part of two landmark projects—New Kolkata Prayag and Sangam—offering a ready audience and sustained commercial growth.",
         image: "/assets/t1.png", 
     },
     {
@@ -38,10 +38,10 @@ export default function TriveniSection() {
                 {amenities.map((item, index) => (
                     <div
                         key={item.number}
-                        className={`relative ${index % 2 !== 0 ? 'md:top-14' : ''} space-y-4 md:space-y-5 md:px-4`}
+                        className={`relative ${index % 2 !== 0 ? 'top-10 md:top-14' : ''} space-y-4 md:space-y-5 md:px-4`}
                     >
                         <div className='absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300'></div>
-                        <div className="md:text-[30px] md:leading-[28px] max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">{item.number}</div>
+                        <div className="md:text-[30px] md:leading-[28px] max-md:text-center text-[20px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">{item.number}</div>
                      <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi leading-[24px] h-[40px] md:h-auto flex items-center">
                     {item.title}
                     </h3>

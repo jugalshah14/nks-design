@@ -59,14 +59,14 @@ export default function triveni() {
         </section>
 
         {/* Triveni Omniplex */}
-        <section className="relative w-full h-[800px] bg-cover bg-center" style={{ backgroundImage: "url('/assets/omniplex.jpg')" }}>
+        <section className="relative w-full h-[274px] md:h-[800px] bg-cover bg-center" style={{ backgroundImage: "url('/assets/omniplex.jpg')" }}>
             <div
                 className="absolute inset-0"
                 style={{
                 background: `linear-gradient(to bottom, #B99680 0%, transparent 40%, #22252E 100%)`,
                 }}
             ></div>
-            <div className="absolute bottom-0 w-full text-center">
+            <div className="absolute bottom-0 w-full text-center hide-triangle">
                 <SlideUp delay={0.4}>
                     <h2 className="pb-[92px] !text-white text-[100px] leading-[120px] font-[400] !text-center font-cormorant">
                       <span className="orange-color">Triveni </span>Omniplex 
@@ -77,14 +77,19 @@ export default function triveni() {
         <Element name="section-Ganga">
           {/* Ganga Video */}
           <div className="">
-            <div className="hidden md:block relative p-5 overflow-hidden">
+            <div className="relative p-5 overflow-hidden">
               <GangaWaves />
               <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
-              <div className="relative container  mx-auto py-15">
-                  <div className="p-2">
-                    <SlideUp delay={0.2} className='text-white text-[20px] leading-[28px] font-[400] font-satoshi pb-[16px]'>Your gateway to exponential growth</SlideUp>
+              <div className="relative container  mx-auto py-[50px] md:py-15">
+                  <div className="md:p-2">
+                    <SlideUp delay={0.4} className='none-md w-full flex flex-row justify-center items-center'>
+                      <h2 className="pb-[20px] text-center !text-white text-[36px] leading-[44px] font-[400] !text-center font-cormorant">
+                        <span className="orange-color">Triveni </span>Omniplex 
+                      </h2>
+                    </SlideUp>
+                    <SlideUp delay={0.2} className='text-center md:text-left text-white text-[16px] md:text-[20px] leading-[20px] md:leading-[28px] font-[400] font-satoshi pb-[20px] md:pb-[16px]'>Your gateway to exponential growth</SlideUp>
                     <SlideUp delay={0.4}>
-                      <p className="max-w-[1200px] w-full transforming-text font-[300] text-[56px] leading-[72px] lg:text-[40px] lg:leading-[48px]">
+                      <p className="text-center md:text-left max-w-[1200px] w-full transforming-text font-[300] text-[24px] md:text-[56px] leading-[28px] md:leading-[72px] lg:text-[40px] lg:leading-[48px]">
                         {`Triveni Omniplex offers a complete destination for shopping, dining, entertainment, and healthcare, presenting brands with a prime opportunity to grow in a rapidly developing region.`}
                       </p>
                     </SlideUp>
@@ -106,21 +111,21 @@ export default function triveni() {
         {/* Map */}
         <section className="bg-white">
             <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-[80px] pb-[40px]">
-                <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 md:px-8 lg:px-24">
                     <div className="max-md:col-span-2">
                         <SlideUp delay={0.4} className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
                             Location <span className="orange-color">Overview</span>
                         </SlideUp>
                     </div>
-                    <div className="hidden md:flex items-end">
-                        <SlideUp delay={0.6} className="text-[20px] text-[#22252E]/60 font-[400]">
+                    <div className="flex items-end">
+                        <SlideUp delay={0.6} className="pt-[28px] md:pt-0 text-[18px] md:text-[20px] text-[#22252E]/60 font-[400] px-[16px] md:px-0 text-center md:text-left">
                             Strategically located on G.T. Road, Mahesh, Serampore Triveni Omniplex serves as a key commercial hub between Kolkata and Hooghly, offering seamless connectivity, a 45-minute airport drive, and access to over 4,650 ready customers.                       
                         </SlideUp>
                     </div>
                 </div>
             </div>
               
-            <FadeIn delay={0.6} className="relative w-full h-[auto] aspect-[2/1]">
+            <FadeIn delay={0.6} className="relative w-full h-[400px] md:h-[auto] aspect-[2/1]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.7621588861452!2d88.35402567513168!3d22.737079979374972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89b1d8d11144b%3A0x436932be30b5b9c2!2sNew%20Kolkata%20Sangam!5e0!3m2!1sen!2sin!4v1749182902387!5m2!1sen!2sin"
                   width="100%"
@@ -213,7 +218,7 @@ export default function triveni() {
         </section>
 
         {/* Retail Mix */}
-        <section className='p-[60px] relative bg-[#E7EDF2] w-full'>
+        <section className='p-[5px] md:p-[60px] relative bg-[#E7EDF2] w-full'>
             <div className="bg-white pb-12">
                 <div className="flex justify-center">
                 <SlideUp delay={0.2} className=" hidden md:block absolute md:top-7">
@@ -249,9 +254,9 @@ export default function triveni() {
 
         {/* Discover Business */}
         <AnimatedSection>
-        <section className="relative w-full h-[524px] md:flex md:overflow-hidden md:my-0 my-12 rounded-none shadow-lg bg-[#010922]  justify-end items-end">
+        <section className="relative w-full h-[524px] md:flex md:overflow-hidden md:mb-0 mb-15 rounded-none shadow-lg bg-[#010922]  justify-end items-end">
           {/* Text container */}
-          <div className=" flex py-6 md:py-[74px] px-4 md:px-0 absolute md:container md:w-[90%] w-full justify-center md:justify-start mx-auto z-1 md:top-1/2 top-2 md:-translate-y-1/2 left-1/2 -translate-x-1/2">
+          <div className=" flex py-[59px] md:py-6 md:py-[74px] px-4 md:px-0 absolute md:container md:w-[90%] w-full justify-center md:justify-start mx-auto z-1 md:top-1/2 top-2 md:-translate-y-1/2 left-1/2 -translate-x-1/2">
             <h2
               className="!max-w-[586px] font-cormorant font-light text-white leading-[44px] md:leading-[72px] text-center md:text-left
                 text-[36px] md:text-[56px]"
@@ -290,7 +295,7 @@ export default function triveni() {
       </AnimatedSection>
 
       {/* Commercial Mix */}
-        <section className='p-[60px] relative w-full'>
+        <section className='p-[16px] md:p-[60px] relative w-full'>
             <div className="bg-white pb-12">
                 <div className="flex justify-center">
                 <SlideUp delay={0.2} className=" hidden md:block absolute md:top-7">
@@ -326,7 +331,7 @@ export default function triveni() {
 
         {/* crafted growth */}
               <AnimatedSection>
-                <section className="relative w-full h-full flex flex-col-reverse md:flex-row overflow-hidden shadow-lg bg-white pb-15 md:pb-0 rounded-none">
+                <section className="relative w-full h-full flex flex-col-reverse md:flex-row overflow-hidden shadow-lg bg-white rounded-none">
                   {/* Image (bottom on mobile, left on desktop) */}
                   <div className="w-full md:w-1/2 h-[300px] md:h-[524px] relative">
                     <Image
@@ -341,7 +346,7 @@ export default function triveni() {
         
                   {/* Text Content (top on mobile, right on desktop) */}
                   <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center py-10 px-4 md:px-6 md:py-[74px] md:pr-[100px] bg-[#0a1628] text-center md:text-left">
-                    <h2 className="text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px] mb-6 md:mb-7">
+                    <h2 className="text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px] mb-0 md:mb-7">
                       <span className="text-[#DE804B]">Crafted  </span>for brands that demand {""}
                       <span className="text-[#DE804B]">visibility</span>,
                       <span className="text-[#DE804B]"> scale</span>, and  
@@ -352,7 +357,10 @@ export default function triveni() {
               </AnimatedSection>
 
         {/* Slider */}
-        <section className='py-[80px]'>
+        <section className='relative py-[0px] md:py-[80px]'>
+          <div className='w-full none-md'>
+                <h1 className="pb-[28px] project-overview-title !text-center pt-[60px] px-[16px]">Why bring your business to <span className="orange-color"> Triveni Omniplex</span></h1>
+            </div>
             <OmniplexSlider/>
         </section>
 
@@ -397,7 +405,7 @@ export default function triveni() {
 
         {/* New Kolkata Trivent */}
         {/* Trivent */}
-              <section className="bg-[#020C22]  mb-[100px] md:mb-[0px] md:pb-[80px]">
+              <section className="bg-[#020C22]  mb-[30px] md:mb-[0px] md:pb-[80px]">
                     <div className="container mx-auto text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
                       <SlideUp
                         delay={0.4}
