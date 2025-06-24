@@ -29,35 +29,35 @@ const seramporeData = [
     icon: "/assets/icons/graduation-hat.svg",
     title: "Serampore College",
     description: "1.85km away",
-    backgroundImage: "/assets/SRP-College.png"
+    backgroundImage: "/assets/SRP-College.png",
   },
   {
     src: "/assets/hospital.png",
     icon: "/assets/icons/hospital-building.svg",
     title: "Serampore Hospital",
     description: "3.1km away",
-    backgroundImage: "/assets/hospital-bg.png"
+    backgroundImage: "/assets/hospital-bg.png",
   },
   {
     src: "/assets/railwaystation.png",
     icon: "/assets/icons/railway.svg",
     title: "Serampore Railway Station",
     description: "2.5km away",
-    backgroundImage: "/assets/railway-bg.png"
+    backgroundImage: "/assets/railway-bg.png",
   },
   {
     src: "/assets/court.png",
     icon: "/assets/icons/court.svg",
     title: "Serampore Court",
     description: "2km away",
-    backgroundImage: "/assets/court-bg.png"
+    backgroundImage: "/assets/court-bg.png",
   },
   {
     src: "/assets/temple.png",
     icon: "/assets/icons/temple.svg",
     title: "Mahesh Temple",
     description: "350mtr away",
-    backgroundImage: "/assets/mahesh-temple.png"
+    backgroundImage: "/assets/mahesh-temple.png",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="Hero_Section" className="relative h-screen">
         <Image
-          className="max-md:hidden inset-0 w-full h-full object-cover"
+          className="max-md:hidden inset-0 object-[50%_25%] w-full h-full object-cover"
           src="/assets/Riverview.png"
           alt="Riverside Luxury Residences"
           layout="fill"
@@ -372,7 +372,7 @@ export default function Home() {
             <div className="container mx-auto !w-[100%] relative md:mb-16">
               <div className="hidden md:flex flex-col justify-center items-center pb-5">
                 <SlideUp delay={0.4}>
-                  <h2 className="w-full text-center text-black text-[56px] font-cormorant leading-[72px] font-[300]">
+                  <h2 className="w-full mt-10 text-center text-black text-[56px] font-cormorant leading-[72px] font-[300]">
                     Elevate to{" "}
                     <span className="orange-color">Award winning</span>
                     <br />
@@ -438,9 +438,9 @@ export default function Home() {
                   >
                     <h2 className="w-[100%] lg:w-[100%] project-overview-title !font-[300] text-center !text-white">
                       The perfect sangam of{" "}
-                      <span className="orange-color">life {' '}</span><br />
-                      and{" "}
-                      <span className="orange-color">lifestyle</span>.
+                      <span className="orange-color">life </span>
+                      <br />
+                      and <span className="orange-color">lifestyle</span>.
                     </h2>
                   </SlideUp>
                 </div>
@@ -469,37 +469,10 @@ export default function Home() {
                     </h2>
                   </SlideUp>
                 </div>
-                <AnimatedSection className="block md:hidden">
+                {/* <AnimatedSection className="block md:hidden">
                   <PlanTypesSwiper />
                 </AnimatedSection>
                 <div className="hidden md:grid grid-cols-3 gap-4 mt-12">
-                  {/* <SlideUp delay={0.4} className="bg-[#fdf6f2] p-5">
-                    <Image
-                      src="/assets/icons/1bhk.svg"
-                      alt="1BHK"
-                      width={36}
-                      height={36}
-                      className="mb-12"
-                    />
-                    <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
-                      1BHK
-                    </h3>
-                    <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
-                      314 - 645 sq. ft.
-                    </p>
-                    <a
-                      href="#"
-                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78]"
-                    >
-                      View
-                      <Image
-                        src="/assets/icons/arrowlong.svg"
-                        alt="1BHK"
-                        width={40}
-                        height={3}
-                      />
-                    </a>
-                  </SlideUp> */}
                   <SlideUp delay={0.6} className="bg-[#fdf6f2] p-5">
                     <Image
                       src="/assets/icons/2bhk.svg"
@@ -581,7 +554,7 @@ export default function Home() {
                       />
                     </a>
                   </SlideUp>
-                </div>
+                </div> */}
               </div>
               <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mt-20">
                 <div className="">
@@ -657,7 +630,9 @@ export default function Home() {
                   <div className="col-span-2 p-2">
                     <SlideUp delay={0.4}>
                       <p className="w-[80%] transforming-text font-[300] text-[56px] leading-[72px] lg:text-[40px] lg:leading-[48px]">
-                        {`Feel the divine aura of Banaras — now in Serampore!`}
+                        {`Feel the divine aura of Banaras — now in Serampore!
+                        Own a Home Where You’re Blessed by Ganga Aarti, Every Single Day
+                        We’re proud to be India’s only riverside township where the sacred Ganga Aarti happens daily`}
                       </p>
                     </SlideUp>
                   </div>
