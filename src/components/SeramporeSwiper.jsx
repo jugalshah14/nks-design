@@ -101,7 +101,7 @@ export default function SeramporeSwiper({ data }) {
                 width={160}
                 className="relative !h-[100px] !w-[100px] md:!h-[180px] md:!w-[180px] z-1" />
               <div
-                className={`w-fit relative flex flex-col md:p-7 md:pb-0 p-2 pl-3 pt-10 md:pt-12 pr-20 md:pr-15 `}
+                className={`w-fit relative flex flex-col md:p-7 md:pb-0 p-2 pl-3 pt-10 md:pt-12 pr-20 md:pr-10 `}
               >
                 <div className="location-slide bg-[#F8F8F8] top-6 -left-[70px] min-w-[120%] md:min-w-full sm:w-[120%] h-[100%] absolute back-active" />
                 <Image
