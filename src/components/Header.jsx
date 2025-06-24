@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { href: "/amenities", label: "Amenities" },
   { href: "/location", label: "Location" },
   { href: "/life-@-alcove", label: "Life @Alcove" },
+  { href:"/triveni" ,label:"Triveni Omniplex"},
   { href: "/blogs", label: "Blogs" },
   { href: "/", label: "Schedule Visit" },
 ];
@@ -92,6 +93,12 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-6 md:justify-end">
+            <Link
+              href="/triveni"
+              className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Triveni Omniplex
+            </Link>
             <Link
               href="/blogs"
               className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
@@ -203,6 +210,11 @@ const Header = () => {
                 className="text-gray-800 hover:text-blue-500"
               >
                 Life @Alcove
+              </Link>
+            </li>
+            <li>
+              <Link href="/triveni" className="text-gray-800 hover:text-blue-500">
+                Triveni Omniplex
               </Link>
             </li>
             <li>
