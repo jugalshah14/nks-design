@@ -171,16 +171,16 @@ export default function OmniplexSlider() {
           disabled={Math.ceil(activeIndex) === 0}
         >
           <Image
-            src="/assets/icons/arrow-right.svg"
+            src="/assets/arrow.svg"
             alt="Previous"
             height={20}
             width={19}
             className="transform rotate-180"
           />
         </button>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center font-[700]">
           {Math.ceil(activeIndex) + 1}
-          <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {slides.length}
+          <div className="h-0.5 w-8 bg-[#D9D9D9]" /> <div className="text-black/30">{slides.length}</div>
         </div>
         <button 
           className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) >= slides.length - 1 ? 'opacity-30' : ''}`} 
@@ -188,7 +188,7 @@ export default function OmniplexSlider() {
           disabled={Math.ceil(activeIndex) >= slides.length - 1}
         >
           <Image
-            src="/assets/icons/arrow-right.svg"
+            src="/assets/arrow.svg"
             alt="Next"
             height={20}
             width={19}
