@@ -28,7 +28,7 @@ export default function triveni() {
             </SlideUp>
         </SlideUp>
 
-        <section className='-mt-16 no-negative-margin pb-[40px] md:pb-[0px]'>
+        <section className='-mt-16 no-negative-margin pb-[40px] md:pb-[80px]'>
             <SlideUp delay={0.8} className="container mx-auto">
             <div className="relative w-full md:h-[460px] h-[265px] hide-triangle">
                 <Image
@@ -68,7 +68,7 @@ export default function triveni() {
             ></div>
             <div className="absolute bottom-0 w-full text-center hide-triangle">
                 <SlideUp delay={0.4}>
-                    <h2 className="pb-[92px] !text-white text-[100px] leading-[120px] font-[400] !text-center font-cormorant">
+                    <h2 className="pb-[80px] !text-white text-[100px] leading-[120px] font-[400] !text-center font-cormorant">
                       <span className="orange-color">Triveni </span>Omniplex 
                     </h2>
                   </SlideUp>
@@ -103,7 +103,7 @@ export default function triveni() {
         {/* why triveni */}
         <section className='relative'>
             <div className="text-center w-full pt-[40px] md:pt-[80px]">
-                <SlideUp delay={0.4} className="project-overview-title text-center md:pb-[28px] md:pb-[0px]">Why  <span className="orange-color">Triveni </span></SlideUp>
+                <SlideUp delay={0.4} className="project-overview-title text-center">Why  <span className="orange-color">Triveni </span></SlideUp>
             </div>
             <TriveniSection/>
         </section>
@@ -219,7 +219,7 @@ export default function triveni() {
 
         {/* Retail Mix */}
         <section className='p-[5px] md:p-[60px] relative bg-[#E7EDF2] w-full'>
-            <div className="bg-white pb-12">
+            <div className="bg-white pb-16 md:pb-12">
                 <div className="flex justify-center">
                 <SlideUp delay={0.2} className=" hidden md:block absolute md:top-7">
                           <Image
@@ -242,7 +242,7 @@ export default function triveni() {
                 </div>
             </div>
             <SlideUp delay={0.4}>
-                <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3 mt-12">
+                <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3 pt-10">
                     Retail Mix
                 </h1>
             </SlideUp>
@@ -254,7 +254,7 @@ export default function triveni() {
 
         {/* Discover Business */}
         <AnimatedSection>
-        <section className="relative w-full h-[524px] md:flex md:overflow-hidden md:mb-0 mb-15 rounded-none shadow-lg bg-[#010922]  justify-end items-end">
+        <section className="relative w-full h-[396px] md:flex md:overflow-hidden md:mb-0 mb-15 rounded-none shadow-lg bg-[#010922]  justify-end items-end">
           {/* Text container */}
           <div className=" flex py-[59px] md:py-6 md:py-[74px] px-4 md:px-0 absolute md:container md:w-[90%] w-full justify-center md:justify-start mx-auto z-1 md:top-1/2 top-2 md:-translate-y-1/2 left-1/2 -translate-x-1/2">
             <h2
@@ -295,12 +295,12 @@ export default function triveni() {
       </AnimatedSection>
 
       {/* Commercial Mix */}
-        <section className='p-[16px] md:p-[60px] relative w-full'>
-            <div className="bg-white pb-12">
-                <div className="flex justify-center">
-                <SlideUp delay={0.2} className=" hidden md:block absolute md:top-7">
+        <section className='p-[16px] md:pt-[60px] relative w-full'>
+            <div className="bg-white pb-12 md:pb-0">
+                <div className="flex justify-center mb-0">
+                <SlideUp delay={0.2} className=" hidden md:block">
                           <Image
-                            src="/assets/poduimLogo.png"
+                            src="/assets/com-logo.svg"
                             alt=""
                             width={100}
                             height={100}
@@ -319,7 +319,7 @@ export default function triveni() {
                 </div>
             </div>
             <SlideUp delay={0.4}>
-                <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3 mt-12">
+                <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-5 my-3 mt-12">
                     Commercial Mix
                 </h1>
             </SlideUp>
@@ -333,7 +333,7 @@ export default function triveni() {
               <AnimatedSection>
                 <section className="relative w-full h-full flex flex-col-reverse md:flex-row overflow-hidden shadow-lg bg-white rounded-none">
                   {/* Image (bottom on mobile, left on desktop) */}
-                  <div className="w-full md:w-1/2 h-[300px] md:h-[524px] relative">
+                  <div className="w-full md:w-1/2 h-[300px] md:h-[396px] relative">
                     <Image
                       src="/assets/commercial.jpg"
                       alt="Ferry Ride"
@@ -345,7 +345,7 @@ export default function triveni() {
                   </div>
         
                   {/* Text Content (top on mobile, right on desktop) */}
-                  <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center py-10 px-4 md:px-6 md:py-[74px] md:pr-[100px] bg-[#0a1628] text-center md:text-left">
+                  <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center py-[60px] px-4 md:px-6 md:py-[74px] md:pr-[100px] bg-[#0a1628] text-center md:text-left">
                     <h2 className="text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px] mb-0 md:mb-7">
                       <span className="text-[#DE804B]">Crafted  </span>for brands that demand {""}
                       <span className="text-[#DE804B]">visibility</span>,
@@ -366,7 +366,7 @@ export default function triveni() {
 
         {/* Demographics & Catchment Area */}
         <section>
-            <div className='container mx-auto pb-[30px] md:pb-[70px] z-[1] relative px-[16px] md:px-[0px]'>
+            <div className='container mx-auto pb-[60px] md:pb-[70px] z-[1] relative px-[16px] md:px-[0px]'>
                         {/* mission */}
                        <div className='flex flex-col justify-center items-center  pt-[60px] pb-[28px] none-md'>
                             <SlideUp delay={0.4} className="page-hero-title !text-[36px] !leading-[44px] text-center md:text-left">Demographics & <span className="orange-color">Catchment Area</span></SlideUp>
@@ -405,8 +405,8 @@ export default function triveni() {
 
         {/* New Kolkata Trivent */}
         {/* Trivent */}
-              <section className="bg-[#020C22]  mb-[30px] md:mb-[0px] md:pb-[80px]">
-                    <div className="container mx-auto text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
+              <section className="bg-[#020C22]  mb-[30px] md:mb-[0px] md:pb-[0px]">
+                    <div className="container mx-auto text-center w-full pb-12 pt-[60px] md:pt-[80px] pb-[20px] md:pb-[52px]">
                       <SlideUp
                         delay={0.4}
                         className="text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[100px] font-[400] md:leading-[120px] px-4"

@@ -33,7 +33,7 @@ const amenities = [
 
 export default function TriveniSection() {
     return (
-        <SlideUp delay={0.6} className="relative text-white py-12 container mx-auto">
+        <SlideUp delay={0.6} className="relative text-white space-triveni md:py-12 container mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-3 md:mb-20 px-4 md:px-0">
                 {amenities.map((item, index) => (
                     <div
