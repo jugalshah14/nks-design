@@ -48,7 +48,7 @@ const data = [
 
 const settings = {
     className: "amenities-swiper !overflow-visible center",
-    infinite: true,
+    infinite: false,
     centerPadding: "30px",
     slidesToShow: 4,
     speed: 600,
@@ -73,7 +73,7 @@ const settings = {
         {
             breakpoint: 425,
             settings: {
-                centerMode: true,
+                centerMode: false,
                 slidesToShow: 1,
             }
         },
@@ -93,6 +93,10 @@ export default function AmenitiesSwiper() {
         swiperRef.slickPrev();
     }
 
+    // Desktop navigation logic
+    const isPrevDisabled = activeIndex === 0;
+    const isNextDisabled = activeIndex >= data.length - settings.slidesToShow;
+
     return (
         <div className='relative max-md:-top-15 overflow-hidden'>
             <div className="container mx-auto relative md:mb-16">
@@ -101,15 +105,27 @@ export default function AmenitiesSwiper() {
                         <h2 className="text-left project-overview-title text-[48px]">
                             <span className="font-[700] text-[112px] ">65+</span> World-class Amenities
                         </h2>
-                        <div className="relative right-[-90px] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding rounded-md flex items-center justify-around mt-9 px-1 py-5">
+                        <div className="relative max-w-[190px] border border-[rgba(0,0,0,0.2)] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
                             <div className="h-full flex items-center justify-center">
-                                <button className="focus:outline-none  cursor-pointer" onClick={handlePrev}>
-                                    <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="transform rotate-180" />
+                                <button className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`} onClick={handlePrev} disabled={isPrevDisabled}>
+                                    <Image
+                                                        src="/assets/arrow-main.svg"
+                                                        alt="Previous"
+                                                        height={20}
+                                                        width={19}
+                                                        className="transform rotate-180"
+                                                      />
                                 </button>
                             </div>
                             <div className="h-full flex items-center justify-center">
-                                <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
-                                    <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="" />
+                                <button className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`} onClick={handleNext} disabled={isNextDisabled}>
+                                    <Image
+                                                        src="/assets/arrow-main.svg"
+                                                        alt="Next"
+                                                        height={20}
+                                                        width={19}
+                                                        className=""
+                                                      />
                                 </button>
                             </div>
                         </div>
@@ -141,7 +157,7 @@ export default function AmenitiesSwiper() {
                         <Image src="/assets/icons/arrow-right.svg" alt="Previous" height={20} width={19} className="transform rotate-180" />
                     </button>
                 </div>
-                <div className="flex gap-2 items-center">{activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> 5</div>
+                <div className="flex gap-2 items-center">{activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}</div>
                 <div className="h-full flex items-center justify-center">
                     <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
                         <Image src="/assets/icons/arrow-right.svg" alt="Next" height={20} width={19} className="" />
