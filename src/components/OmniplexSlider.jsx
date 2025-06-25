@@ -63,14 +63,14 @@ const settings = {
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 1.4,
+        slidesToShow: 1.3,
         infinite: false,
       },
     },
     {
       breakpoint: 425,
       settings: {
-        slidesToShow: 1.4,
+        slidesToShow: 1.3,
         infinite: false,
       },
     },

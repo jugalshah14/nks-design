@@ -600,6 +600,10 @@ body::-webkit-scrollbar {
 
 /* MasterPlan responsive classes */
 @media (max-width: 768px) {
+  .space-triveni{
+    padding-top: 28px;
+    padding-bottom: 70px;
+  }
   .project-overview-title {
     font-size: 36px;
     line-height: 44px;
