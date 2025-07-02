@@ -2,6 +2,7 @@
 
 import { AnimatedSection, SlideUp } from "@/components/animations";
 import GangaWaves from "@/components/GangaWaves";
+import SafetySecuritySection from "@/components/SafetySecuritySection";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -1312,93 +1313,7 @@ export default function Amenities() {
 
       {/* Plans */}
       <AnimatedSection className="overflow-visible">
-        <div className="relative p-5 overflow-hidden mb-0">
-          <GangaWaves />
-          <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
-          <div className="relative md:px-24 container max-w-7xl mx-auto py-5 max-md:pb-15 md:py-15">
-            <div className="grid grid-cols-2 gap-4 ">
-              <div className="max-md:col-span-2 md:p-2">
-                <SlideUp delay={0.4}>
-                  <h2 className="font-cormorant text-[36px] md:leading-[72px] max-md:text-center md:font-[300] md:text-[56px] text-white">
-                    Your <span className="orange-color">Safety</span> &
-                    <br className="max-md:hidden" />{" "}
-                    <span className="orange-color">Security</span>, Our
-                    <br className="max-md:hidden" /> Priority
-                  </h2>
-                </SlideUp>
-                <SlideUp delay={0.6}>
-                  <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium md:inline-flex items-center gap-2 overflow-hidden mb-0 button-primary">
-                    <div className="px-6 py-3 mr-20">Schedule a Visit</div>
-                    <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
-                      ↗
-                    </span>
-                  </button>
-                </SlideUp>
-              </div>
-              <div className="max-md:col-span-2 grid grid-cols-2 md:gap-x-20 gap-y-9 md:gap-y-12 mt-9 md:mt-6">
-                <SlideUp delay={0.2} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/surveillance-cctv.svg"
-                    alt="Security Systems"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    24 hours security systems
-                  </p>
-                </SlideUp>
-
-                <SlideUp delay={0.3} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/desktop-computer.svg"
-                    alt="Monitoring Systems"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    Central monitoring systems
-                  </p>
-                </SlideUp>
-
-                <SlideUp delay={0.5} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/security-officer-gate.svg"
-                    alt="Surveillance"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    24 hours surveillance
-                  </p>
-                </SlideUp>
-
-                <SlideUp delay={0.6} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/surveillance-cctv.svg"
-                    alt="Emergency Buttons"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    Emergency Buttons
-                  </p>
-                </SlideUp>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex md:hidden justify-center relative -top-7">
-          <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden mb-0 button-primary">
-            <div className="px-6 py-3 mr-20">Schedule a Visit</div>
-            <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
-              ↗
-            </span>
-          </button>
-        </div>
+        <SafetySecuritySection />
       </AnimatedSection>
 
       {/* Question Section */}

@@ -24,6 +24,7 @@ import WhyRiversideFloatingButton from "@/components/WhyRiversideFloatingButton"
 import Image from "next/image";
 import Link from "next/link";
 import { Element } from "react-scroll";
+import SafetySecuritySection from "@/components/SafetySecuritySection";
 
 const seramporeData = [
   {
@@ -118,8 +119,7 @@ export default function Home() {
             <SlideUp delay={0.4}>
               <h2 className="project-overview-title max-md:!text-[36px] max-md:!leading-11 max-md:font-[400] text-center">
                 Project
-                <span className="hidden md:inline"> overview</span>
-                <span className="inline md:hidden"> View</span>
+                <span> overview</span>
               </h2>
             </SlideUp>
           </div>
@@ -209,7 +209,7 @@ export default function Home() {
               />
             </div>
             <h3 className="hidden md:block text-[40px] font-satoshi font-[400] leading-[54px] text-[#22252e] mb-1">
-              24 x 7
+              24/7
             </h3>
             <p className="hidden md:block text-[20px] font-satoshi font-[400] leading-[28px] text-[#22252e] text-center">
               Security
@@ -373,44 +373,34 @@ export default function Home() {
             </div>
             <Amenities /> */}
             <div className="container mx-auto !w-[100%] relative md:mb-16">
-              <div className="hidden md:flex flex-col justify-center items-center pb-5">
+              <div className="flex flex-col justify-center items-center pb-5">
                 <SlideUp delay={0.4}>
-                  <h2 className="w-full mt-10 text-center text-black text-[56px] font-cormorant leading-[72px] font-[300]">
+                  <h2 className="w-full md:mt-10 text-center text-black md:text-[56px] text-[36px] font-cormorant md:leading-[72px] leading-[44px] font-[400]">
                     Elevate to{" "}
-                    <span className="orange-color">Award winning</span>
-                    <br />
+                    <span className="orange-color">Award winning </span>
                     Architectural Brilliance
                   </h2>
                 </SlideUp>
               </div>
-              <AnimatedSection className="hidden md:block relative">
-                <div className="flex w-full h-[558px] justify-center relative">
+              <AnimatedSection className="block relative">
+                <div className={"absolute top-5 right-5 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group"}>
+                  <div className="overflow-hidden">
+                    <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                      {"Actual Image"}
+                    </div>
+                  </div>
+                  <Image alt="" src="/assets/icons/info.svg" height={30} width={30} className="" />
+                </div>
+                <div className="flex w-full h-[167px] md:h-[558px] justify-center relative">
                   <Image
                     fill
                     src="/assets/bitmap.png"
                     alt="Aerial view of Riverside Residences"
-                    className="rounded-lg object-cover"
+                    className="md:rounded-lg object-cover"
                   />
                 </div>
               </AnimatedSection>
               <div className="block md:hidden relative">
-                <div className="flex w-full h-[280px] justify-center relative">
-                  <Image
-                    fill
-                    src="/assets/bitmap.png"
-                    alt="Aerial view of Riverside Residences"
-                    className="object-cover"
-                  />
-                  <div className="plans-backdrop absolute top-0 left-0 h-[100%] w-[100%]" />
-                  <div className="h-[100%] flex flex-col justify-center items-center bitmap absolute inset-0 w-[100%]">
-                    <SlideUp delay={0.4}>
-                      <h2 className="w-[90%] text-center project-overview-title !text-white !text-[36px] !leading-11 font-[400] !font-cormorant">
-                        Largest <span className="orange-color">Clubhouse</span>{" "}
-                        in Kolkata
-                      </h2>
-                    </SlideUp>
-                  </div>
-                </div>
                 <div className="h-[160px] bg-[#061026]">
                   <div className="flex justify-center items-center">
                     <hr className="border-[#FFFFFF] w-[100%] opacity-20 absolute" />
@@ -625,8 +615,8 @@ export default function Home() {
                     <SlideUp delay={0.4}>
                       <p className="w-[80%] transforming-text font-[300] text-[56px] leading-[72px] lg:text-[40px] lg:leading-[48px]">
                         {`Feel the divine aura of Banaras — now in Serampore!
-                        Own a Home Where You’re Blessed by Ganga Aarti, Every Single Day
-                        We’re proud to be India’s only riverside township where the sacred Ganga Aarti happens daily`}
+                        Own a Home Where You're Blessed by Ganga Aarti, Every Single Day
+                        We're proud to be India's only riverside township where the sacred Ganga Aarti happens daily`}
                       </p>
                     </SlideUp>
                   </div>
@@ -863,11 +853,16 @@ export default function Home() {
                 </h2>
               </SlideUp>
             </div>
-            <div className="hidden md:flex items-end">
+            <div className="flex md:items-end max-md:col-span-2 max-md:justify-center max-md:text-center">
               <SlideUp delay={0.6}>
                 <p className="text-[20px] text-[#22252E] font-[400]">
                   Hear from Our 2800+ Happy Homebuyers
                 </p>
+                <Link href="/testimonials">
+                  <button className="mt-5 border border-[#22252E] rounded-md px-8 py-3 font-satoshi font-bold text-[14px] leading-6 transition hover:bg-[#f5f5f5] cursor-pointer">
+                    Read All Testimonials
+                  </button>
+                </Link>{" "}
               </SlideUp>
             </div>
           </div>
@@ -876,103 +871,7 @@ export default function Home() {
       </section>
 
       {/* Plans */}
-      <div>
-        <div className="relative p-5 overflow-hidden">
-          <GangaWaves />
-          <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
-          <div className="relative md:px-8 lg:px-24 container  mx-auto py-5 max-md:pb-15 md:py-15">
-            <div className="grid grid-cols-2 gap-4 ">
-              <div className="max-md:col-span-2 md:p-2">
-                <SlideUp delay={0.4}>
-                  <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
-                    Your <span className="orange-color">Safety</span> &
-                    <br className="max-md:hidden" />{" "}
-                    <span className="orange-color">Security</span>, Our
-                    <br className="max-md:hidden" /> Priority
-                  </h2>
-                </SlideUp>
-                <SlideUp delay={0.6}>
-                  <Link href="/contact-us">
-                    <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
-                      <div className="px-6 py-3 mr-20">
-                        <span>Schedule a Visit</span>
-                      </div>
-                      <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-                        ↗
-                      </span>
-                    </button>
-                  </Link>
-                </SlideUp>
-              </div>
-              <div className="max-md:col-span-2 grid grid-cols-2 md:gap-x-20 gap-y-9 md:gap-y-12 mt-9 md:mt-6">
-                <FadeIn delay={0.2} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/surveillance-cctv.svg"
-                    alt="Security Systems"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    24 hours security systems
-                  </p>
-                </FadeIn>
-
-                <FadeIn delay={0.4} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/desktop-computer.svg"
-                    alt="Monitoring Systems"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    Central monitoring systems
-                  </p>
-                </FadeIn>
-
-                <FadeIn delay={0.6} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/security-officer-gate.svg"
-                    alt="Surveillance"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    24 hours surveillance
-                  </p>
-                </FadeIn>
-
-                <FadeIn delay={0.8} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/sos.svg"
-                    alt="Emergency Buttons"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    Emergency Buttons
-                  </p>
-                </FadeIn>
-              </div>
-            </div>
-          </div>
-        </div>
-        <SlideUp delay={0.8}>
-          <div className="flex md:hidden justify-center relative -top-7">
-            <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary">
-              <div className="px-6 py-3 mr-20">
-                <span>Schedule a Visit</span>
-              </div>
-              <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
-                ↗
-              </span>
-            </button>
-          </div>
-        </SlideUp>
-      </div>
+      <SafetySecuritySection />
     </main>
   );
 }
