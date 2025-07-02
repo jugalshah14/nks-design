@@ -10,10 +10,12 @@ import {
 import GangaVideoSection from "@/components/GangaVideoSection";
 import GangaWaves from "@/components/GangaWaves";
 import HeroSectionWaves from "@/components/HeroSectionWaves";
+import PlansSection from "@/components/PlansSection";
 import PlansSwiper from "@/components/PlansSwiper";
 import PlanTypesSwiper from "@/components/PlanTypesSwiper";
 import ProjectViewSlides from "@/components/ProjectViewSlides";
 import RiversideLivingSwiper from "@/components/RiversideLivingSwiper";
+import ScheduleVisitModal from "@/components/ScheduleVisitModal";
 import ScrollSpyNav from "@/components/ScrollSpyNav";
 import SeramporeMarqueeSlides from "@/components/SeramporeMarqueeSlides";
 import SeramporeSwiper from "@/components/SeramporeSwiper";
@@ -62,6 +64,7 @@ const seramporeData = [
 ];
 
 export default function Home() {
+
   return (
     <main>
       {/* Hero Section */}
@@ -428,47 +431,47 @@ export default function Home() {
 
         <Element name="section-Plans">
           {/* Plans Section */}
-          <div className="bg-[#020C22]">
+          <div className="bg-[#FDF9F6]">
             <section className="container  mx-auto">
-              <div className="relative container  mx-auto md:px-6">
-                <div className="hidden md:flex text-center pt-20 flex-col justify-center items-center">
+              <div className="relative md:py-[80px]">
+                <div className="flex text-center flex-col justify-center items-center">
                   <SlideUp
                     delay={0.4}
                     className="flex justify-center items-center"
                   >
-                    <h2 className="w-[100%] lg:w-[100%] project-overview-title !font-[300] text-center !text-white">
+                    <h2 className="max-w-[600px] w-[100%] lg:w-[100%] project-overview-title !font-[300] text-center pb-[48px] pt-[60px] md:pt-0">
                       The perfect sangam of{" "}
                       <span className="orange-color">life </span>
-                      <br />
                       and <span className="orange-color">lifestyle</span>.
                     </h2>
                   </SlideUp>
                 </div>
-                <div className="flex md:hidden text-center pt-10 flex-col justify-center items-center px-4">
+                <PlansSection />
+                {/* <div className="flex md:hidden text-center pt-10 flex-col justify-center items-center px-4">
                   <SlideUp delay={0.4}>
                     <h2 className="w-[100%] project-overview-title !text-center !text-white !text-[36px] !leading-11 font-cormorant">
                       {`We've got something for`}{" "}
                       <span className="orange-color">{`Everyone's need`}</span>
                     </h2>
                   </SlideUp>
-                </div>
+                </div> */}
               </div>
             </section>
-            <PlansSwiper />
+            {/* <PlansSwiper /> */}
           </div>
 
           {/* Plans Types */}
           <section className="bg-white">
             <div className=" container mx-auto relative certification-section !bg-white pt-20">
               <div className="relative container mx-auto">
-                <div className="text-center">
+                {/* <div className="text-center">
                   <SlideUp delay={0.4}>
                     <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-cormorant">
                       <span className="orange-color">Comfortable </span>living,
                       simplified
                     </h2>
                   </SlideUp>
-                </div>
+                </div> */}
                 {/* <AnimatedSection className="block md:hidden">
                   <PlanTypesSwiper />
                 </AnimatedSection>
@@ -556,18 +559,18 @@ export default function Home() {
                   </SlideUp>
                 </div> */}
               </div>
-              <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mt-20">
+              <div className="md:grid md:grid-cols-2 gap-10 justify-baseline">
                 <div className="">
                   <SlideUp delay={0.4}>
-                    <h2 className="project-overview-title text-[56px]">
-                      Discover yourself by the{" "}
-                      <span className="orange-color">sacred</span> and{" "}
-                      <span className="orange-color">tranquil rhythms</span> of
+                    <h2 className="project-overview-title text-[56px] text-center md:text-left">
+                      Comfortable Living, Simplified — Discover Yourself by the{" "}
+                      <span className="orange-color">Sacred</span> and{" "}
+                      <span className="orange-color">Tranquil Rhythms</span> of
                       the Ganges
                     </h2>
                   </SlideUp>
                 </div>
-                <div className="flex items-end">
+                <div className="hidden md:flex items-baseline">
                   <SlideUp delay={0.6}>
                     <p className="text-[20px] text-[#22252E] font-[400]">
                       Riverside living offers a tranquil environment with
@@ -580,15 +583,6 @@ export default function Home() {
                     </p>
                   </SlideUp>
                 </div>
-              </div>
-              <div className="block md:hidden mt-10 text-center">
-                <SlideUp delay={0.4}>
-                  <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-cormorant">
-                    Cherish the{" "}
-                    <span className="orange-color">benefits of Ganga</span> on
-                    your wellbeing!
-                  </h2>
-                </SlideUp>
               </div>
             </div>
             <RiversideLivingSwiper />
