@@ -25,6 +25,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Element } from "react-scroll";
 import SafetySecuritySection from "@/components/SafetySecuritySection";
+import CertificationSection from "@/components/CertificationSection";
 
 const seramporeData = [
   {
@@ -222,119 +223,7 @@ export default function Home() {
       </section>
 
       {/* Certification Information */}
-      <section className="max-md:hidden">
-        <div className="relative certification-section pt-20 pb-30">
-          <Image
-            src="/assets/Rectangl_Left.png"
-            width={80}
-            height={307}
-            alt="Rectangle_left"
-            className="absolute top-0 h-[100%] left-0"
-          />
-          <Image
-            src="/assets/Rectangle_right.png"
-            width={80}
-            height={307}
-            alt="Rectangle_left"
-            className="absolute top-0 h-[100%] right-0"
-          />
-          <div className="relative  container mx-auto px-6">
-            <div className="text-center">
-              <SlideUp delay={0.4}>
-                <h2 className="project-overview-title text-center">
-                  <span className="orange-color">Certified</span> by
-                </h2>
-              </SlideUp>
-            </div>
-          </div>
-        </div>
-        <div className="relative -top-[45px] lg:top-[-75px] container  mx-auto grid md:grid-cols-5 gap-8">
-          <SlideUp delay={0.2} className="flex flex-col items-center">
-            <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
-              <Image
-                src="/assets/award01.png"
-                fill
-                alt="award"
-                className="object-scale-down"
-              />
-            </div>
-            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] mt-auto-2 text-center">
-              The Economic Times Real Estate Conclave
-            </h3>
-            <p className="text-[14px] leading-5 font-satoshi text-[#5C5F68] mt-2 text-center">
-              Residential Project - Developer <br /> (Metro)
-            </p>
-          </SlideUp>
-
-          <SlideUp delay={0.4} className="flex flex-col items-center">
-            <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
-              <Image
-                src="/assets/RERAAward.png"
-                fill
-                alt="RERA Approved"
-                className="object-scale-down"
-              />
-            </div>
-            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] text-center">
-              REALTY +
-            </h3>
-            <p className="text-[14px] leading-5 font-satoshi text-[#5C5F68] mt-2 text-center">
-              Affordable Housing Project of the Year
-            </p>
-          </SlideUp>
-
-          <SlideUp delay={0.6} className="flex flex-col items-center">
-            <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
-              <Image
-                src="/assets/award03.png"
-                fill
-                alt="WBHIRA Approved"
-                className="object-scale-down"
-              />
-            </div>
-            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] text-center">
-              PMAY
-            </h3>
-            <p className="text-[14px] leading-5 font-satoshi text-[#5C5F68] mt-2 text-center">
-              Best Affordable EWS/LIG Housing Project
-            </p>
-          </SlideUp>
-
-          <SlideUp delay={0.8} className="flex flex-col items-center">
-            <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
-              <Image
-                src="/assets/award4.png"
-                fill
-                alt="IGBC Approved"
-                className="object-scale-down"
-              />
-            </div>
-            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] text-center">
-              Credai Howrah- Hooghly
-            </h3>
-            <p className="text-[14px] leading-5 font-satoshi text-[#5C5F68] mt-2 text-center">
-              Best Ongoing Residential Project (Above 2 lakh sq.ft)
-            </p>
-          </SlideUp>
-
-          <SlideUp delay={1} className="flex flex-col items-center">
-            <div className="relative w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full bg-white flex items-center justify-center mb-4">
-              <Image
-                src="/assets/award5.png"
-                fill
-                alt="RERA Approved"
-                className="object-scale-down"
-              />
-            </div>
-            <h3 className="text-[18px] lg:text-[24px] font-satoshi font-bold leading-[33px] text-[#22252e] text-center">
-              Real Estate Conclave
-            </h3>
-            <p className="text-[14px] leading-5 font-satoshi text-[#5C5F68] mt-2 text-center">
-              Certificate of Excellence
-            </p>
-          </SlideUp>
-        </div>
-      </section>
+      <CertificationSection />
 
       <section className="relative">
         {/* Subnav with scroll spy*/}
