@@ -34,40 +34,11 @@ export default function MasterPlan() {
       <section className="-mt-16 no-negative-margin">
         <SlideUp delay={0.8}>
           <div className="container mx-auto">
-            <div className="relative w-full md:h-[460px] h-[265px] hide-triangle">
-              <Image
-                src="/assets/master-plan.png"
-                alt="Hero-img"
-                fill
-                priority
-                className='select-none no-drag'
-            />
-            </div>
-            <div className="relative w-full h-[265px] md:h-[460px] none-md">
-              <Image
-                src="/assets/tri1.svg"
-                width={65}
-                height={65}
-                alt="img"
-                className="absolute left-0 z-10 w-[18px] h-[18px] md:w-[65px] md:h-[65px] select-none no-drag"
-              />
-              <Image
-                src="/assets/tri2.svg"
-                width={65}
-                height={65}
-                alt="img"
-                className="absolute right-0 bottom-0 z-10 w-[18px] h-[18px] md:w-[65px] md:h-[65px] select-none no-drag"
-              />
-              <Image
-                src="/assets/master-plan.png"
-                alt="Hero-img"
-                fill
-                className="object-cover w-full h-full select-none no-drag"
-                priority
-              />
+          <div className="relative w-full md:h-[460px] h-[265px]">
+              <Image src="/assets/master-plan.png" alt="Hero-img" fill priority />
             </div>
             <div className="z-20 flex text-center items-center justify-center relative p-[10px] -mt-12 mx-2 md:mx-[80px]  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
-              <h2 className="text-center project-overview-title text-center mobile-title max-w-[800px]">
+              <h2 className="text-center project-overview-title mobile-title max-w-[800px]">
                 Seamless living in a thoughtfully designed{" "}
                 <span className="orange-color">Masterplans</span>
               </h2>
@@ -82,7 +53,7 @@ export default function MasterPlan() {
             <SlideUp delay={0.2} className="flex flex-col items-center">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
-                  src="/assets/icons/connectivity.svg"
+                  src="/assets/icons/Towers.svg"
                   width={68}
                   height={68}
                   alt="Connectivity"
@@ -100,7 +71,7 @@ export default function MasterPlan() {
             <SlideUp delay={0.4} className="flex flex-col items-center">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
-                  src="/assets/icons/residential.svg"
+                  src="/assets/icons/Building-Nature.svg"
                   width={68}
                   height={68}
                   alt="Clubhouse"
@@ -136,7 +107,7 @@ export default function MasterPlan() {
             <SlideUp delay={0.8} className="flex flex-col items-center">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
-                  src="/assets/icons/jetty.svg"
+                  src="/assets/icons/Double-Bed.svg"
                   width={68}
                   height={68}
                   alt="Garden and Ghat"
@@ -232,12 +203,12 @@ export default function MasterPlan() {
             </SlideUp>
           </div>
         </div>
-        <FadeIn delay={0.6} className="relative w-full h-[auto] aspect-[2/1]">
+        <FadeIn delay={0.6} className="relative w-full h-auto aspect-[2/1]">
           <Image
             src="/assets/map.png"
             alt="img"
             fill
-            className="object-cover select-none no-drag"
+            className="object-fit select-none no-drag"
           />
         </FadeIn>
       </section>

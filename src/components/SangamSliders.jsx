@@ -12,7 +12,6 @@ import Link from "next/link";
 
 const flatsData = {
   '3BHK': {
-    tabs: ['2D', '3D', 'Floor', 'Building'],
     sliderImages: {
       '2D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
       '3D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
@@ -23,7 +22,6 @@ const flatsData = {
   },
 
   '2BHK': {
-    tabs: ['2D', '3D', 'Floor', 'Building'],
     sliderImages: {
       '2D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
       '3D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
@@ -34,7 +32,6 @@ const flatsData = {
   },
 
   '4BHK': {
-    tabs: ['2D', '3D', 'Floor', 'Building'],
     sliderImages: {
       '2D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
       '3D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
@@ -157,7 +154,7 @@ export default function SangamSliders() {
 
                 {/* Tabs */}
                 {/* Mobile Tabs */}
-                <div className="px-4 none-md flex w-full absolute z-[10] top-[-50px]">
+                {/* <div className="px-4 none-md flex w-full absolute z-[10] top-[-50px]">
                   <div className="flex flex-1 flex-row items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full transition-all duration-300 overflow-hidden">
                     {flatsData[activeBHK].tabs.map(tab => (
                       <div
@@ -170,10 +167,10 @@ export default function SangamSliders() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Dashboard tabs */}
-                <div className='hide-triangle absolute z-[10] md:mx-[0px] flex flex-row md:flex-col items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full md:w-[72px] absolute left-0 top-[-50px] md:top-0 transition-all duration-300'>
+                {/* <div className='hide-triangle absolute z-[10] md:mx-[0px] flex flex-row md:flex-col items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full md:w-[72px] absolute left-0 top-[-50px] md:top-0 transition-all duration-300'>
                  {flatsData[activeBHK].tabs.map(tab => (
                     <div
                       key={tab}
@@ -184,7 +181,7 @@ export default function SangamSliders() {
                       {tab}
                     </div>
                   ))}
-                </div>
+                </div> */}
 
                 <Image src="/assets/triangle-blue.png" width={65} height={65} alt="triangle" className='absolute right-0 hide-triangle transition-transform duration-500 hover:rotate-12' />
 

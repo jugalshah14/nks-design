@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { AnimatedSection, FadeIn, SlideUp } from "@/components/animations";
-import TriventSliders from "@/components/TriventSliders";
+// import TriventSliders from "@/components/TriventSliders";
 import { Element } from "react-scroll";
 import GangaWaves from "@/components/GangaWaves";
 import SeramporeMarqueeSlides from "@/components/SeramporeMarqueeSlides";
@@ -103,7 +103,7 @@ export default function Location() {
       </section>
 
      {/* Trivent */}
-      <section className="bg-[#020C22]  mb-[100px] md:mb-[0px] md:pb-[80px]">
+      {/* <section className="bg-[#020C22]  mb-[100px] md:mb-[0px] md:pb-[80px]">
             <div className="container mx-auto text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
               <SlideUp
                 delay={0.4}
@@ -131,51 +131,45 @@ export default function Location() {
               <AnimatedSection delay={0.6} className="relative top-[50px] md:top-0 md:mt-[60px]">
                 <TriventSliders />
               </AnimatedSection>
-      </section>
+      </section> */}
 
       {/* Logo Cards Section */}
-      <section>
+      {/* <section>
         <section className="container mx-auto bg-white p-[16px] md:p-[40px] flex flex-col gap-[48px] mt-[-60px]">
             <SlideUp delay={0.2} className="text-center font-satoshi text-[24px] md:text-[40px] leading-[28px] md:leading-[48px]">Soon you will also see:)</SlideUp>
             <SlideUp delay={0.4} className="w-full">                
                 <div className="grid grid-cols-2 md:grid-cols-3 md:gap-[40px] w-full">
-                    {/* Card 1 */}
-                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                    <div className="flex items-center flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
                         <div className="p-[16px] md:p-[22px] rounded-full bg-[#F0F3FA] flex items-center justify-center">
                             <Image src="/assets/icons/connectivity.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
                         <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Landscaped to perfection</p>
                     </div> 
-                    {/* Card 2 */}
-                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                    <div className="flex items-center flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
                         <div className="p-[16px] md:p-[22px] rounded-full bg-[#FDF9F6] flex items-center justify-center">
                             <Image src="/assets/icons/residential.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
                         <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Multiple relaxation zones</p>
                     </div> 
-                    {/* Card 3 */}
-                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                    <div className="flex items-center flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
                         <div className="p-[16px] md:p-[22px] rounded-full custom-gradient flex items-center justify-center">
                             <Image src="/assets/icons/connectivity.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
                         <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Fountain plaza and Amphitheater</p>
                     </div> 
-                    {/* Card 4 */}
-                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                    <div className="flex items-center flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
                         <div className="p-[16px] md:p-[22px] rounded-full custom-gradient flex items-center justify-center">
                             <Image src="/assets/icons/area_of_project.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
                         <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Landscaped to perfection</p>
                     </div> 
-                    {/* Card 5 */}
-                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                    <div className="flex items-center flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
                         <div className="p-[16px] md:p-[22px] rounded-full bg-[#F0F3FA] flex items-center justify-center">
                             <Image src="/assets/icons/residential.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
                         <p className="text-center md:text-left font-satoshi text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-[700]">Multiple relaxation zones</p>
                     </div> 
-                    {/* Card 6 */}
-                    <div className="flex items-center flex flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
+                    <div className="flex items-center flex-col md:flex-row gap-[16px] md:gap-[28px] pb-[36px] md:pb-[0px]">
                         <div className="p-[16px] md:p-[22px] rounded-full bg-[#FDF9F6] flex items-center justify-center">
                             <Image src="/assets/icons/jetty.svg" alt="icon" className="w-[28px] md:w-[48px] h-[28px] md:h-[48px]" width={48} height={48} />
                         </div>
@@ -185,7 +179,7 @@ export default function Location() {
                 
             </SlideUp>
         </section>
-      </section>
+      </section> */}
 
       {/* Location Benifits */}
       <Element name="section-WhySerampore">
