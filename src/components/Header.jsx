@@ -80,12 +80,12 @@ const Header = () => {
             </nav>
           </div>
 
-          <div className="w-[95px] h-[44px] md:h-[75px] md:w-[161px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">
+          <div className="md:h-[48px] md:w-[260px] w-[95px] h-[44px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">
             <Link href="/">
               <Image
                 className="invert-100 logo-image"
                 src="/assets/logo.png"
-                alt="Next.js logo"
+                alt="logo"
                 fill
                 priority
               />
