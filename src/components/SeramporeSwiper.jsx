@@ -60,15 +60,15 @@ export default function SeramporeSwiper({ data }) {
   };
 
   return (
-    <><AnimatedSection className="container mx-auto relative certification-section !bg-white pt-10 md:pt-20 mt-7">
-      <div className="md:h-[400px] md:w-full h-[150px] w-[90%] z-1" />
+    <><AnimatedSection className="container mx-auto relative certification-section !bg-white mt-7">
+      <div className="md:h-[286px] md:w-full h-[150px] w-[90%] z-1" />
       <Image
         src={data[activeIndex - 1].backgroundImage}
         fill
         className={`object-contain md:block transition-opacity duration-100 ${isTransitioning ? "opacity-80" : "opacity-100"}`}
         alt="serampore map" />
     </AnimatedSection>
-      <div className="md:pt-10 mb-10 container mx-auto px-4 md:px-0">
+      <div className=" container mx-auto px-4 md:px-0">
         <Slider
           ref={(slider) => {
             swiperRef = slider;
@@ -99,7 +99,7 @@ export default function SeramporeSwiper({ data }) {
                 alt="slide-0"
                 height={160}
                 width={160}
-                className="relative !h-[100px] !w-[100px] md:!h-[180px] md:!w-[180px] z-1" />
+                className="relative !h-[100px] !w-[100px] md:!h-[132px] md:!w-[132px] z-1" />
               <div
                 className={`w-fit relative flex flex-col md:p-7 md:pb-0 p-2 pl-3 pt-10 md:pt-12 pr-20 md:pr-10 `}
               >
@@ -116,7 +116,7 @@ export default function SeramporeSwiper({ data }) {
                   {slide.title}
                 </p>
                 <p
-                  className={`z-1 mb-1 text-[12px] md:text-[16px] text-[#22252E] opacity-60 font-[400] leading-4 md:leading-[20px] description`}
+                  className={`z-1 text-[12px] md:text-[16px] text-[#22252E] opacity-60 font-[400] leading-4 md:leading-[20px] description`}
                 >
                   {slide.description}
                 </p>
