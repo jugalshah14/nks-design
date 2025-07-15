@@ -9,17 +9,6 @@ const headerClass = {
   "/": "home-page-header",
 };
 
-const NAV_ITEMS = [
-  { href: "/why-alcove", label: "Why Alcove" },
-  { href: "/master-plan", label: "Master Plans" },
-  { href: "/amenities", label: "Amenities" },
-  { href: "/location", label: "Location" },
-  { href: "/life-@-alcove", label: "Life @Alcove" },
-  { href:"/triveni" ,label:"Triveni Omniplex"},
-  { href: "/blogs", label: "Blogs" },
-  { href: "/", label: "Schedule Visit" },
-];
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeClass, setActiveClass] = useState("/");
@@ -63,21 +52,38 @@ const Header = () => {
           "!bg-white !backdrop-blur-sm has-scrolled"
         }`}
       >
-        <div className="container mx-auto py-4 md:grid md:grid-cols-3 md:items-center flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
-          <div className="hidden md:flex items-center space-x-8 justify-start">
-            <nav className="hidden md:flex gap-8">
-              {NAV_ITEMS.slice(0, 5)?.map((item, index) => {
-                return (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    className="font-satoshi font-medium whitespace-nowrap text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </nav>
+        <div className="container mx-auto py-4 md:grid md:grid-cols-3 md:items-center flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-3">
+          <div className="hidden md:flex items-center justify-start gap-5">
+            <Link
+              href="/why-alcove"
+              className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Why Alcove
+            </Link>
+            <Link
+              href="/master-plan"
+              className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Master Plans
+            </Link>
+            <Link
+              href="/amenities"
+              className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Amenities
+            </Link>
+            <Link
+              href="/location"
+              className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Location
+            </Link>
+            <Link
+              href="/life-@-alcove"
+              className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Life @Alcove
+            </Link>
           </div>
 
           <div className="md:h-[48px] md:w-[260px] w-[95px] h-[44px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">

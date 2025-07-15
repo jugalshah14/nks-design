@@ -93,7 +93,7 @@ export default function ProjectViewSlides() {
                     <div key={index} className='relative top-[-50px]'>
                         <div className="flex justify-center relative h-[280px] md:h-[700px]">
                             {/* Info Icon with Tooltip (new style) */}
-                            <div className={`absolute top-15 right-3 md:right-20 lg:right-35 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group`}>
+                            <div className={`absolute top-15 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group`}>
                                 <div className="overflow-hidden">
                                     <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
                                         {slide.info}
@@ -105,11 +105,11 @@ export default function ProjectViewSlides() {
                             <Image
                                 src={slide.src}
                                 alt={slide.title}
-                                className="object-contain"
+                                className="object-fill"
                                 fill
                             />
                             <div className="absolute inset-0 rounded-lg z-2">
-                                <h3 className="max-md:w-[100%] max-md:text-center bottom-10 absolute md:bottom-11 md:left-45 text-[28px] md:text-[48px] font-satoshi font-[400] leading-8 md:leading-[65px] text-white">
+                                <h3 className="max-md:w-[100%] max-md:text-center bottom-10 absolute md:left-10 text-[28px] md:text-[48px] font-satoshi font-[400] leading-8 md:leading-[65px] text-white">
                                     {slide.title}
                                 </h3>
                             </div>
