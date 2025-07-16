@@ -1,13 +1,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import TeamSwiper from "@/components/TeamSwiper";
 import PastProjectSwiper from "@/components/PastProjectSwiper";
-import LogoSection from "@/components/LogoSection";
 import { SlideUp } from "@/components/animations";
-import Amenities from "../amenities/page";
-import AmenitiesSwiper from "@/components/AmenitiesSwiper";
-import SocialSection from "@/components/SocialSection";
 
 export default function WhyAlcove() {
   return (
@@ -32,36 +27,13 @@ export default function WhyAlcove() {
 
       <section className="-mt-16 no-negative-margin pb-[40px] md:pb-[0px]">
         <SlideUp delay={0.8} className="container mx-auto">
-          <div className="relative w-full md:h-[460px] h-[265px] hide-triangle">
+          <div className="relative w-full md:h-[460px] h-[265px]">
             <Image
               src="/assets/alcove-hero.png"
               alt="Hero-img"
               fill
               priority
               className="select-none no-drag"
-            />
-          </div>
-          <div className="relative w-full h-[262px] none-md">
-            <Image
-              src="/assets/blue-triangle.svg"
-              width={18}
-              height={17}
-              alt="img"
-              className="absolute left-0 z-10 w-[18px] h-[18px] md:w-[65px] md:h-[65px] select-none no-drag"
-            />
-            <Image
-              src="/assets/tri2.svg"
-              width={65}
-              height={65}
-              alt="img"
-              className="absolute right-0 bottom-0 z-10 w-[18px] h-[18px] md:w-[65px] md:h-[65px] select-none no-drag"
-            />
-            <Image
-              src="/assets/why-alcove-mobile-img.png"
-              alt="Hero-img"
-              fill
-              className=" w-full h-full select-none no-drag"
-              priority
             />
           </div>
           <div className="z-20 flex text-center items-center justify-center relative p-[10px] -mt-8 mx-2 md:mx-[80px]  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
@@ -83,7 +55,7 @@ export default function WhyAlcove() {
             alt="Rectangle_left"
             className="absolute top-0 h-[100%] left-0"
           />
-          <div className="flex flex-col md:flex-row justify-between relative container mx-auto px-[16px] md:px-24 gap-[12px] md:gap-[36px] md:gap-12">
+          <div className="flex flex-col md:flex-row justify-between relative container mx-auto gap-[12px] md:gap-[54px]">
             <div className="text-center md:text-left w-full md:pb-15">
               <SlideUp
                 delay={0.2}
@@ -94,7 +66,7 @@ export default function WhyAlcove() {
               </SlideUp>
               <SlideUp
                 delay={0.4}
-                className="max-w-[409px] text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[16px]"
+                className="text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[16px]"
               >
                 Alcove Realty was founded by Shri. Amar Nath Shro . He is the
                 driving force behind our commitment to excellence, innovation,
@@ -109,25 +81,16 @@ export default function WhyAlcove() {
                 excellence and customer satisfaction
               </SlideUp>
             </div>
-            <SlideUp delay={0.6} className="flex flex-row w-full items-streach">
+            <SlideUp delay={0.6} className="flex flex-row w-full">
               <Image
                 src="/assets/white-triangle.svg"
                 width={38}
                 height={430}
                 alt="Rectangle_left"
-                className="pt-7 hide-triangle flex items-end"
+                className="pt-9 hide-triangle flex items-end"
               />
-              <div className="bg-white pb-0 w-full justify-center">
+              <div className="w-full justify-center">
                 <div className="relative">
-                  <div className="top-[100px] left-[145px] rounded-full absolute none-md p-[25px] bg-black/30 w-auto">
-                    <Image
-                      src="/assets/play-button.svg"
-                      width={10}
-                      height={10}
-                      alt="thumbnail"
-                      className=""
-                    />
-                  </div>
                   <Image
                     src="/assets/person.png"
                     width={446}
@@ -136,7 +99,7 @@ export default function WhyAlcove() {
                     className="w-full"
                   />
                 </div>
-                <div className="flex flex-row gap-[10px] justify-center items-center py-[20px] md:py-0">
+                <div className="bg-white flex flex-row gap-[10px] justify-center items-center py-[20px] md:py-0">
                   <Image
                     src="/assets/thumbnail-mobile.svg"
                     width={60}
@@ -340,13 +303,10 @@ export default function WhyAlcove() {
                   />
                   <div className="flex flex-col items-baseline h-full">
                     <h2 className="text-[18px] leading-[24px] md:text-[24px] md:leading-[28px] font-satoshi font-[700]">
-                      Vision Title
+                    How We Create Impact
                     </h2>
                     <p className="pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]">
-                      As being architect of New Kolkata, I recommend this place
-                      as nice place to live. we&apos;re architecture notes.
-                      learn about the systems you use everyday from the
-                      engineers who built them
+                    Alcove Realty seeks to enhance the quality of life through active community involvement in all its projects. Continually exploring new ideas and technology while retaining tradition and heritage, every project transcends the elements of style, exclusivity, elegance and safety.
                     </p>
                   </div>
                 </div>
@@ -357,7 +317,7 @@ export default function WhyAlcove() {
               className="w-full flex justify-end pb-[28px] md:pb-[0px]"
             >
               <Image
-                src="/assets/mission.svg"
+                src="/assets/vision.svg"
                 width={450}
                 height={460}
                 alt="mission"
@@ -433,7 +393,7 @@ export default function WhyAlcove() {
       </section>
 
       {/* slider */}
-      <section className="realtive pt-6">
+      {/* <section className="realtive pt-6">
         <div className="w-full flex justify-center items-center none-md">
           <h1 className="project-overview-title !text-center md:pb-[28px] md:pb-[0px] none-md py-[30px]">
             Meet The {""}
@@ -443,11 +403,11 @@ export default function WhyAlcove() {
         <SlideUp delay={0.4}>
           <TeamSwiper />
         </SlideUp>
-      </section>
+      </section> */}
 
       <section className="relative">
-        <div className="text-center w-full pt-[40px] md:pt-0">
-          <SlideUp
+        {/* <div className="text-center w-full pt-[40px] md:pt-0"> */}
+          {/* <SlideUp
             delay={0.4}
             className="project-overview-title text-center md:pb-[28px] md:pb-[0px]"
           >
@@ -455,7 +415,7 @@ export default function WhyAlcove() {
             <span className="orange-color">Responsibility </span>
           </SlideUp>
         </div>
-        <SocialSection />
+        <SocialSection /> */}
         <SlideUp
           delay={0.6}
           className="mr-[16px] md:mr-[0px] md:ml-[100px] absolute container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]"
@@ -515,70 +475,70 @@ export default function WhyAlcove() {
           >
             <div className="relative w-full">
               <Image
-                src="/assets/award.svg"
+                src="/assets/ar1.png"
                 width={504}
                 height={490}
                 alt="award"
                 className="w-full h-[313px] md:h-[490px] object-cover"
               />
               <div className="absolute right-0 bottom-0 p-[12px] md:p-[28px] flex flex-col gap-[12px] bg-[#020C22] justify-center">
-                <h1 className="max-w-[284px] text-[18px] md:text-[24px] font-satoshi font-[600] leading-[24px] md:leading-[28px] text-white">
-                  PropertyGuru Asia Property Awards
+                <h1 className="max-w-[284px] text-[18px] md:text-[24px] font-satoshi font-[700] leading-[24px] md:leading-[28px] text-white">
+                Most Popular Project of the Year
                 </h1>
-                <p className="text-[16px] font-satoshi font-[400] leading-[24px] text-white">
-                  Apr, 22
+                <p className="text-[16px] font-normal font-satoshi leading-[24px] text-white">
+                  2025
                 </p>
               </div>
             </div>
             <div className="w-full h-auto flex flex-col gap-[29px]">
               <div className="w-full flex flex-row h-full">
                 <Image
-                  src="/assets/award1.png"
+                  src="/assets/ar2.png"
                   width={210}
                   height={148}
                   alt="award"
                   className="img-size object-cover"
                 />
                 <div className="w-full p-[12px] md:p-[28px] flex flex-col gap-[12px] bg-white/5 justify-center">
-                  <h1 className="text-[18px] md:text-[24px] font-satoshi font-[600] leading-[24px] md:leading-[28px] text-white">
-                    PropertyGuru Asia Property Awards
+                  <h1 className="text-[18px] md:text-[24px] font-satoshi font-[700] leading-[24px] md:leading-[28px] text-white">
+                  Landscape Project of the Year- Residential
                   </h1>
                   <p className="text-[16px] font-satoshi font-[400] leading-[24px] text-white">
-                    Apr, 22
+                    2025
                   </p>
                 </div>
               </div>
               <div className="w-full flex flex-row h-full">
                 <Image
-                  src="/assets/award2.png"
+                  src="/assets/ar3.png"
                   width={210}
                   height={148}
                   alt="award"
                   className="img-size object-cover"
                 />
                 <div className="w-full p-[12px] md:p-[28px] flex flex-col gap-[12px] bg-white/5 justify-center">
-                  <h1 className="text-[18px] md:text-[24px] font-satoshi font-[600] leading-[24px] md:leading-[28px] text-white">
-                    PropertyGuru Asia Property Awards
+                  <h1 className="text-[18px] md:text-[24px] font-satoshi font-[700] leading-[24px] md:leading-[28px] text-white">
+                  Best Mid-Range Housing Projects in West Bengal 
                   </h1>
                   <p className="text-[16px] font-satoshi font-[400] leading-[24px] text-white">
-                    Apr, 22
+                   2025
                   </p>
                 </div>
               </div>
               <div className="w-full flex flex-row h-full">
                 <Image
-                  src="/assets/award3.png"
+                  src="/assets/ar4.png"
                   width={210}
                   height={148}
                   alt="award"
                   className="img-size object-cover"
                 />
                 <div className="w-full p-[12px] md:p-[28px] flex flex-col gap-[12px] bg-white/5 justify-center">
-                  <h1 className="text-[18px] md:text-[24px] font-satoshi font-[600] leading-[24px] md:leading-[28px] text-white">
-                    PropertyGuru Asia Property Awards
+                  <h1 className="text-[18px] md:text-[24px] font-satoshi font-[700] leading-[24px] md:leading-[28px] text-white">
+                  Excellence in Brand Customer Experience
                   </h1>
                   <p className="text-[16px] font-satoshi font-[400] leading-[24px] text-white">
-                    Apr, 22
+                    2025
                   </p>
                 </div>
               </div>
@@ -587,9 +547,9 @@ export default function WhyAlcove() {
         </div>
       </section>
 
-      <section className="overflow-x-hidden">
+      {/* <section className="overflow-x-hidden">
         <LogoSection />
-      </section>
+      </section> */}
     </main>
   );
 }
