@@ -2,6 +2,7 @@
 
 import { AnimatedSection, SlideUp } from "@/components/animations";
 import GangaWaves from "@/components/GangaWaves";
+import ImageGallery from "@/components/ImageGallery";
 import SafetySecuritySection from "@/components/SafetySecuritySection";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -11,25 +12,26 @@ const amenities = {
     {
       title: "Embrace the new day with open arms.",
       description:
-        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+        "Watch the sunrise over the river, breathe in the fresh morning air, and let nature set the tone for a peaceful day ahead.",
       image: "/assets/Sunrise.png",
     },
     {
       title: "Find peace within: unlock the power of meditation.",
-      description: "Refresh your senses with the interactive fountains",
+      description:
+        "Begin your day with calm moments by the river — a peaceful space to relax and clear your mind.",
       image: "/assets/Yoga.png",
     },
     {
       title: "Keep yourself fit with our gym & fitness centre",
       description:
-        "Immerse yourself in the tranquility of the lush landscape garden",
+        "Stay active every day with modern equipment and a refreshing open-air workout space.",
       image: "/assets/GYM.png",
     },
     {
       title:
         "Stay fit and active at Jogging Park with its pristine trails, fitness stations, and revitalizing amenities",
       description:
-        "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+        "Enjoy a refreshing run or walk through green trails, with spots to stretch, relax, and recharge.",
       image: "/assets/Jogging.png",
     },
   ],
@@ -37,26 +39,27 @@ const amenities = {
     {
       title: "Escape into a tranquil sanctuary of books and relaxation.",
       description:
-        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+        "Discover serenity. Our tranquil sanctuary offers a perfect escape to relax and immerse yourself in the world of books.",
       image: "/assets/noon1.png",
     },
     {
       title: "Unleash your playful side in our dynamic indoor games room.",
-      description: "Refresh your senses with the interactive fountains",
+      description:
+        "Unleash the fun! Our dynamic games room is perfect for play and lively moments.",
       image: "/assets/noon2.png",
     },
     {
       title:
         "Immerse yourself in cinematic bliss with our deluxe home theater amenities.",
       description:
-        "Immerse yourself in the tranquility of the lush landscape garden",
+        "Your private cinema awaits. Enjoy cinematic bliss with our deluxe home theater amenities.",
       image: "/assets/noon3.png",
     },
     {
       title:
         "Elevate your lifestyle in our clubhouse, offering diverse amenities for your enjoyment",
       description:
-        "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+        "Enhance your lifestyle. Our clubhouse, with its diverse amenities, is your hub for enjoyment and leisure.",
       image: "/assets/noon4.png",
     },
   ],
@@ -65,25 +68,26 @@ const amenities = {
       title:
         "Indulge in opulent travel with our private ferry service, redefining luxury and convenience.",
       description:
-        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+        "Redefine your journey. Indulge in luxurious and convenient travel with our exclusive private ferry service.",
       image: "/assets/evening1.png",
     },
     {
       title:
         "Unleash your agility and finesse on our top-notch badminton court, designed for exhilarating rallies and competitive play.",
-      description: "Refresh your senses with the interactive fountains",
+      description:
+        "Serve up excitement! Hone your skills and enjoy thrilling matches on our premier badminton court.",
       image: "/assets/evening2.png",
     },
     {
       title: "Escape to a secluded waterfront oasis at our private ghat.",
       description:
-        "Immerse yourself in the tranquility of the lush landscape garden",
+        "Find your oasis. Our private ghat provides a secluded waterfront escape, offering peace and stunning views.",
       image: "/assets/evening3.png",
     },
     {
       title: "Explore the depths of spirituality",
       description:
-        "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+        "Find your peace. This tranquil setting provides a sacred space for contemplation and spiritual exploration.",
       image: "/assets/evening4.png",
     },
   ],
@@ -92,27 +96,28 @@ const amenities = {
       title:
         "Indulge in the grandeur of exquisite architecture, luxurious seating & captivating artwork.",
       description:
-        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+        "Indulge your senses. Step into a world of grand architecture, luxurious comfort, and captivating art.",
       image: "/assets/night1.png",
     },
     {
       title:
         "Unforgettable events in elegant spaces await at our banquet facilities.",
-      description: "Refresh your senses with the interactive fountains",
+      description:
+        "Celebrate in style. Create unforgettable moments in the elegant spaces of our premier banquet facilities.",
       image: "/assets/night2.png",
     },
     {
       title:
         "Retail bliss awaits at our outlet facility with diverse stores, exclusive discounts, and a vibrant atmosphere",
       description:
-        "Immerse yourself in the tranquility of the lush landscape garden",
+        "Unlock incredible deals and diverse choices. Experience the vibrant energy and retail bliss at our premier outlet facility.",
       image: "/assets/night3.png",
     },
     {
       title:
         "Elevate your nights with breathtaking views from our viewing deck, offering a panorama, cozy seating, and enchanting ambiance",
       description:
-        "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+        "Breathtaking nights. Panorama, cozy seating, enchanting ambiance from our viewing deck.",
       image: "/assets/night4.png",
     },
   ],
@@ -120,16 +125,16 @@ const amenities = {
 
 const clubhouseData = [
   {
-    title: "Swimming pool",
+    title: "Infinity Swimming pool",
     description:
       "Immerse yourself in the tranquility of the lush landscape garden",
     image: "/assets/Swimming-pool.png",
   },
   {
-    title: "Viewing deck",
+    title: "Yoga Room",
     description:
       "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
-    image: "/assets/Viewing-deck.png",
+    image: "/assets/Yoga-Room.png",
   },
   {
     title: "Badminton court",
@@ -138,9 +143,9 @@ const clubhouseData = [
     image: "/assets/Badminton-court.png",
   },
   {
-    title: "Poolside deck with lounger",
+    title: "Theater",
     description: "Refresh your senses with the interactive fountains",
-    image: "/assets/Poolside-deck.png",
+    image: "/assets/Theater.png",
   },
 ];
 
@@ -212,27 +217,27 @@ const ClubIconsRes = [
 
 const PodiumData = [
   {
-    title: "Palm garden",
+    title: "Splash pool",
     description:
       "Immerse yourself in the tranquility of the lush landscape garden",
-    image: "/assets/PalmGarden.png",
+    image: "/assets/Splash-pool.png",
   },
   {
-    title: "Garden pavilion",
+    title: "Landscape Garden",
     description:
       "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
-    image: "/assets/GardenPavilion.png",
+    image: "/assets/Landscape-Garden.png",
   },
   {
-    title: "Outdoor gym",
+    title: "Kids Play Area",
     description:
       "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
-    image: "/assets/OutdoorGym.png",
+    image: "/assets/Kids.png",
   },
   {
-    title: "Lotus pond and pavilion",
+    title: "Fountain Plaza",
     description: "Refresh your senses with the interactive fountains",
-    image: "/assets/LotusPond.png",
+    image: "/assets/FountainPlaza.png",
   },
 ];
 
@@ -349,91 +354,83 @@ const features = [
   },
 ];
 
-const accordionData = [
-  {
-    question: "Can I choose my meals?",
-    answer:
-      "Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.",
-  },
-  {
-    question: "When will I receive my order?",
-    answer:
-      "Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.",
-  },
-  {
-    question: "Can I skip a delivery?",
-    answer:
-      "Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.",
-  },
-  {
-    question: "Can I add Extras to my delivery?",
-    answer:
-      "Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.",
-  },
-];
-
 export default function Amenities() {
   const [selectedTab, setSelectedTab] = useState("morning");
   const [selectedNav, setSelectedNav] = useState("Club-house");
   const [activeIndex, setActiveIndex] = useState(null);
-  const [activeCategory, setActiveCategory] = useState(0); // New state for selected category
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const images = [
+    "/assets/Certificate1.png",
+    "/assets/Certificate2.png",
+    "/assets/Certificate3.png",
+  ];
+
+  // const [activeCategory, setActiveCategory] = useState(0); // New state for selected category
 
   // Accordion data for each category
   const accordionData = [
-    [
-      {
-        question: "Cat 1 - Question 1",
-        answer: "Answer for Cat 1 - Question 1",
-      },
-      {
-        question: "Cat 1 - Question 2",
-        answer: "Answer for Cat 1 - Question 2",
-      },
-      {
-        question: "Cat 1 - Question 3",
-        answer: "Answer for Cat 1 - Question 1",
-      },
-      {
-        question: "Cat 1 - Question 4",
-        answer: "Answer for Cat 1 - Question 2",
-      },
-    ],
-    [
-      {
-        question: "Cat 2 - Question 1",
-        answer: "Answer for Cat 2 - Question 1",
-      },
-      {
-        question: "Cat 2 - Question 2",
-        answer: "Answer for Cat 2 - Question 2",
-      },
-      {
-        question: "Cat 2 - Question 3",
-        answer: "Answer for Cat 1 - Question 1",
-      },
-      {
-        question: "Cat 2 - Question 4",
-        answer: "Answer for Cat 1 - Question 2",
-      },
-    ],
-    [
-      {
-        question: "Cat 3 - Question 1",
-        answer: "Answer for Cat 3 - Question 1",
-      },
-      {
-        question: "Cat 3 - Question 2",
-        answer: "Answer for Cat 3 - Question 2",
-      },
-      {
-        question: "Cat 3 - Question 3",
-        answer: "Answer for Cat 1 - Question 1",
-      },
-      {
-        question: "Cat 3 - Question 4",
-        answer: "Answer for Cat 1 - Question 2",
-      },
-    ],
+    {
+      question: "Is there a swimming pool in the clubhouse?",
+      answer:
+        "Yes, Sangam’s clubhouse features a swimming pool with a poolside deck.",
+    },
+    {
+      question: "Does Sangam offer a gym?",
+      answer:
+        "Yes, there's a hi‑tech, air-conditioned multi‑gym with changing rooms and lockers.",
+    },
+    {
+      question: "Can we watch movies together in a theatre?",
+      answer:
+        "Absolutely, the clubhouse has an AC home theatre with surround‑sound and seating for around 90 people.",
+    },
+    {
+      question: "Is there a dedicated games area indoors?",
+      answer:
+        "Yes, there's an indoor games arena with pool, table tennis, carrom, chess, darts, squash, and badminton.",
+    },
+    {
+      question: "Is there a space for group events or classes?",
+      answer:
+        "Yes, a multipurpose hall hosts activities like karaoke, dance, and cooking classes.",
+    },
+    // [
+    //   {
+    //     question: "Cat 2 - Question 1",
+    //     answer: "Answer for Cat 2 - Question 1",
+    //   },
+    //   {
+    //     question: "Cat 2 - Question 2",
+    //     answer: "Answer for Cat 2 - Question 2",
+    //   },
+    //   {
+    //     question: "Cat 2 - Question 3",
+    //     answer: "Answer for Cat 1 - Question 1",
+    //   },
+    //   {
+    //     question: "Cat 2 - Question 4",
+    //     answer: "Answer for Cat 1 - Question 2",
+    //   },
+    // ],
+    // [
+    //   {
+    //     question: "Cat 3 - Question 1",
+    //     answer: "Answer for Cat 3 - Question 1",
+    //   },
+    //   {
+    //     question: "Cat 3 - Question 2",
+    //     answer: "Answer for Cat 3 - Question 2",
+    //   },
+    //   {
+    //     question: "Cat 3 - Question 3",
+    //     answer: "Answer for Cat 1 - Question 1",
+    //   },
+    //   {
+    //     question: "Cat 3 - Question 4",
+    //     answer: "Answer for Cat 1 - Question 2",
+    //   },
+    // ],
   ];
 
   const toggleIndex = (index) => {
@@ -455,6 +452,7 @@ export default function Amenities() {
   ];
 
   return (
+    <>
     <main>
       <SlideUp>
         <section className="relative justify-center bg-[#f3f6f8] flex flex-col items-center md:h-[280px] md:top-[107] h-[180px] top-[50]">
@@ -627,7 +625,7 @@ export default function Amenities() {
             delay={0.6}
             className="text-[48px] font-cormorant leading-[60px] font-normal text-white"
           >
-            World-class Amenities
+            World-className Amenities
           </SlideUp>
         </div>
 
@@ -651,7 +649,7 @@ export default function Amenities() {
             65+
           </p>
           <p className="text-[16px] font-satoshi font-bold leading-[20px] relative z-10">
-            World-class <br /> Amenities
+            World-className <br /> Amenities
           </p>
         </SlideUp>
 
@@ -966,7 +964,7 @@ export default function Amenities() {
             </div>
             <div className="flex-1 md:px-11 md:py-8">
               <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-                Curious to see life @Alcove and world-class amenities?
+                Curious to see life @Alcove and world-className amenities?
               </p>
             </div>
             <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
@@ -1136,180 +1134,312 @@ export default function Amenities() {
 
       {/* ferry ride */}
       <AnimatedSection>
-        <section className="relative w-full h-full flex flex-col-reverse md:flex-row overflow-hidden shadow-lg bg-white pb-15 md:pb-0 rounded-none">
-          {/* Image (bottom on mobile, left on desktop) */}
-          <div className="w-full md:w-1/2 h-[300px] md:h-[524px] relative">
+        <section className="relative w-full h-full flex flex-col-reverse md:flex-col overflow-hidden shadow-lg bg-white pb-15 md:pb-0 rounded-none">
+          {/* Image Section (with Tailwind for responsiveness) */}
+          <div className="w-full md:h-[900px] h-[1200px] relative">
             <Image
-              src="/assets/ferry-ride.png"
+              src="/assets/ferry-ride.png" // replace with your image path
               alt="Ferry Ride"
-              fill
-              className="object-cover"
+              layout="fill"
+              objectFit="fit"
               priority
             />
-            <div className="absolute -inset-1 bg-[linear-gradient(180deg,#0a1628_9.69%,rgba(2,12,34,0)_93.16%)] md:bg-[linear-gradient(267.36deg,#0a1628_9.69%,rgba(2,12,34,0)_93.16%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(0deg,#0a1628_55.69%,rgba(2,12,34,0)_100.16%)]" />
           </div>
 
-          {/* Text Content (top on mobile, right on desktop) */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center py-10 px-4 md:px-6 md:py-[74px] md:pr-[100px] bg-[#0a1628] text-center md:text-left">
-            <h2 className="text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px] mb-6 md:mb-7">
-              Indulge in the <span className="text-[#DE804B]">ferry ride </span>
-              <br className="hidden md:block" />
-              departing from our <br className="hidden md:block" />
-              location.
+          {/* Content Section */}
+          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center text-center">
+            <h2 className="absolute md:-top-30 -top-10 text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px]">
+              Good News <span className="text-[#DE804B]">Sails Faster</span>
             </h2>
-            <p className="text-white font-satoshi font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] mb-6 md:mb-7">
-              Ferry solely for potential clients and current customers.
-            </p>
-            <button className="md:min-h-[4rem] min-h-[3.5rem] h-full md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
-              <div className="px-6 py-3 mr-20">
-                <span>Book Now</span>
+            <div className="absolute -top-10 text-white font-satoshi font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[28px]">
+              Your river rides from New Kolkata Sangam just got a new
+              destination
+            </div>
+            <div className="w-full flex max-md:flex-col justify-center text-white gap-10 mb-10 mt-5">
+              {/* Slot 1 */}
+              <div>
+                <table className="min-w-full table-auto border-collapse text-left bg-[#0f182d] p-5 rounded-[20px]">
+                  <thead>
+                    <tr>
+                      <th
+                        colSpan="4"
+                        className=" flex justify-start md:px-4 px-2 md:py-5 py-2 text-xl font-bold text-[#DE804B]"
+                      >
+                        Slot 1
+                      </th>
+                    </tr>
+                    <tr className="border-b border-gray-600">
+                      <th className=" md:px-4 md:py-2 px-2 py-1">Station</th>
+                      <th className=" md:px-4 md:py-2 px-2 py-1">Departure</th>
+                      <th className=" md:px-4 md:py-2 px-2 py-1">Station</th>
+                      <th className=" md:px-4 md:py-2 px-2 py-1">Arrival</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className=" md:px-4 md:py-2 px-2 py-1">
+                        New Kolkata
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">10.30am</td>
+                      <td className=" md:px-4 md:py-2 px-2 py-1">
+                        Dakshineswar
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">10.55am</td>
+                    </tr>
+                    <tr>
+                      <td className="md:px-4 md:py-2 px-2 py-1">
+                        Dakshineswar
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">11.00am</td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">
+                        Millennium Park
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">11.40am</td>
+                    </tr>
+                    <tr>
+                      <td className="md:px-4 md:py-2 px-2 py-1">
+                        Millennium Park
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">12.00pm</td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">
+                        Dakshineswar
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">12.40pm</td>
+                    </tr>
+                    <tr>
+                      <td className="md:px-4 md:py-2 px-2 py-1">
+                        Dakshineswar
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">12.20pm</td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">New Kolkata</td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">1.00pm</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              {/* Slot 2 */}
+              <div>
+                <table className="min-w-full table-auto border-collapse text-left bg-[#0f182d] p-5 rounded-[20px]">
+                  <thead>
+                    <tr>
+                      <th
+                        colSpan="4"
+                        className=" flex justify-start px-4 py-5 text-xl font-bold text-[#DE804B]"
+                      >
+                        Slot 2
+                      </th>
+                    </tr>
+                    <tr className="border-b border-gray-600">
+                      <th className="md:px-4 md:py-2 px-2 py-1">Station</th>
+                      <th className="md:px-4 md:py-2 px-2 py-1">Departure</th>
+                      <th className="md:px-4 md:py-2 px-2 py-1">Station</th>
+                      <th className="md:px-4 md:py-2 px-2 py-1">Arrival</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="md:px-4 md:py-2 px-2 py-1">New Kolkata</td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">4.30pm</td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">
+                        Dakshineswar
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">4.55pm</td>
+                    </tr>
+                    <tr>
+                      <td className="md:px-4 md:py-2 px-2 py-1">
+                        Dakshineswar
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">5.00pm</td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">
+                        Millennium Park
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">5.40pm</td>
+                    </tr>
+                    <tr>
+                      <td className="md:px-4 md:py-2 px-2 py-1">
+                        Millennium Park
+                      </td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">5.45pm</td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">New Kolkata</td>
+                      <td className="md:px-4 md:py-2 px-2 py-1">6.45pm</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>{" "}
+            <button className="mb-7 md:min-h-[4rem] min-h-[3.5rem] h-full md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
+              <div className="px-6 py-3 mr-5">
+                <span>Call +91 760 508 1410 to Book</span>
               </div>
               <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
-                ↗
+                <svg
+                  width="19"
+                  height="18"
+                  viewBox="0 0 19 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.4788 18C15.5454 18 13.5746 17.5333 11.5663 16.6C9.55791 15.6667 7.69541 14.3417 5.97876 12.625C4.26211 10.9083 2.93711 9.04585 2.00376 7.0375C1.07042 5.02915 0.60376 3.05835 0.60376 1.125C0.60376 0.8035 0.710925 0.535665 0.92526 0.3215C1.13942 0.107165 1.40726 0 1.72876 0H5.22876C5.46211 0 5.66211 0.083335 5.82876 0.25C5.99541 0.416665 6.11211 0.625 6.17876 0.875L6.85201 4.016C6.88651 4.25535 6.88291 4.47085 6.84126 4.6625C6.79961 4.85415 6.71016 5.0186 6.57301 5.15575L4.07876 7.675C4.51211 8.40835 4.97041 9.09165 5.45376 9.725C5.93711 10.3584 6.47041 10.9583 7.05376 11.525C7.67041 12.1583 8.32041 12.7375 9.00376 13.2625C9.68711 13.7875 10.4038 14.25 11.1538 14.65L13.5288 12.2C13.6954 12.0167 13.8884 11.8917 14.1075 11.825C14.3267 11.7583 14.5421 11.7416 14.7538 11.775L17.7288 12.425C17.9788 12.4917 18.1871 12.6253 18.3538 12.826C18.5204 13.0268 18.6038 13.2515 18.6038 13.5V16.875C18.6038 17.1965 18.4966 17.4643 18.2823 17.6785C18.0681 17.8928 17.8003 18 17.4788 18ZM3.32876 6.3L5.35376 4.25L4.77876 1.5H2.10376C2.13709 2.2 2.24959 2.9375 2.44126 3.7125C2.63291 4.4875 2.92876 5.35 3.32876 6.3ZM12.5538 15.375C13.2371 15.6917 13.9788 15.95 14.7788 16.15C15.5788 16.35 16.3538 16.4667 17.1038 16.5V13.825L14.5288 13.3L12.5538 15.375Z"
+                    fill="#DE804B"
+                  />
+                </svg>
               </span>
             </button>
+            <p className="z-10 mb-12 font-regular !text-white text-[16px] leading-[24px]">
+              Note: Closed on Sundays and Public Holidays.
+            </p>
           </div>
         </section>
       </AnimatedSection>
 
       {/* certified section */}
-      <AnimatedSection className='overflow-visible'>
-  <section className="relative w-full bg-[#E7F2EB] px-2 md:pt-[130px] md:pb-20 pt-1 pb-1 md:px-15 bg-cover bg-center md:bg-top">
-    <div className="md:!w-[92%] w-[96%] h-[720px] absolute z-10">
-      <Image src={"/assets/certifed.svg"} alt="" fill className="object-cover w-full h-full" />
-    </div>
-    <div className="z-11 relative w-full md:py-20 md:px-10 mb:mt-12 text-center">
-      {/* IGBC Logo */}
-      <div className="flex justify-center z-11">
-        <SlideUp delay={0.6} className="absolute -top-12 z-11">
-          <Image
-            src="/assets/IGBC.png"
-            alt="IGBC Logo"
-            width={152}
-            height={152}
-            priority
-            className="responsive-IGBC-image"
-          />
-        </SlideUp>
-      </div>
-
-      {/* Heading */}
-      <SlideUp delay={0.8}>
-        <h2 className="md:text-[56px] text-[36px] leading-[44px] font-cormorant font-normal md:leading-[72px] my-10">
-          Pre-Certified <br />
-          Platinum-Rated by <br />
-          <span className="text-[#DE804B]">IGBC</span>
-        </h2>
-      </SlideUp>
-
-      {/* Features List - Desktop */}
-      <div className="hidden md:flex justify-between w-full gap-20 pb-20 md:pb-0">
-        {features.map(({ image, title }, i) => (
-          <SlideUp
-            delay={i * 0.2}
-            key={i}
-            className="flex flex-col items-center md:space-y-4 px-4 md:px-0 text-center max-w-[235px]"
-          >
-            <div className="flex-shrink-0 flex items-center justify-center rounded-full mb-0">
-              <Image
-                src={image}
-                alt={title}
-                width={92}
-                height={92}
-                className="icon-image"
-              />
-            </div>
-            <p className="md:mt-7 mt-4 font-satoshi font-bold text-[16px] md:text-[20px] leading:6 md:leading-7 text-[#22252E]">
-              {title}
-            </p>
-          </SlideUp>
-        ))}
-      </div>
-
-      {/* Features List - Mobile */}
-      <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:hidden pb-15 px-3">
-        {features.slice(0, 2).map(({ image, title }, i) => (
-          <SlideUp
-            delay={i * 0.2}
-            key={i}
-            className="flex flex-col items-center text-center"
-          >
-            <Image src={image} alt={title} width={60} height={60} />
-            <p className="mt-3 font-satoshi font-bold text-[16px] leading-[24px] text-[#22252E]">
-              {title}
-            </p>
-          </SlideUp>
-        ))}
-        {features.slice(2, 4).map(({ image, title }, i) => (
-          <SlideUp
-            delay={(i + 2) * 0.2}
-            key={i + 2}
-            className="flex flex-col items-center text-center"
-          >
-            <Image src={image} alt={title} width={60} height={60} />
-            <p className="mt-3 font-satoshi font-bold text-[16px] leading-[24px] text-[#22252E]">
-              {title}
-            </p>
-          </SlideUp>
-        ))}
-        {/* Center the last item */}
-        <div className="col-span-2 flex justify-center">
-          <SlideUp
-            delay={4 * 0.2}
-            className="flex flex-col items-center text-center"
-          >
+      <AnimatedSection className="overflow-visible">
+        <section className="relative w-full bg-[#E7F2EB] px-2 md:pt-[130px] md:pb-20 pt-1 pb-1 md:px-15 bg-cover bg-center md:bg-top">
+          <div className="md:!w-[92%] w-[96%] h-[720px] absolute z-10">
             <Image
-              src={features[4].image}
-              alt={features[4].title}
-              width={60}
-              height={60}
+              src={"/assets/certifed.svg"}
+              alt=""
+              fill
+              className="object-cover w-full h-full"
             />
-            <p className="mt-3 font-satoshi font-bold px-15 text-[16px] leading-[24px] text-[#22252E]">
-              {features[4].title}
-            </p>
-          </SlideUp>
-        </div>
-      </div>
+          </div>
+          <div className="z-11 relative w-full md:py-20 md:px-10 mb:mt-12 text-center">
+            {/* IGBC Logo */}
+            <div className="flex justify-center z-11">
+              <SlideUp delay={0.6} className="absolute -top-12 z-11">
+                <Image
+                  src="/assets/IGBC.png"
+                  alt="IGBC Logo"
+                  width={152}
+                  height={152}
+                  priority
+                  className="responsive-IGBC-image"
+                />
+              </SlideUp>
+            </div>
 
-      {/* View Certification Button */}
-      <AnimatedSection className="flex justify-center relative bottom-7 md:bottom-0 md:top-27 overflow-visible">
-        <button className="md:min-h-[4rem] min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden mb-0 button-primary">
-          <div className="px-6 py-3 mr-20">View Certification</div>
-          <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
-            ↗
-          </span>
-        </button>
+            {/* Heading */}
+            <SlideUp delay={0.8}>
+              <h2 className="md:text-[56px] text-[36px] leading-[44px] font-cormorant font-normal md:leading-[72px] my-10">
+                Pre-Certified <br />
+                Platinum-Rated by <br />
+                <span className="text-[#DE804B]">IGBC</span>
+              </h2>
+            </SlideUp>
+
+            {/* Features List - Desktop */}
+            <div className="hidden md:flex justify-between w-full gap-20 pb-20 md:pb-0">
+              {features.map(({ image, title }, i) => (
+                <SlideUp
+                  delay={i * 0.2}
+                  key={i}
+                  className="flex flex-col items-center md:space-y-4 px-4 md:px-0 text-center max-w-[235px]"
+                >
+                  <div className="flex-shrink-0 flex items-center justify-center rounded-full mb-0">
+                    <Image
+                      src={image}
+                      alt={title}
+                      width={92}
+                      height={92}
+                      className="icon-image"
+                    />
+                  </div>
+                  <p className="md:mt-7 mt-4 font-satoshi font-bold text-[16px] md:text-[20px] leading:6 md:leading-7 text-[#22252E]">
+                    {title}
+                  </p>
+                </SlideUp>
+              ))}
+            </div>
+
+            {/* Features List - Mobile */}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:hidden pb-15 px-3">
+              {features.slice(0, 2).map(({ image, title }, i) => (
+                <SlideUp
+                  delay={i * 0.2}
+                  key={i}
+                  className="flex flex-col items-center text-center"
+                >
+                  <Image src={image} alt={title} width={60} height={60} />
+                  <p className="mt-3 font-satoshi font-bold text-[16px] leading-[24px] text-[#22252E]">
+                    {title}
+                  </p>
+                </SlideUp>
+              ))}
+              {features.slice(2, 4).map(({ image, title }, i) => (
+                <SlideUp
+                  delay={(i + 2) * 0.2}
+                  key={i + 2}
+                  className="flex flex-col items-center text-center"
+                >
+                  <Image src={image} alt={title} width={60} height={60} />
+                  <p className="mt-3 font-satoshi font-bold text-[16px] leading-[24px] text-[#22252E]">
+                    {title}
+                  </p>
+                </SlideUp>
+              ))}
+              {/* Center the last item */}
+              <div className="col-span-2 flex justify-center">
+                <SlideUp
+                  delay={4 * 0.2}
+                  className="flex flex-col items-center text-center"
+                >
+                  <Image
+                    src={features[4].image}
+                    alt={features[4].title}
+                    width={60}
+                    height={60}
+                  />
+                  <p className="mt-3 font-satoshi font-bold px-15 text-[16px] leading-[24px] text-[#22252E]">
+                    {features[4].title}
+                  </p>
+                </SlideUp>
+              </div>
+            </div>
+
+            {/* View Certification Button */}
+            <AnimatedSection className="flex justify-center relative bottom-7 md:bottom-0 md:top-27 overflow-visible">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="md:min-h-[4rem] min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden mb-0 button-primary"
+              >
+                <div className="px-6 py-3 mr-20">View Certification</div>
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
+                  ↗
+                </span>
+              </button>
+            </AnimatedSection>
+          </div>
+          {/* Horizontal Card Section */}
+          <AnimatedSection>
+            <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
+              <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+                <Image
+                  src="/assets/sport-gif.gif"
+                  alt="Room preview"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-1 md:px-11 md:py-8">
+                <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+                  Curious to see life @Alcove and world-className amenities?
+                </p>
+              </div>
+              <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
+                <Image
+                  src="/assets/icons/arrowlong.svg"
+                  alt=""
+                  width={40}
+                  height={3}
+                  className="absolute -ml-6"
+                />
+              </div>
+            </div>
+          </AnimatedSection>
+        </section>
       </AnimatedSection>
-    </div>
-    {/* Horizontal Card Section */}
-    <AnimatedSection>
-      <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
-        <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
-          <Image
-            src="/assets/sport-gif.gif"
-            alt="Room preview"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="flex-1 md:px-11 md:py-8">
-          <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-            Curious to see life @Alcove and world-class amenities?
-          </p>
-        </div>
-        <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
-          <Image
-            src="/assets/icons/arrowlong.svg"
-            alt=""
-            width={40}
-            height={3}
-            className="absolute -ml-6"
-          />
-        </div>
-      </div>
-    </AnimatedSection>
-  </section>
-</AnimatedSection>
 
       {/* Plans */}
       <AnimatedSection className="overflow-visible">
@@ -1331,7 +1461,7 @@ export default function Amenities() {
           </div>
           <div className="flex flex-col md:w-[70%] w-full">
             {/* Category Buttons */}
-            <div className="flex gap-5 md:gap-10 items-center mb-8 mt-6 md:mt-0 text-gray-400 relative py-4 px-6 md:py-0 md:px-0 md:border-none border-y-1 border-dashed border-[#ebedef]">
+            {/* <div className="flex gap-5 md:gap-10 items-center mb-8 mt-6 md:mt-0 text-gray-400 relative py-4 px-6 md:py-0 md:px-0 md:border-none border-y-1 border-dashed border-[#ebedef]">
               {["Category 1", "Category 2", "Category 3"].map(
                 (label, idx, arr) => (
                   <React.Fragment key={idx}>
@@ -1341,7 +1471,7 @@ export default function Amenities() {
                       }`}
                       onClick={() => {
                         setActiveCategory(idx);
-                        setActiveIndex(null); // Reset open accordion
+                        setActiveIndex(null);
                       }}
                     >
                       {label}
@@ -1350,17 +1480,16 @@ export default function Amenities() {
                       )}
                     </button>
 
-                    {/* CSS Diamond */}
                     {idx < arr.length - 1 && (
                       <span className="w-1 h-1 border border-black rotate-45 mx-[12px]"></span>
                     )}
                   </React.Fragment>
                 )
               )}
-            </div>
+            </div> */}
 
             {/* Accordion Items */}
-            {accordionData[activeCategory].map((item, index) => (
+            {accordionData.map((item, index) => (
               <div key={index} className="mb-4 rounded-md bg-white p-4">
                 <button
                   className="w-full flex justify-between items-center font-satoshi font-bold text-left text-gray-900 cursor-pointer"
@@ -1407,7 +1536,7 @@ export default function Amenities() {
                 <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
                     activeIndex === index
-                      ? "max-h-40 opacity-100"
+                      ? "max-h-auto opacity-100"
                       : "max-h-0 opacity-0"
                   }`}
                 >
@@ -1445,5 +1574,11 @@ export default function Amenities() {
         </div>
       </section>
     </main>
+    <ImageGallery
+    isOpen={isModalOpen}
+    onClose={() => setIsModalOpen(false)}
+    images={images}
+  />
+    </>
   );
 }

@@ -8,46 +8,48 @@ import "slick-carousel/slick/slick-theme.css";
 import { SlideUp } from "./animations";
 
 const data = {
-  "3BHK": [
+  "1BHK": [
     {
-      src: "/assets/sangam1.png",
+      src: "/assets/1bhkv.png",
     },
     {
-      src: "/assets/sangam2.png",
+      src: "/assets/1bhkv2.png",
     },
     {
-      src: "/assets/sangam3.png",
-    },
-    {
-      src: "/assets/sangam4.jpg",
+      src: "/assets/1bhkv3.png",
     },
   ],
   "2BHK": [
     {
-      src: "/assets/mp1.png",
+      src: "/assets/1bhkv.png",
     },
     {
-      src: "/assets/mp2.png",
+      src: "/assets/1bhkv2.png",
     },
     {
-      src: "/assets/mp3.png",
+      src: "/assets/1bhkv3.png",
+    },
+  ],
+  "3BHK": [
+    {
+      src: "/assets/3bhkv.png",
     },
     {
-      src: "/assets/mp4.png",
+      src: "/assets/3bhkv1.png",
     },
   ],
   "4BHK": [
     {
-      src: "/assets/sangam1.png",
+      src: "/assets/4bhkv.png",
     },
     {
-      src: "/assets/sangam2.png",
+      src: "/assets/4bhkv1.png",
     },
     {
-      src: "/assets/sangam3.png",
+      src: "/assets/4bhkv2.png",
     },
     {
-      src: "/assets/sangam4.jpg",
+      src: "/assets/4bhkv3.png",
     },
   ],
 };

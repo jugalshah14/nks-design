@@ -13,30 +13,47 @@ const data = [
         src: '/assets/project1.png',
         icon1: '/assets/project-icon1.svg',
         icon2: '/assets/project-icon2.svg',
-        title: 'The 42 Kolkata',
-        description: 'Enjoy the beauty of the lotus pond pavilion and unwind with a calming.'
+        title: 'The 42 Night Aerial',
+        description: 'Enjoy the beauty of the lotus pond pavilion and unwind with a calming view from the tallest tower in Eastern India.',
+        category: 'Luxurious Flats',
+        location: 'Chowringhee, Kolkata',
     },
     {
-        src: '/assets/project2.jpg',
+        src: '/assets/project2.png',
         icon1: '/assets/project-icon1.svg',
         icon2: '/assets/project-icon2.svg',
-        title: 'Newkolkata Triveni',
-        description: 'Enjoy the beauty of the lotus pond pavilion and unwind with a calming.'
+        title: 'The Alcove Gloria',
+        description: 'Experience comfort and community living with spacious homes, serene landscaping, and doorstep essentials.',
+        category: 'Premium Residences',
+        location: 'Lake Town, Kolkata',
     },
     {
-        src: '/assets/project3.jpg',
+        src: '/assets/project3.png',
         icon1: '/assets/project-icon1.svg',
         icon2: '/assets/project-icon2.svg',
-        title: 'The 42 Kolkata',
-        description: 'Enjoy the beauty of the lotus pond pavilion and unwind with a calming.'
+        title: 'Flora Foundation',
+        description: 'Soak in the charm of water gardens, green landscapes, and amenities crafted for a balanced lifestyle.',
+        category: 'Luxury with Nature-Inspired Living',
+        location: 'Topsia, Kolkata',
     },
     {
-        src: '/assets/project3.jpg',
+        src: '/assets/project4.png',
         icon1: '/assets/project-icon1.svg',
         icon2: '/assets/project-icon2.svg',
-        title: 'The 42 Kolkata',
-        description: 'Enjoy the beauty of the lotus pond pavilion and unwind with a calming.'
-    }
+        title: 'The Regency',
+        description: 'Live in elegance with well-planned apartments, top-notch amenities, and excellent connectivity to EM Bypass.',
+        category: 'Luxurious Flats',
+        location: 'Topsia, Kolkata',
+    },
+    {
+        src: '/assets/project5.png',
+        icon1: '/assets/project-icon1.svg',
+        icon2: '/assets/project-icon2.svg',
+        title: 'Prayag',
+        description: 'A peaceful riverside community where heritage meets comfort, offering a harmonious lifestyle by the Ganges.',
+        category: 'Affordable Luxury Homes',
+        location: 'Serampore, Kolkata',
+    },
 ]
 
 const settings = {
@@ -109,7 +126,7 @@ export default function PastProjectSwiper() {
                             </div>
                             <div className='w-full flex flex-col bg-[#0C162B] md:mt-[40px]'>
                                 <div className='p-[16px] md:p-[36px] relative'>
-                                    <div className='md:mt-[32px] absolute w-full top-[-65px] md:top-0 md:left-[-60px] flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[5px] bg-opacity-80'>
+                                    <div className='md:mt-[32px] absolute w-full top-[-65px] md:top-0 md:left-[-60px] flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[34px] bg-opacity-80'>
                                         <div className='w-full projectslide-title py-[20px] px-[27px] transforming-text font-[400] text-[40px] leading-[48px] whitespace-nowrap'>
                                             {slide.title}
                                         </div>        
@@ -126,7 +143,7 @@ export default function PastProjectSwiper() {
                                         </div>
                                         <div>
                                             <p className="text-[14px] md:text-[14px] font-satoshi font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">Project Category</p>
-                                            <p className="text-[16px] md:text-[16px] font-satoshi font-[400] leading-6 md:leading-[20px] text-white">Luxurious Flats</p>
+                                            <p className="text-[16px] md:text-[16px] font-satoshi font-[400] leading-6 md:leading-[20px] text-white">{slide.category}</p>
                                         </div>
                                     </div>
                                     <div className='flex flex-row gap-4'>
@@ -135,7 +152,7 @@ export default function PastProjectSwiper() {
                                         </div>
                                         <div>
                                             <p className="text-[14px] md:text-[14px] font-satoshi font-[400] leading-5 md:leading-[20px] text-white/50 mb-1">Location</p>
-                                            <p className="text-[16px] md:text-[16px] font-satoshi font-[400] leading-6 md:leading-[20px] text-white">Serampore, Kolkata</p>
+                                            <p className="text-[16px] md:text-[16px] font-satoshi font-[400] leading-6 md:leading-[20px] text-white">{slide.location}</p>
                                         </div>
                                     </div>
                                 </div>
