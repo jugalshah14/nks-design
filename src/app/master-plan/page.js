@@ -18,7 +18,9 @@ export default function MasterPlan() {
         <section className="bg-[#FDF9F6] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
           <SlideUp delay={0.4}>
             <div className="text-sm px-4 pt-6 text-center text-gray-500 mb-2">
-              <span className="text-black-700 font-semibold text-[#22252E]">• Home</span>
+              <span className="text-black-700 font-semibold text-[#22252E]">
+                • Home
+              </span>
               <span className="mx-2">—</span>
               <span className="text-gray-400">Masterplans</span>
             </div>
@@ -34,8 +36,13 @@ export default function MasterPlan() {
       <section className="-mt-16 no-negative-margin">
         <SlideUp delay={0.8}>
           <div className="container mx-auto">
-          <div className="relative w-full md:h-[460px] h-[265px]">
-              <Image src="/assets/master-plan.png" alt="Hero-img" fill priority />
+            <div className="relative w-full md:h-[460px] h-[265px]">
+              <Image
+                src="/assets/master-plan.png"
+                alt="Hero-img"
+                fill
+                priority
+              />
             </div>
             <div className="z-20 flex text-center items-center justify-center relative p-[10px] -mt-12 mx-2 md:mx-[80px]  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
               <h2 className="text-center project-overview-title mobile-title max-w-[800px]">
@@ -185,10 +192,28 @@ export default function MasterPlan() {
           </div>
         </div>
       </section>
-      <SlideUp delay={0.2} className='w-full flex justify-center items-center none-md flex-row gap-4 justify-between items-center  pb-[36px]'>
-        <Image src="/assets/line1.svg" alt="Previous" height={20} width={10} className="w-[60px]"/>
-        <h1 className="text-center text-[28px] leading-[32px] font-satoshi font-[400]">Primary goals<br/> we were having</h1>
-        <Image src="/assets/line1.svg" alt="Previous" height={20} width={10} className="w-[60px]"/>
+      <SlideUp
+        delay={0.2}
+        className="w-full flex justify-center items-center none-md flex-row gap-4 justify-between items-center  pb-[36px]"
+      >
+        <Image
+          src="/assets/line1.svg"
+          alt="Previous"
+          height={20}
+          width={10}
+          className="w-[60px]"
+        />
+        <h1 className="text-center text-[28px] leading-[32px] font-satoshi font-[400]">
+          Primary goals
+          <br /> we were having
+        </h1>
+        <Image
+          src="/assets/line1.svg"
+          alt="Previous"
+          height={20}
+          width={10}
+          className="w-[60px]"
+        />
       </SlideUp>
       <AnimatedSection delay={0.4}>
         <MasterplanSwiper />
@@ -227,11 +252,11 @@ export default function MasterPlan() {
               {/* Structure */}
               <SlideUp
                 delay={0.6}
-                className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300"
+                className=" pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
               >
                 <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
                   <Image
-                    src="/assets/icons/connectivity.svg"
+                    src="/assets/icons/Structure.svg"
                     width={68}
                     height={68}
                     alt="Connectivity"
@@ -250,11 +275,11 @@ export default function MasterPlan() {
               {/* Electricals */}
               <SlideUp
                 delay={0.8}
-                className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300"
+                className=" pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
               >
                 <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
                   <Image
-                    src="/assets/icons/connectivity.svg"
+                    src="/assets/icons/Electricals.svg"
                     width={68}
                     height={68}
                     alt="Connectivity"
@@ -270,14 +295,13 @@ export default function MasterPlan() {
                     make switches.
                   </li>
                   <li>
-                    AC point, TV point & telephone socket in living/dining & all
-                    bedrooms.
+                    Socket points for AC, TV and telephone in living, dining and
+                    all bedrooms.
                   </li>
-                  <li>Sufficient electrical points.</li>
                   <li>
                     Electrical points for geyser, exhaust, washing machine,
                     microwave, refrigerator, water purifier, grinder, computer,
-                    mobile charging.
+                    and mobile charging.
                   </li>
                 </ul>
               </SlideUp>
@@ -285,11 +309,11 @@ export default function MasterPlan() {
               {/* Kitchen */}
               <SlideUp
                 delay={1}
-                className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300"
+                className=" pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
               >
                 <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
                   <Image
-                    src="/assets/icons/area_of_project.svg"
+                    src="/assets/icons/Kitchen.svg"
                     width={68}
                     height={68}
                     alt="Project Area"
@@ -305,22 +329,21 @@ export default function MasterPlan() {
                     repute make.
                   </li>
                   <li>
-                    Ceramic tiles dado up to 2 ft. above working platform (Size
-                    – 18” X 12”).
+                    Ceramic tiles dado up to 2 ft. above working platform.
                   </li>
                   <li>Provision for water inlet for filter.</li>
-                  <li>Exhaust provision</li>
+                  <li>Provision for exhaust</li>
                 </ul>
               </SlideUp>
 
               {/* Flooring */}
               <SlideUp
                 delay={1.2}
-                className=" p-[16px] md:p-10 pt-3 md:border-l md:border-dashed md:border-gray-300"
+                className="pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
               >
                 <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
                   <Image
-                    src="/assets/icons/connectivity.svg"
+                    src="/assets/icons/Flooring.svg"
                     width={68}
                     height={68}
                     alt="Connectivity"
@@ -331,23 +354,9 @@ export default function MasterPlan() {
                   </h3>
                 </div>
                 <ul className="list-disc pl-4">
-                  <li>Ceramic tiles in all bedrooms. (Size – 16’’ X 16”)</li>
-                  <li>
-                    Vitrified tiles in living/dining space. (Size – 24” X 24”)
-                  </li>
-                  <li>
-                    Anti–skid ceramic tiles in kitchen & toilets. (Size – 12” X
-                    12”)
-                  </li>
-                  <li>
-                    Ceramic Tiles in Balcony attached to bedroom, if any (Size –
-                    16&quot; X 16&quot;)
-                  </li>
-                  <li>
-                    Vitrified Mat finish tiles in Balcony attached to
-                    living/dining space, if any (Size &quot; 24&quot; X
-                    24&quot;)
-                  </li>
+                  <li>Porcelano tiles in all bedrooms</li>
+                  <li>Vitried tiles in the living/dining space & kitchen</li>
+                  <li>Anti-skid ceramic tiles in toilet</li>
                 </ul>
               </SlideUp>
             </div>
@@ -359,7 +368,10 @@ export default function MasterPlan() {
       </section>
 
       {/* sangam */}
-      <section id="sangam-section" className="bg-[#020C22] mb-[160px] md:mb-[100px] md:mb-[0px] md:pb-[80px]">
+      <section
+        id="sangam-section"
+        className="bg-[#020C22] mb-[160px] md:mb-[100px] md:mb-[0px] md:pb-[80px]"
+      >
         <div className="text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
           <SlideUp
             delay={0.4}
@@ -374,42 +386,44 @@ export default function MasterPlan() {
       </section>
 
       <section className="container mx-auto md:px-[200px] pr-[16px] md:pr-[200px]">
-      <SlideUp
-        delay={0.2}
-        className="flex flex-row justify-center w-full md:-mt-[170px] group cursor-pointer transform transition-transform duration-300 hover:scale-101"
-      >
-        <Image
-          src="/assets/faqs-detail-gif.gif"
-          width={144}
-          height={144}
-          alt="house"
-          className="img-size  md:h-[144px] md:w-[144px]"
-        />
-        <div
-          className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center cursor-pointer"
-          style={{ borderTopWidth: "1px", borderBottomWidth: "4px" }}
+        <SlideUp
+          delay={0.2}
+          className="flex flex-row justify-center w-full md:-mt-[170px] group cursor-pointer transform transition-transform duration-300 hover:scale-101"
         >
-          <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">
-            Curious to see life @Alcove and world-class amenities?
-          </h1>
           <Image
-            src="/assets/icons/arrowlong.svg"
-            alt="1BHK"
-            width={40}
-            height={3}
-            className="absolute right-[10px] md:right-[40px]"
+            src="/assets/faqs-detail-gif.gif"
+            width={144}
+            height={144}
+            alt="house"
+            className="img-size  md:h-[144px] md:w-[144px]"
           />
-          <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
-        </div>
-      </SlideUp>
+          <div
+            className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center cursor-pointer"
+            style={{ borderTopWidth: "1px", borderBottomWidth: "4px" }}
+          >
+            <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">
+              Curious to see life @Alcove and world-class amenities?
+            </h1>
+            <Image
+              src="/assets/icons/arrowlong.svg"
+              alt="1BHK"
+              width={40}
+              height={3}
+              className="absolute right-[10px] md:right-[40px]"
+            />
+            <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
+          </div>
+        </SlideUp>
       </section>
-
 
       {/* Past Projects */}
       <section className="md:overflow-x-hidden overflow-hidden">
         <div className="relative pt-[30px] md:pt-[100px]">
           <div className="text-center w-full">
-            <SlideUp delay={0.4} className="project-overview-title text-center pt-4">
+            <SlideUp
+              delay={0.4}
+              className="project-overview-title text-center pt-4"
+            >
               <span className="orange-color">Past</span> Projects
             </SlideUp>
           </div>
@@ -418,11 +432,10 @@ export default function MasterPlan() {
         <AnimatedSection>
           <PastProjectSwiper />
         </AnimatedSection>
-        </section>
-
+      </section>
 
       <section className="container mx-auto md:px-[200px] pr-[16px] md:pr-[200px]">
-      <FadeIn
+        <FadeIn
           delay={0.4}
           className="flex flex-row justify-center w-full pt-12 md:pt-0 cursor-pointer transform transition-transform duration-300 hover:scale-101"
         >
@@ -449,7 +462,7 @@ export default function MasterPlan() {
             />
             <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
           </div>
-      </FadeIn>
+        </FadeIn>
       </section>
 
       {/* Project Overview */}

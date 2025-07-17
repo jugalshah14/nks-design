@@ -117,11 +117,12 @@ const Header = () => {
             >
               Schedule Visit
             </button>
+            <Link href={"tel:918101881018"}>
             <div className="h-[40px] w-[100px] md:h-[48px] md:w-[123px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-md action-button flex items-center justify-center">
               <p className="font-satoshi font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22]">
                 Call Now
               </p>
-            </div>
+            </div></Link>
           </div>
 
           <button className="md:hidden text-[#22252E]" onClick={toggleDrawer}>
@@ -137,7 +138,7 @@ const Header = () => {
       </header>
       {/*Drawer */}
       <div
-        className={`block md:hidden !overflow-hidden z-99999 fixed top-0 left-0 w-[100vw] h-[100vh] bg-white shadow-lg
+        className={`block md:hidden !overflow-hidden z-9999 fixed top-0 left-0 w-[100vw] h-[100vh] bg-white shadow-lg
                 transition-transform transform ${
                   isOpen ? "translate-x-0" : "-translate-x-full"
                 }`}

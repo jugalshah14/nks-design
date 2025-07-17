@@ -71,20 +71,6 @@ export default function Location() {
           <div className="container mx-auto">
             <div className="relative w-full h-[265px] md:h-[460px]">
               <Image
-                src="/assets/tri1.svg"
-                width={65}
-                height={65}
-                alt="img"
-                className="absolute left-0 md:left-[-3px] z-10 w-[18px] h-[18px] md:w-[68px] md:h-[65px] select-none no-drag"
-              />
-              <Image
-                src="/assets/tri2.svg"
-                width={65}
-                height={65}
-                alt="img"
-                className="absolute right-0 md:right-[-3px] bottom-0 z-10 w-[18px] h-[18px] md:w-[68px] md:h-[65px] select-none no-drag"
-              />
-              <Image
                 src="/assets/location-hero.png"
                 alt="Hero-img"
                 fill
