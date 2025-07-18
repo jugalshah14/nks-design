@@ -48,7 +48,7 @@ export default function SangamSliders() {
   const [activeTab, setActiveTab] = useState('2D');
   const [fade, setFade] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [activeBHK, setActiveBHK] = useState('2BHK');
+  const [activeBHK, setActiveBHK] = useState('1BHK');
   const [bhkFade, setBhkFade] = useState(false);
 
   useEffect(() => {
