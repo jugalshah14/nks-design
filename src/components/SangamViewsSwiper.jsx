@@ -15,19 +15,16 @@ const data = {
     {
       src: "/assets/1bhkv2.png",
     },
-    {
-      src: "/assets/1bhkv3.png",
-    },
   ],
   "2BHK": [
     {
-      src: "/assets/1bhkv.png",
+      src: "/assets/2bhkv.png",
     },
     {
-      src: "/assets/1bhkv2.png",
+      src: "/assets/2bhkv2.png",
     },
     {
-      src: "/assets/1bhkv3.png",
+      src: "/assets/2bhkv3.png",
     },
   ],
   "3BHK": [
