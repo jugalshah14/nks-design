@@ -24,7 +24,7 @@ export default function PlansSection() {
         area: '567 - 1039 sq. ft.',
         price: '1234',
         link: '/contact-us',
-        imgtype: 'Real Image'
+        imgtype: 'Actual Image'
       },
       {
         img: '/assets/suite.png',
@@ -33,7 +33,7 @@ export default function PlansSection() {
         area: '1440 - 2085 sq. ft.',
         price: '1234',
         link: '/contact-us',
-        imgtype: 'Copied Image'
+        imgtype: 'Actual Image'
       },
       {
         img: '/assets/signature.png',
@@ -42,7 +42,7 @@ export default function PlansSection() {
         area: '567 - 1039 sq. ft.',
         price: '1234',
         link: '/contact-us',
-        imgtype: 'Real Image'
+        imgtype: 'Actual Image'
       },
     ];
 
@@ -116,12 +116,12 @@ export default function PlansSection() {
                       </button>
                     </div>
                   </div>
-                  <Link
+                  {/* <Link
                     href={card.link}
                     className="cursor-pointer text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] flex flex-row gap-2 whitespace-nowrap"
                   >
                     Let's Discuss Your Requirements <Image src="/assets/blue-arrow.svg" alt="arrow" width={30} height={10}/>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             ))}
@@ -156,7 +156,7 @@ export default function PlansSection() {
             <div className="group absolute right-3 top-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20">
               <div className="overflow-hidden">
                 <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 translate-x-2 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                  Real Image
+                Actual Image
                 </div>
               </div>
               <Image src="/assets/info.svg" alt="info" width={20} height={20} className="" />
@@ -186,12 +186,12 @@ export default function PlansSection() {
                   </button>
                 </div>
               </div>
-              <Link
+              {/* <Link
                 href="/contact-us"
                 className="cursor-pointer text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] flex flex-row gap-2"
               >
                 Let's Discuss Your Requirements <Image src="/assets/blue-arrow.svg" alt="arrow" width={40} height={10}/>
-              </Link>
+              </Link> */}
             </div>
           </div>
           {/* Card 2 */}
@@ -199,7 +199,7 @@ export default function PlansSection() {
             <div className="group absolute right-3 top-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20">
               <div className="overflow-hidden">
                 <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 translate-x-2 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                  Copied Image
+                Actual Image
                 </div>
               </div>
               <Image src="/assets/info.svg" alt="info" width={20} height={20} className="" />
@@ -229,12 +229,12 @@ export default function PlansSection() {
                   </button>
                 </div>
               </div>
-              <Link
+              {/* <Link
                 href="/contact-us"
                 className="cursor-pointer text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] flex flex-row gap-2"
               >
                 Let's Discuss Your Requirements <Image src="/assets/blue-arrow.svg" alt="arrow" width={40} height={10}/>
-              </Link>
+              </Link> */}
             </div>
           </div>
           {/* Card 3 */}
@@ -242,7 +242,7 @@ export default function PlansSection() {
             <div className="group absolute right-3 top-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20">
               <div className="overflow-hidden">
                 <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 translate-x-2 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                  Real Image
+                Actual Image
                 </div>
               </div>
               <Image src="/assets/info.svg" alt="info" width={20} height={20} className="" />
@@ -272,12 +272,12 @@ export default function PlansSection() {
                   </button>
                 </div>
               </div>
-              <Link
+              {/* <Link
                 href="/contact-us"
                 className="cursor-pointer text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] flex flex-row gap-2"
               >
                 Let's Discuss Your Requirements <Image src="/assets/blue-arrow.svg" alt="arrow" width={40} height={10}/>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

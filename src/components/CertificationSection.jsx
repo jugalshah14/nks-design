@@ -289,7 +289,7 @@ export default function CertificationSection() {
   const isNextDisabled = activeIndex >= awards.length - slidesToShow;
 
   return (
-    <section className=" bg-[#EFF3F6] relative pb-10">
+    <section className=" bg-[#EFF3F6] relative md:pb-10 pb-0">
       <div className="relative bg-[#002F52] pt-20 pb-30">
         <Image
           src="/assets/Rectangle_home_l.png"

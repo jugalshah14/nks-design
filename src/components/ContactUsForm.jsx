@@ -201,7 +201,7 @@ const ContactUsForm = () => {
           <div className="px-6 py-3 mr-20">
             {isSubmitting ? "Submitting..." : "Submit"}
           </div>
-          <span className="px-6 flex items-center justify-center min-h-[4rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+          <span className="px-6 flex items-center justify-center min-h-[4rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
             ↗
           </span>
         </button>

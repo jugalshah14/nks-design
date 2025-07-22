@@ -566,12 +566,12 @@ const FaqPage = () => {
                 className="!h-[163px] !w-[163px] min-h-[163px] min-w-[163px]"
               />
             </div>
-            <div className="bg-white relative w-full border-[#144D78] flex flex-row justify-between items-center border-t-1 border-b-4">
+            <Link href="/contact-us" className="bg-white relative w-full border-[#144D78] flex flex-row justify-between items-center border-t-1 border-b-4">
               <h1 className="text-[#22252E] font-satoshi text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">
                 Still have doubts?
                 <Link
                   href="/contact-us"
-                  className="contact-us-link text-[#DE804B] hover:text-orange-500"
+                  className="contact-us-link text-[#DE804B] hover:orange-color"
                 >
                   <span> Contact us.</span>
                 </Link>
@@ -584,7 +584,7 @@ const FaqPage = () => {
                 className="absolute right-[10px] md:right-[40px]"
               />
               <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
-            </div>
+            </Link>
           </div>
         </div>
       </AnimatedSection>

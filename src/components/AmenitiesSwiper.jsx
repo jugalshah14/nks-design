@@ -118,7 +118,7 @@ export default function AmenitiesSwiper() {
 
   return (
     <div className="relative max-md:-top-15 overflow-hidden">
-      <div className="container mx-auto relative md:mb-16">
+      <div className="container mx-auto relative md:mb-20">
         <div className="grid grid-cols-4 gap-0">
           <div className="hidden md:block bg-white z-2 after-box pr-10 md:col-span-2 lg:col-span-1">
             <h2 className="text-left project-overview-title text-[48px]">
@@ -172,7 +172,7 @@ export default function AmenitiesSwiper() {
                 afterChange={(current) => setActiveIndex(current)}
               >
                 {data.map((slide, i) => (
-                  <div key={i} className="mx-2 !w-[209px] !overflow-hidden">
+                  <div key={i} className="mx-4 !w-[209px] !overflow-hidden">
                     <div className="relative !w-[209px] h-[380px]">
                       <div className="group inset-0">
                         <div className={"absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group"}>

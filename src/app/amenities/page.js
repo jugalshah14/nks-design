@@ -591,7 +591,7 @@ export default function Amenities() {
                 } space-y-4 md:px-5 px-0`}
               >
                 <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300 opacity-20"></div>
-                <div className="text-[20px] font-cormorant leading-7 text-orange-500 font-normal md:text-lg md:mb-6 mb-3">
+                <div className="text-[20px] font-cormorant leading-7 orange-color font-normal md:text-lg md:mb-6 mb-3">
                   {index + 1}
                 </div>
                 <h3 className="text-white text-left text-[18px] md:text-[24px] font-bold font-satoshi md:mb-6 mb-3">
@@ -731,7 +731,7 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">
+                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
                   </div>
                   <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
@@ -880,7 +880,7 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">
+                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
                   </div>
                   <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
@@ -1059,7 +1059,7 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">
+                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
                   </div>
                   <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
@@ -1272,7 +1272,7 @@ export default function Amenities() {
               <div className="px-6 py-3 mr-5">
                 <span>Call +91 760 508 1410 to Book</span>
               </div>
-              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
+              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
                 <svg
                   width="19"
                   height="18"
@@ -1405,7 +1405,7 @@ export default function Amenities() {
                 className="md:min-h-[4rem] min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden mb-0 button-primary"
               >
                 <div className="px-6 py-3 mr-20">View Certification</div>
-                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
                   ↗
                 </span>
               </button>

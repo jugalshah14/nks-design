@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import PastProjectSwiper from "@/components/PastProjectSwiper";
 import { SlideUp } from "@/components/animations";
+import Link from "next/link";
 
 export default function WhyAlcove() {
   return (
@@ -47,14 +48,14 @@ export default function WhyAlcove() {
       </section>
 
       {/* Founder's desk */}
-      <section className="mt-[80px]">
-        <div className="relative certification-section pt-[48px]">
+      <section className="md:mt-[80px]">
+        <div className="relative certification-section py-[48px]">
           <Image
             src="/assets/Rectangl_Left.png"
             width={80}
             height={307}
             alt="Rectangle_left"
-            className="absolute top-0 h-[100%] left-0"
+            className="absolute top-0 !h-[100%] left-0"
           />
           <div className="flex flex-col md:flex-row justify-between relative container mx-auto gap-[12px] md:gap-[54px]">
             <div className="text-center md:text-left w-full md:pb-15">
@@ -67,7 +68,7 @@ export default function WhyAlcove() {
               </SlideUp>
               <SlideUp
                 delay={0.4}
-                className="text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[16px]"
+                className="text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[16px] max-md:px-5"
               >
                 Alcove Realty was founded by Shri. Amar Nath Shro . He is the
                 driving force behind our commitment to excellence, innovation,
@@ -95,7 +96,7 @@ export default function WhyAlcove() {
                   <Image
                     src="/assets/person.png"
                     width={446}
-                    height={330}
+                    height={339}
                     alt="Rectangle_left"
                     className="w-full"
                   />
@@ -355,8 +356,9 @@ export default function WhyAlcove() {
               alt="house"
               className="img-size md:h-[144px] md:w-[144px]"
             />
-            <div
-              className="mr-[16px] md:mr-[0px] bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"
+            <Link
+              href="/life-@-alcove"
+              className="mr-[16px] md:mr-[0px] cursor-pointer bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"
               style={{ borderTopWidth: "1px", borderBottomWidth: "4px" }}
             >
               <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">
@@ -370,7 +372,7 @@ export default function WhyAlcove() {
                 className="absolute right-[10px] md:right-[40px]"
               />
               <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
-            </div>
+            </Link>
           </SlideUp>
         </div>
       </section>
@@ -381,7 +383,7 @@ export default function WhyAlcove() {
           <div className="text-center w-full">
             <SlideUp
               delay={0.4}
-              className="project-overview-title text-center md:pb-[28px] md:pb-[0px]"
+              className="project-overview-title text-center md:pb-[28px]"
             >
               <span className="orange-color">Past</span> Projects
             </SlideUp>
@@ -407,16 +409,6 @@ export default function WhyAlcove() {
       </section> */}
 
       <section className="relative">
-        {/* <div className="text-center w-full pt-[40px] md:pt-0"> */}
-          {/* <SlideUp
-            delay={0.4}
-            className="project-overview-title text-center md:pb-[28px] md:pb-[0px]"
-          >
-            Corporate Social{" "}
-            <span className="orange-color">Responsibility </span>
-          </SlideUp>
-        </div>
-        <SocialSection /> */}
         <SlideUp
           delay={0.6}
           className="mr-[16px] md:mr-[0px] md:ml-[100px] absolute container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]"
@@ -428,8 +420,9 @@ export default function WhyAlcove() {
             alt="house"
             className="img-size md:h-[144px] md:w-[144px]"
           />
-          <div
-            className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"
+          <Link
+            href="/location"
+            className="bg-white cursor-pointer relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"
             style={{ borderTopWidth: "1px", borderBottomWidth: "4px" }}
           >
             <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">
@@ -443,7 +436,7 @@ export default function WhyAlcove() {
               className="absolute right-[10px] md:right-[40px]"
             />
             <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
-          </div>
+          </Link>
         </SlideUp>
       </section>
 

@@ -23,6 +23,7 @@ const Header = () => {
   const handleScheduleVisit = (e) => {
     e.preventDefault();
     setIsModalOpen(true);
+    setIsOpen(!isOpen);
   };
 
   useEffect(() => {
@@ -86,7 +87,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="md:h-[48px] md:w-[260px] w-[95px] h-[44px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">
+          <div className="md:h-[48px] md:w-[260px] w-[141px] h-[26px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">
             <Link href="/">
               <Image
                 className="invert-100 logo-image"
@@ -144,8 +145,8 @@ const Header = () => {
                 }`}
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
-          <div className="w-[60px] h-[30px] relative">
-            <Link href="/">
+          <div className="w-[141px] h-[26px] relative">
+            <Link href="/" onClick={toggleDrawer}>
               <Image
                 src="/assets/logo.png"
                 alt="Logo"
@@ -183,6 +184,7 @@ const Header = () => {
               <Link
                 href="/why-alcove"
                 className="text-gray-800 hover:text-blue-500"
+                onClick={toggleDrawer}
               >
                 Why Alcove
               </Link>
@@ -191,6 +193,7 @@ const Header = () => {
               <Link
                 href="/master-plan"
                 className="text-gray-800 hover:text-blue-500"
+                onClick={toggleDrawer}
               >
                 Master Plans
               </Link>
@@ -199,6 +202,7 @@ const Header = () => {
               <Link
                 href="/amenities"
                 className="text-gray-800 hover:text-blue-500"
+                onClick={toggleDrawer}
               >
                 Amenities
               </Link>
@@ -207,6 +211,7 @@ const Header = () => {
               <Link
                 href="/location"
                 className="text-gray-800 hover:text-blue-500"
+                onClick={toggleDrawer}
               >
                 Location
               </Link>
@@ -215,17 +220,20 @@ const Header = () => {
               <Link
                 href="/life-@-alcove"
                 className="text-gray-800 hover:text-blue-500"
+                onClick={toggleDrawer}
               >
                 Life @Alcove
               </Link>
             </li>
             <li>
-              <Link href="/triveni" className="text-gray-800 hover:text-blue-500">
+              <Link href="/triveni" className="text-gray-800 hover:text-blue-500
+              onClick={toggleDrawer}">
                 Triveni Omniplex
               </Link>
             </li>
             <li>
-              <Link href="/blogs" className="text-gray-800 hover:text-blue-500">
+              <Link href="/blogs" className="text-gray-800 hover:text-blue-500
+              onClick={toggleDrawer}">
                 Blogs
               </Link>
             </li>

@@ -40,7 +40,7 @@ export default function Amenities() {
                         className={`relative ${index % 2 !== 0 && 'top-10'} space-y-4 px-4`}
                     >
                         <div className='absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300'></div>
-                        <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 text-orange-500 font-semibold md:text-lg">{item.number}</div>
+                        <div className="max-md:text-center text-[18px] font-[IvyMode] leading-7 orange-color font-semibold md:text-lg">{item.number}</div>
                         <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">{item.title}</h3>
                         <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
                             <Image
@@ -70,7 +70,7 @@ export default function Amenities() {
                         <span className='hidden md:inline'>Explore the Riverside Sanctuary</span>
                         <span className='inline md:hidden'>Schedule a Visit</span>
                     </div>
-                    <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg ml-auto">↗</span>
+                    <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg ml-auto">↗</span>
                 </button>
             </div>
 
