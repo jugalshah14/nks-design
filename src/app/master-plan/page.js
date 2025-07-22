@@ -9,6 +9,7 @@ import Blogs from "@/components/Blogs";
 import ConstructionSlider from "@/components/ConstructionSlider";
 import PastProjectSwiper from "@/components/PastProjectSwiper";
 import { AnimatedSection, FadeIn, SlideUp } from "@/components/animations";
+import Link from "next/link";
 
 export default function MasterPlan() {
   return (
@@ -248,7 +249,7 @@ export default function MasterPlan() {
           </div>
           <div>
             {/* Grid Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[10px] md:gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] md:gap-10">
               {/* Structure */}
               <SlideUp
                 delay={0.6}
@@ -260,9 +261,9 @@ export default function MasterPlan() {
                     width={68}
                     height={68}
                     alt="Connectivity"
-                    className="mb-6 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
+                    className="md:mb-6 mb-3 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
                   />
-                  <h3 className="font-satoshi font-semibold text-xl mb-6">
+                  <h3 className="font-satoshi font-semibold text-xl md:mb-6 mb-3">
                     Structure
                   </h3>
                 </div>
@@ -283,9 +284,9 @@ export default function MasterPlan() {
                     width={68}
                     height={68}
                     alt="Connectivity"
-                    className="mb-6 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
+                    className="md:mb-6 mb-3 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
                   />
-                  <h3 className="font-satoshi font-semibold text-xl mb-6">
+                  <h3 className="font-satoshi font-semibold text-xl md:mb-6 mb-3">
                     Electricals
                   </h3>
                 </div>
@@ -317,9 +318,9 @@ export default function MasterPlan() {
                     width={68}
                     height={68}
                     alt="Project Area"
-                    className="mb-6 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
+                    className="md:mb-6 mb-3 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
                   />
-                  <h3 className="font-satoshi font-semibold text-xl mb-6">
+                  <h3 className="font-satoshi font-semibold text-xl md:mb-6 mb-3">
                     Kitchen
                   </h3>
                 </div>
@@ -347,9 +348,9 @@ export default function MasterPlan() {
                     width={68}
                     height={68}
                     alt="Connectivity"
-                    className="mb-6 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
+                    className="md:mb-6 mb-3 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
                   />
-                  <h3 className="font-satoshi font-semibold text-xl mb-6">
+                  <h3 className="font-satoshi font-semibold text-xl md:mb-6 mb-3">
                     Flooring
                   </h3>
                 </div>
@@ -397,7 +398,8 @@ export default function MasterPlan() {
             alt="house"
             className="img-size  md:h-[144px] md:w-[144px]"
           />
-          <div
+          <Link
+            href="/amenities"
             className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center cursor-pointer"
             style={{ borderTopWidth: "1px", borderBottomWidth: "4px" }}
           >
@@ -412,7 +414,7 @@ export default function MasterPlan() {
               className="absolute right-[10px] md:right-[40px]"
             />
             <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
-          </div>
+          </Link>
         </SlideUp>
       </section>
 
@@ -446,8 +448,9 @@ export default function MasterPlan() {
             alt="house"
             className="img-size md:h-[144px] md:w-[144px]"
           />
-          <div
-            className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"
+          <Link
+            href="/location"
+            className="bg-white cursor-pointer relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"
             style={{ borderTopWidth: "1px", borderBottomWidth: "4px" }}
           >
             <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">
@@ -461,7 +464,7 @@ export default function MasterPlan() {
               className="absolute right-[10px] md:right-[40px]"
             />
             <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
-          </div>
+          </Link>
         </FadeIn>
       </section>
 

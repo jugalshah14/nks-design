@@ -41,7 +41,7 @@ export default function TriveniSection() {
                         className={`relative ${index % 2 !== 0 ? 'top-10 md:top-14' : ''} space-y-4 md:space-y-5 md:px-4`}
                     >
                         <div className='absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300'></div>
-                        <div className="md:text-[30px] md:leading-[28px] max-md:text-center text-[20px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">{item.number}</div>
+                        <div className="md:text-[30px] md:leading-[28px] max-md:text-center text-[20px] font-cormorant leading-7 orange-color font-semibold md:text-lg">{item.number}</div>
                      <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi leading-[24px] h-[40px] md:h-auto flex items-center">
                     {item.title}
                     </h3>

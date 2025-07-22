@@ -273,7 +273,7 @@ export default function Footer() {
                 <div className="px-6 py-5 mr-20">
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </div>
-                <span className="px-6 flex items-center justify-center min-h-[4.8rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                <span className="px-6 flex items-center justify-center min-h-[4.8rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
                   ↗
                 </span>
               </button>

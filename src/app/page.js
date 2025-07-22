@@ -66,7 +66,6 @@ const seramporeData = [
 ];
 
 export default function Home() {
-
   return (
     <main>
       {/* Hero Section */}
@@ -114,9 +113,9 @@ export default function Home() {
       </section>
 
       {/* Project Overview */}
-      <section className="pb-2 pt-16 md:py-16 bg-white">
-        <div className="container  mx-auto px-6">
-          <div className="text-center mb-7 md:mb-16">
+      <section className="pb-2 pt-16 md:py-10 bg-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-7 md:mb-10">
             <SlideUp delay={0.4}>
               <h2 className="project-overview-title max-md:!text-[36px] max-md:!leading-11 max-md:font-[400] text-center">
                 Project
@@ -225,7 +224,7 @@ export default function Home() {
       {/* Certification Information */}
       <CertificationSection />
 
-      <section className="relative">
+      <section className="relative md:mt-[12px] mt-[60px]">
         {/* Subnav with scroll spy*/}
         <ScrollSpyNav />
 
@@ -264,7 +263,7 @@ export default function Home() {
             <div className="container mx-auto !w-[100%] relative md:mb-16">
               <div className="flex flex-col justify-center items-center pb-5">
                 <SlideUp delay={0.4}>
-                  <h2 className="w-full md:mt-10 text-center text-black md:text-[56px] text-[36px] font-cormorant md:leading-[72px] leading-[44px] font-[400]">
+                  <h2 className="w-full md:mt-10 text-center text-black md:text-[56px] text-[36px] font-cormorant md:leading-[72px] leading-[44px] font-[400] max-md:px-5">
                     Elevate to{" "}
                     <span className="orange-color">Award winning </span>
                     Architectural Brilliance
@@ -272,13 +271,23 @@ export default function Home() {
                 </SlideUp>
               </div>
               <AnimatedSection className="block relative">
-                <div className={"absolute top-5 right-5 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group"}>
+                <div
+                  className={
+                    "absolute top-5 right-5 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group"
+                  }
+                >
                   <div className="overflow-hidden">
                     <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
                       {"Actual Image"}
                     </div>
                   </div>
-                  <Image alt="" src="/assets/icons/info.svg" height={30} width={30} className="" />
+                  <Image
+                    alt=""
+                    src="/assets/icons/info.svg"
+                    height={30}
+                    width={30}
+                    className=""
+                  />
                 </div>
                 <div className="flex w-full h-[167px] md:h-[558px] justify-center relative">
                   <Image
@@ -481,7 +490,7 @@ export default function Home() {
                   <div className="px-6 py-3 mr-20">
                     <span>Schedule a Visit</span>
                   </div>
-                  <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
+                  <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
                     ↗
                   </span>
                 </button>
@@ -502,10 +511,9 @@ export default function Home() {
                 <div className="grid grid-cols-4 lg:grid-cols-3 gap-4 ">
                   <div className="col-span-2 p-2">
                     <SlideUp delay={0.4}>
+                      <div className="text-[20px] font-satoshi font-[700] leading-[28px] mb-4 text-white">Did you know?</div>
                       <p className="w-[80%] transforming-text font-[300] text-[56px] leading-[72px] lg:text-[40px] lg:leading-[48px]">
-                        {`Feel the divine aura of Banaras — now in Serampore!
-                        Own a Home Where You're Blessed by Ganga Aarti, Every Single Day
-                        We're proud to be India's only riverside township where the sacred Ganga Aarti happens daily`}
+                        {`Feel the divine aura of Banaras now in Serampore! Own a Home Where You’re Blessed by Ganga Aarti, Every Single Day We’re proud to be India’s only riverside township where the sacred Ganga Aarti happens daily`}
                       </p>
                     </SlideUp>
                   </div>
@@ -539,7 +547,7 @@ export default function Home() {
                               <div className="px-6 py-3">
                                 <span>Schedule a Visit</span>
                               </div>
-                              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
                                 ↗
                               </span>
                             </button>
@@ -603,7 +611,7 @@ export default function Home() {
                 <GangaWaves />
                 <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
                 <div className="max-md:px-5">
-                  <div className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-15">
+                  <div className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-20">
                     <div className="grid grid-cols-2 gap-4 ">
                       <div className="max-md:col-span-2 md:p-2">
                         <SlideUp delay={0.4}>
@@ -616,7 +624,7 @@ export default function Home() {
                           <Link href="/location">
                             <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                               <div className="px-6 py-3 mr-20">Learn More</div>
-                              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
                                 ↗
                               </span>
                             </button>
@@ -624,7 +632,7 @@ export default function Home() {
                         </SlideUp>
                       </div>
                       <div className="max-md:mt-5 max-md:col-span-2 md:p-2 flex max-md:px-7 gap-10 items-center">
-                        <div className="mb-12">
+                        <div>
                           <div className="space-y-11">
                             <SlideIn
                               delay={0.2}
@@ -715,7 +723,7 @@ export default function Home() {
                     <div className="px-6 py-3 mr-20">
                       <span>Schedule a Visit</span>
                     </div>
-                    <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                    <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
                       ↗
                     </span>
                   </button>
@@ -742,10 +750,10 @@ export default function Home() {
                 </h2>
               </SlideUp>
             </div>
-            <div className="flex md:items-end max-md:col-span-2 max-md:justify-center max-md:text-center">
+            <div className="mt-20 flex md:items-end max-md:col-span-2 max-md:justify-center max-md:text-center">
               <SlideUp delay={0.6}>
                 <p className="text-[20px] text-[#22252E] font-[400]">
-                  Hear from Our 2800+ Happy Homebuyers
+                Hear From Few of Our 3500+ Happy Home Buyers
                 </p>
                 <Link href="/testimonials">
                   <button className="mt-5 border border-[#22252E] rounded-md px-8 py-3 font-satoshi font-bold text-[14px] leading-6 transition hover:bg-[#f5f5f5] cursor-pointer">

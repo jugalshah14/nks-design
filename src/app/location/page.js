@@ -14,35 +14,35 @@ const seramporeData = [
     icon: "/assets/icons/graduation-hat.svg",
     title: "Serampore College",
     description: "1.85km away",
-    backgroundImage: "/assets/SRP-College.png"
+    backgroundImage: "/assets/SRP-College.png",
   },
   {
     src: "/assets/hospital.png",
     icon: "/assets/icons/hospital-building.svg",
     title: "Serampore Hospital",
     description: "3.1km away",
-    backgroundImage: "/assets/hospital-bg.png"
+    backgroundImage: "/assets/hospital-bg.png",
   },
   {
     src: "/assets/railwaystation.png",
     icon: "/assets/icons/shopping-bag-tag.svg",
     title: "Serampore Railway Station",
     description: "2.5km away",
-    backgroundImage: "/assets/railway-bg.png"
+    backgroundImage: "/assets/railway-bg.png",
   },
   {
     src: "/assets/shelby.jpg",
     icon: "/assets/icons/hospital-building.svg",
     title: "Serampore Court",
     description: "2.5km away",
-    backgroundImage: "/assets/court.png"
+    backgroundImage: "/assets/court.png",
   },
   {
     src: "/assets/shelby.jpg",
     icon: "/assets/icons/hospital-building.svg",
     title: "Mahesh Temple",
     description: "2.5km away",
-    backgroundImage: "/assets/shelby-bg.png"
+    backgroundImage: "/assets/shelby-bg.png",
   },
 ];
 export default function Location() {
@@ -53,7 +53,9 @@ export default function Location() {
         <section className="bg-[#FDF9F6] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
           <SlideUp delay={0.4}>
             <div className="text-sm px-4 pt-6 text-center text-gray-500 mb-2">
-              <span className="text-black-700 font-semibold text-[#22252E]">• Home</span>
+              <span className="text-black-700 font-semibold text-[#22252E]">
+                • Home
+              </span>
               <span className="mx-2">—</span>
               <span className="text-gray-400">Location</span>
             </div>
@@ -80,15 +82,15 @@ export default function Location() {
             </div>
             <div className="z-20 flex text-center items-center justify-center relative p-[10px] -mt-12 mx-2 md:mx-[80px]  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
               <h2 className="text-center project-overview-title mobile-title max-w-[800px]">
-                Embrace the{" "}
-                <span className="orange-color">beauty </span>of your <span className="orange-color">surroundings </span>.
+                Embrace the <span className="orange-color">beauty </span>of your{" "}
+                <span className="orange-color">surroundings </span>.
               </h2>
             </div>
           </div>
         </SlideUp>
       </section>
 
-     {/* Trivent */}
+      {/* Trivent */}
       {/* <section className="bg-[#020C22]  mb-[100px] md:mb-[0px] md:pb-[80px]">
             <div className="container mx-auto text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
               <SlideUp
@@ -169,58 +171,69 @@ export default function Location() {
 
       {/* Location Benifits */}
       <Element name="section-WhySerampore">
-                <section className="bg-white">
-                  <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
-                    <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
-                      <div className="max-md:col-span-2">
-                        <SlideUp delay={0.4} className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
-                          Location <span className="orange-color">Benefits</span>
-                        </SlideUp>
-                      </div>
-                      <div className="hidden md:flex items-end">
-                        <SlideUp delay={0.6} className="text-[20px] text-[#22252E]/60 font-[400]">
-                          Serampore is situated about 20 kilometers north of Kolkata, providing easy access to urban amenities, job opportunities, and transportation networks.
-                        </SlideUp>
-                      </div>
-                    </div>
-                  </div>
-      
-                  <SlideUp delay={0.6} className="overflow-x-hidden">
-                    <SeramporeSwiper data={seramporeData} />
-                  </SlideUp>
-                </section>
+        <section className="bg-white">
+          <div className="container  mx-auto relative certification-section !bg-white">
+            <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
+              <div className="max-md:col-span-2">
+                <SlideUp
+                  delay={0.4}
+                  className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]"
+                >
+                  Location <span className="orange-color">Benefits</span>
+                </SlideUp>
+              </div>
+              <div className="hidden md:flex items-end">
+                <SlideUp
+                  delay={0.6}
+                  className="text-[20px] text-[#22252E]/60 font-[400]"
+                >
+                  Serampore is situated about 20 kilometers north of Kolkata,
+                  providing easy access to urban amenities, job opportunities,
+                  and transportation networks.
+                </SlideUp>
+              </div>
+            </div>
+          </div>
+
+          <SlideUp delay={0.6} className="overflow-x-hidden">
+            <SeramporeSwiper data={seramporeData} />
+          </SlideUp>
+        </section>
       </Element>
 
-        {/* Maps */}
-        <section>
-            <div className="container px-10 mx-auto md:pt-[40px]">
-                <div className="text-center w-full pb-12">
-                    <SlideUp delay={0.4} className="project-overview-title text-center">
-                      Our <span className="orange-color">Neighbourhood</span>
-                    </SlideUp>
-                </div>
-            </div>
-            <FadeIn delay={0.6} className="relative w-full h-[auto] aspect-[2/1]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.7621588861452!2d88.35402567513168!3d22.737079979374972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89b1d8d11144b%3A0x436932be30b5b9c2!2sNew%20Kolkata%20Sangam!5e0!3m2!1sen!2sin!4v1749182902387!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className=""
-                />
-            </FadeIn>
-        </section>
+      {/* Maps */}
+      <section>
+        <div className="container px-10 mx-auto md:pt-[40px]">
+          <div className="text-center w-full pb-12">
+            <SlideUp delay={0.4} className="project-overview-title text-center">
+              Our <span className="orange-color">Neighbourhood</span>
+            </SlideUp>
+          </div>
+        </div>
+        <FadeIn delay={0.6} className="relative w-full h-[auto] aspect-[2/1]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.7621588861452!2d88.35402567513168!3d22.737079979374972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89b1d8d11144b%3A0x436932be30b5b9c2!2sNew%20Kolkata%20Sangam!5e0!3m2!1sen!2sin!4v1749182902387!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className=""
+          />
+        </FadeIn>
+      </section>
 
-        {/* Investment Hub */}
-        <div>
+      {/* Investment Hub */}
+      <div>
         <div className="relative md:p-5 overflow-hidden max-md:pb-5">
           <GangaWaves />
           <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
           <div className="max-md:px-5">
-            <SlideUp delay={0.2} className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-15">
+            <SlideUp
+              delay={0.2}
+              className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-20"
+            >
               <div className="grid grid-cols-2 gap-4 ">
                 <div className="max-md:col-span-2 md:p-2">
                   <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
@@ -229,13 +242,13 @@ export default function Location() {
                   </h2>
                   <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                     <div className="px-6 py-3 mr-20">Learn More</div>
-                    <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
+                    <span className="px-6 py-3 ml-auto orange-color bg-[#002F52] text-lg">
                       ↗
                     </span>
                   </button>
                 </div>
                 <div className="max-md:mt-5 max-md:col-span-2 md:p-2 flex max-md:px-7 gap-10 items-center">
-                  <div className="mb-12">
+                  <div>
                     <div className="space-y-11">
                       <div className="flex items-center gap-9">
                         <div className="relative w-[48px] h-[48px]">
@@ -310,14 +323,12 @@ export default function Location() {
             <div className="px-6 py-3 mr-20">
               <span>Schedule a Visit</span>
             </div>
-            <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
+            <span className="px-6 py-3 ml-auto orange-color bg-[#002F52] text-lg">
               ↗
             </span>
           </button>
         </div>
       </div>
-
-    
     </main>
   );
 }

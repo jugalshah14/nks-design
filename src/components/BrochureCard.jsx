@@ -13,7 +13,7 @@ export default function BrochureSection() {
             <div className='px-6 py-3'>
                 <span className='hidden md:inline'>Download our Brochure</span>
             </div>
-                <span className="px-6 py-4 text-orange-500 bg-[#002F52] text-lg ml-auto">↗</span>
+                <span className="px-6 py-4 orange-color bg-[#002F52] text-lg ml-auto">↗</span>
           </button>
         </div>
       </div>

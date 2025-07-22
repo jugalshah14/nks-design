@@ -1,5 +1,6 @@
 import { AnimatedSection, SlideUp } from "@/components/animations";
 import Image from "next/image";
+import Link from "next/link";
 export default function ReviewsSection() {
   return (
     <>
@@ -9,7 +10,7 @@ export default function ReviewsSection() {
           <div className="bg-white relative container mx-auto md:-mt-20 pt-[54px] md:pb-[70px] pb-[30px]">
             <h2 className="flex md:flex-row flex-col justify-center font-cormorant font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center">
               When Promises&nbsp;
-              <span className="text-orange-500"> Arrive Early</span>
+              <span className="orange-color"> Arrive Early</span>
             </h2>
           </div>
         </SlideUp>
@@ -50,7 +51,7 @@ export default function ReviewsSection() {
           <div className="bg-white relative container mx-auto md:-mt-20 pt-[54px] md:pb-[70px] pb-[30px]">
             <h2 className="flex md:flex-row flex-col justify-center font-cormorant font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center">
               Waking Up to the&nbsp;
-              <span className="text-orange-500">Ganga</span>
+              <span className="orange-color">Ganga</span>
             </h2>
           </div>
         </SlideUp>
@@ -99,7 +100,7 @@ export default function ReviewsSection() {
       </div>
       {/* Horizontal card */}
       <AnimatedSection className="overflow-visible">
-        <div className="relative group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:mt-20 md:h-[144px]">
+        <Link href="/location" className="relative group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:mt-20 md:h-[144px]">
           <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
             <Image
               src="/assets/faqs-detail-gif.gif"
@@ -122,7 +123,7 @@ export default function ReviewsSection() {
               className="absolute -ml-6"
             />
           </div>
-        </div>
+        </Link>
       </AnimatedSection>
       {/* #3 */}
       <div>
@@ -130,7 +131,7 @@ export default function ReviewsSection() {
           <div className="bg-white relative container mx-auto  pt-[54px] md:pb-[70px] pb-[30px]">
             <h2 className="flex md:flex-row flex-col justify-center font-cormorant font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center">
               A Name They Could&nbsp;
-              <span className="text-orange-500">Trust</span>
+              <span className="orange-color">Trust</span>
             </h2>
           </div>
         </SlideUp>
@@ -182,7 +183,7 @@ export default function ReviewsSection() {
         <SlideUp delay={0.4}>
           <div className="bg-white relative container mx-auto md:-mt-20 pt-[54px] md:pb-[70px] pb-[30px]">
             <h2 className="flex md:flex-row flex-col justify-center font-cormorant font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center">
-              <span className="text-orange-500">Keys</span>
+              <span className="orange-color">Keys</span>
               &nbsp;to a New Chapter
             </h2>
           </div>
@@ -236,7 +237,7 @@ export default function ReviewsSection() {
         <div className="bg-white relative container mx-auto md:-mt-20 pt-[54px] md:pb-[70px] pb-[30px]">
         <h2 className="flex md:flex-row flex-col justify-center font-cormorant font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center">
         Hear It From&nbsp;
-              <span className="text-orange-500">Our Residents</span>
+              <span className="orange-color">Our Residents</span>
             </h2>
           </div>
         </SlideUp>
@@ -286,7 +287,7 @@ export default function ReviewsSection() {
       </div>
       {/* Horizontal card */}
       <AnimatedSection className="overflow-visible">
-        <div className="relative group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:mt-20 md:h-[144px]">
+        <Link href="/location" className="relative group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:mt-20 md:h-[144px]">
           <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
             <Image
               src="/assets/faqs-detail-gif.gif"
@@ -309,7 +310,7 @@ export default function ReviewsSection() {
               className="absolute -ml-6"
             />
           </div>
-        </div>
+        </Link>
       </AnimatedSection>
     </>
   );

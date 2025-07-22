@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { AnimatedSection, FadeIn, SlideUp } from "@/components/animations";
+import Link from "next/link";
 
 export default function lifeAtAlcove() {
   return (
@@ -65,7 +66,7 @@ export default function lifeAtAlcove() {
                       width={65}
                       height={65}
                       alt="triangle"
-                      className="absolute right-0 z-10"
+                      className="absolute max-md:w-[36px] max-md:h-[36px] right-0 z-10"
                     />
                     <Image
                       src="/assets/fitness.png"
@@ -85,7 +86,7 @@ export default function lifeAtAlcove() {
                 <div className="z-20 md:relative md:-bottom-[300px] md:right-[70px] max-w-md bg-[#020C22] p-5 md:p-10 text-white font-satoshi text-[24px] md:text-[40px] font-normal leading-[28px] md:leading-[48px] text-center md:text-left flex h-auto">
                   <span>
                     Make everyday living effortless with our{" "}
-                    <span className="text-orange-500">Convenience</span> for
+                    <span className="orange-color">Convenience</span> for
                     Residence scheme.
                   </span>
                 </div>
@@ -110,7 +111,7 @@ export default function lifeAtAlcove() {
                       width={65}
                       height={65}
                       alt="triangle"
-                      className="md:hidden absolute left-0 z-10"
+                      className="md:hidden absolute max-md:w-[36px] max-md:h-[36px] left-0 z-10"
                     />
                     <Image
                       src="/assets/Ghat Eye Level.png"
@@ -131,7 +132,7 @@ export default function lifeAtAlcove() {
                   <span>
                     Embrace the beauty of nature with us, where modern living
                     meets{" "}
-                    <span className="text-orange-500">natural wonders</span>
+                    <span className="orange-color">natural wonders</span>
                   </span>
                 </div>
               </div>
@@ -155,7 +156,7 @@ export default function lifeAtAlcove() {
                       width={65}
                       height={65}
                       alt="triangle"
-                      className="md:hidden absolute right-0 -top-1 rotate-90 z-10"
+                      className="md:hidden absolute right-0 max-md:w-[36px] max-md:h-[36px] -top-1 rotate-90 z-10"
                     />
                     <Image
                       src="/assets/earthday.png"
@@ -175,7 +176,7 @@ export default function lifeAtAlcove() {
                 <div className="z-20 md:relative md:-bottom-[300px] md:right-[70px] max-w-md bg-[#020C22] p-5 md:p-10 text-white font-satoshi text-[24px] md:text-[40px] font-normal leading-[28px] md:leading-[48px] text-center md:text-left flex h-auto">
                   <span>
                     Join the fun and make memories with our{" "}
-                    <span className="text-orange-500">exciting activities</span>{" "}
+                    <span className="orange-color">exciting activities</span>{" "}
                     for everyone
                   </span>
                 </div>
@@ -184,7 +185,7 @@ export default function lifeAtAlcove() {
           </AnimatedSection>
         </AnimatedSection>
         <AnimatedSection className="!overflow-visible flex w-full justify-center mt-10">
-          <div className=" absolute group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center justify-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:h-[144px]">
+          <Link href="/location" className=" absolute group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center justify-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
                 src="/assets/neighbour.png"
@@ -207,14 +208,14 @@ export default function lifeAtAlcove() {
                 className="absolute -ml-6"
               />
             </div>
-          </div>
+            </Link>
         </AnimatedSection>
       </section>
 
       <section className="py-20 pb-0 mt-20 md:mt-0 bg-white">
         <SlideUp delay={0.4}>
           <h2 className="flex justify-center font-cormorant font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] mt-4 text-center">
-            <span className="text-orange-500">Event</span>&nbsp;Gallery
+            <span className="orange-color">Event</span>&nbsp;Gallery
           </h2>
         </SlideUp>
 

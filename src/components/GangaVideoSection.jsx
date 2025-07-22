@@ -182,7 +182,7 @@ const GangaVideoSection = () => {
         <SlideUp delay={1} className="flex justify-center items-center w-full">
           <button className="md:min-h-[4.75rem] min-h-[3.5rem] h-full -top-9 mx-auto relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden rounded-md">
             <div className="px-6 py-3 mr-20">Be a part of it</div>
-            <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+            <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
               ↗
             </span>
           </button>

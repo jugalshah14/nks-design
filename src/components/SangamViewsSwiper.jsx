@@ -77,6 +77,7 @@ const settings = {
     },
   ],
 };
+
 export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
   const [activeIndex, setActiveIndex] = useState(0);
   let swiperRef = useRef(null);
@@ -99,6 +100,9 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
   const isMobilePrevDisabled = mobileIndex === 0;
   const isMobileNextDisabled = mobileIndex >= data[activeBHK].length - 1;
 
+  // Conditional check to hide navigation on desktop when there are less than 3 images
+  const showDesktopNavigation = data[activeBHK].length > 3;
+
   return (
     <div className="relative top-[100px] md:-top-15 overflow-x-hidden bg-[#020C22]">
       <div className="container mx-auto relative md:mb-16 bg-[#020C22]">
@@ -116,38 +120,40 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
             >
               Views from {activeBHK}
             </div>
-            <div className="hidden md:flex relative max-w-[190px] w-[366px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
-              <div className="h-full flex items-center justify-center">
-                <button
-                  className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`}
-                  onClick={handlePrev}
-                  disabled={isPrevDisabled}
-                >
-                  <Image
-                    src="/assets/arrow-main.svg"
-                    alt="Previous"
-                    height={20}
-                    width={19}
-                    className="transform rotate-180 invert-100"
-                  />
-                </button>
+            {showDesktopNavigation && (
+              <div className="hidden md:flex relative max-w-[190px] w-[366px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
+                <div className="h-full flex items-center justify-center">
+                  <button
+                    className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`}
+                    onClick={handlePrev}
+                    disabled={isPrevDisabled}
+                  >
+                    <Image
+                      src="/assets/arrow-main.svg"
+                      alt="Previous"
+                      height={20}
+                      width={19}
+                      className="transform rotate-180 invert-100"
+                    />
+                  </button>
+                </div>
+                <div className="h-full flex items-center justify-center">
+                  <button
+                    className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`}
+                    onClick={handleNext}
+                    disabled={isNextDisabled}
+                  >
+                    <Image
+                      src="/assets/arrow-main.svg"
+                      alt="Next"
+                      height={20}
+                      width={19}
+                      className="invert-100"
+                    />
+                  </button>
+                </div>
               </div>
-              <div className="h-full flex items-center justify-center">
-                <button
-                  className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`}
-                  onClick={handleNext}
-                  disabled={isNextDisabled}
-                >
-                  <Image
-                    src="/assets/arrow-main.svg"
-                    alt="Next"
-                    height={20}
-                    width={19}
-                    className="invert-100"
-                  />
-                </button>
-              </div>
-            </div>
+            )}
           </div>
           <div className="col-span-4 md:col-span-2 lg:col-span-3">
             <div>
@@ -161,9 +167,9 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
                 {data[activeBHK].map((slide, i) => (
                   <div
                     key={i}
-                    className="mx-5 !w-[100%] !overflow-x-hidden transition-transform duration-300 transform hover:scale-95"
+                    className="mx-5 !w-[100%] !overflow-x-hidden"
                   >
-                    <div className="relative !w-[100%] h-[200px] md:h-[350px] min-h-[200px] max-h-[200px] md:min-h-[350px]">
+                    <div className="relative !w-[280px] h-[280px]">
                       <Image
                         src={slide.src}
                         alt={`${activeBHK}-view-${i}`}

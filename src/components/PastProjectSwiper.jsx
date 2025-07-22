@@ -114,7 +114,7 @@ export default function PastProjectSwiper() {
                 afterChange={(current) => setActiveIndex(current)}
             >
                 {data.map((slide, index) => (
-                    <div key={index} className='relative !flex justify-center flex-nowrap pt-15 w-[100%]'>
+                    <div key={index} className='relative !flex justify-center flex-nowrap md:pt-15 pt-7 w-[100%]'>
                         <div className='w-full flex md:flex-row flex-col'>
                            <div className='w-full md:w-[80%] h-[240px] md:h-[468px] relative'>
                             <Image 
@@ -163,7 +163,7 @@ export default function PastProjectSwiper() {
             </Slider>
             </div>
         </div>
-        <div className='w-full ietms-center justify-center flex md:mb-10 px-4 pt-2 md:pt-0'>
+        <div className='w-full ietms-center justify-center flex mb-10 px-4 pt-2 md:pt-0'>
                 <div className="w-full relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-2 md:py-5 max-w-[366px] shadow-[0px_4px_170px_rgba(0,0,0,0.25)]">
                     <div className="h-full flex items-center justify-center">
                         <button 
