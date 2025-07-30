@@ -50,25 +50,22 @@ export default function Location() {
     <main>
       {/* Hero Section */}
       <SlideUp>
-        <section className="bg-[#FDF9F6] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
-          <SlideUp delay={0.4}>
-            <div className="text-sm px-4 pt-6 text-center text-gray-500 mb-2">
-              <span className="text-black-700 font-semibold text-[#22252E]">
+      <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[280px] md:top-[100] h-[180px] top-[50]">
+      <SlideUp delay={0.4}>
+            <div className="px-4 pt-6 text-center pb-4 md:pb-0">
+              <span className="text-[#22252e] font-bold text-[20px]">
                 • Home
               </span>
               <span className="mx-2">—</span>
-              <span className="text-gray-400">Location</span>
+              <span className="text-[#5c5f68] font-normal text-[20px]">
+                Location
+              </span>
             </div>
-          </SlideUp>
-          <SlideUp delay={0.6}>
-            <h1 className="relative -mb-5 page-hero-title no-negative-margin select-none no-drag">
-              Location
-            </h1>
           </SlideUp>
         </section>
       </SlideUp>
 
-      <section className="-mt-16 no-negative-margin pb-[60px]">
+      <section className="mt-9">
         <SlideUp delay={0.8}>
           <div className="container mx-auto">
             <div className="relative w-full h-[265px] md:h-[460px]">
