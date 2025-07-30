@@ -87,15 +87,15 @@ export default function Home() {
         <div className="md:hidden hero-section-bg h-[100%] w-[100%] top-0 left-0" />
         <div className="absolute inset-0 flex flex-col justify-center">
           <div className="container mx-auto">
-            <SlideUp delay={0.2}>
-              <p className="block md:hidden text-center text-[#F2F2F2] font-[500] text-[14px] leading-8 uppercase">
-                have you ever imagined
-              </p>
-            </SlideUp>
             <SlideUp delay={0.4}>
               <h1 className="max-md:px-9 max-md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[100px] font-[400] md:leading-[100px] md:max-w-[635px]">
                 Affordable Luxury by the Riverside
               </h1>
+            </SlideUp>
+            <SlideUp delay={0.4}>
+              <p className=" mt-6 max-md:text-center font-satoshi text-[#FFFFFF] font-[400] text-[14px] leading-5">
+                HIRA/P/HOO/2019/000635 &nbsp; | &nbsp;<Link href="https://www.rera.wb.gov.in" target="_blank" className="text-[#FFFFFF]">www.rera.wb.gov.in</Link>
+              </p>
             </SlideUp>
           </div>
         </div>
@@ -201,7 +201,7 @@ export default function Home() {
           >
             <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
               <Image
-                src="/assets/icons/cctv.svg"
+                src="/assets/icons/family-icon.svg"
                 width={68}
                 height={68}
                 alt="Garden and Ghat"
@@ -209,13 +209,13 @@ export default function Home() {
               />
             </div>
             <h3 className="hidden md:block text-[40px] font-satoshi font-[400] leading-[54px] text-[#22252e] mb-1">
-              24/7
+              3500+
             </h3>
             <p className="hidden md:block text-[20px] font-satoshi font-[400] leading-[28px] text-[#22252e] text-center">
-              Security
+            Happy Families
             </p>
             <p className="block md:hidden text-[18px] font-satoshi font-[400] leading-6 text-[#22252e] text-center">
-              Security
+            Happy Families
             </p>
           </SlideUp>
         </div>
@@ -335,14 +335,6 @@ export default function Home() {
                   </SlideUp>
                 </div>
                 <PlansSection />
-                {/* <div className="flex md:hidden text-center pt-10 flex-col justify-center items-center px-4">
-                  <SlideUp delay={0.4}>
-                    <h2 className="w-[100%] project-overview-title !text-center !text-white !text-[36px] !leading-11 font-cormorant">
-                      {`We've got something for`}{" "}
-                      <span className="orange-color">{`Everyone's need`}</span>
-                    </h2>
-                  </SlideUp>
-                </div> */}
               </div>
             </section>
             {/* <PlansSwiper /> */}
@@ -352,100 +344,6 @@ export default function Home() {
           <section className="bg-white">
             <div className=" container mx-auto relative certification-section !bg-white pt-20">
               <div className="relative container mx-auto">
-                {/* <div className="text-center">
-                  <SlideUp delay={0.4}>
-                    <h2 className="w-[100%] !text-center project-overview-title max-md:!text-[36px] max-md:!leading-11 font-cormorant">
-                      <span className="orange-color">Comfortable </span>living,
-                      simplified
-                    </h2>
-                  </SlideUp>
-                </div> */}
-                {/* <AnimatedSection className="block md:hidden">
-                  <PlanTypesSwiper />
-                </AnimatedSection>
-                <div className="hidden md:grid grid-cols-3 gap-4 mt-12">
-                  <SlideUp delay={0.6} className="bg-[#fdf6f2] p-5">
-                    <Image
-                      src="/assets/icons/2bhk.svg"
-                      alt="2BHK"
-                      width={36}
-                      height={36}
-                      className="mb-12"
-                    />
-                    <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
-                      2BHK
-                    </h3>
-                    <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
-                      314 - 645 sq. ft.
-                    </p>
-                    <a
-                      href="/master-plan?section=sangam&bhk=2BHK"
-                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78] hover:gap-4 transition-all duration-300"
-                    >
-                      View
-                      <Image
-                        src="/assets/icons/arrowlong.svg"
-                        alt="1BHK"
-                        width={40}
-                        height={3}
-                      />
-                    </a>
-                  </SlideUp>
-                  <SlideUp delay={0.8} className="bg-[#fdf6f2] p-5">
-                    <Image
-                      src="/assets/icons/3bhk.svg"
-                      alt="3BHK"
-                      width={37}
-                      height={40}
-                      className="mb-12"
-                    />
-                    <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
-                      3BHK
-                    </h3>
-                    <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
-                      314 - 645 sq. ft.
-                    </p>
-                    <a
-                      href="/master-plan?section=sangam&bhk=3BHK"
-                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78] hover:gap-4 transition-all duration-300"
-                    >
-                      View
-                      <Image
-                        src="/assets/icons/arrowlong.svg"
-                        alt="1BHK"
-                        width={40}
-                        height={3}
-                      />
-                    </a>
-                  </SlideUp>
-                  <SlideUp delay={1} className="bg-[#fdf6f2] p-5">
-                    <Image
-                      src="/assets/icons/4bhk.svg"
-                      alt="4BHK"
-                      width={43}
-                      height={39}
-                      className="mb-12"
-                    />
-                    <h3 className="text-[40px] font-satoshi font-normal leading-[54px] text-[#22252e] mb-2">
-                      4BHK
-                    </h3>
-                    <p className="text-[20px] font-satoshi font-normal leading-[27px] text-[#22252eb2] mb-8">
-                      314 - 645 sq. ft.
-                    </p>
-                    <a
-                      href="/master-plan?section=sangam&bhk=4BHK"
-                      className="flex items-center gap-2 text-[16px] font-satoshi font-bold leading-[22px] text-[#134c78] hover:gap-4 transition-all duration-300"
-                    >
-                      View
-                      <Image
-                        src="/assets/icons/arrowlong.svg"
-                        alt="1BHK"
-                        width={40}
-                        height={3}
-                      />
-                    </a>
-                  </SlideUp>
-                </div> */}
               </div>
               <div className="md:grid md:grid-cols-2 gap-10 justify-baseline">
                 <div className="">

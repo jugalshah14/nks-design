@@ -15,28 +15,28 @@ const flatsData = {
     sliderImages: {
       '2D': ["/assets/1bhk.png", "/assets/1bhk1.png"],
     },
-    info: { towers: 'A,B,C', units: 'B/C/F/G/J/K/N/O', price: 4234 },
+    info: { towers: 'Serenity', units: 'B/C/F/G/J/K/N/O', price: 4234 },
   },
 
   '2BHK': {
     sliderImages: {
       '2D': ["/assets/2bhk1.png", "/assets/2bhk2.png"],
     },
-    info: { towers: 'A,B,C', units: 'E/H', price: 4234 },
+    info: { towers: 'Signature & Serenity', units: 'E/H', price: 4234 },
   },
   
   '3BHK': {
     sliderImages: {
       '2D': ["/assets/3bhk.png", "/assets/3bhk1.png", "/assets/3bhk2.png","/assets/3bhk3.png","/assets/3bhk4.png"],
     },
-    info: { towers: 'A,B,C', units: 'A/B/C/D', price: 1234 },
+    info: { towers: 'Signature , Serenity , Suites', units: 'A/B/C/D', price: 1234 },
   },
 
   '4BHK': {
     sliderImages: {
       '2D': ["/assets/4bhk.png", "/assets/4bhk1.png"],
     },
-    info: { towers: 'A,B,C', units: '', price: 7234 },
+    info: { towers: 'Suites', units: '', price: 7234 },
   }
 };
 

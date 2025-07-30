@@ -18,18 +18,13 @@ export default function MasterPlan() {
       <SlideUp>
         <section className="bg-[#FDF9F6] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
           <SlideUp delay={0.4}>
-            <div className="text-sm px-4 pt-6 text-center text-gray-500 mb-2">
+            <div className="text-sm px-4 pt-6 text-center text-gray-500 mb-10">
               <span className="text-black-700 font-semibold text-[#22252E]">
                 • Home
               </span>
               <span className="mx-2">—</span>
               <span className="text-gray-400">Masterplans</span>
             </div>
-          </SlideUp>
-          <SlideUp delay={0.6}>
-            <h1 className="relative -mb-5 page-hero-title no-negative-margin select-none no-drag">
-              Masterplans
-            </h1>
           </SlideUp>
         </section>
       </SlideUp>

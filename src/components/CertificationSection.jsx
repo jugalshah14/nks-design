@@ -144,6 +144,14 @@ const awards = [
   },
   {
     delay: 0.2,
+    img: "/assets/award/11.png",
+    alt: "The Economic Times Real Estate Conclave",
+    title: "The Economic Times Real Estate Conclave",
+    desc: "Residential Project. Affordable Housing (Metro: Completed)",
+    year: "2022",
+  },
+  {
+    delay: 0.2,
     img: "/assets/award/12.png",
     alt: "CREDAI Realty Awards",
     title: "CREDAI Realty Awards",
@@ -192,6 +200,14 @@ const awards = [
   },
   {
     delay: 0.2,
+    img: "/assets/award/23.png",
+    alt: "INDIAN GREEN BUILDING COUNCIL",
+    title: "INDIAN GREEN BUILDING COUNCIL",
+    desc: "IGBC Green Affordable Housing Rating System",
+    year: "2021",
+  },
+  {
+    delay: 0.2,
     img: "/assets/award/18.png",
     alt: "INDIAN GREEN BUILDING COUNCIL",
     title: "INDIAN GREEN BUILDING COUNCIL",
@@ -216,7 +232,7 @@ const awards = [
   },
   {
     delay: 0.2,
-    img: "/assets/award/3.png",
+    img: "/assets/award/22.png",
     alt: "Realty+",
     title: "Realty+",
     desc: "Affordable Housing Project of the Year",
@@ -227,7 +243,7 @@ const awards = [
     img: "/assets/award/21.png",
     alt: "Realty+",
     title: "Realty+",
-    desc: "Affordable Housing Project of the Year",
+    desc: "IGBC-certified development",
     year: "2020",
   },
 ];

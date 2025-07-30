@@ -5,6 +5,7 @@ import GangaWaves from "@/components/GangaWaves";
 import ImageGallery from "@/components/ImageGallery";
 import SafetySecuritySection from "@/components/SafetySecuritySection";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const amenities = {
@@ -246,18 +247,18 @@ const PodiumIcons = [
   { label: "Reflexology path", image: "/assets/podium2.png" },
   { label: "Floating stage", image: "/assets/podium3.png" },
   { label: "Amphitheater", image: "/assets/podium4.png" },
-  { label: "Splash pool", image: "/assets/podium5.png" },
+  { label: "Swimming Pool", image: "/assets/podium5.png" },
   {
     label: "Splash pool side deck with loungers",
     image: "/assets/podium6.png",
   },
   { label: "Interactive fountain", image: "/assets/podium7.png" },
   { label: "Fountain plaza", image: "/assets/podium8.png" },
-  { label: "Kid's play area", image: "/assets/podium9.png" },
+  { label: "Lotus Pond", image: "/assets/podium9.png" },
   { label: "Common toilet", image: "/assets/podium10.png" },
   { label: "24/7 Power backup", image: "/assets/podium11.png" },
   { label: "CCTV", image: "/assets/podium12.png" },
-  { label: "Provision for intercom", image: "/assets/podium13.png" },
+  { label: "MotorCare Function", image: "/assets/podium13.png" },
   { label: "Disable access and parking", image: "/assets/podium14.png" },
   { label: "Solar panels", image: "/assets/podium15.png" },
   { label: "Admin office", image: "/assets/podium16.png" },
@@ -282,25 +283,25 @@ const PodiumIcons = [
 
 const groundData = [
   {
-    title: "Cycling track",
+    title: "Skating Rink",
     description:
       "Immerse yourself in the tranquility of the lush landscape garden",
     image: "/assets/cycling-track.png",
   },
   {
-    title: "Mandir",
+    title: "Riverside Gazebo",
     description:
       "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
     image: "/assets/mandir.png",
   },
   {
-    title: "Floating fountain",
+    title: "Hibiscus garden",
     description:
       "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
     image: "/assets/Floating-fountain.png",
   },
   {
-    title: "Kid's play area",
+    title: "Deepmala",
     description: "Refresh your senses with the interactive fountains",
     image: "/assets/kids-play.png",
   },
@@ -309,13 +310,10 @@ const groundData = [
 const groundIcons = [
   { label: "Footpath/jogging Track", image: "/assets/ground1.png" },
   { label: "Pet park", image: "/assets/ground2.png" },
-  { label: "Underpass 1", image: "/assets/ground3.png" },
-  { label: "Hibiscus garden", image: "/assets/ground4.png" },
-  { label: "Skating ring", image: "/assets/ground5.png" },
-  { label: "Lotus pond", image: "/assets/ground6.png" },
+  { label: "Sewage Treatment Plant", image: "/assets/ground3.png" },
   { label: "Private jetty & ferry service", image: "/assets/ground7.png" },
-  { label: "Riverside Gazebo", image: "/assets/ground8.png" },
-  { label: "Deepmala", image: "/assets/ground9.png" },
+  { label: "Floating Fountain", image: "/assets/ground8.png" },
+  { label: "Drip Irrigation System", image: "/assets/ground9.png" },
   { label: "Drivers seating area", image: "/assets/ground10.png" },
   { label: "Mygate service", image: "/assets/ground11.png" },
   { label: "Visitor car parking space", image: "/assets/ground12.png" },
@@ -323,7 +321,7 @@ const groundIcons = [
   { label: "Drip irrigation system", image: "/assets/ground14.png" },
   { label: "Water treatment plant", image: "/assets/ground15.png" },
   { label: "ATM space", image: "/assets/ground16.png" },
-  { label: "Private ghat", image: "/assets/ground17.png" },
+  { label: "Mandir", image: "/assets/ground17.png" },
   { label: "Multiway connectivity", image: "/assets/ground18.png" },
   { label: "Provision for intercom", image: "/assets/ground19.png" },
   { label: "Restaurant", image: "/assets/ground20.png" },
@@ -466,11 +464,6 @@ export default function Amenities() {
                 Amenities
               </span>
             </div>
-          </SlideUp>
-          <SlideUp delay={0.6}>
-            <h1 className="text-[48px] text-black leading-[52px] md:text-[#dee2e4] md:text-[150px] md:leading-[150px] font-cormorant">
-              Amenities
-            </h1>
           </SlideUp>
         </section>
       </SlideUp>
@@ -808,7 +801,7 @@ export default function Amenities() {
 
         {/* Horizontal Card Section */}
         <AnimatedSection>
-          <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
+          <Link href="/master-plan" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
                 src="/assets/faqs-detail-gif.gif"
@@ -832,7 +825,7 @@ export default function Amenities() {
                 className="absolute -ml-6"
               />
             </div>
-          </div>
+          </Link>
         </AnimatedSection>
       </section>
 
@@ -953,7 +946,7 @@ export default function Amenities() {
         </div>
         {/* Horizontal Card Section */}
         <AnimatedSection>
-          <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 md:h-[144px]">
+          <Link href="/life-@-alcove" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
                 src="/assets/sport-gif.gif"
@@ -976,7 +969,7 @@ export default function Amenities() {
                 className="absolute -ml-6"
               />
             </div>
-          </div>
+          </Link>
         </AnimatedSection>
       </section>
 
@@ -1134,141 +1127,35 @@ export default function Amenities() {
 
       {/* ferry ride */}
       <AnimatedSection>
-        <section className="relative w-full h-full flex flex-col-reverse md:flex-col overflow-hidden shadow-lg bg-white pb-15 md:pb-0 rounded-none">
-          {/* Image Section (with Tailwind for responsiveness) */}
-          <div className="w-full md:h-[900px] h-[1200px] relative">
+        <section className="relative w-full h-[300px] md:h-[524px] flex">
+          {/* Left Side - Image */}
+          <div className="w-1/2 h-full relative">
             <Image
-              src="/assets/ferry-ride.png" // replace with your image path
+              src="/assets/ferry-ride.png"
               alt="Ferry Ride"
-              layout="fill"
-              objectFit="fit"
+              fill
+              className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-[linear-gradient(0deg,#0a1628_55.69%,rgba(2,12,34,0)_100.16%)]" />
+            {/* Gradient overlay from left to right */}
+            <div className="absolute inset-0 bg-[linear-gradient(87.36deg,rgba(2,12,34,0)_6.84%,#010922_90.31%)]" />
           </div>
 
-          {/* Content Section */}
-          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center text-center">
-            <h2 className="absolute md:-top-30 -top-10 text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px]">
+          {/* Right Side - Blue Content Section */}
+          <div className="w-1/2 h-full bg-[#010922] flex flex-col py-25 pr-25">
+            <h2 className="text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px] mb-7">
               Good News <span className="text-[#DE804B]">Sails Faster</span>
             </h2>
-            <div className="absolute -top-10 text-white font-satoshi font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[28px]">
-              Your river rides from New Kolkata Sangam just got a new
-              destination
-            </div>
-            <div className="w-full flex max-md:flex-col justify-center text-white gap-10 mb-10 mt-5">
-              {/* Slot 1 */}
-              <div>
-                <table className="min-w-full table-auto border-collapse text-left bg-[#0f182d] p-5 rounded-[20px]">
-                  <thead>
-                    <tr>
-                      <th
-                        colSpan="4"
-                        className=" flex justify-start md:px-4 px-2 md:py-5 py-2 text-xl font-bold text-[#DE804B]"
-                      >
-                        Slot 1
-                      </th>
-                    </tr>
-                    <tr className="border-b border-gray-600">
-                      <th className=" md:px-4 md:py-2 px-2 py-1">Station</th>
-                      <th className=" md:px-4 md:py-2 px-2 py-1">Departure</th>
-                      <th className=" md:px-4 md:py-2 px-2 py-1">Station</th>
-                      <th className=" md:px-4 md:py-2 px-2 py-1">Arrival</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className=" md:px-4 md:py-2 px-2 py-1">
-                        New Kolkata
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">10.30am</td>
-                      <td className=" md:px-4 md:py-2 px-2 py-1">
-                        Dakshineswar
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">10.55am</td>
-                    </tr>
-                    <tr>
-                      <td className="md:px-4 md:py-2 px-2 py-1">
-                        Dakshineswar
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">11.00am</td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">
-                        Millennium Park
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">11.40am</td>
-                    </tr>
-                    <tr>
-                      <td className="md:px-4 md:py-2 px-2 py-1">
-                        Millennium Park
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">12.00pm</td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">
-                        Dakshineswar
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">12.40pm</td>
-                    </tr>
-                    <tr>
-                      <td className="md:px-4 md:py-2 px-2 py-1">
-                        Dakshineswar
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">12.20pm</td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">New Kolkata</td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">1.00pm</td>
-                    </tr>
-                  </tbody>
-                </table>
+            <div className="w-full mb-7">
+              <div className="text-left">
+                <div className="text-white text-[24px] leading-[28px] font-satoshi font-normal mb-5">Travel Route :</div>
+                <div className="border-b border-white mb-5 w-[140px]"></div>
+                <div className="text-white text-[24px] leading-[28px] font-satoshi font-normal">
+                  New Kolkata → Dakshineswar → Millennium Park → New Kolkata
+                </div>
               </div>
-              {/* Slot 2 */}
-              <div>
-                <table className="min-w-full table-auto border-collapse text-left bg-[#0f182d] p-5 rounded-[20px]">
-                  <thead>
-                    <tr>
-                      <th
-                        colSpan="4"
-                        className=" flex justify-start px-4 py-5 text-xl font-bold text-[#DE804B]"
-                      >
-                        Slot 2
-                      </th>
-                    </tr>
-                    <tr className="border-b border-gray-600">
-                      <th className="md:px-4 md:py-2 px-2 py-1">Station</th>
-                      <th className="md:px-4 md:py-2 px-2 py-1">Departure</th>
-                      <th className="md:px-4 md:py-2 px-2 py-1">Station</th>
-                      <th className="md:px-4 md:py-2 px-2 py-1">Arrival</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="md:px-4 md:py-2 px-2 py-1">New Kolkata</td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">4.30pm</td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">
-                        Dakshineswar
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">4.55pm</td>
-                    </tr>
-                    <tr>
-                      <td className="md:px-4 md:py-2 px-2 py-1">
-                        Dakshineswar
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">5.00pm</td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">
-                        Millennium Park
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">5.40pm</td>
-                    </tr>
-                    <tr>
-                      <td className="md:px-4 md:py-2 px-2 py-1">
-                        Millennium Park
-                      </td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">5.45pm</td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">New Kolkata</td>
-                      <td className="md:px-4 md:py-2 px-2 py-1">6.45pm</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>{" "}
-            <button className="mb-7 md:min-h-[4rem] min-h-[3.5rem] h-full md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
+            </div>           
+            <button className="mb-7 md:min-h-[4rem] min-h-[3.5rem] w-fit bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
               <div className="px-6 py-3 mr-5">
                 <span>Call +91 760 508 1410 to Book</span>
               </div>
@@ -1286,10 +1173,7 @@ export default function Amenities() {
                   />
                 </svg>
               </span>
-            </button>
-            <p className="z-10 mb-12 font-regular !text-white text-[16px] leading-[24px]">
-              Note: Closed on Sundays and Public Holidays.
-            </p>
+            </button>           
           </div>
         </section>
       </AnimatedSection>

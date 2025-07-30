@@ -38,8 +38,8 @@ export default function PlansSection() {
       {
         img: '/assets/signature.png',
         title: 'Sangam Signature',
-        bhk: '1,2,3',
-        area: '567 - 1039 sq. ft.',
+        bhk: '2,3',
+        area: '887 - 1039 sq. ft.',
         price: '1234',
         link: '/contact-us',
         imgtype: 'Actual Image'
@@ -102,7 +102,7 @@ export default function PlansSection() {
                   <h1 className="text-[24px] leading-[28px] font-[700] font-satoshi pb-[10px]">{card.title}</h1>
                   <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">BHK Type</p>
                   <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black pb-[20px]">{card.bhk}</p>
-                  <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">Carpet Area</p>
+                  <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">Super Built-up Area</p>
                   <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black pb-[20px]">{card.area}</p>
                   <div className="pb-[10px]">
                     <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 mb-1">Price</p>
@@ -172,7 +172,7 @@ export default function PlansSection() {
               <h1 className="text-[24px] leading-[28px] font-[700] font-satoshi pb-[10px]">Sangam Serenity</h1>
               <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">BHK Type</p>
               <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black pb-[20px]">1,2,3</p>
-              <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">Carpet Area</p>
+              <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">Super Built-up Area</p>
               <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black pb-[20px]">567 - 1039 sq. ft.</p>
               <div className="pb-[10px]">
                 <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 mb-1">Price</p>
@@ -215,7 +215,7 @@ export default function PlansSection() {
               <h1 className="text-[24px] leading-[28px] font-[700] font-satoshi pb-[10px]">Sangam Suite</h1>
               <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">BHK Type</p>
               <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black pb-[20px]">3,4</p>
-              <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">Carpet Area</p>
+              <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">Super Built-up Area</p>
               <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black pb-[20px]">1440 - 2085 sq. ft.</p>
               <div className="pb-[10px]">
                 <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 mb-1">Price</p>
@@ -257,9 +257,9 @@ export default function PlansSection() {
             <div className="bg-white p-[28px] mx-[20px] flex flex-col mt-[-20px]">
               <h1 className="text-[24px] leading-[28px] font-[700] font-satoshi pb-[10px]">Sangam Signature</h1>
               <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">BHK Type</p>
-              <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black pb-[20px]">1,2,3</p>
-              <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">Carpet Area</p>
-              <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black pb-[20px]">567 - 1039 sq. ft.</p>
+              <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black pb-[20px]">2,3</p>
+              <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 pb-[4px]">Super Built-up Area</p>
+              <p className="text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black pb-[20px]">887 - 1039 sq. ft.</p>
               <div className="pb-[10px]">
                 <p className="text-[12px] md:text-[16px] font-satoshi font-[400] leading-5 md:leading-[22px] text-black/50 mb-1">Price</p>
                 <div className="flex items-center">
