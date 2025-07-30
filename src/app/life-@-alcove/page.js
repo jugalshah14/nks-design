@@ -19,11 +19,6 @@ export default function lifeAtAlcove() {
               </span>
             </div>
           </SlideUp>
-          <SlideUp delay={0.6}>
-            <h1 className="text-[48px] text-black leading-[52px] md:text-[#dee2e4] md:text-[150px] md:leading-[150px] font-cormorant">
-              Life @Alcove
-            </h1>
-          </SlideUp>
         </section>
       </SlideUp>
 

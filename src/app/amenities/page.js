@@ -393,42 +393,6 @@ export default function Amenities() {
       answer:
         "Yes, a multipurpose hall hosts activities like karaoke, dance, and cooking classes.",
     },
-    // [
-    //   {
-    //     question: "Cat 2 - Question 1",
-    //     answer: "Answer for Cat 2 - Question 1",
-    //   },
-    //   {
-    //     question: "Cat 2 - Question 2",
-    //     answer: "Answer for Cat 2 - Question 2",
-    //   },
-    //   {
-    //     question: "Cat 2 - Question 3",
-    //     answer: "Answer for Cat 1 - Question 1",
-    //   },
-    //   {
-    //     question: "Cat 2 - Question 4",
-    //     answer: "Answer for Cat 1 - Question 2",
-    //   },
-    // ],
-    // [
-    //   {
-    //     question: "Cat 3 - Question 1",
-    //     answer: "Answer for Cat 3 - Question 1",
-    //   },
-    //   {
-    //     question: "Cat 3 - Question 2",
-    //     answer: "Answer for Cat 3 - Question 2",
-    //   },
-    //   {
-    //     question: "Cat 3 - Question 3",
-    //     answer: "Answer for Cat 1 - Question 1",
-    //   },
-    //   {
-    //     question: "Cat 3 - Question 4",
-    //     answer: "Answer for Cat 1 - Question 2",
-    //   },
-    // ],
   ];
 
   const toggleIndex = (index) => {
@@ -595,7 +559,7 @@ export default function Amenities() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
+                    className="object-fill"
                   />
                 </div>
                 <p className="font-satoshi text-[14px] md:text-[16px] text-white font-normal md:mt-6 mt-3 opacity-50">
@@ -648,7 +612,7 @@ export default function Amenities() {
 
         {/* Navigation buttons */}
         <AnimatedSection delay={0.8}>
-          <nav className="mb-30 relative w-full mt-9 flex justify-center items-center border-t border-b border-[#232c3d] px-1 md:px-0 py-4 md:py-6">
+          <nav className="md:mb-30 mb-20 relative w-full mt-9 flex justify-center items-center border-t border-b border-[#232c3d] px-1 md:px-0 py-4 md:py-6">
             {navTabs.map((tab, idx) => (
               <React.Fragment key={tab}>
                 <button
@@ -709,12 +673,12 @@ export default function Amenities() {
             </SlideUp>
           </div>
           <SlideUp delay={0.4}>
-            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3">
+            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:mt-4 max-md:my-3">
               Club-house
             </h1>
           </SlideUp>
           <div className="relative text-white md:py-10 py-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:mb-20 mb-10">
               {clubhouseData.map((item, index) => (
                 <SlideUp
                   delay={index * 0.2}
@@ -727,7 +691,7 @@ export default function Amenities() {
                   <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
                   </div>
-                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
+                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
@@ -735,7 +699,7 @@ export default function Amenities() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-fill"
                     />
                   </div>
                   <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E] font-[400]">
@@ -857,13 +821,13 @@ export default function Amenities() {
             </div>
           </div>
           <SlideUp delay={0.4}>
-            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3 mt-10">
+            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:mt-12 mt-6">
               Podium Level
             </h1>
           </SlideUp>
 
           <div className="relative text-white md:px-8 md:py-10 py-4 px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:mb-20 mb-10">
               {PodiumData.map((item, index) => (
                 <SlideUp
                   delay={index * 0.2}
@@ -876,7 +840,7 @@ export default function Amenities() {
                   <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
                   </div>
-                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
+                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
@@ -884,7 +848,7 @@ export default function Amenities() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-fill"
                     />
                   </div>
                   <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E] font-[400]">
@@ -1036,13 +1000,13 @@ export default function Amenities() {
             </SlideUp>
           </div>
           <SlideUp delay={0.4}>
-            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3 mt-5 md:mt-0">
+            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant max-md:my-3 mt-5 md:mt-4">
               Ground Level
             </h1>
           </SlideUp>
 
           <div className="relative text-white md:py-10 py-6 px-4 md:px-0">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5  md:mb-20 mb-10">
               {groundData.map((item, index) => (
                 <SlideUp
                   delay={index * 0.2}
@@ -1055,7 +1019,7 @@ export default function Amenities() {
                   <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
                   </div>
-                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
+                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
@@ -1063,7 +1027,7 @@ export default function Amenities() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-fill"
                     />
                   </div>
                   <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E] font-[400]">
@@ -1127,53 +1091,108 @@ export default function Amenities() {
 
       {/* ferry ride */}
       <AnimatedSection>
-        <section className="relative w-full h-[300px] md:h-[524px] flex">
-          {/* Left Side - Image */}
-          <div className="w-1/2 h-full relative">
-            <Image
-              src="/assets/ferry-ride.png"
-              alt="Ferry Ride"
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Gradient overlay from left to right */}
-            <div className="absolute inset-0 bg-[linear-gradient(87.36deg,rgba(2,12,34,0)_6.84%,#010922_90.31%)]" />
+        <section className="relative w-full h-[600px] md:h-[524px] md:flex flex-col bg-white max-md:pb-20">
+          {/* Mobile Layout */}
+          <div className="md:hidden w-full h-full flex flex-col">
+            {/* Top Section - Content (60-65% height) */}
+            <div className="h-[70%] bg-[#010922] flex flex-col justify-center items-center pt-12">
+              <h2 className="text-[36px] font-cormorant text-white font-normal leading-[44px] mb-9 text-center">
+                Good News <br /> <span className="text-[#DE804B]">Sails Faster</span>
+              </h2>
+              <div className="w-full max-w-[280px] mb-6">
+                <div className="text-center">
+                  <div className="text-white text-[16px] leading-[24px] font-satoshi font-bold mb-5">Travel Route :</div>
+                  <div className="border-b border-white mb-5 w-[120px] mx-auto"></div>
+                  <div className="text-white text-[14px] leading-[22px] font-satoshi font-normal text-center">
+                    New Kolkata &nbsp; → &nbsp; Dakshineswar&nbsp; → &nbsp;<br />
+                    Millennium Park &nbsp; → &nbsp; New Kolkata
+                  </div>
+                </div>
+              </div>           
+              <button className="w-full max-w-[330px] bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center justify-between overflow-hidden">
+                <div className="px-4 py-3 flex-1 text-center">
+                  <span className="text-[16px]">Call +91 760 508 1410 to Book</span>
+                </div>
+                <span className="px-4 flex items-center justify-center h-[52px] bg-[#002F52]">
+                  <svg
+                    width="18"
+                    height="17"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.4788 18C15.5454 18 13.5746 17.5333 11.5663 16.6C9.55791 15.6667 7.69541 14.3417 5.97876 12.625C4.26211 10.9083 2.93711 9.04585 2.00376 7.0375C1.07042 5.02915 0.60376 3.05835 0.60376 1.125C0.60376 0.8035 0.710925 0.535665 0.92526 0.3215C1.13942 0.107165 1.40726 0 1.72876 0H5.22876C5.46211 0 5.66211 0.083335 5.82876 0.25C5.99541 0.416665 6.11211 0.625 6.17876 0.875L6.85201 4.016C6.88651 4.25535 6.88291 4.47085 6.84126 4.6625C6.79961 4.85415 6.71016 5.0186 6.57301 5.15575L4.07876 7.675C4.51211 8.40835 4.97041 9.09165 5.45376 9.725C5.93711 10.3584 6.47041 10.9583 7.05376 11.525C7.67041 12.1583 8.32041 12.7375 9.00376 13.2625C9.68711 13.7875 10.4038 14.25 11.1538 14.65L13.5288 12.2C13.6954 12.0167 13.8884 11.8917 14.1075 11.825C14.3267 11.7583 14.5421 11.7416 14.7538 11.775L17.7288 12.425C17.9788 12.4917 18.1871 12.6253 18.3538 12.826C18.5204 13.0268 18.6038 13.2515 18.6038 13.5V16.875C18.6038 17.1965 18.4966 17.4643 18.2823 17.6785C18.0681 17.8928 17.8003 18 17.4788 18ZM3.32876 6.3L5.35376 4.25L4.77876 1.5H2.10376C2.13709 2.2 2.24959 2.9375 2.44126 3.7125C2.63291 4.4875 2.92876 5.35 3.32876 6.3ZM12.5538 15.375C13.2371 15.6917 13.9788 15.95 14.7788 16.15C15.5788 16.35 16.3538 16.4667 17.1038 16.5V13.825L14.5288 13.3L12.5538 15.375Z"
+                      fill="#DE804B"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            {/* Bottom Section - Image (35-40% height) */}
+            <div className="h-[35%] relative">
+              <Image
+                src="/assets/ferry-ride.png"
+                alt="Ferry Ride"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Gradient overlay from top to bottom */}
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(1,9,34,0.8)_0%,rgba(1,9,34,0.3)_50%,rgba(1,9,34,0)_100%)]" />
+            </div>
           </div>
 
-          {/* Right Side - Blue Content Section */}
-          <div className="w-1/2 h-full bg-[#010922] flex flex-col py-25 pr-25">
-            <h2 className="text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px] mb-7">
-              Good News <span className="text-[#DE804B]">Sails Faster</span>
-            </h2>
-            <div className="w-full mb-7">
-              <div className="text-left">
-                <div className="text-white text-[24px] leading-[28px] font-satoshi font-normal mb-5">Travel Route :</div>
-                <div className="border-b border-white mb-5 w-[140px]"></div>
-                <div className="text-white text-[24px] leading-[28px] font-satoshi font-normal">
-                  New Kolkata → Dakshineswar → Millennium Park → New Kolkata
+          {/* Desktop Layout */}
+          <div className="hidden md:flex w-full h-full">
+            {/* Left Side - Image */}
+            <div className="w-1/2 h-full relative">
+              <Image
+                src="/assets/ferry-ride.png"
+                alt="Ferry Ride"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Gradient overlay from left to right */}
+              <div className="absolute inset-0 bg-[linear-gradient(87.36deg,rgba(2,12,34,0)_6.84%,#010922_90.31%)]" />
+            </div>
+
+            {/* Right Side - Blue Content Section */}
+            <div className="w-1/2 h-full bg-[#010922] flex flex-col py-25 pr-25">
+              <h2 className="text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px] mb-7">
+                Good News <span className="text-[#DE804B]">Sails Faster</span>
+              </h2>
+              <div className="w-full mb-7">
+                <div className="text-left">
+                  <div className="text-white text-[24px] leading-[28px] font-satoshi font-normal mb-5">Travel Route :</div>
+                  <div className="border-b border-white mb-5 w-[140px]"></div>
+                  <div className="text-white text-[24px] leading-[28px] font-satoshi font-normal">
+                    New Kolkata → Dakshineswar → Millennium Park → New Kolkata
+                  </div>
                 </div>
-              </div>
-            </div>           
-            <button className="mb-7 md:min-h-[4rem] min-h-[3.5rem] w-fit bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
-              <div className="px-6 py-3 mr-5">
-                <span>Call +91 760 508 1410 to Book</span>
-              </div>
-              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
-                <svg
-                  width="19"
-                  height="18"
-                  viewBox="0 0 19 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17.4788 18C15.5454 18 13.5746 17.5333 11.5663 16.6C9.55791 15.6667 7.69541 14.3417 5.97876 12.625C4.26211 10.9083 2.93711 9.04585 2.00376 7.0375C1.07042 5.02915 0.60376 3.05835 0.60376 1.125C0.60376 0.8035 0.710925 0.535665 0.92526 0.3215C1.13942 0.107165 1.40726 0 1.72876 0H5.22876C5.46211 0 5.66211 0.083335 5.82876 0.25C5.99541 0.416665 6.11211 0.625 6.17876 0.875L6.85201 4.016C6.88651 4.25535 6.88291 4.47085 6.84126 4.6625C6.79961 4.85415 6.71016 5.0186 6.57301 5.15575L4.07876 7.675C4.51211 8.40835 4.97041 9.09165 5.45376 9.725C5.93711 10.3584 6.47041 10.9583 7.05376 11.525C7.67041 12.1583 8.32041 12.7375 9.00376 13.2625C9.68711 13.7875 10.4038 14.25 11.1538 14.65L13.5288 12.2C13.6954 12.0167 13.8884 11.8917 14.1075 11.825C14.3267 11.7583 14.5421 11.7416 14.7538 11.775L17.7288 12.425C17.9788 12.4917 18.1871 12.6253 18.3538 12.826C18.5204 13.0268 18.6038 13.2515 18.6038 13.5V16.875C18.6038 17.1965 18.4966 17.4643 18.2823 17.6785C18.0681 17.8928 17.8003 18 17.4788 18ZM3.32876 6.3L5.35376 4.25L4.77876 1.5H2.10376C2.13709 2.2 2.24959 2.9375 2.44126 3.7125C2.63291 4.4875 2.92876 5.35 3.32876 6.3ZM12.5538 15.375C13.2371 15.6917 13.9788 15.95 14.7788 16.15C15.5788 16.35 16.3538 16.4667 17.1038 16.5V13.825L14.5288 13.3L12.5538 15.375Z"
-                    fill="#DE804B"
-                  />
-                </svg>
-              </span>
-            </button>           
+              </div>           
+              <button className="mb-7 md:min-h-[4rem] min-h-[3.5rem] w-fit bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
+                <div className="px-6 py-3 mr-5">
+                  <span>Call +91 760 508 1410 to Book</span>
+                </div>
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
+                  <svg
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.4788 18C15.5454 18 13.5746 17.5333 11.5663 16.6C9.55791 15.6667 7.69541 14.3417 5.97876 12.625C4.26211 10.9083 2.93711 9.04585 2.00376 7.0375C1.07042 5.02915 0.60376 3.05835 0.60376 1.125C0.60376 0.8035 0.710925 0.535665 0.92526 0.3215C1.13942 0.107165 1.40726 0 1.72876 0H5.22876C5.46211 0 5.66211 0.083335 5.82876 0.25C5.99541 0.416665 6.11211 0.625 6.17876 0.875L6.85201 4.016C6.88651 4.25535 6.88291 4.47085 6.84126 4.6625C6.79961 4.85415 6.71016 5.0186 6.57301 5.15575L4.07876 7.675C4.51211 8.40835 4.97041 9.09165 5.45376 9.725C5.93711 10.3584 6.47041 10.9583 7.05376 11.525C7.67041 12.1583 8.32041 12.7375 9.00376 13.2625C9.68711 13.7875 10.4038 14.25 11.1538 14.65L13.5288 12.2C13.6954 12.0167 13.8884 11.8917 14.1075 11.825C14.3267 11.7583 14.5421 11.7416 14.7538 11.775L17.7288 12.425C17.9788 12.4917 18.1871 12.6253 18.3538 12.826C18.5204 13.0268 18.6038 13.2515 18.6038 13.5V16.875C18.6038 17.1965 18.4966 17.4643 18.2823 17.6785C18.0681 17.8928 17.8003 18 17.4788 18ZM3.32876 6.3L5.35376 4.25L4.77876 1.5H2.10376C2.13709 2.2 2.24959 2.9375 2.44126 3.7125C2.63291 4.4875 2.92876 5.35 3.32876 6.3ZM12.5538 15.375C13.2371 15.6917 13.9788 15.95 14.7788 16.15C15.5788 16.35 16.3538 16.4667 17.1038 16.5V13.825L14.5288 13.3L12.5538 15.375Z"
+                      fill="#DE804B"
+                    />
+                  </svg>
+                </span>
+              </button>           
+            </div>
           </div>
         </section>
       </AnimatedSection>
@@ -1181,12 +1200,20 @@ export default function Amenities() {
       {/* certified section */}
       <AnimatedSection className="overflow-visible">
         <section className="relative w-full bg-[#E7F2EB] px-2 md:pt-[130px] md:pb-20 pt-1 pb-1 md:px-15 bg-cover bg-center md:bg-top">
-          <div className="md:!w-[92%] w-[96%] h-[720px] absolute z-10">
+          <div className="!w-[92%] h-[720px] absolute z-10 hidden md:block">
             <Image
               src={"/assets/certifed.svg"}
               alt=""
               fill
               className="object-cover w-full h-full"
+            />
+            </div>
+            <div className="w-[96%] h-[740px] absolute z-10 md:hidden">
+            <Image
+              src={"/assets/certifedmobile.svg"}
+              alt=""
+              fill
+              className="object-cover w-[205px] h-[370px]"
             />
           </div>
           <div className="z-11 relative w-full md:py-20 md:px-10 mb:mt-12 text-center">
@@ -1297,7 +1324,7 @@ export default function Amenities() {
           </div>
           {/* Horizontal Card Section */}
           <AnimatedSection>
-            <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
+            <Link href="/life-@-alcove" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
               <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
                 <Image
                   src="/assets/sport-gif.gif"
@@ -1320,7 +1347,7 @@ export default function Amenities() {
                   className="absolute -ml-6"
                 />
               </div>
-            </div>
+            </Link>
           </AnimatedSection>
         </section>
       </AnimatedSection>
@@ -1430,30 +1457,6 @@ export default function Amenities() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 absolute border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 -bottom-13 md:h-[104px] z-1">
-          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
-            <Image
-              src="/assets/faqs-detail-gif.gif"
-              alt="Room preview"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="flex-1 md:px-11 md:py-8">
-            <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-              Have more questions? Contact us now.
-            </p>
-          </div>
-          <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
-            <Image
-              src="/assets/icons/arrowlong.svg"
-              alt=""
-              width={40}
-              height={3}
-              className="absolute -ml-6"
-            />
           </div>
         </div>
       </section>

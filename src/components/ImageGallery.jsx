@@ -42,7 +42,7 @@ const ImageGallery = ({ isOpen, onClose, images }) => {
 
   return (
     <div className="fixed bg-black/50 inset-0 flex justify-center items-center z-99999 overflow-auto">
-      <div className="bg-transparent bg-opacity-50 flex flex-col items-center rounded-lg w-11/12 md:w-2/3 lg:w-1/2 relative">
+      <div className="bg-transparent bg-opacity-75 flex flex-col items-center rounded-lg w-11/12 md:w-2/3 lg:w-1/2 relative">
         <div className="flex justify-end items-end w-full">
           <button
             onClick={onClose}
@@ -76,7 +76,7 @@ const ImageGallery = ({ isOpen, onClose, images }) => {
               className={`w-20 h-20 object-cover cursor-pointer rounded-md border-2 transition ${
                 selectedImage === image
                   ? "border-blue-600 filter-none"
-                  : "border-transparent hover:border-gray-300 filter brightness-50"
+                  : "border-transparent hover:border-gray-300 filter brightness-40"
               }`}
               onClick={() => handleThumbnailClick(image)}
             />
