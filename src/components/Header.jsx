@@ -112,18 +112,25 @@ const Header = () => {
             >
               Blogs
             </Link>
+            <div className="flex items-center gap-6 md:justify-end">
             <button
               onClick={handleScheduleVisit}
-              className="cursor-pointer max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+              className="h-[40px] w-[100px] md:h-[48px] md:w-[123px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-md action-button flex items-center justify-center"
             >
-              Schedule Visit
-            </button>
-            <Link href={"tel:918101881018"}>
-            <div className="h-[40px] w-[100px] md:h-[48px] md:w-[123px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-md action-button flex items-center justify-center">
               <p className="font-satoshi font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22]">
-                Call Now
+                Schedule Visit
               </p>
-            </div></Link>
+            </button>
+            <Link href={"tel:+918101881018"} className="h-[24px] w-[24px] relative cursor-pointer">
+            <Image
+                src="/assets/phone.svg"
+                alt="logo"
+                fill
+                  priority
+                  className="invert-100 logo-image"
+              />
+            </Link>
+          </div>
           </div>
 
           <button className="md:hidden text-[#22252E]" onClick={toggleDrawer}>
