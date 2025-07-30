@@ -9,31 +9,39 @@ export default function Testimonials() {
     <main>
       {/* Hero Section */}
       <SlideUp>
-        <section className="bg-[#FDF9F6] flex flex-col text-center items-center px-0 pb-30 md:px-14 pt-[70px] md:pt-[150px]">
-          <SlideUp delay={0.4}>
-            <div className="text-sm px-4 pt-6 text-center text-gray-500">
-              <span className="text-black-700 font-semibold">• Home</span>
+      <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[280px] md:top-[100] h-[180px] top-[50]">
+      <SlideUp delay={0.4}>
+            <div className="px-4 pt-6 text-center pb-4 md:pb-0">
+              <span className="text-[#22252e] font-bold text-[20px]">
+                • Home
+              </span>
               <span className="mx-2">—</span>
-              <span className="text-gray-400">Testimonials</span>
+              <span className="text-[#5c5f68] font-normal text-[20px]">
+                Testimonials
+              </span>
             </div>
           </SlideUp>
-          <SlideUp delay={0.6} className="justify-center flex">
-            <h1 className="relative md:mb-5 page-hero-title no-negative-margin select-none no-drag">
-              Testimonials
-            </h1>
-          </SlideUp>
-        <SlideUp delay={0.8} className="flex justify-center w-full absolute bottom-0">
-          <div>
-            <Image
-              src="/assets/people.png"
-              width={859}
-              height={192}
-              alt="award"
-              className="img-size grayscale !w-full md:w-[859px]"
-            />
+        </section>
+      <section className="mt-9">
+        <SlideUp delay={0.8}>
+          <div className="container mx-auto">
+            <div className="relative w-full h-[265px] md:h-[460px]">
+              <Image
+                src="/assets/testimonials-hero.png"
+                alt="Hero-img"
+                fill
+                className="object-cover w-full h-full select-none no-drag"
+                priority
+              />
+            </div>
+            <div className="z-20 flex text-center items-center justify-center relative p-[10px] -mt-12 mx-2 md:mx-[80px]  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
+              <h2 className="text-center project-overview-title mobile-title max-w-[800px]">
+              Where Stories <span className="orange-color">Meet Homes </span>
+              </h2>
+            </div>
           </div>
         </SlideUp>
-        </section>
+      </section>
       </SlideUp>
 
       {/* white section */}
