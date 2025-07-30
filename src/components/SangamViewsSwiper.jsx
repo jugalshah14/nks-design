@@ -12,9 +12,6 @@ const data = {
     {
       src: "/assets/1bhkv.png",
     },
-    {
-      src: "/assets/1bhkv2.png",
-    },
   ],
   "2BHK": [
     {
@@ -51,6 +48,13 @@ const data = {
   ],
 };
 
+const towerInfo = {
+  "1BHK": "",
+  "2BHK": "Tower 9 - 15th Floor",
+  "3BHK": "Tower 12",
+  "4BHK": "24E & 24F",
+};
+
 const settings = {
   className: "amenities-swiper !overflow-visible center",
   infinite: false,
@@ -78,7 +82,7 @@ const settings = {
   ],
 };
 
-export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
+export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
   const [activeIndex, setActiveIndex] = useState(0);
   let swiperRef = useRef(null);
 
@@ -104,12 +108,13 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
   const showDesktopNavigation = data[activeBHK].length > 3;
 
   return (
-    <div className="relative top-[100px] md:-top-15 overflow-x-hidden bg-[#020C22]">
+    <div className="relative top-[120px] md:-top-15 overflow-x-hidden bg-[#020C22]">
       <div className="container mx-auto relative md:mb-16 bg-[#020C22]">
         {/* Only for mobile */}
         <div className="flex items-center justify-center">
           <div className="none-md text-center text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0">
-            Views from {activeBHK}
+            <div>Views from {activeBHK}*</div>
+            <div className="text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] mt-2">{towerInfo[activeBHK]}</div>
           </div>
         </div>
 
@@ -118,7 +123,8 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
             <div
               className="hide-triangle text-center md:text-left text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0"
             >
-              Views from {activeBHK}
+              <div>Views from {activeBHK}*</div>
+              <div className="text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] mt-2">{towerInfo[activeBHK]}</div>
             </div>
             {showDesktopNavigation && (
               <div className="hidden md:flex relative max-w-[190px] w-[366px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">

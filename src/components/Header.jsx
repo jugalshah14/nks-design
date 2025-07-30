@@ -91,7 +91,7 @@ const Header = () => {
             <Link href="/">
               <Image
                 className="invert-100 logo-image"
-                src="/assets/logo.png"
+                src="/assets/logo.svg"
                 alt="logo"
                 fill
                 priority
@@ -148,7 +148,7 @@ const Header = () => {
           <div className="w-[141px] h-[26px] relative">
             <Link href="/" onClick={toggleDrawer}>
               <Image
-                src="/assets/logo.png"
+                src="/assets/logo.svg"
                 alt="Logo"
                 fill
                 className=" invert-100 object-contain"
