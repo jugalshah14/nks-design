@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import PastProjectSwiper from "@/components/PastProjectSwiper";
-import { SlideUp } from "@/components/animations";
+import { AnimatedSection, SlideUp } from "@/components/animations";
 import Link from "next/link";
 
 export default function WhyAlcove() {
@@ -305,10 +305,14 @@ export default function WhyAlcove() {
                   />
                   <div className="flex flex-col items-baseline h-full">
                     <h2 className="text-[18px] leading-[24px] md:text-[24px] md:leading-[28px] font-satoshi font-[700]">
-                    How We Create Impact
+                      How We Create Impact
                     </h2>
                     <p className="pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]">
-                    Alcove Realty seeks to enhance the quality of life through active community involvement in all its projects. Continually exploring new ideas and technology while retaining tradition and heritage, every project transcends the elements of style, exclusivity, elegance and safety.
+                      Alcove Realty seeks to enhance the quality of life through
+                      active community involvement in all its projects.
+                      Continually exploring new ideas and technology while
+                      retaining tradition and heritage, every project transcends
+                      the elements of style, exclusivity, elegance and safety.
                     </p>
                   </div>
                 </div>
@@ -394,19 +398,174 @@ export default function WhyAlcove() {
           <PastProjectSwiper />
         </SlideUp>
       </section>
-
-      {/* slider */}
-      {/* <section className="realtive pt-6">
-        <div className="w-full flex justify-center items-center none-md">
-          <h1 className="project-overview-title !text-center md:pb-[28px] md:pb-[0px] none-md py-[30px]">
-            Meet The {""}
-            <span className="orange-color pl-2"> Team</span>
-          </h1>
-        </div>
+      {/* Real Minds Section */}
+      <section className="bg-white flex flex-col relative text-[#002F52] md-pt-20 md:pb-20 pt-20 pb-0 h-auto">
         <SlideUp delay={0.4}>
-          <TeamSwiper />
+          <div className="flex font-cormorant font-normal items-center justify-center text-center text-[48px] leading-[52px] md:text-[56px] md:leading-[72px] md:mt-4 md:px-0 px-[13px]">
+            Know Your "<span className="orange-color">Real Minds</span>" Behind Project
+          </div>
         </SlideUp>
-      </section> */}
+        
+        <AnimatedSection className="overflow-visible">
+          {/* Builder Section */}
+          <AnimatedSection>
+            <div className="container w-full mx-auto flex-col lg:flex-row mt-12 lg:gap-x-8 flex">
+              <div className="flex flex-col items-center w-full md:w-[804px]">
+                <div className="relative w-full md:w-[804px]">
+                  <div className="md:relative w-full h-[268px] md:h-[570px]">
+                    <Image
+                      src="/assets/white-vector.png"
+                      width={65}
+                      height={65}
+                      alt="triangle"
+                      className="absolute -right-1 z-10"
+                    />
+                    <Image
+                      src="/assets/RM1.png"
+                      alt="Builder"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-center lg:justify-center h-full">
+                <div className="z-20 md:relative md:-bottom-[163px] md:right-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-center md:text-left">
+                  <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4">
+                    Know Your <span className="orange-color">Builder</span>
+                  </h3>
+                  <ul className="space-y-3 text-[14px] md:text-[16px] font-normal leading-[20px] md:leading-[24px]">
+                    {[
+                      "RERA project registration number",
+                      "No pending RERA complaints; project registered with RERA",
+                      "Area delivered",
+                      "Number of projects delivered",
+                      "Committed to quality and deadlines",
+                      "Awarded builder with strong mission and team",
+                      "Years of trust, family-led, with strong combined experience"
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <Image
+                          src="/assets/icons/white-check.svg"
+                          width={16}
+                          height={12}
+                          alt="checkmark"
+                          className="mt-1 flex-shrink-0"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Consultants Section */}
+          <AnimatedSection>
+            <div className="container w-full mx-auto flex-col lg:flex-row md:mt-12 mt-0 lg:gap-x-8 flex max-md:bg-white">
+              <div className="flex flex-col items-center w-full md:w-[804px] lg:order-2">
+                <div className="relative w-full md:w-[804px]">
+                  <div className="md:relative w-full h-[268px] md:h-[570px]">
+                    <Image
+                      src="/assets/white-vector.png"
+                      width={65}
+                      height={65}
+                      alt="triangle"
+                      className="absolute -right-1 z-10"
+                    />
+                    <Image
+                      src="/assets/RM2.png"
+                      alt="Project Consultants"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-center lg:justify-center h-full lg:order-1">
+                <div className="z-20 md:relative md:-bottom-[174px] md:left-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-center md:text-left">
+                  <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4">
+                    Know Your <span className="orange-color">Project's Consultants</span>
+                  </h3>
+                  <ul className="space-y-3 text-[14px] md:text-[16px] font-normal leading-[20px] md:leading-[24px]">
+                    {[
+                      "MEP consultants who ensure efficient mechanical, electrical, & plumbing systems throughout project.",
+                      "Landscape consultants focused on designing functional and beautiful outdoor environments.",
+                      "Structural consultants dedicated to ensuring the building's strength, safety, and stability.",
+                      "Soil consultants who assess ground conditions for a safe and solid foundation."
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <Image
+                          src="/assets/icons/white-check.svg"
+                          width={16}
+                          height={12}
+                          alt="checkmark"
+                          className="mt-1 flex-shrink-0"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Architect Section */}
+          <AnimatedSection>
+            <div className="container w-full mx-auto flex-col lg:flex-row md:mt-12 mt-0 lg:gap-x-8 flex">
+              <div className="flex flex-col items-center w-full md:w-[804px]">
+                <div className="relative w-full md:w-[804px]">
+                  <div className="md:relative w-full h-[268px] md:h-[570px]">
+                    <Image
+                      src="/assets/white-vector.png"
+                      width={65}
+                      height={65}
+                      alt="triangle"
+                      className="absolute -right-1 z-10"
+                    />
+                    <Image
+                      src="/assets/RM3.png"
+                      alt="Project Architect"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-center lg:justify-center h-full">
+                <div className="z-20 md:relative md:-bottom-[198px] md:right-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-center md:text-left">
+                  <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4">
+                    Know Your <span className="orange-color">Project's Architect</span>
+                  </h3>
+                  <ul className="space-y-3 text-[14px] md:text-[16px] font-normal leading-[20px] md:leading-[24px]">
+                    {[
+                      "Architect's background and legacy",
+                      "Architect tie-ups and team",
+                      "Tuning of the builder and architect",
+                      "Number of projects done in the category",
+                      "Architect awards and recognitions",
+                      "Architects mission"
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <Image
+                          src="/assets/icons/white-check.svg"
+                          width={16}
+                          height={12}
+                          alt="checkmark"
+                          className="mt-1 flex-shrink-0"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </AnimatedSection>
+      </section>
 
       <section className="relative">
         <SlideUp
@@ -477,7 +636,7 @@ export default function WhyAlcove() {
               />
               <div className="absolute right-0 bottom-0 p-[12px] md:p-[28px] flex flex-col gap-[12px] bg-[#020C22] justify-center">
                 <h1 className="max-w-[284px] text-[18px] md:text-[24px] font-satoshi font-[700] leading-[24px] md:leading-[28px] text-white">
-                Most Popular Project of the Year
+                  Most Popular Project of the Year
                 </h1>
                 <p className="text-[16px] font-normal font-satoshi leading-[24px] text-white">
                   2025
@@ -495,7 +654,7 @@ export default function WhyAlcove() {
                 />
                 <div className="w-full p-[12px] md:p-[28px] flex flex-col gap-[12px] bg-white/5 justify-center">
                   <h1 className="text-[18px] md:text-[24px] font-satoshi font-[700] leading-[24px] md:leading-[28px] text-white">
-                  Landscape Project of the Year- Residential
+                    Landscape Project of the Year- Residential
                   </h1>
                   <p className="text-[16px] font-satoshi font-[400] leading-[24px] text-white">
                     2025
@@ -512,10 +671,10 @@ export default function WhyAlcove() {
                 />
                 <div className="w-full p-[12px] md:p-[28px] flex flex-col gap-[12px] bg-white/5 justify-center">
                   <h1 className="text-[18px] md:text-[24px] font-satoshi font-[700] leading-[24px] md:leading-[28px] text-white">
-                  Best Mid-Range Housing Projects in West Bengal 
+                    Best Mid-Range Housing Projects in West Bengal
                   </h1>
                   <p className="text-[16px] font-satoshi font-[400] leading-[24px] text-white">
-                   2025
+                    2025
                   </p>
                 </div>
               </div>
@@ -529,7 +688,7 @@ export default function WhyAlcove() {
                 />
                 <div className="w-full p-[12px] md:p-[28px] flex flex-col gap-[12px] bg-white/5 justify-center">
                   <h1 className="text-[18px] md:text-[24px] font-satoshi font-[700] leading-[24px] md:leading-[28px] text-white">
-                  Excellence in Brand Customer Experience
+                    Excellence in Brand Customer Experience
                   </h1>
                   <p className="text-[16px] font-satoshi font-[400] leading-[24px] text-white">
                     2025
