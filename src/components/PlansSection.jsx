@@ -13,6 +13,7 @@ import ScheduleVisitModal from './ScheduleVisitModal';
 export default function PlansSection() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [openTooltips, setOpenTooltips] = useState({}); // Track which tooltips are open
     const swiperRef = useRef(null);
 
     // Card data
@@ -59,6 +60,14 @@ export default function PlansSection() {
       setIsModalOpen(true);
     };
 
+    // Handle tooltip toggle
+    const handleTooltipToggle = (index) => {
+      setOpenTooltips(prev => ({
+        ...prev,
+        [index]: !prev[index]
+      }));
+    };
+
     // Arrow states for mobile
     const mobileIndex = Math.ceil(activeIndex);
     const isMobilePrevDisabled = mobileIndex === 0;
@@ -83,9 +92,16 @@ export default function PlansSection() {
           <Slider ref={swiperRef} {...mobileSettings}>
             {cards.map((card, idx) => (
               <div key={idx} className={`w-full flex flex-col relative pl-[16px]${idx === cards.length - 1 ? ' pr-[16px]' : ''}`}>
-                <div className={`absolute ${idx === cards.length - 1 ? 'right-6' : 'right-2'} top-2 cursor-pointer flex flex-row items-center rounded-xl bg-black/20`}>
+                <div 
+                  className={`absolute ${idx === cards.length - 1 ? 'right-6' : 'right-2'} top-2 cursor-pointer flex flex-row items-center rounded-xl bg-black/20`}
+                  onClick={() => handleTooltipToggle(idx)}
+                >
                   <div className="overflow-hidden">
-                    <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 px-2 opacity-100 max-w-[100px] translate-x-0 transition-all duration-300 ease-in-out">
+                    <div className={`text-[12px] text-white whitespace-nowrap px-0 transition-all duration-300 ease-in-out ${
+                      openTooltips[idx] 
+                        ? 'opacity-100 max-w-[100px] translate-x-0 px-2' 
+                        : 'opacity-0 max-w-0 translate-x-2'
+                    }`}>
                       {card.imgtype}
                     </div>
                   </div>
@@ -96,7 +112,7 @@ export default function PlansSection() {
                   alt={card.title}
                   width={392}
                   height={240}
-                  className="object-cover w-full rounded-md h-[240px]"
+                  className="object-cover w-full h-[240px]"
                 />
                 <div className="bg-white p-[20px] mx-[20px] flex flex-col !mt-[-20px] relative">
                   <h1 className="text-[24px] leading-[28px] font-[700] font-satoshi pb-[10px]">{card.title}</h1>
@@ -166,7 +182,7 @@ export default function PlansSection() {
               alt="serenity"
               width={392}
               height={240}
-              className="object-cover w-full rounded-md h-[240px]"
+              className="object-cover w-full  h-[240px]"
             />
             <div className="bg-white p-[28px] mx-[20px] flex flex-col mt-[-20px]">
               <h1 className="text-[24px] leading-[28px] font-[700] font-satoshi pb-[10px]">Sangam Serenity</h1>
@@ -209,7 +225,7 @@ export default function PlansSection() {
               alt="serenity"
               width={392}
               height={240}
-              className="object-cover w-full rounded-md h-[240px]"
+              className="object-cover w-full  h-[240px]"
             />
             <div className="bg-white p-[28px] mx-[20px] flex flex-col mt-[-20px]">
               <h1 className="text-[24px] leading-[28px] font-[700] font-satoshi pb-[10px]">Sangam Suite</h1>
@@ -252,7 +268,7 @@ export default function PlansSection() {
               alt="serenity"
               width={392}
               height={240}
-              className="object-cover w-full rounded-md h-[240px]"
+              className="object-cover w-full  h-[240px]"
             />
             <div className="bg-white p-[28px] mx-[20px] flex flex-col mt-[-20px]">
               <h1 className="text-[24px] leading-[28px] font-[700] font-satoshi pb-[10px]">Sangam Signature</h1>

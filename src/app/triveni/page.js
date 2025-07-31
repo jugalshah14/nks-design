@@ -17,18 +17,23 @@ export default function triveni() {
     <main>
 
         {/* Hero Section */}
-        <SlideUp className="bg-[#F3F6F8] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
-            <SlideUp delay={0.4} className="text-sm px-4 pt-6 text-center text-gray-500 mb-2">
-                <span className="text-[#22252E] font-satoshi font-[700]">• Home</span>
-                <span className="mx-2">—</span>
-                <span className="text-gray-400">Triveni Omniplex</span>
-            </SlideUp>
-            <SlideUp delay={0.6} className="text-center items-center flex justify-center relative -mb-5 page-hero-title no-negative-margin">
-            Triveni Omniplex
-            </SlideUp>
-        </SlideUp>
+        <SlideUp>
+        <section className="relative justify-center bg-[#f3f6f8] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
+          <SlideUp delay={0.4}>
+            <div className="text-center pb-4 md:pb-0">
+              <span className="text-[#22252e] font-bold text-[20px]">
+                • Home
+              </span>
+              <span className="mx-2">—</span>
+              <span className="text-[#5c5f68] font-normal text-[20px]">
+                Triveni Omniplex
+              </span>
+            </div>
+          </SlideUp>
+        </section>
+      </SlideUp>
 
-        <section className='-mt-16 no-negative-margin pb-[40px] md:pb-[80px]'>
+        <section className='no-negative-margin pb-[40px] md:pb-[80px]'>
             <SlideUp delay={0.8} className="container mx-auto">
             <div className="relative w-full md:h-[460px] h-[265px] hide-triangle">
                 <Image

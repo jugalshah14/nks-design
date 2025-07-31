@@ -46,9 +46,9 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
     if (!isOpen || !selectedImage) return null;  // Prevent rendering if selectedImage is invalid
   
     return (
-      <div className="fixed bg-black/50 inset-0 flex justify-center items-center z-99999 overflow-auto">
+      <div className="fixed bg-black/75 inset-0 flex justify-center items-center z-99999 overflow-auto">
         <div className="bg-transparent bg-opacity-50 flex flex-col items-center rounded-lg w-full md:w-full lg:w-full relative">
-          <div className="w-[70%] flex justify-end items-end">
+          <div className="md:w-[70%] w-[90%] flex justify-end items-end">
             <button
               onClick={onClose}
               className="text-3xl text-white hover:text-gray-800 cursor-pointer"
@@ -87,7 +87,7 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
                 height={60}
                 className={`w-20 h-20 object-cover cursor-pointer rounded-md border-2 transition ${
                   selectedImage === image.src
-                    ? "border-blue-600 filter-none"
+                    ? "border-white filter-none"
                     : "border-transparent hover:border-gray-300 filter brightness-50"
                 }`}
                 onClick={() => handleThumbnailClick(image)}
@@ -96,14 +96,14 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
           </div>
   
           {/* Navigation */}
-          <div className="relative transform bg-white flex gap-10 items-center justify-center mt-9 p-5">
+          <div className="relative transform bg-[#021642] flex gap-20 items-center justify-center mt-9 p-5">
             <div className="h-full flex items-center justify-center">
               <button
                 className="focus:outline-none cursor-pointer disabled:cursor-auto"
                 onClick={handlePreviousImage}
               >
                 <Image
-                  src="/assets/icons/arrow-right.svg"
+                  src="/assets/icons/arrow-r-w.svg"
                   alt="Previous"
                   height={20}
                   width={19}
@@ -119,7 +119,7 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
                 onClick={handleNextImage}
               >
                 <Image
-                  src="/assets/icons/arrow-right.svg"
+                  src="/assets/icons/arrow-r-w.svg"
                   alt="Next"
                   height={20}
                   width={19}

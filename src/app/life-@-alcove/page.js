@@ -7,27 +7,35 @@ export default function lifeAtAlcove() {
   return (
     <main>
       <SlideUp>
-        <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[280px] md:top-[107] h-[180px] top-[50]">
+        <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
           <SlideUp delay={0.4}>
-            <div className="px-4 pt-6 text-center pb-4 md:pb-0">
+            <div className="text-center pb-4 md:pb-0">
               <span className="text-[#22252e] font-bold text-[20px]">
                 • Home
               </span>
               <span className="mx-2">—</span>
               <span className="text-[#5c5f68] font-normal text-[20px]">
-                Life @Alcove
+                Life @ Alcove
               </span>
             </div>
           </SlideUp>
         </section>
       </SlideUp>
 
-      <section className="mt-9">
+      <section className="">
         <SlideUp delay={0.8}>
           <div className="container md:max-w-7xl md:mx-auto">
-            <div className="relative w-full md:h-[460px] h-[265px]">
+            <div className="relative w-full h-[460px] hidden md:block">
               <Image
                 src="/assets/life @alcove.png"
+                alt="Hero-img"
+                fill
+                priority
+              />
+            </div>
+            <div className="relative w-full md:hidden h-[265px]">
+              <Image
+                src="/assets/life @alcoveRES.png"
                 alt="Hero-img"
                 fill
                 priority
@@ -70,7 +78,7 @@ export default function lifeAtAlcove() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="w-full absolute bottom-0 left-0 max-md:text-center p-3 md:p-5 backdrop-blur-md font-semibold z-10">
+                  <div className="w-full absolute bottom-0 left-0 max-md:text-center p-3 md:p-5 backdrop-blur-[34px] font-semibold z-10">
                     <span className="text-white md:font-bold text-[18px] md:text-[24px] md:leading-7 leading-6">
                       Fitness events to enhance your fitness level.
                     </span>
@@ -82,7 +90,7 @@ export default function lifeAtAlcove() {
                   <span>
                     Make everyday living effortless with our{" "}
                     <span className="orange-color">Convenience</span> for
-                    Residence scheme.
+                    Residence scheme
                   </span>
                 </div>
               </div>
@@ -115,7 +123,7 @@ export default function lifeAtAlcove() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="w-full absolute bottom-0 left-0 max-md:text-center p-3 md:p-5 backdrop-blur-md font-semibold z-10">
+                  <div className="w-full absolute bottom-0 left-0 max-md:text-center p-3 md:p-5 backdrop-blur-[34px] font-semibold z-10">
                     <span className="text-white md:font-bold text-[18px] md:text-[24px] md:leading-7 leading-6 md:pl-10 pl-0">
                       Experience the thrill of our nature exploring events!
                     </span>
@@ -160,7 +168,7 @@ export default function lifeAtAlcove() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="w-full absolute bottom-0 left-0 max-md:text-center p-3 md:p-5 backdrop-blur-md font-semibold z-10">
+                  <div className="w-full absolute bottom-0 left-0 max-md:text-center p-3 md:p-5 backdrop-blur-[34px] font-semibold z-10">
                     <span className="text-white md:font-bold text-[18px] md:text-[24px] md:leading-7 leading-6">
                       Earth Day Activities
                     </span>

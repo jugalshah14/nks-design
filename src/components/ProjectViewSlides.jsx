@@ -62,6 +62,7 @@ const settings = {
 
 export default function ProjectViewSlides() {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [mobileTooltipIndex, setMobileTooltipIndex] = useState(null);
     let swiperRef = useRef(null);
 
     const handleNext = () => {
@@ -74,6 +75,13 @@ export default function ProjectViewSlides() {
         swiperRef.slickPrev();
     }
 
+    const handleInfoClick = (index) => {
+        if (mobileTooltipIndex === index) {
+            setMobileTooltipIndex(null);
+        } else {
+            setMobileTooltipIndex(index);
+        }
+    }
 
     return (
         <div className='relative'>
@@ -95,11 +103,22 @@ export default function ProjectViewSlides() {
                             {/* Info Icon with Tooltip (new style) */}
                             <div className={`absolute md:top-15 top-10 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group`}>
                                 <div className="overflow-hidden">
-                                    <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                                    <div className={`text-[12px] text-white whitespace-nowrap transition-all duration-300 ease-in-out ${
+                                        // Show on hover for desktop, show on click for mobile
+                                        mobileTooltipIndex === index 
+                                            ? 'opacity-100 max-w-[100px] px-2 translate-x-0' 
+                                            : 'md:group-hover:opacity-100 md:group-hover:max-w-[100px] md:group-hover:px-2 md:group-hover:translate-x-0 opacity-0 max-w-0'
+                                    }`}>
                                         {slide.info}
                                     </div>
                                 </div>
-                                <Image src="/assets/icons/info.svg" alt="info" width={25} height={25} className="" />
+                                <button 
+                                    onClick={() => handleInfoClick(index)}
+                                    className="focus:outline-none"
+                                    aria-label={`Show info for ${slide.title}`}
+                                >
+                                    <Image src="/assets/icons/info.svg" alt="info" width={25} height={25} className="" />
+                                </button>
                             </div>
                             <div className="absolute inset-0 rounded-lg w-full h-full z-1"></div>
                             <Image
@@ -108,7 +127,9 @@ export default function ProjectViewSlides() {
                                 className="object-fill"
                                 fill
                             />
-                            <div className="absolute inset-0 rounded-lg z-2">
+                            <div className="absolute inset-0 rounded-lg z-2" style={{
+                                background: 'linear-gradient(180deg, #000000 -48%, rgba(0, 0, 0, 0) 44.08%, #0D0C0C 130.57%)'
+                            }}>
                                 <h3 className="max-md:w-[100%] max-md:text-center md:bottom-10 bottom-5 absolute md:left-10 text-[28px] md:text-[48px] font-satoshi font-[400] leading-8 md:leading-[65px] text-white">
                                     {slide.title}
                                 </h3>

@@ -398,7 +398,7 @@ body::-webkit-scrollbar {
   }
 
   .project-overview-title {
-    font-family: "Satoshi", sans-serif;
+    font-family: "Cormorant Garamond", serif;
     font-weight: 400;
     font-size: 32px;
     line-height: 44px;
@@ -424,6 +424,9 @@ body::-webkit-scrollbar {
   .icon-image {
     width: 60px;
     height: 60px;
+  }
+  .serampore-swiper .slick-slide {
+    margin: 0 15px;
   }
 }
 
@@ -478,7 +481,7 @@ body::-webkit-scrollbar {
 }
 
 .serampore-swiper .slick-slide {
-  margin: 0 15px;
+  margin: 0 30px;
 }
 
 .serampore-swiper .slick-list {

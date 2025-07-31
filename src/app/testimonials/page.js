@@ -9,9 +9,9 @@ export default function Testimonials() {
     <main>
       {/* Hero Section */}
       <SlideUp>
-      <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[280px] md:top-[100] h-[180px] top-[50]">
-      <SlideUp delay={0.4}>
-            <div className="px-4 pt-6 text-center pb-4 md:pb-0">
+        <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
+          <SlideUp delay={0.4}>
+            <div className="text-center pb-4 md:pb-0">
               <span className="text-[#22252e] font-bold text-[20px]">
                 • Home
               </span>
@@ -22,7 +22,8 @@ export default function Testimonials() {
             </div>
           </SlideUp>
         </section>
-      <section className="mt-9">
+      </SlideUp>
+      <section className="">
         <SlideUp delay={0.8}>
           <div className="container mx-auto">
             <div className="relative w-full h-[265px] md:h-[460px]">
@@ -42,7 +43,6 @@ export default function Testimonials() {
           </div>
         </SlideUp>
       </section>
-      </SlideUp>
 
       {/* white section */}
       <section>

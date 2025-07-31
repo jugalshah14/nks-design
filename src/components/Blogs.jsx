@@ -105,16 +105,28 @@ const Blogs = () => {
                 <p className="text-[14px] leading-[20px] font-semibold font-inter text-[#4F70AF] pt-[32px] pb-[12px]">
                     {formatDate(post.attributes.Date)}
                 </p>
-                <h3 className="text-[#22252E] text-[19px] md:text-[24px] font-[700] pb-[12px] line-clamp-2">
+                <h3 className="text-[#22252E] text-[19px] md:text-[24px] font-[700] pb-[12px] style={{ 
+                  display: '-webkit-box', 
+                  WebkitLineClamp: 2, 
+                  WebkitBoxOrient: 'vertical',
+                  lineHeight: '20px',
+                  maxHeight: '40px'
+                }}">
                     {post.attributes.Title}
                 </h3>
-                <p className="text-[15px] md:text-[16px] leading-[20px] font-normal font-satoshi text-[#5C5C5C] pb-[12px] overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                <p className="text-[15px] md:text-[16px] leading-[20px] font-normal font-satoshi text-[#5C5C5C] pb-[12px] overflow-hidden" style={{ 
+                  display: '-webkit-box', 
+                  WebkitLineClamp: 2, 
+                  WebkitBoxOrient: 'vertical',
+                  lineHeight: '20px',
+                  maxHeight: '40px'
+                }}>
                     {post.attributes.ShortDescription}
                 </p>
-                <p className="text-[14px] leading-[20px] font-medium text-[#026AA2] bg-[#F5F8FA] rounded-xl px-3 py-1">
+                <p className="text-[14px] leading-[20px] font-medium text-[#026AA2] bg-[#F5F8FA] rounded-xl px-3 py-1 mt-[10px] md:mt-[15px]">
                     {getCategoryName(post)}
                 </p>
-                <p className="text-sm font-satoshi font-medium text-[#DE804B] mt-[10px] md:mt-[24px] cursor-pointer hover:underline">
+                <p className="text-sm font-satoshi font-medium text-[#DE804B] mt-[10px] md:mt-[15px] cursor-pointer hover:underline">
                     Read Blog →
                 </p>
             </div>
