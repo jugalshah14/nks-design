@@ -447,6 +447,20 @@ const FaqPage = () => {
     setActiveIndexes(newActiveIndexes);
   };
 
+  // Filter FAQ data based on search query
+  const filteredFaqsData = faqsData.map(section => ({
+    ...section,
+    faqs: section.faqs.filter(faq => {
+      const searchLower = searchQ.toLowerCase();
+      const questionLower = faq.question.toLowerCase();
+      const answerText = typeof faq.answer === 'string' 
+        ? faq.answer.toLowerCase() 
+        : faq.answer.props?.children?.toString().toLowerCase() || '';
+      
+      return questionLower.includes(searchLower) || answerText.includes(searchLower);
+    })
+  })).filter(section => section.faqs.length > 0); // Only show sections that have matching FAQs
+
   return (
     <main className="relative">
       <AnimatedSection className="overflow-visible">
@@ -473,121 +487,141 @@ const FaqPage = () => {
       </AnimatedSection>
       <AnimatedSection>
         <section className="mx-auto pt-11 bg-white ">
-          {faqsData.map((item, sectionIndex) => (
-            <div
-              key={`${item.id}-${sectionIndex}`}
-              className={`${
-                sectionIndex % 2 === 0 ? "bg-white" : "bg-[#F3F6F8]"
-              }`}
-            >
-              <div className={`container mx-auto relative flex max-md:flex-col md:py-20 py-10 md:gap-20 gap-10`}>
-                <SlideUp delay={0.2} className="md:w-[50%] w-full max-md:text-center max-md:px-4">
-                  <p className=" md:text-[56px] text-[36px] font-[400] font-cormorant md:leading-18 leading-11 text-[#22252E]">
-                    {item.label}
-                  </p>
-                </SlideUp>
-                <div className="flex flex-col gap-2 w-full max-md:px-4">
-                  {item.faqs.map((faq, faqIndex) => (
-                    <div
-                      key={faqIndex}
-                      className="rounded-md bg-white p-4 shadow-[0px_4px_4px_0px_#0000000F]"
-                    >
-                      <button
-                        className="w-full flex justify-between items-center font-satoshi font-bold text-left text-gray-900 cursor-pointer"
-                        onClick={() => toggleIndex(sectionIndex, faqIndex)}
-                      >
-                        <span>{faq.question}</span>
-                        <span>
-                          {activeIndexes[sectionIndex] === faqIndex ? (
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5 text-orange-600"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M19 9l-7 7-7-7"
-                              />
-                            </svg>
-                          ) : (
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5 text-orange-600"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          )}
-                        </span>
-                      </button>
-
+          {filteredFaqsData.length > 0 ? (
+            filteredFaqsData.map((item, sectionIndex) => (
+              <div
+                key={`${item.id}-${sectionIndex}`}
+                className={`${
+                  sectionIndex % 2 === 0 ? "bg-white" : "bg-[#F3F6F8]"
+                }`}
+              >
+                <div className={`container mx-auto relative flex max-md:flex-col md:py-20 py-10 md:gap-20 gap-10`}>
+                  <SlideUp delay={0.2} className="md:w-[50%] w-full max-md:text-center max-md:px-4">
+                    <p className=" md:text-[56px] text-[36px] font-[400] font-cormorant md:leading-18 leading-11 text-[#22252E]">
+                      {item.label}
+                    </p>
+                  </SlideUp>
+                  <div className="flex flex-col gap-[14px] w-full max-md:px-4">
+                    {item.faqs.map((faq, faqIndex) => (
                       <div
-                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                          activeIndexes[sectionIndex] === faqIndex
-                            ? "max-h-auto opacity-100"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        key={faqIndex}
+                        className="rounded-md bg-white p-4 shadow-[0px_4px_4px_0px_#0000000F]"
                       >
-                        <div className="mt-2 text-gray-500 text-sm font-satoshi">
-                          {typeof faq.answer === "string" ? (
-                            faq.answer
-                          ) : (
-                            <>{faq.answer}</> // Render as JSX if it's not a string
-                          )}
+                        <button
+                          className="w-full flex justify-between text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] items-center font-satoshi font-bold text-left text-gray-900 cursor-pointer"
+                          onClick={() => toggleIndex(sectionIndex, faqIndex)}
+                        >
+                          <span>{faq.question}</span>
+                          <span>
+                            {activeIndexes[sectionIndex] === faqIndex ? (
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5 text-orange-600"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M19 9l-7 7-7-7"
+                                />
+                              </svg>
+                            ) : (
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5 text-orange-600"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>
+                            )}
+                          </span>
+                        </button>
+
+                        <div
+                          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                            activeIndexes[sectionIndex] === faqIndex
+                              ? "max-h-auto opacity-100"
+                              : "max-h-0 opacity-0"
+                          }`}
+                        >
+                          <div className="mt-2 text-gray-500 text-sm font-satoshi">
+                            {typeof faq.answer === "string" ? (
+                              faq.answer
+                            ) : (
+                              <>{faq.answer}</> // Render as JSX if it's not a string
+                            )}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
+            ))
+          ) : searchQ && (
+            <div className="container mx-auto py-20 text-center">
+              <div className="max-w-md mx-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-16 w-16 mx-auto text-gray-400 mb-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+                <h3 className="text-lg font-satoshi font-semibold text-gray-900 mb-2">
+                  No results found
+                </h3>
+                <p className="text-gray-500 font-satoshi">
+                  We couldn&apos;t find any FAQs matching &quot;{searchQ}&quot;. Try searching with different keywords.
+                </p>
+              </div>
             </div>
-          ))}
+          )}
         </section>
       </AnimatedSection>
       <AnimatedSection>
-        <div className="md:container relative mx-auto max-sm:mx-5">
-          <div className="relative md:container md:mx-auto flex flex-row justify-center md:w-full !max-w-[824px] z-[1]">
-            <div className="!h-[144px] min-h-[144px] min-w-[144px] !w-[144px] relative overflow-hidden">
+          <Link href="/contact-us" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
+            <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
                 src="/assets/faqs-detail-gif.gif"
+                alt="Room preview"
                 fill
-                alt="gif"
-                className="!h-[163px] !w-[163px] min-h-[163px] min-w-[163px]"
+                className="object-cover"
               />
             </div>
-            <Link href="/contact-us" className="bg-white relative w-full border-[#144D78] flex flex-row justify-between items-center border-t-1 border-b-4">
-              <h1 className="text-[#22252E] font-satoshi text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">
-                Still have doubts?
-                <Link
-                  href="/contact-us"
-                  className="contact-us-link text-[#DE804B] hover:orange-color"
-                >
-                  <span> Contact us.</span>
-                </Link>
-              </h1>
+            <div className="flex-1 md:px-11 md:py-8">
+              <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
+              Still have doubts?<span className="text-[#DE804B]"> Contact us.</span>
+              </p>
+            </div>
+            <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
               <Image
                 src="/assets/icons/arrowlong.svg"
-                alt="1BHK"
+                alt=""
                 width={40}
                 height={3}
-                className="absolute right-[10px] md:right-[40px]"
+                className="absolute -ml-6"
               />
-              <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
-            </Link>
-          </div>
-        </div>
-      </AnimatedSection>
+            </div>
+          </Link>
+        </AnimatedSection>
     </main>
   );
 };

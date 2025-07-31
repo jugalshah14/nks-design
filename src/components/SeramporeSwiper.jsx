@@ -124,7 +124,7 @@ export default function SeramporeSwiper({ data }) {
             </div>
           ))}
         </Slider>
-        <div className="relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-5 mb-20">
+        <div className="relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-5 mb-10 md:mb-20">
           <div className="h-full flex items-center justify-center">
             <button
               className="focus:outline-none cursor-pointer disabled:cursor-auto"

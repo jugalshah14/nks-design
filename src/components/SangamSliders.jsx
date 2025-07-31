@@ -9,34 +9,83 @@ import SangamViewsSwiper from './SangamViewsSwiper';
 import { AnimatedSection } from './animations';
 import { useSearchParams } from 'next/navigation';
 import Link from "next/link";
+import ScheduleVisitModal from './ScheduleVisitModal';
 
 const flatsData = {
   '1BHK': {
     sliderImages: {
-      '2D': ["/assets/1bhk.png", "/assets/1bhk1.png"],
+      '2D': [
+        {
+          src: "/assets/1bhk.png",
+          unitType: "B/C/F/G/J/K/N/O",
+        },
+        {
+          src: "/assets/1bhk1.png", 
+          unitType: "A/D/E/H/I/L/M/P",
+        }
+      ],
     },
-    info: { towers: 'Serenity', units: 'B/C/F/G/J/K/N/O', price: 4234 },
+    info: { towers: 'Serenity', price: 4234 },
   },
 
   '2BHK': {
     sliderImages: {
-      '2D': ["/assets/2bhk1.png", "/assets/2bhk2.png"],
+      '2D': [
+        {
+          src: "/assets/2bhk1.png",
+          unitType: "E/H", 
+        },
+        {
+          src: "/assets/2bhk2.png",
+          unitType: "F/G",
+        }
+      ],
     },
-    info: { towers: 'Signature & Serenity', units: 'E/H', price: 4234 },
+    info: { towers: 'Signature & Serenity', price: 4234 },
   },
   
   '3BHK': {
     sliderImages: {
-      '2D': ["/assets/3bhk.png", "/assets/3bhk1.png", "/assets/3bhk2.png","/assets/3bhk3.png","/assets/3bhk4.png"],
+      '2D': [
+        {
+          src: "/assets/3bhk.png",
+          unitType: "A/B/C/D",
+        },
+        {
+          src: "/assets/3bhk1.png",
+          unitType: "A/B/C/D", 
+        },
+        {
+          src: "/assets/3bhk2.png",
+          unitType: "A/B/C/D",
+        },
+        {
+          src: "/assets/3bhk3.png",
+          unitType: "A/B/C/D",
+        },
+        {
+          src: "/assets/3bhk4.png",
+          unitType: "A/B/C/D",
+        }
+      ],
     },
-    info: { towers: 'Signature , Serenity , Suites', units: 'A/B/C/D', price: 1234 },
+    info: { towers: 'Signature, Serenity, Suites', price: 1234 },
   },
 
   '4BHK': {
     sliderImages: {
-      '2D': ["/assets/4bhk.png", "/assets/4bhk1.png"],
+      '2D': [
+        {
+          src: "/assets/4bhk.png",
+          unitType: "",
+        },
+        {
+          src: "/assets/4bhk1.png",
+          unitType: "", 
+        }
+      ],
     },
-    info: { towers: 'Suites', units: '', price: 7234 },
+    info: { towers: 'Suites', price: 7234 },
   }
 };
 
@@ -50,6 +99,11 @@ export default function SangamSliders() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [activeBHK, setActiveBHK] = useState('1BHK');
   const [bhkFade, setBhkFade] = useState(false);
+  const [isModalOpens, setIsModalOpens] = useState(false);
+  const handleScheduleVisit = (e) => {
+    e.preventDefault();
+    setIsModalOpens(true);
+  };
 
   useEffect(() => {
     const bhkParam = searchParams.get('bhk');
@@ -165,15 +219,15 @@ export default function SangamSliders() {
                     loop={false}
                     speed={600}
                     >
-                    {flatsData[activeBHK].sliderImages[activeTab].map((src, index) => (
+                    {flatsData[activeBHK].sliderImages[activeTab].map((image, index) => (
                         <SwiperSlide key={index}>
                         <div
-                            className={`p-[10px] md:p-[69px] flex items-center justify-center transition-all duration-500 ${
+                            className={`p-[10px] md:p-[69px] flex flex-col items-center justify-center transition-all duration-500 ${
                             isTransitioning ? 'scale-95 opacity-80' : 'scale-100 opacity-100'
                             }`}
                         >
                             <Image
-                            src={src}
+                            src={image.src}
                             width={500}
                             height={500}
                             alt={`${activeTab}-${index}`}
@@ -246,12 +300,14 @@ export default function SangamSliders() {
                 <div className="grid grid-cols-2 md:gap-20">
                   <div className='flex flex-col items-center md:items-start transition-all duration-300 hover:scale-105'>
                     <p className="text-[12px] md:text-[16px] text-white/50 mb-1">Tower</p>
-                    <p className="text-[20px] md:text-[24px] text-white">{flatsData[activeBHK].info.towers}</p>
+                    <p className="text-[20px] md:text-[24px] text-white max-md:text-center">{flatsData[activeBHK].info.towers}</p>
                   </div>
-                  <div className='flex flex-col items-center md:items-start transition-all duration-300 hover:scale-105'>
-                    <p className="text-[12px] md:text-[16px] text-white/50 mb-1">Unit Type</p>
-                    <p className="text-[20px] md:text-[24px] text-white">{flatsData[activeBHK].info.units}</p>
-                  </div>
+                                     {activeBHK !== '4BHK' && (
+                     <div className='flex flex-col items-center md:items-start transition-all duration-300 hover:scale-105'>
+                       <p className="text-[12px] md:text-[16px] text-white/50 mb-1">Unit Type</p>
+                       <p className="text-[20px] md:text-[24px] text-white">{flatsData[activeBHK].sliderImages[activeTab][activeIndex]?.unitType || `${activeBHK}`}</p>
+                     </div>
+                   )}
                 </div>
 
                 <div className="grid grid-cols-2 md:gap-20 md:mb-8">
@@ -259,21 +315,19 @@ export default function SangamSliders() {
                     <p className="text-[12px] md:text-[16px] text-white/50 mb-1">Price</p>
                     <div className="flex items-center">
                       <p className="hidden md:inline text-[24px] text-white shadow-lg mr-2 blur-[6.5px]">{flatsData[activeBHK].info.price}</p>
-                      <a href="#" className="text-[14px] font-bold text-[#134c78] underline transition-all duration-300 hover:text-[#1a6ba8]">Know price</a>
+                      <button onClick={handleScheduleVisit} className="text-[14px] font-bold text-[#134c78] underline transition-all duration-300 hover:text-[#1a6ba8]">Know price</button>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className='w-full mt-[20px] md:mt-[0px]'>
-                <Link href="/contact-us">
-                <button className="md:rounded-sm w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
+                <button onClick={handleScheduleVisit} className="md:rounded-sm w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
                   <div className='px-6 py-3 w-full flex justify-start'>
                       <span className='text-left inline md:inline'>Schedule a Visit</span>
                   </div>
                       <span className="px-6 py-4 orange-color bg-[#002F52] text-lg ml-auto">↗</span>
                 </button>
-                </Link>
               </div>
             </div>
           </div>
@@ -284,6 +338,10 @@ export default function SangamSliders() {
 
     {/* sangam part2 */}     
       <SangamViewsSwiper activeBHK={activeBHK} />
+
+      <ScheduleVisitModal
+        isOpen={isModalOpens}
+        onClose={() => setIsModalOpens(false)} />
     </>
   );
 }

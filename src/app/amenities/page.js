@@ -189,33 +189,6 @@ const ClubIcons = [
   },
 ];
 
-const ClubIconsRes = [
-  {
-    label: "Convenience store",
-    image: "/assets/club1.png",
-  },
-  {
-    label: "Multi purpose hall",
-    image: "/assets/club2.png",
-  },
-  {
-    label: "Hi-tech gym",
-    image: "/assets/club3.png",
-  },
-  {
-    label: "Snacks Corner",
-    image: "/assets/club4.png",
-  },
-  {
-    label: "Indoor kinds playing zone",
-    image: "/assets/club5.png",
-  },
-  {
-    label: "Squash court",
-    image: "/assets/club6.png",
-  },
-];
-
 const PodiumData = [
   {
     title: "Splash pool",
@@ -330,23 +303,23 @@ const groundIcons = [
 
 const features = [
   {
-    image: "/assets/podium1.png",
+    image: "/assets/podium1.svg",
     title: "Reduction in energy and water consumption",
   },
   {
-    image: "/assets/podium2.png",
+    image: "/assets/podium2.svg",
     title: "Improved health & hygiene",
   },
   {
-    image: "/assets/podium3.png",
+    image: "/assets/podium3.svg",
     title: "Better ventilation and light in the dwellings",
   },
   {
-    image: "/assets/podium3.png",
+    image: "/assets/podium3.svg",
     title: "Better sanitation",
   },
   {
-    image: "/assets/podium3.png",
+    image: "/assets/podium3.svg",
     title:
       "Fuel savings in transit of people to workplaces and associated pollution",
   },
@@ -417,9 +390,9 @@ export default function Amenities() {
     <>
     <main>
       <SlideUp>
-        <section className="relative justify-center bg-[#f3f6f8] flex flex-col items-center md:h-[280px] md:top-[107] h-[180px] top-[50]">
+        <section className="relative justify-center bg-[#f3f6f8] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
           <SlideUp delay={0.4}>
-            <div className="px-4 pt-6 text-center pb-4 md:pb-0">
+            <div className="text-center pb-4 md:pb-0">
               <span className="text-[#22252e] font-bold text-[20px]">
                 • Home
               </span>
@@ -432,11 +405,14 @@ export default function Amenities() {
         </section>
       </SlideUp>
 
-      <section className="mt-10">
+      <section>
         <SlideUp delay={0.8}>
           <div className="container md:max-w-7xl md:mx-auto">
-            <div className="relative w-full md:h-[460px] h-[265px]">
+            <div className="relative w-full md:h-[460px] h-[265px] max-md:hidden">
               <Image src="/assets/Amenities.png" alt="Hero-img" fill priority />
+              </div>
+              <div className="relative w-full md:h-[460px] h-[265px] md:hidden">
+              <Image src="/assets/AmenitiesR.png" alt="Hero-img" fill priority />
             </div>
             <div className="z-20 flex text-center items-center justify-center md:mx-[80px] mx-[2%] relative p-[10px] -mt-12 mx-2 md:mx-[80px] mb-12  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
               <h2 className="project-overview-title text-center">
@@ -710,52 +686,24 @@ export default function Amenities() {
             </div>
           </div>
 
-          <div className="hidden md:grid max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 max-md:px-5">
             {ClubIcons.map(({ label, image }, idx) => (
               <SlideUp
-                delay={idx * 0.2}
+                delay={0.2}
                 key={idx}
-                className="flex items-center space-y-3"
+                className="flex flex-col md:flex-row items-center space-y-3"
               >
-                <div
-                  className={`flex items-center justify-center w-20 h-20 rounded-full mb-0
-                  }`}
-                >
-                  <Image
-                    src={image}
-                    alt={label}
-                    width={92}
-                    height={92}
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-                <p className="font-bold text-[24px] leading-[28px] font-satoshi text-[#22252E] text-center ml-7">
-                  {label}
-                </p>
-              </SlideUp>
-            ))}
-          </div>
-          {/* responsive */}
-          <div className="md:hidden flex max-w-7xl mx-auto grid grid-cols-2 gap-5">
-            {ClubIconsRes.map(({ label, image }, idx) => (
-              <SlideUp
-                delay={idx * 0.2}
-                key={idx}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div
-                  className={`flex items-center justify-center w-20 h-20 rounded-full mb-0
-                  }`}
-                >
+                <div className="flex items-center justify-center w-20 h-20 rounded-full mb-0">
                   <Image
                     src={image}
                     alt={label}
                     width={60}
                     height={60}
+                    className="md:w-[92px] md:h-[92px]"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal text-[18px] leading-[24px] font-satoshi text-[#22252E] text-center">
+                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] text-center md:ml-7">
                   {label}
                 </p>
               </SlideUp>
@@ -859,49 +807,24 @@ export default function Amenities() {
             </div>
           </div>
 
-          <div className="hidden md:grid max-w-7xl mx-auto md:grid-cols-3 gap-10 px-8 ">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 max-md:px-5">
             {PodiumIcons.map(({ label, image }, idx) => (
               <SlideUp
-                delay={idx * 0.2}
+                delay={0.2}
                 key={idx}
-                className="flex items-center space-x-4"
+                className="flex flex-col md:flex-row items-center space-y-3"
               >
-                <div className="flex-shrink-0 flex items-center justify-center w-20 h-20 rounded-full">
-                  <Image
-                    src={image}
-                    alt={label}
-                    width={92}
-                    height={92}
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-                <p className="font-bold text-[24px] leading-[28px] font-satoshi text-[#22252E]">
-                  {label}
-                </p>
-              </SlideUp>
-            ))}
-          </div>
-          {/* responsive */}
-          <div className="md:hidden flex max-w-7xl mx-auto grid grid-cols-2 gap-5">
-            {ClubIconsRes.map(({ label, image }, idx) => (
-              <SlideUp
-                delay={idx * 0.1}
-                key={idx}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div
-                  className={`flex items-center justify-center w-20 h-20 rounded-full mb-0
-                  }`}
-                >
+                <div className="flex items-center justify-center w-20 h-20 rounded-full mb-0">
                   <Image
                     src={image}
                     alt={label}
                     width={60}
                     height={60}
+                    className="md:w-[92px] md:h-[92px]"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal text-[18px] leading-[24px] font-satoshi text-[#22252E] text-center">
+                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] text-center md:ml-7">
                   {label}
                 </p>
               </SlideUp>
@@ -1038,49 +961,24 @@ export default function Amenities() {
             </div>
           </div>
 
-          <div className="hidden md:grid max-w-7xl mx-auto grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 max-md:px-5">
             {groundIcons.map(({ label, image }, idx) => (
               <SlideUp
-                delay={idx * 0.1}
+                delay={0.2}
                 key={idx}
-                className="flex items-center space-x-4"
+                className="flex flex-col md:flex-row items-center space-y-3"
               >
-                <div className="flex-shrink-0 flex items-center justify-center w-20 h-20 rounded-full">
-                  <Image
-                    src={image}
-                    alt={label}
-                    width={92}
-                    height={92}
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-                <p className="font-bold text-[24px] leading-[28px] font-satoshi text-[#22252E]">
-                  {label}
-                </p>
-              </SlideUp>
-            ))}
-          </div>
-          {/* responsive */}
-          <div className="md:hidden flex max-w-7xl mx-auto grid grid-cols-2 gap-5 px-4">
-            {ClubIconsRes.map(({ label, image }, idx) => (
-              <SlideUp
-                delay={idx * 0.1}
-                key={idx}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div
-                  className={`flex items-center justify-center w-20 h-20 rounded-full mb-0
-                  }`}
-                >
+                <div className="flex items-center justify-center w-20 h-20 rounded-full mb-0">
                   <Image
                     src={image}
                     alt={label}
                     width={60}
                     height={60}
+                    className="md:w-[92px] md:h-[92px]"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal text-[18px] leading-[24px] font-satoshi text-[#22252E] text-center">
+                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] text-center md:ml-7">
                   {label}
                 </p>
               </SlideUp>
@@ -1093,13 +991,13 @@ export default function Amenities() {
       <AnimatedSection>
         <section className="relative w-full h-[600px] md:h-[524px] md:flex flex-col bg-white max-md:pb-20">
           {/* Mobile Layout */}
-          <div className="md:hidden w-full h-full flex flex-col">
+          <div className="md:hidden w-full h-full flex flex-col overflow-visible">
             {/* Top Section - Content (60-65% height) */}
-            <div className="h-[70%] bg-[#010922] flex flex-col justify-center items-center pt-12">
+            <div className="h-[60%] bg-[#010922] relative flex flex-col justify-center items-center pt-12 pb-10 overflow-visible">
               <h2 className="text-[36px] font-cormorant text-white font-normal leading-[44px] mb-9 text-center">
                 Good News <br /> <span className="text-[#DE804B]">Sails Faster</span>
               </h2>
-              <div className="w-full max-w-[280px] mb-6">
+              <div className="w-full max-w-[280px] mb-6 overflow-visible">
                 <div className="text-center">
                   <div className="text-white text-[16px] leading-[24px] font-satoshi font-bold mb-5">Travel Route :</div>
                   <div className="border-b border-white mb-5 w-[120px] mx-auto"></div>
@@ -1109,14 +1007,15 @@ export default function Amenities() {
                   </div>
                 </div>
               </div>           
-              <button className="w-full max-w-[330px] bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center justify-between overflow-hidden">
-                <div className="px-4 py-3 flex-1 text-center">
-                  <span className="text-[16px]">Call +91 760 508 1410 to Book</span>
-                </div>
-                <span className="px-4 flex items-center justify-center h-[52px] bg-[#002F52]">
-                  <svg
-                    width="18"
-                    height="17"
+              <button
+                href={"tel:+917605081410"}
+                className="z-100 absolute -bottom-7 md:min-h-[4rem] w-fit h-[3.5rem] md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-bold text-4 leading-7 inline-flex items-center gap-2 overflow-visible mb-0 button-primary"
+              >
+                <div className="px-3 py-3">Call +91 760 508 1410 to Book</div>
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
+                <svg
+                    width="19"
+                    height="18"
                     viewBox="0 0 19 18"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1131,9 +1030,9 @@ export default function Amenities() {
             </div>
 
             {/* Bottom Section - Image (35-40% height) */}
-            <div className="h-[35%] relative">
+            <div className="h-[50%] relative">
               <Image
-                src="/assets/ferry-ride.png"
+                src="/assets/ferry-rideRES.png"
                 alt="Ferry Ride"
                 fill
                 className="object-cover"
@@ -1172,13 +1071,14 @@ export default function Amenities() {
                     New Kolkata → Dakshineswar → Millennium Park → New Kolkata
                   </div>
                 </div>
-              </div>           
-              <button className="mb-7 md:min-h-[4rem] min-h-[3.5rem] w-fit bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden">
-                <div className="px-6 py-3 mr-5">
-                  <span>Call +91 760 508 1410 to Book</span>
-                </div>
+                </div>           
+                <button
+                href={"tel:+917605081410"}
+                className="md:min-h-[4rem] w-fit min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-bold inline-flex items-center gap-2 overflow-hidden mb-0 button-primary"
+              >
+                <div className="px-6 py-3 mr-20">Call +91 760 508 1410 to Book</div>
                 <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
-                  <svg
+                <svg
                     width="19"
                     height="18"
                     viewBox="0 0 19 18"
@@ -1191,7 +1091,7 @@ export default function Amenities() {
                     />
                   </svg>
                 </span>
-              </button>           
+              </button>          
             </div>
           </div>
         </section>
@@ -1199,7 +1099,7 @@ export default function Amenities() {
 
       {/* certified section */}
       <AnimatedSection className="overflow-visible">
-        <section className="relative w-full bg-[#E7F2EB] px-2 md:pt-[130px] md:pb-20 pt-1 pb-1 md:px-15 bg-cover bg-center md:bg-top">
+        <section className="relative w-full bg-[#E7F2EB] px-2 md:pt-[130px] md:pb-20 pt-1 pb-15 md:px-15 bg-cover bg-center md:bg-top">
           <div className="!w-[92%] h-[720px] absolute z-10 hidden md:block">
             <Image
               src={"/assets/certifed.svg"}
@@ -1208,13 +1108,14 @@ export default function Amenities() {
               className="object-cover w-full h-full"
             />
             </div>
-            <div className="w-[96%] h-[740px] absolute z-10 md:hidden">
-            <Image
+            <div className="w-[96%] h-[740px] bg-white absolute z-10 md:hidden">
+              <div className="w-[205px] h-[370px] absolute top-0 right-0">
+              <Image
               src={"/assets/certifedmobile.svg"}
               alt=""
               fill
-              className="object-cover w-[205px] h-[370px]"
             />
+              </div>
           </div>
           <div className="z-11 relative w-full md:py-20 md:px-10 mb:mt-12 text-center">
             {/* IGBC Logo */}

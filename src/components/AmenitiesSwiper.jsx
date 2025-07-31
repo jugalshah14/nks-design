@@ -5,6 +5,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import MobileSwiperNavigation from "./MobileSwiperNavigation";
 
 const data = [
   {
@@ -116,9 +117,24 @@ export default function AmenitiesSwiper() {
   const isPrevDisabled = activeIndex === 0;
   const isNextDisabled = activeIndex >= data.length - settings.slidesToShow;
 
+  // Mobile navigation logic - calculate proper display index
+  const getMobileDisplayIndex = () => {
+    // For mobile, we show 1.7 slides at once, so we need to calculate the actual slide being viewed
+    const mobileSlidesToShow = 1.7;
+    const maxIndex = data.length - mobileSlidesToShow;
+    
+    if (activeIndex >= maxIndex) {
+      return data.length; // Show total slides when at the end
+    }
+    return Math.floor(activeIndex + 1); // Show current slide number
+  };
+
+  const mobileDisplayIndex = getMobileDisplayIndex();
+  const isMobileNextDisabled = activeIndex >= data.length - 1.7;
+
   return (
     <div className="relative max-md:-top-15 overflow-hidden">
-      <div className="container mx-auto relative md:mb-20">
+      <div className="container mx-auto relative md:mb-16">
         <div className="grid grid-cols-4 gap-0">
           <div className="hidden md:block bg-white z-2 after-box pr-10 md:col-span-2 lg:col-span-1">
             <h2 className="text-left project-overview-title text-[48px]">
@@ -172,10 +188,10 @@ export default function AmenitiesSwiper() {
                 afterChange={(current) => setActiveIndex(current)}
               >
                 {data.map((slide, i) => (
-                  <div key={i} className="mx-4 !w-[209px] !overflow-hidden">
+                  <div key={i} className="mx-2 !w-[209px] !overflow-hidden">
                     <div className="relative !w-[209px] h-[380px]">
                       <div className="group inset-0">
-                        <div className={"absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group"}>
+                        <div className={"absolute top-3 md:right-5 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group"}>
                           <div className="overflow-hidden">
                             <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
                               {slide.info}
@@ -198,53 +214,15 @@ export default function AmenitiesSwiper() {
           </div>
         </div>
       </div>
-      <div className="flex md:hidden relative -top-3 z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding items-center justify-around px-1 py-5">
-        <div className="h-full flex items-center justify-center">
-          <button
-            className={`focus:outline-none cursor-pointer ${
-              activeIndex === 0 ? "opacity-30 pointer-events-none" : ""
-            }`}
-            onClick={handlePrev}
-            disabled={activeIndex === 0}
-          >
-            <Image
-              src="/assets/icons/arrow-right.svg"
-              alt="Previous"
-              height={20}
-              width={19}
-              className="transform rotate-180"
-            />
-          </button>
-        </div>
-        <div className="flex gap-2 items-center select-none">
-          <span className="font-bold text-lg text-[#191C1F]">
-            {activeIndex + 1}
-          </span>
-          <div className="h-0.5 w-8 bg-[#D9D9D9]" />
-          <span className="font-bold text-lg text-[#B0B3B9]">
-            {data.length}
-          </span>
-        </div>
-        <div className="h-full flex items-center justify-center">
-          <button
-            className={`focus:outline-none cursor-pointer ${
-              activeIndex === data.length - 1
-                ? "opacity-30 pointer-events-none"
-                : ""
-            }`}
-            onClick={handleNext}
-            disabled={activeIndex === data.length - 1}
-          >
-            <Image
-              src="/assets/icons/arrow-right.svg"
-              alt="Next"
-              height={20}
-              width={19}
-              className=""
-            />
-          </button>
-        </div>
-      </div>
+      <MobileSwiperNavigation
+        currentIndex={mobileDisplayIndex - 1}
+        totalSlides={data.length}
+        onPrev={handlePrev}
+        onNext={handleNext}
+        isPrevDisabled={activeIndex === 0}
+        isNextDisabled={isMobileNextDisabled}
+        className="md:hidden relative -top-3 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding"
+      />
     </div>
   );
 }

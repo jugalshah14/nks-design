@@ -16,20 +16,22 @@ export default function MasterPlan() {
     <main>
       {/* Hero Section */}
       <SlideUp>
-        <section className="bg-[#FDF9F6] flex flex-col items-center px-14 pt-[150px] pb-14 padding-top">
+        <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
           <SlideUp delay={0.4}>
-            <div className="text-sm px-4 pt-6 text-center text-gray-500 mb-10">
-              <span className="text-black-700 font-semibold text-[#22252E]">
+            <div className="text-center pb-4 md:pb-0">
+              <span className="text-[#22252e] font-bold text-[20px]">
                 • Home
               </span>
               <span className="mx-2">—</span>
-              <span className="text-gray-400">Masterplans</span>
+              <span className="text-[#5c5f68] font-normal text-[20px]">
+                Master Plan
+              </span>
             </div>
           </SlideUp>
         </section>
       </SlideUp>
 
-      <section className="-mt-16 no-negative-margin">
+      <section className=" no-negative-margin">
         <SlideUp delay={0.8}>
           <div className="container mx-auto">
             <div className="relative w-full md:h-[460px] h-[265px]">
@@ -250,7 +252,7 @@ export default function MasterPlan() {
                 delay={0.6}
                 className=" pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
               >
-                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
+                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-start justify-start">
                   <Image
                     src="/assets/icons/Structure.svg"
                     width={68}
@@ -273,7 +275,7 @@ export default function MasterPlan() {
                 delay={0.8}
                 className=" pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
               >
-                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
+                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-start justify-start">
                   <Image
                     src="/assets/icons/Electricals.svg"
                     width={68}
@@ -307,7 +309,7 @@ export default function MasterPlan() {
                 delay={1}
                 className=" pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
               >
-                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
+                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-start justify-start">
                   <Image
                     src="/assets/icons/Kitchen.svg"
                     width={68}
@@ -337,7 +339,7 @@ export default function MasterPlan() {
                 delay={1.2}
                 className="pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
               >
-                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-center justify-center md:items-start md:justify-start">
+                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-start justify-start">
                   <Image
                     src="/assets/icons/Flooring.svg"
                     width={68}

@@ -98,9 +98,12 @@ export default function Footer() {
               <span className="orange-color">Contact </span>Us
             </h2>
             <p className="hidden lg:block font-[400] text-[14px] leading-5 !text-[#5C5F68]">
-              Whether you're interested in creating a custom space, or want to
-              learn more about what New Kolkata can do for you, we would love to
-              chat.
+              An exceptional choice deserves equally exceptional service! Let’s
+              work together to finalize the remaining details and make your
+              transition to your new address seamless and stress-free. Our team
+              is here to provide you with the support and attention to detail
+              you need at every step, ensuring a smooth and rewarding experience
+              in securing your perfect new home.
             </p>
 
             <h2 className="max-lg:text-center text-[18px] leading-6 font-stoshi font-[700] lg:leading-7 lg:text-[24px] !text-[#22252E] mt-12 mb-4">
@@ -266,14 +269,14 @@ export default function Footer() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`min-h-[4.8rem] h-full max-lg:mx-auto w-[70%] mt-5 md:mt-10 relative bg-[#144D78] button-primary transition-all duration-300 rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden ${
+                className={`md:min-h-[4rem] min-h-[3.5rem] h-full max-lg:mx-auto w-[70%] mt-5 md:mt-10 relative bg-[#144D78] button-primary transition-all duration-300 rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden ${
                   isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                 }`}
               >
-                <div className="px-6 py-5 mr-20">
-                  {isSubmitting ? "Submitting..." : "Submit"}
+                <div className="px-6 py-3 mr-20">
+                  <span>{isSubmitting ? "Submitting..." : "Submit"}</span>
                 </div>
-                <span className="px-6 flex items-center justify-center min-h-[4.8rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
                   ↗
                 </span>
               </button>

@@ -92,7 +92,7 @@ export default function MasterPlanSwiper() {
             <h2 className="px-[60px] pt-[34px] md:px-[0px] md:pt-[0px] text-[28px] md:text-[40px] font-satoshi font-normal leading-[32px] md:leading-[54px] text-[#22252e] mb-1 text-center md:text-left">
               Primary<br/> goals we <br/>were having
             </h2>
-            <div className="relative max-w-[190px] border border-[rgba(0,0,0,0.2)] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
+            <div className="relative max-w-[190px] border border-[#E9E9EA] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
               <div className="h-full flex items-center justify-center">
                 <button
                   className={`focus:outline-none cursor-pointer ${isDesktopPrevDisabled ? 'opacity-30' : ''}`}
