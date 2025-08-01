@@ -26,7 +26,7 @@ export default function WhyAlcove() {
         </section>
       </SlideUp>
 
-      <section className=" no-negative-margin pb-[40px] md:pb-[0px]">
+      {/* <section className=" no-negative-margin pb-[40px] md:pb-[0px]">
         <SlideUp delay={0.8} className="container mx-auto">
           <div className="relative w-full md:h-[460px] h-[265px]">
             <Image
@@ -37,18 +37,46 @@ export default function WhyAlcove() {
               className="select-none no-drag"
             />
           </div>
-          <div className="z-20 flex text-center items-center justify-center relative p-[10px] -mt-8 mx-2 md:mx-[80px]  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
-            <h2 className="text-center project-overview-title mobile-title max-w-[800px]">
-              Where <span className="orange-color">luxury </span>meets{" "}
-              <span className="orange-color">affordability </span>
-            </h2>
+          <div className="relative p-5 md:p-12 bg-white/50 -mt-25 md:mx-[80px] mx-[2%] md:backdrop-blur-[37px] backdrop-blur-[7px] mb-12">
+              <h2 className="project-overview-title text-center">
+                Where<span className="orange-color"> luxury</span> meets
+                <span className="orange-color"> affordability</span>
+              </h2>
+            </div>
+        </SlideUp>
+      </section> */}
+      <section className="">
+        <SlideUp delay={0.8}>
+          <div className="container md:max-w-7xl md:mx-auto">
+            <div className="relative w-full h-[460px] hidden md:block">
+              <Image
+                src="/assets/alcove-hero.png"
+                alt="Hero-img"
+                fill
+                priority
+              />
+            </div>
+            <div className="relative w-full md:hidden h-[265px]">
+              <Image
+                src="/assets/alcove-heroRES.png"
+                alt="Hero-img"
+                fill
+                priority
+              />
+            </div>
+            <div className="relative p-5 md:p-12 bg-white/50 -mt-12 md:-mt-24 md:mx-[80px] mx-[2%] md:backdrop-blur-[37px] backdrop-blur-[7px] mb-12">
+              <h2 className="project-overview-title text-center">
+                Where<span className="orange-color"> luxury</span> meets
+                <span className="orange-color"> affordability</span>
+              </h2>
+            </div>
           </div>
         </SlideUp>
       </section>
 
       {/* Founder's desk */}
       <section className="md:mt-[80px]">
-        <div className="relative certification-section py-[48px]">
+        <div className="relative bg-[#F3F6F8] md:py-[48px] max-md:pt-10">
           <Image
             src="/assets/Rectangl_Left.png"
             width={80}
@@ -69,14 +97,14 @@ export default function WhyAlcove() {
                 delay={0.4}
                 className="text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] md:mb-2 py-[16px] max-md:px-5"
               >
-                Alcove Realty was founded by Shri. Amar Nath Shro . He is the
+                Alcove Realty was founded by Shri. Amar Nath Shroff . He is the
                 driving force behind our commitment to excellence, innovation,
                 and customer satisfaction. With decades of experience in the
                 industry, he has shaped our company into what it is today. His
                 passion for creating exceptional homes has led our team to
                 deliver countless successful projects that have set new
                 benchmarks in the industry. As a visionary leader, Shri. Amar
-                Nath Shro 's expertise continues to inspire our team to push
+                Nath Shroff 's expertise continues to inspire our team to push
                 boundaries and exceed expectations. At Alcove Realty, we take
                 pride in having him at the helm of our journey towards
                 excellence and customer satisfaction
@@ -122,51 +150,6 @@ export default function WhyAlcove() {
           </div>
         </div>
       </section>
-
-      {/* <section className="mt-[80px] bg-[#eaf1f6] py-[40px] md:py-[80px]">
-        <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start gap-[40px] md:gap-[60px] px-[16px] md:px-[80px]">
-          <div className="max-w-[500px] text-center md:text-left">
-            <h2 className="text-[#22252E] text-[28px] md:text-[36px] font-cormorant font-medium leading-tight">
-              From <br />
-              <span className="text-[#DE7D37]">Founder’s</span> Desk
-            </h2>
-            <p className="mt-6 text-[#22252E] text-[16px] md:text-[18px] leading-[26px] font-satoshi">
-              Alcove Realty was founded by Shri. Amar Nath Shroff. He is the
-              driving force behind our commitment to excellence, innovation, and
-              customer satisfaction. With decades of experience in the industry,
-              he has shaped our company into what it is today. His passion for
-              creating exceptional homes has led our team to deliver countless
-              successful projects that have set new benchmarks in the industry.
-              As a visionary leader, Shri. Amar Nath Shroff's expertise
-              continues to inspire our team to push boundaries and exceed
-              expectations. At Alcove Realty, we take pride in having him at the
-              helm of our journey towards excellence and customer satisfaction.
-            </p>
-          </div>
-          <div className="relative max-w-[446px] w-full">
-            <div className="bg-white rounded shadow-lg transform rotate-[2deg] w-full h-[339px] flex flex-col overflow-hidden">
-              <div className="transform rotate-[-2deg] w-full flex-shrink-0">
-                <Image
-                  src="/assets/person.png"
-                  alt="Amar Nath Shroff"
-                  width={446}
-                  height={220}
-                  className="w-full h-[220px] object-cover rounded-t select-none no-drag"
-                  priority
-                />
-              </div>
-              <div className="flex flex-col justify-center items-center flex-grow px-4 py-3">
-                <h3 className="text-[#22252E] text-[18px] md:text-[20px] font-semibold text-center">
-                  Amar Nath Shroff
-                </h3>
-                <p className="text-[#5C5F68] text-[14px] md:text-[16px] font-normal text-center">
-                  Chairman, Alcove
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* Mission and vision */}
       <section>
@@ -398,11 +381,13 @@ export default function WhyAlcove() {
         </SlideUp>
       </section>
       {/* Real Minds Section */}
-      <section className="bg-white flex flex-col relative text-[#002F52] md-pt-20 md:pb-20 pt-20 pb-0 h-auto">
+      <section className="bg-white flex flex-col relative text-[#002F52] md:pt-20 md:pb-20 pt-10 pb-0 h-auto">
         <SlideUp delay={0.4}>
-          <div className="flex font-cormorant font-normal items-center justify-center text-center text-[48px] leading-[52px] md:text-[56px] md:leading-[72px] md:mt-4 md:px-0 px-[13px]">
-            Know Your "<span className="orange-color">Real Minds</span>" Behind Project
-          </div>
+        <div className="relative">
+              <h2 className="project-overview-title text-center">
+                Know Your "<span className="orange-color">Real Minds</span>" Behind Project
+              </h2>
+            </div>
         </SlideUp>
         
         <AnimatedSection className="overflow-visible">
@@ -429,8 +414,8 @@ export default function WhyAlcove() {
                 </div>
               </div>
               <div className="flex flex-col justify-center lg:justify-center h-full">
-                <div className="z-20 md:relative md:-bottom-[163px] md:right-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-center md:text-left">
-                  <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4">
+                <div className="z-20 md:relative md:-bottom-[163px] md:right-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-left">
+                  <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4 max-md:text-center">
                     Know Your <span className="orange-color">Builder</span>
                   </h3>
                   <ul className="space-y-3 text-[14px] md:text-[16px] font-normal leading-[20px] md:leading-[24px]">
@@ -462,7 +447,7 @@ export default function WhyAlcove() {
 
           {/* Consultants Section */}
           <AnimatedSection>
-            <div className="container w-full mx-auto flex-col lg:flex-row md:mt-12 mt-0 lg:gap-x-8 flex max-md:bg-white">
+            <div className="container w-full mx-auto flex-col lg:flex-row md:mt-20 mt-10 lg:gap-x-8 flex max-md:bg-white">
               <div className="flex flex-col items-center w-full md:w-[804px] lg:order-2">
                 <div className="relative w-full md:w-[804px]">
                   <div className="md:relative w-full h-[268px] md:h-[570px]">
@@ -483,8 +468,8 @@ export default function WhyAlcove() {
                 </div>
               </div>
               <div className="flex flex-col justify-center lg:justify-center h-full lg:order-1">
-                <div className="z-20 md:relative md:-bottom-[174px] md:left-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-center md:text-left">
-                  <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4">
+                <div className="z-20 md:relative md:-bottom-[174px] md:left-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-left">
+                  <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4 max-md:text-center">
                     Know Your <span className="orange-color">Project's Consultants</span>
                   </h3>
                   <ul className="space-y-3 text-[14px] md:text-[16px] font-normal leading-[20px] md:leading-[24px]">
@@ -513,7 +498,7 @@ export default function WhyAlcove() {
 
           {/* Architect Section */}
           <AnimatedSection>
-            <div className="container w-full mx-auto flex-col lg:flex-row md:mt-12 mt-0 lg:gap-x-8 flex">
+            <div className="container w-full mx-auto flex-col lg:flex-row md:mt-20 mt-10 lg:gap-x-8 flex">
               <div className="flex flex-col items-center w-full md:w-[804px]">
                 <div className="relative w-full md:w-[804px]">
                   <div className="md:relative w-full h-[268px] md:h-[570px]">
@@ -534,8 +519,8 @@ export default function WhyAlcove() {
                 </div>
               </div>
               <div className="flex flex-col justify-center lg:justify-center h-full">
-                <div className="z-20 md:relative md:-bottom-[198px] md:right-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-center md:text-left">
-                  <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4">
+                <div className="z-20 md:relative md:-bottom-[198px] md:right-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-left">
+                  <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4 max-md:text-center">
                     Know Your <span className="orange-color">Project's Architect</span>
                   </h3>
                   <ul className="space-y-3 text-[14px] md:text-[16px] font-normal leading-[20px] md:leading-[24px]">
@@ -569,7 +554,7 @@ export default function WhyAlcove() {
       <section className="relative">
         <SlideUp
           delay={0.6}
-          className="mr-[16px] md:mr-[0px] md:ml-[100px] absolute container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]"
+          className="mr-[16px] md:mr-[0px] max-md:mt-6 md:ml-[100px] absolute container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]"
         >
           <Image
             src="/assets/faqs-detail-gif.gif"
@@ -599,7 +584,7 @@ export default function WhyAlcove() {
       </section>
 
       {/* Blue section */}
-      <section className="bg-[#020C22] py-[80px] pt-[100px] md:pt-[160px] mt-[70px] overflow-hidden px-[16px] md:px-[0px]">
+      <section className="bg-[#020C22] py-[80px] pt-[40px] md:pt-[160px] md:mt-[70px] mt-[170px] overflow-hidden px-[16px] md:px-[0px]">
         <div className="container mx-auto">
           <div className="flex ietms-center w-full md:items-end justify-between mb-[48px]">
             <div className="w-full">
