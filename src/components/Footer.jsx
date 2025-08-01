@@ -269,7 +269,7 @@ export default function Footer() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`md:min-h-[4rem] min-h-[3.5rem] h-full max-lg:mx-auto w-[70%] mt-5 md:mt-10 relative bg-[#144D78] button-primary transition-all duration-300 rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden ${
+                className={`md:min-h-[4rem] max-md:w-[90%] min-h-[3.5rem] h-full max-lg:mx-auto w-[70%] mt-5 md:mt-10 relative bg-[#144D78] button-primary transition-all duration-300 rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden ${
                   isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                 }`}
               >
