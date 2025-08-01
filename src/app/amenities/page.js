@@ -693,17 +693,17 @@ export default function Amenities() {
                 key={idx}
                 className="flex flex-col md:flex-row items-center space-y-3"
               >
-                <div className="flex items-center justify-center w-20 h-20 rounded-full mb-0">
+                <div className="flex-shrink-0 flex max-md:items-center max-md:justify-center w-15 h-15 md:w-[92px] md:h-[92px] rounded-full mb-0">
                   <Image
                     src={image}
                     alt={label}
                     width={60}
                     height={60}
-                    className="md:w-[92px] md:h-[92px]"
+                    className="w-full h-full md:w-[92px] md:h-[92px]"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] text-center md:ml-7">
+                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] max-md:text-center md:ml-7 flex-1">
                   {label}
                 </p>
               </SlideUp>
@@ -814,17 +814,17 @@ export default function Amenities() {
                 key={idx}
                 className="flex flex-col md:flex-row items-center space-y-3"
               >
-                <div className="flex items-center justify-center w-20 h-20 rounded-full mb-0">
+                <div className="flex-shrink-0 flex max-md:items-center max-md:justify-center w-15 h-15 md:w-[92px] md:h-[92px] rounded-full mb-0">
                   <Image
                     src={image}
                     alt={label}
                     width={60}
                     height={60}
-                    className="md:w-[92px] md:h-[92px]"
+                    className="w-full h-full md:w-[92px] md:h-[92px]"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] text-center md:ml-7">
+                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] max-md:text-center md:ml-7 flex-1">
                   {label}
                 </p>
               </SlideUp>
@@ -968,17 +968,17 @@ export default function Amenities() {
                 key={idx}
                 className="flex flex-col md:flex-row items-center space-y-3"
               >
-                <div className="flex items-center justify-center w-20 h-20 rounded-full mb-0">
+                <div className="flex-shrink-0 flex max-md:items-center max-md:justify-center w-15 h-15 md:w-[92px] md:h-[92px] rounded-full mb-0">
                   <Image
                     src={image}
                     alt={label}
                     width={60}
                     height={60}
-                    className="md:w-[92px] md:h-[92px]"
+                    className="w-full h-full md:w-[92px] md:h-[92px]"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] text-center md:ml-7">
+                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] max-md:text-center md:ml-7 flex-1">
                   {label}
                 </p>
               </SlideUp>
