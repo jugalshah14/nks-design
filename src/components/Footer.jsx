@@ -284,9 +284,170 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
-          <div className="flex flex-col md:flex-row justify-between items-center pt-[36px] md:pt-[128px] gap-[36px] md:gap-0">
-            <div className="flex flex-row gap-[20px]">
+        <div className="flex flex-col md:flex-row justify-between mt-[40px] gap-[40px]">
+          <div className="flex flex-col gap-[12px]">
+            <div className="text-[16px] leading-[24px] font-satoshi font-[700] text-[#5C5F68]">
+              New Kolkata
+            </div>
+            <div className="flex flex-col gap-1">
+              <a className="cursor-pointer" href="/typology/flats-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  Flats in New Kolkata
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/apartments-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  Apartments in New Kolkata
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/house-for-sale-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  House For Sale in New Kolkata
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/1-bhk-flats-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  1 BHK Flats in New Kolkata
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/2-bhk-flats-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  2 BHK Flats in New Kolkata
+                </div>
+              </a>
+              <a className="cursor-pointer" href="/typology/3-bhk-flats-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  3 BHK Flats in New Kolkata
+                </div>
+              </a>
+              <a className="cursor-pointer" href="/typology/4-bhk-flats-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  4 BHK Flats in New Kolkata
+                </div>
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col gap-[12px]">
+            <div className="text-[16px] leading-[24px] font-satoshi font-[700] text-[#5C5F68]">
+              Serampore
+            </div>
+            <div className="flex flex-col gap-1">
+              <a className="cursor-pointer" href="/typology/flats-in-serampore">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  Flats in Serampore
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/2-bhk-flats-in-serampore">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  2 BHK Flats in Serampore
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/3-bhk-flats-in-serampore">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  3 BHK Flats in Serampore
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/4-bhk-flats-in-serampore">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  4 BHK Flats in Serampore
+                </div>
+              </a>{" "}
+            </div>
+          </div>
+          <div className="flex flex-col gap-[12px]">
+            <div className="text-[16px] leading-[24px] font-satoshi font-[700] text-[#5C5F68]">
+              Quick Links
+            </div>
+            <div className="flex flex-col gap-[20px]">
+              <div className="flex flex-col gap-1">
+              <a className="cursor-pointer" href="/testimonials">
+                <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">
+                  Testimonials
+                </div>
+              </a>
+              <a className="cursor-pointer" href="/faqs">
+                <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">
+                  FAQs
+                </div>
+              </a>
+                <a className="cursor-pointer" href="/#">
+                  <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                    Terms of Service
+                  </div>
+                </a>{" "}
+                <a className="cursor-pointer" href="/#">
+                  <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                    Privacy Policy
+                  </div>
+                </a>{" "}
+              </div>
+              <div className="flex flex-col gap-[20px]">
+                <div className="flex flex-row gap-[32px] md:gap-[24px]">
+                  <a
+                    className="cursor-pointer"
+                    href="https://www.youtube.com/@NewKolkatasangam"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/youtube.svg"
+                      alt="you-tube icon"
+                      width={24}
+                      height={24}
+                      className=""
+                    />
+                  </a>
+                  <a
+                    className="cursor-pointer"
+                    href="https://www.facebook.com/NewKolkata"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/fb.svg"
+                      alt="facebook icon"
+                      width={24}
+                      height={24}
+                      className=""
+                    />
+                  </a>
+                  <a
+                    className="cursor-pointer"
+                    href="https://x.com/new_kolkata"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/twitter.svg"
+                      alt="twitter icon"
+                      width={24}
+                      height={24}
+                      className=""
+                    />
+                  </a>
+                  <a
+                    className="cursor-pointer"
+                    href="https://www.instagram.com/new_kolkata/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/insta.svg"
+                      alt="insta icon"
+                      width={24}
+                      height={24}
+                      className=""
+                    />
+                  </a>
+                </div>
+                <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">
+                  All rights reserved © Alcove Realty
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="flex flex-col justify-between items-center pt-[36px] md:pt-[128px] gap-[36px] md:gap-0">
+            <div className="flex gap-[20px]">
               <a className="cursor-pointer" href="/testimonials">
                 <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">
                   Testimonials
@@ -372,7 +533,7 @@ export default function Footer() {
             <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68] pb-[80px] inline md:hidden">
               All rights reserved © Alcove Realty
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <Image
