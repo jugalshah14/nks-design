@@ -133,7 +133,7 @@ export default function Home() {
               <SlideUp delay={0.4}>
                 <h2 className="project-overview-title max-md:!text-[36px] max-md:!leading-11 max-md:font-[400] text-center">
                   Project
-                  <span className="orange-color"> overview</span>
+                  <span className="orange-color"> Overview</span>
                 </h2>
               </SlideUp>
             </div>
@@ -227,35 +227,6 @@ export default function Home() {
           <Element name="section-Amenities" id="Amenities">
             {/* Amenities */}
             <section className="container  mx-auto mt-5">
-              {/* <div className="hidden md:grid grid-cols-2 gap-10 md:px-8 lg:px-24 mb-14">
-      <div className="">
-        <SlideUp delay={0.4}>
-          <h2 className="project-overview-title text-[56px]">
-            Enjoy{" "}
-            <span className="orange-color">world-class Amenities</span>{" "}
-            by the Ganges
-          </h2>
-        </SlideUp>
-      </div>
-      <div className="flex items-end">
-        <SlideUp delay={0.6}>
-          <p className="text-[20px] font-satoshi leading-[22px] text-[#22252E]">
-            Experience a world of wonder and adventure. Our podium level
-            is a playground for all ages!
-          </p>
-        </SlideUp>
-      </div>
-    </div>
-    <div className="block md:hidden text-center mb-7 md:mb-16 px-5">
-      <SlideUp delay={0.4}>
-        <h2 className="project-overview-title max-md:!text-[36px] max-md:!leading-11 max-md:font-[400] text-center">
-          Enjoy{" "}
-          <span className="orange-color">World-class Amenities</span>{" "}
-          alongside Ganga
-        </h2>
-      </SlideUp>
-    </div>
-    <Amenities /> */}
               <div className="container mx-auto !w-[100%] relative md:mb-16">
                 <div className="flex flex-col justify-center items-center pb-5">
                   <SlideUp delay={0.4}>
@@ -267,47 +238,43 @@ export default function Home() {
                   </SlideUp>
                 </div>
                 <AnimatedSection className="block relative">
-                  <div
-                    className={
-                      "absolute top-5 right-5 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group"
-                    }
-                  >
-                    <div className="overflow-hidden">
-                      <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                        {"Actual Image"}
-                      </div>
+                <div
+                  className={"absolute top-5 right-5 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group"}
+                >
+                  <div className="overflow-hidden">
+                    <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                      {"Actual Image"}
                     </div>
-                    <Image
-                      alt=""
-                      src="/assets/icons/info.svg"
-                      height={30}
-                      width={30}
-                      className=""
-                    />
                   </div>
-                  <div className="flex w-full h-[167px] md:h-[558px] justify-center relative">
-                    <Image
-                      fill
-                      src="/assets/bitmap.png"
-                      alt="Aerial view of Riverside Residences"
-                      className=" object-cover"
-                    />
-                  </div>
-                </AnimatedSection>
-                <div className="block md:hidden relative">
-                  <div className="h-[160px] bg-[#061026]">
-                    <div className="flex justify-center items-center">
-                      <hr className="border-[#FFFFFF] w-[100%] opacity-20 absolute" />
-                      <SlideUp delay={0.6}>
-                        <p className="p-2 z-1 bg-[#061026] font-satoshi text-[16px] font-[700] leading-6 text-center text-white">
-                          65+ <br />
-                          World-class <br />
-                          Amenities
-                        </p>
-                      </SlideUp>
-                    </div>
+                  <Image
+                    alt=""
+                    src="/assets/icons/info.svg"
+                    height={25}
+                    width={25}
+                    className="" />
+                </div>
+                <div className="flex w-full h-[167px] md:h-[558px] justify-center relative">
+                  <Image
+                    fill
+                    src="/assets/bitmap.png"
+                    alt="Aerial view of Riverside Residences"
+                    className=" object-cover" />
+                </div>
+              </AnimatedSection>
+              <div className="block md:hidden relative">
+                <div className="h-[160px] bg-[#061026]">
+                  <div className="flex justify-center items-center">
+                    <hr className="border-[#FFFFFF] w-[100%] opacity-20 absolute" />
+                    <SlideUp delay={0.6}>
+                      <p className="p-2 z-1 bg-[#061026] font-satoshi text-[16px] font-[700] leading-6 text-center text-white">
+                        65+ <br />
+                        World-class <br />
+                        Amenities
+                      </p>
+                    </SlideUp>
                   </div>
                 </div>
+              </div>
               </div>
             </section>
             <AmenitiesSwiper />

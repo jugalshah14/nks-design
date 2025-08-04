@@ -284,7 +284,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between mt-[40px] gap-[40px]">
+        <div className="flex flex-col md:flex-row justify-between text-center md:text-left max-md:items-center mt-[40px] gap-[40px]">
           <div className="flex flex-col gap-[12px]">
             <div className="text-[16px] leading-[24px] font-satoshi font-[700] text-[#5C5F68]">
               New Kolkata
