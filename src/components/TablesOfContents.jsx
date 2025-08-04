@@ -12,6 +12,20 @@ export function TableOfContents({ propertyId }) {
     (item) => item.question
   ) || [];
 
+  const handleQuestionClick = (index) => {
+    const element = document.getElementById(`question-${index}`);
+    if (element) {
+      const offset = 100; // Add 100px spacing from top
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="w-full lg:max-w-[270px] flex flex-col gap-4">
       <h2 className="text-lg font-satoshi text-[18px] font-bold leading-[24px] text-[#666666]">
@@ -19,7 +33,11 @@ export function TableOfContents({ propertyId }) {
       </h2>
       <div className="flex flex-col gap-2">
         {tableOfContents.map((item, index) => (
-          <div key={index} className="flex items-start gap-2">
+          <div 
+            key={index} 
+            className="flex items-start gap-2 cursor-pointer"
+            onClick={() => handleQuestionClick(index)}
+          >
             <div className="w-5 text-[14px] text-[#2B2B2B] font-inter leading-[20px] tracking-[-0.056px]">
               {index + 1}.
             </div>

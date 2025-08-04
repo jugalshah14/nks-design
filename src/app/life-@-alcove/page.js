@@ -187,7 +187,7 @@ export default function lifeAtAlcove() {
             </div>
           </AnimatedSection>
         </AnimatedSection>
-        <AnimatedSection className="!overflow-visible flex w-full justify-center mt-10">
+        <AnimatedSection className="!overflow-visible flex w-full justify-center md:mt-10">
           <Link href="/location" className=" absolute group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center justify-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image

@@ -128,24 +128,24 @@ const clubhouseData = [
   {
     title: "Infinity Swimming pool",
     description:
-      "Immerse yourself in the tranquility of the lush landscape garden",
+      "Take a refreshing dip while soaking in uninterrupted views of the Ganges, surrounded by serene palm-lined decks and the sound of stillness.",
     image: "/assets/Swimming-pool.png",
   },
   {
     title: "Yoga Room",
     description:
-      "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+      "Find your inner peace in a calming space designed for meditation and yoga, with natural light, tranquil views, and lotus pond serenity.",
     image: "/assets/Yoga-Room.png",
   },
   {
     title: "Badminton court",
     description:
-      "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+      "Serve, smash, and stay active in a vibrant indoor court that invites both casual fun and competitive spirit within a modern setup.",
     image: "/assets/Badminton-court.png",
   },
   {
     title: "Theater",
-    description: "Refresh your senses with the interactive fountains",
+    description: "Experience cinema in comfort with a state-of-the-art home theatre where every movie night becomes a private, luxurious escape.",
     image: "/assets/Theater.png",
   },
 ];
@@ -193,24 +193,24 @@ const PodiumData = [
   {
     title: "Splash pool",
     description:
-      "Immerse yourself in the tranquility of the lush landscape garden",
+      "Let your little ones laugh, play, and cool off in a safe, fun-filled splash zone while you lounge and unwind nearby.",
     image: "/assets/Splash-pool.png",
   },
   {
     title: "Landscape Garden",
     description:
-      "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+      "Stroll through expanses of lush greenery and curated plant life, thoughtfully designed to offer moments of reflection and natural harmony.",
     image: "/assets/Landscape-Garden.png",
   },
   {
     title: "Kids Play Area",
     description:
-      "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+      "A joyful space where imagination runs free filled with safe, interactive equipment to keep your children active and delighted.",
     image: "/assets/Kids.png",
   },
   {
     title: "Fountain Plaza",
-    description: "Refresh your senses with the interactive fountains",
+    description: "Witness the charm of water come alive in a beautifully designed plaza, with interactive fountains creating moments of wonder.",
     image: "/assets/FountainPlaza.png",
   },
 ];
@@ -258,24 +258,24 @@ const groundData = [
   {
     title: "Skating Rink",
     description:
-      "Immerse yourself in the tranquility of the lush landscape garden",
+      "Glide with ease or watch the fun unfold in a vibrant rink designed for motion, laughter, and outdoor excitement.",
     image: "/assets/cycling-track.png",
   },
   {
     title: "Riverside Gazebo",
     description:
-      "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+      "Relax by the Ganges under elegant gazebos that offer panoramic views, fresh breezes, and the perfect retreat from routine.",
     image: "/assets/mandir.png",
   },
   {
     title: "Hibiscus garden",
     description:
-      "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+      "Walk through a vibrant palette of blooming hibiscus an aromatic haven crafted to lift your spirits and soothe your senses.",
     image: "/assets/Floating-fountain.png",
   },
   {
     title: "Deepmala",
-    description: "Refresh your senses with the interactive fountains",
+    description: "Celebrate timeless tradition with the glow of ornamental lighting that adds a touch of heritage and grandeur to your evenings.",
     image: "/assets/kids-play.png",
   },
 ];
@@ -1012,7 +1012,7 @@ export default function Amenities() {
                 className="z-100 absolute -bottom-7 md:min-h-[4rem] w-fit h-[3.5rem] md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-bold text-4 leading-7 inline-flex items-center gap-2 overflow-visible mb-0 button-primary"
               >
                 <div className="px-3 py-3">Call +91 760 508 1410 to Book</div>
-                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] rounded-r-md text-lg">
                 <svg
                     width="19"
                     height="18"

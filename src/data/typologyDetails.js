@@ -3,7 +3,10 @@ const seramporeProperties = [
   {
     propertyId: "2-bhk-flats-in-serampore",
     projectOverview: {
-      heading: "2 BHK Flats in Serampore",
+      heading: {
+        main: "2 BHK Flats",
+        highlight: "in Serampore"
+      },
       title: "2 BHK",
       headline:
         "Above Realty's flagship residential project in Scrampore is a paradise with modern amenities, enchanting expanse of natural greens, and the soothing music of the flowing Ganga!",
@@ -122,7 +125,10 @@ const seramporeProperties = [
   {
     propertyId: "3-bhk-flats-in-serampore",
     projectOverview: {
-      heading: "3 BHK Flats in Serampore",
+      heading: {
+        main: "3 BHK Flats",
+        highlight: "in Serampore"
+      },
       title: "3 BHK",
       headline:
         "Above Realty's flagship residential project in Scrampore is a paradise with modern amenities, enchanting expanse of natural greens, and the soothing music of the flowing Ganga!",
@@ -247,7 +253,10 @@ const seramporeProperties = [
   {
     propertyId: "4-bhk-flats-in-serampore",
     projectOverview: {
-      heading: "4 BHK Flats in Serampore",
+      heading: {
+        main: "4 BHK Flats",
+        highlight: "in Serampore"
+      },
       title: "4 BHK",
       headline:
         "Alcove Realty's premium 4 BHK flats in Serampore offer spacious living with modern amenities, enchanting natural greens, and the soothing presence of the flowing Ganga!",
@@ -335,7 +344,10 @@ const seramporeProperties = [
   {
     propertyId: "4-bhk-flats-in-new-kolkata",
     projectOverview: {
-      heading: "4 BHK Flats in New Kolkata",
+      heading: {
+        main: "4 BHK Flats",
+        highlight: "in New Kolkata"
+      },
       title: "4 BHK",
       headline:
         "Alcove Realty's flagship residential project in New Kolkata is a paradise with modern amenities, enchanting expanse of natural greens, and the soothing music of the Flowing Ganga!",
@@ -420,7 +432,10 @@ Serampore and Barrackpore are rich in cultural heritage, providing a charming bl
   {
     propertyId: "flats-in-serampore",
     projectOverview: {
-      heading: "Flats in Serampore",
+      heading: {
+        main: "Flats",
+        highlight: "in Serampore"
+      },
       title: "1, 2, 3 & 4 BHK",
       headline:
         "Alcove Realty's flagship residential project in Serampore is a paradise with modern amenities, enchanting expanse of natural greens, and the soothing music of the flowing Ganga!",
@@ -484,7 +499,10 @@ Whether you're looking for a spacious flat or a cozy house for sale in Serampor
   {
     propertyId: "3-bhk-flats-in-new-kolkata",
     projectOverview: {
-      heading: "3 BHK Flats in New Kolkata",
+      heading: {
+        main: "3 BHK Flats",
+        highlight: "in New Kolkata"
+      },
       title: "3 BHK",
       headline:
         "Alcove Realty's flagship residential project in Serampore is a paradise with modern amenities, enchanting expanse of natural greens, and the soothing music of the flowing Ganga!",
@@ -572,7 +590,10 @@ Whether you're looking for a spacious flat or a cozy house for sale in Serampor
   {
     propertyId: "2-bhk-flats-in-new-kolkata",
     projectOverview: {
-      heading: "2 BHK Flats in New Kolkata",
+      heading: {
+        main: "2 BHK Flats",
+        highlight: "in New Kolkata"
+      },
       title: "2 BHK",
       headline:
         "Alcove Realty's flagship residential project in Serampore is a paradise with modern amenities, enchanting expanse of natural greens, and the soothing music of the flowing Ganga!",
@@ -655,7 +676,10 @@ Whether you're looking for a spacious flat or a cozy house for sale in Serampor
   {
     propertyId: "1-bhk-flats-in-new-kolkata",
     projectOverview: {
-      heading: "1 BHK Flats in New Kolkata",
+      heading: {
+        main: "1 BHK Flats",
+        highlight: "in New Kolkata"
+      },
       title: "1 BHK",
       headline:
         "Alcove Realty's flagship residential project in Serampore is a paradise with modern amenities, enchanting expanse of natural greens, and the soothing music of the flowing Ganga!",
@@ -731,7 +755,10 @@ Whether you're looking for a spacious flat or a cozy house for sale in Serampor
   {
     propertyId: "apartments-in-new-kolkata",
     projectOverview: {
-      heading: "Apartments in New Kolkata",
+      heading: {
+        main: "Apartments",
+        highlight: "in New Kolkata"
+      },
       title: "1, 2, 3 & 4 BHK",
       headline:
         "Alcove Realty's flagship residential project in Serampore is a paradise with modern amenities, enchanting expanse of natural greens, and the soothing music of the flowing Ganga!",
@@ -811,7 +838,10 @@ Whether you're looking for a spacious flat or a cozy house for sale in Serampor
   {
     propertyId: "house-for-sale-in-new-kolkata",
     projectOverview: {
-      heading: "House For Sale in New Kolkata",
+      heading: {
+        main: "House For Sale",
+        highlight: "in New Kolkata"
+      },
       title: "1, 2, 3 & 4 BHK",
       headline:
         "Alcove Realty's flagship residential project in Serampore is a paradise with modern amenities, enchanting expanse of natural greens, and the soothing music of the flowing Ganga!",
@@ -890,7 +920,10 @@ Whether you're looking for a spacious flat or a cozy house for sale in Serampor
   {
     propertyId: "flats-in-new-kolkata",
     projectOverview: {
-      heading: "Flats in New Kolkata",
+      heading: {
+        main: "Flats",
+        highlight: "in New Kolkata"
+      },
       title: "1, 2, 3 & 4 BHK",
       headline:
         "Alcove Realty's flagship residential project in Serampore is a paradise with modern amenities, enchanting expanse of natural greens, and the soothing music of the flowing Ganga!",
