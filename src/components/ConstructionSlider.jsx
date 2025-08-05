@@ -46,7 +46,7 @@ const sliderData = [
       { src: "/assets/June/Sangam Tower 14 On Possession.JPG", text: "Sangam Tower 14 On Possession." },
       { src: "/assets/June/Sangam Tower 15 On Possession.JPG", text: "Sangam Tower 15 On Possession." },
       { src: "/assets/June/Sangam Tower 16 On Possession.JPG", text: "Sangam Tower 16 On Possession." },
-      { src: "/assets/June/TRIVENI.JPG", text: "TRIVENI." },
+      { src: "/assets/June/Triveni.JPG", text: "TRIVENI." },
       
     ],
     description: "Everybody longs for a lifestyle that relishes their body.",

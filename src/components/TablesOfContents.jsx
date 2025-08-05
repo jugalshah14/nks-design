@@ -41,7 +41,7 @@ export function TableOfContents({ propertyId }) {
             <div className="w-5 text-[14px] text-[#2B2B2B] font-inter leading-[20px] tracking-[-0.056px]">
               {index + 1}.
             </div>
-            <div className="flex-1 font-satoshi text-[14px] text-[#2B2B2B] leading-[20px]">
+            <div className="flex-1 font-satoshi text-[14px] text-[#2B2B2B] leading-[20px] hover:text-[#DE804B] transition-colors duration-200">
               {item}
             </div>
           </div>

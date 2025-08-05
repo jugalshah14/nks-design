@@ -1007,7 +1007,7 @@ export default function Amenities() {
                   </div>
                 </div>
               </div>           
-              <button
+              <Link
                 href={"tel:+917605081410"}
                 className="z-100 absolute -bottom-7 md:min-h-[4rem] w-fit h-[3.5rem] md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-bold text-4 leading-7 inline-flex items-center gap-2 overflow-visible mb-0 button-primary"
               >
@@ -1026,7 +1026,7 @@ export default function Amenities() {
                     />
                   </svg>
                 </span>
-              </button>
+              </Link>
             </div>
 
             {/* Bottom Section - Image (35-40% height) */}
@@ -1072,7 +1072,7 @@ export default function Amenities() {
                   </div>
                 </div>
                 </div>           
-                <button
+                <Link
                 href={"tel:+917605081410"}
                 className="md:min-h-[4rem] w-fit min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-bold inline-flex items-center gap-2 overflow-hidden mb-0 button-primary"
               >
@@ -1091,7 +1091,7 @@ export default function Amenities() {
                     />
                   </svg>
                 </span>
-              </button>          
+              </Link>          
             </div>
           </div>
         </section>

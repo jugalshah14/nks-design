@@ -141,7 +141,7 @@ export default function AmenitiesSwiper() {
               <span className="font-[700] text-[112px] ">65+</span> World-class
               Amenities
             </h2>
-            <div className="relative max-w-[190px] border border-[rgba(0,0,0,0.2)] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
+            <div className="relative max-w-[190px] border border-[#E9E9EA] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
               <div className="h-full flex items-center justify-center">
                 <button
                   className={`focus:outline-none cursor-pointer ${
