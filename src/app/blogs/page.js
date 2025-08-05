@@ -156,7 +156,7 @@ export default function LifeAtAlcove() {
                 <p className="text-[#5C5F68] text-base leading-[20px] font-normal line-clamp-2">
                   {blog.attributes.ShortDescription}
                 </p>
-                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
+                <span className="w-fit font-satoshi bg-white text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
                   {getCategoryName(blog)}
                 </span>
               </div>

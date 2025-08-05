@@ -23,7 +23,6 @@ const Header = () => {
   const handleScheduleVisit = (e) => {
     e.preventDefault();
     setIsModalOpen(true);
-    setIsOpen(!isOpen);
   };
 
   useEffect(() => {
