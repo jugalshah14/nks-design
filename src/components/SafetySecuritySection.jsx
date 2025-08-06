@@ -31,7 +31,6 @@ const SafetySecuritySection = () => {
                 </h2>
               </SlideUp>
               <SlideUp delay={0.6}>
-                <Link href="/contact-us">
                   <button onClick={handleScheduleVisit} className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                     <div className="px-6 py-3 mr-20">
                       <span>Schedule a Visit</span>
@@ -40,7 +39,6 @@ const SafetySecuritySection = () => {
                       ↗
                     </span>
                   </button>
-                </Link>
               </SlideUp>
             </div>
             <div className="max-md:col-span-2 grid grid-cols-2 md:gap-x-20 gap-y-9 md:gap-y-12 mt-9 md:mt-6">
