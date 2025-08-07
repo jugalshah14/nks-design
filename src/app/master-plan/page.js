@@ -181,9 +181,7 @@ export default function MasterPlan() {
                   delay={1}
                   className="text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] mb-2 py-[20px] md:pt-10"
                 >
-                  As being architect of New Kolkata, I recommend this place as
-                  nice place to live. we&apos;re architecture notes. learn about
-                  the systems you use everyday from the engineers who built them
+                  New Kolkata aims to provide affordable homes with great design and comfort. Each flat offers Ganga views and ventilation, ensuring a high-end living experience at accessible prices.
                 </SlideUp>
               </div>
             </SlideUp>
@@ -330,7 +328,7 @@ export default function MasterPlan() {
                     Ceramic tiles dado up to 2 ft. above working platform.
                   </li>
                   <li>Provision for water inlet for filter.</li>
-                  <li>Provision for exhaust</li>
+                  <li>Provision for exhaust.</li>
                 </ul>
               </SlideUp>
 
@@ -352,9 +350,9 @@ export default function MasterPlan() {
                   </h3>
                 </div>
                 <ul className="list-disc pl-4">
-                  <li>Porcelano tiles in all bedrooms</li>
-                  <li>Vitried tiles in the living/dining space & kitchen</li>
-                  <li>Anti-skid ceramic tiles in toilet</li>
+                  <li>Porcelano tiles in all bedrooms.</li>
+                  <li>Vitried tiles in the living/dining space & kitchen.</li>
+                  <li>Anti-skid ceramic tiles in toilet.</li>
                 </ul>
               </SlideUp>
             </div>
@@ -388,13 +386,14 @@ export default function MasterPlan() {
           delay={0.2}
           className="flex flex-row justify-center w-full md:-mt-[170px] group cursor-pointer transform transition-transform duration-300 hover:scale-101"
         >
-          <Image
-            src="/assets/faqs-detail-gif.gif"
-            width={144}
-            height={144}
-            alt="house"
-            className="img-size  md:h-[144px] md:w-[144px]"
-          />
+          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+                <Image
+                  src="/assets/HB.jpg"
+                  alt="Room preview"
+                  fill
+                  className="object-cover"
+                />
+              </div>
           <Link
             href="/amenities"
             className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center cursor-pointer"
@@ -438,13 +437,14 @@ export default function MasterPlan() {
           delay={0.4}
           className="flex flex-row justify-center w-full pt-12 md:pt-0 cursor-pointer transform transition-transform duration-300 hover:scale-101"
         >
-          <Image
-            src="/assets/sport-gif.gif"
-            width={144}
-            height={144}
-            alt="house"
-            className="img-size md:h-[144px] md:w-[144px]"
-          />
+          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+                <Image
+                  src="/assets/HB.jpg"
+                  alt="Room preview"
+                  fill
+                  className="object-cover"
+                />
+              </div>
           <Link
             href="/location"
             className="bg-white cursor-pointer relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"

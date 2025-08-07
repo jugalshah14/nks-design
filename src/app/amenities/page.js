@@ -416,7 +416,7 @@ export default function Amenities() {
             </div>
             <div className="z-20 flex text-center items-center justify-center md:mx-[80px] mx-[2%] relative p-[10px] -mt-12 mx-2 md:mx-[80px] mb-12  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
               <h2 className="project-overview-title text-center">
-                Lead a life of<span className="orange-color"> luxury</span>.
+                Lead a life of<span className="orange-color"> luxury</span>
               </h2>
             </div>
           </div>
@@ -558,7 +558,7 @@ export default function Amenities() {
             delay={0.6}
             className="text-[48px] font-cormorant leading-[60px] font-normal text-white"
           >
-            World-className Amenities
+            World-class Amenities
           </SlideUp>
         </div>
 
@@ -716,7 +716,7 @@ export default function Amenities() {
           <Link href="/master-plan" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
-                src="/assets/faqs-detail-gif.gif"
+                src="/assets/HB.jpg"
                 alt="Room preview"
                 fill
                 className="object-cover"
@@ -836,7 +836,7 @@ export default function Amenities() {
           <Link href="/life-@-alcove" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
-                src="/assets/sport-gif.gif"
+                src="/assets/HB.jpg"
                 alt="Room preview"
                 fill
                 className="object-cover"
@@ -844,7 +844,7 @@ export default function Amenities() {
             </div>
             <div className="flex-1 md:px-11 md:py-8">
               <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-                Curious to see life @Alcove and world-className amenities?
+                Curious to see life @Alcove and world-class amenities?
               </p>
             </div>
             <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
@@ -872,7 +872,7 @@ export default function Amenities() {
               <span className="text-[#DE804B]">Devote </span>
               your evening to
               <br />
-              experiencing the<span className="text-[#DE804B]"> Ganga</span>
+              experience the<span className="text-[#DE804B]"> Ganga</span>
               <br />
               <span className="text-[#DE804B]">Ghat</span>.
             </h2>
@@ -1228,7 +1228,7 @@ export default function Amenities() {
             <Link href="/life-@-alcove" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
               <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
                 <Image
-                  src="/assets/sport-gif.gif"
+                  src="/assets/HB.jpg"
                   alt="Room preview"
                   fill
                   className="object-cover"
@@ -1236,7 +1236,7 @@ export default function Amenities() {
               </div>
               <div className="flex-1 md:px-11 md:py-8">
                 <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-                  Curious to see life @Alcove and world-className amenities?
+                  Curious to see life @Alcove and world-class amenities?
                 </p>
               </div>
               <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">

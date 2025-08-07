@@ -6,15 +6,28 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
+  name: z
+    .string()
+    .min(1, { message: "Please enter your name" })
+    .refine((val) => val.trim().length >= 2, { 
+      message: "Name must be at least 2 characters" 
+    })
+    .transform((val) => val.trim()),
+  email: z
+    .string()
+    .min(1, { message: "Please enter your email address" })
+    .email({ message: "Please enter a valid email address" })
+    .transform((val) => val.trim()),
   phone: z
     .string()
-    .min(10, { message: "Phone number must be at least 10 digits" })
-    .max(15, { message: "Phone number must be no more than 15 digits" }),
+    .min(1, { message: "Please enter your phone number" })
+    .refine((val) => /^\d{10}$/.test(val.trim()), { 
+      message: "Phone number must be exactly 10 digits" 
+    })
+    .transform((val) => val.trim()),
   bhk: z.string().min(1, { message: "Please select a choice" }),
   budget: z.string().min(1, { message: "Please select a budget" }),
-  message: z.string().optional(),
+  message: z.string().optional().transform((val) => val?.trim() || ""),
 });
 
 const ScheduleVisitModal = ({ isOpen, onClose }) => {

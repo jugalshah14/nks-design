@@ -338,7 +338,7 @@ export default function Home() {
                 <div className="hidden md:block relative px-10 lg:px-17 pt-9 pb-16 mt-4">
                   <div className="absolute -left-[4.5%] top-0 w-[60%] h-[100%] lg:w-[80%] lg:h-[100%] bg-[#DE804B] -skew-x-12"></div>
                   <div className="absolute left-0 top-0 w-[100%] h-[100%] bg-[#020C22] skew-x-12"></div>
-                  <p className="relative text-[36px] lg:text-[40px] font-[400] transforming-text text-center">
+                  <p className="relative text-[36px] lg:text-[40px] font-[400] transforming-text !font-satoshi text-center">
                     Take the 1st step to transforming your life
                   </p>
                 </div>
@@ -373,7 +373,7 @@ export default function Home() {
                           Did you know?
                         </div>
                         <p className="w-[80%] transforming-text font-[300] text-[56px] leading-[72px] lg:text-[40px] lg:leading-[48px]">
-                          {`Feel the divine aura of Banaras now in Serampore! Own a Home Where You’re Blessed by Ganga Aarti, Every Single Day We’re proud to be India’s only riverside township where the sacred Ganga Aarti happens daily`}
+                          {`Feel the divine aura of Banaras now in Serampore! Own a Home Where You’re Blessed by Ganga Aarti, Every Single Day We’re proud to be India’s only riverside township where the sacred Ganga Aarti happens daily.`}
                         </p>
                       </SlideUp>
                     </div>

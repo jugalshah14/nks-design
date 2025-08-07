@@ -14,7 +14,7 @@ const data = [
         src: '/assets/project1.png',
         icon1: '/assets/project-icon1.svg',
         icon2: '/assets/project-icon2.svg',
-        title: 'The 42 Night Aerial',
+        title: 'The 42',
         description: 'Enjoy the beauty of the lotus pond pavilion and unwind with a calming view from the tallest tower in Eastern India.',
         category: 'Luxurious Flats',
         location: 'Chowringhee, Kolkata',
@@ -23,7 +23,7 @@ const data = [
         src: '/assets/project2.png',
         icon1: '/assets/project-icon1.svg',
         icon2: '/assets/project-icon2.svg',
-        title: 'The Alcove Gloria',
+        title: 'Alcove Gloria',
         description: 'Experience comfort and community living with spacious homes, serene landscaping, and doorstep essentials.',
         category: 'Premium Residences',
         location: 'Lake Town, Kolkata',
@@ -32,7 +32,7 @@ const data = [
         src: '/assets/project3.png',
         icon1: '/assets/project-icon1.svg',
         icon2: '/assets/project-icon2.svg',
-        title: 'Flora Foundation',
+        title: 'Flora Fountain',
         description: 'Soak in the charm of water gardens, green landscapes, and amenities crafted for a balanced lifestyle.',
         category: 'Luxury with Nature-Inspired Living',
         location: 'Topsia, Kolkata',
@@ -41,7 +41,7 @@ const data = [
         src: '/assets/project4.png',
         icon1: '/assets/project-icon1.svg',
         icon2: '/assets/project-icon2.svg',
-        title: 'The Regency',
+        title: 'Alcove Regency',
         description: 'Live in elegance with well-planned apartments, top-notch amenities, and excellent connectivity to EM Bypass.',
         category: 'Luxurious Flats',
         location: 'Topsia, Kolkata',
@@ -127,7 +127,7 @@ export default function PastProjectSwiper() {
                             </div>
                             <div className='w-full flex flex-col bg-[#0C162B] md:mt-[40px]'>
                                 <div className='p-[16px] md:p-[36px] relative'>
-                                    <div className='md:mt-[32px] absolute w-full top-[-65px] md:top-0 md:left-[-60px] flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[5px] bg-opacity-80'>
+                                    <div className='md:mt-[32px] absolute w-full top-[-65px] md:top-0 flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[5px] bg-opacity-80'>
                                         <div className='w-full projectslide-title py-[20px] md:px-[27px] px-5 transforming-text font-[400] md:text-[40px] text-[24px] md:leading-[48px] leading-[28px] whitespace-nowrap'>
                                             {slide.title}
                                         </div>        

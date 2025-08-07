@@ -10,13 +10,27 @@ import * as z from "zod";
 
 // Define form schema with validation
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  company: z.string().optional(),
-  email: z.string().email({ message: "Please enter a valid email address" }),
+  name: z
+    .string()
+    .min(1, { message: "Please enter your name" })
+    .refine((val) => val.trim().length >= 2, { 
+      message: "Name must be at least 2 characters" 
+    })
+    .transform((val) => val.trim()),
+  company: z.string().optional().transform((val) => val?.trim() || ""),
+  email: z
+    .string()
+    .min(1, { message: "Please enter your email address" })
+    .email({ message: "Please enter a valid email address" })
+    .transform((val) => val.trim()),
   phoneNumber: z
     .string()
-    .min(10, { message: "Phone number must be at least 10 digits" }),
-  requirements: z.string().optional(),
+    .min(1, { message: "Please enter your phone number" })
+    .refine((val) => /^\d{10}$/.test(val.trim()), { 
+      message: "Phone number must be exactly 10 digits" 
+    })
+    .transform((val) => val.trim()),
+  requirements: z.string().optional().transform((val) => val?.trim() || ""),
 });
 
 export default function Footer() {

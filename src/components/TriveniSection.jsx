@@ -8,25 +8,29 @@ const amenities = [
         number: "1",
         title: "Established Residential Hub",
         description: "An integral part of two landmark projects—New Kolkata Prayag and Sangam—offering a ready audience and sustained commercial growth.",
-        image: "/assets/t1.png", 
+        image: "/assets/t1.png",
+        imageType: "Actual Image"
     },
     {
         number: "2",
         title: "Built In Consumer Base",
         description: "Part of New Kolkata Prayag (1274 units, completed Jan 2022) and Sangam (3364 units, handover in progress) ensuring built-in footfall.",
-        image: "/assets/t2.jpg", 
+        image: "/assets/t2.jpg",
+        imageType: "Artist Impression"
     },
     {
         number: "3",
         title: "Growing Customer Base",
         description: "Over 1,700 units from Sangam are being handed over from Sept 2024 creating a fast-growing and captive audience.",
-        image: "/assets/t3.jpg", 
+        image: "/assets/t3.jpg",
+        imageType: "Artist Impression"
     },
     {
         number: "4",
         title: "Unmatched Accessibility",
         description: "Excellent road access via G.T. Road and just 45 minutes from the airport making it easily reachable for all.",
-        image: "/assets/t4.jpg", 
+        image: "/assets/t4.jpg",
+        imageType: "Stock Image"
     },
 ];
 
@@ -47,6 +51,16 @@ export default function TriveniSection() {
                     </h3>
 
                         <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
+                            {/* Info Icon */}
+                            <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                                <div className="overflow-hidden">
+                                    <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                                        {item.imageType}
+                                    </div>
+                                </div>
+                                <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                            </div>
+                            
                             <Image
                                 src={item.image}
                                 alt={item.title}

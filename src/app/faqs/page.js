@@ -600,7 +600,7 @@ const FaqPage = () => {
           <Link href="/contact-us" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
-                src="/assets/faqs-detail-gif.gif"
+                src="/assets/HB.jpg"
                 alt="Room preview"
                 fill
                 className="object-cover"

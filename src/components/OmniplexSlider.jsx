@@ -9,38 +9,45 @@ import "slick-carousel/slick/slick-theme.css";
 const slides = [
   {
     image: "/assets/o1.png",
-    designation: "Proximity to 4650 ready clientele base living in the 29-acre township",
+    designation: "Around 4650 clients in township",
     objectPosition: "object-[70%_50%]",
+    imageType: "Actual Image"
   },
   {
     image: "/assets/o2.png",
-    designation: "High footfall expectations from Serampore and neighbouring towns",
+    designation: "High foot traffic in Serampore",
     objectPosition: "object-[0%_50%]",
+    imageType: "Actual Image"
   },
   {
     image: "/assets/o3.jpg",
-    designation: "Strategically located between Hooghly district and Kolkata",
+    designation: "Between Hooghly and Kolkata",
     objectPosition: "object-[50%_50%]",
+    imageType: "Artist Impression"
   },
   {
     image: "/assets/o4.jpg",
     designation: "State-of-the-art infrastructure",
     objectPosition: "object-[50%_50%]",
+    imageType: "Artist Impression"
   },
   {
-    image: "/assets/o5.jpg",
-    designation: "Presence of an advanced hospital revolutionising healthcare services",
+    image: "/assets/o5.png",
+    designation: "Advanced revolutionising healthcare services",
     objectPosition: "object-[50%_50%]",
+    imageType: "Stock Image"
   },
   {
-    image: "/assets/o6.jpg",
-    designation: "Seamlessly connected to Kolkata via rail and road",
+    image: "/assets/o6.png",
+    designation: "Seamless three-way connectivity",
     objectPosition: "object-[50%_50%]",
+    imageType: "Stock Image"
   },
   {
     image: "/assets/o7.png",
     designation: "Affordable leasing rates",
     objectPosition: "object-[50%_50%]",
+    imageType: "Actual Image"
   }
 ];
 
@@ -143,13 +150,25 @@ export default function OmniplexSlider() {
                   className="mx-2 md:mx-6 !w-full !overflow-hidden"
                 >
                   <div className="relative gap-2 flex flex-col min-h-[400px]">
-                    <Image
-                      src={slide.image}
-                      width={280}
-                      height={240}
-                      alt={slide.title}
-                      className={`height-member w-full !h-[400px] object-cover ${slide.objectPosition}`}
-                    />
+                    <div className="relative">
+                      {/* Info Icon */}
+                      <div className="absolute top-3 md:right-8 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                        <div className="overflow-hidden">
+                          <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                            {slide.imageType}
+                          </div>
+                        </div>
+                        <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                      </div>
+                      
+                      <Image
+                        src={slide.image}
+                        width={280}
+                        height={240}
+                        alt={slide.title}
+                        className={`height-member w-full !h-[400px] object-cover ${slide.objectPosition}`}
+                      />
+                    </div>
                     <div className="p-4 absolute bottom-0 bg-white/90 backdrop-filter backdrop-blur-[14px] bg-opacity-80 w-full gap-2 flex flex-col">
                       <p className="max-w-[232px] text-[20px] text-[#22252E] font-[400] font-satoshi leading-[28px]">
                         {slide.designation}

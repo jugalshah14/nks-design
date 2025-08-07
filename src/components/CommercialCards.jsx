@@ -8,19 +8,22 @@ const amenities = [
         number: "1",
         title: "Healthcare Centre​",
         description: "",
-        image: "/assets/c1.jpg", 
+        image: "/assets/c1.png",
+        imageType: "Stock Image"
     },
     {
         number: "2",
         title: "Banquet Hall",
         description: "",
-        image: "/assets/c2.jpg", 
+        image: "/assets/c2.jpg",
+        imageType: "Stock Image"
     },
     {
         number: "3",
         title: "88-key hotel​",
         description: "",
-        image: "/assets/c3.jpg", 
+        image: "/assets/c3.jpg",
+        imageType: "Stock Image"
     }
 ];
 
@@ -41,6 +44,16 @@ export default function CommercialCards() {
                     </h3>
 
                         <div className="md:!min-w-[240px] md:!max-w-[240px] w-full h-[160px] md:h-[240px] relative overflow-hidden">
+                            {/* Info Icon */}
+                            <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                                <div className="overflow-hidden">
+                                    <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                                        {item.imageType}
+                                    </div>
+                                </div>
+                                <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                            </div>
+                            
                             <Image
                                 src={item.image}
                                 alt={item.title}

@@ -11,46 +11,55 @@ const data = [
     title: "Quick bites after a movie night",
     image: "/assets/n1.png",
     desc: "Space for a sprawling food court on the 5th ﬂoor.",
+    imageType: "Stock Image"
   },
   {
     title: "A rich gourmet experience awaits",
     image: "/assets/n2.png",
-    desc: "Triveni’s 4th ﬂoor is open to restaurants",
+    desc: "Triveni's 4th ﬂoor is open to restaurants.",
+    imageType: "Stock Image"
   },
   {
-    title: "Bringing convenience to everyone’s doorstep",
+    title: "Bringing convenience to everyone's doorstep",
     image: "/assets/n3.png",
     desc: "A hypermarket on the lower ground ﬂoor to fulﬁl daily needs.",
+    imageType: "Stock Image"
   },
   {
     title: "Unlimited fun for kids and adults alike",
     image: "/assets/n4.png",
     desc: "World-class entertainment zone.",
+    imageType: "Stock Image"
   },
   {
     title: "Big screen magic awaits film buffs",
     image: "/assets/n5.png",
     desc: "4-screen multiplex on the 4th and 5th ﬂoor.",
+    imageType: "Stock Image"
   },
   {
     title: "Setting a style statement",
     image: "/assets/n6.png",
     desc: "Open to apparel and lifestyle brands.",
+    imageType: "Stock Image"
   },
   {
     title: "Revolutionising Healthcare in Serampore",
     image: "/assets/n7.png",
     desc: "Coming soon!",
+    imageType: "Stock Image"
   },
   {
     title: "One-stop destination for every celebration",
     image: "/assets/n8.png",
-    desc: "Space for banquet halls on the 7th ﬂoor",
+    desc: "Space for banquet halls on the 7th ﬂoor.",
+    imageType: "Stock Image"
   },
   {
     title: "Transforming hospitality in Hooghly district",
     image: "/assets/n9.png",
-    desc: "Room for a 90-key hotel on the 8th and 9th ﬂoor",
+    desc: "Room for a 90-key hotel on the 8th and 9th ﬂoor.",
+    imageType: "Stock Image"
   }
 ];
 
@@ -163,13 +172,25 @@ export default function NewTriventSliders() {
                       <h2 className="hide-triangle text-white text-[20px] md:text-[24px] font-[700]">
                         {slide.title}
                       </h2>
-                      <Image
-                        src={slide.image}
-                        width={240}
-                        height={240}
-                        alt="img"
-                        className="w-full min-h-[240px] max-h-[240px] object-cover"
-                      />
+                      <div className="relative">
+                        {/* Info Icon */}
+                        <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                          <div className="overflow-hidden">
+                            <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                              {slide.imageType}
+                            </div>
+                          </div>
+                          <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                        </div>
+                        
+                        <Image
+                          src={slide.image}
+                          width={240}
+                          height={240}
+                          alt="img"
+                          className="w-full min-h-[240px] max-h-[240px] object-cover"
+                        />
+                      </div>
                       <h2 className="none-md text-white text-[20px] md:text-[24px] font-[700]">
                         {slide.title}
                       </h2>
