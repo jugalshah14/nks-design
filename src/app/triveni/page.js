@@ -57,7 +57,7 @@ export default function triveni() {
             </div>
             <div className="z-20 flex text-center items-center justify-center relative p-[10px] -mt-12 mx-2 md:mx-[80px]  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
                 <h2 className="text-center project-overview-title mobile-title max-w-[800px]">
-                A gold mine for your  <span className="orange-color">brand</span>.
+                A gold mine for your  <span className="orange-color">brand</span>
                 </h2>
             </div>
             </SlideUp>

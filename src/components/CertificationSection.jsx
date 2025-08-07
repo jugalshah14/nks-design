@@ -241,8 +241,8 @@ const awards = [
   {
     delay: 0.2,
     img: "/assets/award/21.png",
-    alt: "Realty+",
-    title: "Realty+",
+    alt: "INDIAN GREEN BUILDING COUNCIL",
+    title: "INDIAN GREEN BUILDING COUNCIL",
     desc: "IGBC-certified development",
     year: "2020",
   },

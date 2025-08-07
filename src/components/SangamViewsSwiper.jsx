@@ -118,7 +118,7 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
         {/* Only for mobile */}
         <div className="flex items-center justify-center">
           <div className="none-md text-center text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0">
-            <div>Views from {activeBHK}*</div>
+            <div>{currentImages.length === 1 ? 'View' : 'Views'} from {activeBHK}*</div>
             <div className="text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] mt-2">{towerInfo[activeBHK]}</div>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
             <div
               className="hide-triangle text-center md:text-left text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0"
             >
-              <div>Views from {activeBHK}*</div>
+              <div>{currentImages.length === 1 ? 'View' : 'Views'} from {activeBHK}*</div>
               <div className="text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] mt-2">{towerInfo[activeBHK]}</div>
             </div>
             {showDesktopNavigation && (

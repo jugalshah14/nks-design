@@ -344,9 +344,9 @@ const ConstructionSlider = () => {
                       </div>
 
                       <p className="text-[16px] font-satoshi font-[400] leading-[20px] text-white/50 pt-[50px] pb-[12px]">
-                        {slide.description}
+                        
                       </p>
-                      <span className="orange-color text-[16px] font-satoshi font-[400] leading-[20px]">
+                      <span className="orange-color text-[16px] font-satoshi font-[400]  leading-[20px]">
                         View Updates →
                       </span>
                     </div>

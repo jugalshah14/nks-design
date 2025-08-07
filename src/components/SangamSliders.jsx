@@ -196,7 +196,7 @@ export default function SangamSliders() {
               <Image src="/assets/sangam-icon.png" width={100} height={100} alt="dot" className='hide-triangle' />
               <Image src="/assets/sangam-icon.svg" width={26} height={26} alt="dot" className='none-md' />
             </div>
-            <h2 className={`relative project-overview-title text-center !text-white pt-[16px] md:pb-[32px] sangam-title transition-all duration-500 ${bhkFade ? 'opacity-0 scale-95 translate-y-2' : 'opacity-100 scale-100 translate-y-0'}`}>
+            <h2 className={`relative project-overview-title !font-satoshi text-center !text-white pt-[16px] md:pb-[32px] sangam-title transition-all duration-500 ${bhkFade ? 'opacity-0 scale-95 translate-y-2' : 'opacity-100 scale-100 translate-y-0'}`}>
             {activeBHK}
             </h2>
           </div>

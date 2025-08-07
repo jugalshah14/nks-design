@@ -90,7 +90,7 @@ export default function lifeAtAlcove() {
                   <span>
                     Make everyday living effortless with our{" "}
                     <span className="orange-color">Convenience</span> for
-                    Residence scheme
+                    Residence scheme.
                   </span>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function lifeAtAlcove() {
                   <span>
                     Embrace the beauty of nature with us, where modern living
                     meets{" "}
-                    <span className="orange-color">natural wonders</span>
+                    <span className="orange-color">natural wonders.</span>
                   </span>
                 </div>
               </div>
@@ -170,7 +170,7 @@ export default function lifeAtAlcove() {
                   </div>
                   <div className="w-full absolute bottom-0 left-0 max-md:text-center p-3 md:p-5 backdrop-blur-[34px] font-semibold z-10">
                     <span className="text-white md:font-bold text-[18px] md:text-[24px] md:leading-7 leading-6">
-                      Earth Day Activities
+                      Earth Day Activities!
                     </span>
                   </div>
                 </div>
@@ -180,7 +180,7 @@ export default function lifeAtAlcove() {
                   <span>
                     Join the fun and make memories with our{" "}
                     <span className="orange-color">exciting activities</span>{" "}
-                    for everyone
+                    for everyone.
                   </span>
                 </div>
               </div>
@@ -189,14 +189,14 @@ export default function lifeAtAlcove() {
         </AnimatedSection>
         <AnimatedSection className="!overflow-visible flex w-full justify-center md:mt-10">
           <Link href="/location" className=" absolute group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center justify-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:h-[144px]">
-            <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
-              <Image
-                src="/assets/neighbour.png"
-                alt="Room preview"
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+                <Image
+                  src="/assets/HB.jpg"
+                  alt="Room preview"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             <div className="flex-1 md:px-11 md:py-8">
               <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
                 Embrace the beauty of your surroundings, know our neighbourhood

@@ -667,6 +667,16 @@ Whether you're looking for a spacious flat or a cozy house for sale in Serampor
           "The 2 BHK flats in the New Kolkata Sangam project offer a range of location benefits, providing residents with: Scenic Ganga Views, and Serampore Railway Station, located just 3.7 km away, Airport is just 21 Km away. This project also offers luxury A.C ferry for residents & potential buyers from the project to Millennium Park via Dakshineswar.",
       },
       {
+        question: "What are the healthcare benefits that come with the 2 BHK flats in the New Kolkata project?",
+        answer:
+          "New Kolkata Sangam is close to many hospitals and medical services like Walsh Hospital - 2.3 KM, ESI Hospital distance - 3.2 KM, Care Concern Hospital Pvt Ltd - 2.8 KM, Mani Kamal Hospital - 5.3 KM, Disha Eye Hospital Sheoraphuli - 5.5 KM, and RE-LIFE HOSPITAL - 6.2 KM",
+      },
+      {
+        question: "What are the Educational Institutions near 2 BHK flats in the New Kolkata project?",
+        answer:
+          "The New Kolkata Sangam project provides access to excellent educational institutions nearby, like Mahesh Sri Ramakrishna Ashram - 1.2 KM, Holy Home School - 2.2 KM, West Point Academy - 700 MTR, Narayana School - 2.6 KM, Aditya Birla Vani Bharati School - 2.5 KM, Serampore College - 2.1 KM, and Government College of Engineering & Textile Technology - 2 KM",
+      },     
+      {
         question: "Do any of the balconies offer a view of the Ganga?",
         answer:
           "Yes,  our 2 bhk Flats in New Kolkata Sangam feature big balconies with enchanting views of the Ganga River. The design of most units prioritizes this scenic aspect, allowing residents to enjoy a mesmerizing panorama of the Ganga River right from the comfort of their own balconies.",
@@ -749,6 +759,16 @@ Whether you're looking for a spacious flat or a cozy house for sale in Serampor
         question: "What is the possession timeline for these flats?",
         answer:
           "The possession timeline of the project starts from mid of 2025. It's advisable to contact the sales team to get accurate information about the expected possession dates for the 1 BHK flats in Kolkata Sangam.",
+      },
+      {
+        question: "What are the Educational Institutions near 1 BHK flats in the New Kolkata project?",
+        answer:
+          "The New Kolkata Sangam project provides access to excellent educational institutions nearby, like Mahesh Sri Ramakrishna Ashram - 1.2 KM, Holy Home School - 2.2 KM, West Point Academy - 700 MTR, Narayana School - 2.6 KM, Aditya Birla Vani Bharati School - 2.5 KM, Serampore College - 2.1 KM, and Government College of Engineering & Textile Technology - 2 KM",
+      },     
+      {
+        question: "Which hospitals/clinics are situated near to the 1 BHK flats in the New Kolkata project?",
+        answer:
+          "New Kolkata Sangam is close to many hospitals and medical services like Walsh Hospital - 2.3 KM, ESI Hospital distance - 3.2 KM, Care Concern Hospital Pvt Ltd - 2.8 KM, Mani Kamal Hospital - 5.3 KM, Disha Eye Hospital Sheoraphuli - 5.5 KM, and RE-LIFE HOSPITAL - 6.2 KM",
       },
     ],
   },

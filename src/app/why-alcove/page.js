@@ -335,13 +335,14 @@ export default function WhyAlcove() {
             delay={0.2}
             className="bg-[#f3f6f8] md:bg-transparent relative container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]"
           >
-            <Image
-              src="/assets/sport-gif.gif"
-              width={144}
-              height={144}
-              alt="house"
-              className="img-size md:h-[144px] md:w-[144px]"
-            />
+            <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+                <Image
+                  src="/assets/HB.jpg"
+                  alt="Room preview"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             <Link
               href="/life-@-alcove"
               className="mr-[16px] md:mr-[0px] cursor-pointer bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"
@@ -556,13 +557,14 @@ export default function WhyAlcove() {
           delay={0.6}
           className="mr-[16px] md:mr-[0px] max-md:mt-6 md:ml-[100px] absolute container mx-auto flex flex-row justify-center w-full md:px-[200px] z-[1]"
         >
-          <Image
-            src="/assets/faqs-detail-gif.gif"
-            width={180}
-            height={144}
-            alt="house"
-            className="img-size md:h-[144px] md:w-[144px]"
-          />
+          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+                <Image
+                  src="/assets/HB.jpg"
+                  alt="Room preview"
+                  fill
+                  className="object-cover"
+                />
+              </div>
           <Link
             href="/location"
             className="bg-white cursor-pointer relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"
