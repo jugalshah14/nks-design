@@ -23,15 +23,12 @@ export default function BlogDetail() {
         if (data.data && data.data.length > 0) {
           setBlogData(data.data[0]);
           
-          // Fetch related blogs (same category)
-          const categorySlug = data.data[0].attributes.categories?.data?.[0]?.attributes?.slug;
-          if (categorySlug) {
-            const relatedResponse = await fetch(
-              `https://admin.newkolkata.in/api/blog-posts?populate[0]=*&populate[1]=Postimage&populate[2]=thumbnailimage&populate[3]=Date&populate[4]=author.image&populate[5]=categories&filters[categories][slug][$eq]=${categorySlug}&filters[slug][$ne]=${params.slug}&pagination[limit]=3`
-            );
-            const relatedData = await relatedResponse.json();
-            setRelatedBlogs(relatedData.data || []);
-          }
+          // Fetch related blogs (exclude current blog and get recent ones)
+          const relatedResponse = await fetch(
+            `https://admin.newkolkata.in/api/blog-posts?populate[0]=*&populate[1]=Postimage&populate[2]=thumbnailimage&populate[3]=Date&populate[4]=author.image&populate[5]=categories&filters[slug][$ne]=${params.slug}&pagination[limit]=3&sort[0]=Date:desc`
+          );
+          const relatedData = await relatedResponse.json();
+          setRelatedBlogs(relatedData.data || []);
         }
         
         setLoading(false);

@@ -16,13 +16,13 @@ const formSchema = z.object({
   email: z
     .string()
     .min(1, { message: "Please enter your email address" })
-    .email({ message: "Please enter a valid email address" })
+    .email({ message: "Please enter a valid email" })
     .transform((val) => val.trim()),
   phone: z
     .string()
-    .min(1, { message: "Please enter your phone number" })
-    .refine((val) => /^\d{10}$/.test(val.trim()), { 
-      message: "Phone number must be exactly 10 digits" 
+    .min(1, { message: "Please enter your phone" })
+    .refine((val) => /^\d{10}$|^\d{12}$/.test(val.trim()), { 
+      message: "Phone number must be exactly 10 or 12 digits" 
     })
     .transform((val) => val.trim()),
   bhk: z.string().min(1, { message: "Please select a choice" }),
