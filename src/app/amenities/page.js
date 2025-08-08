@@ -15,18 +15,21 @@ const amenities = {
       description:
         "Watch the sunrise over the river, breathe in the fresh morning air, and let nature set the tone for a peaceful day ahead.",
       image: "/assets/Sunrise.png",
+      imageType: "Actual Image"
     },
     {
       title: "Find peace within: unlock the power of meditation.",
       description:
         "Begin your day with calm moments by the river — a peaceful space to relax and clear your mind.",
       image: "/assets/Yoga.png",
+      imageType: "Actual Image"
     },
     {
       title: "Keep yourself fit with our gym & fitness centre",
       description:
         "Stay active every day with modern equipment and a refreshing open-air workout space.",
       image: "/assets/GYM.png",
+      imageType: "Actual Image"
     },
     {
       title:
@@ -34,6 +37,7 @@ const amenities = {
       description:
         "Enjoy a refreshing run or walk through green trails, with spots to stretch, relax, and recharge.",
       image: "/assets/Jogging.png",
+      imageType: "Stock Image"
     },
   ],
   noon: [
@@ -42,12 +46,14 @@ const amenities = {
       description:
         "Discover serenity. Our tranquil sanctuary offers a perfect escape to relax and immerse yourself in the world of books.",
       image: "/assets/noon1.png",
+      imageType: "Artist Impression"
     },
     {
       title: "Unleash your playful side in our dynamic indoor games room.",
       description:
         "Unleash the fun! Our dynamic games room is perfect for play and lively moments.",
       image: "/assets/noon2.png",
+      imageType: "Artist Impression"
     },
     {
       title:
@@ -55,6 +61,7 @@ const amenities = {
       description:
         "Your private cinema awaits. Enjoy cinematic bliss with our deluxe home theater amenities.",
       image: "/assets/noon3.png",
+      imageType: "Artist Impression"
     },
     {
       title:
@@ -62,6 +69,7 @@ const amenities = {
       description:
         "Enhance your lifestyle. Our clubhouse, with its diverse amenities, is your hub for enjoyment and leisure.",
       image: "/assets/noon4.png",
+      imageType: "Artist Impression"
     },
   ],
   evening: [
@@ -71,6 +79,7 @@ const amenities = {
       description:
         "Redefine your journey. Indulge in luxurious and convenient travel with our exclusive private ferry service.",
       image: "/assets/evening1.png",
+      imageType: "Actual Image"
     },
     {
       title:
@@ -78,18 +87,21 @@ const amenities = {
       description:
         "Serve up excitement! Hone your skills and enjoy thrilling matches on our premier badminton court.",
       image: "/assets/evening2.png",
+      imageType: "Artist Impression"
     },
     {
       title: "Escape to a secluded waterfront oasis at our private ghat.",
       description:
         "Find your oasis. Our private ghat provides a secluded waterfront escape, offering peace and stunning views.",
       image: "/assets/evening3.png",
+      imageType: "Actual Image"
     },
     {
       title: "Explore the depths of spirituality",
       description:
         "Find your peace. This tranquil setting provides a sacred space for contemplation and spiritual exploration.",
       image: "/assets/evening4.png",
+      imageType: "Actual Image"
     },
   ],
   night: [
@@ -99,6 +111,7 @@ const amenities = {
       description:
         "Indulge your senses. Step into a world of grand architecture, luxurious comfort, and captivating art.",
       image: "/assets/night1.png",
+      imageType: "Artist Impression"
     },
     {
       title:
@@ -106,6 +119,7 @@ const amenities = {
       description:
         "Celebrate in style. Create unforgettable moments in the elegant spaces of our premier banquet facilities.",
       image: "/assets/night2.png",
+      imageType: "Artist Impression"
     },
     {
       title:
@@ -113,6 +127,7 @@ const amenities = {
       description:
         "Unlock incredible deals and diverse choices. Experience the vibrant energy and retail bliss at our premier outlet facility.",
       image: "/assets/night3.png",
+      imageType: "Stock Image"
     },
     {
       title:
@@ -120,6 +135,7 @@ const amenities = {
       description:
         "Breathtaking nights. Panorama, cozy seating, enchanting ambiance from our viewing deck.",
       image: "/assets/night4.png",
+      imageType: "Artist Impression"
     },
   ],
 };
@@ -130,23 +146,27 @@ const clubhouseData = [
     description:
       "Take a refreshing dip while soaking in uninterrupted views of the Ganges, surrounded by serene palm-lined decks and the sound of stillness.",
     image: "/assets/Swimming-pool.png",
+    imageType: "Artist Impression"
   },
   {
     title: "Yoga Room",
     description:
       "Find your inner peace in a calming space designed for meditation and yoga, with natural light, tranquil views, and lotus pond serenity.",
     image: "/assets/Yoga-Room.png",
+    imageType: "Artist Impression"
   },
   {
     title: "Badminton court",
     description:
       "Serve, smash, and stay active in a vibrant indoor court that invites both casual fun and competitive spirit within a modern setup.",
     image: "/assets/Badminton-court.png",
+    imageType: "Artist Impression"
   },
   {
     title: "Theater",
     description: "Experience cinema in comfort with a state-of-the-art home theatre where every movie night becomes a private, luxurious escape.",
     image: "/assets/Theater.png",
+    imageType: "Artist Impression"
   },
 ];
 
@@ -195,23 +215,27 @@ const PodiumData = [
     description:
       "Let your little ones laugh, play, and cool off in a safe, fun-filled splash zone while you lounge and unwind nearby.",
     image: "/assets/Splash-pool.png",
+    imageType: "Actual Image"
   },
   {
     title: "Landscape Garden",
     description:
       "Stroll through expanses of lush greenery and curated plant life, thoughtfully designed to offer moments of reflection and natural harmony.",
     image: "/assets/Landscape-Garden.png",
+    imageType: "Actual Image"
   },
   {
     title: "Kids Play Area",
     description:
       "A joyful space where imagination runs free filled with safe, interactive equipment to keep your children active and delighted.",
     image: "/assets/Kids.png",
+    imageType: "Actual Image"
   },
   {
     title: "Fountain Plaza",
     description: "Witness the charm of water come alive in a beautifully designed plaza, with interactive fountains creating moments of wonder.",
     image: "/assets/FountainPlaza.png",
+    imageType: "Actual Image"
   },
 ];
 
@@ -260,23 +284,27 @@ const groundData = [
     description:
       "Glide with ease or watch the fun unfold in a vibrant rink designed for motion, laughter, and outdoor excitement.",
     image: "/assets/cycling-track.png",
+    imageType: "Actual Image"
   },
   {
     title: "Riverside Gazebo",
     description:
       "Relax by the Ganges under elegant gazebos that offer panoramic views, fresh breezes, and the perfect retreat from routine.",
     image: "/assets/mandir.png",
+    imageType: "Actual Image"
   },
   {
     title: "Hibiscus garden",
     description:
       "Walk through a vibrant palette of blooming hibiscus an aromatic haven crafted to lift your spirits and soothe your senses.",
     image: "/assets/Floating-fountain.png",
+    imageType: "Stock Image"
   },
   {
     title: "Deepmala",
     description: "Celebrate timeless tradition with the glow of ornamental lighting that adds a touch of heritage and grandeur to your evenings.",
     image: "/assets/kids-play.png",
+    imageType: "Actual Image"
   },
 ];
 
@@ -531,6 +559,16 @@ export default function Amenities() {
                   {item.title}
                 </h3>
                 <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
+                  {/* Info Icon */}
+                  <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                    <div className="overflow-hidden">
+                      <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                        {item.imageType}
+                      </div>
+                    </div>
+                    <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                  </div>
+                  
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -671,6 +709,16 @@ export default function Amenities() {
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
+                    {/* Info Icon */}
+                    <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                      <div className="overflow-hidden">
+                        <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                          {item.imageType}
+                        </div>
+                      </div>
+                      <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                    </div>
+                    
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -792,6 +840,16 @@ export default function Amenities() {
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
+                    {/* Info Icon */}
+                    <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                      <div className="overflow-hidden">
+                        <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                          {item.imageType}
+                        </div>
+                      </div>
+                      <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                    </div>
+                    
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -946,6 +1004,16 @@ export default function Amenities() {
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
+                    {/* Info Icon */}
+                    <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                      <div className="overflow-hidden">
+                        <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                          {item.imageType}
+                        </div>
+                      </div>
+                      <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                    </div>
+                    
                     <Image
                       src={item.image}
                       alt={item.title}

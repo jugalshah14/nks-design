@@ -18,6 +18,7 @@ const data = [
         description: 'Enjoy the beauty of the lotus pond pavilion and unwind with a calming view from the tallest tower in Eastern India.',
         category: 'Luxurious Flats',
         location: 'Chowringhee, Kolkata',
+        imageType: 'Artist Impression'
     },
     {
         src: '/assets/project2.png',
@@ -27,6 +28,7 @@ const data = [
         description: 'Experience comfort and community living with spacious homes, serene landscaping, and doorstep essentials.',
         category: 'Premium Residences',
         location: 'Lake Town, Kolkata',
+        imageType: 'Artist Impression'
     },
     {
         src: '/assets/project3.png',
@@ -36,6 +38,7 @@ const data = [
         description: 'Soak in the charm of water gardens, green landscapes, and amenities crafted for a balanced lifestyle.',
         category: 'Luxury with Nature-Inspired Living',
         location: 'Topsia, Kolkata',
+        imageType: 'Artist Impression'
     },
     {
         src: '/assets/project4.png',
@@ -45,6 +48,7 @@ const data = [
         description: 'Live in elegance with well-planned apartments, top-notch amenities, and excellent connectivity to EM Bypass.',
         category: 'Luxurious Flats',
         location: 'Topsia, Kolkata',
+        imageType: 'Artist Impression'
     },
     {
         src: '/assets/project5.png',
@@ -54,6 +58,7 @@ const data = [
         description: 'A peaceful riverside community where heritage meets comfort, offering a harmonious lifestyle by the Ganges.',
         category: 'Affordable Luxury Homes',
         location: 'Serampore, Kolkata',
+        imageType: 'Artist Impression'
     },
 ]
 
@@ -118,6 +123,16 @@ export default function PastProjectSwiper() {
                     <div key={index} className='relative !flex justify-center flex-nowrap md:pt-15 pt-10 w-[100%]'>
                         <div className='w-full flex md:flex-row flex-col'>
                            <div className='w-full md:w-[80%] h-[240px] md:h-[468px] relative'>
+                            {/* Info Icon */}
+                            <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                                <div className="overflow-hidden">
+                                    <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                                        {slide.imageType}
+                                    </div>
+                                </div>
+                                <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                            </div>
+                            
                             <Image 
                                 src={slide.src} 
                                 alt="slide-0" 

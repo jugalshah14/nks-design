@@ -10,9 +10,9 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        // Fetch featured blogs for the recent blogs section
+        // Fetch recent blogs for the recent blogs section
         const response = await fetch(
-          "https://admin.newkolkata.in/api/blog-posts?populate[0]=*&populate[1]=Postimage&populate[2]=thumbnailimage&populate[3]=Date&populate[4]=author.image&populate[5]=categories&filters[categories][slug][$eq]=featured&pagination[limit]=3"
+          "https://admin.newkolkata.in/api/blog-posts?populate[0]=*&populate[1]=Postimage&populate[2]=thumbnailimage&populate[3]=Date&populate[4]=author.image&populate[5]=categories&pagination[limit]=3&sort[0]=Date:desc"
         );
         const data = await response.json();
         
