@@ -144,7 +144,7 @@ const clubhouseData = [
   {
     title: "Infinity Swimming pool",
     description:
-      "Take a refreshing dip while soaking in uninterrupted views of the Ganges, surrounded by serene palm-lined decks and the sound of stillness.",
+      "Take a refreshing dip while soaking in uninterrupted views of the Ganga, surrounded by serene palm-lined decks and the sound of stillness.",
     image: "/assets/Swimming-pool.png",
     imageType: "Artist Impression"
   },
@@ -289,7 +289,7 @@ const groundData = [
   {
     title: "Riverside Gazebo",
     description:
-      "Relax by the Ganges under elegant gazebos that offer panoramic views, fresh breezes, and the perfect retreat from routine.",
+      "Relax by the Ganga under elegant gazebos that offer panoramic views, fresh breezes, and the perfect retreat from routine.",
     image: "/assets/mandir.png",
     imageType: "Actual Image"
   },

@@ -15,14 +15,37 @@ const formSchema = z.object({
     .transform((val) => val.trim()),
   email: z
     .string()
-    .min(1, { message: "Please enter your email address" })
+    .min(1, { message: "Please enter your email" })
     .email({ message: "Please enter a valid email" })
     .transform((val) => val.trim()),
   phone: z
     .string()
     .min(1, { message: "Please enter your phone" })
-    .refine((val) => /^\d{10}$|^\d{12}$/.test(val.trim()), { 
-      message: "Phone number must be exactly 10 or 12 digits" 
+    .refine((val) => {
+      const trimmed = val.trim();
+      // Remove + from the beginning for length calculation
+      const numberOnly = trimmed.startsWith('+') ? trimmed.slice(1) : trimmed;
+      
+      if (numberOnly.length < 10) {
+        return false;
+      }
+      if (numberOnly.length > 15) {
+        return false;
+      }
+      // Allow + at the beginning, then only digits
+      return /^\+?\d+$/.test(trimmed);
+    }, (val) => {
+      const trimmed = val.trim();
+      // Remove + from the beginning for length calculation
+      const numberOnly = trimmed.startsWith('+') ? trimmed.slice(1) : trimmed;
+      
+      if (numberOnly.length < 10) {
+        return { message: "Phone number should be 10 digits long." };
+      }
+      if (numberOnly.length > 15) {
+        return { message: "Please enter a valid number." };
+      }
+      return { message: "Please enter a valid number." };
     })
     .transform((val) => val.trim()),
   bhk: z.string().min(1, { message: "Please select a choice" }),
@@ -51,11 +74,14 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
       setIsSubmitted(false);
     } else {
       document.body.style.overflow = "unset";
+      // Reset form when modal closes
+      reset();
+      setSubmitStatus(null);
     }
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isOpen]);
+  }, [isOpen, reset]);
 
   useEffect(() => {
     let timer;

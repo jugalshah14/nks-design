@@ -254,7 +254,7 @@ export default function CertificationSection() {
   const swiperRef = React.useRef(null);
 
   const settings = {
-    className: "awards-swiper !overflow-visible center",
+    className: "awards-swiper !overflow-visible center pb-10",
     infinite: false,
     centerPadding: "30px",
     slidesToShow: 5.4,
@@ -325,7 +325,7 @@ export default function CertificationSection() {
           <div className="text-center">
             <SlideUp delay={0.4}>
               <h2 className="project-overview-title text-center !text-white !max-sm:font-cormorant">
-                <span className="orange-color">Certified</span> by
+                <span className="orange-color">Awards</span> and Accolades
               </h2>
             </SlideUp>
           </div>
@@ -365,7 +365,7 @@ export default function CertificationSection() {
           ))}
         </Slider>
       </div>
-      <div className="absolute bottom-0 flex justify-center w-full">
+      <div className="absolute bottom-10 flex justify-center w-full">
         <div className="flex items-center gap-15 bg-[#f2f5f8] px-6 py-6">
           <button
             className={`focus:outline-none cursor-pointer ${
