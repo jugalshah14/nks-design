@@ -124,7 +124,7 @@ export default function PropertyPage({ params }) {
                   <h1 className="text-[16px] lg:text-[24px] font-bold leading-[24px] lg:leading-[28px] text-[#22252E] font-satoshi lg:mb-4 mt-12">
                     {propertyData.projectOverview.headline}
                   </h1>
-                  <button className="hidden lg:flex items-center gap-[10px] group mt-12 pt-[2px]">
+                  <button id="typology-master-plan-link" className="hidden lg:flex items-center gap-[10px] group mt-12 pt-[2px]">
                     <Link
                       href="/master-plan"
                       className="text-[#002F52] font-satoshi text-base font-bold leading-5"

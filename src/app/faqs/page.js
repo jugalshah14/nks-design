@@ -508,6 +508,7 @@ const FaqPage = () => {
                         className="rounded-md bg-white p-4 shadow-[0px_4px_4px_0px_#0000000F]"
                       >
                         <button
+                          id={`faqs-accordion-${sectionIndex}-${faqIndex}`}
                           className="w-full flex justify-between text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] items-center font-satoshi font-bold text-left text-gray-900 cursor-pointer"
                           onClick={() => toggleIndex(sectionIndex, faqIndex)}
                         >

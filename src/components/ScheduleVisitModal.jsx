@@ -139,6 +139,7 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
         {!isSubmitted ? (
           <>
             <button
+              id="modal-close-button"
               onClick={onClose}
               className="absolute top-0 right-0 text-white bg-[#144D78] p-2 rounded-tr-lg hover:bg-[#002F52]"
             >
@@ -262,6 +263,7 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
               </div> */}
 
               <button
+                id="modal-submit-button"
                 type="submit"
                 disabled={isSubmitting}
                 className={`cursor-pointer w-full bg-[#144D78] text-white py-3 md:py-4 px-6 md:px-9 rounded-md hover:bg-[#002F52] transition-colors duration-300 font-medium flex items-center justify-center ${

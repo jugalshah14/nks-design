@@ -135,6 +135,7 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
               <div className="hidden md:flex relative max-w-[190px] w-[366px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
                 <div className="h-full flex items-center justify-center">
                   <button
+                    id="sangam-views-swiper-prev-desktop"
                     className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`}
                     onClick={handlePrev}
                     disabled={isPrevDisabled}
@@ -150,6 +151,7 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
                 </div>
                 <div className="h-full flex items-center justify-center">
                   <button
+                    id="sangam-views-swiper-next-desktop"
                     className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`}
                     onClick={handleNext}
                     disabled={isNextDisabled}
@@ -199,6 +201,7 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
         <div className="w-full absolute bottom-0 flex md:hidden relative z-111 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
         <div className="h-full flex items-center justify-center">
           <button
+            id="sangam-views-swiper-prev-mobile"
             className={`focus:outline-none cursor-pointer ${isMobilePrevDisabled ? 'opacity-30' : ''}`}
             onClick={handlePrev}
             disabled={isMobilePrevDisabled}
@@ -219,6 +222,7 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
         </div>
         <div className="h-full flex items-center justify-center">
           <button
+            id="sangam-views-swiper-next-mobile"
             className={`focus:outline-none cursor-pointer ${isMobileNextDisabled ? 'opacity-30' : ''}`}
             onClick={handleNext}
             disabled={isMobileNextDisabled}

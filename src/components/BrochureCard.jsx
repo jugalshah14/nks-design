@@ -36,6 +36,7 @@ export default function BrochureSection() {
           </h1>
           <div className="bg-[#E7EDF2] w-[10px] md:w-[54px] h-full"></div>
           <button
+            id="brochure-download-desktop"
             onClick={handleDownloadBrochure}
             className="hide-triangle absolute right-[-150px] bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary"
           >
@@ -49,6 +50,7 @@ export default function BrochureSection() {
         </div>
       </div>
       <button
+        id="brochure-download-mobile"
         onClick={handleDownloadBrochure}
         className="mt-[-3px] flex flex-row justify-between ml-[28px] mr-[16px] none-md group cursor-pointer bg-[#144D78] hover:bg-[#0e3a5a] transition text-white font-medium inline-flex items-center gap-2 overflow-hidden"
       >

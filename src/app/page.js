@@ -253,6 +253,7 @@ export default function Home() {
                         </SlideUp>
                         <SlideUp delay={0.8} className="w-full">
                           <button
+                            id="hero-schedule-visit"
                             onClick={handleScheduleVisit}
                             className="w-full md:min-h-[4rem] min-h-[3.5rem] h-full relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary"
                           >
@@ -283,6 +284,7 @@ export default function Home() {
               Take the 1st step to transforming your life
             </p>
             <button
+              id="transforming-life-schedule-visit"
               onClick={handleScheduleVisit}
               className="md:min-h-[4rem] min-h-[3.5rem] h-full relative md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary"
             >
@@ -460,7 +462,7 @@ export default function Home() {
                       Hear From Few of Our 3500+ Happy Home Buyers
                     </p>
                     <Link href="/testimonials">
-                      <button className="mt-5 border border-[#22252E] rounded-md px-8 py-3 font-satoshi font-bold text-[14px] leading-6 transition hover:bg-[#f5f5f5] cursor-pointer">
+                      <button id="read-all-testimonials" className="mt-5 border border-[#22252E] rounded-md px-8 py-3 font-satoshi font-bold text-[14px] leading-6 transition hover:bg-[#f5f5f5] cursor-pointer">
                         Read All Testimonials
                       </button>
                     </Link>{" "}
@@ -487,7 +489,7 @@ export default function Home() {
                       </SlideUp>
                       <SlideUp delay={0.6}>
                         <Link href="/location">
-                          <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
+                          <button id="serampore-learn-more" className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                             <div className="px-6 py-3 mr-20">Learn More</div>
                             <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
                               ↗
@@ -582,6 +584,7 @@ export default function Home() {
             <SlideUp delay={0.8}>
               <div className="flex md:hidden justify-center relative -top-7">
                 <button
+                  id="mobile-schedule-visit-bottom"
                   onClick={handleScheduleVisit}
                   className="md:min-h-[4rem] min-h-[3.5rem] rounded-md h-full inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary"
                 >

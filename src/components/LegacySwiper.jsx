@@ -113,6 +113,7 @@ export default function LegacySwiper() {
           <div className="absolute -bottom-10 md:bottom-[25px] left-1/2 transform -translate-x-1/2 bg-white custom-box-shadow rounded-md flex items-center justify-between w-[121px] md:w-[160px] h-[48px] md:h-[60px] z-1">
             <div className="w-1/2 h-full flex items-center justify-center">
               <button
+                id="legacy-swiper-prev"
                 className={`focus:outline-none cursor-pointer ${
                   isPrevDisabled ? "opacity-30" : ""
                 }`}
@@ -131,6 +132,7 @@ export default function LegacySwiper() {
             <div className="h-6 w-px bg-[#20202019]"></div>
             <div className="w-1/2 h-full flex items-center justify-center">
               <button
+                id="legacy-swiper-next"
                 className={`focus:outline-none cursor-pointer ${
                   isNextDisabled ? "opacity-30" : ""
                 }`}

@@ -186,7 +186,7 @@ const GangaVideoSection = () => {
           </SlideUp>
         </div>
         <SlideUp delay={1} className="flex justify-center items-center w-full">
-          <button onClick={handleScheduleVisit} className="md:min-h-[4.75rem] min-h-[3.5rem] h-full -top-9 mx-auto relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden rounded-md">
+          <button id="ganga-video-schedule-visit" onClick={handleScheduleVisit} className="md:min-h-[4.75rem] min-h-[3.5rem] h-full -top-9 mx-auto relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden rounded-md">
             <div className="px-6 py-3 mr-20">Schedule a Visit</div>
             <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
               ↗
@@ -199,6 +199,7 @@ const GangaVideoSection = () => {
           <div className="relative w-full max-w-4xl">
             {/* Close button */}
             <button
+              id="ganga-video-modal-close"
               onClick={toggleModal}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 focus:outline-none cursor-pointer"
             >

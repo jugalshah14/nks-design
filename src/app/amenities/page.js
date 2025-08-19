@@ -630,6 +630,7 @@ export default function Amenities() {
             {navTabs.map((tab, idx) => (
               <React.Fragment key={tab}>
                 <button
+                  id={`amenities-nav-${tab.toLowerCase().replace(/\s/g, "-")}`}
                   onClick={() => {
                     setSelectedNav(tab);
                     const element = document.getElementById(
@@ -1281,6 +1282,7 @@ export default function Amenities() {
             {/* View Certification Button */}
             <AnimatedSection className="flex justify-center relative bottom-7 md:bottom-0 md:top-27 overflow-visible">
               <button
+                id="amenities-view-certification"
                 onClick={() => setIsModalOpen(true)}
                 className="md:min-h-[4rem] min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden mb-0 button-primary"
               >
@@ -1372,6 +1374,7 @@ export default function Amenities() {
             {accordionData.map((item, index) => (
               <div key={index} className="mb-4 rounded-md bg-white p-4">
                 <button
+                  id={`amenities-faq-accordion-${index}`}
                   className="w-full flex justify-between items-center font-satoshi font-bold text-left text-gray-900 cursor-pointer"
                   onClick={() => toggleIndex(index)}
                 >

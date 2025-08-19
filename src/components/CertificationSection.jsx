@@ -368,6 +368,7 @@ export default function CertificationSection() {
       <div className="absolute bottom-10 flex justify-center w-full">
         <div className="flex items-center gap-15 bg-[#f2f5f8] px-6 py-6">
           <button
+            id="certification-section-prev"
             className={`focus:outline-none cursor-pointer ${
               isPrevDisabled ? "opacity-30 pointer-events-none" : ""
             }`}
@@ -383,6 +384,7 @@ export default function CertificationSection() {
             />
           </button>
           <button
+            id="certification-section-next"
             className={`focus:outline-none cursor-pointer ${
               isNextDisabled ? "opacity-30 pointer-events-none" : ""
             }`}

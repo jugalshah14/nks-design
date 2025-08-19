@@ -79,7 +79,7 @@ export default function ReviewSliderOne() {
               Other<span className="orange-color"> Reviews</span>
             </h2>
             <div className="mt-[150px] relative right-[-30px] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding rounded-md flex items-center justify-around mt-9 px-1 py-5">
-              <button className="focus:outline-none cursor-pointer" onClick={handlePrev}>
+              <button id="review-swiper-prev-desktop" className="focus:outline-none cursor-pointer" onClick={handlePrev}>
                 <Image
                   src="/assets/icons/arrow-right.svg"
                   alt="Previous"
@@ -91,7 +91,7 @@ export default function ReviewSliderOne() {
               <div className="flex gap-2 items-center">
                 {activeIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {slides.length}
               </div>
-              <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
+              <button id="review-swiper-next-desktop" className="focus:outline-none cursor-pointer" onClick={handleNext}>
                 <Image
                   src="/assets/icons/arrow-right.svg"
                   alt="Next"
@@ -149,7 +149,7 @@ export default function ReviewSliderOne() {
 
       {/* Bottom arrows and pagination (mobile only) */}
       <div className="pt-8 flex md:hidden relative -top-2 z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding items-center justify-around px-1 py-5">
-        <button className="focus:outline-none cursor-pointer" onClick={handlePrev}>
+        <button id="review-swiper-prev-mobile" className="focus:outline-none cursor-pointer" onClick={handlePrev}>
           <Image
             src="/assets/icons/arrow-right.svg"
             alt="Previous"
@@ -162,7 +162,7 @@ export default function ReviewSliderOne() {
           {Math.ceil(activeIndex) + 1}
           <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {slides.length}
         </div>
-        <button className="focus:outline-none cursor-pointer" onClick={handleNext}>
+        <button id="review-swiper-next-mobile" className="focus:outline-none cursor-pointer" onClick={handleNext}>
           <Image
             src="/assets/icons/arrow-right.svg"
             alt="Next"

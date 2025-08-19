@@ -315,14 +315,14 @@ export default function SangamSliders() {
                     <p className="text-[12px] md:text-[16px] text-white/50 mb-1">Price</p>
                     <div className="flex items-center">
                       <p className="hidden md:inline text-[24px] text-white shadow-lg mr-2 blur-[6.5px]">{flatsData[activeBHK].info.price}</p>
-                      <button onClick={handleScheduleVisit} className="text-[14px] font-bold text-[#134c78] underline transition-all duration-300 hover:text-[#1a6ba8]">Know price</button>
+                      <button id="sangam-know-price" onClick={handleScheduleVisit} className="text-[14px] font-bold text-[#134c78] underline transition-all duration-300 hover:text-[#1a6ba8]">Know price</button>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className='w-full mt-[20px] md:mt-[0px]'>
-                <button onClick={handleScheduleVisit} className="md:rounded-sm w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
+                <button id="sangam-schedule-visit" onClick={handleScheduleVisit} className="md:rounded-sm w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
                   <div className='px-6 py-3 w-full flex justify-start'>
                       <span className='text-left inline md:inline'>Schedule a Visit</span>
                   </div>

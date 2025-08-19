@@ -45,6 +45,7 @@ const ImageGallery = ({ isOpen, onClose, images }) => {
       <div className="bg-transparent bg-opacity-75 flex flex-col items-center rounded-lg w-11/12 md:w-2/3 lg:w-1/2 relative">
         <div className="flex justify-end items-end w-full">
           <button
+            id="image-gallery-close"
             onClick={onClose}
             className="text-3xl text-white hover:text-gray-800 cursor-pointer"
             aria-label="Close Modal"
@@ -87,6 +88,7 @@ const ImageGallery = ({ isOpen, onClose, images }) => {
         <div className="relative transform bg-white flex gap-10 items-center justify-center mt-9 p-5">
           <div className="h-full flex items-center justify-center">
             <button
+              id="image-gallery-prev"
               className="focus:outline-none cursor-pointer disabled:cursor-auto"
               onClick={handlePreviousImage}
             >
@@ -107,6 +109,7 @@ const ImageGallery = ({ isOpen, onClose, images }) => {
           </div>
           <div className="h-full flex items-center justify-center disabled:cursor-auto">
             <button
+              id="image-gallery-next"
               className="focus:outline-none cursor-pointer"
               onClick={handleNextImage}
             >

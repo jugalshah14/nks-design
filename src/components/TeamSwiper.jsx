@@ -93,6 +93,7 @@ export default function TeamSwiper() {
             </h2>
             <div className="max-w-[190px] relative border border-[rgba(0,0,0,0.2)] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 flex items-center justify-around mt-9 px-1 py-5">
               <button 
+                id="team-swiper-prev-desktop"
                 className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`} 
                 onClick={handlePrev}
                 disabled={isPrevDisabled}
@@ -106,6 +107,7 @@ export default function TeamSwiper() {
                 />
               </button>
               <button 
+                id="team-swiper-next-desktop"
                 className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`} 
                 onClick={handleNext}
                 disabled={isNextDisabled}
@@ -159,6 +161,7 @@ export default function TeamSwiper() {
       {/* Bottom arrows and pagination (mobile only) */}
       <div className="pt-8 flex md:hidden relative -top-2 z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding items-center justify-around px-1 py-5">
         <button 
+          id="team-swiper-prev-mobile"
           className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) === 0 ? 'opacity-30' : ''}`} 
           onClick={handlePrev}
           disabled={Math.ceil(activeIndex) === 0}
@@ -176,6 +179,7 @@ export default function TeamSwiper() {
           <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {slides.length}
         </div>
         <button 
+          id="team-swiper-next-mobile"
           className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) >= slides.length - 1 ? 'opacity-30' : ''}`} 
           onClick={handleNext}
           disabled={Math.ceil(activeIndex) >= slides.length - 1}
