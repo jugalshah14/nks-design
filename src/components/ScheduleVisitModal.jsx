@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { submitScheduleVisitForm } from "../utils/api";
 
 const formSchema = z.object({
   name: z
@@ -97,49 +98,15 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const onSubmit = async (data) => {
-    const requestData = {
-      Leads: [
-        {
-          FName: data.name,
-          LName: data.name,
-          Phone: data.phone,
-          City: "Kolkata",
-          project: "NEW KOLKATA - SANGAM",
-          Email: data.email,
-          Campaign: "G_Generic_WB_08-Feb-2023",
-          Source: "google",
-          Medium: "s",
-          Content: "",
-          Choice__c: data.bhk,
-          gcBudget__c: data.budget,
-          Term: `BHK: ${data.bhk}, Budget: ${data.budget}${data.message ? `, Message: ${data.message}` : ''}`,
-        },
-      ],
-    };
-    console.log('🚀 ~ onSubmit ~ requestData:', requestData);
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      const response = await fetch(
-        "https://alcoverealty.my.salesforce-sites.com/websitehook/services/apexrest/hookinlandingPage",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestData),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      await response.json();
+      const result = await submitScheduleVisitForm(data);
+      
       setSubmitStatus({
         success: true,
-        message: "Thank you! Your site visit request has been submitted successfully.",
+        message: result.message,
       });
       setIsSubmitted(true);
       reset();
@@ -147,7 +114,7 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
       console.error("Error submitting form:", error);
       setSubmitStatus({
         success: false,
-        message: "Something went wrong. Please try again later.",
+        message: error.message || "Something went wrong. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
