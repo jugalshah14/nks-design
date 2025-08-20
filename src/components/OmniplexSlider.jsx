@@ -17,7 +17,7 @@ const slides = [
     image: "/assets/o2.png",
     designation: "High foot traffic in Serampore",
     objectPosition: "object-[0%_50%]",
-    imageType: "Actual Image"
+    imageType: "Stock Image"
   },
   {
     image: "/assets/o3.jpg",

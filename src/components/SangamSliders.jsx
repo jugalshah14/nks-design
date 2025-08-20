@@ -38,7 +38,15 @@ const flatsData = {
         {
           src: "/assets/2bhk2.png",
           unitType: "F/G",
-        }
+        },
+        {
+          src: "/assets/2bhk3.png",
+          unitType: "F/G",
+        },
+        {
+          src: "/assets/2bhk4.png",
+          unitType: "F/G",
+        },
       ],
     },
     info: { towers: 'Signature & Serenity', price: 4234 },

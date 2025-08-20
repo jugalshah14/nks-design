@@ -17,6 +17,13 @@ import ScheduleVisitModal from "@/components/ScheduleVisitModal";
 
 const seramporeData = [
   {
+    src: "/assets/temple.png",
+    icon: "/assets/icons/temple.svg",
+    title: "Mahesh Temple",
+    description: "350mtr away",
+    backgroundImage: "/assets/mahesh-temple.png",
+  },
+  {
     src: "/assets/collage.png",
     icon: "/assets/icons/graduation-hat.svg",
     title: "Serampore College",
@@ -36,20 +43,6 @@ const seramporeData = [
     title: "Serampore Railway Station",
     description: "2.5km away",
     backgroundImage: "/assets/railway-bg.png",
-  },
-  {
-    src: "/assets/court.png",
-    icon: "/assets/icons/court.svg",
-    title: "Serampore Court",
-    description: "2km away",
-    backgroundImage: "/assets/court-bg.png",
-  },
-  {
-    src: "/assets/temple.png",
-    icon: "/assets/icons/temple.svg",
-    title: "Mahesh Temple",
-    description: "350mtr away",
-    backgroundImage: "/assets/mahesh-temple.png",
   },
 ];
 export default function Location() {

@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const data = [
     {
-        src: '/assets/project_overview_image_1.png',
+        src: '/assets/project_overview_image_1.jpg',
         info: 'Actual Image',
         title: 'Aerial view'
     },
@@ -33,12 +33,12 @@ const data = [
         title: 'Ghat Eye Level'
     },
     {
-        src: '/assets/project_overview_image_6.png',
+        src: '/assets/project_overview_image_6.jpg',
         info: 'Actual Image',
         title: 'Podium night view'
     },
     {
-        src: '/assets/project_overview_image_7.png',
+        src: '/assets/project_overview_image_7.jpg',
         info: 'Actual Image',
         title: 'Podium Landscape'
     },

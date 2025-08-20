@@ -21,7 +21,7 @@ const data = [
     info: "Actual Image",
   },
   {
-    src: "/assets/amenities-slides-3.png",
+    src: "/assets/amenities-slides-3.jpg",
     info: "Actual Image",
   },
   {

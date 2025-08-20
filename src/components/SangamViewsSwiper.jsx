@@ -55,12 +55,12 @@ const towerInfo = {
   "4BHK": "24E & 24F",
 };
 
-// Dynamic settings based on number of images
+// Fixed settings to maintain consistent spacing
 const getSettings = (imageCount) => ({
   className: "amenities-swiper !overflow-visible center",
   infinite: false,
   centerPadding: "30px",
-  slidesToShow: Math.min(3, imageCount),
+  slidesToShow: 3, // Always show 3 slides for consistent spacing
   speed: 600,
   dots: false,
   arrows: false,
@@ -87,9 +87,16 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
   const [activeIndex, setActiveIndex] = useState(0);
   let swiperRef = useRef(null);
   
-  // Get dynamic settings based on number of images
-  const currentImages = data[activeBHK];
-  const settings = getSettings(currentImages.length);
+  // Get current images and create padded array for consistent spacing
+  const originalImages = data[activeBHK];
+  const currentImages = [...originalImages];
+  
+  // Pad with empty slides if less than 3 images (only for desktop view)
+  while (currentImages.length < 3) {
+    currentImages.push({ src: "", isEmpty: true });
+  }
+  
+  const settings = getSettings(originalImages.length);
 
   const handleNext = () => {
     if (!swiperRef) return;
@@ -102,15 +109,15 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
   };
 
   const isPrevDisabled = activeIndex === 0;
-  const isNextDisabled = activeIndex >= currentImages.length - settings.slidesToShow;
+  const isNextDisabled = activeIndex >= originalImages.length - 1 || originalImages.length <= 3;
 
-  // Mobile navigation logic
+  // Mobile navigation logic (use original images count)
   const mobileIndex = Math.ceil(activeIndex);
   const isMobilePrevDisabled = mobileIndex === 0;
-  const isMobileNextDisabled = mobileIndex >= currentImages.length - 1;
+  const isMobileNextDisabled = mobileIndex >= originalImages.length - 1;
 
-  // Conditional check to hide navigation on desktop when there are less than 3 images
-  const showDesktopNavigation = currentImages.length > 3;
+  // Conditional check to hide navigation on desktop when there are less than or equal to 3 images
+  const showDesktopNavigation = originalImages.length > 3;
 
   return (
     <div className="relative top-[120px] md:-top-15 overflow-x-hidden bg-[#020C22]">
@@ -118,7 +125,7 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
         {/* Only for mobile */}
         <div className="flex items-center justify-center">
           <div className="none-md text-center text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0">
-            <div>{currentImages.length === 1 ? 'View' : 'Views'} from {activeBHK}*</div>
+            <div>{originalImages.length === 1 ? 'View' : 'Views'} from {activeBHK}*</div>
             <div className="text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] mt-2">{towerInfo[activeBHK]}</div>
           </div>
         </div>
@@ -128,7 +135,7 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
             <div
               className="hide-triangle text-center md:text-left text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0"
             >
-              <div>{currentImages.length === 1 ? 'View' : 'Views'} from {activeBHK}*</div>
+              <div>{originalImages.length === 1 ? 'View' : 'Views'} from {activeBHK}*</div>
               <div className="text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] mt-2">{towerInfo[activeBHK]}</div>
             </div>
             {showDesktopNavigation && (
@@ -183,12 +190,14 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
                     className="mx-5 !w-[100%] !overflow-x-hidden"
                   >
                     <div className="relative !w-[280px] h-[280px]">
-                      <Image
-                        src={slide.src}
-                        alt={`${activeBHK}-view-${i}`}
-                        fill
-                        className="object-cover"
-                      />
+                      {!slide.isEmpty && (
+                        <Image
+                          src={slide.src}
+                          alt={`${activeBHK}-view-${i}`}
+                          fill
+                          className="object-cover"
+                        />
+                      )}
                     </div>
                   </div>
                 ))}
@@ -197,7 +206,7 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
           </div>
         </div>
       </div>
-      {currentImages.length > 1 && (
+      {originalImages.length > 1 && (
         <div className="w-full absolute bottom-0 flex md:hidden relative z-111 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
         <div className="h-full flex items-center justify-center">
           <button
@@ -218,7 +227,7 @@ export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
         <div className="flex gap-2 items-center text-white">
           {Math.ceil(activeIndex) + 1}{" "}
           <div className="h-0.5 w-8 bg-[#D9D9D9] text-white" />{" "}
-          {currentImages.length}
+          {originalImages.length}
         </div>
         <div className="h-full flex items-center justify-center">
           <button

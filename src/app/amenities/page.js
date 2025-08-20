@@ -552,9 +552,9 @@ export default function Amenities() {
                 } space-y-4 md:px-5 px-0`}
               >
                 <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300 opacity-20"></div>
-                <div className="text-[20px] font-cormorant leading-7 orange-color font-normal md:text-lg md:mb-6 mb-3">
+                {/* <div className="text-[20px] font-cormorant leading-7 orange-color font-normal md:text-lg md:mb-6 mb-3">
                   {index + 1}
-                </div>
+                </div> */}
                 <h3 className="text-white text-left text-[18px] md:text-[24px] font-bold font-satoshi md:mb-6 mb-3">
                   {item.title}
                 </h3>
@@ -703,9 +703,9 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
+                  {/* <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
-                  </div>
+                  </div> */}
                   <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
@@ -834,9 +834,9 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
+                  {/* <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
-                  </div>
+                  </div> */}
                   <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
@@ -998,9 +998,9 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
+                  {/* <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
-                  </div>
+                  </div> */}
                   <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>

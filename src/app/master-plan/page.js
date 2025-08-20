@@ -173,7 +173,7 @@ export default function MasterPlan() {
                       Hafeez Contractor
                     </h2>
                     <p className="pb-0 text-[16px] text-[#5C5F68] font-[400]">
-                      Architect, Alcove
+                    Padma Bhushan Awardee Architect, Alcove
                     </p>
                   </div>
                 </SlideUp>
