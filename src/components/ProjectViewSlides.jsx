@@ -10,7 +10,7 @@ const data = [
     {
         src: '/assets/project_overview_image_1.jpg',
         info: 'Actual Image',
-        title: 'Aerial view'
+        title: 'Aerial View'
     },
     {
         src: '/assets/project_overview_image_2.png',
@@ -30,12 +30,12 @@ const data = [
     {
         src: '/assets/project_overview_image_5.png',
         info: 'Actual Image',
-        title: 'Ghat Eye Level'
+        title: 'Private Ganga Ghat'
     },
     {
         src: '/assets/project_overview_image_6.jpg',
         info: 'Actual Image',
-        title: 'Podium night view'
+        title: 'Podium Night View'
     },
     {
         src: '/assets/project_overview_image_7.jpg',
@@ -45,7 +45,7 @@ const data = [
     {
         src: '/assets/project_overview_image_8.png',
         info: 'Actual Image',
-        title: 'View From French Window'
+        title: 'View from Bedroom'
     },
 ];
 

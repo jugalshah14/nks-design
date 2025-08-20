@@ -33,7 +33,7 @@ const slides = [
   },
   {
     image: "/assets/o5.png",
-    designation: "Advanced revolutionising healthcare services",
+    designation: "Healthcare services in Serampore",
     objectPosition: "object-[50%_50%]",
     imageType: "Stock Image"
   },
@@ -47,7 +47,7 @@ const slides = [
     image: "/assets/o7.png",
     designation: "Affordable leasing rates",
     objectPosition: "object-[50%_50%]",
-    imageType: "Actual Image"
+    imageType: "Stock Image"
   }
 ];
 

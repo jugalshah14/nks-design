@@ -24,7 +24,7 @@ const amenities = [
     },
     {
         number: "4",
-        title: "Unmatched Accessibility",
+        title: "Three-Way Connectivity",
         image: "/assets/t4.png",
         imageType: "Stock Image"
     },

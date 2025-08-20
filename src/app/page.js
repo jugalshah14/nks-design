@@ -91,7 +91,7 @@ export default function Home() {
               <SlideUp delay={0.4}>
                 <h1 className="max-md:px-9 max-md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[100px] font-[400] md:leading-[100px] md:max-w-[635px]">
                   Affordable riverside luxury by the creators of &apos;The
-                  42&apos;
+                  <span className="text-[150px]"> 42</span>&apos;
                 </h1>
               </SlideUp>
             </div>

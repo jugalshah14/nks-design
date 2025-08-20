@@ -107,7 +107,7 @@ export default function WhyAlcove() {
                 Nath Shroff 's expertise continues to inspire our team to push
                 boundaries and exceed expectations. At Alcove Realty, we take
                 pride in having him at the helm of our journey towards
-                excellence and customer satisfaction
+                excellence and customer satisfaction.
               </SlideUp>
             </div>
             <SlideUp delay={0.6} className="flex flex-row w-full">
@@ -201,7 +201,7 @@ export default function WhyAlcove() {
                       Our Journey
                     </h2>
                     <p className="pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]">
-                      Alcove Realty! Spearheaded by its Legendary Founder Shri
+                      Alcove Realty! Spearheaded by its Legendary Founder Shri.
                       Amar Nath Shroff, is the most renowned and trusted name in
                       the sphere of real estate. With Forty glorious years of
                       experience, this ‘3 Generation’ company towers with
@@ -415,15 +415,15 @@ export default function WhyAlcove() {
                 </div>
               </div>
               <div className="flex flex-col justify-center lg:justify-center h-full">
-                <div className="z-20 md:relative md:-bottom-[163px] md:right-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-left">
+                <div className="z-20 md:relative md:-bottom-[186px] md:right-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-left">
                   <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4 max-md:text-center">
                     Know Your <span className="orange-color">Builder</span>
                   </h3>
                   <ul className="space-y-3 text-[14px] md:text-[16px] font-normal leading-[20px] md:leading-[24px]">
                     {[
                       "RERA project registration number",
-                      "No pending RERA complaints; project registered with RERA",
-                      "Area delivered",
+                      "No pending RERA complaints",
+                      "Total Area delivered by the Builder",
                       "Number of projects delivered",
                       "Committed to quality and deadlines",
                       "Awarded builder with strong mission and team",
@@ -475,10 +475,10 @@ export default function WhyAlcove() {
                   </h3>
                   <ul className="space-y-3 text-[14px] md:text-[16px] font-normal leading-[20px] md:leading-[24px]">
                     {[
-                      "MEP consultants who ensure efficient mechanical, electrical, & plumbing systems throughout project.",
-                      "Landscape consultants focused on designing functional and beautiful outdoor environments.",
-                      "Structural consultants dedicated to ensuring the building's strength, safety, and stability.",
-                      "Soil consultants who assess ground conditions for a safe and solid foundation."
+                      "MEP consultants who ensure efficient mechanical, electrical, & plumbing systems throughout project",
+                      "Landscape consultants focused on designing functional and beautiful outdoor environments",
+                      "Structural consultants dedicated to ensuring the building's strength, safety, and stability",
+                      "Soil consultants who assess ground conditions for a safe and solid foundation"
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <Image
@@ -527,8 +527,8 @@ export default function WhyAlcove() {
                   <ul className="space-y-3 text-[14px] md:text-[16px] font-normal leading-[20px] md:leading-[24px]">
                     {[
                       "Architect's background and legacy",
-                      "Architect tie-ups and team",
-                      "Tuning of the builder and architect",
+                      "Architect Team and tie-ups",
+                      "Tuning between the Builder and the Architect",
                       "Number of projects done in the category",
                       "Architect awards and recognitions",
                       "Architects mission"

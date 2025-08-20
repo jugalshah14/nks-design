@@ -36,11 +36,11 @@ const flatsData = {
           unitType: "E/H", 
         },
         {
-          src: "/assets/2bhk2.png",
-          unitType: "F/G",
+          src: "/assets/2bhk3.png",
+          unitType: "E/H",
         },
         {
-          src: "/assets/2bhk3.png",
+          src: "/assets/2bhk2.png",
           unitType: "F/G",
         },
         {

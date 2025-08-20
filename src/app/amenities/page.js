@@ -25,7 +25,7 @@ const amenities = {
       imageType: "Actual Image"
     },
     {
-      title: "Keep yourself fit with our gym & fitness centre",
+      title: "Keep yourself fit with our gym & fitness centre.",
       description:
         "Stay active every day with modern equipment and a refreshing open-air workout space.",
       image: "/assets/GYM.png",
@@ -33,7 +33,7 @@ const amenities = {
     },
     {
       title:
-        "Stay fit and active at Jogging Park with its pristine trails, fitness stations, and revitalizing amenities",
+        "Stay fit and active at Jogging Park with its pristine trails, fitness stations, and revitalizing amenities.",
       description:
         "Enjoy a refreshing run or walk through green trails, with spots to stretch, relax, and recharge.",
       image: "/assets/Jogging.png",
@@ -65,7 +65,7 @@ const amenities = {
     },
     {
       title:
-        "Elevate your lifestyle in our clubhouse, offering diverse amenities for your enjoyment",
+        "Elevate your lifestyle in our clubhouse, offering diverse amenities for your enjoyment.",
       description:
         "Enhance your lifestyle. Our clubhouse, with its diverse amenities, is your hub for enjoyment and leisure.",
       image: "/assets/noon4.png",
@@ -97,7 +97,7 @@ const amenities = {
       imageType: "Actual Image"
     },
     {
-      title: "Explore the depths of spirituality",
+      title: "Explore the depths of spirituality.",
       description:
         "Find your peace. This tranquil setting provides a sacred space for contemplation and spiritual exploration.",
       image: "/assets/evening4.png",
@@ -123,15 +123,15 @@ const amenities = {
     },
     {
       title:
-        "Retail bliss awaits at our outlet facility with diverse stores, exclusive discounts, and a vibrant atmosphere",
+        "Retail bliss awaits at our outlet facility with diverse stores, exclusive discounts, and a vibrant atmosphere.",
       description:
-        "Unlock incredible deals and diverse choices. Experience the vibrant energy and retail bliss at our premier outlet facility.",
+        "Unlock incredible deals and diverse choices. Experience the vibrant energy and retail bliss at triveni omniplex.",
       image: "/assets/night3.png",
       imageType: "Stock Image"
     },
     {
       title:
-        "Elevate your nights with breathtaking views from our viewing deck, offering a panorama, cozy seating, and enchanting ambiance",
+        "Elevate your nights with breathtaking views from our viewing deck, offering a panorama, cozy seating, and enchanting ambiance.",
       description:
         "Breathtaking nights. Panorama, cozy seating, enchanting ambiance from our viewing deck.",
       image: "/assets/night4.png",
@@ -188,7 +188,7 @@ const ClubIcons = [
     image: "/assets/club4.png",
   },
   {
-    label: "Indoor kinds playing zone",
+    label: "Toddler playing zone",
     image: "/assets/club5.png",
   },
   {
@@ -199,10 +199,7 @@ const ClubIcons = [
     label: "AC indoor games",
     image: "/assets/club7.png",
   },
-  {
-    label: "AC home theatre",
-    image: "/assets/club8.png",
-  },
+  { label: "Reading room", image: "/assets/club8.png" },
   {
     label: "Kids pool",
     image: "/assets/club9.png",
@@ -244,38 +241,14 @@ const PodiumIcons = [
   { label: "Reflexology path", image: "/assets/podium2.png" },
   { label: "Floating stage", image: "/assets/podium3.png" },
   { label: "Amphitheater", image: "/assets/podium4.png" },
-  { label: "Swimming Pool", image: "/assets/podium5.png" },
-  {
-    label: "Splash pool side deck with loungers",
-    image: "/assets/podium6.png",
-  },
+  { label: "Splash pool",image: "/assets/podium6.png" },
   { label: "Interactive fountain", image: "/assets/podium7.png" },
   { label: "Fountain plaza", image: "/assets/podium8.png" },
   { label: "Lotus Pond", image: "/assets/podium9.png" },
-  { label: "Common toilet", image: "/assets/podium10.png" },
-  { label: "24/7 Power backup", image: "/assets/podium11.png" },
   { label: "CCTV", image: "/assets/podium12.png" },
-  { label: "MotorCare Function", image: "/assets/podium13.png" },
-  { label: "Disable access and parking", image: "/assets/podium14.png" },
-  { label: "Solar panels", image: "/assets/podium15.png" },
-  { label: "Admin office", image: "/assets/podium16.png" },
-  {
-    label: "Designed for natural light and ventilation",
-    image: "/assets/podium17.png",
-  },
+  { label: "Designed for natural light and ventilation", image: "/assets/podium17.png" },
   { label: "Improved air quality", image: "/assets/podium18.png" },
-  {
-    label: "Modern fire safety & firefighting equipment",
-    image: "/assets/podium19.png",
-  },
-  { label: "Controlled noise pollution", image: "/assets/podium20.png" },
-  {
-    label: "Dedicated space for cycle, 2 wheelers, 4 wheelers",
-    image: "/assets/podium21.png",
-  },
-  { label: "Triple height lobbies", image: "/assets/podium22.png" },
   { label: "Biometrics secured entrance", image: "/assets/podium23.png" },
-  { label: "Reading room", image: "/assets/podium24.png" },
 ];
 
 const groundData = [
@@ -314,7 +287,6 @@ const groundIcons = [
   { label: "Sewage Treatment Plant", image: "/assets/ground3.png" },
   { label: "Private jetty & ferry service", image: "/assets/ground7.png" },
   { label: "Floating Fountain", image: "/assets/ground8.png" },
-  { label: "Drip Irrigation System", image: "/assets/ground9.png" },
   { label: "Drivers seating area", image: "/assets/ground10.png" },
   { label: "Mygate service", image: "/assets/ground11.png" },
   { label: "Visitor car parking space", image: "/assets/ground12.png" },
@@ -324,9 +296,6 @@ const groundIcons = [
   { label: "ATM space", image: "/assets/ground16.png" },
   { label: "Mandir", image: "/assets/ground17.png" },
   { label: "Multiway connectivity", image: "/assets/ground18.png" },
-  { label: "Provision for intercom", image: "/assets/ground19.png" },
-  { label: "Restaurant", image: "/assets/ground20.png" },
-  { label: "240,000 Sq. ft. landscaped podium", image: "/assets/ground21.png" },
 ];
 
 const features = [
@@ -343,11 +312,11 @@ const features = [
     title: "Better ventilation and light in the dwellings",
   },
   {
-    image: "/assets/podium3.svg",
+    image: "/assets/podium4.svg",
     title: "Better sanitation",
   },
   {
-    image: "/assets/podium3.svg",
+    image: "/assets/podium5.svg",
     title:
       "Fuel savings in transit of people to workplaces and associated pollution",
   },

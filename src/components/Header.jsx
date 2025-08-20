@@ -41,6 +41,16 @@ const Header = () => {
     };
   }, [pathname]);
 
+  // Determine which logo to use
+  const getLogoSource = () => {
+    // If it's the home page and not scrolled, use regular logo
+    if (pathname === "/" && !isScrolled) {
+      return "/assets/logo.svg";
+    }
+    // For all other cases (scrolled home page or other pages), use logo-l.svg
+    return "/assets/logo-l.svg";
+  };
+
   return (
     <>
       <header
@@ -89,8 +99,8 @@ const Header = () => {
           <div className="md:h-[48px] md:w-[260px] w-[141px] h-[26px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">
             <Link href="/">
               <Image
-                className="invert-100 logo-image"
-                src="/assets/logo.svg"
+                className="logo-image"
+                src={getLogoSource()}
                 alt="logo"
                 fill
                 priority
@@ -127,7 +137,7 @@ const Header = () => {
                 alt="logo"
                 fill
                   priority
-                  className="invert-100 logo-image"
+                  className="logo-image"
               />
             </Link>
           </div>
@@ -155,10 +165,10 @@ const Header = () => {
           <div className="w-[141px] h-[26px] relative">
             <Link href="/" onClick={toggleDrawer}>
               <Image
-                src="/assets/logo.svg"
+                src="/assets/logo-l.svg"
                 alt="Logo"
                 fill
-                className=" invert-100 object-contain"
+                className="object-contain"
                 priority
               />
             </Link>
