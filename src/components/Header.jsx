@@ -113,6 +113,7 @@ const Header = () => {
             </Link>
             <div className="flex items-center gap-3 md:justify-end">
             <button
+              id="header-schedule-visit"
               onClick={handleScheduleVisit}
               className="h-[40px] w-[100px] md:h-[48px] md:w-[123px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-md action-button flex items-center justify-center"
             >
@@ -132,7 +133,7 @@ const Header = () => {
           </div>
           </div>
 
-          <button className="md:hidden text-[#22252E]" onClick={toggleDrawer}>
+          <button id="mobile-menu-toggle" className="md:hidden text-[#22252E]" onClick={toggleDrawer}>
             <Image
               src="/assets/icons/menu.svg"
               height={24}
@@ -163,6 +164,7 @@ const Header = () => {
             </Link>
           </div>
           <button
+            id="mobile-menu-close"
             onClick={toggleDrawer}
             className="text-gray-600"
             aria-label="Close menu"
@@ -245,6 +247,7 @@ const Header = () => {
             </li>
             <li>
               <button
+                id="mobile-schedule-visit"
                 onClick={handleScheduleVisit}
                 className="text-gray-800 hover:text-blue-500"
               >

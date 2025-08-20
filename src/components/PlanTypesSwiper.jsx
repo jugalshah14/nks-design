@@ -116,6 +116,7 @@ export default function PlanTypesSwiper() {
         <div className="w-[100%] md:w-[360px] z-11 flex items-center justify-around px-1 py-5">
           <div className="h-full flex items-center justify-center">
             <button
+              id="plan-types-swiper-prev"
               className="focus:outline-none  cursor-pointer"
               onClick={handlePrev}
             >
@@ -134,6 +135,7 @@ export default function PlanTypesSwiper() {
           </div>
           <div className="h-full flex items-center justify-center">
             <button
+              id="plan-types-swiper-next"
               className="focus:outline-none cursor-pointer"
               onClick={handleNext}
             >

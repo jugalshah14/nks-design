@@ -50,6 +50,7 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
         <div className="bg-transparent bg-opacity-50 flex flex-col items-center rounded-lg w-full md:w-full lg:w-full relative">
           <div className="md:w-[70%] w-[90%] flex justify-end items-end">
             <button
+              id="construction-gallery-close"
               onClick={onClose}
               className="text-3xl text-white hover:text-gray-800 cursor-pointer"
               aria-label="Close Modal"
@@ -99,6 +100,7 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
           <div className="relative transform bg-[#021642] flex gap-20 items-center justify-center mt-9 p-5">
             <div className="h-full flex items-center justify-center">
               <button
+                id="construction-gallery-prev"
                 className="focus:outline-none cursor-pointer disabled:cursor-auto"
                 onClick={handlePreviousImage}
               >
@@ -115,6 +117,7 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
             </div>
             <div className="h-full flex items-center justify-center disabled:cursor-auto">
               <button
+                id="construction-gallery-next"
                 className="focus:outline-none cursor-pointer"
                 onClick={handleNextImage}
               >

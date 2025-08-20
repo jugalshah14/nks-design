@@ -125,6 +125,7 @@ export default function PlansSection() {
                     <div className="flex items-center">
                       <p className="hidden md:inline text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black shadow-lg mr-2 blur-[6.5px]">{card.price}</p>
                       <button
+                        id="plans-section-know-price-mobile"
                         onClick={handleKnowPriceClick}
                         className="cursor-pointer text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] underline"
                       >
@@ -146,6 +147,7 @@ export default function PlansSection() {
           <div className="flex mt-[44px] z-11 bg-white items-center justify-around px-1 py-5 w-full">
             <div className="h-full flex items-center justify-center">
               <button
+                id="plans-section-prev-mobile"
                 className={`focus:outline-none cursor-pointer ${isMobilePrevDisabled ? 'opacity-30' : ''}`}
                 onClick={handlePrev}
                 disabled={isMobilePrevDisabled}
@@ -156,6 +158,7 @@ export default function PlansSection() {
             <div className="flex gap-2 items-center font-[700] text-black">{mobileIndex + 1} <div className="h-0.5 w-8 bg-[#D9D9D9]" /><div className=' text-black/30'>{cards.length}</div></div>
             <div className="h-full flex items-center justify-center">
               <button
+                id="plans-section-next-mobile"
                 className={`focus:outline-none cursor-pointer ${isMobileNextDisabled ? 'opacity-30' : ''}`}
                 onClick={handleNext}
                 disabled={isMobileNextDisabled}
@@ -195,6 +198,7 @@ export default function PlansSection() {
                 <div className="flex items-center">
                   <p className="hidden md:inline text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black shadow-lg mr-2 blur-[6.5px]">1234</p>
                   <button
+                    id="plans-section-know-price-desktop"
                     onClick={handleKnowPriceClick}
                     className="cursor-pointer text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] underline"
                   >
@@ -238,6 +242,7 @@ export default function PlansSection() {
                 <div className="flex items-center">
                   <p className="hidden md:inline text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black shadow-lg mr-2 blur-[6.5px]">1234</p>
                   <button
+                    id="plans-section-know-price-suite"
                     onClick={handleKnowPriceClick}
                     className="cursor-pointer text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] underline"
                   >
@@ -281,6 +286,7 @@ export default function PlansSection() {
                 <div className="flex items-center">
                   <p className="hidden md:inline text-[20px] md:text-[24px] font-satoshi font-[400] leading-6 md:leading-[33px] text-black shadow-lg mr-2 blur-[6.5px]">1234</p>
                   <button
+                    id="plans-section-know-price-signature"
                     onClick={handleKnowPriceClick}
                     className="cursor-pointer text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] underline"
                   >

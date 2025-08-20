@@ -211,6 +211,7 @@ export default function LifeAtAlcove() {
           {navTabs.map((tab, idx) => (
             <React.Fragment key={tab}>
               <button
+                id={`blogs-nav-${tab.toLowerCase().replace(/\s/g, "-")}`}
                 onClick={() => {
                   setSelectedNav(tab);
                   const element = document.getElementById(

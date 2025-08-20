@@ -90,6 +90,7 @@ export default function TriventSliders() {
             <div className="w-full relative max-w-[190px] z-11 transform bg-[#021642] flex items-center justify-around mt-9 px-1 py-5">
               <div className="h-full flex items-center justify-center">
                 <button
+                  id="trivent-sliders-prev-desktop"
                   className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`}
                   onClick={handlePrev}
                   disabled={isPrevDisabled}
@@ -105,6 +106,7 @@ export default function TriventSliders() {
               </div>
               <div className="h-full flex items-center justify-center">
                 <button
+                  id="trivent-sliders-next-desktop"
                   className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`}
                   onClick={handleNext}
                   disabled={isNextDisabled}
@@ -163,6 +165,7 @@ export default function TriventSliders() {
     <div className="absolute w-full top-[-40px] h-[48px] flex md:hidden relative !z-11 transform bg-[#021642] items-center justify-around px-1 py-5">
         <div className="h-full flex items-center justify-center">
           <button
+            id="trivent-sliders-prev-mobile"
             className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) === 0 ? 'opacity-30' : ''}`}
             onClick={handlePrev}
             disabled={Math.ceil(activeIndex) === 0}
@@ -182,6 +185,7 @@ export default function TriventSliders() {
         </div>
         <div className="h-full flex items-center justify-center">
           <button
+            id="trivent-sliders-next-mobile"
             className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) >= data.length - 1 ? 'opacity-30' : ''}`}
             onClick={handleNext}
             disabled={Math.ceil(activeIndex) >= data.length - 1}

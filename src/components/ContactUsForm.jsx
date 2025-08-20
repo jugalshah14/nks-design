@@ -192,6 +192,7 @@ const ContactUsForm = () => {
           </div>
         </div>
         <button
+          id="contact-form-submit"
           type="submit"
           disabled={isSubmitting}
           className={`min-h-[4rem] h-full max-lg:mx-auto w-[50%] mt-10 relative bg-[#144D78] button-primary transition-all duration-300 rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden ${

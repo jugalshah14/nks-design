@@ -55,7 +55,7 @@ const data = [
         icon1: '/assets/project-icon1.svg',
         icon2: '/assets/project-icon2.svg',
         title: 'Prayag',
-        description: 'A peaceful riverside community where heritage meets comfort, offering a harmonious lifestyle by the Ganges.',
+        description: 'A peaceful riverside community where heritage meets comfort, offering a harmonious lifestyle by the Ganga.',
         category: 'Affordable Luxury Homes',
         location: 'Serampore, Kolkata',
         imageType: 'Artist Impression'

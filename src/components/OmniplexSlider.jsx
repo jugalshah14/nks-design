@@ -17,7 +17,7 @@ const slides = [
     image: "/assets/o2.png",
     designation: "High foot traffic in Serampore",
     objectPosition: "object-[0%_50%]",
-    imageType: "Actual Image"
+    imageType: "Stock Image"
   },
   {
     image: "/assets/o3.jpg",
@@ -110,6 +110,7 @@ export default function OmniplexSlider() {
             </h2>
             <div className="max-w-[190px] relative border border-[rgba(0,0,0,0.2)] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 flex items-center justify-around mt-9 px-1 py-5">
               <button 
+                id="omniplex-slider-prev-desktop"
                 className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`} 
                 onClick={handlePrev}
                 disabled={isPrevDisabled}
@@ -123,6 +124,7 @@ export default function OmniplexSlider() {
                 />
               </button>
               <button 
+                id="omniplex-slider-next-desktop"
                 className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`} 
                 onClick={handleNext}
                 disabled={isNextDisabled}
@@ -185,6 +187,7 @@ export default function OmniplexSlider() {
       {/* Bottom arrows and pagination (mobile only) */}
       <div className="pt-8 flex md:hidden relative -top-2 z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding items-center justify-around px-1 py-5">
         <button 
+          id="omniplex-slider-prev-mobile"
           className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) === 0 ? 'opacity-30' : ''}`} 
           onClick={handlePrev}
           disabled={Math.ceil(activeIndex) === 0}
@@ -202,6 +205,7 @@ export default function OmniplexSlider() {
           <div className="h-0.5 w-8 bg-[#D9D9D9]" /> <div className="text-black/30">{slides.length}</div>
         </div>
         <button 
+          id="omniplex-slider-next-mobile"
           className={`focus:outline-none cursor-pointer ${Math.ceil(activeIndex) >= slides.length - 1 ? 'opacity-30' : ''}`} 
           onClick={handleNext}
           disabled={Math.ceil(activeIndex) >= slides.length - 1}

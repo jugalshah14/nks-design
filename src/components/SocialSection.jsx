@@ -12,7 +12,7 @@ const amenities = [
     },
     {
         number: "2",
-        title: "Save the Ganges ",
+        title: "Save the Ganga ",
         description: "Everybody longs for a lifestyle that relishes their body.",
         image: "/assets/corporate1.png", // replace with actual image path
     },

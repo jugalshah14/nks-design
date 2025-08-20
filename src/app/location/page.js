@@ -17,6 +17,13 @@ import ScheduleVisitModal from "@/components/ScheduleVisitModal";
 
 const seramporeData = [
   {
+    src: "/assets/temple.png",
+    icon: "/assets/icons/temple.svg",
+    title: "Mahesh Temple",
+    description: "350mtr away",
+    backgroundImage: "/assets/mahesh-temple.png",
+  },
+  {
     src: "/assets/collage.png",
     icon: "/assets/icons/graduation-hat.svg",
     title: "Serampore College",
@@ -36,20 +43,6 @@ const seramporeData = [
     title: "Serampore Railway Station",
     description: "2.5km away",
     backgroundImage: "/assets/railway-bg.png",
-  },
-  {
-    src: "/assets/court.png",
-    icon: "/assets/icons/court.svg",
-    title: "Serampore Court",
-    description: "2km away",
-    backgroundImage: "/assets/court-bg.png",
-  },
-  {
-    src: "/assets/temple.png",
-    icon: "/assets/icons/temple.svg",
-    title: "Mahesh Temple",
-    description: "350mtr away",
-    backgroundImage: "/assets/mahesh-temple.png",
   },
 ];
 export default function Location() {
@@ -266,7 +259,7 @@ export default function Location() {
                     </SlideUp>
                     <SlideUp delay={0.6}>
                       <Link href="/location">
-                        <button className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
+                        <button id="location-learn-more" className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                           <div className="px-6 py-3 mr-20">Learn More</div>
                           <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
                             ↗
@@ -361,6 +354,7 @@ export default function Location() {
           <SlideUp delay={0.8}>
             <div className="flex md:hidden justify-center relative -top-7">
               <button
+                id="location-schedule-visit-mobile"
                 onClick={handleScheduleVisit}
                 className="md:min-h-[4rem] min-h-[3.5rem] rounded-md h-full inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary"
               >

@@ -91,6 +91,7 @@ export default function MasterPlanSwiper() {
             <div className="relative max-w-[190px] border border-[#E9E9EA] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
               <div className="h-full flex items-center justify-center">
                 <button
+                  id="masterplan-swiper-prev-desktop"
                   className={`focus:outline-none cursor-pointer ${isDesktopPrevDisabled ? 'opacity-30' : ''}`}
                   onClick={handlePrev}
                   disabled={isDesktopPrevDisabled}
@@ -106,6 +107,7 @@ export default function MasterPlanSwiper() {
               </div>
               <div className="h-full flex items-center justify-center">
                 <button
+                  id="masterplan-swiper-next-desktop"
                   className={`focus:outline-none cursor-pointer ${isDesktopNextDisabled ? 'opacity-30' : ''}`}
                   onClick={handleNext}
                   disabled={isDesktopNextDisabled}
@@ -160,6 +162,7 @@ export default function MasterPlanSwiper() {
       <div className="flex md:hidden relative top-0 z-11 transform bg-[#e7edf2] bg-clip-padding items-center justify-around px-1 py-4">
         <div className="h-full flex items-center justify-center">
           <button
+            id="masterplan-swiper-prev-mobile"
             className={`focus:outline-none cursor-pointer ${isMobilePrevDisabled ? 'opacity-30' : ''}`}
             onClick={handlePrev}
             disabled={isMobilePrevDisabled}
@@ -179,6 +182,7 @@ export default function MasterPlanSwiper() {
         </div>
         <div className="h-full flex items-center justify-center">
           <button
+            id="masterplan-swiper-next-mobile"
             className={`focus:outline-none cursor-pointer ${isMobileNextDisabled ? 'opacity-30' : ''}`}
             onClick={handleNext}
             disabled={isMobileNextDisabled}

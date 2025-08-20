@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { submitContactForm } from "../utils/api";
 
 // Define form schema with validation
 const formSchema = z.object({
@@ -48,54 +49,22 @@ export default function Footer() {
   });
 
   const onSubmit = async (data) => {
-    const requestData = {
-      Leads: [
-        {
-          FName: data.name,
-          LName: data.name,
-          Phone: data.phoneNumber,
-          City: "Kolkata",
-          project: "NEW KOLKATA - SANGAM",
-          Email: data.email,
-          Campaign: "G_Generic_WB_08-Feb-2023",
-          Source: "google",
-          Medium: "s",
-          Content: "",
-          Term: data.requirements || "",
-        },
-      ],
-    };
-    console.log('🚀 ~ onSubmit ~ requestData:', requestData);
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      const response = await fetch(
-        "https://alcoverealty.my.salesforce-sites.com/websitehook/services/apexrest/hookinlandingPage",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestData),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      await response.json();
+      const result = await submitContactForm(data);
+      
       setSubmitStatus({
         success: true,
-        message: "Thank you! Your message has been sent successfully.",
+        message: result.message,
       });
       reset();
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitStatus({
         success: false,
-        message: "Something went wrong. Please try again later.",
+        message: error.message || "Something went wrong. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
@@ -282,6 +251,7 @@ export default function Footer() {
                 </div>
               </div>
               <button
+                id="footer-form-submit"
                 type="submit"
                 disabled={isSubmitting}
                 className={`md:min-h-[4rem] max-md:w-[90%] min-h-[3.5rem] h-full max-lg:mx-auto w-[70%] mt-5 md:mt-10 relative bg-[#144D78] button-primary transition-all duration-300 rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden ${

@@ -59,7 +59,7 @@ export default function RetailCards() {
                         className={`relative ${index % 2 === 1 ? 'top-10' : ''} ${(index === 1 || index === 4) ? 'md:top-14' : ''} space-y-[12px] md:space-y-5 md:pl-[40px] md:pr-[10px]`}
                         >
                         <div className='absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300'></div>
-                        <div className="md:text-[30px] md:leading-[28px] max-md:text-center text-[20px] font-cormorant leading-7 orange-color font-semibold md:text-lg">{item.number}</div>
+                        {/* <div className="md:text-[30px] md:leading-[28px] max-md:text-center text-[20px] font-cormorant leading-7 orange-color font-semibold md:text-lg">{item.number}</div> */}
                      <h3 className="justify-center flex md:justify-start text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi leading-[24px] h-[40px] md:h-auto flex items-center">
                     {item.title}
                     </h3>

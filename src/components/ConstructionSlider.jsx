@@ -416,6 +416,7 @@ const ConstructionSlider = () => {
           <div className="w-[100%] md:w-[360px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around px-1 py-5">
             <div className="h-full flex items-center justify-center">
               <button
+                id="construction-slider-prev-mobile"
                 className={`focus:outline-none cursor-pointer ${
                   isMobilePrevDisabled ? "opacity-30" : ""
                 }`}
@@ -437,6 +438,7 @@ const ConstructionSlider = () => {
             </div>
             <div className="h-full flex items-center justify-center">
               <button
+                id="construction-slider-next-mobile"
                 className={`focus:outline-none cursor-pointer ${
                   isMobileNextDisabled ? "opacity-30" : ""
                 }`}

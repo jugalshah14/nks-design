@@ -104,7 +104,7 @@ export default function page() {
                 />
                 <span>Your Email Address*</span>
               </label>
-              <button className="px-6 py-3 ml-auto orange-color bg-[#002F52] text-lg relative flex items-center justify-center">
+              <button id="newsletter-subscribe" className="px-6 py-3 ml-auto orange-color bg-[#002F52] text-lg relative flex items-center justify-center">
                 <Image
                   src="/assets/icons/white-check.svg"
                   alt="white-check"

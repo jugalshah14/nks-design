@@ -144,7 +144,7 @@ const clubhouseData = [
   {
     title: "Infinity Swimming pool",
     description:
-      "Take a refreshing dip while soaking in uninterrupted views of the Ganges, surrounded by serene palm-lined decks and the sound of stillness.",
+      "Take a refreshing dip while soaking in uninterrupted views of the Ganga, surrounded by serene palm-lined decks and the sound of stillness.",
     image: "/assets/Swimming-pool.png",
     imageType: "Artist Impression"
   },
@@ -289,7 +289,7 @@ const groundData = [
   {
     title: "Riverside Gazebo",
     description:
-      "Relax by the Ganges under elegant gazebos that offer panoramic views, fresh breezes, and the perfect retreat from routine.",
+      "Relax by the Ganga under elegant gazebos that offer panoramic views, fresh breezes, and the perfect retreat from routine.",
     image: "/assets/mandir.png",
     imageType: "Actual Image"
   },
@@ -552,9 +552,9 @@ export default function Amenities() {
                 } space-y-4 md:px-5 px-0`}
               >
                 <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300 opacity-20"></div>
-                <div className="text-[20px] font-cormorant leading-7 orange-color font-normal md:text-lg md:mb-6 mb-3">
+                {/* <div className="text-[20px] font-cormorant leading-7 orange-color font-normal md:text-lg md:mb-6 mb-3">
                   {index + 1}
-                </div>
+                </div> */}
                 <h3 className="text-white text-left text-[18px] md:text-[24px] font-bold font-satoshi md:mb-6 mb-3">
                   {item.title}
                 </h3>
@@ -630,6 +630,7 @@ export default function Amenities() {
             {navTabs.map((tab, idx) => (
               <React.Fragment key={tab}>
                 <button
+                  id={`amenities-nav-${tab.toLowerCase().replace(/\s/g, "-")}`}
                   onClick={() => {
                     setSelectedNav(tab);
                     const element = document.getElementById(
@@ -702,9 +703,9 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
+                  {/* <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
-                  </div>
+                  </div> */}
                   <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
@@ -833,9 +834,9 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
+                  {/* <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
-                  </div>
+                  </div> */}
                   <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
@@ -997,9 +998,9 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
+                  {/* <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
-                  </div>
+                  </div> */}
                   <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
@@ -1281,6 +1282,7 @@ export default function Amenities() {
             {/* View Certification Button */}
             <AnimatedSection className="flex justify-center relative bottom-7 md:bottom-0 md:top-27 overflow-visible">
               <button
+                id="amenities-view-certification"
                 onClick={() => setIsModalOpen(true)}
                 className="md:min-h-[4rem] min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden mb-0 button-primary"
               >
@@ -1372,6 +1374,7 @@ export default function Amenities() {
             {accordionData.map((item, index) => (
               <div key={index} className="mb-4 rounded-md bg-white p-4">
                 <button
+                  id={`amenities-faq-accordion-${index}`}
                   className="w-full flex justify-between items-center font-satoshi font-bold text-left text-gray-900 cursor-pointer"
                   onClick={() => toggleIndex(index)}
                 >
