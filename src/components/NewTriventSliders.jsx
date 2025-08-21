@@ -58,7 +58,7 @@ const data = [
   {
     title: "Transforming hospitality in Hooghly district",
     image: "/assets/n9.png",
-    desc: "Room for a 90-key hotel on the 8th and 9th ﬂoor.",
+    desc: "Room for a 88-key hotel on the 8th and 9th ﬂoor.",
     imageType: "Stock Image"
   }
 ];

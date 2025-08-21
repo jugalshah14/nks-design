@@ -38,7 +38,7 @@ const data = [
         description: 'Soak in the charm of water gardens, green landscapes, and amenities crafted for a balanced lifestyle.',
         category: 'Luxury with Nature-Inspired Living',
         location: 'Topsia, Kolkata',
-        imageType: 'Artist Impression'
+        imageType: 'Actual Image'
     },
     {
         src: '/assets/project4.png',
@@ -58,7 +58,7 @@ const data = [
         description: 'A peaceful riverside community where heritage meets comfort, offering a harmonious lifestyle by the Ganga.',
         category: 'Affordable Luxury Homes',
         location: 'Serampore, Kolkata',
-        imageType: 'Artist Impression'
+        imageType: 'Actual Image'
     },
 ]
 
@@ -143,7 +143,7 @@ export default function PastProjectSwiper() {
                             <div className='w-full flex flex-col bg-[#0C162B] md:mt-[40px]'>
                                 <div className='p-[16px] md:p-[36px] relative'>
                                     <div className='md:mt-[32px] absolute w-full top-[-65px] md:top-0 flex items-start justify-start mb-[28px] left-0 bg-black/70 md:bg-transparent backdrop-filter backdrop-blur-[5px] bg-opacity-80'>
-                                        <div className='w-full projectslide-title py-[20px] md:px-[27px] px-5 transforming-text font-[400] md:text-[40px] text-[24px] md:leading-[48px] leading-[28px] whitespace-nowrap'>
+                                        <div className='w-full projectslide-title !font-satoshi py-[20px] md:px-[27px] px-5 transforming-text font-[400] md:text-[40px] text-[24px] md:leading-[48px] leading-[28px] whitespace-nowrap'>
                                             {slide.title}
                                         </div>        
                                     </div>

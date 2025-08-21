@@ -73,6 +73,11 @@ body::-webkit-scrollbar {
   filter: none;
 }
 
+/* Remove filter for logo since we're using different logo files */
+.home-page-header .logo-image {
+  filter: none !important;
+}
+
 .home-page-header .menu-button {
   filter: none;
 }

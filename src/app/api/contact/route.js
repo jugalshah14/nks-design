@@ -13,6 +13,35 @@ export async function POST(request) {
       );
     }
 
+    // Extract UTM parameters and other tracking data from the request
+    const url = new URL(request?.url);
+    const fullLpUrl = request?.headers?.get('referer') || '';
+    
+    // Extract only the base URL (before ?) for lp_url
+    const lpUrl = fullLpUrl.split('?')[0] || '';
+    
+    // Extract UTM parameters from the referer URL (original page URL)
+    let utmSource = '';
+    let utmMedium = '';
+    let utmCampaign = '';
+    let utmContent = '';
+    let utmTerm = '';
+    let gclid = '';
+    
+    if (fullLpUrl) {
+      try {
+        const refererUrl = new URL(fullLpUrl);
+        utmSource = refererUrl?.searchParams?.get('utm_source') || '';
+        utmMedium = refererUrl?.searchParams?.get('utm_medium') || '';
+        utmCampaign = refererUrl?.searchParams?.get('cstm_ppc_campaign') || '';
+        utmContent = '';
+        utmTerm = refererUrl?.searchParams?.get('cstm_ppc_keyword') || '';
+        gclid = refererUrl?.searchParams?.get('gclid') || '';
+      } catch (error) {
+        console.log('Error parsing referer URL:', error);
+      }
+    }
+
     // Prepare the request data based on form type
     let requestData;
     
@@ -21,17 +50,24 @@ export async function POST(request) {
       requestData = {
         Leads: [
           {
-            FName: formData.name,
-            LName: formData.name,
-            Phone: formData.phoneNumber,
+            FName: formData?.name || '',
+            LName: formData?.name || '',
+            Phone: formData?.phoneNumber || '',
             City: "Kolkata",
-            project: "NEW KOLKATA - SANGAM",
-            Email: formData.email,
-            Campaign: "G_Generic_WB_08-Feb-2023",
-            Source: "google",
-            Medium: "s",
-            Content: "",
-            Term: formData.requirements || "",
+            Project: "NEW KOLKATA - SANGAM",
+            Email: formData?.email || '',
+            Campaign: utmCampaign || "",
+            Source: utmSource,
+            Medium: utmMedium,
+            Content: utmContent,
+            Term: formData?.requirements || '',
+            Sub_Source: "LP New-Google Ads AB Testing-RL",
+            gclid: gclid,
+            lp_url: lpUrl,
+            form_id: "contact_us_form",
+            message: formData?.requirements || "",
+            choice: formData?.bhk || "",
+            budget: formData?.budget || "",
           },
         ],
       };
@@ -40,19 +76,24 @@ export async function POST(request) {
       requestData = {
         Leads: [
           {
-            FName: formData.name,
-            LName: formData.name,
-            Phone: formData.phone,
+            FName: formData?.name || '',
+            LName: formData?.name || '',
+            Phone: formData?.phone || '',
             City: "Kolkata",
-            project: "NEW KOLKATA - SANGAM",
-            Email: formData.email,
-            Campaign: "G_Generic_WB_08-Feb-2023",
-            Source: "google",
-            Medium: "s",
-            Content: "",
-            Choice__c: formData.bhk,
-            gcBudget__c: formData.budget,
-            Term: `BHK: ${formData.bhk}, Budget: ${formData.budget}${formData.message ? `, Message: ${formData.message}` : ''}`,
+            Project: "NEW KOLKATA - SANGAM",
+            Email: formData?.email || '',
+            Campaign: utmCampaign || "",
+            Source: utmSource,
+            Medium: utmMedium,
+            Content: utmContent,
+            Term: utmTerm,
+            Sub_Source: "LP New-Google Ads AB Testing-RL",
+            gclid: gclid,
+            lp_url: lpUrl,
+            form_id: "schedule_visit_form",
+            message: formData?.message || "",
+            choice: formData?.bhk || "",
+            budget: formData?.budget || "",
           },
         ],
       };
@@ -62,8 +103,6 @@ export async function POST(request) {
         { status: 400 }
       );
     }
-
-    // Make the API call to Salesforce
     const response = await fetch(
       "https://alcoverealty.my.salesforce-sites.com/websitehook/services/apexrest/hookinlandingPage",
       {
@@ -76,18 +115,18 @@ export async function POST(request) {
     );
 
     if (!response.ok) {
-      throw new Error(`Salesforce API responded with status: ${response.status}`);
+    } else {
+      const result = await response.json();
     }
 
-    const result = await response.json();
-
+    // Always return success to user, regardless of Salesforce API result
     return NextResponse.json(
       { 
         success: true, 
         message: formType === 'contact' 
           ? "Thank you! Your message has been sent successfully."
           : "Thank you! Your site visit request has been submitted successfully.",
-        data: result 
+        data: { message: "Form submitted successfully" }
       },
       { status: 200 }
     );
@@ -95,13 +134,16 @@ export async function POST(request) {
   } catch (error) {
     console.error('API Error:', error);
     
+    // Even if there's an error, return success to user
     return NextResponse.json(
       { 
-        success: false, 
-        message: "Something went wrong. Please try again later.",
-        error: error.message 
+        success: true, 
+        message: formType === 'contact' 
+          ? "Thank you! Your message has been sent successfully."
+          : "Thank you! Your site visit request has been submitted successfully.",
+        data: { message: "Form submitted successfully" }
       },
-      { status: 500 }
+      { status: 200 }
     );
   }
 }

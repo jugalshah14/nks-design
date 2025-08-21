@@ -95,7 +95,7 @@ export default function triveni() {
                     <SlideUp delay={0.2} className='text-center md:text-left text-white text-[16px] md:text-[20px] leading-[20px] md:leading-[28px] font-[400] font-satoshi pb-[20px] md:pb-[16px]'>Your gateway to exponential growth</SlideUp>
                     <SlideUp delay={0.4}>
                       <p className="text-center md:text-left max-w-[1200px] w-full transforming-text font-[300] text-[24px] md:text-[56px] leading-[28px] md:leading-[72px] lg:text-[40px] lg:leading-[48px]">
-                        {`Triveni Omniplex offers a complete destination for shopping, dining, entertainment, and healthcare, presenting brands with a prime opportunity to grow in a rapidly developing region.`}
+                        {`Triveni Omniplex offers a complete destination for shopping, dining, entertainment, workspace and healthcare, presenting brands with a prime opportunity to grow in a rapidly developing region.`}
                       </p>
                     </SlideUp>
                   </div>
@@ -398,7 +398,7 @@ export default function triveni() {
                                         <Image src="/assets/people.svg" width={40} height={30} alt="house" className="mt-2" />
                                         <div className='flex flex-col items-baseline h-full'>
                                             <h2 className='text-[18px] leading-[24px] md:text-[24px] md:leading-[28px] font-satoshi font-[700]'>Catchment Area</h2>
-                                            <p className='pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]'>High footfall driven by local businesses, educational hubs, and major cultural festivities like Durga Puja, Mahesh Rathyatra and Rath Yatra.</p>
+                                            <p className='pt-[8px] max-w-[400px] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] font-satoshi font-[400]'>High footfall driven by local businesses, educational hubs, and major cultural festivities like Durga Puja, Mahesh Rath Yatra.</p>
                                         </div>
                                     </div>
                                     <Image src="/assets/pink-tri.svg" width={28} height={88} alt="blue triangle" className="rotate-180 none-md" />

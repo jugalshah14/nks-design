@@ -29,7 +29,7 @@ const data = {
       src: "/assets/3bhkv.png",
     },
     {
-      src: "/assets/3bhkv1.png",
+      src: "/assets/3bhkv1.jpg",
     },
   ],
   "4BHK": [

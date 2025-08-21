@@ -92,8 +92,7 @@ export default function ReviewsSection() {
                 height={3}
                 className="pb-3"
               />
-              They planned for the future—but their dream home came sooner. Hear
-              how early delivery made their journey unforgettable.
+              They envisioned their future, but their dream home arrived ahead of schedule. Discover how this early delivery transformed their experience into something truly memorable.
             </div>
           </div>
         </div>
@@ -265,8 +264,7 @@ export default function ReviewsSection() {
                 height={3}
                 className="pb-3"
               />
-              It is more than just a brand. They placed their trust in New
-              Kolkata—and found it was well earned.
+              New Kolkata has proven to be a trustworthy choice. It is not just a brand for us it is our home.
             </div>
           </div>
 

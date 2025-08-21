@@ -86,11 +86,10 @@ export default function lifeAtAlcove() {
                 </div>
               </div>
               <div className="flex flex-col justify-center lg:justify-center h-full">
-                <div className="z-20 md:relative md:-bottom-[300px] md:right-[70px] max-w-md bg-[#020C22] p-5 md:p-10 text-white font-satoshi text-[24px] md:text-[40px] font-normal leading-[28px] md:leading-[48px] text-center md:text-left flex h-auto">
+                <div className="z-20 md:relative md:-bottom-[350px] md:right-[70px] max-w-md bg-[#020C22] p-5 md:p-10 text-white font-satoshi text-[24px] md:text-[40px] font-normal leading-[28px] md:leading-[48px] text-center md:text-left flex h-auto">
                   <span>
-                    Make everyday living effortless with our{" "}
-                    <span className="orange-color">Convenience</span> for
-                    Residence scheme.
+                  Make everyday{" "}
+                    <span className="orange-color">living effortless </span>at New Kolkata Sangam.
                   </span>
                 </div>
               </div>
@@ -125,7 +124,7 @@ export default function lifeAtAlcove() {
                   </div>
                   <div className="w-full absolute bottom-0 left-0 max-md:text-center p-3 md:p-5 backdrop-blur-[34px] font-semibold z-10">
                     <span className="text-white md:font-bold text-[18px] md:text-[24px] md:leading-7 leading-6 md:pl-10 pl-0">
-                      Experience the thrill of our nature exploring events!
+                    Experience the serenity of mornings by the Ganga.
                     </span>
                   </div>
                 </div>

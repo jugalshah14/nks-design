@@ -355,12 +355,7 @@ export default function Footer() {
                   FAQs
                 </div>
               </a>
-                <a className="cursor-pointer" href="/#">
-                  <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
-                    Terms of Service
-                  </div>
-                </a>{" "}
-                <a className="cursor-pointer" href="/#">
+                <a className="cursor-pointer" href="/privacy-policy">
                   <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
                     Privacy Policy
                   </div>

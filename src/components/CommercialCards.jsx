@@ -24,6 +24,13 @@ const amenities = [
         description: "",
         image: "/assets/c3.jpg",
         imageType: "Stock Image"
+    },
+    {
+        number: "4",
+        title: "Office Workspace",
+        description: "",
+        image: "/assets/c4.png",
+        imageType: "Stock Image"
     }
 ];
 
@@ -31,11 +38,11 @@ const amenities = [
 export default function CommercialCards() {
     return (
         <SlideUp delay={0.6} className="relative text-white container mx-auto justify-center items-center flex">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-[23px] md:gap-[40px] mb-3 md:mb-20 justify-center items-center w-fit">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-[23px] md:gap-[40px] mb-3 md:mb-20 justify-center items-center w-fit">
                 {amenities.map((item, index) => (
                     <div
                         key={item.number}
-                        className={`relative  ${index === 2 ? 'min-w-[160px] col-span-2 mt-[40px] md:mt-0 md:col-span-1 mx-auto' : ''}  ${(index === 1 || index === 4) ? 'top-10 md:top-14' : ''} space-y-2 md:space-y-5 md:pl-[40px] md:pr-[10px]`}
+                        className={`relative ${index === 2 ? 'min-w-[160px] col-span-2 mt-[40px] md:mt-0 md:col-span-1 mx-auto' : ''} ${(index === 1 || index === 3) ? 'top-10 md:top-14' : ''} space-y-2 md:space-y-5 md:pl-[40px] md:pr-[10px]`}
                     >
                         <div className='absolute h-[65%] left-[-5px] md:border-l md:border-dashed md:border-gray-300'></div>
                         {/* <div className="md:text-[30px] md:leading-[28px] max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">{item.number}</div> */}
