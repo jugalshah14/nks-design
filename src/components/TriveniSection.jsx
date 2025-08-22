@@ -25,7 +25,7 @@ const amenities = [
     {
         number: "4",
         title: "Three-Way Connectivity",
-        image: "/assets/t4.png",
+        image: "/assets/o6.png",
         imageType: "Stock Image"
     },
 ];
