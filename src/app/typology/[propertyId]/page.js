@@ -150,7 +150,7 @@ export default function PropertyPage({ params }) {
               <div className="flex-1 order-first lg:order-none relative">
                 <SlideUp delay={0.6}>
                   <div className="relative w-full h-[486px] overflow-visible">
-                    <img
+                    <Image
                       src="/assets/typology-buildings.png"
                       alt={`${propertyData.projectOverview.title} in Serampore`}
                       className="w-full h-full object-cover"
