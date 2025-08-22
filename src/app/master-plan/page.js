@@ -1,17 +1,525 @@
-import React from 'react'
+"use client";
+import React from "react";
+import Image from "next/image";
+import MasterplanSwiper from "@/components/MasterplanSwiper";
+import BrochureSection from "@/components/BrochureCard";
+import ProjectViewSlides from "@/components/ProjectViewSlides";
+import SangamSliders from "@/components/SangamSliders";
+import Blogs from "@/components/Blogs";
+import ConstructionSlider from "@/components/ConstructionSlider";
+import PastProjectSwiper from "@/components/PastProjectSwiper";
+import { AnimatedSection, FadeIn, SlideUp } from "@/components/animations";
+import Link from "next/link";
 
 export default function MasterPlan() {
   return (
-    <main className='bg-[#5C5F68]'>
-      <section id="Hero_Section" className="relative h-screen">
-        <div className="absolute inset-0 flex flex-col justify-center">
-          <div className="container max-w-7xl mx-auto">
-            <h1 className="hero-section-title text-white text-[100px] font-normal leading-[100px] max-w-[635px]">
-              Master Plan Page
-            </h1>
+    <main>
+      {/* Hero Section */}
+      <SlideUp>
+        <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
+          <SlideUp delay={0.4}>
+            <div className="text-center pb-4 md:pb-0">
+              <span className="text-[#22252e] font-bold text-[20px]">
+                • Home
+              </span>
+              <span className="mx-2">—</span>
+              <span className="text-[#5c5f68] font-normal text-[20px]">
+                Master Plan
+              </span>
+            </div>
+          </SlideUp>
+        </section>
+      </SlideUp>
+
+      <section className=" no-negative-margin">
+        <SlideUp delay={0.8}>
+          <div className="container mx-auto">
+            <div className="relative w-full md:h-[460px] h-[265px]">
+              <Image
+                src="/assets/master-plan.png"
+                alt="Hero-img"
+                fill
+                priority
+              />
+            </div>
+            <div className="z-20 flex text-center items-center justify-center relative p-[10px] -mt-12 mx-2 md:mx-[80px]  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
+              <h2 className="text-center project-overview-title mobile-title max-w-[800px]">
+                Seamless living in a thoughtfully designed{" "}
+                <span className="orange-color">Masterplans</span>
+              </h2>
+            </div>
+          </div>
+        </SlideUp>
+      </section>
+
+      <section>
+        <div className="">
+          <div className="container px-[16px] md:px-10 mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 py-[60px] md:py-20 bg-white">
+            <SlideUp delay={0.2} className="flex flex-col items-center">
+              <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
+                <Image
+                  src="/assets/icons/Towers.svg"
+                  width={68}
+                  height={68}
+                  alt="Connectivity"
+                  className="w-[52px] h-[52px] md:w-[68px] md:h-[68px]"
+                />
+              </div>
+              <h3 className="text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
+                15
+              </h3>
+              <p className="text-[18px] md:text-[20px] font-satoshi font-normal leding-[24px] md:leading-[27px] text-[#22252e] text-center">
+                Total Towers
+              </p>
+            </SlideUp>
+
+            <SlideUp delay={0.4} className="flex flex-col items-center">
+              <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
+                <Image
+                  src="/assets/icons/Building-Nature.svg"
+                  width={68}
+                  height={68}
+                  alt="Clubhouse"
+                  className="w-[52px] h-[52px] md:w-[68px] md:h-[68px]"
+                />
+              </div>
+              <h3 className="text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
+                27
+              </h3>
+              <p className="text-[18px] md:text-[20px] font-satoshi font-normal leding-[24px] md:leading-[28px] text-[#22252e] text-center">
+                Highest number of <br /> Floors
+              </p>
+            </SlideUp>
+
+            <SlideUp delay={0.6} className="flex flex-col items-center">
+              <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
+                <Image
+                  src="/assets/icons/area_of_project.svg"
+                  width={68}
+                  height={68}
+                  alt="Project Area"
+                  className="w-[52px] h-[52px] md:w-[68px] md:h-[68px]"
+                />
+              </div>
+              <h3 className="text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
+                65+
+              </h3>
+              <p className="text-[18px] md:text-[20px] font-satoshi font-normal leding-[24px] md:leading-[27px] text-[#22252e] text-center">
+                Amenities
+              </p>
+            </SlideUp>
+
+            <SlideUp delay={0.8} className="flex flex-col items-center">
+              <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
+                <Image
+                  src="/assets/icons/Double-Bed.svg"
+                  width={68}
+                  height={68}
+                  alt="Garden and Ghat"
+                  className="w-[52px] h-[52px] md:w-[68px] md:h-[68px]"
+                />
+              </div>
+              <h3 className="text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
+                4
+              </h3>
+              <p className="text-[18px] md:text-[20px] font-satoshi font-normal leding-[24px] md:leading-[28px] text-[#22252e] text-center">
+                Types of BHKs
+              </p>
+            </SlideUp>
           </div>
         </div>
       </section>
+
+      {/* Architect Eye Section */}
+      <section>
+        <div className="relative certification-section pt-[40px] md:pt-20 mb-15">
+          <Image
+            src="/assets/Rectangl_Left.png"
+            width={80}
+            height={307}
+            alt="Rectangle_left"
+            className="absolute top-0 h-[100%] left-0 hide-triangle"
+          />
+          <div className="flex flex-col md:flex-row justify-between relative container mx-auto px-[16px] md:px-24 gap-[36px] md:gap-12">
+            <div className="text-center md:text-left w-full md:pt-10">
+              <SlideUp
+                delay={0.4}
+                className="project-overview-title text-center md:text-left"
+              >
+                From <br />
+                <span className="orange-color"> Architect’s </span> Eye
+              </SlideUp>
+            </div>
+            <SlideUp delay={0.6} className="flex flex-row">
+              <Image
+                src="/assets/Rectangle_right.png"
+                width={80}
+                height={307}
+                alt="Rectangle_left"
+                className="h-[100%] hide-triangle"
+              />
+              <div className="bg-white pb-0 p-[24px] md:p-12 w-full">
+                <SlideUp delay={0.8} className="flex flex-row gap-8">
+                  <div>
+                    <Image
+                      src="/assets/hafeez.svg"
+                      width={60}
+                      height={60}
+                      alt="img"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="text-[#22252E] text-[18px] md:text-[24px] font-[700]">
+                      Hafeez Contractor
+                    </h2>
+                    <p className="pb-0 text-[16px] text-[#5C5F68] font-[400]">
+                    Padma Bhushan Awardee Architect
+                    </p>
+                  </div>
+                </SlideUp>
+                <SlideUp
+                  delay={1}
+                  className="text-[16px] md:text-[20px] font-satoshi font-normal leading-[20px] md:leading-[28px] text-[#22252e] mb-2 py-[20px] md:pt-10"
+                >
+                  New Kolkata aims to provide affordable homes with great design and comfort. Each flat offers Ganga views and ventilation, ensuring a high-end living experience at accessible prices.
+                </SlideUp>
+              </div>
+            </SlideUp>
+          </div>
+        </div>
+      </section>
+      <SlideUp
+        delay={0.2}
+        className="w-full flex justify-center items-center none-md flex-row gap-4 justify-between items-center  pb-[36px]"
+      >
+        <Image
+          src="/assets/line1.svg"
+          alt="Previous"
+          height={20}
+          width={10}
+          className="w-[60px]"
+        />
+        <h1 className="text-center text-[28px] leading-[32px] font-satoshi font-[400]">
+          Primary goals
+          <br /> we were having
+        </h1>
+        <Image
+          src="/assets/line1.svg"
+          alt="Previous"
+          height={20}
+          width={10}
+          className="w-[60px]"
+        />
+      </SlideUp>
+      <AnimatedSection delay={0.4}>
+        <MasterplanSwiper />
+      </AnimatedSection>
+
+      {/* map section */}
+      <section>
+        <div className="container px-10 mx-auto">
+          <div className="text-center w-full pb-12">
+            <SlideUp delay={0.4} className="project-overview-title text-center">
+              NewKolkata’s <span className="orange-color">Masterplan</span>
+            </SlideUp>
+          </div>
+        </div>
+        <FadeIn delay={0.6} className="relative w-full h-auto aspect-[2/1]">
+          <Image
+            src="/assets/map.png"
+            alt="img"
+            fill
+            className="object-fit select-none no-drag"
+          />
+        </FadeIn>
+      </section>
+
+      {/* specifications */}
+      <section>
+        <div className="container mx-auto py-20 gap-[37px] md:gap-12 flex flex-col">
+          <div className="text-center w-full">
+            <SlideUp delay={0.4} className="project-overview-title text-center">
+              NewKolkata’s <span className="orange-color">Specifications</span>
+            </SlideUp>
+          </div>
+          <div>
+            {/* Grid Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] md:gap-10">
+              {/* Structure */}
+              <SlideUp
+                delay={0.6}
+                className=" pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
+              >
+                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-start justify-start">
+                  <Image
+                    src="/assets/icons/Structure.svg"
+                    width={68}
+                    height={68}
+                    alt="Connectivity"
+                    className="md:mb-6 mb-3 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
+                  />
+                  <h3 className="font-satoshi font-semibold text-xl md:mb-6 mb-3">
+                    Structure
+                  </h3>
+                </div>
+                <ul className="list-disc pl-4">
+                  <li>Pile Foundation for durability & stability.</li>
+                  <li>Earthquake resistant RCC Superstructure.</li>
+                </ul>
+              </SlideUp>
+
+              {/* Electricals */}
+              <SlideUp
+                delay={0.8}
+                className=" pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
+              >
+                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-start justify-start">
+                  <Image
+                    src="/assets/icons/Electricals.svg"
+                    width={68}
+                    height={68}
+                    alt="Connectivity"
+                    className="md:mb-6 mb-3 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
+                  />
+                  <h3 className="font-satoshi font-semibold text-xl md:mb-6 mb-3">
+                    Electricals
+                  </h3>
+                </div>
+                <ul className="list-disc pl-4">
+                  <li>
+                    Copper PVC coated wiring in concealed conduits with repute
+                    make switches.
+                  </li>
+                  <li>
+                    Socket points for AC, TV and telephone in living, dining and
+                    all bedrooms.
+                  </li>
+                  <li>
+                    Electrical points for geyser, exhaust, washing machine,
+                    microwave, refrigerator, water purifier, grinder, computer,
+                    and mobile charging.
+                  </li>
+                </ul>
+              </SlideUp>
+
+              {/* Kitchen */}
+              <SlideUp
+                delay={1}
+                className=" pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
+              >
+                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-start justify-start">
+                  <Image
+                    src="/assets/icons/Kitchen.svg"
+                    width={68}
+                    height={68}
+                    alt="Project Area"
+                    className="md:mb-6 mb-3 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
+                  />
+                  <h3 className="font-satoshi font-semibold text-xl md:mb-6 mb-3">
+                    Kitchen
+                  </h3>
+                </div>
+                <ul className="list-disc pl-4">
+                  <li>
+                    Cuddapah counter with stainless steel sink and taps of
+                    repute make.
+                  </li>
+                  <li>
+                    Ceramic tiles dado up to 2 ft. above working platform.
+                  </li>
+                  <li>Provision for water inlet for filter.</li>
+                  <li>Provision for exhaust.</li>
+                </ul>
+              </SlideUp>
+
+              {/* Flooring */}
+              <SlideUp
+                delay={1.2}
+                className="pl-[16px] md:pl-10 md:border-l md:border-dashed md:border-gray-300"
+              >
+                <div className="flex flex-row md:flex-col gap-[12px] md:gap-[0px] items-start justify-start">
+                  <Image
+                    src="/assets/icons/Flooring.svg"
+                    width={68}
+                    height={68}
+                    alt="Connectivity"
+                    className="md:mb-6 mb-3 w-[30px] md:w-[68px] h-[30px] md:h-[68px]"
+                  />
+                  <h3 className="font-satoshi font-semibold text-xl md:mb-6 mb-3">
+                    Flooring
+                  </h3>
+                </div>
+                <ul className="list-disc pl-4">
+                  <li>Porcelano tiles in all bedrooms.</li>
+                  <li>Vitried tiles in the living/dining space & kitchen.</li>
+                  <li>Anti-skid ceramic tiles in toilet.</li>
+                </ul>
+              </SlideUp>
+            </div>
+          </div>
+          <SlideUp delay={0.4}>
+            <BrochureSection />
+          </SlideUp>
+        </div>
+      </section>
+
+      {/* sangam */}
+      <section
+        id="sangam-section"
+        className="bg-[#020C22] mb-[160px] md:mb-[100px] md:mb-[0px] md:pb-[80px]"
+      >
+        <div className="text-center w-full pb-12 pt-[80px] pb-[20px] md:pb-[52px]">
+          <SlideUp
+            delay={0.4}
+            className="text-[14px] md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[150px] font-[400] md:leading-[150px]"
+          >
+            Sangam
+          </SlideUp>
+        </div>
+        <SlideUp delay={0.6}>
+          <SangamSliders />
+        </SlideUp>
+      </section>
+
+      <section className="container mx-auto md:px-[200px] pr-[16px] md:pr-[200px]">
+        <SlideUp
+          delay={0.2}
+          className="flex flex-row justify-center w-full md:-mt-[170px] group cursor-pointer transform transition-transform duration-300 hover:scale-101"
+        >
+          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+                <Image
+                  src="/assets/HB.jpg"
+                  alt="Room preview"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+          <Link
+            href="/amenities"
+            className="bg-white relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center cursor-pointer"
+            style={{ borderTopWidth: "1px", borderBottomWidth: "4px" }}
+          >
+            <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">
+              Curious to see life @Alcove and world-class amenities?
+            </h1>
+            <Image
+              src="/assets/icons/arrowlong.svg"
+              alt="1BHK"
+              width={40}
+              height={3}
+              className="absolute right-[10px] md:right-[40px]"
+            />
+            <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
+          </Link>
+        </SlideUp>
+      </section>
+
+      {/* Past Projects */}
+      <section className="md:overflow-x-hidden overflow-hidden">
+        <div className="relative pt-[30px] md:pt-[100px]">
+          <div className="text-center w-full">
+            <SlideUp
+              delay={0.4}
+              className="project-overview-title text-center pt-4"
+            >
+              <span className="orange-color">Past</span> Projects
+            </SlideUp>
+          </div>
+          <div className="bg-[#F5F8FA] w-full absolute h-[315px] top-115"></div>
+        </div>
+        <AnimatedSection>
+          <PastProjectSwiper />
+        </AnimatedSection>
+      </section>
+
+      <section className="container mx-auto md:px-[200px] pr-[16px] md:pr-[200px]">
+        <FadeIn
+          delay={0.4}
+          className="flex flex-row justify-center w-full pt-12 md:pt-0 cursor-pointer transform transition-transform duration-300 hover:scale-101"
+        >
+          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
+                <Image
+                  src="/assets/HB.jpg"
+                  alt="Room preview"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+          <Link
+            href="/location"
+            className="bg-white cursor-pointer relative w-full border-t border-b border-[#144D78] flex flex-row justify-between items-center"
+            style={{ borderTopWidth: "1px", borderBottomWidth: "4px" }}
+          >
+            <h1 className="text-[#22252E] text-[16px] md:text-[24px] font-[700] max-w-[548px] p-2 md:p-6">
+              Embrace the beauty of your surroundings, know our neighbourhood
+            </h1>
+            <Image
+              src="/assets/icons/arrowlong.svg"
+              alt="1BHK"
+              width={40}
+              height={3}
+              className="absolute right-[10px] md:right-[40px]"
+            />
+            <div className="bg-[#E7EDF2] w-[54px] h-full"></div>
+          </Link>
+        </FadeIn>
+      </section>
+
+      {/* Project Overview */}
+      <section className="pb-2 md:py-20 bg-white pt-[60px] md:pt-[80px]">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-7 md:mb-16">
+            <SlideUp delay={0.4} className="project-overview-title text-center">
+              <span className="orange-color">Image</span> Gallery
+            </SlideUp>
+          </div>
+        </div>
+        <div className="container mx-auto relative">
+          <AnimatedSection
+            delay={0.6}
+            className="relative max-md:pt-5 !overflow-visible"
+          >
+            <ProjectViewSlides />
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Blogs Section */}
+      <section className="relative">
+        <div className="hide-triangle bg-[#F5F8FA] w-full absolute h-[374px] md:top-[-20px]"></div>
+        <div className="container mx-auto  px-[16px] md:px-[0px]">
+          <Blogs />
+        </div>
+      </section>
+
+      {/* Construction Updates Section */}
+      <section className="bg-[#020C22] md:py-[80px] pt-[40px]">
+        <div className="container mx-auto">
+          <div className="flex ietms-center w-full md:items-end justify-between mb-[48px]">
+            <div className="w-full">
+              <SlideUp
+                delay={0.4}
+                className="project-overview-title text-center md:text-left !text-white"
+              >
+                <span className="orange-color">
+                  Construction <br />
+                </span>
+                Updates
+              </SlideUp>
+            </div>
+            <SlideUp
+              delay={0.4}
+              className="hide-triangle text-[20px] md:text-[20px] font-satoshi font-[400] leading-5 md:leading-[28px] text-white/50 max-w-[400px]"
+            >
+              Experience a world of wonder and adventure. Our podium level is a
+              playground for all ages!
+            </SlideUp>
+          </div>
+        </div>
+        <AnimatedSection delay={0.6}>
+          <ConstructionSlider />
+        </AnimatedSection>
+      </section>
     </main>
-  )
+  );
 }
