@@ -99,6 +99,7 @@ const Blogs = () => {
                 alt={post.attributes.Title}
                 fill
                 className="object-cover transform transition-transform duration-300 ease-in-out hover:scale-98"
+                loading="lazy"
               />
             </div>
             <div className="flex flex-col items-start text-left">
