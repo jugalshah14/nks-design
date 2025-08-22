@@ -58,10 +58,10 @@ export default function ReviewsSection() {
         <div className="container mx-auto flex flex-col md:flex-row relative justify-between !overflow-visible md:h-[508px] md:mb-20 mb-10">
           {/* Quote Image */}
           <div className="md:block hidden absolute -left-20 top-0">
-            <img src="/assets/qt.svg" alt="Quote" width={168} height={241} />
+            <Image src="/assets/qt.svg" alt="Quote" width={168} height={241} />
           </div>
           <div className="md:block hidden md:absolute md:right-60 md:top-20">
-            <img
+            <Image
               src="/assets/circle.svg"
               alt="Quote"
               width={353}
@@ -137,10 +137,10 @@ export default function ReviewsSection() {
         <div className="container mx-auto flex flex-col md:flex-row relative justify-between !overflow-visible md:h-[508px] md:mb-20">
           {/* Quote Image (hidden on mobile, positioned on left) */}
           <div className="absolute -right-20 top-0 transform scale-x-[-1] md:block hidden">
-            <img src="/assets/qt.svg" alt="Quote" width={168} height={241} />
+            <Image src="/assets/qt.svg" alt="Quote" width={168} height={241} />
           </div>
           <div className="absolute left-60 top-20 md:block hidden">
-            <img
+            <Image
               src="/assets/circle.svg"
               alt="Quote"
               width={353}
@@ -190,10 +190,10 @@ export default function ReviewsSection() {
         <div className="container mx-auto flex flex-col md:flex-row relative justify-between !overflow-visible md:h-[508px] md:mb-20">
           {/* Quote Image (hidden on mobile, positioned on left) */}
           <div className="md:block hidden absolute -left-20 top-0">
-            <img src="/assets/qt.svg" alt="Quote" width={168} height={241} />
+            <Image src="/assets/qt.svg" alt="Quote" width={168} height={241} />
           </div>
           <div className="md:block hidden md:absolute md:right-60 md:top-20">
-            <img
+            <Image
               src="/assets/circle.svg"
               alt="Quote"
               width={353}
@@ -243,10 +243,10 @@ export default function ReviewsSection() {
         <div className="container mx-auto flex flex-col md:flex-row relative justify-between !overflow-visible md:h-[508px] md:mb-20 mb-10">
           {/* Quote Image (now hidden on mobile, positioned on left) */}
           <div className="absolute -right-20 top-0 transform scale-x-[-1] md:block hidden">
-            <img src="/assets/qt.svg" alt="Quote" width={168} height={241} />
+            <Image src="/assets/qt.svg" alt="Quote" width={168} height={241} />
           </div>
           <div className="absolute left-60 top-20 md:block hidden">
-            <img
+            <Image
               src="/assets/circle.svg"
               alt="Quote"
               width={353}
