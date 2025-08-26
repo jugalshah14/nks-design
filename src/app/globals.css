@@ -73,6 +73,11 @@ body::-webkit-scrollbar {
   filter: none;
 }
 
+/* Remove filter for logo since we're using different logo files */
+.home-page-header .logo-image {
+  filter: none !important;
+}
+
 .home-page-header .menu-button {
   filter: none;
 }
@@ -398,7 +403,7 @@ body::-webkit-scrollbar {
   }
 
   .project-overview-title {
-    font-family: "Satoshi", sans-serif;
+    font-family: "Cormorant Garamond", serif;
     font-weight: 400;
     font-size: 32px;
     line-height: 44px;
@@ -424,6 +429,9 @@ body::-webkit-scrollbar {
   .icon-image {
     width: 60px;
     height: 60px;
+  }
+  .serampore-swiper .slick-slide {
+    margin: 0 15px;
   }
 }
 
@@ -478,7 +486,7 @@ body::-webkit-scrollbar {
 }
 
 .serampore-swiper .slick-slide {
-  margin: 0 15px;
+  margin: 0 30px;
 }
 
 .serampore-swiper .slick-list {
@@ -600,6 +608,10 @@ body::-webkit-scrollbar {
 
 /* MasterPlan responsive classes */
 @media (max-width: 768px) {
+  .space-triveni{
+    padding-top: 28px;
+    padding-bottom: 70px;
+  }
   .project-overview-title {
     font-size: 36px;
     line-height: 44px;
@@ -875,3 +887,5 @@ body::-webkit-scrollbar {
     transform: translateX(-50%);
   }
 }
+
+

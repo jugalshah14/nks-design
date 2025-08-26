@@ -8,55 +8,59 @@ import "slick-carousel/slick/slick-theme.css";
 import { SlideUp } from "./animations";
 
 const data = {
-  "3BHK": [
+  "1BHK": [
     {
-      src: "/assets/sangam1.png",
-    },
-    {
-      src: "/assets/sangam2.png",
-    },
-    {
-      src: "/assets/sangam3.png",
-    },
-    {
-      src: "/assets/sangam4.jpg",
+      src: "/assets/1bhkv.png",
     },
   ],
   "2BHK": [
     {
-      src: "/assets/mp1.png",
+      src: "/assets/2bhkv.png",
     },
     {
-      src: "/assets/mp2.png",
+      src: "/assets/2bhkv2.png",
     },
     {
-      src: "/assets/mp3.png",
+      src: "/assets/2bhkv3.png",
+    },
+  ],
+  "3BHK": [
+    {
+      src: "/assets/3bhkv.png",
     },
     {
-      src: "/assets/mp4.png",
+      src: "/assets/3bhkv1.jpg",
     },
   ],
   "4BHK": [
     {
-      src: "/assets/sangam1.png",
+      src: "/assets/4bhkv.png",
     },
     {
-      src: "/assets/sangam2.png",
+      src: "/assets/4bhkv1.png",
     },
     {
-      src: "/assets/sangam3.png",
+      src: "/assets/4bhkv2.png",
     },
     {
-      src: "/assets/sangam4.jpg",
+      src: "/assets/4bhkv3.png",
     },
   ],
 };
 
-const settings = {
+const towerInfo = {
+  "1BHK": "",
+  "2BHK": "Tower 9 - 15th Floor",
+  "3BHK": "Tower 12",
+  "4BHK": "24E & 24F",
+};
+
+// Fixed settings to maintain consistent spacing
+const getSettings = (imageCount) => ({
   className: "amenities-swiper !overflow-visible center",
   infinite: false,
   centerPadding: "30px",
-  slidesToShow: 3,
+  slidesToShow: 3, // Always show 3 slides for consistent spacing
   speed: 600,
   dots: false,
   arrows: false,
@@ -66,21 +70,33 @@ const settings = {
       breakpoint: 1024,
       settings: {
         centerMode: false,
-        slidesToShow: 2,
+        slidesToShow: Math.min(2, imageCount),
       },
     },
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 1.8,
+        slidesToShow: Math.min(1.8, imageCount),
         infinite: false,
       },
     },
   ],
-};
-export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
+});
+
+export default function SangamViewsSwiper({ activeBHK = "1BHK" }) {
   const [activeIndex, setActiveIndex] = useState(0);
   let swiperRef = useRef(null);
+  
+  // Get current images and create padded array for consistent spacing
+  const originalImages = data[activeBHK];
+  const currentImages = [...originalImages];
+  
+  // Pad with empty slides if less than 3 images (only for desktop view)
+  while (currentImages.length < 3) {
+    currentImages.push({ src: "", isEmpty: true });
+  }
+  
+  const settings = getSettings(originalImages.length);
 
   const handleNext = () => {
     if (!swiperRef) return;
@@ -93,20 +109,24 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
   };
 
   const isPrevDisabled = activeIndex === 0;
-  const isNextDisabled = activeIndex >= data[activeBHK].length - settings.slidesToShow;
+  const isNextDisabled = activeIndex >= originalImages.length - 1 || originalImages.length <= 3;
 
-  // Mobile navigation logic
+  // Mobile navigation logic (use original images count)
   const mobileIndex = Math.ceil(activeIndex);
   const isMobilePrevDisabled = mobileIndex === 0;
-  const isMobileNextDisabled = mobileIndex >= data[activeBHK].length - 1;
+  const isMobileNextDisabled = mobileIndex >= originalImages.length - 1;
+
+  // Conditional check to hide navigation on desktop when there are less than or equal to 3 images
+  const showDesktopNavigation = originalImages.length > 3;
 
   return (
-    <div className="relative top-[100px] md:-top-15 overflow-x-hidden bg-[#020C22]">
+    <div className="relative top-[120px] md:-top-15 overflow-x-hidden bg-[#020C22]">
       <div className="container mx-auto relative md:mb-16 bg-[#020C22]">
         {/* Only for mobile */}
         <div className="flex items-center justify-center">
           <div className="none-md text-center text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0">
-            Views from {activeBHK}
+            <div>{originalImages.length === 1 ? 'View' : 'Views'} from {activeBHK}*</div>
+            <div className="text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] mt-2">{towerInfo[activeBHK]}</div>
           </div>
         </div>
 
@@ -115,40 +135,45 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
             <div
               className="hide-triangle text-center md:text-left text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-white mb-6 md:mb-1 mt-[60px] md:mt-0"
             >
-              Views from {activeBHK}
+              <div>{originalImages.length === 1 ? 'View' : 'Views'} from {activeBHK}*</div>
+              <div className="text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] mt-2">{towerInfo[activeBHK]}</div>
             </div>
-            <div className="hidden md:flex relative max-w-[190px] w-[366px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
-              <div className="h-full flex items-center justify-center">
-                <button
-                  className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`}
-                  onClick={handlePrev}
-                  disabled={isPrevDisabled}
-                >
-                  <Image
-                    src="/assets/arrow-main.svg"
-                    alt="Previous"
-                    height={20}
-                    width={19}
-                    className="transform rotate-180 invert-100"
-                  />
-                </button>
+            {showDesktopNavigation && (
+              <div className="hidden md:flex relative max-w-[190px] w-[366px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
+                <div className="h-full flex items-center justify-center">
+                  <button
+                    id="sangam-views-swiper-prev-desktop"
+                    className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`}
+                    onClick={handlePrev}
+                    disabled={isPrevDisabled}
+                  >
+                    <Image
+                      src="/assets/arrow-main.svg"
+                      alt="Previous"
+                      height={20}
+                      width={19}
+                      className="transform rotate-180 invert-100"
+                    />
+                  </button>
+                </div>
+                <div className="h-full flex items-center justify-center">
+                  <button
+                    id="sangam-views-swiper-next-desktop"
+                    className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`}
+                    onClick={handleNext}
+                    disabled={isNextDisabled}
+                  >
+                    <Image
+                      src="/assets/arrow-main.svg"
+                      alt="Next"
+                      height={20}
+                      width={19}
+                      className="invert-100"
+                    />
+                  </button>
+                </div>
               </div>
-              <div className="h-full flex items-center justify-center">
-                <button
-                  className={`focus:outline-none cursor-pointer ${isNextDisabled ? 'opacity-30' : ''}`}
-                  onClick={handleNext}
-                  disabled={isNextDisabled}
-                >
-                  <Image
-                    src="/assets/arrow-main.svg"
-                    alt="Next"
-                    height={20}
-                    width={19}
-                    className="invert-100"
-                  />
-                </button>
-              </div>
-            </div>
+            )}
           </div>
           <div className="col-span-4 md:col-span-2 lg:col-span-3">
             <div>
@@ -159,18 +184,20 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
                 {...settings}
                 afterChange={(current) => setActiveIndex(current)}
               >
-                {data[activeBHK].map((slide, i) => (
+                {currentImages.map((slide, i) => (
                   <div
                     key={i}
-                    className="mx-5 !w-[100%] !overflow-x-hidden transition-transform duration-300 transform hover:scale-95"
+                    className="mx-5 !w-[100%] !overflow-x-hidden"
                   >
-                    <div className="relative !w-[100%] h-[200px] md:h-[350px] min-h-[200px] max-h-[200px] md:min-h-[350px]">
-                      <Image
-                        src={slide.src}
-                        alt={`${activeBHK}-view-${i}`}
-                        fill
-                        className="object-cover"
-                      />
+                    <div className="relative !w-[280px] h-[280px]">
+                      {!slide.isEmpty && (
+                        <Image
+                          src={slide.src}
+                          alt={`${activeBHK}-view-${i}`}
+                          fill
+                          className="object-cover"
+                        />
+                      )}
                     </div>
                   </div>
                 ))}
@@ -179,9 +206,11 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
           </div>
         </div>
       </div>
-      <div className="w-full absolute bottom-0 flex md:hidden relative z-111 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
+      {originalImages.length > 1 && (
+        <div className="w-full absolute bottom-0 flex md:hidden relative z-111 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around mt-9 px-1 py-5">
         <div className="h-full flex items-center justify-center">
           <button
+            id="sangam-views-swiper-prev-mobile"
             className={`focus:outline-none cursor-pointer ${isMobilePrevDisabled ? 'opacity-30' : ''}`}
             onClick={handlePrev}
             disabled={isMobilePrevDisabled}
@@ -198,10 +227,11 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
         <div className="flex gap-2 items-center text-white">
           {Math.ceil(activeIndex) + 1}{" "}
           <div className="h-0.5 w-8 bg-[#D9D9D9] text-white" />{" "}
-          {data[activeBHK].length}
+          {originalImages.length}
         </div>
         <div className="h-full flex items-center justify-center">
           <button
+            id="sangam-views-swiper-next-mobile"
             className={`focus:outline-none cursor-pointer ${isMobileNextDisabled ? 'opacity-30' : ''}`}
             onClick={handleNext}
             disabled={isMobileNextDisabled}
@@ -216,6 +246,7 @@ export default function SangamViewsSwiper({ activeBHK = "3BHK" }) {
           </button>
         </div>
       </div>
+      )}
     </div>
   );
 }

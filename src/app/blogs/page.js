@@ -1,13 +1,187 @@
 "use client";
 import { AnimatedSection, SlideUp } from "@/components/animations";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function lifeAtAlcove() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+export default function LifeAtAlcove() {
   const [selectedNav, setSelectedNav] = useState("Featured");
+  const [featuredBlogs, setFeaturedBlogs] = useState([]);
+  const [residentialBlogs, setResidentialBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const navTabs = ["Featured", "Residential", "Construction"];
+  const navTabs = ["Featured", "Residential"];
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        // Fetch Featured Blogs
+        const featuredResponse = await fetch(
+          "https://admin.newkolkata.in/api/blog-posts?populate[0]=*&populate[1]=Postimage&populate[2]=thumbnailimage&populate[3]=Date&populate[4]=author.image&populate[5]=categories&filters[categories][slug][$eq]=featured&pagination[limit]=-1&sort[0]=Date:desc"
+        );
+        const featuredData = await featuredResponse.json();
+        setFeaturedBlogs(featuredData.data || []);
+
+        // Fetch Residential Blogs
+        const residentialResponse = await fetch(
+          "https://admin.newkolkata.in/api/blog-posts?populate[0]=*&populate[1]=Postimage&populate[2]=thumbnailimage&populate[3]=Date&populate[4]=author.image&populate[5]=categories&filters[categories][slug][$eq]=residential&pagination[limit]=-1&sort[0]=Date:desc"
+        );
+        const residentialData = await residentialResponse.json();
+        setResidentialBlogs(residentialData.data || []);
+
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'short', 
+      day: 'numeric' 
+    });
+  };
+
+  const getImageUrl = (imageData) => {
+    if (!imageData?.data?.attributes?.formats) return "/assets/Blogs-1.png";
+    
+    const imageUrl = imageData.data.attributes.formats.medium?.url || 
+           imageData.data.attributes.formats.small?.url || 
+           imageData.data.attributes.url || 
+           "/assets/Blogs-1.png";
+    
+    // Add base URL if it's not already present and not a fallback image
+    if (imageUrl !== "/assets/Blogs-1.png" && !imageUrl.startsWith("http")) {
+      return `https://admin.newkolkata.in${imageUrl}`;
+    }
+    
+    return imageUrl;
+  };
+
+  const getThumbnailUrl = (thumbnailData) => {
+    if (!thumbnailData?.data?.attributes?.formats) return "/assets/blogs-2.png";
+    
+    const thumbnailUrl = thumbnailData.data.attributes.formats.thumbnail?.url || 
+           thumbnailData.data.attributes.formats.small?.url || 
+           thumbnailData.data.attributes.url || 
+           "/assets/blogs-2.png";
+    
+    // Add base URL if it's not already present and not a fallback image
+    if (thumbnailUrl !== "/assets/blogs-2.png" && !thumbnailUrl.startsWith("http")) {
+      return `https://admin.newkolkata.in${thumbnailUrl}`;
+    }
+    
+    return thumbnailUrl;
+  };
+
+  const getCategoryName = (blog) => {
+    return blog.attributes.categories?.data?.[0]?.attributes?.categoryname || "Featured";
+  };
+
+  const getReadTime = (blog) => {
+    return blog.attributes.timeToRead || "5 min read";
+  };
+
+  // Blog Card Component
+  const BlogCard = ({ blog, variant = "side", delay = 0, showDescription = true, categoryBgColor = null }) => {
+    if (variant === "side") {
+      return (
+        <SlideUp delay={delay}>
+          <a href={`/blogs-detail/${blog.attributes.slug}`} className="block">
+            <div className="flex flex-col mx-7 md:mx-0 md:flex-row gap-4 items-stretch font-satoshi hover:opacity-90 transition-opacity">
+              <div className="md:mt-7 relative md:min-w-[272px] md:w-[272px] h-[201px] overflow-hidden">
+                <Image
+                  src={getThumbnailUrl(blog.attributes.thumbnailimage)}
+                  alt={blog.attributes.Title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-col flex-1 md:pt-6 gap-4">
+                <div className="flex items-center gap-3">
+                  <span className={`${categoryBgColor || 'bg-[#F5F8FA]'} text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium`}>
+                    {getCategoryName(blog)}
+                  </span>
+                  <span className="text-[#22252E] text-sm font-medium">
+                    • {getReadTime(blog)}
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-black leading-[28px]">
+                  {blog.attributes.Title}
+                </h3>
+                {showDescription && (
+                  <p className="text-[#5C5F68] text-base leading-[20px] font-normal line-clamp-3">
+                    {blog.attributes.ShortDescription}
+                  </p>
+                )}
+                <span className="orange-color leading-[20px] font-bold flex items-center gap-2 text-base">
+                  Read Article <span className="ml-2">→</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </SlideUp>
+      );
+    }
+
+    if (variant === "grid") {
+      return (
+        <SlideUp delay={delay}>
+          <a href={`/blogs-detail/${blog.attributes.slug}`} className="block">
+            <div className="flex flex-col hover:opacity-90 transition-opacity cursor-pointer">
+              <div className="relative w-full h-[240px] overflow-hidden">
+                <Image
+                  src={getThumbnailUrl(blog.attributes.thumbnailimage)}
+                  alt={blog.attributes.Title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="md:py-[32px] py-[16px] flex flex-col gap-3">
+                <span className="text-[#4F70AF] text-[14px] leading-[20px] font-semibold">
+                  {formatDate(blog.attributes.Date)}
+                </span>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-[24px] leading-[28px] font-bold text-black">
+                    {blog.attributes.Title}
+                  </h3>
+                  <span className="ml-auto text-white text-lg">↗</span>
+                </div>
+                <p className="text-[#5C5F68] text-base leading-[20px] font-normal line-clamp-2">
+                  {blog.attributes.ShortDescription}
+                </p>
+                <span className={`w-fit font-satoshi ${categoryBgColor || 'bg-white'} text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium`}>
+                  {getCategoryName(blog)}
+                </span>
+              </div>
+            </div>
+          </a>
+        </SlideUp>
+      );
+    }
+
+    return null;
+  };
+
+  if (loading) {
+    return (
+      <main>
+        <div className="flex justify-center items-center h-screen">
+          <div className="flex flex-col items-center gap-4">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#026AA2]"></div>
+            <p className="text-lg text-gray-600">Loading blogs...</p>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main>
       <SlideUp>
@@ -33,10 +207,11 @@ export default function lifeAtAlcove() {
 
       {/* Navigation buttons */}
       <AnimatedSection delay={0.8}>
-        <nav className="mb-10 mt-30 relative w-full mt-9 flex justify-between md:justify-center items-center border-t border-b border-[#22252e19] py-4 md:py-6 px-7 md:px-0">
+        <nav className="mb-10 md:mt-30 relative w-full mt-10 flex max-md:gap-10 justify-center items-center border-t border-b border-[#22252e19] py-4 md:py-6 px-7 md:px-0">
           {navTabs.map((tab, idx) => (
             <React.Fragment key={tab}>
               <button
+                id={`blogs-nav-${tab.toLowerCase().replace(/\s/g, "-")}`}
                 onClick={() => {
                   setSelectedNav(tab);
                   const element = document.getElementById(
@@ -74,18 +249,20 @@ export default function lifeAtAlcove() {
           ))}
         </nav>
       </AnimatedSection>
+
       {/* Blog Cards Section */}
       <section
         id="featured"
         className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl mx-auto mb-20"
       >
         {/* Left Large Card */}
+        {featuredBlogs.length > 0 && (
         <SlideUp delay={0.8}>
           <div className="flex flex-col mx-7 md:mx-0">
-            <div className="flex justify-center rounded-lg relative w-full h-[351px] overflow-hidden">
+              <div className="flex justify-center md:mt-7 relative w-full h-[351px] overflow-hidden">
               <Image
-                src="/assets/Blogs-1.png"
-                alt="Main Blog"
+                  src={getImageUrl(featuredBlogs[0].attributes.Postimage)}
+                  alt={featuredBlogs[0].attributes.Title}
                 fill
                 className="object-cover"
               />
@@ -94,414 +271,85 @@ export default function lifeAtAlcove() {
               <div className="my-7 flex flex-col gap-6">
                 <div className="flex items-center gap-3 font-satoshi">
                   <span className="font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
-                    Construction Update
-                  </span>
-                  <span className="text-[#22252E] text-sm font-medium">
-                    • 5 min read
-                  </span>
+                      {getCategoryName(featuredBlogs[0])}
+                    </span>
+                    <span className="text-[#22252E] text-sm font-medium">
+                      • {getReadTime(featuredBlogs[0])}
+                    </span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-cormorant text-black leading-[44px] font-normal">
+                    {featuredBlogs[0].attributes.Title}
+                  </h2>
+                    <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
+                    {featuredBlogs[0].attributes.ShortDescription}
+                    </p>
+                  <a
+                    href={`/blogs-detail/${featuredBlogs[0].attributes.slug}`}
+                    className="orange-color leading-[20px] font-bold flex items-center gap-2 text-base "
+                  >
+                    Read Article <span className="ml-2">→</span>
+                  </a>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-cormorant text-black leading-[44px] font-normal">
-                  Your passport to the web3 economy
-                </h2>
-                <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
-                  If you&rsquo;ve read this far and you&rsquo;re wondering what
-                  &ldquo;web3&rdquo; is exactly, this is one of those
-                  need-to-knows, and it&rsquo;s pretty simple. We&rsquo;ll
-                  explain more below
-                </p>
-                <a
-                  href="/blogs-detail"
-                  className="orange-color leading-[20px] font-bold flex items-center gap-2 text-base "
-                >
-                  Read Article <span className="ml-2">→</span>
-                </a>
+              </SlideUp>
               </div>
             </SlideUp>
-          </div>
-        </SlideUp>
-        {/* Right Side Cards */}
+        )}
+
+        {/* Right Side Cards - Using Mapping */}
         <SlideUp>
           <div className="flex flex-col gap-6">
-            {/* Card 1 */}
-            <SlideUp delay={0.8}>
-              <div className="flex flex-col mx-7 md:mx-0 md:flex-row gap-4 items-stretch font-satoshi">
-                <div className="rounded-lg relative md:min-w-[272px] md:w-[272px] h-[201px] overflow-hidden">
-                  <Image
-                    src="/assets/blogs-2.png"
-                    alt="Blog 1"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex flex-col flex-1 md:py-6 gap-4">
-                  <div className="flex items-center gap-3">
-                    <span className="bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
-                      Construction Update
-                    </span>
-                    <span className="text-[#22252E] text-sm font-medium">
-                      • 5 min read
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-black leading-[28px]">
-                    How to secure have your crypto wallet
-                  </h3>
-                  <a
-                    href="#"
-                    className="orange-color leading-[20px] font-bold flex items-center gap-2 text-base "
-                  >
-                    Read Article <span className="ml-2">→</span>
-                  </a>
-                </div>
-              </div>
-            </SlideUp>
-            {/* Card 2 */}
-            <SlideUp delay={1}>
-              <div className="flex flex-col md:flex-row mx-7 md:mx-0 gap-4 items-stretch font-satoshi">
-                <div className="rounded-lg relative md:min-w-[272px] md:w-[272px] h-[201px] overflow-hidden">
-                  <Image
-                    src="/assets/blogs-3.png"
-                    alt="Blog 2"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex flex-col flex-1 gap-4">
-                  <div className="flex items-center gap-3">
-                    <span className="bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
-                      Construction Update
-                    </span>
-                    <span className="text-[#22252E] text-sm font-medium">
-                      • 5 min read
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-black leading-[28px]">
-                      How to secure have your crypto wallet
-                    </h3>
-                    <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Suspendisse varius enim in eros.
-                    </p>
-                  </div>
-                  <a
-                    href="#"
-                    className="orange-color leading-[20px] font-bold flex items-center gap-2 text-base "
-                  >
-                    Read Article <span className="ml-2">→</span>
-                  </a>
-                </div>
-              </div>
-            </SlideUp>
-            {/* Card 3 */}
-            <SlideUp delay={0.12}>
-              <div className="flex flex-col md:flex-row mx-7 md:mx-0  gap-4 items-stretch font-satoshi">
-                <div className="rounded-lg relative md:min-w-[272px] md:w-[272px] h-[201px] overflow-hidden">
-                  <Image
-                    src="/assets/blogs-4.png"
-                    alt="Blog 3"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex flex-col flex-1 gap-4">
-                  <div className="flex items-center gap-3">
-                    <span className="bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
-                      Construction Update
-                    </span>
-                    <span className="text-[#22252E] text-sm font-medium">
-                      • 5 min read
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-black leading-[28px]">
-                      How to secure have your crypto wallet
-                    </h3>
-                    <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Suspendisse varius enim in eros.
-                    </p>
-                  </div>
-                  <a
-                    href="#"
-                    className="orange-color leading-[20px] font-bold flex items-center gap-2 text-base "
-                  >
-                    Read Article <span className="ml-2">→</span>
-                  </a>
-                </div>
-              </div>
-            </SlideUp>
+            {featuredBlogs.slice(1, 4).map((blog, index) => (
+              <BlogCard
+                key={blog.id}
+                blog={blog}
+                variant="side"
+                delay={index}
+                // showDescription={index === 1} // Only show description for second card
+              />
+            ))}
           </div>
         </SlideUp>
       </section>
+
+      {/* Additional Featured Blogs Grid */}
+      {featuredBlogs.length > 4 && (
+        <section className="w-full max-w-7xl mx-auto mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-7 md:mx-0">
+            {featuredBlogs.slice(4).map((blog, index) => (
+              <BlogCard
+                key={blog.id}
+                blog={blog}
+                variant="grid"
+                delay={index}
+                categoryBgColor="bg-[#F5F8FA]"
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Residential Section */}
       <section
         id="residential"
         className="relative w-full pt-10 pb-10 md:pt-20 md:pb-0 bg-[#F3F6F8]"
       >
-        <div className="text-center mb-12">
+        <div className="text-center md:mb-12 mb-6">
           <SlideUp delay={0.8}>
             <h2 className="text-[56px] leading-[72px] font-normal font-cormorant text-black">
               Residential
             </h2>
           </SlideUp>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-7 md:px-0">
-          {/* Card 1 */}
-          <SlideUp delay={0.7}>
-            <div className="flex flex-col">
-              <div className="relative w-full h-[240px] rounded-md overflow-hidden">
-                <Image
-                  src="/assets/Residential-1.png"
-                  alt="Bill Walsh leadership lessons"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="md:py-[32px] py-[16px] flex flex-col gap-3">
-                <span className="text-[#4F70AF] text-[14px] leading-[20px] font-semibold">
-                  Sunday, 1 Jan 2023
-                </span>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-[24px] leading-[28px] font-bold text-black">
-                    Bill Walsh leadership lessons
-                  </h3>
-                  <span className="ml-auto text-white text-lg">↗</span>
-                </div>
-                <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
-                  Like to know the secrets of transforming a 2-14 team into a 3x
-                  Super Bowl winning Dynasty?
-                </p>
-                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
-                  Construction Update
-                </span>
-              </div>
-            </div>
-          </SlideUp>
-          {/* Card 2 */}
-          <SlideUp delay={0.8}>
-            <div className="flex flex-col">
-              <div className="relative w-full h-[240px] rounded-md overflow-hidden">
-                <Image
-                  src="/assets/Residential-2.png"
-                  alt="PM mental models"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="md:py-[32px] py-[16px] flex flex-col gap-3">
-                <span className="text-[#4F70AF] text-[14px] leading-[20px] font-semibold">
-                  Sunday, 1 Jan 2023
-                </span>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-[24px] leading-[28px] font-bold text-black">
-                    PM mental models
-                  </h3>
-                  <span className="ml-auto text-white text-lg">↗</span>
-                </div>
-                <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
-                  Mental models are simple expressions of complex processes or
-                  relationships.
-                </p>
-                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
-                  New Tower Launch
-                </span>
-              </div>
-            </div>
-          </SlideUp>
-          {/* Card 3 */}
-          <SlideUp delay={1}>
-            <div className="flex flex-col">
-              <div className="relative w-full h-[240px] rounded-md overflow-hidden">
-                <Image
-                  src="/assets/Residential-3.png"
-                  alt="What is Wireframing?"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="md:py-[32px] py-[16px] flex flex-col gap-3">
-                <span className="text-[#4F70AF] text-[14px] leading-[20px] font-semibold">
-                  Sunday, 1 Jan 2023
-                </span>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-[24px] leading-[28px] font-bold text-black">
-                    What is Wireframing?
-                  </h3>
-                  <span className="ml-auto text-white text-lg">↗</span>
-                </div>
-                <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
-                  Introduction to Wireframing and its Principles. Learn from the
-                  best in the industry.
-                </p>
-                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
-                  Product
-                </span>
-              </div>
-            </div>
-          </SlideUp>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-7 md:px-0">
+          {residentialBlogs.map((blog, index) => (
+            <BlogCard
+              key={blog.id}
+              blog={blog}
+              variant="grid"
+              delay={index * 0}
+            />
+          ))}
         </div>
-        <AnimatedSection className="overflow-visible">
-          <div className="relative group cursor-pointer transform transition-transform duration-300 hover:scale-101 md:-bottom-18 -bottom-10 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:h-[144px]">
-            <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
-              <Image
-                src="/assets/blogs-hr.png"
-                alt="Room preview"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="flex-1 md:px-11 md:py-8">
-              <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-                Curious to see life @Alcove and world-class amenities?{" "}
-              </p>
-            </div>
-            <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
-              <Image
-                src="/assets/icons/arrowlong.svg"
-                alt=""
-                width={40}
-                height={3}
-                className="absolute -ml-6"
-              />
-            </div>
-          </div>
-        </AnimatedSection>
-      </section>
-
-      {/* Construction Section */}
-      <section
-        id="construction"
-        className="relative w-full md:mt-20 py-20 bg-white"
-      >
-        <div className="text-center mb-12">
-          <SlideUp delay={0.8}>
-            <h2 className="text-[56px] leading-[72px] font-normal font-cormorant text-black">
-              Construction
-            </h2>
-          </SlideUp>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-10 px-7 md:px-0">
-          {/* Card 1 */}
-          <SlideUp delay={0.7}>
-            <div className="flex flex-col">
-              <div className="relative w-full h-[240px] rounded-md overflow-hidden">
-                <Image
-                  src="/assets/Residential-1.png"
-                  alt="Bill Walsh leadership lessons"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="md:py-[32px] py-[16px] flex flex-col gap-3">
-                <span className="text-[#4F70AF] text-[14px] leading-[20px] font-semibold">
-                  Sunday, 1 Jan 2023
-                </span>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-[24px] leading-[28px] font-bold text-black">
-                    Bill Walsh leadership lessons
-                  </h3>
-                  <span className="ml-auto text-white text-lg">↗</span>
-                </div>
-                <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
-                  Like to know the secrets of transforming a 2-14 team into a 3x
-                  Super Bowl winning Dynasty?
-                </p>
-                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
-                  Construction Update
-                </span>
-              </div>
-            </div>
-          </SlideUp>
-          {/* Card 2 */}
-          <SlideUp delay={0.8}>
-            <div className="flex flex-col">
-              <div className="relative w-full h-[240px] rounded-md overflow-hidden">
-                <Image
-                  src="/assets/Residential-2.png"
-                  alt="PM mental models"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="md:py-[32px] py-[16px] flex flex-col gap-3">
-                <span className="text-[#4F70AF] text-[14px] leading-[20px] font-semibold">
-                  Sunday, 1 Jan 2023
-                </span>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-[24px] leading-[28px] font-bold text-black">
-                    PM mental models
-                  </h3>
-                  <span className="ml-auto text-white text-lg">↗</span>
-                </div>
-                <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
-                  Mental models are simple expressions of complex processes or
-                  relationships.
-                </p>
-                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
-                  New Tower Launch
-                </span>
-              </div>
-            </div>
-          </SlideUp>
-          {/* Card 3 */}
-          <SlideUp delay={1}>
-            <div className="flex flex-col">
-              <div className="relative w-full h-[240px] rounded-md overflow-hidden">
-                <Image
-                  src="/assets/Residential-3.png"
-                  alt="What is Wireframing?"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="md:py-[32px] py-[16px] flex flex-col gap-3">
-                <span className="text-[#4F70AF] text-[14px] leading-[20px] font-semibold">
-                  Sunday, 1 Jan 2023
-                </span>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-[24px] leading-[28px] font-bold text-black">
-                    What is Wireframing?
-                  </h3>
-                  <span className="ml-auto text-white text-lg">↗</span>
-                </div>
-                <p className="text-[#5C5F68] text-base leading-[20px] font-normal">
-                  Introduction to Wireframing and its Principles. Learn from the
-                  best in the industry.
-                </p>
-                <span className="w-fit font-satoshi bg-[#F5F8FA] text-[#026AA2] rounded-full px-3 py-1 text-[14px] leading-[20px] font-medium">
-                  Product
-                </span>
-              </div>
-            </div>
-          </SlideUp>
-        </div>
-        <AnimatedSection className="overflow-visible">
-          <div className="relative group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
-            <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
-              <Image
-                src="/assets/neighbour.png"
-                alt="Room preview"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="flex-1 md:px-11 md:py-8">
-              <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-                Embrace the beauty of your surroundings, know our neighbourhood
-              </p>
-            </div>
-            <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
-              <Image
-                src="/assets/icons/arrowlong.svg"
-                alt=""
-                width={40}
-                height={3}
-                className="absolute -ml-6"
-              />
-            </div>
-          </div>
-        </AnimatedSection>
       </section>
     </main>
   );

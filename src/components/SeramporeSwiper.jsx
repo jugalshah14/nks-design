@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AnimatedSection } from "./animations";
+import MobileSwiperNavigation from "./MobileSwiperNavigation";
 
 const settings = {
   className: "serampore-swiper overflow-x-visible",
@@ -30,7 +31,7 @@ const settings = {
       breakpoint: 768,
       settings: {
         centerMode: false,
-        slidesToShow: 1.05,
+        slidesToShow: 1,
       },
     },
   ],
@@ -60,15 +61,15 @@ export default function SeramporeSwiper({ data }) {
   };
 
   return (
-    <><AnimatedSection className="container mx-auto relative certification-section !bg-white pt-10 md:pt-20 mt-7">
-      <div className="md:h-[400px] md:w-full h-[150px] w-[90%] z-1" />
+    <><AnimatedSection className="container mx-auto relative certification-section !bg-white mt-7">
+      <div className="md:h-[286px] md:w-full h-[150px] w-[90%] z-1" />
       <Image
         src={data[activeIndex - 1].backgroundImage}
         fill
         className={`object-contain md:block transition-opacity duration-100 ${isTransitioning ? "opacity-80" : "opacity-100"}`}
         alt="serampore map" />
     </AnimatedSection>
-      <div className="md:pt-10 mb-10 container mx-auto px-4 md:px-0">
+      <div className=" container mx-auto px-4 md:px-0">
         <Slider
           ref={(slider) => {
             swiperRef = slider;
@@ -97,13 +98,13 @@ export default function SeramporeSwiper({ data }) {
               <Image
                 src={slide.src}
                 alt="slide-0"
-                height={160}
-                width={160}
-                className="relative !h-[100px] !w-[100px] md:!h-[180px] md:!w-[180px] z-1" />
+                height={132}
+                width={132}
+                className="relative !h-[100px] !w-[100px] md:!h-[132px] md:!w-[132px] z-1" />
               <div
-                className={`w-fit relative flex flex-col md:p-7 md:pb-0 p-2 pl-3 pt-10 md:pt-12 pr-20 md:pr-15 `}
+                className={`w-full relative flex flex-col md:p-4 md:pb-0 p-2 pt-10 md:pt-12 `}
               >
-                <div className="location-slide bg-[#F8F8F8] top-6 -left-[70px] min-w-[120%] md:min-w-full sm:w-[120%] h-[100%] absolute back-active" />
+                <div className="location-slide bg-[#F8F8F8] top-6 -left-[70px] min-w-[140%] h-[100%] absolute back-active" />
                 <Image
                   src={slide.icon}
                   height={48}
@@ -111,12 +112,12 @@ export default function SeramporeSwiper({ data }) {
                   alt="icon"
                   className={`max-md:!h-[33px] max-md:!w-[33px] image z-1`} />
                 <p
-                  className={`md:!w-[172px] mt-2 text-[14px] md:text-[20px] text-[#22252E] font-[700] z-1 leading-5 md:leading-[28px] title`}
+                  className={`md:!w-full text-[14px] md:text-[20px] text-[#22252E] font-[700] z-1 leading-5 md:leading-[28px] title`}
                 >
                   {slide.title}
                 </p>
                 <p
-                  className={`z-1 mb-1 text-[12px] md:text-[16px] text-[#22252E] opacity-60 font-[400] leading-4 md:leading-[20px] description`}
+                  className={`z-1 text-[12px] md:text-[16px] text-[#22252E] opacity-60 font-[400] leading-4 md:leading-[20px] description`}
                 >
                   {slide.description}
                 </p>
@@ -124,39 +125,15 @@ export default function SeramporeSwiper({ data }) {
             </div>
           ))}
         </Slider>
-        <div className="relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-5">
-          <div className="h-full flex items-center justify-center">
-            <button
-              className="focus:outline-none cursor-pointer disabled:cursor-auto"
-              onClick={handlePrev}
-              disabled={activeIndex === 1}
-            >
-              <Image
-                src="/assets/icons/arrow-right.svg"
-                alt="Previous"
-                height={20}
-                width={19}
-                className={`${activeIndex === 1 && "invert-75"} transform rotate-180`} />
-            </button>
-          </div>
-          <div className="flex gap-2 items-center">
-            {activeIndex} <div className="h-0.5 w-8 bg-[#D9D9D9]" /> {data.length}
-          </div>
-          <div className="h-full flex items-center justify-center disabled:cursor-auto">
-            <button
-              className="focus:outline-none cursor-pointer"
-              onClick={handleNext}
-              disabled={activeIndex === data.length}
-            >
-              <Image
-                src="/assets/icons/arrow-right.svg"
-                alt="Next"
-                height={20}
-                width={19}
-                className={activeIndex === data.length && "invert-75"} />
-            </button>
-          </div>
-        </div>
+        <MobileSwiperNavigation
+          currentIndex={activeIndex - 1}
+          totalSlides={data.length}
+          onPrev={handlePrev}
+          onNext={handleNext}
+          isPrevDisabled={activeIndex === 1}
+          isNextDisabled={activeIndex === data.length}
+          className="relative transform bg-white flex gap-10 items-center justify-center mt-9 px-1 py-5 md:mb-20 mb-10"
+        />
       </div></>
   );
 }

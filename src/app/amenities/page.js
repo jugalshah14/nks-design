@@ -2,7 +2,10 @@
 
 import { AnimatedSection, SlideUp } from "@/components/animations";
 import GangaWaves from "@/components/GangaWaves";
+import ImageGallery from "@/components/ImageGallery";
+import SafetySecuritySection from "@/components/SafetySecuritySection";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const amenities = {
@@ -10,53 +13,63 @@ const amenities = {
     {
       title: "Embrace the new day with open arms.",
       description:
-        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+        "Watch the sunrise over the river, breathe in the fresh morning air, and let nature set the tone for a peaceful day ahead.",
       image: "/assets/Sunrise.png",
+      imageType: "Actual Image"
     },
     {
       title: "Find peace within: unlock the power of meditation.",
-      description: "Refresh your senses with the interactive fountains",
+      description:
+        "Begin your day with calm moments by the river — a peaceful space to relax and clear your mind.",
       image: "/assets/Yoga.png",
+      imageType: "Actual Image"
     },
     {
-      title: "Keep yourself fit with our gym & fitness centre",
+      title: "Keep yourself fit with our gym & fitness centre.",
       description:
-        "Immerse yourself in the tranquility of the lush landscape garden",
+        "Stay active every day with modern equipment and a refreshing open-air workout space.",
       image: "/assets/GYM.png",
+      imageType: "Actual Image"
     },
     {
       title:
-        "Stay fit and active at Jogging Park with its pristine trails, fitness stations, and revitalizing amenities",
+        "Stay fit and active at Jogging Park with its pristine trails, fitness stations, and revitalizing amenities.",
       description:
-        "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+        "Enjoy a refreshing run or walk through green trails, with spots to stretch, relax, and recharge.",
       image: "/assets/Jogging.png",
+      imageType: "Stock Image"
     },
   ],
   noon: [
     {
       title: "Escape into a tranquil sanctuary of books and relaxation.",
       description:
-        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+        "Discover serenity. Our tranquil sanctuary offers a perfect escape to relax and immerse yourself in the world of books.",
       image: "/assets/noon1.png",
+      imageType: "Artist Impression"
     },
     {
       title: "Unleash your playful side in our dynamic indoor games room.",
-      description: "Refresh your senses with the interactive fountains",
+      description:
+        "Unleash the fun! Our dynamic games room is perfect for play and lively moments.",
       image: "/assets/noon2.png",
+      imageType: "Artist Impression"
     },
     {
       title:
         "Immerse yourself in cinematic bliss with our deluxe home theater amenities.",
       description:
-        "Immerse yourself in the tranquility of the lush landscape garden",
+        "Your private cinema awaits. Enjoy cinematic bliss with our deluxe home theater amenities.",
       image: "/assets/noon3.png",
+      imageType: "Artist Impression"
     },
     {
       title:
-        "Elevate your lifestyle in our clubhouse, offering diverse amenities for your enjoyment",
+        "Elevate your lifestyle in our clubhouse, offering diverse amenities for your enjoyment.",
       description:
-        "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+        "Enhance your lifestyle. Our clubhouse, with its diverse amenities, is your hub for enjoyment and leisure.",
       image: "/assets/noon4.png",
+      imageType: "Artist Impression"
     },
   ],
   evening: [
@@ -64,26 +77,31 @@ const amenities = {
       title:
         "Indulge in opulent travel with our private ferry service, redefining luxury and convenience.",
       description:
-        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+        "Redefine your journey. Indulge in luxurious and convenient travel with our exclusive private ferry service.",
       image: "/assets/evening1.png",
+      imageType: "Actual Image"
     },
     {
       title:
         "Unleash your agility and finesse on our top-notch badminton court, designed for exhilarating rallies and competitive play.",
-      description: "Refresh your senses with the interactive fountains",
+      description:
+        "Serve up excitement! Hone your skills and enjoy thrilling matches on our premier badminton court.",
       image: "/assets/evening2.png",
+      imageType: "Artist Impression"
     },
     {
       title: "Escape to a secluded waterfront oasis at our private ghat.",
       description:
-        "Immerse yourself in the tranquility of the lush landscape garden",
+        "Find your oasis. Our private ghat provides a secluded waterfront escape, offering peace and stunning views.",
       image: "/assets/evening3.png",
+      imageType: "Actual Image"
     },
     {
-      title: "Explore the depths of spirituality",
+      title: "Explore the depths of spirituality.",
       description:
-        "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+        "Find your peace. This tranquil setting provides a sacred space for contemplation and spiritual exploration.",
       image: "/assets/evening4.png",
+      imageType: "Actual Image"
     },
   ],
   night: [
@@ -91,55 +109,64 @@ const amenities = {
       title:
         "Indulge in the grandeur of exquisite architecture, luxurious seating & captivating artwork.",
       description:
-        "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+        "Indulge your senses. Step into a world of grand architecture, luxurious comfort, and captivating art.",
       image: "/assets/night1.png",
+      imageType: "Artist Impression"
     },
     {
       title:
         "Unforgettable events in elegant spaces await at our banquet facilities.",
-      description: "Refresh your senses with the interactive fountains",
+      description:
+        "Celebrate in style. Create unforgettable moments in the elegant spaces of our premier banquet facilities.",
       image: "/assets/night2.png",
+      imageType: "Artist Impression"
     },
     {
       title:
-        "Retail bliss awaits at our outlet facility with diverse stores, exclusive discounts, and a vibrant atmosphere",
+        "Retail bliss awaits at our outlet facility with diverse stores, exclusive discounts, and a vibrant atmosphere.",
       description:
-        "Immerse yourself in the tranquility of the lush landscape garden",
+        "Unlock incredible deals and diverse choices. Experience the vibrant energy and retail bliss at triveni omniplex.",
       image: "/assets/night3.png",
+      imageType: "Stock Image"
     },
     {
       title:
-        "Elevate your nights with breathtaking views from our viewing deck, offering a panorama, cozy seating, and enchanting ambiance",
+        "Elevate your nights with breathtaking views from our viewing deck, offering a panorama, cozy seating, and enchanting ambiance.",
       description:
-        "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+        "Breathtaking nights. Panorama, cozy seating, enchanting ambiance from our viewing deck.",
       image: "/assets/night4.png",
+      imageType: "Artist Impression"
     },
   ],
 };
 
 const clubhouseData = [
   {
-    title: "Swimming pool",
+    title: "Infinity Swimming pool",
     description:
-      "Immerse yourself in the tranquility of the lush landscape garden",
+      "Take a refreshing dip while soaking in uninterrupted views of the Ganga, surrounded by serene palm-lined decks and the sound of stillness.",
     image: "/assets/Swimming-pool.png",
+    imageType: "Artist Impression"
   },
   {
-    title: "Viewing deck",
+    title: "Yoga Room",
     description:
-      "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
-    image: "/assets/Viewing-deck.png",
+      "Find your inner peace in a calming space designed for meditation and yoga, with natural light, tranquil views, and lotus pond serenity.",
+    image: "/assets/Yoga-Room.png",
+    imageType: "Artist Impression"
   },
   {
     title: "Badminton court",
     description:
-      "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+      "Serve, smash, and stay active in a vibrant indoor court that invites both casual fun and competitive spirit within a modern setup.",
     image: "/assets/Badminton-court.png",
+    imageType: "Artist Impression"
   },
   {
-    title: "Poolside deck with lounger",
-    description: "Refresh your senses with the interactive fountains",
-    image: "/assets/Poolside-deck.png",
+    title: "Theater",
+    description: "Experience cinema in comfort with a state-of-the-art home theatre where every movie night becomes a private, luxurious escape.",
+    image: "/assets/Theater.png",
+    imageType: "Artist Impression"
   },
 ];
 
@@ -161,7 +188,7 @@ const ClubIcons = [
     image: "/assets/club4.png",
   },
   {
-    label: "Indoor kinds playing zone",
+    label: "Toddler playing zone",
     image: "/assets/club5.png",
   },
   {
@@ -172,66 +199,40 @@ const ClubIcons = [
     label: "AC indoor games",
     image: "/assets/club7.png",
   },
-  {
-    label: "AC home theatre",
-    image: "/assets/club8.png",
-  },
+  { label: "Reading room", image: "/assets/club8.png" },
   {
     label: "Kids pool",
     image: "/assets/club9.png",
   },
 ];
 
-const ClubIconsRes = [
-  {
-    label: "Convenience store",
-    image: "/assets/club1.png",
-  },
-  {
-    label: "Multi purpose hall",
-    image: "/assets/club2.png",
-  },
-  {
-    label: "Hi-tech gym",
-    image: "/assets/club3.png",
-  },
-  {
-    label: "Snacks Corner",
-    image: "/assets/club4.png",
-  },
-  {
-    label: "Indoor kinds playing zone",
-    image: "/assets/club5.png",
-  },
-  {
-    label: "Squash court",
-    image: "/assets/club6.png",
-  },
-];
-
 const PodiumData = [
   {
-    title: "Palm garden",
+    title: "Splash pool",
     description:
-      "Immerse yourself in the tranquility of the lush landscape garden",
-    image: "/assets/PalmGarden.png",
+      "Let your little ones laugh, play, and cool off in a safe, fun-filled splash zone while you lounge and unwind nearby.",
+    image: "/assets/Splash-pool.png",
+    imageType: "Actual Image"
   },
   {
-    title: "Garden pavilion",
+    title: "Landscape Garden",
     description:
-      "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
-    image: "/assets/GardenPavilion.png",
+      "Stroll through expanses of lush greenery and curated plant life, thoughtfully designed to offer moments of reflection and natural harmony.",
+    image: "/assets/Landscape-Garden.png",
+    imageType: "Actual Image"
   },
   {
-    title: "Outdoor gym",
+    title: "Kids Play Area",
     description:
-      "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
-    image: "/assets/OutdoorGym.png",
+      "A joyful space where imagination runs free filled with safe, interactive equipment to keep your children active and delighted.",
+    image: "/assets/Kids.png",
+    imageType: "Actual Image"
   },
   {
-    title: "Lotus pond and pavilion",
-    description: "Refresh your senses with the interactive fountains",
-    image: "/assets/LotusPond.png",
+    title: "Fountain Plaza",
+    description: "Witness the charm of water come alive in a beautifully designed plaza, with interactive fountains creating moments of wonder.",
+    image: "/assets/FountainPlaza.png",
+    imageType: "Actual Image"
   },
 ];
 
@@ -240,76 +241,52 @@ const PodiumIcons = [
   { label: "Reflexology path", image: "/assets/podium2.png" },
   { label: "Floating stage", image: "/assets/podium3.png" },
   { label: "Amphitheater", image: "/assets/podium4.png" },
-  { label: "Splash pool", image: "/assets/podium5.png" },
-  {
-    label: "Splash pool side deck with loungers",
-    image: "/assets/podium6.png",
-  },
+  // { label: "Splash pool",image: "/assets/podium6.png" },
   { label: "Interactive fountain", image: "/assets/podium7.png" },
-  { label: "Fountain plaza", image: "/assets/podium8.png" },
-  { label: "Kid's play area", image: "/assets/podium9.png" },
-  { label: "Common toilet", image: "/assets/podium10.png" },
-  { label: "24/7 Power backup", image: "/assets/podium11.png" },
+  // { label: "Fountain plaza", image: "/assets/podium8.png" },
+  { label: "Lotus Pond", image: "/assets/podium9.png" },
   { label: "CCTV", image: "/assets/podium12.png" },
-  { label: "Provision for intercom", image: "/assets/podium13.png" },
-  { label: "Disable access and parking", image: "/assets/podium14.png" },
-  { label: "Solar panels", image: "/assets/podium15.png" },
-  { label: "Admin office", image: "/assets/podium16.png" },
-  {
-    label: "Designed for natural light and ventilation",
-    image: "/assets/podium17.png",
-  },
+  { label: "Designed for natural light and ventilation", image: "/assets/podium17.png" },
   { label: "Improved air quality", image: "/assets/podium18.png" },
-  {
-    label: "Modern fire safety & firefighting equipment",
-    image: "/assets/podium19.png",
-  },
-  { label: "Controlled noise pollution", image: "/assets/podium20.png" },
-  {
-    label: "Dedicated space for cycle, 2 wheelers, 4 wheelers",
-    image: "/assets/podium21.png",
-  },
-  { label: "Triple height lobbies", image: "/assets/podium22.png" },
   { label: "Biometrics secured entrance", image: "/assets/podium23.png" },
-  { label: "Reading room", image: "/assets/podium24.png" },
 ];
 
 const groundData = [
   {
-    title: "Cycling track",
+    title: "Skating Rink",
     description:
-      "Immerse yourself in the tranquility of the lush landscape garden",
+      "Glide with ease or watch the fun unfold in a vibrant rink designed for motion, laughter, and outdoor excitement.",
     image: "/assets/cycling-track.png",
+    imageType: "Actual Image"
   },
   {
-    title: "Mandir",
+    title: "Riverside Gazebo",
     description:
-      "Enjoy the beauty of the lotus pond pavilion and unwind with a calming session of yoga and meditation",
+      "Relax by the Ganga under elegant gazebos that offer panoramic views, fresh breezes, and the perfect retreat from routine.",
     image: "/assets/mandir.png",
+    imageType: "Actual Image"
   },
   {
-    title: "Floating fountain",
+    title: "Hibiscus garden",
     description:
-      "Let your little ones frolic at the children's play area or the splash pool while you lounge or take a stroll",
+      "Walk through a vibrant palette of blooming hibiscus an aromatic haven crafted to lift your spirits and soothe your senses.",
     image: "/assets/Floating-fountain.png",
+    imageType: "Stock Image"
   },
   {
-    title: "Kid's play area",
-    description: "Refresh your senses with the interactive fountains",
+    title: "Deepmala",
+    description: "Celebrate timeless tradition with the glow of ornamental lighting that adds a touch of heritage and grandeur to your evenings.",
     image: "/assets/kids-play.png",
+    imageType: "Actual Image"
   },
 ];
 
 const groundIcons = [
   { label: "Footpath/jogging Track", image: "/assets/ground1.png" },
   { label: "Pet park", image: "/assets/ground2.png" },
-  { label: "Underpass 1", image: "/assets/ground3.png" },
-  { label: "Hibiscus garden", image: "/assets/ground4.png" },
-  { label: "Skating ring", image: "/assets/ground5.png" },
-  { label: "Lotus pond", image: "/assets/ground6.png" },
+  { label: "Sewage Treatment Plant", image: "/assets/ground3.png" },
   { label: "Private jetty & ferry service", image: "/assets/ground7.png" },
-  { label: "Riverside Gazebo", image: "/assets/ground8.png" },
-  { label: "Deepmala", image: "/assets/ground9.png" },
+  { label: "Floating Fountain", image: "/assets/ground8.png" },
   { label: "Drivers seating area", image: "/assets/ground10.png" },
   { label: "Mygate service", image: "/assets/ground11.png" },
   { label: "Visitor car parking space", image: "/assets/ground12.png" },
@@ -317,57 +294,31 @@ const groundIcons = [
   { label: "Drip irrigation system", image: "/assets/ground14.png" },
   { label: "Water treatment plant", image: "/assets/ground15.png" },
   { label: "ATM space", image: "/assets/ground16.png" },
-  { label: "Private ghat", image: "/assets/ground17.png" },
+  { label: "Mandir", image: "/assets/ground17.png" },
   { label: "Multiway connectivity", image: "/assets/ground18.png" },
-  { label: "Provision for intercom", image: "/assets/ground19.png" },
-  { label: "Restaurant", image: "/assets/ground20.png" },
-  { label: "240,000 Sq. ft. landscaped podium", image: "/assets/ground21.png" },
 ];
 
 const features = [
   {
-    image: "/assets/podium1.png",
+    image: "/assets/podium1.svg",
     title: "Reduction in energy and water consumption",
   },
   {
-    image: "/assets/podium2.png",
+    image: "/assets/podium2.svg",
     title: "Improved health & hygiene",
   },
   {
-    image: "/assets/podium3.png",
+    image: "/assets/podium3.svg",
     title: "Better ventilation and light in the dwellings",
   },
   {
-    image: "/assets/podium3.png",
+    image: "/assets/podium4.svg",
     title: "Better sanitation",
   },
   {
-    image: "/assets/podium3.png",
+    image: "/assets/podium5.svg",
     title:
       "Fuel savings in transit of people to workplaces and associated pollution",
-  },
-];
-
-const accordionData = [
-  {
-    question: "Can I choose my meals?",
-    answer:
-      "Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.",
-  },
-  {
-    question: "When will I receive my order?",
-    answer:
-      "Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.",
-  },
-  {
-    question: "Can I skip a delivery?",
-    answer:
-      "Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.",
-  },
-  {
-    question: "Can I add Extras to my delivery?",
-    answer:
-      "Quisque rutrum. Aenean imperdi. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.",
   },
 ];
 
@@ -375,64 +326,43 @@ export default function Amenities() {
   const [selectedTab, setSelectedTab] = useState("morning");
   const [selectedNav, setSelectedNav] = useState("Club-house");
   const [activeIndex, setActiveIndex] = useState(null);
-  const [activeCategory, setActiveCategory] = useState(0); // New state for selected category
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const images = [
+    "/assets/Certificate1.png",
+    "/assets/Certificate2.png",
+    "/assets/Certificate3.png",
+  ];
+
+  // const [activeCategory, setActiveCategory] = useState(0); // New state for selected category
 
   // Accordion data for each category
   const accordionData = [
-    [
-      {
-        question: "Cat 1 - Question 1",
-        answer: "Answer for Cat 1 - Question 1",
-      },
-      {
-        question: "Cat 1 - Question 2",
-        answer: "Answer for Cat 1 - Question 2",
-      },
-      {
-        question: "Cat 1 - Question 3",
-        answer: "Answer for Cat 1 - Question 1",
-      },
-      {
-        question: "Cat 1 - Question 4",
-        answer: "Answer for Cat 1 - Question 2",
-      },
-    ],
-    [
-      {
-        question: "Cat 2 - Question 1",
-        answer: "Answer for Cat 2 - Question 1",
-      },
-      {
-        question: "Cat 2 - Question 2",
-        answer: "Answer for Cat 2 - Question 2",
-      },
-      {
-        question: "Cat 2 - Question 3",
-        answer: "Answer for Cat 1 - Question 1",
-      },
-      {
-        question: "Cat 2 - Question 4",
-        answer: "Answer for Cat 1 - Question 2",
-      },
-    ],
-    [
-      {
-        question: "Cat 3 - Question 1",
-        answer: "Answer for Cat 3 - Question 1",
-      },
-      {
-        question: "Cat 3 - Question 2",
-        answer: "Answer for Cat 3 - Question 2",
-      },
-      {
-        question: "Cat 3 - Question 3",
-        answer: "Answer for Cat 1 - Question 1",
-      },
-      {
-        question: "Cat 3 - Question 4",
-        answer: "Answer for Cat 1 - Question 2",
-      },
-    ],
+    {
+      question: "Is there a swimming pool in the clubhouse?",
+      answer:
+        "Yes, Sangam’s clubhouse features a swimming pool with a poolside deck.",
+    },
+    {
+      question: "Does Sangam offer a gym?",
+      answer:
+        "Yes, there's a hi‑tech, air-conditioned multi‑gym with changing rooms and lockers.",
+    },
+    {
+      question: "Can we watch movies together in a theatre?",
+      answer:
+        "Absolutely, the clubhouse has an AC home theatre with surround‑sound and seating for around 90 people.",
+    },
+    {
+      question: "Is there a dedicated games area indoors?",
+      answer:
+        "Yes, there's an indoor games arena with pool, table tennis, carrom, chess, darts, squash, and badminton.",
+    },
+    {
+      question: "Is there a space for group events or classes?",
+      answer:
+        "Yes, a multipurpose hall hosts activities like karaoke, dance, and cooking classes.",
+    },
   ];
 
   const toggleIndex = (index) => {
@@ -454,11 +384,12 @@ export default function Amenities() {
   ];
 
   return (
+    <>
     <main>
       <SlideUp>
-        <section className="relative justify-center bg-[#f3f6f8] flex flex-col items-center md:h-[280px] md:top-[107] h-[180px] top-[50]">
+        <section className="relative justify-center bg-[#f3f6f8] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
           <SlideUp delay={0.4}>
-            <div className="px-4 pt-6 text-center pb-4 md:pb-0">
+            <div className="text-center pb-4 md:pb-0">
               <span className="text-[#22252e] font-bold text-[20px]">
                 • Home
               </span>
@@ -468,23 +399,21 @@ export default function Amenities() {
               </span>
             </div>
           </SlideUp>
-          <SlideUp delay={0.6}>
-            <h1 className="text-[48px] text-black leading-[52px] md:text-[#dee2e4] md:text-[150px] md:leading-[150px] font-cormorant">
-              Amenities
-            </h1>
-          </SlideUp>
         </section>
       </SlideUp>
 
-      <section className="mt-10">
+      <section>
         <SlideUp delay={0.8}>
           <div className="container md:max-w-7xl md:mx-auto">
-            <div className="relative w-full md:h-[460px] h-[265px]">
+            <div className="relative w-full md:h-[460px] h-[265px] max-md:hidden">
               <Image src="/assets/Amenities.png" alt="Hero-img" fill priority />
+              </div>
+              <div className="relative w-full md:h-[460px] h-[265px] md:hidden">
+              <Image src="/assets/AmenitiesR.png" alt="Hero-img" fill priority />
             </div>
             <div className="z-20 flex text-center items-center justify-center md:mx-[80px] mx-[2%] relative p-[10px] -mt-12 mx-2 md:mx-[80px] mb-12  md:p-12 bg-white/80 backdrop-filter backdrop-blur-[14px] bg-opacity-80">
               <h2 className="project-overview-title text-center">
-                Lead a life of<span className="orange-color"> luxury</span>.
+                Lead a life of<span className="orange-color"> luxury</span>
               </h2>
             </div>
           </div>
@@ -592,18 +521,28 @@ export default function Amenities() {
                 } space-y-4 md:px-5 px-0`}
               >
                 <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300 opacity-20"></div>
-                <div className="text-[20px] font-cormorant leading-7 text-orange-500 font-normal md:text-lg md:mb-6 mb-3">
+                {/* <div className="text-[20px] font-cormorant leading-7 orange-color font-normal md:text-lg md:mb-6 mb-3">
                   {index + 1}
-                </div>
+                </div> */}
                 <h3 className="text-white text-left text-[18px] md:text-[24px] font-bold font-satoshi md:mb-6 mb-3">
                   {item.title}
                 </h3>
                 <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
+                  {/* Info Icon */}
+                  <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                    <div className="overflow-hidden">
+                      <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                        {item.imageType}
+                      </div>
+                    </div>
+                    <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                  </div>
+                  
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
+                    className="object-fill"
                   />
                 </div>
                 <p className="font-satoshi text-[14px] md:text-[16px] text-white font-normal md:mt-6 mt-3 opacity-50">
@@ -650,16 +589,17 @@ export default function Amenities() {
             65+
           </p>
           <p className="text-[16px] font-satoshi font-bold leading-[20px] relative z-10">
-            World-class <br /> Amenities
+            World-className <br /> Amenities
           </p>
         </SlideUp>
 
         {/* Navigation buttons */}
         <AnimatedSection delay={0.8}>
-          <nav className="mb-30 relative w-full mt-9 flex justify-center items-center border-t border-b border-[#232c3d] px-1 md:px-0 py-4 md:py-6">
+          <nav className="md:mb-30 mb-20 relative w-full mt-9 flex justify-center items-center border-t border-b border-[#232c3d] px-1 md:px-0 py-4 md:py-6">
             {navTabs.map((tab, idx) => (
               <React.Fragment key={tab}>
                 <button
+                  id={`amenities-nav-${tab.toLowerCase().replace(/\s/g, "-")}`}
                   onClick={() => {
                     setSelectedNav(tab);
                     const element = document.getElementById(
@@ -717,12 +657,12 @@ export default function Amenities() {
             </SlideUp>
           </div>
           <SlideUp delay={0.4}>
-            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3">
+            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:mt-4 max-md:my-3">
               Club-house
             </h1>
           </SlideUp>
           <div className="relative text-white md:py-10 py-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:mb-20 mb-10">
               {clubhouseData.map((item, index) => (
                 <SlideUp
                   delay={index * 0.2}
@@ -732,18 +672,28 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">
+                  {/* <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
-                  </div>
-                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
+                  </div> */}
+                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
+                    {/* Info Icon */}
+                    <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                      <div className="overflow-hidden">
+                        <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                          {item.imageType}
+                        </div>
+                      </div>
+                      <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                    </div>
+                    
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-fill"
                     />
                   </div>
                   <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E] font-[400]">
@@ -754,52 +704,24 @@ export default function Amenities() {
             </div>
           </div>
 
-          <div className="hidden md:grid max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 max-md:px-5">
             {ClubIcons.map(({ label, image }, idx) => (
               <SlideUp
-                delay={idx * 0.2}
+                delay={0.2}
                 key={idx}
-                className="flex items-center space-y-3"
+                className="flex flex-col md:flex-row items-center space-y-3"
               >
-                <div
-                  className={`flex items-center justify-center w-20 h-20 rounded-full mb-0
-                  }`}
-                >
-                  <Image
-                    src={image}
-                    alt={label}
-                    width={92}
-                    height={92}
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-                <p className="font-bold text-[24px] leading-[28px] font-satoshi text-[#22252E] text-center ml-7">
-                  {label}
-                </p>
-              </SlideUp>
-            ))}
-          </div>
-          {/* responsive */}
-          <div className="md:hidden flex max-w-7xl mx-auto grid grid-cols-2 gap-5">
-            {ClubIconsRes.map(({ label, image }, idx) => (
-              <SlideUp
-                delay={idx * 0.2}
-                key={idx}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div
-                  className={`flex items-center justify-center w-20 h-20 rounded-full mb-0
-                  }`}
-                >
+                <div className="flex-shrink-0 flex max-md:items-center max-md:justify-center w-15 h-15 md:w-[92px] md:h-[92px] rounded-full mb-0">
                   <Image
                     src={image}
                     alt={label}
                     width={60}
                     height={60}
+                    className="w-full h-full md:w-[92px] md:h-[92px]"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal text-[18px] leading-[24px] font-satoshi text-[#22252E] text-center">
+                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] max-md:text-center md:ml-7 flex-1">
                   {label}
                 </p>
               </SlideUp>
@@ -809,10 +731,10 @@ export default function Amenities() {
 
         {/* Horizontal Card Section */}
         <AnimatedSection>
-          <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
+          <Link href="/master-plan" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto my-6 mb-15 md:mb-0 md:my-12 md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
-                src="/assets/faqs-detail-gif.gif"
+                src="/assets/HB.jpg"
                 alt="Room preview"
                 fill
                 className="object-cover"
@@ -833,7 +755,7 @@ export default function Amenities() {
                 className="absolute -ml-6"
               />
             </div>
-          </div>
+          </Link>
         </AnimatedSection>
       </section>
 
@@ -865,13 +787,13 @@ export default function Amenities() {
             </div>
           </div>
           <SlideUp delay={0.4}>
-            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3 mt-10">
+            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:mt-12 mt-6">
               Podium Level
             </h1>
           </SlideUp>
 
           <div className="relative text-white md:px-8 md:py-10 py-4 px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:mb-20 mb-10">
               {PodiumData.map((item, index) => (
                 <SlideUp
                   delay={index * 0.2}
@@ -881,18 +803,28 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">
+                  {/* <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
-                  </div>
-                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
+                  </div> */}
+                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
+                    {/* Info Icon */}
+                    <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                      <div className="overflow-hidden">
+                        <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                          {item.imageType}
+                        </div>
+                      </div>
+                      <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                    </div>
+                    
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-fill"
                     />
                   </div>
                   <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E] font-[400]">
@@ -903,49 +835,24 @@ export default function Amenities() {
             </div>
           </div>
 
-          <div className="hidden md:grid max-w-7xl mx-auto md:grid-cols-3 gap-10 px-8 ">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 max-md:px-5">
             {PodiumIcons.map(({ label, image }, idx) => (
               <SlideUp
-                delay={idx * 0.2}
+                delay={0.2}
                 key={idx}
-                className="flex items-center space-x-4"
+                className="flex flex-col md:flex-row items-center space-y-3"
               >
-                <div className="flex-shrink-0 flex items-center justify-center w-20 h-20 rounded-full">
-                  <Image
-                    src={image}
-                    alt={label}
-                    width={92}
-                    height={92}
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-                <p className="font-bold text-[24px] leading-[28px] font-satoshi text-[#22252E]">
-                  {label}
-                </p>
-              </SlideUp>
-            ))}
-          </div>
-          {/* responsive */}
-          <div className="md:hidden flex max-w-7xl mx-auto grid grid-cols-2 gap-5">
-            {ClubIconsRes.map(({ label, image }, idx) => (
-              <SlideUp
-                delay={idx * 0.1}
-                key={idx}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div
-                  className={`flex items-center justify-center w-20 h-20 rounded-full mb-0
-                  }`}
-                >
+                <div className="flex-shrink-0 flex max-md:items-center max-md:justify-center w-15 h-15 md:w-[92px] md:h-[92px] rounded-full mb-0">
                   <Image
                     src={image}
                     alt={label}
                     width={60}
                     height={60}
+                    className="w-full h-full md:w-[92px] md:h-[92px]"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal text-[18px] leading-[24px] font-satoshi text-[#22252E] text-center">
+                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] max-md:text-center md:ml-7 flex-1">
                   {label}
                 </p>
               </SlideUp>
@@ -954,10 +861,10 @@ export default function Amenities() {
         </div>
         {/* Horizontal Card Section */}
         <AnimatedSection>
-          <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 md:h-[144px]">
+          <Link href="/life-@-alcove" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto md:my-12 md:h-[144px]">
             <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
               <Image
-                src="/assets/sport-gif.gif"
+                src="/assets/HB.jpg"
                 alt="Room preview"
                 fill
                 className="object-cover"
@@ -977,7 +884,7 @@ export default function Amenities() {
                 className="absolute -ml-6"
               />
             </div>
-          </div>
+          </Link>
         </AnimatedSection>
       </section>
 
@@ -993,9 +900,9 @@ export default function Amenities() {
               <span className="text-[#DE804B]">Devote </span>
               your evening to
               <br />
-              experiencing the<span className="text-[#DE804B]"> Ganga</span>
+              experience the<span className="text-[#DE804B]"> Ganga</span>
               <br />
-              <span className="text-[#DE804B]">Ghat.</span>
+              <span className="text-[#DE804B]">Ghat</span>.
             </h2>
           </div>
 
@@ -1044,13 +951,13 @@ export default function Amenities() {
             </SlideUp>
           </div>
           <SlideUp delay={0.4}>
-            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant md:my-12 my-3 mt-5 md:mt-0">
+            <h1 className="relative text-[#22252E] font-normal text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] text-center font-cormorant max-md:my-3 mt-5 md:mt-4">
               Ground Level
             </h1>
           </SlideUp>
 
           <div className="relative text-white md:py-10 py-6 px-4 md:px-0">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5  md:mb-20 mb-10">
               {groundData.map((item, index) => (
                 <SlideUp
                   delay={index * 0.2}
@@ -1060,18 +967,28 @@ export default function Amenities() {
                   } md:space-y-4 md:px-5 px-0`}
                 >
                   <div className="absolute h-[65%] left-[-10px] md:border-l md:border-dashed md:border-gray-300"></div>
-                  <div className="max-md:text-center text-[18px] font-cormorant leading-7 text-orange-500 font-semibold md:text-lg">
+                  {/* <div className="max-md:text-center text-[18px] font-cormorant leading-7 orange-color font-semibold md:text-lg">
                     {index + 1}
-                  </div>
-                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi">
+                  </div> */}
+                  <h3 className="text-[#22252E] max-md:text-center text-[18px] md:text-[24px] font-[700] font-satoshi max-md:mb-3">
                     {item.title}
                   </h3>
                   <div className="w-full h-[160px] md:h-[240px] relative overflow-hidden">
+                    {/* Info Icon */}
+                    <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                      <div className="overflow-hidden">
+                        <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                          {item.imageType}
+                        </div>
+                      </div>
+                      <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                    </div>
+                    
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-fill"
                     />
                   </div>
                   <p className="font-satoshi text-[14px] md:text-[16px] text-[#22252E] font-[400]">
@@ -1082,49 +999,24 @@ export default function Amenities() {
             </div>
           </div>
 
-          <div className="hidden md:grid max-w-7xl mx-auto grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 max-md:px-5">
             {groundIcons.map(({ label, image }, idx) => (
               <SlideUp
-                delay={idx * 0.1}
+                delay={0.2}
                 key={idx}
-                className="flex items-center space-x-4"
+                className="flex flex-col md:flex-row items-center space-y-3"
               >
-                <div className="flex-shrink-0 flex items-center justify-center w-20 h-20 rounded-full">
-                  <Image
-                    src={image}
-                    alt={label}
-                    width={92}
-                    height={92}
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-                <p className="font-bold text-[24px] leading-[28px] font-satoshi text-[#22252E]">
-                  {label}
-                </p>
-              </SlideUp>
-            ))}
-          </div>
-          {/* responsive */}
-          <div className="md:hidden flex max-w-7xl mx-auto grid grid-cols-2 gap-5 px-4">
-            {ClubIconsRes.map(({ label, image }, idx) => (
-              <SlideUp
-                delay={idx * 0.1}
-                key={idx}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div
-                  className={`flex items-center justify-center w-20 h-20 rounded-full mb-0
-                  }`}
-                >
+                <div className="flex-shrink-0 flex max-md:items-center max-md:justify-center w-15 h-15 md:w-[92px] md:h-[92px] rounded-full mb-0">
                   <Image
                     src={image}
                     alt={label}
                     width={60}
                     height={60}
+                    className="w-full h-full md:w-[92px] md:h-[92px]"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <p className="font-normal text-[18px] leading-[24px] font-satoshi text-[#22252E] text-center">
+                <p className="font-normal md:font-bold text-[18px] md:text-[24px] leading-[24px] md:leading-[28px] font-satoshi text-[#22252E] max-md:text-center md:ml-7 flex-1">
                   {label}
                 </p>
               </SlideUp>
@@ -1135,49 +1027,138 @@ export default function Amenities() {
 
       {/* ferry ride */}
       <AnimatedSection>
-        <section className="relative w-full h-full flex flex-col-reverse md:flex-row overflow-hidden shadow-lg bg-white pb-15 md:pb-0 rounded-none">
-          {/* Image (bottom on mobile, left on desktop) */}
-          <div className="w-full md:w-1/2 h-[300px] md:h-[524px] relative">
-            <Image
-              src="/assets/ferry-ride.png"
-              alt="Ferry Ride"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute -inset-1 bg-[linear-gradient(180deg,#0a1628_9.69%,rgba(2,12,34,0)_93.16%)] md:bg-[linear-gradient(267.36deg,#0a1628_9.69%,rgba(2,12,34,0)_93.16%)]" />
+        <section className="relative w-full h-[600px] md:h-[524px] md:flex flex-col bg-white max-md:pb-20">
+          {/* Mobile Layout */}
+          <div className="md:hidden w-full h-full flex flex-col overflow-visible">
+            {/* Top Section - Content (60-65% height) */}
+            <div className="h-[60%] bg-[#010922] relative flex flex-col justify-center items-center pt-12 pb-10 overflow-visible">
+              <h2 className="text-[36px] font-cormorant text-white font-normal leading-[44px] mb-9 text-center">
+                Good News <br /> <span className="text-[#DE804B]">Sails Faster</span>
+              </h2>
+              <div className="w-full max-w-[280px] mb-6 overflow-visible">
+                <div className="text-center">
+                  <div className="text-white text-[16px] leading-[24px] font-satoshi font-bold mb-5">Travel Route :</div>
+                  <div className="border-b border-white mb-5 w-[120px] mx-auto"></div>
+                  <div className="text-white text-[14px] leading-[22px] font-satoshi font-normal text-center">
+                    New Kolkata &nbsp; → &nbsp; Dakshineswar&nbsp; → &nbsp;<br />
+                    Millennium Park &nbsp; → &nbsp; New Kolkata
+                  </div>
+                </div>
+              </div>           
+              <Link
+                href={"tel:+917605081410"}
+                className="z-100 absolute -bottom-7 md:min-h-[4rem] w-fit h-[3.5rem] md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-bold text-4 leading-7 inline-flex items-center gap-2 overflow-visible mb-0 button-primary"
+              >
+                <div className="px-3 py-3">Call +91 760 508 1410 to Book</div>
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] rounded-r-md text-lg">
+                <svg
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.4788 18C15.5454 18 13.5746 17.5333 11.5663 16.6C9.55791 15.6667 7.69541 14.3417 5.97876 12.625C4.26211 10.9083 2.93711 9.04585 2.00376 7.0375C1.07042 5.02915 0.60376 3.05835 0.60376 1.125C0.60376 0.8035 0.710925 0.535665 0.92526 0.3215C1.13942 0.107165 1.40726 0 1.72876 0H5.22876C5.46211 0 5.66211 0.083335 5.82876 0.25C5.99541 0.416665 6.11211 0.625 6.17876 0.875L6.85201 4.016C6.88651 4.25535 6.88291 4.47085 6.84126 4.6625C6.79961 4.85415 6.71016 5.0186 6.57301 5.15575L4.07876 7.675C4.51211 8.40835 4.97041 9.09165 5.45376 9.725C5.93711 10.3584 6.47041 10.9583 7.05376 11.525C7.67041 12.1583 8.32041 12.7375 9.00376 13.2625C9.68711 13.7875 10.4038 14.25 11.1538 14.65L13.5288 12.2C13.6954 12.0167 13.8884 11.8917 14.1075 11.825C14.3267 11.7583 14.5421 11.7416 14.7538 11.775L17.7288 12.425C17.9788 12.4917 18.1871 12.6253 18.3538 12.826C18.5204 13.0268 18.6038 13.2515 18.6038 13.5V16.875C18.6038 17.1965 18.4966 17.4643 18.2823 17.6785C18.0681 17.8928 17.8003 18 17.4788 18ZM3.32876 6.3L5.35376 4.25L4.77876 1.5H2.10376C2.13709 2.2 2.24959 2.9375 2.44126 3.7125C2.63291 4.4875 2.92876 5.35 3.32876 6.3ZM12.5538 15.375C13.2371 15.6917 13.9788 15.95 14.7788 16.15C15.5788 16.35 16.3538 16.4667 17.1038 16.5V13.825L14.5288 13.3L12.5538 15.375Z"
+                      fill="#DE804B"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+
+            {/* Bottom Section - Image (35-40% height) */}
+            <div className="h-[50%] relative">
+              <Image
+                src="/assets/ferry-rideRES.png"
+                alt="Ferry Ride"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Gradient overlay from top to bottom */}
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(1,9,34,0.8)_0%,rgba(1,9,34,0.3)_50%,rgba(1,9,34,0)_100%)]" />
+            </div>
           </div>
 
-          {/* Text Content (top on mobile, right on desktop) */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center py-10 px-4 md:px-6 md:py-[74px] md:pr-[100px] bg-[#0a1628] text-center md:text-left">
-            <h2 className="text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px] mb-6 md:mb-7">
-              Indulge in the <span className="text-[#DE804B]">ferry ride </span>
-              <br className="hidden md:block" />
-              departing from our <br className="hidden md:block" />
-              location.
-            </h2>
-            <p className="text-white font-satoshi font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] mb-6 md:mb-7">
-              Ferry solely for potential clients and current customers.
-            </p>
-            <button className="md:min-h-[4rem] min-h-[3.5rem] h-full md:-top-7 bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden button-primary">
-              <div className="px-6 py-3 mr-20">
-                <span>Book Now</span>
-              </div>
-              <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
-                ↗
-              </span>
-            </button>
+          {/* Desktop Layout */}
+          <div className="hidden md:flex w-full h-full">
+            {/* Left Side - Image */}
+            <div className="w-1/2 h-full relative">
+              <Image
+                src="/assets/ferry-ride.png"
+                alt="Ferry Ride"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Gradient overlay from left to right */}
+              <div className="absolute inset-0 bg-[linear-gradient(87.36deg,rgba(2,12,34,0)_6.84%,#010922_90.31%)]" />
+            </div>
+
+            {/* Right Side - Blue Content Section */}
+            <div className="w-1/2 h-full bg-[#010922] flex flex-col py-25 pr-25">
+              <h2 className="text-[36px] md:text-[56px] font-cormorant text-white font-light leading-[40px] md:leading-[72px] mb-7">
+                Good News <span className="text-[#DE804B]">Sails Faster</span>
+              </h2>
+              <div className="w-full mb-7">
+                <div className="text-left">
+                  <div className="text-white text-[24px] leading-[28px] font-satoshi font-normal mb-5">Travel Route :</div>
+                  <div className="border-b border-white mb-5 w-[140px]"></div>
+                  <div className="text-white text-[24px] leading-[28px] font-satoshi font-normal">
+                    New Kolkata → Dakshineswar → Millennium Park → New Kolkata
+                  </div>
+                </div>
+                </div>           
+                <Link
+                href={"tel:+917605081410"}
+                className="md:min-h-[4rem] w-fit min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-bold inline-flex items-center gap-2 overflow-hidden mb-0 button-primary"
+              >
+                <div className="px-6 py-3 mr-20">Call +91 760 508 1410 to Book</div>
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
+                <svg
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.4788 18C15.5454 18 13.5746 17.5333 11.5663 16.6C9.55791 15.6667 7.69541 14.3417 5.97876 12.625C4.26211 10.9083 2.93711 9.04585 2.00376 7.0375C1.07042 5.02915 0.60376 3.05835 0.60376 1.125C0.60376 0.8035 0.710925 0.535665 0.92526 0.3215C1.13942 0.107165 1.40726 0 1.72876 0H5.22876C5.46211 0 5.66211 0.083335 5.82876 0.25C5.99541 0.416665 6.11211 0.625 6.17876 0.875L6.85201 4.016C6.88651 4.25535 6.88291 4.47085 6.84126 4.6625C6.79961 4.85415 6.71016 5.0186 6.57301 5.15575L4.07876 7.675C4.51211 8.40835 4.97041 9.09165 5.45376 9.725C5.93711 10.3584 6.47041 10.9583 7.05376 11.525C7.67041 12.1583 8.32041 12.7375 9.00376 13.2625C9.68711 13.7875 10.4038 14.25 11.1538 14.65L13.5288 12.2C13.6954 12.0167 13.8884 11.8917 14.1075 11.825C14.3267 11.7583 14.5421 11.7416 14.7538 11.775L17.7288 12.425C17.9788 12.4917 18.1871 12.6253 18.3538 12.826C18.5204 13.0268 18.6038 13.2515 18.6038 13.5V16.875C18.6038 17.1965 18.4966 17.4643 18.2823 17.6785C18.0681 17.8928 17.8003 18 17.4788 18ZM3.32876 6.3L5.35376 4.25L4.77876 1.5H2.10376C2.13709 2.2 2.24959 2.9375 2.44126 3.7125C2.63291 4.4875 2.92876 5.35 3.32876 6.3ZM12.5538 15.375C13.2371 15.6917 13.9788 15.95 14.7788 16.15C15.5788 16.35 16.3538 16.4667 17.1038 16.5V13.825L14.5288 13.3L12.5538 15.375Z"
+                      fill="#DE804B"
+                    />
+                  </svg>
+                </span>
+              </Link>          
+            </div>
           </div>
         </section>
       </AnimatedSection>
 
       {/* certified section */}
       <AnimatedSection className="overflow-visible">
-        <section className="block relative w-full bg-[#E7F2EB] px-2 md:pt-[130px] md:pb-20 pt-1 pb-1 md:px-15">
-          <div className="bg-white relative w-full md:py-20 md:px-10 mb:mt-12 text-center">
+        <section className="relative w-full bg-[#E7F2EB] px-2 md:pt-[130px] md:pb-20 pt-1 pb-15 md:px-15 bg-cover bg-center md:bg-top">
+          <div className="!w-[92%] h-[720px] absolute z-10 hidden md:block">
+            <Image
+              src={"/assets/certifed.svg"}
+              alt=""
+              fill
+              className="object-cover w-full h-full"
+            />
+            </div>
+            <div className="w-[96%] h-[740px] bg-white absolute z-10 md:hidden">
+              <div className="w-[205px] h-[370px] absolute top-0 right-0">
+              <Image
+              src={"/assets/certifedmobile.svg"}
+              alt=""
+              fill
+            />
+              </div>
+          </div>
+          <div className="z-11 relative w-full md:py-20 md:px-10 mb:mt-12 text-center">
             {/* IGBC Logo */}
-            <div className="flex justify-center">
-              <SlideUp delay={0.6} className="absolute -top-12">
+            <div className="flex justify-center z-11">
+              <SlideUp delay={0.6} className="absolute -top-12 z-11">
                 <Image
                   src="/assets/IGBC.png"
                   alt="IGBC Logo"
@@ -1269,9 +1250,13 @@ export default function Amenities() {
 
             {/* View Certification Button */}
             <AnimatedSection className="flex justify-center relative bottom-7 md:bottom-0 md:top-27 overflow-visible">
-              <button className="md:min-h-[4rem] min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden mb-0 button-primary">
+              <button
+                id="amenities-view-certification"
+                onClick={() => setIsModalOpen(true)}
+                className="md:min-h-[4rem] min-h-[3.5rem] h-full absolute md:static bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium inline-flex items-center gap-2 overflow-hidden mb-0 button-primary"
+              >
                 <div className="px-6 py-3 mr-20">View Certification</div>
-                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full text-orange-500 bg-[#002F52] text-lg">
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
                   ↗
                 </span>
               </button>
@@ -1279,10 +1264,10 @@ export default function Amenities() {
           </div>
           {/* Horizontal Card Section */}
           <AnimatedSection>
-            <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
+            <Link href="/life-@-alcove" className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 md:h-[144px]">
               <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
                 <Image
-                  src="/assets/sport-gif.gif"
+                  src="/assets/HB.jpg"
                   alt="Room preview"
                   fill
                   className="object-cover"
@@ -1302,100 +1287,14 @@ export default function Amenities() {
                   className="absolute -ml-6"
                 />
               </div>
-            </div>
+            </Link>
           </AnimatedSection>
         </section>
       </AnimatedSection>
 
       {/* Plans */}
       <AnimatedSection className="overflow-visible">
-        <div className="relative p-5 overflow-hidden mb-0">
-          <GangaWaves />
-          <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
-          <div className="relative md:px-24 container max-w-7xl mx-auto py-5 max-md:pb-15 md:py-15">
-            <div className="grid grid-cols-2 gap-4 ">
-              <div className="max-md:col-span-2 md:p-2">
-                <SlideUp delay={0.4}>
-                  <h2 className="font-cormorant text-[36px] md:leading-[72px] max-md:text-center md:font-[300] md:text-[56px] text-white">
-                    Your <span className="orange-color">Safety</span> &
-                    <br className="max-md:hidden" />{" "}
-                    <span className="orange-color">Security</span>, Our
-                    <br className="max-md:hidden" /> Priority
-                  </h2>
-                </SlideUp>
-                <SlideUp delay={0.6}>
-                  <button className="hidden mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium md:inline-flex items-center gap-2 overflow-hidden mb-0 button-primary">
-                    <div className="px-6 py-3 mr-20">Schedule a Visit</div>
-                    <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
-                      ↗
-                    </span>
-                  </button>
-                </SlideUp>
-              </div>
-              <div className="max-md:col-span-2 grid grid-cols-2 md:gap-x-20 gap-y-9 md:gap-y-12 mt-9 md:mt-6">
-                <SlideUp delay={0.2} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/surveillance-cctv.svg"
-                    alt="Security Systems"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    24 hours security systems
-                  </p>
-                </SlideUp>
-
-                <SlideUp delay={0.3} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/desktop-computer.svg"
-                    alt="Monitoring Systems"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    Central monitoring systems
-                  </p>
-                </SlideUp>
-
-                <SlideUp delay={0.5} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/security-officer-gate.svg"
-                    alt="Surveillance"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    24 hours surveillance
-                  </p>
-                </SlideUp>
-
-                <SlideUp delay={0.6} className="flex flex-col items-center">
-                  <Image
-                    height={68}
-                    width={68}
-                    src="/assets/icons/surveillance-cctv.svg"
-                    alt="Emergency Buttons"
-                    className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                  />
-                  <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
-                    Emergency Buttons
-                  </p>
-                </SlideUp>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex md:hidden justify-center relative -top-7">
-          <button className="inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden mb-0 button-primary">
-            <div className="px-6 py-3 mr-20">Schedule a Visit</div>
-            <span className="px-6 py-3 ml-auto text-orange-500 bg-[#002F52] text-lg">
-              ↗
-            </span>
-          </button>
-        </div>
+        <SafetySecuritySection />
       </AnimatedSection>
 
       {/* Question Section */}
@@ -1413,7 +1312,7 @@ export default function Amenities() {
           </div>
           <div className="flex flex-col md:w-[70%] w-full">
             {/* Category Buttons */}
-            <div className="flex gap-5 md:gap-10 items-center mb-8 mt-6 md:mt-0 text-gray-400 relative py-4 px-6 md:py-0 md:px-0 md:border-none border-y-1 border-dashed border-[#ebedef]">
+            {/* <div className="flex gap-5 md:gap-10 items-center mb-8 mt-6 md:mt-0 text-gray-400 relative py-4 px-6 md:py-0 md:px-0 md:border-none border-y-1 border-dashed border-[#ebedef]">
               {["Category 1", "Category 2", "Category 3"].map(
                 (label, idx, arr) => (
                   <React.Fragment key={idx}>
@@ -1423,7 +1322,7 @@ export default function Amenities() {
                       }`}
                       onClick={() => {
                         setActiveCategory(idx);
-                        setActiveIndex(null); // Reset open accordion
+                        setActiveIndex(null);
                       }}
                     >
                       {label}
@@ -1432,19 +1331,19 @@ export default function Amenities() {
                       )}
                     </button>
 
-                    {/* CSS Diamond */}
                     {idx < arr.length - 1 && (
                       <span className="w-1 h-1 border border-black rotate-45 mx-[12px]"></span>
                     )}
                   </React.Fragment>
                 )
               )}
-            </div>
+            </div> */}
 
             {/* Accordion Items */}
-            {accordionData[activeCategory].map((item, index) => (
+            {accordionData.map((item, index) => (
               <div key={index} className="mb-4 rounded-md bg-white p-4">
                 <button
+                  id={`amenities-faq-accordion-${index}`}
                   className="w-full flex justify-between items-center font-satoshi font-bold text-left text-gray-900 cursor-pointer"
                   onClick={() => toggleIndex(index)}
                 >
@@ -1489,7 +1388,7 @@ export default function Amenities() {
                 <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
                     activeIndex === index
-                      ? "max-h-40 opacity-100"
+                      ? "max-h-auto opacity-100"
                       : "max-h-0 opacity-0"
                   }`}
                 >
@@ -1501,31 +1400,13 @@ export default function Amenities() {
             ))}
           </div>
         </div>
-        <div className="group cursor-pointer transform transition-transform duration-300 hover:scale-101 absolute border-b-4 border-t-1 border-[#144D78] flex items-center bg-white rounded-none shadow-none overflow-hidden w-full max-w-4xl mx-auto mt-20 -bottom-13 md:h-[104px] z-1">
-          <div className="w-[100px] h-[100px] md:w-[144px] md:h-[144px] flex-shrink-0 relative">
-            <Image
-              src="/assets/faqs-detail-gif.gif"
-              alt="Room preview"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="flex-1 md:px-11 md:py-8">
-            <p className="px-5 md:px-0 md:text-[24px] font-satoshi font-bold text-[#22252E] md:leading-[28px] text-[16px] leading-[24px]">
-              Have more questions? Contact us now.
-            </p>
-          </div>
-          <div className="relative bg-[#E7EDF2] md:h-[144px] h-[100px] flex items-center md:w-13.5 w-8">
-            <Image
-              src="/assets/icons/arrowlong.svg"
-              alt=""
-              width={40}
-              height={3}
-              className="absolute -ml-6"
-            />
-          </div>
-        </div>
       </section>
     </main>
+    <ImageGallery
+    isOpen={isModalOpen}
+    onClose={() => setIsModalOpen(false)}
+    images={images}
+  />
+    </>
   );
 }

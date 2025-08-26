@@ -7,16 +7,31 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { submitContactForm } from "../utils/api";
 
 // Define form schema with validation
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  company: z.string().optional(),
-  email: z.string().email({ message: "Please enter a valid email address" }),
+  name: z
+    .string()
+    .min(1, { message: "Please enter your name" })
+    .refine((val) => val.trim().length >= 2, { 
+      message: "Name must be at least 2 characters" 
+    })
+    .transform((val) => val.trim()),
+  company: z.string().optional().transform((val) => val?.trim() || ""),
+  email: z
+    .string()
+    .min(1, { message: "Please enter your email address" })
+    .email({ message: "Please enter a valid email address" })
+    .transform((val) => val.trim()),
   phoneNumber: z
     .string()
-    .min(10, { message: "Phone number must be at least 10 digits" }),
-  requirements: z.string().optional(),
+    .min(1, { message: "Please enter your phone number" })
+    .refine((val) => /^\d{10}$/.test(val.trim()), { 
+      message: "Phone number must be exactly 10 digits" 
+    })
+    .transform((val) => val.trim()),
+  requirements: z.string().optional().transform((val) => val?.trim() || ""),
 });
 
 export default function Footer() {
@@ -34,53 +49,22 @@ export default function Footer() {
   });
 
   const onSubmit = async (data) => {
-    const requestData = {
-      Leads: [
-        {
-          FName: data.name,
-          LName: "K. Thakur",
-          Phone: data.phoneNumber,
-          City: "Kolkata",
-          project: "NEW KOLKATA - SANGAM",
-          Email: data.email,
-          Campaign: "G_Generic_WB_08-Feb-2023",
-          Source: "google",
-          Medium: "s",
-          Content: "647759937277",
-          Term: data.requirements || "",
-        },
-      ],
-    };
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      const response = await fetch(
-        "https://alcoverealty.my.salesforce-sites.com/websitehook/services/apexrest/hookinlandingPage",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestData),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      await response.json();
+      const result = await submitContactForm(data);
+      
       setSubmitStatus({
         success: true,
-        message: "Thank you! Your message has been sent successfully.",
+        message: result.message,
       });
       reset();
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitStatus({
         success: false,
-        message: "Something went wrong. Please try again later.",
+        message: error.message || "Something went wrong. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
@@ -98,9 +82,12 @@ export default function Footer() {
               <span className="orange-color">Contact </span>Us
             </h2>
             <p className="hidden lg:block font-[400] text-[14px] leading-5 !text-[#5C5F68]">
-              Whether you're interested in creating a custom space, or want to
-              learn more about what New Kolkata can do for you, we would love to
-              chat.
+              An exceptional choice deserves equally exceptional service! Let’s
+              work together to finalize the remaining details and make your
+              transition to your new address seamless and stress-free. Our team
+              is here to provide you with the support and attention to detail
+              you need at every step, ensuring a smooth and rewarding experience
+              in securing your perfect new home.
             </p>
 
             <h2 className="max-lg:text-center text-[18px] leading-6 font-stoshi font-[700] lg:leading-7 lg:text-[24px] !text-[#22252E] mt-12 mb-4">
@@ -264,16 +251,17 @@ export default function Footer() {
                 </div>
               </div>
               <button
+                id="footer-form-submit"
                 type="submit"
                 disabled={isSubmitting}
-                className={`min-h-[4rem] h-full max-lg:mx-auto w-[90%] mt-5 md:mt-10 relative bg-[#144D78] button-primary transition-all duration-300 rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden ${
+                className={`md:min-h-[4rem] max-md:w-[90%] min-h-[3.5rem] h-full max-lg:mx-auto w-[70%] mt-5 md:mt-10 relative bg-[#144D78] button-primary transition-all duration-300 rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden ${
                   isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                 }`}
               >
                 <div className="px-6 py-3 mr-20">
-                  {isSubmitting ? "Submitting..." : "Submit"}
+                  <span>{isSubmitting ? "Submitting..." : "Submit"}</span>
                 </div>
-                <span className="px-6 flex items-center justify-center min-h-[4rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
                   ↗
                 </span>
               </button>
@@ -281,9 +269,165 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
-          <div className="flex flex-col md:flex-row justify-between items-center pt-[36px] md:pt-[128px] gap-[36px] md:gap-0">
-            <div className="flex flex-row gap-[20px]">
+        <div className="flex flex-col md:flex-row justify-between text-center md:text-left max-md:items-center mt-[40px] gap-[40px]">
+          <div className="flex flex-col gap-[12px]">
+            <div className="text-[16px] leading-[24px] font-satoshi font-[700] text-[#5C5F68]">
+              New Kolkata
+            </div>
+            <div className="flex flex-col gap-1">
+              <a className="cursor-pointer" href="/typology/flats-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  Flats in New Kolkata
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/apartments-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  Apartments in New Kolkata
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/house-for-sale-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  House For Sale in New Kolkata
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/1-bhk-flats-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  1 BHK Flats in New Kolkata
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/2-bhk-flats-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  2 BHK Flats in New Kolkata
+                </div>
+              </a>
+              <a className="cursor-pointer" href="/typology/3-bhk-flats-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  3 BHK Flats in New Kolkata
+                </div>
+              </a>
+              <a className="cursor-pointer" href="/typology/4-bhk-flats-in-new-kolkata">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  4 BHK Flats in New Kolkata
+                </div>
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col gap-[12px]">
+            <div className="text-[16px] leading-[24px] font-satoshi font-[700] text-[#5C5F68]">
+              Serampore
+            </div>
+            <div className="flex flex-col gap-1">
+              <a className="cursor-pointer" href="/typology/flats-in-serampore">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  Flats in Serampore
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/2-bhk-flats-in-serampore">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  2 BHK Flats in Serampore
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/3-bhk-flats-in-serampore">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  3 BHK Flats in Serampore
+                </div>
+              </a>{" "}
+              <a className="cursor-pointer" href="/typology/4-bhk-flats-in-serampore">
+                <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                  4 BHK Flats in Serampore
+                </div>
+              </a>{" "}
+            </div>
+          </div>
+          <div className="flex flex-col gap-[12px]">
+            <div className="text-[16px] leading-[24px] font-satoshi font-[700] text-[#5C5F68]">
+              Quick Links
+            </div>
+            <div className="flex flex-col gap-[20px]">
+              <div className="flex flex-col gap-1">
+              <a className="cursor-pointer" href="/testimonials">
+                <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">
+                  Testimonials
+                </div>
+              </a>
+              <a className="cursor-pointer" href="/faqs">
+                <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">
+                  FAQs
+                </div>
+              </a>
+                <a className="cursor-pointer" href="/privacy-policy">
+                  <div className="text-[14px] leading-[24px] font-satoshi font-[500] text-[#5C5F68]">
+                    Privacy Policy
+                  </div>
+                </a>{" "}
+              </div>
+              <div className="flex flex-col gap-[20px]">
+                <div className="flex flex-row gap-[32px] md:gap-[24px]">
+                  <a
+                    className="cursor-pointer"
+                    href="https://www.youtube.com/@NewKolkatasangam"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/youtube.svg"
+                      alt="you-tube icon"
+                      width={24}
+                      height={24}
+                      className=""
+                    />
+                  </a>
+                  <a
+                    className="cursor-pointer"
+                    href="https://www.facebook.com/NewKolkata"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/fb.svg"
+                      alt="facebook icon"
+                      width={24}
+                      height={24}
+                      className=""
+                    />
+                  </a>
+                  <a
+                    className="cursor-pointer"
+                    href="https://x.com/new_kolkata"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/twitter.svg"
+                      alt="twitter icon"
+                      width={24}
+                      height={24}
+                      className=""
+                    />
+                  </a>
+                  <a
+                    className="cursor-pointer"
+                    href="https://www.instagram.com/new_kolkata/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/insta.svg"
+                      alt="insta icon"
+                      width={24}
+                      height={24}
+                      className=""
+                    />
+                  </a>
+                </div>
+                <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">
+                  All rights reserved © Alcove Realty
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="flex flex-col justify-between items-center pt-[36px] md:pt-[128px] gap-[36px] md:gap-0">
+            <div className="flex gap-[20px]">
               <a className="cursor-pointer" href="/testimonials">
                 <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68]">
                   Testimonials
@@ -369,7 +513,7 @@ export default function Footer() {
             <div className="text-[14px] leading-[20px] font-satoshi font-[400] text-[#5C5F68] pb-[80px] inline md:hidden">
               All rights reserved © Alcove Realty
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <Image

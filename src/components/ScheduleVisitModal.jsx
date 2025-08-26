@@ -4,17 +4,54 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { submitScheduleVisitForm } from "../utils/api";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
+  name: z
+    .string()
+    .min(1, { message: "Please enter your name" })
+    .refine((val) => val.trim().length >= 2, { 
+      message: "Name must be at least 2 characters" 
+    })
+    .transform((val) => val.trim()),
+  email: z
+    .string()
+    .min(1, { message: "Please enter your email" })
+    .email({ message: "Please enter a valid email" })
+    .transform((val) => val.trim()),
   phone: z
     .string()
-    .min(10, { message: "Phone number must be at least 10 digits" })
-    .max(15, { message: "Phone number must be no more than 15 digits" }),
+    .min(1, { message: "Please enter your phone" })
+    .refine((val) => {
+      const trimmed = val.trim();
+      // Remove + from the beginning for length calculation
+      const numberOnly = trimmed.startsWith('+') ? trimmed.slice(1) : trimmed;
+      
+      if (numberOnly.length < 10) {
+        return false;
+      }
+      if (numberOnly.length > 15) {
+        return false;
+      }
+      // Allow + at the beginning, then only digits
+      return /^\+?\d+$/.test(trimmed);
+    }, (val) => {
+      const trimmed = val.trim();
+      // Remove + from the beginning for length calculation
+      const numberOnly = trimmed.startsWith('+') ? trimmed.slice(1) : trimmed;
+      
+      if (numberOnly.length < 10) {
+        return { message: "Phone number should be 10 digits long." };
+      }
+      if (numberOnly.length > 15) {
+        return { message: "Please enter a valid number." };
+      }
+      return { message: "Please enter a valid number." };
+    })
+    .transform((val) => val.trim()),
   bhk: z.string().min(1, { message: "Please select a choice" }),
   budget: z.string().min(1, { message: "Please select a budget" }),
-  message: z.string().optional(),
+  message: z.string().optional().transform((val) => val?.trim() || ""),
 });
 
 const ScheduleVisitModal = ({ isOpen, onClose }) => {
@@ -28,26 +65,9 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const modalRef = useRef(null); 
-  const submitForm = async (payload) => {
-    console.log('Sending payload to API:', payload);
-
-    // Future API call example:
-    // try {
-    //   const response = await fetch('/api/submit', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(payload),
-    //   });
-
-    //   const result = await response.json();
-    //   console.log('API Response:', result);
-    // } catch (error) {
-    //   console.error('Error submitting form:', error);
-    // }
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const modalRef = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -55,11 +75,14 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
       setIsSubmitted(false);
     } else {
       document.body.style.overflow = "unset";
+      // Reset form when modal closes
+      reset();
+      setSubmitStatus(null);
     }
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isOpen]);
+  }, [isOpen, reset]);
 
   useEffect(() => {
     let timer;
@@ -74,10 +97,28 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const onSubmit = (data) => {
-    console.log("Form Payload:", data);
-    setIsSubmitted(true);
-    reset();
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const result = await submitScheduleVisitForm(data);
+      
+      setSubmitStatus({
+        success: true,
+        message: result.message,
+      });
+      setIsSubmitted(true);
+      reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus({
+        success: false,
+        message: error.message || "Something went wrong. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleBackdropClick = (e) => {
@@ -98,6 +139,7 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
         {!isSubmitted ? (
           <>
             <button
+              id="modal-close-button"
               onClick={onClose}
               className="absolute top-0 right-0 text-white bg-[#144D78] p-2 rounded-tr-lg hover:bg-[#002F52]"
             >
@@ -111,6 +153,19 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
             </button>
 
             <h2 className="text-2xl font-bold mb-6 text-[#22252E]">Write to us</h2>
+
+            {/* Status Message */}
+            {submitStatus && (
+              <div
+                className={`mb-6 p-4 rounded ${
+                  submitStatus.success
+                    ? "bg-green-100 text-green-800"
+                    : "bg-red-100 text-red-800"
+                }`}
+              >
+                {submitStatus.message}
+              </div>
+            )}
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -198,21 +253,25 @@ const ScheduleVisitModal = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              <div>
+              {/* <div>
                 <textarea
                   {...register("message")}
                   rows="4"
                   placeholder="Message"
                   className="w-full px-4 py-3 border border-gray-300 rounded-md outline-none"
                 ></textarea>
-              </div>
+              </div> */}
 
               <button
+                id="modal-submit-button"
                 type="submit"
-                className="cursor-pointer w-full bg-[#144D78] text-white py-3 md:py-4 px-6 md:px-9 rounded-md hover:bg-[#002F52] transition-colors duration-300 font-medium flex items-center justify-center"
+                disabled={isSubmitting}
+                className={`cursor-pointer w-full bg-[#144D78] text-white py-3 md:py-4 px-6 md:px-9 rounded-md hover:bg-[#002F52] transition-colors duration-300 font-medium flex items-center justify-center ${
+                  isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+                }`}
               >
                 <span className="text-left flex-grow text-[18px] md:text-[20px] font-[600]">
-                  Book A Site Visit
+                  {isSubmitting ? "Submitting..." : "Book A Site Visit"}
                 </span>
                 <Image
                   src="/assets/form-arrow.svg"

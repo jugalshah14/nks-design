@@ -9,39 +9,91 @@ import SangamViewsSwiper from './SangamViewsSwiper';
 import { AnimatedSection } from './animations';
 import { useSearchParams } from 'next/navigation';
 import Link from "next/link";
+import ScheduleVisitModal from './ScheduleVisitModal';
 
 const flatsData = {
-  '3BHK': {
-    tabs: ['2D', '3D', 'Floor', 'Building'],
+  '1BHK': {
     sliderImages: {
-      '2D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
-      '3D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
-      'Floor': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
-      'Building': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
+      '2D': [
+        {
+          src: "/assets/1bhk.png",
+          unitType: "B/C/F/G/J/K/N/O",
+        },
+        {
+          src: "/assets/1bhk1.png", 
+          unitType: "A/D/E/H/I/L/M/P",
+        }
+      ],
     },
-    info: { towers: 'A,B,C', units: 234, area: '56 m2 - 76 m2', price: 1234 },
+    info: { towers: 'Serenity', price: 4234 },
   },
 
   '2BHK': {
-    tabs: ['2D', '3D', 'Floor', 'Building'],
     sliderImages: {
-      '2D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
-      '3D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
-      'Floor': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
-      'Building': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
+      '2D': [
+        {
+          src: "/assets/2bhk1.png",
+          unitType: "E/H", 
+        },
+        {
+          src: "/assets/2bhk3.png",
+          unitType: "E/H",
+        },
+        {
+          src: "/assets/2bhk2.png",
+          unitType: "F/G",
+        },
+        {
+          src: "/assets/2bhk4.png",
+          unitType: "F/G",
+        },
+      ],
     },
-    info: { towers: 'D,E', units: 150, area: '45 m2 - 60 m2', price: 4234 },
+    info: { towers: 'Signature & Serenity', price: 4234 },
+  },
+  
+  '3BHK': {
+    sliderImages: {
+      '2D': [
+        {
+          src: "/assets/3bhk.png",
+          unitType: "A/B/C/D",
+        },
+        {
+          src: "/assets/3bhk1.png",
+          unitType: "A/B/C/D", 
+        },
+        {
+          src: "/assets/3bhk2.png",
+          unitType: "A/B/C/D",
+        },
+        {
+          src: "/assets/3bhk3.png",
+          unitType: "A/B/C/D",
+        },
+        {
+          src: "/assets/3bhk4.png",
+          unitType: "A/B/C/D",
+        }
+      ],
+    },
+    info: { towers: 'Signature, Serenity, Suites', price: 1234 },
   },
 
   '4BHK': {
-    tabs: ['2D', '3D', 'Floor', 'Building'],
     sliderImages: {
-      '2D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
-      '3D': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
-      'Floor': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
-      'Building': ["/assets/3bhkk.png", "/assets/3bhkk.png", "/assets/3bhkk.png","/assets/3bhkk.png"],
+      '2D': [
+        {
+          src: "/assets/4bhk.png",
+          unitType: "",
+        },
+        {
+          src: "/assets/4bhk1.png",
+          unitType: "", 
+        }
+      ],
     },
-    info: { towers: 'F', units: 90, area: '80 m2 - 100 m2', price: 7234 },
+    info: { towers: 'Suites', price: 7234 },
   }
 };
 
@@ -53,8 +105,13 @@ export default function SangamSliders() {
   const [activeTab, setActiveTab] = useState('2D');
   const [fade, setFade] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [activeBHK, setActiveBHK] = useState('3BHK');
+  const [activeBHK, setActiveBHK] = useState('1BHK');
   const [bhkFade, setBhkFade] = useState(false);
+  const [isModalOpens, setIsModalOpens] = useState(false);
+  const handleScheduleVisit = (e) => {
+    e.preventDefault();
+    setIsModalOpens(true);
+  };
 
   useEffect(() => {
     const bhkParam = searchParams.get('bhk');
@@ -74,7 +131,7 @@ export default function SangamSliders() {
       }
     }
 
-    if (bhkParam && ['2BHK', '3BHK', '4BHK'].includes(bhkParam)) {
+    if (bhkParam && ['1BHK', '2BHK', '3BHK', '4BHK'].includes(bhkParam)) {
       handleBHKChange(bhkParam);
     }
   }, [searchParams]);
@@ -118,7 +175,7 @@ export default function SangamSliders() {
     <>
     <div className='relative max-md:-top-15'>
       <div className='w-full items-center justify-center mt-[80px] md:mt-[0px] flex flex-row gap-4 md:gap-10 border-t border-b border-white/10 md:mb-[52px]'>
-        {['3BHK', '2BHK', '4BHK'].map((bhk, index) => (
+        {['1BHK', '2BHK', '3BHK', '4BHK'].map((bhk, index) => (
             <React.Fragment key={bhk}>
             <div
                 onClick={() => handleBHKChange(bhk)}
@@ -131,7 +188,7 @@ export default function SangamSliders() {
                     activeBHK === bhk ? 'scale-x-100' : 'scale-x-0'
                 }`}></div>
             </div>
-            {index < 2 && (
+            {index < 3 && (
                 <Image src="/assets/dot.svg" width={10} height={10} alt="dot" className="transition-opacity duration-300" />
             )}
             </React.Fragment>
@@ -147,44 +204,13 @@ export default function SangamSliders() {
               <Image src="/assets/sangam-icon.png" width={100} height={100} alt="dot" className='hide-triangle' />
               <Image src="/assets/sangam-icon.svg" width={26} height={26} alt="dot" className='none-md' />
             </div>
-            <h2 className={`relative project-overview-title text-center !text-white pt-[16px] pb-[50px] md:pb-[32px] sangam-title transition-all duration-500 ${bhkFade ? 'opacity-0 scale-95 translate-y-2' : 'opacity-100 scale-100 translate-y-0'}`}>
+            <h2 className={`relative project-overview-title !font-satoshi text-center !text-white pt-[16px] md:pb-[32px] sangam-title transition-all duration-500 ${bhkFade ? 'opacity-0 scale-95 translate-y-2' : 'opacity-100 scale-100 translate-y-0'}`}>
             {activeBHK}
             </h2>
           </div>
           <div className='flex flex-col md:flex-row'>
             <div className='w-full md:w-[60%]'>
               <div className={`bg-[#111B2F] relative transition-all duration-500 ${bhkFade ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}>
-
-                {/* Tabs */}
-                {/* Mobile Tabs */}
-                <div className="px-4 none-md flex w-full absolute z-[10] top-[-50px]">
-                  <div className="flex flex-1 flex-row items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full transition-all duration-300 overflow-hidden">
-                    {flatsData[activeBHK].tabs.map(tab => (
-                      <div
-                        key={tab}
-                        onClick={() => handleTabChange(tab)}
-                        className={`flex-1 text-center text-white text-sm py-[7px] cursor-pointer transition-all duration-300 
-                          ${activeTab === tab ? 'bg-[#144D78]' : 'hover:bg-[#144D78]'}`}
-                      >
-                        {tab}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Dashboard tabs */}
-                <div className='hide-triangle absolute z-[10] md:mx-[0px] flex flex-row md:flex-col items-center justify-between bg-white/5 backdrop-filter backdrop-blur-[14px] bg-opacity-100 w-full md:w-[72px] absolute left-0 top-[-50px] md:top-0 transition-all duration-300'>
-                 {flatsData[activeBHK].tabs.map(tab => (
-                    <div
-                      key={tab}
-                      onClick={() => handleTabChange(tab)}
-                      className={`w-full text-center text-white text-sm py-[7px] cursor-pointer transition-all duration-300 
-                        ${activeTab === tab ? 'bg-[#144D78]' : 'hover:bg-[#144D78]'}`}
-                    >
-                      {tab}
-                    </div>
-                  ))}
-                </div>
 
                 <Image src="/assets/triangle-blue.png" width={65} height={65} alt="triangle" className='absolute right-0 hide-triangle transition-transform duration-500 hover:rotate-12' />
 
@@ -201,15 +227,15 @@ export default function SangamSliders() {
                     loop={false}
                     speed={600}
                     >
-                    {flatsData[activeBHK].sliderImages[activeTab].map((src, index) => (
+                    {flatsData[activeBHK].sliderImages[activeTab].map((image, index) => (
                         <SwiperSlide key={index}>
                         <div
-                            className={`p-[10px] md:p-[69px] flex items-center justify-center transition-all duration-500 ${
+                            className={`p-[10px] md:p-[69px] flex flex-col items-center justify-center transition-all duration-500 ${
                             isTransitioning ? 'scale-95 opacity-80' : 'scale-100 opacity-100'
                             }`}
                         >
                             <Image
-                            src={src}
+                            src={image.src}
                             width={500}
                             height={500}
                             alt={`${activeTab}-${index}`}
@@ -223,16 +249,8 @@ export default function SangamSliders() {
 
                 {/* Navigation Buttons */}
 
-                <div className="relative md:static flex items-center justify-between bg-[#0E1727] md:bg-white/5 p-[18px] transition-all duration-300 mt-[-60px] md:mt-0">
-                {/* CTA Button */}
-                <button className="pl-12 w-full text-orange-500 md:text-white text-sm flex items-center gap-2 justify-center transition-all duration-300 hover:gap-4">
-                   Check Dimensions 
-                   <Image src="/assets/whitearrow.svg" alt="1BHK" width={40} height={3} className="hide-triangle transition-transform duration-300 group-hover:translate-x-2" />
-                   <Image src="/assets/orange-arrow.svg" alt="1BHK" width={25} height={1} className="none-md transition-transform duration-300 group-hover:translate-x-2" />
-                </button>
-
-                {/* Desktop Navigation Arrows */}
-                <div className="hidden md:flex items-center gap-2">
+                <div className="relative md:static flex items-center justify-center bg-[#0E1727] md:bg-white/5 p-[18px] transition-all duration-300 mt-[-60px] md:mt-0">
+                <div className="flex items-center gap-2">
                   <div
                     className={`w-6 md:w-[27px] h-6 md:h-[27px] rounded-full flex items-center justify-center cursor-pointer select-none transition-all duration-300 ${
                       activeIndex > 0 ? 'bg-white text-black hover:scale-110' : 'bg-white/20 text-white/50 pointer-events-none'
@@ -278,54 +296,6 @@ export default function SangamSliders() {
                       </svg>
                   </div>
                 </div>
-
-                {/* Mobile Absolute Arrows */}
-                <div className="md:hidden">
-                  <div
-                    className={`absolute left-2 top-[-3px] -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
-                      activeIndex > 0 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
-                    }`}
-                    onClick={activeIndex > 0 ? handlePrev : undefined}
-                  >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-[#22252E] rotate-180"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                  </div>
-                  <div
-                    className={`absolute right-2 top-[-3px] -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
-                      activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? 'bg-white text-black' : 'bg-white/20 text-white/50 pointer-events-none'
-                    }`}
-                    onClick={
-                      activeIndex < flatsData[activeBHK].sliderImages[activeTab].length - 1 ? handleNext : undefined
-                    }
-                  >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-[#22252E]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                  </div>
-                </div>
               </div>
 
 
@@ -334,42 +304,38 @@ export default function SangamSliders() {
 
             {/* Info Card */}
             <div className={`z-[10] absolute right-0 top-135 md:top-75 p-[20px] md:p-[40px] bg-[#020C22] w-full md:w-[44%] transition-all duration-500 ${bhkFade ? 'opacity-50 scale-95 translate-x-4' : 'opacity-100 scale-100 translate-x-0'}`}>
-              <div className='flex flex-col gap-3 md:gap-10'>
-                <div className="grid grid-cols-2 md:gap-20 mb-4">
+              <div className='flex flex-col gap-3 md:gap-5'>
+                <div className="grid grid-cols-2 md:gap-20">
                   <div className='flex flex-col items-center md:items-start transition-all duration-300 hover:scale-105'>
                     <p className="text-[12px] md:text-[16px] text-white/50 mb-1">Tower</p>
-                    <p className="text-[20px] md:text-[24px] text-white">{flatsData[activeBHK].info.towers}</p>
+                    <p className="text-[20px] md:text-[24px] text-white max-md:text-center">{flatsData[activeBHK].info.towers}</p>
                   </div>
-                  <div className='flex flex-col items-center md:items-start transition-all duration-300 hover:scale-105'>
-                    <p className="text-[12px] md:text-[16px] text-white/50 mb-1">Flat units</p>
-                    <p className="text-[20px] md:text-[24px] text-white">{flatsData[activeBHK].info.units}</p>
-                  </div>
+                                     {activeBHK !== '4BHK' && (
+                     <div className='flex flex-col items-center md:items-start transition-all duration-300 hover:scale-105'>
+                       <p className="text-[12px] md:text-[16px] text-white/50 mb-1">Unit Type</p>
+                       <p className="text-[20px] md:text-[24px] text-white">{flatsData[activeBHK].sliderImages[activeTab][activeIndex]?.unitType || `${activeBHK}`}</p>
+                     </div>
+                   )}
                 </div>
 
                 <div className="grid grid-cols-2 md:gap-20 md:mb-8">
-                  <div className='order-2 md:order-1 flex flex-col items-center md:items-start transition-all duration-300 hover:scale-105'>
-                    <p className="text-[12px] md:text-[16px] text-white/50 mb-1">Unit area</p>
-                    <p className="text-[20px] md:text-[24px] text-white">{flatsData[activeBHK].info.area}</p>
-                  </div>
                   <div className='order-1 md:order-2 flex flex-col items-center md:items-start transition-all duration-300 hover:scale-105'>
                     <p className="text-[12px] md:text-[16px] text-white/50 mb-1">Price</p>
                     <div className="flex items-center">
                       <p className="hidden md:inline text-[24px] text-white shadow-lg mr-2 blur-[6.5px]">{flatsData[activeBHK].info.price}</p>
-                      <a href="#" className="text-[14px] font-bold text-[#134c78] underline transition-all duration-300 hover:text-[#1a6ba8]">Know price</a>
+                      <button id="sangam-know-price" onClick={handleScheduleVisit} className="text-[14px] font-bold text-[#134c78] underline transition-all duration-300 hover:text-[#1a6ba8]">Know price</button>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className='w-full mt-[20px] md:mt-[0px]'>
-                <Link href="/contact-us">
-                <button className="md:rounded-sm w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
+                <button id="sangam-schedule-visit" onClick={handleScheduleVisit} className="md:rounded-sm w-full bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden button-secondary">
                   <div className='px-6 py-3 w-full flex justify-start'>
                       <span className='text-left inline md:inline'>Schedule a Visit</span>
                   </div>
-                      <span className="px-6 py-4 text-orange-500 bg-[#002F52] text-lg ml-auto">↗</span>
+                      <span className="px-6 py-4 orange-color bg-[#002F52] text-lg ml-auto">↗</span>
                 </button>
-                </Link>
               </div>
             </div>
           </div>
@@ -380,6 +346,10 @@ export default function SangamSliders() {
 
     {/* sangam part2 */}     
       <SangamViewsSwiper activeBHK={activeBHK} />
+
+      <ScheduleVisitModal
+        isOpen={isModalOpens}
+        onClose={() => setIsModalOpens(false)} />
     </>
   );
 }

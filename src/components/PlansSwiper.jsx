@@ -16,7 +16,7 @@ const data = [
         title: 'Sangam Signature',
         towers: '1, 2, 3, 9, 10, 11',
         carpetArea: '887 - 1039 sq.ft.',
-        bhkTypes: '2 , 3',
+        bhkTypes: '2,3',
         price: '****',
     },
     {
@@ -24,7 +24,7 @@ const data = [
         title: 'Sangam Suites',
         towers: '4, 12',
         carpetArea: '1400 - 2085 sq. ft.',
-        bhkTypes: '3 , 4',
+        bhkTypes: '3,4',
         price: '****',
     },
     {
@@ -32,7 +32,7 @@ const data = [
         title: 'Sangam Serenity',
         towers: '5, 6, 7, 13, 14, 15, 16',
         carpetArea: '567 - 1039 sq. ft.',
-        bhkTypes: '1 , 2 , 3',
+        bhkTypes: '1,2,3',
         price: '****',
     }
 ];
@@ -135,6 +135,7 @@ export default function PlansSwiper() {
                           {slide.price}
                         </p>
                         <button
+                          id="plans-swiper-know-price"
                           onClick={handleKnowPriceClick}
                           className="cursor-pointer text-[14px] font-satoshi font-bold leading-[19px] text-[#134c78] underline"
                         >
@@ -177,6 +178,7 @@ export default function PlansSwiper() {
         <div className="w-[100%] md:w-[360px] z-11 transform bg-[#021642] backdrop-filter backdrop-blur-[14px] bg-opacity-80 bg-clip-padding flex items-center justify-around px-1 py-5">
           <div className="h-full flex items-center justify-center">
             <button
+              id="plans-swiper-prev"
               className="focus:outline-none  cursor-pointer"
               onClick={handlePrev}
             >
@@ -195,6 +197,7 @@ export default function PlansSwiper() {
           </div>
           <div className="h-full flex items-center justify-center">
             <button
+              id="plans-swiper-next"
               className="focus:outline-none cursor-pointer"
               onClick={handleNext}
             >

@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatedSection, SlideUp } from "./animations";
 import Image from "next/image";
+import ScheduleVisitModal from "./ScheduleVisitModal";
 
 const GangaVideoSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,6 +11,11 @@ const GangaVideoSection = () => {
   const youtubeVideoId = "Rw1QbHsvS0I";
   const [playerError, setPlayerError] = useState(false);
   const youtubeContainerRefs = useRef([]);
+  const [isModalOpens, setIsModalOpens] = useState(false);
+  const handleScheduleVisit = (e) => {
+    e.preventDefault();
+    setIsModalOpens(true);
+  };
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -95,7 +101,7 @@ const GangaVideoSection = () => {
               <>
                 <div
                   ref={addContainerRef}
-                  className="w-screen h-full scale-x-[135%]"
+                  className="w-screen h-full scale-x-[135%] object-cover"
                 />
                 <div className="absolute inset-0 bg-black opacity-30" />
               </>
@@ -175,13 +181,13 @@ const GangaVideoSection = () => {
           </div>
           <SlideUp delay={0.8}>
             <p className="did-you-know-m w-[85%] mx-auto text-center font-[400] text-[24px] leading-7 mb-4 pt-4">
-              Feel the divine aura of Banaras — now in Serampore!
+            Feel the divine aura of Banaras now in Serampore! Own a Home Where You’re Blessed by Ganga Aarti, Every Single Day We’re proud to be India’s only riverside township where the sacred Ganga Aarti happens daily
             </p>
           </SlideUp>
         </div>
         <SlideUp delay={1} className="flex justify-center items-center w-full">
-          <button className="md:min-h-[4.75rem] min-h-[3.5rem] h-full -top-9 mx-auto relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden rounded-md">
-            <div className="px-6 py-3 mr-20">Be a part of it</div>
+          <button id="ganga-video-schedule-visit" onClick={handleScheduleVisit} className="md:min-h-[4.75rem] min-h-[3.5rem] h-full -top-9 mx-auto relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden rounded-md">
+            <div className="px-6 py-3 mr-20">Schedule a Visit</div>
             <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
               ↗
             </span>
@@ -193,6 +199,7 @@ const GangaVideoSection = () => {
           <div className="relative w-full max-w-4xl">
             {/* Close button */}
             <button
+              id="ganga-video-modal-close"
               onClick={toggleModal}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 focus:outline-none cursor-pointer"
             >
@@ -232,6 +239,9 @@ const GangaVideoSection = () => {
           </div>
         </div>
       )}
+      <ScheduleVisitModal
+        isOpen={isModalOpens}
+        onClose={() => setIsModalOpens(false)} />
     </>
   );
 };

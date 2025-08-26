@@ -192,6 +192,7 @@ const ContactUsForm = () => {
           </div>
         </div>
         <button
+          id="contact-form-submit"
           type="submit"
           disabled={isSubmitting}
           className={`min-h-[4rem] h-full max-lg:mx-auto w-[50%] mt-10 relative bg-[#144D78] button-primary transition-all duration-300 rounded-sm text-white font-medium inline-flex items-center gap-2 overflow-hidden ${
@@ -201,7 +202,7 @@ const ContactUsForm = () => {
           <div className="px-6 py-3 mr-20">
             {isSubmitting ? "Submitting..." : "Submit"}
           </div>
-          <span className="px-6 flex items-center justify-center min-h-[4rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+          <span className="px-6 flex items-center justify-center min-h-[4rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
             ↗
           </span>
         </button>

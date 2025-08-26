@@ -9,16 +9,6 @@ const headerClass = {
   "/": "home-page-header",
 };
 
-const NAV_ITEMS = [
-  { href: "/why-alcove", label: "Why Alcove" },
-  { href: "/master-plan", label: "Master Plans" },
-  { href: "/amenities", label: "Amenities" },
-  { href: "/location", label: "Location" },
-  { href: "/life-@-alcove", label: "Life @Alcove" },
-  { href: "/blogs", label: "Blogs" },
-  { href: "/", label: "Schedule Visit" },
-];
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeClass, setActiveClass] = useState("/");
@@ -51,6 +41,16 @@ const Header = () => {
     };
   }, [pathname]);
 
+  // Determine which logo to use
+  const getLogoSource = () => {
+    // If it's the home page and not scrolled, use regular logo
+    if (pathname === "/" && !isScrolled) {
+      return "/assets/logo.svg";
+    }
+    // For all other cases (scrolled home page or other pages), use logo-l.svg
+    return "/assets/logo-l.svg";
+  };
+
   return (
     <>
       <header
@@ -62,29 +62,46 @@ const Header = () => {
           "!bg-white !backdrop-blur-sm has-scrolled"
         }`}
       >
-        <div className="container mx-auto py-4 md:grid md:grid-cols-3 md:items-center flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-7">
-          <div className="hidden md:flex items-center space-x-8 justify-start">
-            <nav className="hidden md:flex gap-8">
-              {NAV_ITEMS.slice(0, 5)?.map((item, index) => {
-                return (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    className="font-satoshi font-medium whitespace-nowrap text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </nav>
+        <div className="container mx-auto py-4 md:grid md:grid-cols-3 md:items-center flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-3">
+          <div className="hidden md:flex items-center justify-start gap-5">
+            <Link
+              href="/why-alcove"
+              className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Why Alcove
+            </Link>
+            <Link
+              href="/master-plan"
+              className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Master Plans
+            </Link>
+            <Link
+              href="/amenities"
+              className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Amenities
+            </Link>
+            <Link
+              href="/location"
+              className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Location
+            </Link>
+            <Link
+              href="/life-@-alcove"
+              className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Life @Alcove
+            </Link>
           </div>
 
-          <div className="w-[95px] h-[44px] md:h-[75px] md:w-[161px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">
+          <div className="md:h-[48px] md:w-[260px] w-[141px] h-[26px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">
             <Link href="/">
               <Image
-                className="invert-100 logo-image"
-                src="/assets/logo.png"
-                alt="Next.js logo"
+                className="logo-image"
+                src={getLogoSource()}
+                alt="logo"
                 fill
                 priority
               />
@@ -93,25 +110,40 @@ const Header = () => {
 
           <div className="flex items-center gap-6 md:justify-end">
             <Link
+              href="/triveni"
+              className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+            >
+              Triveni Omniplex
+            </Link>
+            <Link
               href="/blogs"
               className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
             >
               Blogs
             </Link>
+            <div className="flex items-center gap-3 md:justify-end">
             <button
+              id="header-schedule-visit"
               onClick={handleScheduleVisit}
-              className="cursor-pointer max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
+              className="h-[40px] w-[100px] md:h-[48px] md:w-[123px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-md action-button flex items-center justify-center"
             >
-              Schedule Visit
-            </button>
-            <div className="h-[40px] w-[100px] md:h-[48px] md:w-[100px] border-1 border-b-4 hover:bg-white transition-all duration-300 cursor-pointer group/header-btn relative rounded-sm action-button flex items-center justify-center">
               <p className="font-satoshi font-bold leading-6 text-[12px] md:text-[14px] md:leading-[19px] text-[#22252E] group-hover/header-btn:!text-[#010b22]">
-                Call Now
+                Schedule Visit
               </p>
-            </div>
+            </button>
+            <Link href={"tel:+918101881018"} className="h-[24px] w-[24px] relative cursor-pointer">
+            <Image
+                src="/assets/phone.svg"
+                alt="logo"
+                fill
+                  priority
+                  className="logo-image"
+              />
+            </Link>
+          </div>
           </div>
 
-          <button className="md:hidden text-[#22252E]" onClick={toggleDrawer}>
+          <button id="mobile-menu-toggle" className="md:hidden text-[#22252E]" onClick={toggleDrawer}>
             <Image
               src="/assets/icons/menu.svg"
               height={24}
@@ -124,24 +156,25 @@ const Header = () => {
       </header>
       {/*Drawer */}
       <div
-        className={`block md:hidden !overflow-hidden z-99999 fixed top-0 left-0 w-[100vw] h-[100vh] bg-white shadow-lg
+        className={`block md:hidden !overflow-hidden z-9999 fixed top-0 left-0 w-[100vw] h-[100vh] bg-white shadow-lg
                 transition-transform transform ${
                   isOpen ? "translate-x-0" : "-translate-x-full"
                 }`}
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
-          <div className="w-[60px] h-[30px] relative">
-            <Link href="/">
+          <div className="w-[141px] h-[26px] relative">
+            <Link href="/" onClick={toggleDrawer}>
               <Image
-                src="/assets/logo.png"
+                src="/assets/logo-l.svg"
                 alt="Logo"
                 fill
-                className=" invert-100 object-contain"
+                className="object-contain"
                 priority
               />
             </Link>
           </div>
           <button
+            id="mobile-menu-close"
             onClick={toggleDrawer}
             className="text-gray-600"
             aria-label="Close menu"
@@ -169,6 +202,7 @@ const Header = () => {
               <Link
                 href="/why-alcove"
                 className="text-gray-800 hover:text-blue-500"
+                onClick={toggleDrawer}
               >
                 Why Alcove
               </Link>
@@ -177,6 +211,7 @@ const Header = () => {
               <Link
                 href="/master-plan"
                 className="text-gray-800 hover:text-blue-500"
+                onClick={toggleDrawer}
               >
                 Master Plans
               </Link>
@@ -185,6 +220,7 @@ const Header = () => {
               <Link
                 href="/amenities"
                 className="text-gray-800 hover:text-blue-500"
+                onClick={toggleDrawer}
               >
                 Amenities
               </Link>
@@ -193,6 +229,7 @@ const Header = () => {
               <Link
                 href="/location"
                 className="text-gray-800 hover:text-blue-500"
+                onClick={toggleDrawer}
               >
                 Location
               </Link>
@@ -201,17 +238,26 @@ const Header = () => {
               <Link
                 href="/life-@-alcove"
                 className="text-gray-800 hover:text-blue-500"
+                onClick={toggleDrawer}
               >
                 Life @Alcove
               </Link>
             </li>
             <li>
-              <Link href="/blogs" className="text-gray-800 hover:text-blue-500">
+              <Link href="/triveni" className="text-gray-800 hover:text-blue-500
+              onClick={toggleDrawer}">
+                Triveni Omniplex
+              </Link>
+            </li>
+            <li>
+              <Link href="/blogs" className="text-gray-800 hover:text-blue-500
+              onClick={toggleDrawer}">
                 Blogs
               </Link>
             </li>
             <li>
               <button
+                id="mobile-schedule-visit"
                 onClick={handleScheduleVisit}
                 className="text-gray-800 hover:text-blue-500"
               >
