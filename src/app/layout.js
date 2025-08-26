@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import localFont from "next/font/local";
 import React from "react";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "700"],
@@ -71,6 +72,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${cormorant.className} ${Satoshi.className} antialiased`}
       >
+        <GoogleAnalytics />
         <React.Suspense fallback={<div>Loading......</div>}>
           <Header />
           {children}
