@@ -45,10 +45,12 @@ const GangaVideoSection = () => {
           },
           events: {
             onReady: (event) => {
-              event.target.playVideo().catch((error) => {
+              try {
+                event.target.playVideo();
+              } catch (error) {
                 console.error(`Playback failed for player ${index}:`, error);
                 setPlayerError(true);
-              });
+              }
             },
             onError: () => setPlayerError(true),
           },
