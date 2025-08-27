@@ -71,6 +71,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${cormorant.className} ${Satoshi.className} antialiased`}
+        suppressHydrationWarning={true}
       >
         <GoogleAnalytics />
         <React.Suspense fallback={<div>Loading......</div>}>
