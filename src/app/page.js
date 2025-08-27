@@ -7,7 +7,7 @@ import {
   SlideIn,
   SlideUp,
 } from "@/components/animations";
-import GangaVideoSection from "@/components/GangaVideoSection";
+// import GangaVideoSection from "@/components/GangaVideoSection";
 import GangaWaves from "@/components/GangaWaves";
 import HeroSectionWaves from "@/components/HeroSectionWaves";
 import PlansSection from "@/components/PlansSection";
@@ -210,7 +210,7 @@ export default function Home() {
         <Element name="section-Ganga">
           {/* Ganga Video */}
           <div>
-            <GangaVideoSection />
+            {/* <GangaVideoSection /> */}
 
             <div className="hidden md:block relative p-5 overflow-hidden">
               <GangaWaves />
