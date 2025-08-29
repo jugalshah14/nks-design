@@ -1,17 +1,19 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { AnimatedSection, SlideUp } from "./animations";
 import Image from "next/image";
 import ScheduleVisitModal from "./ScheduleVisitModal";
 
 const GangaVideoSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const playerRefs = useRef([]);
+  const playerRefs = useRef(new Map());
   const youtubeVideoId = "Rw1QbHsvS0I";
   const [playerError, setPlayerError] = useState(false);
-  const youtubeContainerRefs = useRef([]);
+  const youtubeContainerRefs = useRef(new Map());
   const [isModalOpens, setIsModalOpens] = useState(false);
+  const isInitialized = useRef(false);
+
   const handleScheduleVisit = (e) => {
     e.preventDefault();
     setIsModalOpens(true);
@@ -21,12 +23,17 @@ const GangaVideoSection = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const initYouTubePlayers = () => {
+  const initYouTubePlayers = useCallback(() => {
+    if (isInitialized.current) return;
+    
     try {
-      youtubeContainerRefs.current.forEach((container, index) => {
-        if (!container) return;
+      youtubeContainerRefs.current.forEach((container, key) => {
+        if (!container || !container.parentNode) return;
 
-        playerRefs.current[index] = new window.YT.Player(container, {
+        // Check if player already exists
+        if (playerRefs.current.has(key)) return;
+
+        const player = new window.YT.Player(container, {
           videoId: youtubeVideoId,
           playerVars: {
             autoplay: 1,
@@ -46,21 +53,27 @@ const GangaVideoSection = () => {
           events: {
             onReady: (event) => {
               try {
-                event.target.playVideo();
+                if (event.target && event.target.playVideo) {
+                  event.target.playVideo();
+                }
               } catch (error) {
-                console.error(`Playback failed for player ${index}:`, error);
+                console.error(`Playback failed for player ${key}:`, error);
                 setPlayerError(true);
               }
             },
             onError: () => setPlayerError(true),
           },
         });
+
+        playerRefs.current.set(key, player);
       });
+      
+      isInitialized.current = true;
     } catch (error) {
       console.error("Player initialization failed:", error);
       setPlayerError(true);
     }
-  };
+  }, [youtubeVideoId]);
 
   // Load YouTube IFrame API
   useEffect(() => {
@@ -71,23 +84,55 @@ const GangaVideoSection = () => {
       document.body.appendChild(tag);
     }
 
-    window.onYouTubeIframeAPIReady = initYouTubePlayers;
+    // Set up the callback for when YouTube API is ready
+    if (window.YT && window.YT.Player) {
+      initYouTubePlayers();
+    } else {
+      window.onYouTubeIframeAPIReady = initYouTubePlayers;
+    }
 
     return () => {
-      playerRefs.current.forEach((player) => {
-        if (player && player.destroy) {
-          player.destroy();
+      // Cleanup function
+      try {
+        playerRefs.current.forEach((player, key) => {
+          if (player && typeof player.destroy === 'function') {
+            try {
+              player.destroy();
+            } catch (error) {
+              console.error(`Error destroying player ${key}:`, error);
+            }
+          }
+        });
+        
+        // Clear the refs
+        playerRefs.current.clear();
+        youtubeContainerRefs.current.clear();
+        isInitialized.current = false;
+        
+        // Clean up the global callback
+        if (window.onYouTubeIframeAPIReady === initYouTubePlayers) {
+          delete window.onYouTubeIframeAPIReady;
         }
-      });
+      } catch (error) {
+        console.error("Cleanup error:", error);
+      }
     };
-  }, [youtubeVideoId]);
+  }, [initYouTubePlayers]);
 
   // Add ref to our collection
-  const addContainerRef = (el) => {
-    if (el && !youtubeContainerRefs.current.includes(el)) {
-      youtubeContainerRefs.current.push(el);
+  const addContainerRef = useCallback((el, key) => {
+    if (el && el.parentNode) {
+      youtubeContainerRefs.current.set(key, el);
+      
+      // Initialize player if API is ready
+      if (window.YT && window.YT.Player && !isInitialized.current) {
+        initYouTubePlayers();
+      }
+    } else if (!el) {
+      // Remove ref if element is null
+      youtubeContainerRefs.current.delete(key);
     }
-  };
+  }, [initYouTubePlayers]);
 
   return (
     <>
@@ -102,7 +147,7 @@ const GangaVideoSection = () => {
             ) : (
               <>
                 <div
-                  ref={addContainerRef}
+                  ref={(el) => addContainerRef(el, 'desktop')}
                   className="w-screen h-full scale-x-[135%] object-cover"
                 />
                 <div className="absolute inset-0 bg-black opacity-30" />
@@ -143,7 +188,7 @@ const GangaVideoSection = () => {
             ) : (
               <>
                 <div
-                  ref={addContainerRef}
+                  ref={(el) => addContainerRef(el, 'mobile')}
                   className="w-screen h-full scale-y-[135%] yt-background"
                 />
                 <div className="absolute inset-0 bg-black opacity-30" />
@@ -183,7 +228,7 @@ const GangaVideoSection = () => {
           </div>
           <SlideUp delay={0.8}>
             <p className="did-you-know-m w-[85%] mx-auto text-center font-[400] text-[24px] leading-7 mb-4 pt-4">
-            Feel the divine aura of Banaras now in Serampore! Own a Home Where You’re Blessed by Ganga Aarti, Every Single Day We’re proud to be India’s only riverside township where the sacred Ganga Aarti happens daily
+            Feel the divine aura of Banaras now in Serampore! Own a Home Where You're Blessed by Ganga Aarti, Every Single Day We're proud to be India's only riverside township where the sacred Ganga Aarti happens daily
             </p>
           </SlideUp>
         </div>
