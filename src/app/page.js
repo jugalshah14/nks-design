@@ -1,10 +1,15 @@
 "use client";
 
-import { lazy, Suspense, useState } from "react";
-import { AnimatedSection, FadeIn, SlideIn, SlideUp } from "@/components/animations";
+import { lazy, Suspense, useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Element } from "react-scroll";
+
+// Lazy load animation components to reduce initial bundle
+const AnimatedSection = lazy(() => import("@/components/animations").then(module => ({ default: module.AnimatedSection })));
+const FadeIn = lazy(() => import("@/components/animations").then(module => ({ default: module.FadeIn })));
+const SlideIn = lazy(() => import("@/components/animations").then(module => ({ default: module.SlideIn })));
+const SlideUp = lazy(() => import("@/components/animations").then(module => ({ default: module.SlideUp })));
 
 // Lazy load heavy components
 const AmenitiesSwiper = lazy(() => import("@/components/AmenitiesSwiper"));
@@ -26,12 +31,37 @@ const SafetySecuritySection = lazy(() => import("@/components/SafetySecuritySect
 const CertificationSection = lazy(() => import("@/components/CertificationSection"));
 const LegacySwiper = lazy(() => import("@/components/LegacySwiper"));
 
-// Loading fallback component
+// Optimized loading fallback component
 const LoadingFallback = () => (
   <div className="flex justify-center items-center py-8">
-    <div className="animate-pulse bg-gray-200 h-8 w-32 rounded"></div>
+    <div className="bg-gray-200 h-8 w-32 rounded"></div>
   </div>
 );
+
+// Performance-optimized animation wrapper
+const OptimizedAnimation = ({ children, delay = 0, ...props }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useMemo(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, delay * 1000);
+    
+    return () => clearTimeout(timer);
+  }, [delay]);
+  
+  if (!isVisible) {
+    return <div className="opacity-0">{children}</div>;
+  }
+  
+  return (
+    <Suspense fallback={<div className="opacity-0">{children}</div>}>
+      <SlideUp delay={0} {...props}>
+        {children}
+      </SlideUp>
+    </Suspense>
+  );
+};
 
 const seramporeData = [
   {
@@ -102,25 +132,21 @@ export default function Home() {
 
           {/* Bottom corner information */}
           <div className="absolute bottom-12 left-4 md:bottom-0 md:left-30">
-            <SlideUp delay={0.15}>
-              <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5">
-                HIRA/P/HOO/2019/000635
-              </p>
-            </SlideUp>
+            <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5 animate-fade-in-delay">
+              HIRA/P/HOO/2019/000635
+            </p>
           </div>
 
           <div className="absolute bottom-12 right-4 md:bottom-0 md:right-45">
-            <SlideUp delay={0.15}>
-              <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5">
-                <Link
-                  href="https://www.rera.wb.gov.in"
-                  target="_blank"
-                  className="text-[#FFFFFF] hover:underline"
-                >
-                  www.rera.wb.gov.in
-                </Link>
-              </p>
-            </SlideUp>
+            <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5 animate-fade-in-delay">
+              <Link
+                href="https://www.rera.wb.gov.in"
+                target="_blank"
+                className="text-[#FFFFFF] hover:underline"
+              >
+                www.rera.wb.gov.in
+              </Link>
+            </p>
           </div>
           <Suspense fallback={<div />}>
             <WhyRiversideFloatingButton />
@@ -136,7 +162,7 @@ export default function Home() {
         {/* Stats Section - Reduced animation delays */}
         <section className="bg-white">
           <div className="container py-7 px-4 lg:px-10 mx-auto grid grid-cols-2 xl:grid-cols-4 gap-8 md:py-20 bg-white">
-            <SlideUp delay={0.05} className="order-1 flex flex-col items-center">
+            <div className="order-1 flex flex-col items-center animate-slide-up">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
                   src="/assets/icons/connectivity.svg"
@@ -152,9 +178,9 @@ export default function Home() {
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[27px] leading-6 text-[#22252e] text-center">
                 Connectivity
               </p>
-            </SlideUp>
+            </div>
 
-            <SlideUp delay={0.1} className="order-2 flex flex-col items-center">
+            <div className="order-2 flex flex-col items-center animate-slide-up-delay">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
                   src="/assets/icons/residential.svg"
@@ -168,9 +194,9 @@ export default function Home() {
                 56,000 sq.ft.
               </h3>
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[28px] leading-6 text-[#22252e] text-center">{`Hooghly's largest Residential Clubhouse`}</p>
-            </SlideUp>
+            </div>
 
-            <SlideUp delay={0.15} className="order-3 flex flex-col items-center">
+            <div className="order-3 flex flex-col items-center animate-slide-up-delay">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
                   src="/assets/icons/area_of_project.svg"
@@ -186,9 +212,9 @@ export default function Home() {
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[27px] leading-6 text-[#22252e] text-center">
                 Area of Project
               </p>
-            </SlideUp>
+            </div>
 
-            <SlideUp delay={0.2} className="order-4 flex flex-col items-center">
+            <div className="order-4 flex flex-col items-center animate-slide-up-delay">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
                   src="/assets/icons/family-icon.svg"
@@ -204,7 +230,7 @@ export default function Home() {
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[28px] leading-6 text-[#22252e] text-center">
                 Happy Families
               </p>
-            </SlideUp>
+            </div>
           </div>
         </section>
         {/* Legacy Section */}

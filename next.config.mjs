@@ -9,21 +9,40 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    // Performance optimizations
+    // Aggressive performance optimizations
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 31536000, // 1 year
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  // Performance optimizations
+  // Aggressive performance optimizations
   experimental: {
-    optimizePackageImports: ['framer-motion', 'lottie-react', 'react-slick'],
+    optimizePackageImports: ['framer-motion', 'lottie-react', 'react-slick', 'swiper'],
   },
-  // Reduce bundle size
+  // Aggressive bundle optimization
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
-      // Enable tree shaking
+      // Enable aggressive tree shaking
       config.optimization.usedExports = true;
       config.optimization.sideEffects = false;
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+          animations: {
+            test: /[\\/]node_modules[\\/](framer-motion|lottie-react)[\\/]/,
+            name: 'animations',
+            chunks: 'all',
+            priority: 10,
+          },
+        },
+      };
     }
     return config;
   },
@@ -31,6 +50,28 @@ const nextConfig = {
   compress: true,
   // Enable gzip compression
   poweredByHeader: false,
+  // Aggressive caching
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
