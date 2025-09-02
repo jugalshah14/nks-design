@@ -1,33 +1,67 @@
 "use client";
 
-import AmenitiesSwiper from "@/components/AmenitiesSwiper";
-import {
-  AnimatedSection,
-  FadeIn,
-  SlideIn,
-  SlideUp,
-} from "@/components/animations";
-import GangaVideoSection from "@/components/GangaVideoSection";
-import GangaWaves from "@/components/GangaWaves";
-import HeroSectionWaves from "@/components/HeroSectionWaves";
-import PlansSection from "@/components/PlansSection";
-import PlansSwiper from "@/components/PlansSwiper";
-import PlanTypesSwiper from "@/components/PlanTypesSwiper";
-import ProjectViewSlides from "@/components/ProjectViewSlides";
-import RiversideLivingSwiper from "@/components/RiversideLivingSwiper";
-import ScheduleVisitModal from "@/components/ScheduleVisitModal";
-import ScrollSpyNav from "@/components/ScrollSpyNav";
-import SeramporeMarqueeSlides from "@/components/SeramporeMarqueeSlides";
-import SeramporeSwiper from "@/components/SeramporeSwiper";
-import Testimonials from "@/components/Testimonials";
-import WhyRiversideFloatingButton from "@/components/WhyRiversideFloatingButton";
+import { lazy, Suspense, useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Element } from "react-scroll";
-import SafetySecuritySection from "@/components/SafetySecuritySection";
-import CertificationSection from "@/components/CertificationSection";
-import LegacySwiper from "@/components/LegacySwiper";
-import { useState } from "react";
+
+// Lazy load animation components to reduce initial bundle
+const AnimatedSection = lazy(() => import("@/components/animations").then(module => ({ default: module.AnimatedSection })));
+const FadeIn = lazy(() => import("@/components/animations").then(module => ({ default: module.FadeIn })));
+const SlideIn = lazy(() => import("@/components/animations").then(module => ({ default: module.SlideIn })));
+const SlideUp = lazy(() => import("@/components/animations").then(module => ({ default: module.SlideUp })));
+
+// Lazy load heavy components
+const AmenitiesSwiper = lazy(() => import("@/components/AmenitiesSwiper"));
+const GangaVideoSection = lazy(() => import("@/components/GangaVideoSection"));
+const GangaWaves = lazy(() => import("@/components/GangaWaves"));
+const HeroSectionWaves = lazy(() => import("@/components/HeroSectionWaves"));
+const PlansSection = lazy(() => import("@/components/PlansSection"));
+const PlansSwiper = lazy(() => import("@/components/PlansSwiper"));
+const PlanTypesSwiper = lazy(() => import("@/components/PlanTypesSwiper"));
+const ProjectViewSlides = lazy(() => import("@/components/ProjectViewSlides"));
+const RiversideLivingSwiper = lazy(() => import("@/components/RiversideLivingSwiper"));
+const ScheduleVisitModal = lazy(() => import("@/components/ScheduleVisitModal"));
+const ScrollSpyNav = lazy(() => import("@/components/ScrollSpyNav"));
+const SeramporeMarqueeSlides = lazy(() => import("@/components/SeramporeMarqueeSlides"));
+const SeramporeSwiper = lazy(() => import("@/components/SeramporeSwiper"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const WhyRiversideFloatingButton = lazy(() => import("@/components/WhyRiversideFloatingButton"));
+const SafetySecuritySection = lazy(() => import("@/components/SafetySecuritySection"));
+const CertificationSection = lazy(() => import("@/components/CertificationSection"));
+const LegacySwiper = lazy(() => import("@/components/LegacySwiper"));
+
+// Optimized loading fallback component
+const LoadingFallback = () => (
+  <div className="flex justify-center items-center py-8">
+    <div className="bg-gray-200 h-8 w-32 rounded"></div>
+  </div>
+);
+
+// Performance-optimized animation wrapper
+const OptimizedAnimation = ({ children, delay = 0, ...props }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useMemo(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, delay * 1000);
+    
+    return () => clearTimeout(timer);
+  }, [delay]);
+  
+  if (!isVisible) {
+    return <div className="opacity-0">{children}</div>;
+  }
+  
+  return (
+    <Suspense fallback={<div className="opacity-0">{children}</div>}>
+      <SlideUp delay={0} {...props}>
+        {children}
+      </SlideUp>
+    </Suspense>
+  );
+};
 
 const seramporeData = [
   {
@@ -66,6 +100,7 @@ export default function Home() {
     e.preventDefault();
     setIsModalOpens(true);
   };
+  
   return (
     <>
       <main>
@@ -88,47 +123,46 @@ export default function Home() {
           <div className="md:hidden hero-section-bg h-[100%] w-[100%] top-0 left-0" />
           <div className="absolute inset-0 flex flex-col justify-center">
             <div className="container mx-auto">
-              <SlideUp delay={0.4}>
                 <h1 className="max-md:px-9 max-md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[100px] font-[400] md:leading-[100px] md:max-w-[635px]">
                   Affordable riverside luxury by the creators of &apos;The
                   <span className="text-[150px]"> 42</span>&apos;
                 </h1>
-              </SlideUp>
             </div>
           </div>
 
           {/* Bottom corner information */}
           <div className="absolute bottom-12 left-4 md:bottom-0 md:left-30">
-            <SlideUp delay={0.4}>
-              <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5">
-                HIRA/P/HOO/2019/000635
-              </p>
-            </SlideUp>
+            <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5 animate-fade-in-delay">
+              HIRA/P/HOO/2019/000635
+            </p>
           </div>
 
           <div className="absolute bottom-12 right-4 md:bottom-0 md:right-45">
-            <SlideUp delay={0.4}>
-              <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5">
-                <Link
-                  href="https://www.rera.wb.gov.in"
-                  target="_blank"
-                  className="text-[#FFFFFF] hover:underline"
-                >
-                  www.rera.wb.gov.in
-                </Link>
-              </p>
-            </SlideUp>
+            <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5 animate-fade-in-delay">
+              <Link
+                href="https://www.rera.wb.gov.in"
+                target="_blank"
+                className="text-[#FFFFFF] hover:underline"
+              >
+                www.rera.wb.gov.in
+              </Link>
+            </p>
           </div>
-          <WhyRiversideFloatingButton />
+          <Suspense fallback={<div />}>
+            <WhyRiversideFloatingButton />
+          </Suspense>
         </section>
+        
         <section className="relative">
-          <HeroSectionWaves />
+          <Suspense fallback={<div />}>
+            <HeroSectionWaves />
+          </Suspense>
         </section>
 
-        {/*  */}
-        <section className=" bg-white">
+        {/* Stats Section - Reduced animation delays */}
+        <section className="bg-white">
           <div className="container py-7 px-4 lg:px-10 mx-auto grid grid-cols-2 xl:grid-cols-4 gap-8 md:py-20 bg-white">
-            <SlideUp delay={0.2} className="order-1 flex flex-col items-center">
+            <div className="order-1 flex flex-col items-center animate-slide-up">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
                   src="/assets/icons/connectivity.svg"
@@ -144,9 +178,9 @@ export default function Home() {
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[27px] leading-6 text-[#22252e] text-center">
                 Connectivity
               </p>
-            </SlideUp>
+            </div>
 
-            <SlideUp delay={0.4} className="order-2 flex flex-col items-center">
+            <div className="order-2 flex flex-col items-center animate-slide-up-delay">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
                   src="/assets/icons/residential.svg"
@@ -160,9 +194,9 @@ export default function Home() {
                 56,000 sq.ft.
               </h3>
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[28px] leading-6 text-[#22252e] text-center">{`Hooghly's largest Residential Clubhouse`}</p>
-            </SlideUp>
+            </div>
 
-            <SlideUp delay={0.6} className="order-3 flex flex-col items-center">
+            <div className="order-3 flex flex-col items-center animate-slide-up-delay">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
                   src="/assets/icons/area_of_project.svg"
@@ -178,9 +212,9 @@ export default function Home() {
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[27px] leading-6 text-[#22252e] text-center">
                 Area of Project
               </p>
-            </SlideUp>
+            </div>
 
-            <SlideUp delay={0.8} className="order-4 flex flex-col items-center">
+            <div className="order-4 flex flex-col items-center animate-slide-up-delay">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
                 <Image
                   src="/assets/icons/family-icon.svg"
@@ -196,21 +230,27 @@ export default function Home() {
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[28px] leading-6 text-[#22252e] text-center">
                 Happy Families
               </p>
-            </SlideUp>
+            </div>
           </div>
         </section>
         {/* Legacy Section */}
         <section>
-          <LegacySwiper />
+          <Suspense fallback={<LoadingFallback />}>
+            <LegacySwiper />
+          </Suspense>
         </section>
 
         {/* Certification Information */}
-        <CertificationSection />
+        <Suspense fallback={<LoadingFallback />}>
+          <CertificationSection />
+        </Suspense>
         {/* Ganga Video Section */}
         <Element name="section-Ganga">
           {/* Ganga Video */}
           <div>
-            <GangaVideoSection />
+            <Suspense fallback={<LoadingFallback />}>
+              <GangaVideoSection />
+            </Suspense>
 
             <div className="hidden md:block relative p-5 overflow-hidden">
               <GangaWaves />
@@ -301,7 +341,7 @@ export default function Home() {
         <section className="bg-white">
           <div className="container mx-auto">
             <div className="text-center mb-7 md:mb-10">
-              <SlideUp delay={0.4}>
+              <SlideUp delay={0.1}>
                 <h2 className="project-overview-title max-md:!text-[36px] max-md:!leading-11 max-md:font-[400] text-center">
                   Project
                   <span className="orange-color"> Overview</span>
@@ -311,7 +351,9 @@ export default function Home() {
           </div>
           <AnimatedSection className="container overflow-visible  mx-auto relative mb-16">
             <div className="relative max-md:pt-5">
+              <Suspense fallback={<LoadingFallback />}>
               <ProjectViewSlides />
+            </Suspense>
             </div>
           </AnimatedSection>
         </section>
@@ -325,7 +367,7 @@ export default function Home() {
             <section className="container  mx-auto mt-5">
               <div className="container mx-auto !w-[100%] relative md:mb-16">
                 <div className="flex flex-col justify-center items-center pb-5">
-                  <SlideUp delay={0.4}>
+                  <SlideUp delay={0.1}>
                     <h2 className="w-full md:mt-10 text-center text-black md:text-[56px] text-[36px] font-cormorant md:leading-[72px] leading-[44px] font-[400] max-md:px-5">
                       Elevate to{" "}
                       <span className="orange-color">Award winning </span>
@@ -365,7 +407,7 @@ export default function Home() {
                   <div className="h-[160px] bg-[#061026]">
                     <div className="flex justify-center items-center">
                       <hr className="border-[#FFFFFF] w-[100%] opacity-20 absolute" />
-                      <SlideUp delay={0.6}>
+                      <SlideUp delay={0.15}>
                         <p className="p-2 z-1 bg-[#061026] font-satoshi text-[16px] font-[700] leading-6 text-center text-white">
                           65+ <br />
                           World-class <br />
@@ -377,10 +419,14 @@ export default function Home() {
                 </div>
               </div>
             </section>
-            <AmenitiesSwiper />
+            <Suspense fallback={<LoadingFallback />}>
+              <AmenitiesSwiper />
+            </Suspense>
           </Element>
 
-          <SafetySecuritySection />
+          <Suspense fallback={<LoadingFallback />}>
+            <SafetySecuritySection />
+          </Suspense>
 
           <Element name="section-Plans">
             {/* Plans Section */}
@@ -389,7 +435,7 @@ export default function Home() {
                 <div className="relative md:py-[80px]">
                   <div className="flex text-center flex-col justify-center items-center">
                     <SlideUp
-                      delay={0.4}
+                      delay={0.1}
                       className="flex justify-center items-center"
                     >
                       <h2 className="max-w-[600px] w-[100%] lg:w-[100%] project-overview-title !font-[300] text-center pb-[48px] pt-[60px] md:pt-0">
@@ -399,7 +445,9 @@ export default function Home() {
                       </h2>
                     </SlideUp>
                   </div>
-                  <PlansSection />
+                  <Suspense fallback={<LoadingFallback />}>
+                    <PlansSection />
+                  </Suspense>
                 </div>
               </section>
               {/* <PlansSwiper /> */}
@@ -411,7 +459,7 @@ export default function Home() {
                 <div className="relative container mx-auto"></div>
                 <div className="md:grid md:grid-cols-2 gap-10 justify-baseline">
                   <div className="">
-                    <SlideUp delay={0.4}>
+                    <SlideUp delay={0.1}>
                       <h2 className="project-overview-title text-[56px] text-center md:text-left">
                         Comfortable Living, Simplified — Discover Yourself by
                         the <span className="orange-color">Sacred</span> and{" "}
@@ -421,7 +469,7 @@ export default function Home() {
                     </SlideUp>
                   </div>
                   <div className="hidden md:flex items-baseline">
-                    <SlideUp delay={0.6}>
+                    <SlideUp delay={0.15}>
                       <p className="text-[20px] text-[#22252E] font-[400]">
                         Riverside living offers a tranquil environment with
                         picturesque views alongside soothing sounds of flowing
@@ -435,7 +483,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <RiversideLivingSwiper />
+              <Suspense fallback={<LoadingFallback />}>
+                <RiversideLivingSwiper />
+              </Suspense>
             </section>
           </Element>
 
@@ -444,7 +494,7 @@ export default function Home() {
             <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
               <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
                 <div className="max-md:col-span-2">
-                  <SlideUp delay={0.4}>
+                  <SlideUp delay={0.1}>
                     <h2 className="hidden md:block project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
                       Building a <span className="orange-color">Brighter?</span>
                       <br />
@@ -457,7 +507,7 @@ export default function Home() {
                   </SlideUp>
                 </div>
                 <div className="md:mt-20 flex md:items-end max-md:col-span-2 max-md:justify-center max-md:text-center">
-                  <SlideUp delay={0.6}>
+                  <SlideUp delay={0.15}>
                     <p className="text-[20px] text-[#22252E] font-[400]">
                       Hear From Few of Our 3500+ Happy Home Buyers
                     </p>
@@ -469,25 +519,29 @@ export default function Home() {
                   </SlideUp>
                 </div>
               </div>
-              <Testimonials />
+              <Suspense fallback={<LoadingFallback />}>
+                <Testimonials />
+              </Suspense>
             </div>
           </section>
           {/* Connectivity */}
           <div>
             <div className="relative md:p-5 overflow-hidden max-md:pb-5">
-              <GangaWaves />
+              <Suspense fallback={<div />}>
+                <GangaWaves />
+              </Suspense>
               <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
               <div className="max-md:px-5">
                 <div className="relative md:px-8 lg:px-24 container  mx-auto max-md:pt-10 md:py-20">
                   <div className="grid grid-cols-2 gap-4 ">
                     <div className="max-md:col-span-2 md:p-2">
-                      <SlideUp delay={0.4}>
+                      <SlideUp delay={0.1}>
                         <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px] !text-white">
                           Serampore, next <br className="max-md:hidden" />
                           <span className="orange-color">Investment hub</span>
                         </h2>
                       </SlideUp>
-                      <SlideUp delay={0.6}>
+                      <SlideUp delay={0.15}>
                         <Link href="/location">
                           <button id="serampore-learn-more" className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                             <div className="px-6 py-3 mr-20">Learn More</div>
@@ -502,7 +556,7 @@ export default function Home() {
                       <div>
                         <div className="space-y-11">
                           <SlideIn
-                            delay={0.2}
+                            delay={0.05}
                             direction="right"
                             className="flex items-center gap-9"
                           >
@@ -525,7 +579,7 @@ export default function Home() {
                           </SlideIn>
 
                           <SlideIn
-                            delay={0.4}
+                            delay={0.1}
                             direction="right"
                             className="flex items-center gap-9"
                           >
@@ -548,7 +602,7 @@ export default function Home() {
                           </SlideIn>
 
                           <SlideIn
-                            delay={0.8}
+                            delay={0.15}
                             direction="right"
                             className="flex items-center gap-9"
                           >
@@ -579,24 +633,26 @@ export default function Home() {
                 </div>
               </div>
               <hr className="border-[#FFFFFF] opacity-10" />
-              <SeramporeMarqueeSlides />
+              <Suspense fallback={<LoadingFallback />}>
+                <SeramporeMarqueeSlides />
+              </Suspense>
             </div>
-            <SlideUp delay={0.8}>
-              <div className="flex md:hidden justify-center relative -top-7">
-                <button
-                  id="mobile-schedule-visit-bottom"
-                  onClick={handleScheduleVisit}
-                  className="md:min-h-[4rem] min-h-[3.5rem] rounded-md h-full inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary"
-                >
-                  <div className="px-6 py-3 mr-20">
-                    <span>Schedule a Visit</span>
-                  </div>
-                  <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
-                    ↗
-                  </span>
-                </button>
-              </div>
-            </SlideUp>
+                          <SlideUp delay={0.2}>
+                <div className="flex md:hidden justify-center relative -top-7">
+                  <button
+                    id="mobile-schedule-visit-bottom"
+                    onClick={handleScheduleVisit}
+                    className="md:min-h-[4rem] min-h-[3.5rem] rounded-md h-full inline-flex relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary"
+                  >
+                    <div className="px-6 py-3 mr-20">
+                      <span>Schedule a Visit</span>
+                    </div>
+                    <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
+                      ↗
+                    </span>
+                  </button>
+                </div>
+              </SlideUp>
           </div>
 
           {/* Why Serampore */}
@@ -606,15 +662,15 @@ export default function Home() {
                 <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
                   <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
                     <div className="max-md:col-span-2">
-                      <SlideUp delay={0.4}>
+                      <SlideUp delay={0.1}>
                         <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
-                          Why <br className="max-md:hidden" />
+                          Why <br className="max-md:col-span-2" />
                           <span className="orange-color">Serampore?</span>
                         </h2>
                       </SlideUp>
                     </div>
                     <div className="hidden md:flex items-end">
-                      <SlideUp delay={0.6}>
+                      <SlideUp delay={0.15}>
                         <p className="text-[20px] text-[#22252E] font-[400]">
                           Serampore is situated about 20 kilometers north of
                           Kolkata, providing easy access to urban amenities, job
@@ -625,7 +681,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <SeramporeSwiper data={seramporeData} />
+                <Suspense fallback={<LoadingFallback />}>
+                  <SeramporeSwiper data={seramporeData} />
+                </Suspense>
               </section>
             </>
           </Element>
