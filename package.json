@@ -22,13 +22,17 @@
     "sharp": "^0.34.3",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.6",
+    "web-vitals": "^5.1.0",
     "zod": "^3.25.61"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.5.2",
     "@tailwindcss/postcss": "^4",
+    "compression-webpack-plugin": "^11.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "webpack-bundle-analyzer": "^4.10.2"
   }
 }

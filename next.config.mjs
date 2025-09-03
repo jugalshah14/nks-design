@@ -1,3 +1,9 @@
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -9,13 +15,16 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    // Aggressive performance optimizations
+    // Aggressive performance optimizations for Core Web Vitals
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000, // 1 year
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Critical for LCP optimization
+    loader: 'default',
+    unoptimized: false,
   },
   // Aggressive performance optimizations
   experimental: {
@@ -40,6 +49,13 @@ const nextConfig = {
             name: 'animations',
             chunks: 'all',
             priority: 10,
+          },
+          // Mobile-specific optimizations
+          mobile: {
+            test: /[\\/]node_modules[\\/](react-slick|swiper)[\\/]/,
+            name: 'mobile',
+            chunks: 'all',
+            priority: 5,
           },
         },
       };
@@ -74,4 +90,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);
