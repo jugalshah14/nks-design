@@ -102,8 +102,11 @@ const Header = () => {
                 className="logo-image"
                 src={getLogoSource()}
                 alt="logo"
+                height={48}
+                width={260}
                 fill
                 priority
+                lazy
               />
             </Link>
           </div>
@@ -134,10 +137,13 @@ const Header = () => {
             <Link href={"tel:+918101881018"} className="h-[24px] w-[24px] relative cursor-pointer">
             <Image
                 src="/assets/phone.svg"
-                alt="logo"
-                fill
+                  alt="logo"
+                  fill
+                  height={24}
+                  width={24}
                   priority
                   className="logo-image"
+                  lazy
               />
             </Link>
           </div>
@@ -150,6 +156,7 @@ const Header = () => {
               width={24}
               alt="menu"
               className="invert-100 menu-button"
+              lazy
             />
           </button>
         </div>
@@ -167,9 +174,12 @@ const Header = () => {
               <Image
                 src="/assets/logo-l.svg"
                 alt="Logo"
+                height={26}
+                width={141}
                 fill
                 className="object-contain"
                 priority
+                lazy
               />
             </Link>
           </div>

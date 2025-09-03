@@ -121,7 +121,7 @@ body::-webkit-scrollbar {
     /* Optimize image loading on mobile */
     img {
       image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
+    
     }
   }
 
@@ -260,6 +260,7 @@ body::-webkit-scrollbar {
 
 .riverside-slider-content {
   background: #ffffffb2;
+  -webkit-backdrop-filter:blur(124px);
   backdrop-filter: blur(124px);
 }
 
