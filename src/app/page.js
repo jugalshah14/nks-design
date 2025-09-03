@@ -183,9 +183,9 @@ export default function Home() {
                   lazy
                 />
               </div>
-              <h3 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
+              <h2 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
                 3 way
-              </h3>
+              </h2>
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[27px] leading-6 text-[#22252e] text-center">
                 Connectivity
               </p>
@@ -202,9 +202,9 @@ export default function Home() {
                   lazy
                 />
               </div>
-              <h3 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
+              <h2 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
                 56,000 sq.ft.
-              </h3>
+              </h2>
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[28px] leading-6 text-[#22252e] text-center">{`Hooghly's largest Residential Clubhouse`}</p>
             </div>
 
@@ -219,9 +219,9 @@ export default function Home() {
                   lazy
                 />
               </div>
-              <h3 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
+              <h2 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
                 19 acres
-              </h3>
+              </h2>
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[27px] leading-6 text-[#22252e] text-center">
                 Area of Project
               </p>
@@ -238,9 +238,9 @@ export default function Home() {
                   lazy
                 />
               </div>
-              <h3 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
+              <h2 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
                 3500+
-              </h3>
+              </h2>
               <p className="block md:text-[20px] text-[18px] font-satoshi font-[400] md:leading-[28px] leading-6 text-[#22252e] text-center">
                 Happy Families
               </p>

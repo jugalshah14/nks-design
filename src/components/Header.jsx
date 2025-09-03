@@ -66,30 +66,35 @@ const Header = () => {
           <div className="hidden md:flex items-center justify-start gap-5">
             <Link
               href="/why-alcove"
+              alt="Why Alcove"
               className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
             >
               Why Alcove
             </Link>
             <Link
               href="/master-plan"
+              alt="Master Plan"
               className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
             >
               Master Plans
             </Link>
             <Link
               href="/amenities"
+              alt="Amenities"
               className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
             >
               Amenities
             </Link>
             <Link
               href="/location"
+              alt="Location"
               className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
             >
               Location
             </Link>
             <Link
               href="/life-@-alcove"
+              alt="Life @ Alcove"
               className="font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
             >
               Life @Alcove
@@ -97,16 +102,15 @@ const Header = () => {
           </div>
 
           <div className="md:h-[48px] md:w-[260px] w-[141px] h-[26px] relative max-md:mr-auto md:mx-auto md:flex md:justify-center md:items-center">
-            <Link href="/">
+            <Link href="/" alt="home">
               <Image
                 className="logo-image"
                 src={getLogoSource()}
                 alt="logo"
                 height={48}
                 width={260}
-                fill
                 priority
-                lazy
+                lazy="true"
               />
             </Link>
           </div>
@@ -114,12 +118,14 @@ const Header = () => {
           <div className="flex items-center gap-6 md:justify-end">
             <Link
               href="/triveni"
+              alt="Triveni"
               className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
             >
               Triveni Omniplex
             </Link>
             <Link
               href="/blogs"
+              alt="Blogs"
               className="max-md:hidden font-satoshi font-medium text-[14px] leading-[19px] text-[#22252E] hover:text-[#de7f4a] transition-colors link-item "
             >
               Blogs
@@ -138,12 +144,11 @@ const Header = () => {
             <Image
                 src="/assets/phone.svg"
                   alt="logo"
-                  fill
                   height={24}
                   width={24}
                   priority
                   className="logo-image"
-                  lazy
+                  lazy="true"
               />
             </Link>
           </div>
@@ -156,7 +161,7 @@ const Header = () => {
               width={24}
               alt="menu"
               className="invert-100 menu-button"
-              lazy
+              lazy="true"
             />
           </button>
         </div>
@@ -170,16 +175,16 @@ const Header = () => {
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <div className="w-[141px] h-[26px] relative">
-            <Link href="/" onClick={toggleDrawer}>
+            <Link href="/" alt="home" onClick={toggleDrawer}>
               <Image
                 src="/assets/logo-l.svg"
                 alt="Logo"
                 height={26}
                 width={141}
-                fill
+                
                 className="object-contain"
                 priority
-                lazy
+                lazy="true"
               />
             </Link>
           </div>
@@ -211,6 +216,7 @@ const Header = () => {
             <li>
               <Link
                 href="/why-alcove"
+                alt="Why Alcove"
                 className="text-gray-800 hover:text-blue-500"
                 onClick={toggleDrawer}
               >
@@ -220,6 +226,7 @@ const Header = () => {
             <li>
               <Link
                 href="/master-plan"
+                alt="Master Plan"
                 className="text-gray-800 hover:text-blue-500"
                 onClick={toggleDrawer}
               >
@@ -229,6 +236,7 @@ const Header = () => {
             <li>
               <Link
                 href="/amenities"
+                alt="Amenities"
                 className="text-gray-800 hover:text-blue-500"
                 onClick={toggleDrawer}
               >
@@ -238,6 +246,7 @@ const Header = () => {
             <li>
               <Link
                 href="/location"
+                alt="Location"
                 className="text-gray-800 hover:text-blue-500"
                 onClick={toggleDrawer}
               >
@@ -247,6 +256,7 @@ const Header = () => {
             <li>
               <Link
                 href="/life-@-alcove"
+                alt="Life @Alcove"
                 className="text-gray-800 hover:text-blue-500"
                 onClick={toggleDrawer}
               >
@@ -254,13 +264,13 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/triveni" className="text-gray-800 hover:text-blue-500
+              <Link href="/triveni" alt="Triveni" className="text-gray-800 hover:text-blue-500
               onClick={toggleDrawer}">
                 Triveni Omniplex
               </Link>
             </li>
             <li>
-              <Link href="/blogs" className="text-gray-800 hover:text-blue-500
+              <Link href="/blogs" alt="Blogs" className="text-gray-800 hover:text-blue-500
               onClick={toggleDrawer}">
                 Blogs
               </Link>
