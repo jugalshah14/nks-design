@@ -110,15 +110,21 @@ export default function Home() {
             className="max-md:hidden inset-0 object-[50%_25%] w-full h-full object-cover"
             src="/assets/Riverview.png"
             alt="Riverside Luxury Residences"
-            layout="fill"
+            fill
             priority
+            sizes="100vw"
+            quality={85}
           />
           <Image
             className="md:hidden inset-0 w-full h-full object-cover"
             src="/assets/Riverviewmobile.png"
             alt="Riverside Luxury Residences"
-            layout="fill"
+            fill
             priority
+            sizes="(max-width: 768px) 100vw, 0vw"
+            quality={90}
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
           />
           <div className="md:hidden hero-section-bg h-[100%] w-[100%] top-0 left-0" />
           <div className="absolute inset-0 flex flex-col justify-center">
@@ -170,6 +176,8 @@ export default function Home() {
                   height={68}
                   alt="Connectivity"
                   className=""
+                  priority
+                  quality={90}
                 />
               </div>
               <h3 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
@@ -340,7 +348,7 @@ export default function Home() {
         {/* Project Overview */}
         <section className="bg-white">
           <div className="container mx-auto">
-            <div className="text-center mb-7 md:mb-10">
+            <div className="text-center mb-7 md:mb-10 max-md:pt-7">
               <SlideUp delay={0.1}>
                 <h2 className="project-overview-title max-md:!text-[36px] max-md:!leading-11 max-md:font-[400] text-center">
                   Project
@@ -349,8 +357,8 @@ export default function Home() {
               </SlideUp>
             </div>
           </div>
-          <AnimatedSection className="container overflow-visible  mx-auto relative mb-16">
-            <div className="relative max-md:pt-5">
+          <AnimatedSection className="container overflow-visible mx-auto relative mb-16">
+            <div className="relative">
               <Suspense fallback={<LoadingFallback />}>
               <ProjectViewSlides />
             </Suspense>

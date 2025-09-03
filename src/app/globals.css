@@ -72,6 +72,69 @@ body::-webkit-scrollbar {
     }
   }
 
+  /* CLS Prevention - Critical for Core Web Vitals */
+  .prevent-layout-shift {
+    contain: layout style paint;
+  }
+  
+  .hero-section-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Image optimization for LCP */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Font loading optimization */
+  .font-satoshi {
+    font-display: swap;
+  }
+  
+  .font-cormorant {
+    font-display: swap;
+  }
+
+  /* Mobile-specific optimizations for Core Web Vitals */
+  @media (max-width: 768px) {
+    /* Reduce layout shifts on mobile */
+    .hero-section-bg {
+      min-height: 100vh;
+      min-width: 100vw;
+    }
+    
+    /* Optimize text rendering on mobile */
+    .hero-section-title {
+      text-rendering: optimizeSpeed;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Prevent horizontal scroll on mobile */
+    body {
+      overflow-x: hidden;
+    }
+    
+    /* Optimize image loading on mobile */
+    img {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+  }
+
+  /* Critical mobile performance optimizations */
+  @media (max-width: 480px) {
+    
+    /* Optimize animations for mobile */
+    .animate-slide-up,
+    .animate-slide-up-delay {
+      animation-duration: 0.6s;
+    }
+  }
+
   .button-primary {
     @apply hover:bg-[#020c22] cursor-pointer duration-500;
   }
