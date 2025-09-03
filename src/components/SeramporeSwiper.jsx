@@ -117,7 +117,7 @@ export default function SeramporeSwiper({ data }) {
                   {slide.title}
                 </p>
                 <p
-                  className={`z-1 text-[12px] md:text-[16px] text-[#22252E] opacity-60 font-[400] leading-4 md:leading-[20px] description`}
+                  className={`z-1 text-[12px] md:text-[16px] text-gray-700 font-[400] leading-4 md:leading-[20px] description`}
                 >
                   {slide.description}
                 </p>
