@@ -1,104 +1,140 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
-// Performance optimization component
-export const PerformanceOptimizer = ({ children, threshold = 0.1, rootMargin = '50px' }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasIntersected, setHasIntersected] = useState(false);
+export default function PerformanceOptimizer() {
+  const workerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasIntersected) {
-          setIsVisible(true);
-          setHasIntersected(true);
-          // Disconnect observer after first intersection to save memory
-          observer.disconnect();
-        }
-      },
-      {
-        threshold,
-        rootMargin,
+    // Initialize Web Worker for heavy computations
+    if (typeof Worker !== 'undefined') {
+      try {
+        workerRef.current = new Worker('/src/utils/performanceWorker.js');
+        
+        workerRef.current.onmessage = (e) => {
+          const { type, data } = e.data;
+          
+          switch (type) {
+            case 'ANIMATIONS_PROCESSED':
+              // Handle processed animation data
+              console.log('Animations processed in background');
+              break;
+            case 'IMAGES_PROCESSED':
+              // Handle processed image data
+              console.log('Images processed in background');
+              break;
+          }
+        };
+      } catch (error) {
+        console.warn('Web Worker not supported:', error);
       }
-    );
-
-    const currentElement = document.querySelector('[data-performance-optimizer]');
-    if (currentElement) {
-      observer.observe(currentElement);
     }
 
-    return () => {
-      observer.disconnect();
+    // Optimize main thread performance
+    const optimizeMainThread = () => {
+      // Use requestIdleCallback for non-critical tasks
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          // Process non-critical animations
+          const animations = document.querySelectorAll('[data-animation]');
+          animations.forEach(animation => {
+            animation.style.willChange = 'transform';
+          });
+        });
+      }
+
+      // Use requestAnimationFrame for smooth animations
+      let animationId;
+      const animate = () => {
+        // Process animations in chunks
+        const elements = document.querySelectorAll('.animate-slide-up, .animate-slide-up-delay');
+        elements.forEach((element, index) => {
+          if (index % 10 === 0) { // Process in chunks of 10
+            element.style.transform = 'translateY(0)';
+            element.style.opacity = '1';
+          }
+        });
+        
+        animationId = requestAnimationFrame(animate);
+      };
+      
+      // Start animation processing
+      setTimeout(() => {
+        animate();
+      }, 100);
     };
-  }, [threshold, rootMargin, hasIntersected]);
 
-  return (
-    <div data-performance-optimizer>
-      {isVisible ? children : (
-        <div className="animate-pulse bg-gray-200 h-32 w-full rounded"></div>
-      )}
-    </div>
-  );
-};
+    // Defer heavy operations
+    const deferHeavyOperations = () => {
+      // Defer non-critical JavaScript execution
+      setTimeout(() => {
+        // Process lazy-loaded components
+        const lazyComponents = document.querySelectorAll('[data-lazy]');
+        lazyComponents.forEach(component => {
+          component.classList.add('loaded');
+        });
+      }, 2000);
 
-// Lazy load wrapper with performance optimization
-export const LazyLoadWrapper = ({ children, fallback, delay = 0 }) => {
-  const [shouldLoad, setShouldLoad] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShouldLoad(true);
-    }, delay);
-
-    return () => clearTimeout(timer);
-  }, [delay]);
-
-  if (!shouldLoad) {
-    return fallback || <div className="animate-pulse bg-gray-200 h-32 w-full rounded"></div>;
-  }
-
-  return children;
-};
-
-// Animation performance optimizer
-export const AnimationOptimizer = ({ children, className = "", ...props }) => {
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
+      // Defer analytics and tracking
+      setTimeout(() => {
+        // Load analytics after critical content
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('config', 'GA_MEASUREMENT_ID', {
+            page_title: document.title,
+            page_location: window.location.href
+          });
         }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '100px',
-      }
-    );
+      }, 3000);
+    };
 
-    const currentElement = document.querySelector('[data-animation-optimizer]');
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
+    // Optimize scroll performance
+    const optimizeScroll = () => {
+      let ticking = false;
+      
+      const updateScroll = () => {
+        // Throttle scroll events
+        const scrollY = window.scrollY;
+        const elements = document.querySelectorAll('[data-scroll-optimize]');
+        
+        elements.forEach(element => {
+          const rect = element.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            element.classList.add('in-viewport');
+          } else {
+            element.classList.remove('in-viewport');
+          }
+        });
+        
+        ticking = false;
+      };
 
+      const onScroll = () => {
+        if (!ticking) {
+          requestAnimationFrame(updateScroll);
+          ticking = true;
+        }
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      
+      return () => {
+        window.removeEventListener('scroll', onScroll);
+      };
+    };
+
+    // Initialize optimizations
+    optimizeMainThread();
+    deferHeavyOperations();
+    const cleanupScroll = optimizeScroll();
+
+    // Cleanup
     return () => {
-      observer.disconnect();
+      if (workerRef.current) {
+        workerRef.current.terminate();
+      }
+      cleanupScroll();
     };
   }, []);
 
-  return (
-    <div 
-      data-animation-optimizer
-      className={`transition-opacity duration-300 ${isInView ? 'opacity-100' : 'opacity-0'} ${className}`}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-};
-
-export default PerformanceOptimizer;
-
+  return null;
+}

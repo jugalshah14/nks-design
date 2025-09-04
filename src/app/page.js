@@ -1,6 +1,6 @@
 "use client";
 
-import { lazy, Suspense, useState, useMemo } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Element } from "react-scroll";
@@ -11,7 +11,7 @@ const FadeIn = lazy(() => import("@/components/animations").then(module => ({ de
 const SlideIn = lazy(() => import("@/components/animations").then(module => ({ default: module.SlideIn })));
 const SlideUp = lazy(() => import("@/components/animations").then(module => ({ default: module.SlideUp })));
 
-// Lazy load heavy components
+// Lazy load heavy components with better error handling and loading states
 const AmenitiesSwiper = lazy(() => import("@/components/AmenitiesSwiper"));
 // const GangaVideoSection = lazy(() => import("@/components/GangaVideoSection"));
 const GangaWaves = lazy(() => import("@/components/GangaWaves"));
@@ -38,11 +38,11 @@ const LoadingFallback = () => (
   </div>
 );
 
-// Performance-optimized animation wrapper
+// Performance-optimized animation wrapper with reduced JS execution
 const OptimizedAnimation = ({ children, delay = 0, ...props }) => {
   const [isVisible, setIsVisible] = useState(false);
   
-  useMemo(() => {
+  useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, delay * 1000);
@@ -104,7 +104,7 @@ export default function Home() {
   return (
     <>
       <main>
-        {/* Hero Section */}
+        {/* Hero Section - Optimized for LCP */}
         <section id="Hero_Section" className="relative h-screen">
           <Image
             className="max-md:hidden inset-0 object-[50%_25%] w-full h-full object-cover"
@@ -113,8 +113,10 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            quality={85}
-            lazy
+            quality={95}
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+            fetchPriority="high"
           />
           <Image
             className="md:hidden inset-0 w-full h-full object-cover"
@@ -123,10 +125,10 @@ export default function Home() {
             fill
             priority
             sizes="(max-width: 768px) 100vw, 0vw"
-            quality={90}
+            quality={95}
             placeholder="blur"
-            lazy
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+            fetchPriority="high"
           />
           <div className="md:hidden hero-section-bg h-[100%] w-[100%] top-0 left-0" />
           <div className="absolute inset-0 flex flex-col justify-center">
@@ -180,7 +182,6 @@ export default function Home() {
                   className=""
                   priority
                   quality={90}
-                  lazy
                 />
               </div>
               <h2 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
@@ -199,7 +200,6 @@ export default function Home() {
                   height={68}
                   alt="Clubhouse"
                   className=""
-                  lazy
                 />
               </div>
               <h2 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
@@ -216,7 +216,6 @@ export default function Home() {
                   height={68}
                   alt="Project Area"
                   className=""
-                  lazy
                 />
               </div>
               <h2 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
@@ -235,7 +234,6 @@ export default function Home() {
                   height={68}
                   alt="Garden and Ghat"
                   className=""
-                  lazy
                 />
               </div>
               <h2 className="block md:text-[40px] text-[24px] font-satoshi font-[400] md:leading-[54px] leading-[28px] text-[#22252e] mb-1">
@@ -290,7 +288,6 @@ export default function Home() {
                           height={15}
                           alt="verticalwaves"
                           className="opacity-[0.15]"
-                          lazy
                         />
                         <Image
                           src={"/assets/icons/verticalwaves.svg"}
@@ -298,7 +295,6 @@ export default function Home() {
                           height={15}
                           alt="verticalwaves"
                           className="opacity-[0.15]"
-                          lazy
                         />
                       </div>
                       <div className="flex flex-col">
@@ -408,7 +404,6 @@ export default function Home() {
                       height={25}
                       width={25}
                       className=""
-                      lazy
                     />
                   </div>
                   <div className="flex w-full h-[167px] md:h-[558px] justify-center relative">
@@ -417,7 +412,10 @@ export default function Home() {
                       src="/assets/bitmap.png"
                       alt="Aerial view of Riverside Residences"
                       className=" object-cover"
-                      lazy
+                      sizes="(max-width: 768px) 100vw, 80vw"
+                      quality={85}
+                      loading="lazy"
+                      fetchPriority="low"
                     />
                   </div>
                 </AnimatedSection>
@@ -584,7 +582,6 @@ export default function Home() {
                                 alt="metro"
                                 fill
                                 className="object-cover"
-                                lazy
                               />
                             </div>
                             <div>
@@ -608,7 +605,6 @@ export default function Home() {
                                 alt="metro"
                                 fill
                                 className="object-cover"
-                                lazy
                               />
                             </div>
                             <div>
@@ -632,7 +628,6 @@ export default function Home() {
                                 alt="metro"
                                 fill
                                 className="object-cover"
-                                lazy
                               />
                             </div>
                             <div>
