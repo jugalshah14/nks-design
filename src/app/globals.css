@@ -21,7 +21,7 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   overflow-x: hidden;
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width: none; /* Firefox */
 }
 
 body::-webkit-scrollbar {
@@ -77,6 +77,21 @@ body::-webkit-scrollbar {
     contain: layout style paint;
   }
   
+  /* Performance optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
   .hero-section-bg {
     background-size: cover;
     background-position: center;
@@ -92,10 +107,14 @@ body::-webkit-scrollbar {
   /* Font loading optimization */
   .font-satoshi {
     font-display: swap;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
   }
   
   .font-cormorant {
     font-display: swap;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
   }
 
   /* Mobile-specific optimizations for Core Web Vitals */
@@ -121,7 +140,25 @@ body::-webkit-scrollbar {
     /* Optimize image loading on mobile */
     img {
       image-rendering: -webkit-optimize-contrast;
+    }
     
+    /* Reduce animation complexity on mobile */
+    .animate-slide-up,
+    .animate-slide-up-delay {
+      animation-duration: 0.6s;
+      animation-timing-function: ease-out;
+    }
+    
+    /* Optimize touch interactions */
+    * {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+    }
+    
+    /* Improve scrolling performance */
+    .smooth-scroll {
+      -webkit-overflow-scrolling: touch; /* iOS Safari */
+      scroll-behavior: smooth;
     }
   }
 
@@ -689,15 +726,15 @@ body::-webkit-scrollbar {
 }
 
 .no-drag {
-  user-drag: none;
   -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .select-none {
-  user-select: none;
-  -moz-user-select: none;
   -webkit-user-select: none;
+  -moz-user-select: none;
   -ms-user-select: none;
+  user-select: none;
 }
 
 .page-hero-title {
@@ -855,15 +892,15 @@ body::-webkit-scrollbar {
 }
 
 .no-drag {
-  user-drag: none;
   -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .select-none {
-  user-select: none;
-  -moz-user-select: none;
   -webkit-user-select: none;
+  -moz-user-select: none;
   -ms-user-select: none;
+  user-select: none;
 }
 
 .page-hero-title {
@@ -969,10 +1006,8 @@ body::-webkit-scrollbar {
 
 /* Hide scrollbar for all browsers */
 .hide-scrollbar {
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-  /* Internet Explorer and Edge */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .hide-scrollbar::-webkit-scrollbar {

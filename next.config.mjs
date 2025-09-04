@@ -29,6 +29,12 @@ const nextConfig = {
   // Aggressive performance optimizations
   experimental: {
     optimizePackageImports: ['framer-motion', 'lottie-react', 'react-slick', 'swiper'],
+    // Enable server components for better performance
+    serverComponentsExternalPackages: ['sharp'],
+    // Optimize server response
+    serverMinification: true,
+    // Enable static optimization
+    staticPageGenerationTimeout: 1000,
   },
   // Aggressive bundle optimization
   webpack: (config, { dev, isServer }) => {
@@ -66,7 +72,7 @@ const nextConfig = {
   compress: true,
   // Enable gzip compression
   poweredByHeader: false,
-  // Aggressive caching
+  // Aggressive caching and performance headers
   async headers() {
     return [
       {
@@ -83,6 +89,37 @@ const nextConfig = {
           {
             key: 'X-XSS-Protection',
             value: '1; mode=block',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+        ],
+      },
+      {
+        source: '/assets/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/image(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

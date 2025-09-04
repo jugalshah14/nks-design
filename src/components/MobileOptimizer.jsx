@@ -48,8 +48,35 @@ export default function MobileOptimizer() {
       document.body.style.setProperty('--webkit-tap-highlight-color', 'transparent');
       document.body.style.setProperty('--webkit-touch-callout', 'none');
       document.body.style.setProperty('--webkit-user-select', 'none');
+      
+      // Preload critical mobile resources
+      const preloadImages = [
+        '/assets/Riverviewmobile.png',
+        '/assets/icons/connectivity.svg',
+        '/assets/icons/residential.svg',
+        '/assets/icons/area_of_project.svg',
+        '/assets/icons/family-icon.svg'
+      ];
+      
+      preloadImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
+      
+      // Performance monitoring for mobile
+      if ('connection' in navigator) {
+        const connection = navigator.connection;
+        if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+          // Reduce quality for slow connections
+          document.body.classList.add('slow-connection');
+        }
+      }
     }
   }, [isMobile]);
 
   return null;
 }
+

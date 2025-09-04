@@ -34,7 +34,14 @@ export default function WebVitals() {
       getLCP(reportWebVitals);
       getTTFB(reportWebVitals);
     });
+
+    // Import advanced performance monitoring
+    import('@/utils/performanceMonitor').then(({ performanceMonitor }) => {
+      // Monitor is automatically initialized
+      console.log('Advanced performance monitoring enabled');
+    });
   }, []);
 
   return null;
 }
+

@@ -7,40 +7,24 @@ import React from "react";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import WebVitals from "@/components/WebVitals";
 import MobileOptimizer from "@/components/MobileOptimizer";
+import PerformanceOptimizer from "@/components/PerformanceOptimizer";
+import BFCacheOptimizer from "@/components/BFCacheOptimizer";
 
 const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   variable: "--font-cormorant",
   display: "swap",
+  preload: true,
+  fallback: ["serif"],
 });
 
 const Satoshi = localFont({
   src: [
     {
-      path: "../fonts/Satoshi-Bold.woff",
-      weight: "bold",
+      path: "../fonts/Satoshi-Regular.woff",
+      weight: "400",
       style: "normal",
-    },
-    {
-      path: "../fonts/Satoshi-BoldItalic.woff",
-      weight: "bold",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Satoshi-Italic.woff",
-      weight: "normal",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Satoshi-Light.woff",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Satoshi-LightItalic.woff",
-      weight: "300",
-      style: "italic",
     },
     {
       path: "../fonts/Satoshi-Medium.woff",
@@ -48,16 +32,40 @@ const Satoshi = localFont({
       style: "normal",
     },
     {
+      path: "../fonts/Satoshi-Bold.woff",
+      weight: "bold",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Satoshi-Light.woff",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Satoshi-Italic.woff",
+      weight: "normal",
+      style: "italic",
+    },
+    {
       path: "../fonts/Satoshi-MediumItalic.woff",
       weight: "600",
       style: "italic",
     },
     {
-      path: "../fonts/Satoshi-Regular.woff",
-      weight: "400",
-      style: "normal",
+      path: "../fonts/Satoshi-BoldItalic.woff",
+      weight: "bold",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Satoshi-LightItalic.woff",
+      weight: "300",
+      style: "italic",
     },
   ],
+  variable: "--font-satoshi",
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
 });
 
 export const metadata = {
@@ -77,6 +85,46 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Critical CSS for above-the-fold content */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Critical CSS for hero section */
+            .hero-section-title {
+              text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+              font-family: "Cormorant Garamond", serif;
+            }
+            .hero-section-bg {
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+            .container {
+              width: 90% !important;
+            }
+            .project-overview-title {
+              font-family: "Cormorant Garamond", serif;
+              font-weight: 400;
+              font-size: 56px;
+              line-height: 72px;
+              letter-spacing: 0%;
+              color: rgba(34, 37, 46, 1);
+            }
+            .orange-color {
+              color: rgba(222, 128, 75, 1);
+            }
+            /* Mobile optimizations */
+            @media (max-width: 768px) {
+              .project-overview-title {
+                font-size: 36px;
+                line-height: 44px;
+              }
+              .hero-section-bg {
+                min-height: 100vh;
+                min-width: 100vw;
+              }
+            }
+          `
+        }} />
         {/* Critical resource hints for Core Web Vitals optimization */}
         <link rel="preload" href="/assets/Riverview.png" as="image" type="image/png" media="(min-width: 769px)" />
         <link rel="preload" href="/assets/Riverviewmobile.png" as="image" type="image/png" media="(max-width: 768px)" />
@@ -84,6 +132,9 @@ export default function RootLayout({ children }) {
         <link rel="preload" href="/assets/icons/residential.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/assets/icons/area_of_project.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/assets/icons/family-icon.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/assets/bitmap.png" as="image" type="image/png" />
+        <link rel="preload" href="/assets/icons/verticalwaves.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/assets/icons/info.svg" as="image" type="image/svg+xml" />
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//admin.newkolkata.in" />
         <link rel="dns-prefetch" href="//www.rera.wb.gov.in" />
@@ -94,6 +145,10 @@ export default function RootLayout({ children }) {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        {/* BFCache optimization */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
       </head>
       <body
         className={`${cormorant.className} ${Satoshi.className} antialiased`}
@@ -102,6 +157,8 @@ export default function RootLayout({ children }) {
         <GoogleAnalytics />
         <WebVitals />
         <MobileOptimizer />
+        <PerformanceOptimizer />
+        <BFCacheOptimizer />
         <React.Suspense fallback={<div>Loading......</div>}>
           <Header />
           {children}
