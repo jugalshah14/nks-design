@@ -108,7 +108,7 @@ export default function Home() {
         <section id="Hero_Section" className="relative h-screen">
           <Image
             className="max-md:hidden inset-0 object-[50%_25%] w-full h-full object-cover"
-            src="/assets/Riverview.png"
+            src="/assets/Riverview.jpeg"
             alt="Riverside Luxury Residences"
             fill
             priority
@@ -409,7 +409,7 @@ export default function Home() {
                   <div className="flex w-full h-[167px] md:h-[558px] justify-center relative">
                     <Image
                       fill
-                      src="/assets/bitmap.png"
+                      src="/assets/bitmap.jpeg"
                       alt="Aerial view of Riverside Residences"
                       className=" object-cover"
                       sizes="(max-width: 768px) 100vw, 80vw"

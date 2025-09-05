@@ -160,7 +160,7 @@ export default function OmniplexSlider() {
                             {slide.imageType}
                           </div>
                         </div>
-                        <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" />
+                        <Image src="/assets/icons/info.svg" alt="info" width={20} height={20} className="" loading="lazy" />
                       </div>
                       
                       <Image
@@ -169,6 +169,11 @@ export default function OmniplexSlider() {
                         height={240}
                         alt={slide.title}
                         className={`height-member w-full !h-[400px] object-cover ${slide.objectPosition}`}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        quality={85}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                        loading="lazy"
                       />
                     </div>
                     <div className="p-4 absolute bottom-0 bg-white/90 backdrop-filter backdrop-blur-[14px] bg-opacity-80 w-full gap-2 flex flex-col">

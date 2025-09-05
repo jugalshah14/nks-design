@@ -76,7 +76,7 @@ export const metadata = {
     "Apartments/Flat In Serampore New Kolkata, Serampore Flats For Sale, Serampore Flat Price | Serampore Flat - New Kolkata",
   // Critical for Core Web Vitals optimization
   other: {
-    'preload': '/assets/Riverview.png',
+    'preload': '/assets/Riverview.jpeg',
     'preload': '/assets/Riverviewmobile.png',
   },
 };
@@ -126,13 +126,13 @@ export default function RootLayout({ children }) {
           `
         }} />
         {/* Critical resource hints for Core Web Vitals optimization */}
-        <link rel="preload" href="/assets/Riverview.png" as="image" type="image/png" media="(min-width: 769px)" />
+        <link rel="preload" href="/assets/Riverview.jpeg" as="image" type="image/jpeg" media="(min-width: 769px)" />
         <link rel="preload" href="/assets/Riverviewmobile.png" as="image" type="image/png" media="(max-width: 768px)" />
         <link rel="preload" href="/assets/icons/connectivity.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/assets/icons/residential.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/assets/icons/area_of_project.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/assets/icons/family-icon.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/assets/bitmap.png" as="image" type="image/png" />
+        <link rel="preload" href="/assets/bitmap.jpeg" as="image" type="image/jpeg" />
         <link rel="preload" href="/assets/icons/verticalwaves.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/assets/icons/info.svg" as="image" type="image/svg+xml" />
         {/* DNS prefetch for external resources */}

@@ -375,6 +375,7 @@ export default function Footer() {
                       width={24}
                       height={24}
                       className=""
+                      loading="lazy"
                     />
                   </a>
                   <a
@@ -389,6 +390,7 @@ export default function Footer() {
                       width={24}
                       height={24}
                       className=""
+                      loading="lazy"
                     />
                   </a>
                   <a
@@ -403,6 +405,7 @@ export default function Footer() {
                       width={24}
                       height={24}
                       className=""
+                      loading="lazy"
                     />
                   </a>
                   <a
@@ -417,6 +420,7 @@ export default function Footer() {
                       width={24}
                       height={24}
                       className=""
+                      loading="lazy"
                     />
                   </a>
                 </div>
@@ -522,6 +526,7 @@ export default function Footer() {
         width={100}
         height={100}
         className="w-full"
+        loading="lazy"
       />
     </div>
   );
