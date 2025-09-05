@@ -110,7 +110,7 @@ const Header = () => {
                 height={48}
                 width={260}
                 priority
-                lazy="true"
+                loading="eager"
               />
             </Link>
           </div>
@@ -147,8 +147,8 @@ const Header = () => {
                   height={24}
                   width={24}
                   priority
+                  loading="eager"
                   className="logo-image"
-                  lazy="true"
               />
             </Link>
           </div>
@@ -161,7 +161,7 @@ const Header = () => {
               width={24}
               alt="menu"
               className="invert-100 menu-button"
-              lazy="true"
+              loading="lazy"
             />
           </button>
         </div>
@@ -181,10 +181,9 @@ const Header = () => {
                 alt="Logo"
                 height={26}
                 width={141}
-                
                 className="object-contain"
                 priority
-                lazy="true"
+                loading="eager"
               />
             </Link>
           </div>

@@ -26,15 +26,13 @@ const nextConfig = {
     loader: 'default',
     unoptimized: false,
   },
+  // Server external packages (moved from experimental)
+  serverExternalPackages: ['sharp'],
   // Aggressive performance optimizations
   experimental: {
     optimizePackageImports: ['framer-motion', 'lottie-react', 'react-slick', 'swiper'],
-    // Enable server components for better performance
-    serverComponentsExternalPackages: ['sharp'],
     // Optimize server response
     serverMinification: true,
-    // Enable static optimization
-    staticPageGenerationTimeout: 1000,
   },
   // Aggressive bundle optimization
   webpack: (config, { dev, isServer }) => {

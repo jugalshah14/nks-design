@@ -9,7 +9,7 @@ export default function PerformanceOptimizer() {
     // Initialize Web Worker for heavy computations
     if (typeof Worker !== 'undefined') {
       try {
-        workerRef.current = new Worker('/src/utils/performanceWorker.js');
+        workerRef.current = new Worker('/performanceWorker.js');
         
         workerRef.current.onmessage = (e) => {
           const { type, data } = e.data;
