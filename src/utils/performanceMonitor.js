@@ -1,192 +1,117 @@
-// Advanced performance monitoring for Core Web Vitals
-export class PerformanceMonitor {
-  constructor() {
-    this.metrics = {};
-    this.observers = [];
-    this.init();
-  }
+// Performance monitoring utilities
 
-  init() {
-    // Monitor Core Web Vitals
-    this.observeLCP();
-    this.observeFID();
-    this.observeCLS();
-    this.observeFCP();
-    this.observeTTFB();
-    
-    // Monitor custom metrics
-    this.observeResourceTiming();
-    this.observeNavigationTiming();
-  }
+/**
+ * Monitor Core Web Vitals
+ */
+export const monitorCoreWebVitals = () => {
+  if (typeof window === 'undefined') return;
 
-  observeLCP() {
-    if ('PerformanceObserver' in window) {
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
+  // Monitor LCP (Largest Contentful Paint)
+  const lcpObserver = new PerformanceObserver((list) => {
+    const entries = list.getEntries();
+    const lastEntry = entries[entries.length - 1];
+    console.log('LCP:', lastEntry.startTime);
+  });
+  lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+
+  // Monitor FID (First Input Delay)
+  const fidObserver = new PerformanceObserver((list) => {
+    const entries = list.getEntries();
+    entries.forEach((entry) => {
+      const fid = entry.processingStart - entry.startTime;
+      console.log('FID:', fid);
+    });
+  });
+  fidObserver.observe({ entryTypes: ['first-input'] });
+
+  // Monitor CLS (Cumulative Layout Shift)
+  let clsValue = 0;
+  const clsObserver = new PerformanceObserver((list) => {
+    const entries = list.getEntries();
+    entries.forEach((entry) => {
+      if (!entry.hadRecentInput) {
+        clsValue += entry.value;
+        console.log('CLS:', clsValue);
+      }
+    });
+  });
+  clsObserver.observe({ entryTypes: ['layout-shift'] });
+
+  // Monitor FCP (First Contentful Paint)
+  const fcpObserver = new PerformanceObserver((list) => {
+    const entries = list.getEntries();
+    entries.forEach((entry) => {
+      if (entry.name === 'first-contentful-paint') {
+        console.log('FCP:', entry.startTime);
+      }
+    });
+  });
+  fcpObserver.observe({ entryTypes: ['paint'] });
+
+  // Monitor TTFB (Time to First Byte)
+  const navigation = performance.getEntriesByType('navigation')[0];
+  if (navigation) {
+    const ttfb = navigation.responseStart - navigation.requestStart;
+    console.log('TTFB:', ttfb);
+  }
+};
+
+/**
+ * Monitor resource loading performance
+ */
+export const monitorResourcePerformance = () => {
+  if (typeof window === 'undefined') return;
+
+  const resourceObserver = new PerformanceObserver((list) => {
+    const entries = list.getEntries();
+    entries.forEach((entry) => {
+      if (entry.entryType === 'resource') {
+        const { name, duration, transferSize, encodedBodySize } = entry;
         
-        this.metrics.lcp = {
-          value: lastEntry.startTime,
-          element: lastEntry.element,
-          url: lastEntry.url,
-          timestamp: Date.now()
-        };
+        // Log slow resources
+        if (duration > 1000) {
+          console.warn(`Slow resource: ${name} (${Math.round(duration)}ms)`);
+        }
         
-        console.log('LCP:', this.metrics.lcp);
-        this.reportMetric('LCP', lastEntry.startTime);
-      });
-      
-      observer.observe({ entryTypes: ['largest-contentful-paint'] });
-      this.observers.push(observer);
-    }
-  }
+        // Log large resources
+        if (transferSize > 100000) {
+          console.warn(`Large resource: ${name} (${Math.round(transferSize / 1024)}KB)`);
+        }
+      }
+    });
+  });
 
-  observeFID() {
-    if ('PerformanceObserver' in window) {
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          this.metrics.fid = {
-            value: entry.processingStart - entry.startTime,
-            timestamp: Date.now()
-          };
-          
-          console.log('FID:', this.metrics.fid);
-          this.reportMetric('FID', entry.processingStart - entry.startTime);
-        });
-      });
-      
-      observer.observe({ entryTypes: ['first-input'] });
-      this.observers.push(observer);
-    }
-  }
+  resourceObserver.observe({ entryTypes: ['resource'] });
+};
 
-  observeCLS() {
-    if ('PerformanceObserver' in window) {
-      let clsValue = 0;
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          if (!entry.hadRecentInput) {
-            clsValue += entry.value;
-          }
-        });
-        
-        this.metrics.cls = {
-          value: clsValue,
-          timestamp: Date.now()
-        };
-        
-        console.log('CLS:', this.metrics.cls);
-        this.reportMetric('CLS', clsValue);
-      });
-      
-      observer.observe({ entryTypes: ['layout-shift'] });
-      this.observers.push(observer);
-    }
-  }
+/**
+ * Monitor memory usage
+ */
+export const monitorMemoryUsage = () => {
+  if (typeof window === 'undefined' || !('memory' in performance)) return;
 
-  observeFCP() {
-    if ('PerformanceObserver' in window) {
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          this.metrics.fcp = {
-            value: entry.startTime,
-            timestamp: Date.now()
-          };
-          
-          console.log('FCP:', this.metrics.fcp);
-          this.reportMetric('FCP', entry.startTime);
-        });
-      });
-      
-      observer.observe({ entryTypes: ['paint'] });
-      this.observers.push(observer);
-    }
-  }
+  const memory = performance.memory;
+  console.log('Memory Usage:', {
+    used: Math.round(memory.usedJSHeapSize / 1024 / 1024) + 'MB',
+    total: Math.round(memory.totalJSHeapSize / 1024 / 1024) + 'MB',
+    limit: Math.round(memory.jsHeapSizeLimit / 1024 / 1024) + 'MB'
+  });
+};
 
-  observeTTFB() {
-    if ('PerformanceObserver' in window) {
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          this.metrics.ttfb = {
-            value: entry.responseStart - entry.requestStart,
-            timestamp: Date.now()
-          };
-          
-          console.log('TTFB:', this.metrics.ttfb);
-          this.reportMetric('TTFB', entry.responseStart - entry.requestStart);
-        });
-      });
-      
-      observer.observe({ entryTypes: ['navigation'] });
-      this.observers.push(observer);
-    }
-  }
+/**
+ * Initialize all performance monitoring
+ */
+export const performanceMonitor = () => {
+  console.log('Initializing performance monitoring...');
+  
+  monitorCoreWebVitals();
+  monitorResourcePerformance();
+  monitorMemoryUsage();
+  
+  console.log('Performance monitoring initialized');
+};
 
-  observeResourceTiming() {
-    if ('PerformanceObserver' in window) {
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          if (entry.transferSize > 100000) { // Log resources > 100KB
-            console.log('Large resource:', {
-              name: entry.name,
-              size: entry.transferSize,
-              duration: entry.duration
-            });
-          }
-        });
-      });
-      
-      observer.observe({ entryTypes: ['resource'] });
-      this.observers.push(observer);
-    }
-  }
-
-  observeNavigationTiming() {
-    if ('PerformanceObserver' in window) {
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          this.metrics.navigation = {
-            domContentLoaded: entry.domContentLoadedEventEnd - entry.domContentLoadedEventStart,
-            loadComplete: entry.loadEventEnd - entry.loadEventStart,
-            domInteractive: entry.domInteractive,
-            timestamp: Date.now()
-          };
-          
-          console.log('Navigation timing:', this.metrics.navigation);
-        });
-      });
-      
-      observer.observe({ entryTypes: ['navigation'] });
-      this.observers.push(observer);
-    }
-  }
-
-  reportMetric(name, value) {
-    // Send to analytics
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', name, {
-        event_category: 'Web Vitals',
-        value: Math.round(name === 'CLS' ? value * 1000 : value),
-        non_interaction: true,
-      });
-    }
-  }
-
-  getMetrics() {
-    return this.metrics;
-  }
-
-  disconnect() {
-    this.observers.forEach(observer => observer.disconnect());
-    this.observers = [];
-  }
+// Auto-initialize if in browser
+if (typeof window !== 'undefined') {
+  performanceMonitor();
 }
-
-// Export singleton instance
-export const performanceMonitor = new PerformanceMonitor();
