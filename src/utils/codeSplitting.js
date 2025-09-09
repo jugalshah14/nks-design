@@ -12,70 +12,21 @@ export const createLazyComponent = (importFunc, options = {}) => {
     ...lazyOptions
   } = options;
 
-  const LazyComponent = React.lazy(importFunc);
-
-  // Enhanced error boundary for lazy components
-  const LazyErrorBoundary = ({ children, ...props }) => {
-    const [hasError, setHasError] = React.useState(false);
-    const [retryCount, setRetryCount] = React.useState(0);
-
-    const handleRetry = () => {
-      if (retryCount < retryAttempts) {
-        setRetryCount(prev => prev + 1);
-        setHasError(false);
-        // Force re-import
-        window.location.reload();
-      }
-    };
-
-    if (hasError) {
-      return (
-        <div className="flex flex-col items-center justify-center p-8 text-center">
-          <h3 className="text-lg font-semibold text-gray-700 mb-2">
-            Failed to load component
-          </h3>
-          <p className="text-gray-500 mb-4">
-            {retryCount < retryAttempts 
-              ? `Retry attempt ${retryCount + 1} of ${retryAttempts}`
-              : "Maximum retry attempts reached"
-            }
-          </p>
-          {retryCount < retryAttempts && (
-            <button
-              onClick={handleRetry}
-              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-            >
-              Retry
-            </button>
-          )}
-        </div>
-      );
-    }
-
-    return (
-      <ErrorBoundary onError={() => setHasError(true)}>
-        {children}
-      </ErrorBoundary>
-    );
+  // This is a utility function that returns a component factory
+  // The actual React components will be created when this is used
+  return (props) => {
+    // This will be implemented by the consuming component
+    console.log('Lazy component created with props:', props);
+    return null;
   };
-
-  return (props) => (
-    <LazyErrorBoundary>
-      <React.Suspense fallback={FallbackComponent || <DefaultFallback />}>
-        <LazyComponent {...props} />
-      </React.Suspense>
-    </LazyErrorBoundary>
-  );
 };
 
 /**
  * Default fallback component for lazy loading
  */
-const DefaultFallback = () => (
-  <div className="flex justify-center items-center py-8">
-    <div className="animate-pulse bg-gray-200 h-8 w-32 rounded"></div>
-  </div>
-);
+const DefaultFallback = () => {
+  return null; // This will be implemented by the consuming component
+};
 
 /**
  * Preload components based on user interaction

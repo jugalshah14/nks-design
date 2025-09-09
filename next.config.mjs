@@ -109,11 +109,7 @@ const nextConfig = {
         },
       };
 
-      // Optimize module resolution
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@': require('path').resolve(__dirname, 'src'),
-      };
+      // Module resolution is handled by Next.js by default
 
       // Enable module concatenation
       config.optimization.concatenateModules = true;
