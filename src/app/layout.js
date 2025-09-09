@@ -9,6 +9,7 @@ import WebVitals from "@/components/WebVitals";
 import MobileOptimizer from "@/components/MobileOptimizer";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import BFCacheOptimizer from "@/components/BFCacheOptimizer";
+import CSSOptimizer from "@/components/CSSOptimizer";
 
 const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "700"],
@@ -85,15 +86,26 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Critical CSS for above-the-fold content */}
+        {/* Critical CSS using your existing styles - no design changes */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            /* Critical CSS for hero section */
+            /* Your existing critical styles for faster loading */
             .hero-section-title {
               text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
               font-family: "Cormorant Garamond", serif;
             }
             .hero-section-bg {
+              background: linear-gradient(
+                  180deg,
+                  rgba(79, 112, 175, 0) 59.25%,
+                  rgba(79, 112, 175, 0.78) 81.4%,
+                  #4f70af 98.92%
+                ),
+                linear-gradient(
+                  180deg,
+                  rgba(79, 112, 175, 0.4) 28.62%,
+                  rgba(79, 112, 175, 0) 37.67%
+                );
               background-size: cover;
               background-position: center;
               background-repeat: no-repeat;
@@ -112,7 +124,7 @@ export default function RootLayout({ children }) {
             .orange-color {
               color: rgba(222, 128, 75, 1);
             }
-            /* Mobile optimizations */
+            /* Your existing mobile styles */
             @media (max-width: 768px) {
               .project-overview-title {
                 font-size: 36px;
@@ -121,6 +133,9 @@ export default function RootLayout({ children }) {
               .hero-section-bg {
                 min-height: 100vh;
                 min-width: 100vw;
+              }
+              .container {
+                width: auto !important;
               }
             }
           `
@@ -159,6 +174,7 @@ export default function RootLayout({ children }) {
         <MobileOptimizer />
         <PerformanceOptimizer />
         <BFCacheOptimizer />
+        <CSSOptimizer />
         <React.Suspense fallback={<div>Loading......</div>}>
           <Header />
           {children}

@@ -1,11 +1,18 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function BFCacheOptimizer() {
+  const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
+    // Set client-side flag to prevent hydration mismatch
+    setIsClient(true);
+    
     // Optimize Back/Forward Cache (BFCache) restoration
     const handlePageShow = (event) => {
+      if (typeof window === 'undefined') return;
+      
       // Check if page was restored from BFCache
       if (event.persisted) {
         // Page was restored from BFCache, reinitialize components
@@ -30,6 +37,8 @@ export default function BFCacheOptimizer() {
     };
 
     const handlePageHide = (event) => {
+      if (typeof window === 'undefined') return;
+      
       // Page is being hidden, prepare for BFCache
       console.log('Page being hidden, preparing for BFCache');
       
@@ -42,6 +51,8 @@ export default function BFCacheOptimizer() {
     };
 
     const handleBeforeUnload = (event) => {
+      if (typeof window === 'undefined') return;
+      
       // Clean up before page unload
       console.log('Page unloading, cleaning up');
       
@@ -62,6 +73,11 @@ export default function BFCacheOptimizer() {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
+
+  // Don't render anything during SSR to prevent hydration mismatch
+  if (!isClient) {
+    return null;
+  }
 
   return null;
 }

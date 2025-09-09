@@ -27,18 +27,22 @@ export function reportWebVitals(metric) {
 export default function WebVitals() {
   useEffect(() => {
     // Import web-vitals dynamically to avoid blocking initial load
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(reportWebVitals);
-      getFID(reportWebVitals);
-      getFCP(reportWebVitals);
-      getLCP(reportWebVitals);
-      getTTFB(reportWebVitals);
+    import('web-vitals').then(({ onCLS, onFID, onFCP, onLCP, onTTFB }) => {
+      onCLS(reportWebVitals);
+      onFID(reportWebVitals);
+      onFCP(reportWebVitals);
+      onLCP(reportWebVitals);
+      onTTFB(reportWebVitals);
+    }).catch((error) => {
+      console.warn('Web Vitals monitoring failed to load:', error);
     });
 
     // Import advanced performance monitoring
     import('@/utils/performanceMonitor').then(({ performanceMonitor }) => {
       // Monitor is automatically initialized
       console.log('Advanced performance monitoring enabled');
+    }).catch((error) => {
+      console.warn('Advanced performance monitoring failed to load:', error);
     });
   }, []);
 

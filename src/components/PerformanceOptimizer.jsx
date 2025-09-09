@@ -1,37 +1,22 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function PerformanceOptimizer() {
   const workerRef = useRef(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Initialize Web Worker for heavy computations
-    if (typeof Worker !== 'undefined') {
-      try {
-        workerRef.current = new Worker('/performanceWorker.js');
-        
-        workerRef.current.onmessage = (e) => {
-          const { type, data } = e.data;
-          
-          switch (type) {
-            case 'ANIMATIONS_PROCESSED':
-              // Handle processed animation data
-              console.log('Animations processed in background');
-              break;
-            case 'IMAGES_PROCESSED':
-              // Handle processed image data
-              console.log('Images processed in background');
-              break;
-          }
-        };
-      } catch (error) {
-        console.warn('Web Worker not supported:', error);
-      }
-    }
+    // Set client-side flag to prevent hydration mismatch
+    setIsClient(true);
+    
+    // Initialize performance optimizations without Web Worker
+    // Web Worker removed to avoid build errors
 
     // Optimize main thread performance
     const optimizeMainThread = () => {
+      if (typeof window === 'undefined') return;
+      
       // Use requestIdleCallback for non-critical tasks
       if ('requestIdleCallback' in window) {
         requestIdleCallback(() => {
@@ -66,6 +51,8 @@ export default function PerformanceOptimizer() {
 
     // Defer heavy operations
     const deferHeavyOperations = () => {
+      if (typeof window === 'undefined') return;
+      
       // Defer non-critical JavaScript execution
       setTimeout(() => {
         // Process lazy-loaded components
@@ -78,7 +65,7 @@ export default function PerformanceOptimizer() {
       // Defer analytics and tracking
       setTimeout(() => {
         // Load analytics after critical content
-        if (typeof window !== 'undefined' && window.gtag) {
+        if (window.gtag) {
           window.gtag('config', 'GA_MEASUREMENT_ID', {
             page_title: document.title,
             page_location: window.location.href
@@ -89,6 +76,8 @@ export default function PerformanceOptimizer() {
 
     // Optimize scroll performance
     const optimizeScroll = () => {
+      if (typeof window === 'undefined') return () => {};
+      
       let ticking = false;
       
       const updateScroll = () => {
@@ -129,12 +118,14 @@ export default function PerformanceOptimizer() {
 
     // Cleanup
     return () => {
-      if (workerRef.current) {
-        workerRef.current.terminate();
-      }
       cleanupScroll();
     };
   }, []);
+
+  // Don't render anything during SSR to prevent hydration mismatch
+  if (!isClient) {
+    return null;
+  }
 
   return null;
 }
