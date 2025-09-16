@@ -8,42 +8,42 @@ import "slick-carousel/slick/slick-theme.css";
 
 const data = [
     {
-        src: '/assets/project_overview_image_1.jpg',
+        src: '/assets/project_overview_image_1.webp',
         info: 'Actual Image',
         title: 'Aerial View'
     },
     {
-        src: '/assets/project_overview_image_2.png',
+        src: '/assets/project_overview_image_2.webp',
         info: 'Actual Image',
         title: 'Fountain View'
     },
     {
-        src: '/assets/project_overview_image_3.png',
+        src: '/assets/project_overview_image_3.webp',
         info: 'Artist impression',
         title: 'Club House'
     },
     {
-        src: '/assets/project_overview_image_4.png',
+        src: '/assets/project_overview_image_4.webp',
         info: 'Actual Image',
         title: 'Kids Play Area'
     },
     {
-        src: '/assets/project_overview_image_5.png',
+        src: '/assets/project_overview_image_5.webp',
         info: 'Actual Image',
         title: 'Private Ganga Ghat'
     },
     {
-        src: '/assets/project_overview_image_6.jpg',
+        src: '/assets/project_overview_image_6.webp',
         info: 'Actual Image',
         title: 'Podium Night View'
     },
     {
-        src: '/assets/project_overview_image_7.jpg',
+        src: '/assets/project_overview_image_7.webp',
         info: 'Actual Image',
         title: 'Podium Landscape'
     },
     {
-        src: '/assets/project_overview_image_8.png',
+        src: '/assets/project_overview_image_8.webp',
         info: 'Actual Image',
         title: 'View from Bedroom'
     },

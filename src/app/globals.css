@@ -103,6 +103,28 @@ body::-webkit-scrollbar {
     max-width: 100%;
     height: auto;
   }
+
+  /* Aspect ratio utilities for stable embeds (prevents CLS) */
+  .aspect-16-9 {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+  .aspect-4-3 {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+  }
+
+  /* Defer offscreen rendering to reduce style/layout work (improves LCP) */
+  .cv-auto {
+    content-visibility: auto;
+    /* Reasonable default placeholder size to prevent jumps */
+    contain-intrinsic-size: 800px;
+  }
+
+  /* Limit layout scope to avoid expensive reflows */
+  .contain-layout {
+    contain: layout style paint;
+  }
   
   /* Font loading optimization */
   .font-satoshi {
