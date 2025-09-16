@@ -9,23 +9,23 @@ import { AnimatedSection } from "./animations";
 
 const data = [
   {
-    src: "/assets/projects1.png",
+    src: "/assets/projects1.webp",
     title: "The 42",
   },
   {
-    src: "/assets/projects2.jpg",
+    src: "/assets/projects2.webp",
     title: "Alcove Gloria",
   },
   {
-    src: "/assets/projects3.jpg",
+    src: "/assets/projects3.webp",
     title: "Flora Fountain",
   },
   {
-    src: "/assets/projects4.jpg",
+    src: "/assets/projects4.webp",
     title: "Alcove Regency",
   },
   {
-    src: "/assets/projects5.jpg",
+    src: "/assets/projects5.webp",
     title: "Prayag",
   },
 ];

@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MobileSwiperNavigation from "./MobileSwiperNavigation";
+import LazyIframe from "./LazyIframe";
 
 const data = [
   {
@@ -96,16 +97,12 @@ export default function Testimonials() {
                 {/* <h3 className="max-md:text-center text-[16px] md:text-[24px] font-satoshi font-[500] leading-6 md:leading-[33px] text-[#22252e] mb-1">{slide.name}</h3>
                                 <p className="max-md:text-center text-[12px] md:text-[16px] font-satoshi font-[500] leading-5 md:leading-[22px] text-[#22252e99] mb-6">{slide.position}</p> */}
                 <div className="max-md:flex max-md:justify-center w-full">
-                  <iframe
-                    width="100%"
-                    height="550"
+                  <LazyIframe
                     src={slide.videoUrl}
-                    title={slide.name + " testimonial"}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="w-full md:h-[550px] h-[350px]"
-                  ></iframe>
+                    title={`${slide.name} testimonial`}
+                    wrapperClassName=""
+                    className=""
+                  />
                 </div>
               </div>
             </div>

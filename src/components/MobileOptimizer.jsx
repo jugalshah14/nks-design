@@ -58,7 +58,7 @@ export default function MobileOptimizer() {
     
     // Preload critical mobile resources
     const preloadImages = [
-      '/assets/Riverviewmobile.png',
+      '/assets/Riverviewmobile.webp',
       '/assets/icons/connectivity.svg',
       '/assets/icons/residential.svg',
       '/assets/icons/area_of_project.svg',

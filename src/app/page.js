@@ -108,26 +108,22 @@ export default function Home() {
         <section id="Hero_Section" className="relative h-screen">
           <Image
             className="max-md:hidden inset-0 object-[50%_25%] w-full h-full object-cover"
-            src="/assets/Riverview.jpeg"
+            src="/assets/Riverview.webp"
             alt="Riverside Luxury Residences"
             fill
             priority
             sizes="100vw"
             quality={95}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             fetchPriority="high"
           />
           <Image
             className="md:hidden inset-0 w-full h-full object-cover"
-            src="/assets/Riverviewmobile.png"
+            src="/assets/Riverviewmobile.webp"
             alt="Riverside Luxury Residences"
             fill
             priority
             sizes="(max-width: 768px) 100vw, 0vw"
             quality={95}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             fetchPriority="high"
           />
           <div className="md:hidden hero-section-bg h-[100%] w-[100%] top-0 left-0" />
@@ -506,7 +502,7 @@ export default function Home() {
           </Element>
 
           {/*  Testimonials */}
-          <section className="bg-white">
+          <section className="bg-white cv-auto contain-layout">
             <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
               <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
                 <div className="max-md:col-span-2">
@@ -674,7 +670,7 @@ export default function Home() {
           {/* Why Serampore */}
           <Element name="section-WhySerampore">
             <>
-              <section className="bg-white overflow-x-hidden">
+              <section className="bg-white overflow-x-hidden cv-auto contain-layout">
                 <div className="container  mx-auto relative certification-section !bg-white pt-10 md:pt-20">
                   <div className="grid grid-cols-2 gap-10 md:px-8 lg:px-24">
                     <div className="max-md:col-span-2">
