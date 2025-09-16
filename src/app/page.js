@@ -13,7 +13,7 @@ const SlideUp = lazy(() => import("@/components/animations").then(module => ({ d
 
 // Lazy load heavy components with better error handling and loading states
 const AmenitiesSwiper = lazy(() => import("@/components/AmenitiesSwiper"));
-// const GangaVideoSection = lazy(() => import("@/components/GangaVideoSection"));
+const GangaVideoSection = lazy(() => import("@/components/GangaVideoSection"));
 const GangaWaves = lazy(() => import("@/components/GangaWaves"));
 const HeroSectionWaves = lazy(() => import("@/components/HeroSectionWaves"));
 const PlansSection = lazy(() => import("@/components/PlansSection"));
@@ -257,7 +257,7 @@ export default function Home() {
           {/* Ganga Video */}
           <div>
             <Suspense fallback={<LoadingFallback />}>
-              {/* <GangaVideoSection /> */}
+              <GangaVideoSection />
             </Suspense>
 
             <div className="hidden md:block relative p-5 overflow-hidden">
