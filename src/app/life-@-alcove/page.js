@@ -10,11 +10,11 @@ export default function lifeAtAlcove() {
         <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
           <SlideUp delay={0.4}>
             <div className="text-center pb-4 md:pb-0">
-              <span className="text-[#22252e] font-bold text-[20px]">
+              <span className="text-[#22252e] font-bold text-[16px]">
                 • Home
               </span>
               <span className="mx-2">—</span>
-              <span className="text-[#5c5f68] font-normal text-[20px]">
+              <span className="text-[#5c5f68] font-normal text-[16px]">
                 Life @ Alcove
               </span>
             </div>
@@ -86,7 +86,7 @@ export default function lifeAtAlcove() {
                 </div>
               </div>
               <div className="flex flex-col justify-center lg:justify-center h-full">
-                <div className="z-20 md:relative md:-bottom-[350px] md:right-[70px] max-w-md bg-[#020C22] p-5 md:p-10 text-white font-satoshi text-[24px] md:text-[40px] font-normal leading-[28px] md:leading-[48px] text-center md:text-left flex h-auto">
+                <div className="z-20 md:relative md:-bottom-[350px] md:right-[70px] max-w-md bg-[#020C22] p-5 max-md:pb-10 md:p-10 text-white font-satoshi text-[24px] md:text-[40px] font-normal leading-[28px] md:leading-[48px] text-center md:text-left flex h-auto">
                   <span>
                   Make everyday{" "}
                     <span className="orange-color">living effortless </span>at New Kolkata Sangam.
@@ -175,7 +175,7 @@ export default function lifeAtAlcove() {
                 </div>
               </div>
               <div className="flex flex-col justify-center lg:justify-center h-full">
-                <div className="z-20 md:relative md:-bottom-[300px] md:right-[70px] max-w-md bg-[#020C22] p-5 md:p-10 text-white font-satoshi text-[24px] md:text-[40px] font-normal leading-[28px] md:leading-[48px] text-center md:text-left flex h-auto">
+                <div className="z-20 md:relative md:-bottom-[300px] md:right-[70px] max-w-md bg-[#020C22] p-5 max-md:pb-10 md:p-10 text-white font-satoshi text-[24px] md:text-[40px] font-normal leading-[28px] md:leading-[48px] text-center md:text-left flex h-auto">
                   <span>
                     Join the fun and make memories with our{" "}
                     <span className="orange-color">exciting activities</span>{" "}

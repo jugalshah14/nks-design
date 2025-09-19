@@ -6,7 +6,6 @@ import { Link as ScrollLink } from 'react-scroll';
 const SCROLL_AREA = {
     "amenities": 0,
     "projects": 30,
-    "ganga": 70,
     "why-serampore": 200
 }
 
@@ -67,8 +66,8 @@ export default function ScrollSpyNav() {
                     </div>
                 </ScrollLink>
             </div>
-            <div className='!w-fit !flex items-center justify-center min-w-[10px] min-h-[10px]'><Image src="/assets/icons/rectangle_divider.svg" alt="Arrow" width={10} height={10} className="m-0" /></div>
-            <div className='!w-fit !flex items-center justify-center'>
+            {/* <div className='!w-fit !flex items-center justify-center min-w-[10px] min-h-[10px]'><Image src="/assets/icons/rectangle_divider.svg" alt="Arrow" width={10} height={10} className="m-0" /></div> */}
+            {/* <div className='!w-fit !flex items-center justify-center'>
                 <ScrollLink
                     activeClass="spy-link-active"
                     to="section-Ganga"
@@ -85,7 +84,7 @@ export default function ScrollSpyNav() {
                         <div className="hidden bottom-line absolute bottom-0 w-[38px] h-1 bg-[#4f70af]"></div>
                     </div>
                 </ScrollLink>
-            </div>
+            </div> */}
             <div className='!w-fit !flex items-center justify-center min-w-[10px] min-h-[10px]'><Image src="/assets/icons/rectangle_divider.svg" alt="Arrow" width={10} height={10} className="m-0" /></div>
             <div className='!w-fit !flex items-center justify-center mr-auto'>
                 <ScrollLink

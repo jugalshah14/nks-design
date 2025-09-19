@@ -11,7 +11,7 @@ const MobileSwiperNavigation = ({
   className = "" 
 }) => {
   return (
-    <div className={`flex z-11 bg-white items-center justify-around px-1 py-5 w-full ${className}`}>
+    <div className={`flex z-11 bg-white items-center justify-around px-1 py-5 w-full shadow-md ${className}`}>
       <div className="h-full flex items-center justify-center">
         <button
           id="mobile-swiper-prev"
@@ -29,7 +29,7 @@ const MobileSwiperNavigation = ({
         </button>
       </div>
       <div className="flex gap-2 items-center font-[700] text-black">
-        {currentIndex + 1} 
+        <div className="w-4 text-center">{currentIndex + 1}</div>
         <div className="h-0.5 w-8 bg-[#D9D9D9]" />
         <div className='text-black/30'>{totalSlides}</div>
       </div>

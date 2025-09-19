@@ -19,11 +19,11 @@ export default function MasterPlan() {
         <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
           <SlideUp delay={0.4}>
             <div className="text-center pb-4 md:pb-0">
-              <span className="text-[#22252e] font-bold text-[20px]">
+              <span className="text-[#22252e] font-bold text-[16px]">
                 • Home
               </span>
               <span className="mx-2">—</span>
-              <span className="text-[#5c5f68] font-normal text-[20px]">
+              <span className="text-[#5c5f68] font-normal text-[16px]">
                 Master Plan
               </span>
             </div>
@@ -405,7 +405,7 @@ export default function MasterPlan() {
             <Image
               src="/assets/icons/arrowlong.svg"
               alt="1BHK"
-              width={40}
+              width={30}
               height={3}
               className="absolute right-[10px] md:right-[40px]"
             />

@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ConstructionGallery = ({ isOpen, onClose, images }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedImage, setSelectedImage] = useState(images?.[0]?.src || "");
     const [selectedText, setSelectedText] = useState(images?.[0]?.text || "");
+    const thumbnailRef = useRef(null);
   
     useEffect(() => {
       if (isOpen) {
@@ -19,28 +21,48 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
   
     useEffect(() => {
       if (images?.length > 0) {
+        setCurrentIndex(0);
         setSelectedImage(images[0].src);
         setSelectedText(images[0]?.text);
       }
     }, [images]);
+
+    // Auto-scroll to active thumbnail
+    useEffect(() => {
+      if (thumbnailRef.current) {
+        const thumbnailElement = thumbnailRef.current.children[currentIndex];
+        if (thumbnailElement) {
+          thumbnailElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+          });
+        }
+      }
+    }, [currentIndex]);
   
-    const handleThumbnailClick = (image) => {
+    const handleThumbnailClick = (image, index) => {
+      setCurrentIndex(index);
       setSelectedImage(image.src);
       setSelectedText(image.text);
     };
   
     const handleNextImage = () => {
-      const currentIndex = images.findIndex((img) => img.src === selectedImage);
-      const nextIndex = (currentIndex + 1) % images.length;
-      setSelectedImage(images[nextIndex].src);
-      setSelectedText(images[nextIndex].text);
+      if (currentIndex < images.length - 1) {
+        const nextIndex = currentIndex + 1;
+        setCurrentIndex(nextIndex);
+        setSelectedImage(images[nextIndex].src);
+        setSelectedText(images[nextIndex].text);
+      }
     };
   
     const handlePreviousImage = () => {
-      const currentIndex = images.findIndex((img) => img.src === selectedImage);
-      const prevIndex = (currentIndex - 1 + images.length) % images.length;
-      setSelectedImage(images[prevIndex].src);
-      setSelectedText(images[prevIndex].text);
+      if (currentIndex > 0) {
+        const prevIndex = currentIndex - 1;
+        setCurrentIndex(prevIndex);
+        setSelectedImage(images[prevIndex].src);
+        setSelectedText(images[prevIndex].text);
+      }
     };
   
     if (!isOpen || !selectedImage) return null;  // Prevent rendering if selectedImage is invalid
@@ -52,7 +74,7 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
             <button
               id="construction-gallery-close"
               onClick={onClose}
-              className="text-3xl text-white hover:text-gray-800 cursor-pointer"
+              className="fixed top-10 right-20 text-3xl text-white hover:text-gray-800 cursor-pointer"
               aria-label="Close Modal"
             >
               &times;
@@ -78,7 +100,14 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
           )}
   
           {/* Thumbnails */}
-          <div className="flex justify-center overflow-x-auto space-x-3 mt-2">
+          <div 
+            ref={thumbnailRef}
+            className="flex justify-start overflow-x-auto space-x-3 mt-2 px-4 py-2 [&::-webkit-scrollbar]:hidden"
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none'
+            }}
+          >
             {images.map((image, index) => (
               <Image
                 key={index}
@@ -86,12 +115,12 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
                 alt={`Thumbnail ${index + 1}`}
                 width={60}
                 height={60}
-                className={`w-20 h-20 object-cover cursor-pointer rounded-md border-2 transition ${
-                  selectedImage === image.src
+                className={`w-20 h-20 object-cover cursor-pointer border-2 transition flex-shrink-0 ${
+                  currentIndex === index
                     ? "border-white filter-none"
                     : "border-transparent hover:border-gray-300 filter brightness-50"
                 }`}
-                onClick={() => handleThumbnailClick(image)}
+                onClick={() => handleThumbnailClick(image, index)}
               />
             ))}
           </div>
@@ -101,8 +130,11 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
             <div className="h-full flex items-center justify-center">
               <button
                 id="construction-gallery-prev"
-                className="focus:outline-none cursor-pointer disabled:cursor-auto"
+                className={`focus:outline-none ${
+                  currentIndex === 0 ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+                }`}
                 onClick={handlePreviousImage}
+                disabled={currentIndex === 0}
               >
                 <Image
                   src="/assets/icons/arrow-r-w.svg"
@@ -110,16 +142,19 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
                   height={20}
                   width={19}
                   className={`${
-                    images.indexOf(selectedImage) + 1 === 1 ? "invert-75" : ""
+                    currentIndex === 0 ? "invert-75" : ""
                   } transform rotate-180`}
                 />
               </button>
             </div>
-            <div className="h-full flex items-center justify-center disabled:cursor-auto">
+            <div className="h-full flex items-center justify-center">
               <button
                 id="construction-gallery-next"
-                className="focus:outline-none cursor-pointer"
+                className={`focus:outline-none ${
+                  currentIndex === images.length - 1 ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+                }`}
                 onClick={handleNextImage}
+                disabled={currentIndex === images.length - 1}
               >
                 <Image
                   src="/assets/icons/arrow-r-w.svg"
@@ -127,7 +162,7 @@ const ConstructionGallery = ({ isOpen, onClose, images }) => {
                   height={20}
                   width={19}
                   className={
-                    images.indexOf(selectedImage) + 1 === images.length
+                    currentIndex === images.length - 1
                       ? "invert-75"
                       : ""
                   }

@@ -131,19 +131,19 @@ export default function Home() {
             <div className="container mx-auto">
                 <h1 className="max-md:px-9 max-md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[100px] font-[400] md:leading-[100px] md:max-w-[635px]">
                   Affordable riverside luxury by the creators of &apos;The
-                  <span className="text-[150px]"> 42</span>&apos;
+                  <span className="md:text-[150px] text-[100px]"> 42</span>&apos;
                 </h1>
             </div>
           </div>
 
           {/* Bottom corner information */}
-          <div className="absolute bottom-12 left-4 md:bottom-0 md:left-30">
+          <div className="absolute bottom-12 left-4 md:bottom-0 md:left-30 max-md: pb-3">
             <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5 animate-fade-in-delay">
               HIRA/P/HOO/2019/000635
             </p>
           </div>
 
-          <div className="absolute bottom-12 right-4 md:bottom-0 md:right-45">
+          <div className="absolute bottom-12 right-4 md:bottom-0 md:right-45 max-md: pb-3">
             <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5 animate-fade-in-delay">
               <Link
                 href="https://www.rera.wb.gov.in"
@@ -270,7 +270,7 @@ export default function Home() {
                       <div className="text-[20px] font-satoshi font-[700] leading-[28px] mb-4 text-white">
                         Did you know?
                       </div>
-                      <p className="w-[80%] transforming-text font-[300] text-[56px] leading-[72px] lg:text-[40px] lg:leading-[48px]">
+                      <p className="w-[100%] transforming-text !font-satoshi font-[300] text-[56px] leading-[72px] lg:text-[40px] lg:leading-[48px]">
                         {`Feel the divine aura of Banaras now in Serampore! Own a Home Where You’re Blessed by Ganga Aarti, Every Single Day We’re proud to be India’s only riverside township where the sacred Ganga Aarti happens daily.`}
                       </p>
                     </SlideUp>
@@ -309,7 +309,7 @@ export default function Home() {
                               <span>Schedule a Visit</span>
                             </div>
                             <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
-                              ↗
+                              <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
                             </span>
                           </button>
                         </SlideUp>
@@ -320,7 +320,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <AnimatedSection className="md:container  mx-auto relative flex flex-col items-center py-10 max-md:mt-7 max-md:bg-[#DE804B17]">
+          <AnimatedSection className="md:container  mx-auto relative flex flex-col items-center py-10 max-md:bg-[#DE804B17]">
             <div className="hidden md:block relative px-10 lg:px-17 pt-9 pb-16 mt-4">
               <div className="absolute -left-[4.5%] top-0 w-[60%] h-[100%] lg:w-[80%] lg:h-[100%] bg-[#DE804B] -skew-x-12"></div>
               <div className="absolute left-0 top-0 w-[100%] h-[100%] bg-[#020C22] skew-x-12"></div>
@@ -340,7 +340,7 @@ export default function Home() {
                 <span>Schedule a Visit</span>
               </div>
               <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
-                ↗
+                <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
               </span>
             </button>
           </AnimatedSection>
@@ -434,11 +434,11 @@ export default function Home() {
             <Suspense fallback={<LoadingFallback />}>
               <AmenitiesSwiper />
             </Suspense>
-          </Element>
 
           <Suspense fallback={<LoadingFallback />}>
             <SafetySecuritySection />
           </Suspense>
+          </Element>
 
           <Element name="section-Plans">
             {/* Plans Section */}
@@ -467,7 +467,7 @@ export default function Home() {
 
             {/* Plans Types */}
             <section className="bg-white">
-              <div className=" container mx-auto relative certification-section !bg-white pt-20">
+              <div className=" container mx-auto relative certification-section !bg-white md:pt-20 pt-10 max-md:px-5">
                 <div className="relative container mx-auto"></div>
                 <div className="md:grid md:grid-cols-2 gap-10 justify-baseline">
                   <div className="">
@@ -499,7 +499,7 @@ export default function Home() {
                 <RiversideLivingSwiper />
               </Suspense>
             </section>
-          </Element>
+         
 
           {/*  Testimonials */}
           <section className="bg-white cv-auto contain-layout">
@@ -558,7 +558,7 @@ export default function Home() {
                           <button id="serampore-learn-more" className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                             <div className="px-6 py-3 mr-20">Learn More</div>
                             <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
-                              ↗
+                              <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
                             </span>
                           </button>
                         </Link>
@@ -660,12 +660,13 @@ export default function Home() {
                       <span>Schedule a Visit</span>
                     </div>
                     <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
-                      ↗
+                      <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
                     </span>
                   </button>
                 </div>
               </SlideUp>
-          </div>
+            </div>
+            </Element>
 
           {/* Why Serampore */}
           <Element name="section-WhySerampore">
@@ -676,7 +677,7 @@ export default function Home() {
                     <div className="max-md:col-span-2">
                       <SlideUp delay={0.1}>
                         <h2 className="project-overview-title !text-[36px] max-md:!leading-11 max-md:font-[400] max-md:text-center md:!text-[56px]">
-                          Why <br className="max-md:col-span-2" />
+                          Why <br className="hidden md:block" />
                           <span className="orange-color">Serampore?</span>
                         </h2>
                       </SlideUp>

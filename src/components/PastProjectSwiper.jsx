@@ -120,7 +120,7 @@ export default function PastProjectSwiper() {
                 afterChange={(current) => setActiveIndex(current)}
             >
                 {data.map((slide, index) => (
-                    <div key={index} className='relative !flex justify-center flex-nowrap md:pt-15 pt-10 w-[100%]'>
+                    <div key={index} className='relative !flex justify-center flex-nowrap md:pt-15 pt-7 w-[100%]'>
                         <div className='w-full flex md:flex-row flex-col'>
                            <div className='w-full md:w-[80%] h-[240px] md:h-[468px] relative'>
                             {/* Info Icon */}

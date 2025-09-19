@@ -8,9 +8,9 @@ export default function FAQAccordion({ data }) {
   };
 
   return (
-    <div className="px-4 lg:px-0">
+    <div className="px-4 max-md:pb-10 lg:px-0">
       {data.map((item, index) => (
-        <div key={index} className="mb-4 rounded-md bg-white p-4">
+        <div key={index} className="md:mb-4 rounded-md bg-white p-4">
           <button
             id={`faq-accordion-${index}`}
             className="w-full flex justify-between items-center font-satoshi font-bold text-left text-gray-900 cursor-pointer"

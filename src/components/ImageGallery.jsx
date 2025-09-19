@@ -80,10 +80,10 @@ const ImageGallery = ({ isOpen, onClose, images }) => {
               alt={`Thumbnail ${index + 1}`}
               width={60}
               height={60}
-              className={`w-20 h-20 object-cover cursor-pointer rounded-md border-2 transition ${
+              className={`w-20 h-20 object-cover cursor-pointer border-2 transition ${
                 selectedImage === image
                   ? "border-blue-600 filter-none"
-                  : "border-transparent hover:border-gray-300 filter brightness-40"
+                  : "border-transparent hover:border-gray-300 filter brightness-50"
               }`}
               onClick={() => handleThumbnailClick(image)}
               sizes="80px"

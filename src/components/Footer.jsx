@@ -262,7 +262,7 @@ export default function Footer() {
                   <span>{isSubmitting ? "Submitting..." : "Submit"}</span>
                 </div>
                 <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-                  ↗
+                  <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
                 </span>
               </button>
             </form>

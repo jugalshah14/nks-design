@@ -223,23 +223,23 @@ const GangaVideoSection = () => {
               </h2>
             </SlideUp>
           </div>
-          <div className="mt-14 flex justify-center items-center">
-            <hr className="border-[#FFFFFF] w-[100%] opacity-20 absolute" />
+          <div className="md:mt-14 mt-8 flex justify-center items-center">
+            <hr className="border-[#FFFFFF] w-[100%] opacity-20 absolute max-md:hidden" />
           </div>
           <SlideUp delay={0.8}>
             <p className="did-you-know-m w-[85%] mx-auto text-center font-[400] text-[24px] leading-7 mb-4 pt-4">
             Feel the divine aura of Banaras now in Serampore! Own a Home Where You're Blessed by Ganga Aarti, Every Single Day We're proud to be India's only riverside township where the sacred Ganga Aarti happens daily
             </p>
           </SlideUp>
+          <div className="absolute -bottom-7 flex justify-center items-center w-full mt-6">
+            <button id="ganga-video-schedule-visit" onClick={handleScheduleVisit} className="md:min-h-[4.75rem] min-h-[3.5rem] h-full mx-auto relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden rounded-md">
+              <div className="px-6 py-3 mr-20">Schedule a Visit</div>
+              <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
+                <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
+              </span>
+            </button>
+          </div>
         </div>
-        <SlideUp delay={1} className="flex justify-center items-center w-full">
-          <button id="ganga-video-schedule-visit" onClick={handleScheduleVisit} className="md:min-h-[4.75rem] min-h-[3.5rem] h-full -top-9 mx-auto relative bg-[#144D78] hover:bg-blue-800 transition text-white font-medium inline-flex items-center gap-2 overflow-hidden rounded-md">
-            <div className="px-6 py-3 mr-20">Schedule a Visit</div>
-            <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full ml-auto text-orange-500 bg-[#002F52] text-lg">
-              ↗
-            </span>
-          </button>
-        </SlideUp>
       </div>
       {isModalOpen && (
         <div className="fixed inset-0 z-9991 flex items-center justify-center p-4 bg-black/50 bg-opacity-75">

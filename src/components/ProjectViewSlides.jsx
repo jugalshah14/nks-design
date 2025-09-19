@@ -142,8 +142,13 @@ export default function ProjectViewSlides() {
             <div className="absolute -bottom-10 md:bottom-[-0px] left-1/2 transform -translate-x-1/2 bg-white custom-box-shadow rounded-md flex items-center justify-between w-[121px] md:w-[260px] h-[48px] md:h-[96px] z-1">
                 <div className="w-1/2 h-full flex items-center justify-center">
                     <button id="project-view-prev" className={`focus:outline-none cursor-pointer ${activeIndex === 0 ? 'opacity-30' : ''}`} onClick={handlePrev}>
-                        <div className='h-[20px] w-[20px] md:h-[35px] md:w-[36px] relative'>
-                            <Image src="/assets/icons/arrow-right.svg" alt="Previous" fill className="object-cover transform rotate-180" />
+                    <div className='h-[20px] w-[20px] md:h-[35px] md:w-[36px] relative'>
+                        <Image
+                            src="/assets/arrow-main.svg"
+                            alt="Previous"
+                            fill
+                            className="transform rotate-180"
+                            />
                         </div>
                     </button>
                 </div>
@@ -151,7 +156,11 @@ export default function ProjectViewSlides() {
                 <div className="w-1/2 h-full flex items-center justify-center">
                     <button id="project-view-next" className={`focus:outline-none cursor-pointer ${activeIndex === data.length - 1 ? 'opacity-30' : ''}`} onClick={handleNext}>
                         <div className='h-[20px] w-[20px] md:h-[35px] md:w-[36px] relative'>
-                            <Image src="/assets/icons/arrow-right.svg" alt="Next" fill className="object-cover" />
+                        <Image
+                            src="/assets/arrow-main.svg"
+                                alt="Next"
+                                fill
+                            />
                         </div>
                     </button>
                 </div>

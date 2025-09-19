@@ -70,7 +70,7 @@ export default function Amenities() {
                         <span className='hidden md:inline'>Explore the Riverside Sanctuary</span>
                         <span className='inline md:hidden'>Schedule a Visit</span>
                     </div>
-                    <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg ml-auto">↗</span>
+                    <span className="px-6 flex items-center justify-center md:min-h-[4.75rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg ml-auto"><Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" /></span>
                 </button>
             </div>
 

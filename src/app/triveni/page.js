@@ -21,11 +21,11 @@ export default function triveni() {
         <section className="relative justify-center bg-[#f3f6f8] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
           <SlideUp delay={0.4}>
             <div className="text-center pb-4 md:pb-0">
-              <span className="text-[#22252e] font-bold text-[20px]">
+              <span className="text-[#22252e] font-bold text-[16px]">
                 • Home
               </span>
               <span className="mx-2">—</span>
-              <span className="text-[#5c5f68] font-normal text-[20px]">
+              <span className="text-[#5c5f68] font-normal text-[16px]">
                 Triveni Omniplex
               </span>
             </div>
@@ -85,7 +85,7 @@ export default function triveni() {
             <div className="relative p-5 overflow-hidden">
               <GangaWaves />
               <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
-              <div className="relative container  mx-auto py-[50px] md:py-15">
+              <div className="relative container  mx-auto py-[30px] md:py-15">
                   <div className="md:p-2">
                     <SlideUp delay={0.4} className='none-md w-full flex flex-row justify-center items-center'>
                       <h2 className="pb-[20px] text-center !text-white text-[36px] leading-[44px] font-[400] !text-center font-cormorant">
@@ -157,7 +157,7 @@ export default function triveni() {
                           className="w-[52px] h-[52px] md:w-[68px] md:h-[68px]"
                         />
                       </div>
-                      <h3 className="text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
+                      <h3 className="text-[24px] max-md:text-center md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
                         1.54 lakh sq. ft.
                       </h3>
                       <p className="text-[18px] md:text-[20px] font-satoshi font-normal leding-[24px] md:leading-[27px] text-[#22252e] text-center">
@@ -175,7 +175,7 @@ export default function triveni() {
                           className="w-[52px] h-[52px] md:w-[68px] md:h-[68px]"
                         />
                       </div>
-                      <h3 className="text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
+                      <h3 className="text-[24px] md:text-[40px] max-md:text-center font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
                         1.32 lakh sq. ft.
                       </h3>
                       <p className="text-[18px] md:text-[20px] font-satoshi font-normal leding-[24px] md:leading-[28px] text-[#22252e] text-center">
@@ -193,7 +193,7 @@ export default function triveni() {
                           className="w-[52px] h-[52px] md:w-[68px] md:h-[68px]"
                         />
                       </div>
-                      <h3 className="text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
+                      <h3 className="text-[24px] md:text-[40px] max-md:text-center font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
                         35,000 sq. ft.
                       </h3>
                       <p className="text-[18px] md:text-[20px] font-satoshi font-normal leding-[24px] md:leading-[27px] text-[#22252e] text-center">
@@ -211,7 +211,7 @@ export default function triveni() {
                           className="w-[52px] h-[52px] md:w-[68px] md:h-[68px]"
                         />
                       </div>
-                      <h3 className="text-[24px] md:text-[40px] font-satoshi font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
+                      <h3 className="text-[24px] md:text-[40px] font-satoshi max-md:text-center font-normal leading-[28px] md:leading-[54px] text-[#22252e] mb-1">
                         300+
                       </h3>
                       <p className="text-[18px] md:text-[20px] font-satoshi font-normal leding-[24px] md:leading-[28px] text-[#22252e] text-center">

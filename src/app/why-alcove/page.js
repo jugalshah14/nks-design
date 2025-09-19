@@ -11,14 +11,14 @@ export default function WhyAlcove() {
     <main>
       {/* Hero Section */}
       <SlideUp>
-        <section className="relative justify-center bg-[#f3f6f8] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
+        <section className="relative justify-center bg-[#f4f6fe] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
           <SlideUp delay={0.4}>
             <div className="text-center pb-4 md:pb-0">
-              <span className="text-[#22252e] font-bold text-[20px]">
+              <span className="text-[#22252e] font-bold text-[16px]">
                 • Home
               </span>
               <span className="mx-2">—</span>
-              <span className="text-[#5c5f68] font-normal text-[20px]">
+              <span className="text-[#5c5f68] font-normal text-[16px]">
                 Why Alcove
               </span>
             </div>
@@ -64,7 +64,7 @@ export default function WhyAlcove() {
                 priority
               />
             </div>
-            <div className="relative p-5 md:p-12 bg-white/50 -mt-12 md:-mt-24 md:mx-[80px] mx-[2%] md:backdrop-blur-[37px] backdrop-blur-[7px] mb-12">
+            <div className="relative p-5 md:p-12 bg-white/50 -mt-12 md:-mt-24 md:mx-[80px] mx-[2%] md:backdrop-blur-[37px] backdrop-blur-[8px] mb-12">
               <h2 className="project-overview-title text-center">
                 Where<span className="orange-color"> luxury</span> meets
                 <span className="orange-color"> affordability</span>
@@ -114,9 +114,9 @@ export default function WhyAlcove() {
               <Image
                 src="/assets/white-triangle.svg"
                 width={38}
-                height={430}
+                height={770}
                 alt="Rectangle_left"
-                className="pt-9 hide-triangle flex items-end"
+                className="pt-20 hide-triangle flex items-end"
               />
               <div className="w-full justify-center">
                 <div className="relative">
@@ -136,7 +136,7 @@ export default function WhyAlcove() {
                     alt="thumbnail"
                     className="none-md"
                   />
-                  <div className="md:w-full p-2">
+                  <div className="md:w-full p-2 py-6">
                     <h2 className="text-center text-[#22252E] text-[18px] md:text-[24px] font-[700]">
                       Amar Nath Shroff
                     </h2>
@@ -277,7 +277,7 @@ export default function WhyAlcove() {
                   alt="blue triangle"
                   className=""
                 />
-                <div className="bg-[#F3F6F8] p-[32px] flex flex-row gap-5 items-start mb-[16px]">
+                <div className="bg-[#F4F6FE] p-[32px] flex flex-row gap-5 items-start mb-[16px]">
                   <Image
                     src="/assets/mission-icon1.svg"
                     width={40}
@@ -354,7 +354,7 @@ export default function WhyAlcove() {
               <Image
                 src="/assets/icons/arrowlong.svg"
                 alt="1BHK"
-                width={40}
+                width={30}
                 height={3}
                 className="absolute right-[10px] md:right-[40px]"
               />
@@ -415,7 +415,7 @@ export default function WhyAlcove() {
                 </div>
               </div>
               <div className="flex flex-col justify-center lg:justify-center h-full">
-                <div className="z-20 md:relative md:-bottom-[186px] md:right-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-left">
+                <div className="z-20 md:relative md:-bottom-[186px] md:right-[70px] max-w-md bg-[#020C22] p-4 md:p-7 text-white font-satoshi text-left">
                   <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4 max-md:text-center">
                     Know Your <span className="orange-color">Builder</span>
                   </h3>
@@ -469,7 +469,7 @@ export default function WhyAlcove() {
                 </div>
               </div>
               <div className="flex flex-col justify-center lg:justify-center h-full lg:order-1">
-                <div className="z-20 md:relative md:-bottom-[174px] md:left-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-left">
+                <div className="w-full z-20 md:relative md:-bottom-[174px] md:left-[70px] max-w-md bg-[#020C22] p-4 md:p-7 text-white font-satoshi text-left">
                   <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4 max-md:text-center">
                     Know Your <span className="orange-color">Project's Consultants</span>
                   </h3>
@@ -520,7 +520,7 @@ export default function WhyAlcove() {
                 </div>
               </div>
               <div className="flex flex-col justify-center lg:justify-center h-full">
-                <div className="z-20 md:relative md:-bottom-[198px] md:right-[70px] max-w-md bg-[#020C22] p-3 md:p-7 text-white font-satoshi text-left">
+                <div className="z-20 md:relative md:-bottom-[198px] md:right-[70px] max-w-md bg-[#020C22] p-4 md:p-7 text-white font-satoshi text-left">
                   <h3 className="text-[24px] md:text-[40px] font-normal leading-12 mb-4 max-md:text-center">
                     Know Your <span className="orange-color">Project's Architect</span>
                   </h3>

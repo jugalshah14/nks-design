@@ -358,56 +358,54 @@ const ConstructionSlider = () => {
         </div>
 
         {/* Desktop Navigation Arrows */}
-        <div className="hidden md:flex gap-4 mt-[56px] w-full justify-center items-center">
-          <div
-            className={`w-[28px] h-[28px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
-              activeIndex > 0
-                ? "bg-white text-black"
-                : "bg-white/20 text-white/50 pointer-events-none"
-            }`}
-            onClick={() => {
-              handlePrev();
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-[#22252E] rotate-180"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
+        <div className="hidden md:flex justify-center mt-[56px] w-full">
+          <div className="bg-[#021642] flex items-center justify-between w-[120px] h-[48px] px-4">
+            <button
+              id="construction-slider-prev"
+              className={`focus:outline-none cursor-pointer ${
+                activeIndex > 0 ? "" : "opacity-30"
+              }`}
+              onClick={handlePrev}
+              disabled={activeIndex === 0}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </div>
-          <div
-            className={`w-[28px] h-[28px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
-              activeIndex < sliderData.length - 1
-                ? "bg-white text-black"
-                : "bg-white/20 text-white/50 pointer-events-none"
-            }`}
-            onClick={() => {
-              handleNext();
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-[#22252E]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              id="construction-slider-next"
+              className={`focus:outline-none cursor-pointer ${
+                activeIndex < sliderData.length - 1 ? "" : "opacity-30"
+              }`}
+              onClick={handleNext}
+              disabled={activeIndex >= sliderData.length - 1}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -424,7 +422,7 @@ const ConstructionSlider = () => {
                 disabled={isMobilePrevDisabled}
               >
                 <Image
-                  src="/assets/icons/arrow-right.svg"
+                  src="/assets/arrow-main.svg"
                   alt="Previous"
                   height={20}
                   width={19}
@@ -446,7 +444,7 @@ const ConstructionSlider = () => {
                 disabled={isMobileNextDisabled}
               >
                 <Image
-                  src="/assets/icons/arrow-right.svg"
+                  src="/assets/arrow-main.svg"
                   alt="Next"
                   height={20}
                   width={19}

@@ -108,7 +108,7 @@ export default function OmniplexSlider() {
             <h2 className="project-overview-title text-left pb-[28px] md:pb-[0px]">
               Why bring your business to <span className="orange-color">Triveni Omniplex </span>
             </h2>
-            <div className="max-w-[190px] relative border border-[rgba(0,0,0,0.2)] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 flex items-center justify-around mt-9 px-1 py-5">
+            <div className="max-w-[190px] relative border border-[#E9E9EA] z-11 transform bg-[#FFFFFF33] backdrop-filter backdrop-blur-[14px] bg-opacity-80 flex items-center justify-around mt-9 px-1 py-5">
               <button 
                 id="omniplex-slider-prev-desktop"
                 className={`focus:outline-none cursor-pointer ${isPrevDisabled ? 'opacity-30' : ''}`} 

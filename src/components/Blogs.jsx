@@ -80,7 +80,7 @@ const Blogs = () => {
         <SlideUp delay={0.6} className="project-overview-title text-center md:text-start">Recent Blogs</SlideUp>
         </div>
         <SlideUp delay={0.8}>
-        <a href="/blogs" className="hide-triangle border border-gray-400 px-4 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105">
+        <a href="/blogs" className="hide-triangle font-bold border border-gray-400 px-4 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105">
           View All Blogs
         </a>
          </SlideUp>
@@ -127,7 +127,7 @@ const Blogs = () => {
                 <p className="text-[14px] leading-[20px] font-medium text-[#026AA2] bg-[#F5F8FA] rounded-xl px-3 py-1 mt-[10px] md:mt-[15px]">
                     {getCategoryName(post)}
                 </p>
-                <p className="text-sm font-satoshi font-medium text-[#DE804B] mt-[10px] md:mt-[15px] cursor-pointer hover:underline">
+                <p className="text-sm font-satoshi font-bold text-[#DE804B] mt-[10px] md:mt-[15px] cursor-pointer hover:underline">
                     Read Blog →
                 </p>
             </div>

@@ -130,7 +130,6 @@ const Header = () => {
             >
               Blogs
             </Link>
-            <div className="flex items-center gap-3 md:justify-end">
             <button
               id="header-schedule-visit"
               onClick={handleScheduleVisit}
@@ -148,10 +147,9 @@ const Header = () => {
                   width={24}
                   priority
                   loading="eager"
-                  className="logo-image"
+                  className="invert-100"
               />
             </Link>
-          </div>
           </div>
 
           <button id="mobile-menu-toggle" className="md:hidden text-[#22252E]" onClick={toggleDrawer}>

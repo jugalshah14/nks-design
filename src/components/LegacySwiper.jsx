@@ -69,7 +69,7 @@ export default function LegacySwiper() {
             </h2>
             <div className="w-[140px] h-[1px] bg-[#282C3F] mb-5"></div>
           </div>
-          <p className="text-[28px] font-satoshi font-[700] text-[#22252E] leading-[36px]">
+          <p className="md:text-[28px] text-[18px] font-satoshi font-[400] text-[#22252E] md:leading-[36px] leading-[24px]">
             Alcove has redefined Kolkata’s skyline with landmark projects. Known
             for quality, innovation, and timely delivery, we create spaces that
             inspire. New Kolkata Sangam carries forward this tradition where
@@ -119,14 +119,13 @@ export default function LegacySwiper() {
                 }`}
                 onClick={handlePrev}
               >
-                <div className="h-[20px] w-[20px] relative">
-                  <Image
-                    src="/assets/icons/arrow-right.svg"
-                    alt="Previous"
-                    fill
-                    className="object-cover transform rotate-180"
-                  />
-                </div>
+                <Image
+                  src="/assets/arrow-main.svg"
+                  alt="Previous"
+                  height={20}
+                  width={20}
+                  className="transform rotate-180"
+                />
               </button>
             </div>
             <div className="h-6 w-px bg-[#20202019]"></div>
@@ -138,14 +137,12 @@ export default function LegacySwiper() {
                 }`}
                 onClick={handleNext}
               >
-                <div className="h-[20px] w-[20px] relative">
-                  <Image
-                    src="/assets/icons/arrow-right.svg"
-                    alt="Next"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                <Image
+                  src="/assets/arrow-main.svg"
+                  alt="Next"
+                  height={20}
+                  width={20}
+                />
               </button>
             </div>
           </div>

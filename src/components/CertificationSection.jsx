@@ -254,7 +254,7 @@ export default function CertificationSection() {
   const swiperRef = React.useRef(null);
 
   const settings = {
-    className: "awards-swiper !overflow-visible center pb-10",
+    className: "awards-swiper !overflow-visible center",
     infinite: false,
     centerPadding: "30px",
     slidesToShow: 5.4,
@@ -266,12 +266,14 @@ export default function CertificationSection() {
       {
         breakpoint: 1024,
         settings: {
+          centerPadding: "40px",
           slidesToShow: 2.5,
         },
       },
       {
         breakpoint: 768,
         settings: {
+          centerPadding: "20px",
           slidesToShow: 1.5,
         },
       },

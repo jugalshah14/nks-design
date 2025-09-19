@@ -59,11 +59,11 @@ export default function Location() {
         <section className="relative justify-center bg-[#FDF9F6] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
           <SlideUp delay={0.4}>
             <div className="text-center pb-4 md:pb-0">
-              <span className="text-[#22252e] font-bold text-[20px]">
+              <span className="text-[#22252e] font-bold text-[16px]">
                 • Home
               </span>
               <span className="mx-2">—</span>
-              <span className="text-[#5c5f68] font-normal text-[20px]">
+              <span className="text-[#5c5f68] font-normal text-[16px]">
                 Location
               </span>
             </div>
@@ -262,7 +262,7 @@ export default function Location() {
                         <button id="location-learn-more" className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
                           <div className="px-6 py-3 mr-20">Learn More</div>
                           <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
-                            ↗
+                            <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
                           </span>
                         </button>
                       </Link>
@@ -362,7 +362,7 @@ export default function Location() {
                   <span>Schedule a Visit</span>
                 </div>
                 <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
-                  ↗
+                  <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
                 </span>
               </button>
             </div>

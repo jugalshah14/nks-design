@@ -170,13 +170,13 @@ export default function NewTriventSliders() {
                     key={i}
                     className="mx-2 !w-[100%] !overflow-hidden md:border-l md:border-dashed md:border-[rgba(255,255,255,0.2)] bg-[#020C22] h-[450px] md:h-auto"
                   >
-                    <div className="top-[60px] md:top-[0px] relative !w-[100%] h-auto px-[16px] md:px-[28px]  gap-[15px] md:gap-[24px] flex flex-col transition-transform duration-300 transform hover:scale-95">
+                    <div className="top-[60px] md:top-[0px] relative !w-[100%] h-auto px-[16px] md:px-[28px]  gap-[15px] md:gap-[24px] flex flex-col transition-transform duration-300 transform">
                       <h2 className="hide-triangle text-white text-[20px] md:text-[24px] font-[700]">
                         {slide.title}
                       </h2>
                       <div className="relative">
                         {/* Info Icon */}
-                        <div className="absolute top-3 right-3 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
+                        <div className="absolute top-2 right-2 cursor-pointer flex flex-row items-center rounded-xl bg-black/20 z-10 group">
                           <div className="overflow-hidden">
                             <div className="text-[12px] text-white whitespace-nowrap opacity-0 max-w-0 group-hover:px-2 group-hover:opacity-100 group-hover:max-w-[100px] group-hover:translate-x-0 transition-all duration-300 ease-in-out">
                               {slide.imageType}

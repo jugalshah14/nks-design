@@ -116,7 +116,7 @@ export default function Testimonials() {
         onNext={handleNext}
         isPrevDisabled={activeIndex === 0}
         isNextDisabled={activeIndex === data.length - 1}
-        className="relative transform bg-white flex gap-10 items-center justify-around md:justify-end mt-9 px-1 py-5"
+        className="relative transform bg-white flex gap-10 items-center justify-around md:justify-end px-1 py-5"
       />
     </div>
   );

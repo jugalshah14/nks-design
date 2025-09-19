@@ -64,11 +64,11 @@ export default function PropertyPage({ params }) {
         <section className="relative justify-center bg-[#F3F6F8] flex flex-col items-center md:h-[220px] md:top-[65] h-[180px] top-[50]">
           <SlideUp delay={0.4}>
             <div className="text-center pb-4 md:pb-0">
-              <span className="text-[#22252e] font-bold text-[20px]">
+              <span className="text-[#22252e] font-bold text-[16px]">
                 • Home
               </span>
               <span className="mx-2">—</span>
-              <span className="text-[#5c5f68] font-normal text-[20px]">
+              <span className="text-[#5c5f68] font-normal text-[16px]">
                 {typeof propertyData.projectOverview.heading === "string"
                   ? propertyData.projectOverview.heading
                   : `${propertyData.projectOverview.heading.main} ${propertyData.projectOverview.heading.highlight}`}
@@ -154,35 +154,37 @@ export default function PropertyPage({ params }) {
                       src="/assets/typology-buildings.png"
                       alt={`${propertyData.projectOverview.title} in Serampore`}
                       className="w-full h-full object-cover"
+                      width={100}
+                      height={100}
                     />
                     <div className="absolute -bottom-30 right-0 lg:right-0 md:bottom-0 left-1/2 translate-x-[-50%] lg:left-auto lg:translate-x-0 bg-white  px-8 py-7 max-w-xs w-full">
                       <div className="flex flex-col gap-5">
                         <div className="flex lg:flex-col gap-5">
                           <div className="">
-                            <div className="text-theme-dark font-satoshi text-[14px] lg:text-[16px] leading-[20px] lg:leading-[28px] font-normal text-[#22252E] opacity-50 mb-1">
+                            <div className="text-theme-dark font-satoshi md:text-[16px] text-[14px] leading-[20px] md:leading-[20px] font-normal text-[#22252E] opacity-50 mb-1">
                               Location
                             </div>
-                            <div className="text-theme-dark font-satoshi text-[20px] lg:text-[24px] leading-[20px] lg:leading-[28px] font-normal text-[#22252E]">
+                            <div className="text-theme-dark font-satoshi md:text-[24px] text-[16px] leading-[20px] md:leading-[28px] font-normal text-[#22252E]">
                               Serampore
                             </div>
                           </div>
                           <div className="">
-                            <div className="text-theme-dark font-satoshi text-[14px] lg:text-[16px] leading-[20px] lg:leading-[28px] font-normal text-[#22252E] opacity-50 mb-1">
+                            <div className="text-theme-dark font-satoshi md:text-[16px] text-[14px] leading-[20px] md:leading-[20px] font-normal text-[#22252E] opacity-50 mb-1">
                               BHK
                             </div>
-                            <div className="text-theme-dark font-satoshi text-[20px] lg:text-[24px] leading-[20px] lg:leading-[28px] font-normal text-[#22252E]">
+                            <div className="text-theme-dark font-satoshi md:text-[24px] text-[16px] leading-[20px] md:leading-[28px] font-normal text-[#22252E]">
                               {propertyData.projectOverview.title}
                             </div>
                           </div>
                         </div>
                         <div>
-                          <div className="text-theme-dark font-satoshi text-[14px] lg:text-[16px] leading-[20px] lg:leading-[28px] font-[400] font-normal opacity-50 mb-1">
+                          <div className="text-theme-dark font-satoshi md:text-[16px] text-[14px] leading-[20px] md:leading-[20px] font-normal opacity-50 mb-1">
                             Unit area
                           </div>
-                          <div className="text-theme-dark font-satoshi text-[20px] lg:text-[24px] leading-[20px] lg:leading-[28px] font-normal text-[#22252E]">
+                          <div className="text-theme-dark font-satoshi md:text-[24px] text-[16px] leading-[20px] md:leading-[28px] font-normal text-[#22252E]">
                             {propertyData.projectOverview.specifications}
                           </div>
-                          <div className="text-theme-dark font-satoshi text-[16px] leading-[20px] lg:leading-[28px] font-normal text-[#22252E]">
+                          <div className="text-theme-dark font-satoshi md:text-[24px] text-[16px] leading-[20px] md:leading-[28px] font-normal text-[#22252E]">
                             (Super Built-up Area)
                           </div>
                         </div>
@@ -243,7 +245,7 @@ export default function PropertyPage({ params }) {
         </div>
       </section>
 
-      <section className="relative w-full bg-[#F8FAFB] md:py-20 md:px-25 flex justify-center h-full mb-[50px] md:mb-0 mt-[80px]">
+      <section className="relative w-full bg-[#F8FAFB] md:py-20 md:px-25 flex justify-center h-full mt-[80px]">
         <div className="flex md:flex-row flex-col w-[100%] md:justify-between gap-[40px]">
           <div className="max-md:col-span-2 md:p-2 pt-10 md:pt-0 px-4 lg:px-0">
             <SlideUp delay={0.4}>

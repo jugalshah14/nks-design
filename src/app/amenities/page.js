@@ -1257,7 +1257,7 @@ export default function Amenities() {
               >
                 <div className="px-6 py-3 mr-20">View Certification</div>
                 <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full orange-color bg-[#002F52] text-lg">
-                  ↗
+                  <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
                 </span>
               </button>
             </AnimatedSection>
@@ -1293,14 +1293,14 @@ export default function Amenities() {
       </AnimatedSection>
 
       {/* Plans */}
-      <AnimatedSection className="overflow-visible">
+      <AnimatedSection className="!overflow-visible">
         <SafetySecuritySection />
       </AnimatedSection>
 
       {/* Question Section */}
       <section className="relative w-full bg-[#F8FAFB] md:py-20 md:px-25 flex justify-center h-[650px] md:h-full mb-[50px] md:mb-0">
         <div className="flex md:flex-row flex-col w-[100%] md:justify-between">
-          <div className="max-md:col-span-2 md:p-2 pt-10 md:pt-0">
+          <div className="max-md:col-span-2 md:p-2 pt-10 pb-10 md:pb-0 md:pt-0">
             <SlideUp delay={0.4}>
               <h2 className="font-cormorant text-[36px] max-md:text-center md:leading-[72px] md:font-[400] md:text-[56px] text-black">
                 Frequently

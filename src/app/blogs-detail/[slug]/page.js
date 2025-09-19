@@ -407,7 +407,7 @@ export default function BlogDetail() {
                         <h3 className="text-[20px] md:text-[24px] leading-[24px] md:leading-[28px] font-bold text-black">
                           {blog.attributes.Title}
                         </h3>
-                        <span className="ml-auto text-white text-lg">↗</span>
+                        <span className="ml-auto text-white text-lg"><Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" /></span>
                       </div>
                       <p className="text-[#5C5F68] text-[14px] md:text-base leading-[18px] md:leading-[20px] font-normal line-clamp-2">
                         {blog.attributes.ShortDescription}

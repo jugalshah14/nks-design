@@ -15,7 +15,7 @@ const SafetySecuritySection = () => {
   };
 
   return (
-    <div>
+    <><div>
       <div className="relative p-5 overflow-hidden">
         <GangaWaves />
         <div className="absolute w-[100%] h-[100%] top-0 left-0 waves-linear-bg" />
@@ -31,14 +31,14 @@ const SafetySecuritySection = () => {
                 </h2>
               </SlideUp>
               <SlideUp delay={0.6}>
-                  <button id="safety-security-schedule-visit" onClick={handleScheduleVisit} className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
-                    <div className="px-6 py-3 mr-20">
-                      <span>Schedule a Visit</span>
-                    </div>
-                    <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto rounded-r-md orange-color bg-[#002F52] text-lg">
-                      ↗
-                    </span>
-                  </button>
+                <button id="safety-security-schedule-visit" onClick={handleScheduleVisit} className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-md text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
+                  <div className="px-6 py-3 mr-20">
+                    <span>Schedule a Visit</span>
+                  </div>
+                  <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto rounded-r-md orange-color bg-[#002F52] text-lg">
+                    <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
+                  </span>
+                </button>
               </SlideUp>
             </div>
             <div className="max-md:col-span-2 grid grid-cols-2 md:gap-x-20 gap-y-9 md:gap-y-12 mt-9 md:mt-6">
@@ -48,8 +48,7 @@ const SafetySecuritySection = () => {
                   width={68}
                   src="/assets/icons/surveillance-cctv.svg"
                   alt="Security Systems"
-                  className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                />
+                  className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4" />
                 <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                   24 hours security systems
                 </p>
@@ -61,8 +60,7 @@ const SafetySecuritySection = () => {
                   width={68}
                   src="/assets/icons/desktop-computer.svg"
                   alt="Monitoring Systems"
-                  className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                />
+                  className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4" />
                 <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                   Central monitoring systems
                 </p>
@@ -74,8 +72,7 @@ const SafetySecuritySection = () => {
                   width={68}
                   src="/assets/icons/security-officer-gate.svg"
                   alt="Surveillance"
-                  className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4"
-                />
+                  className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] mb-4" />
                 <p className="px-1 max-md:opacity-70 text-[16px] md:text-[20px] font-satoshi font-[400] leading-6 md:leading-[28px] text-white text-center">
                   24 hours surveillance
                 </p>
@@ -85,23 +82,22 @@ const SafetySecuritySection = () => {
         </div>
       </div>
       <SlideUp delay={0.8}>
-        <div className="flex md:hidden justify-center relative -top-7">
-          <button 
+        <div className="flex md:hidden justify-center absolute -top-7 left-0 right-0 overflow-visible">
+          <button
             id="safety-security-schedule-visit-mobile"
             onClick={handleScheduleVisit}
             className="inline-flex relative bg-[#144D78] hover:bg-blue-800 rounded-md transition text-white font-medium md:hidden items-center gap-2 overflow-hidden button-primary"
           >
             <div className="px-6 py-3 mr-20">
-              <span>Schedule a Visit</span>
+              <span>Learn More</span>
             </div>
             <span className="px-6 py-3 ml-auto rounded-r-md orange-color bg-[#002F52] text-lg">
-              ↗
+              <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />
             </span>
           </button>
         </div>
       </SlideUp>
-      <ScheduleVisitModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </div>
+    </div><ScheduleVisitModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} /></>
   );
 };
 
