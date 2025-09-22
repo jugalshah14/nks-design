@@ -11,7 +11,7 @@ const MobileSwiperNavigation = ({
   className = "" 
 }) => {
   return (
-    <div className={`flex z-11 bg-white items-center justify-around px-1 py-5 w-full shadow-md ${className}`}>
+    <div className={`flex z-11 bg-white items-center justify-around px-1 py-5 ${className}`}>
       <div className="h-full flex items-center justify-center">
         <button
           id="mobile-swiper-prev"
