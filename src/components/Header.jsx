@@ -51,6 +51,27 @@ const Header = () => {
     return "/assets/logo-l.svg";
   };
 
+  // Determine phone icon styling based on page and scroll state
+  const getPhoneIconClass = () => {
+    // If it's the home page and not scrolled, use light icon (invert-0)
+    if (pathname === "/" && !isScrolled) {
+      return "invert-0";
+    }
+    // For all other cases (scrolled home page or other pages), use dark icon
+    return "invert-100";
+  };
+
+  // Get phone icon style object for more control
+  const getPhoneIconStyle = () => {
+    if (pathname === "/" && !isScrolled) {
+      return { filter: 'invert(0)' };
+    }
+    return { filter: 'invert(1)' };
+  };
+
+  // Debug logging
+  console.log('Phone icon debug:', { pathname, isScrolled, phoneClass: getPhoneIconClass() });
+
   return (
     <>
       <header
@@ -139,15 +160,16 @@ const Header = () => {
                 Schedule Visit
               </p>
             </button>
-            <Link href={"tel:+918101881018"} className="h-[24px] w-[24px] relative cursor-pointer">
+            <Link href={"tel:+918101881018"} className="h-[24px] w-[24px] relative cursor-pointer hover:opacity-70 transition-opacity">
             <Image
                 src="/assets/phone.svg"
-                  alt="logo"
+                  alt="phone"
                   height={24}
                   width={24}
                   priority
                   loading="eager"
-                  className="invert-100"
+                  className={`${getPhoneIconClass()} filter`}
+                  style={getPhoneIconStyle()}
               />
             </Link>
           </div>
