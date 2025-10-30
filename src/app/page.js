@@ -563,8 +563,7 @@ export default function Home() {
                   style={{ objectPosition: 'center' }}
                   onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
-              </div>
-            
+              </div>           
             </div>
           <div className="absolute inset-0 md:hidden bg-white">
             <div
@@ -735,6 +734,7 @@ export default function Home() {
                 bottom: '0%',
                 left: 0,
                 right: 0,
+                width: '100%',
                 height: '50%',
                 transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
                 transformOrigin: '100% 0%',
@@ -757,6 +757,7 @@ export default function Home() {
                 bottom: '10%',
                 left: '0',
                 right: '10%',
+                width: '100%',
                 height: '50%',
                 transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
                 transformOrigin: '100% 0%',
@@ -778,6 +779,7 @@ export default function Home() {
               style={{
                 bottom: '-20%',
                 right: '-5%',
+                width: '100%',
                 height: '50%',
                 transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
                 transformOrigin: '100% 0%',
@@ -799,6 +801,7 @@ export default function Home() {
               style={{
                 bottom: '-20%',
                 right: '-10%',
+                width: '100%',
                 height: '50%',
                 transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
                 transformOrigin: '100% 0%',
@@ -820,6 +823,7 @@ export default function Home() {
               style={{
                 bottom: '-20%',
                 right: '-15%',
+                width: '100%',
                 height: '50%',
                 transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
                 transformOrigin: '100% 0%',
@@ -841,6 +845,7 @@ export default function Home() {
               style={{
                 bottom: '-20%',
                 right: '-25%',
+                width: '100%',
                 height: '50%',
                 transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
                 transformOrigin: '100% 0%',
@@ -893,9 +898,7 @@ export default function Home() {
                     </SlideUp>
                 </div>
               </div>
-              <div className="max-md:flex max-md:flex-row max-md:items-center max-md:justify-center">
                 <WhyRiversideFloatingButton />
-                </div>
             </>
           )}
         </section>
