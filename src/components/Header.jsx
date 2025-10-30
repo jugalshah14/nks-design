@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   // Debug logging
-  console.log('Phone icon debug:', { pathname, isScrolled, phoneClass: getPhoneIconClass() });
+  // console.log('Phone icon debug:', { pathname, isScrolled, phoneClass: getPhoneIconClass() });
 
   return (
     <>
