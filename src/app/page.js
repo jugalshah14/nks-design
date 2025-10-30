@@ -4,6 +4,7 @@ import { lazy, Suspense, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Element } from "react-scroll";
+import WhyRiversideFloatingButton from "@/components/WhyRiversideFloatingButton";
 
 // Lazy load animation components to reduce initial bundle
 const AnimatedSection = lazy(() => import("@/components/animations").then(module => ({ default: module.AnimatedSection })));
@@ -15,7 +16,7 @@ const SlideUp = lazy(() => import("@/components/animations").then(module => ({ d
 const AmenitiesSwiper = lazy(() => import("@/components/AmenitiesSwiper"));
 const GangaVideoSection = lazy(() => import("@/components/GangaVideoSection"));
 const GangaWaves = lazy(() => import("@/components/GangaWaves"));
-const HeroSectionWaves = lazy(() => import("@/components/HeroSectionWaves"));
+// const HeroSectionWaves = lazy(() => import("@/components/HeroSectionWaves"));
 const PlansSection = lazy(() => import("@/components/PlansSection"));
 const PlansSwiper = lazy(() => import("@/components/PlansSwiper"));
 const PlanTypesSwiper = lazy(() => import("@/components/PlanTypesSwiper"));
@@ -26,7 +27,6 @@ const ScrollSpyNav = lazy(() => import("@/components/ScrollSpyNav"));
 const SeramporeMarqueeSlides = lazy(() => import("@/components/SeramporeMarqueeSlides"));
 const SeramporeSwiper = lazy(() => import("@/components/SeramporeSwiper"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
-const WhyRiversideFloatingButton = lazy(() => import("@/components/WhyRiversideFloatingButton"));
 const SafetySecuritySection = lazy(() => import("@/components/SafetySecuritySection"));
 const CertificationSection = lazy(() => import("@/components/CertificationSection"));
 const LegacySwiper = lazy(() => import("@/components/LegacySwiper"));
