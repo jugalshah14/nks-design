@@ -587,8 +587,8 @@ export default function Home() {
               <div 
                 className="cloud-layer absolute"
                 style={{
-                  bottom: '-10%',
-                  left: '-25%',
+                  bottom: '-20%',
+                  left: '-30%',
                   right: 0,
                   width: '100%',
                   height: '50%',
@@ -731,7 +731,7 @@ export default function Home() {
             <div 
               className="cloud-layer absolute w-full"
               style={{
-                bottom: '0%',
+                bottom: '-10%',
                 left: 0,
                 right: 0,
                 width: '100%',
@@ -754,9 +754,9 @@ export default function Home() {
             <div 
               className="cloud-layer absolute w-full"
               style={{
-                bottom: '10%',
-                left: '0',
-                right: '10%',
+                bottom: '-10%',
+                left: 0,
+                right: 0,
                 width: '100%',
                 height: '50%',
                 transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
@@ -799,7 +799,7 @@ export default function Home() {
             <div 
               className="cloud-layer absolute w-full"
               style={{
-                bottom: '-20%',
+                bottom: '-10%',
                 right: '-10%',
                 width: '100%',
                 height: '50%',
@@ -821,7 +821,7 @@ export default function Home() {
             <div 
               className="cloud-layer absolute w-full"
               style={{
-                bottom: '-20%',
+                bottom: '-10%',
                 right: '-15%',
                 width: '100%',
                 height: '50%',
@@ -843,7 +843,7 @@ export default function Home() {
             <div 
               className="cloud-layer absolute w-full"
               style={{
-                bottom: '-20%',
+                bottom: '-10%',
                 right: '-25%',
                 width: '100%',
                 height: '50%',
@@ -857,6 +857,28 @@ export default function Home() {
               <Image
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 12.png"
                 alt="Cloud layer 12"
+                fill
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute w-full"
+              style={{
+                bottom: '-10%',
+                right: '-30%',
+                width: '100%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: '100% 0%',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 1 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 12.png"
+                alt="Cloud layer 13"
                 fill
                 className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                 onLoadingComplete={(img) => { img.style.opacity = '1'; }}
@@ -898,7 +920,9 @@ export default function Home() {
                     </SlideUp>
                 </div>
               </div>
+              <div className="max-md:flex max-md:flex-row max-md:items-center max-md:justify-center">
                 <WhyRiversideFloatingButton />
+                </div>
             </>
           )}
         </section>
