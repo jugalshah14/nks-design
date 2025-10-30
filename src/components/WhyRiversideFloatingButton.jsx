@@ -1,5 +1,6 @@
 'use client';
 import React from 'react'
+import Image from 'next/image'
 import { Link as ScrollLink } from 'react-scroll';
 
 export default function WhyRiversideFloatingButton() {
@@ -8,16 +9,22 @@ export default function WhyRiversideFloatingButton() {
             activeClass="spy-link-active"
             to="section-Amenities"
             spy={true}
-            className="default-theme-text-color-1"
+            className="default-theme-text-color-1 max-md:flex max-md:w-100 max-md:justify-center"
             smooth={true}
             offset={-100}
             duration={500}
             id="amenities"
         >
-            <div className="cursor-pointer inset-center absolute backdrop-blur-[20px] -bottom-[150px] md:bottom-[-60px] z-10 md:right-8 bg-[#FFFFFF33] rounded-full w-[133px] h-[133px] flex flex-col items-center justify-center">
-                <p className="text-white text-[16px] font-satoshi font-bold leading-[20px] text-center max-w-[93px]">
+            <div className="cursor-pointer absolute bottom-[30px] z-10 md:right-8 bg-white shadow-lg max-md:px-3 max-md:py-3 md:px-6 md:py-6 flex items-center md:gap-3 gap-2 w-auto">
+                <p className="text-[#22252E] md:text-[16px] text-[14px] font-satoshi font-bold leading-[20px]">
                     Why Riverside Living?
                 </p>
+                <Image 
+                    src="/assets/icons/arrow-down.svg" 
+                    alt="arrow down" 
+                    width={20} 
+                    height={20}
+                />
             </div>
         </ScrollLink>
     )

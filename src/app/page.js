@@ -96,6 +96,91 @@ const seramporeData = [
 
 export default function Home() {
   const [isModalOpens, setIsModalOpens] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+  const [allowScrolling, setAllowScrolling] = useState(false);
+  const [animationStarted, setAnimationStarted] = useState(false);
+  const [hasScrolledDown, setHasScrolledDown] = useState(false);
+
+  // Handle reset when scrolled back to top
+  useEffect(() => {
+    if (!allowScrolling) return;
+    
+    const handleScrollTop = () => {
+      // Only reset if user was scrolled down and came back to top
+      if (window.scrollY === 0 && hasScrolledDown) {
+        // Reset everything back to initial state
+        setIsZoomed(true);
+        setShowContent(false);
+        setAnimationStarted(false);
+        setAllowScrolling(false);
+        setHasScrolledDown(false);
+        document.body.removeAttribute('data-hero-ready');
+      } else if (window.scrollY > 0) {
+        // Mark that we've scrolled down
+        setHasScrolledDown(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollTop);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScrollTop);
+    };
+  }, [allowScrolling, hasScrolledDown]);
+
+  useEffect(() => {
+    let wheelTimeout;
+
+    const handleWheel = (e) => {
+      // If we're at top and animations haven't started, prevent scrolling
+      if (window.scrollY === 0 && !animationStarted && !allowScrolling) {
+        e.preventDefault();
+        
+        if (!animationStarted) {
+          setAnimationStarted(true);
+          
+          // Start zoom out animation
+          setTimeout(() => {
+            setIsZoomed(false);
+          }, 0);
+          
+          // After zoom out completes (3 seconds), show content
+          setTimeout(() => {
+            setShowContent(true);
+            // Set data attribute on body to control header visibility
+            document.body.setAttribute('data-hero-ready', 'true');
+          }, 3000);
+          
+          // After content is shown, allow scrolling
+          setTimeout(() => {
+            setAllowScrolling(true);
+          }, 4000);
+        }
+      }
+    };
+
+    const handleScroll = () => {
+      // Allow normal scrolling once animations are complete
+      if (allowScrolling) return;
+      
+      // If at top and animations haven't started, prevent scroll
+      if (window.scrollY === 0 && !animationStarted) {
+        window.scrollTo(0, 0);
+      }
+    };
+
+    // Use wheel event for better control
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(wheelTimeout);
+    };
+  }, [animationStarted, allowScrolling]);
+
   const handleScheduleVisit = (e) => {
     e.preventDefault();
     setIsModalOpens(true);
@@ -104,69 +189,643 @@ export default function Home() {
   return (
     <>
       <main>
-        {/* Hero Section - Optimized for LCP */}
-        <section id="Hero_Section" className="relative h-screen">
-          <Image
-            className="max-md:hidden inset-0 object-[50%_25%] w-full h-full object-cover"
-            src="/assets/Riverview.webp"
-            alt="Riverside Luxury Residences"
-            fill
-            priority
-            sizes="100vw"
-            quality={95}
-            fetchPriority="high"
-          />
-          <Image
-            className="md:hidden inset-0 w-full h-full object-cover"
-            src="/assets/Riverviewmobile.webp"
-            alt="Riverside Luxury Residences"
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 0vw"
-            quality={95}
-            fetchPriority="high"
-          />
-          <div className="md:hidden hero-section-bg h-[100%] w-[100%] top-0 left-0" />
-          <div className="absolute inset-0 flex flex-col justify-center">
-            <div className="container mx-auto">
-                <h1 className="max-md:px-9 max-md:text-center hero-section-title text-white leading-13 text-[48px] md:text-[100px] font-[400] md:leading-[100px] md:max-w-[635px]">
-                  Affordable riverside luxury by the creators of &apos;The
-                  <span className="md:text-[150px] text-[100px]"> 42</span>&apos;
-                </h1>
+        {/* Hero Section */}
+        <section id="Hero_Section" className="relative h-screen overflow-hidden">
+          <div className="absolute inset-0 max-md:hidden">
+            {/* Background image */}
+            <div
+              className="w-full h-full relative"
+              style={{
+                transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                transformOrigin: '100% 30%',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0.5, 0.32, 1)',
+              }}
+            >
+              <Image
+                className="inset-0 w-full h-full object-fill"
+                src="/assets/Riverview.png"
+                alt="Riverside Luxury Residences"
+                layout="fill"
+                priority
+              />
+            </div>
+            
+            {/* Moving Clouds Layers - On top, bottom 50% of screen */}
+              <div 
+                className="cloud-layer absolute"
+                style={{
+                  bottom: '-10%',
+                  left: '-25%',
+                  right: 0,
+                  width: '100%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: ' bottom',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.7 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 1.png"
+                  alt="Cloud layer 1"
+                  fill
+                  className="cloud-image object-cover"
+                  style={{ objectPosition: 'center' }}
+                  priority
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute"
+                style={{
+                  bottom: '-10%',
+                  left: '-20%',
+                  right: 0,
+                  width: '100%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: 'center bottom',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.65 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 2.png"
+                  alt="Cloud layer 2"
+                  fill
+                  className="cloud-image object-cover"
+                  style={{ objectPosition: 'left' }}
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute"
+                style={{
+                  bottom: '-10%',
+                  left: '-15%',
+                  right: 0,
+                  width: '100%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: 'center bottom',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.75 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 3.png"
+                  alt="Cloud layer 3"
+                  fill
+                  className="cloud-image object-cover"
+                  style={{ objectPosition: 'right' }}
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute"
+                style={{
+                  bottom: '-10%',
+                  left: '-10%',
+                  right: 0,
+                  width: '100%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: 'center bottom',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.68 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 4.png"
+                  alt="Cloud layer 4"
+                  fill
+                  className="cloud-image object-cover"
+                  style={{ objectPosition: '25% center' }}
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute"
+                style={{
+                  bottom: '-10%',
+                  left: '-5%',
+                  right: 0,
+                  width: '100%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: 'center bottom',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.7 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 5.png"
+                  alt="Cloud layer 5"
+                  fill
+                  className="cloud-image object-cover"
+                  style={{ objectPosition: '75% center' }}
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute"
+                style={{
+                  bottom: '-10%',
+                  left: 0,
+                  right: 0,
+                  width: '100%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: 'center bottom',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.72 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 6.png"
+                  alt="Cloud layer 6"
+                  fill
+                  className="cloud-image object-cover"
+                  style={{ objectPosition: '15% center' }}
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute w-full"
+                style={{
+                  bottom: '0%',
+                  left: 0,
+                  right: 0,
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: '100% 0%',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.73 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 7.png"
+                  alt="Cloud layer 7"
+                  fill
+                  className="cloud-image object-cover"
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute w-full"
+                style={{
+                  bottom: '0%',
+                  left: '0',
+                  right: '0',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: '100% 0%',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.65 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 8.png"
+                  alt="Cloud layer 8"
+                  fill
+                  className="cloud-image object-cover"
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute w-full"
+                style={{
+                  bottom: '-10%',
+                  // left: '0',
+                  right: '-5%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: '100% 0%',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.71 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 9.png"
+                  alt="Cloud layer 9"
+                  fill
+                  className="cloud-image object-cover"
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute w-full"
+                style={{
+                  bottom: '-10%',
+                  // left: 0,
+                  right: '-10%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: '100% 0%',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.66 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 10.png"
+                  alt="Cloud layer 10"
+                  fill
+                  className="cloud-image object-cover"
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute w-full"
+                style={{
+                  bottom: '-10%',
+                  // left: 0,
+                  right: '-15%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: '100% 0%',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.74 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 11.png"
+                  alt="Cloud layer 11"
+                  fill
+                  className="cloud-image object-cover"
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute w-full"
+                style={{
+                  bottom: '-10%',
+                  // left: 0,
+                  right: '-25%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: '100% 0%',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 1 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 12.png"
+                  alt="Cloud layer 12"
+                  fill
+                  className="cloud-image object-cover"
+                />
+              </div>
+              <div 
+                className="cloud-layer absolute"
+                style={{
+                  bottom: '-30%',
+                  // left: 0,
+                  right: '-25%',
+                  width: '100%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.8)' : 'scale(1)',
+                  transformOrigin: 'center bottom',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 1 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 13.png"
+                  alt="Cloud layer 13"
+                  fill
+                  className="cloud-image object-cover"
+                  style={{ objectPosition: 'center' }}
+                />
+              </div>
+            </div>
+          <div className="absolute inset-0 md:hidden bg-white">
+            <div
+              className="w-full h-full"
+              style={{
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: '70% 90%',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+              }}
+            >
+              <Image
+                className="inset-0 w-full h-full object-cover"
+                src="/assets/Riverviewmobile.png"
+                alt="Riverside Luxury Residences"
+                layout="fill"
+                priority
+              />
+            </div>
+            
+            {/* Moving Clouds Layers - Mobile */}
+            <div 
+              className="cloud-layer absolute"
+              style={{
+                bottom: '-10%',
+                left: '-25%',
+                right: 0,
+                width: '100%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: 'bottom',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.7 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 1.png"
+                alt="Cloud layer 1"
+                fill
+                className="cloud-image object-cover"
+                style={{ objectPosition: 'center' }}
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute"
+              style={{
+                bottom: '-10%',
+                left: '-20%',
+                right: 0,
+                width: '100%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: 'center bottom',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.65 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 2.png"
+                alt="Cloud layer 2"
+                fill
+                className="cloud-image object-cover"
+                style={{ objectPosition: 'left' }}
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute"
+              style={{
+                bottom: '-10%',
+                left: '-15%',
+                right: 0,
+                width: '100%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: 'center bottom',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.75 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 3.png"
+                alt="Cloud layer 3"
+                fill
+                className="cloud-image object-cover"
+                style={{ objectPosition: 'right' }}
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute"
+              style={{
+                bottom: '-10%',
+                left: '-10%',
+                right: 0,
+                width: '100%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: 'center bottom',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.68 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 4.png"
+                alt="Cloud layer 4"
+                fill
+                className="cloud-image object-cover"
+                style={{ objectPosition: '25% center' }}
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute"
+              style={{
+                bottom: '-20%',
+                left: '-5%',
+                right: 0,
+                width: '100%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: 'center bottom',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.7 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 5.png"
+                alt="Cloud layer 5"
+                fill
+                className="cloud-image object-cover"
+                style={{ objectPosition: '75% center' }}
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute"
+              style={{
+                bottom: '-10%',
+                left: 0,
+                right: 0,
+                width: '100%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: 'center bottom',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.72 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 6.png"
+                alt="Cloud layer 6"
+                fill
+                className="cloud-image object-cover"
+                style={{ objectPosition: '15% center' }}
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute w-full"
+              style={{
+                bottom: '0%',
+                left: 0,
+                right: 0,
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: '100% 0%',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.73 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 7.png"
+                alt="Cloud layer 7"
+                fill
+                className="cloud-image object-cover"
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute w-full"
+              style={{
+                bottom: '0%',
+                left: '0',
+                right: '0',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: '100% 0%',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.65 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 8.png"
+                alt="Cloud layer 8"
+                fill
+                className="cloud-image object-cover"
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute w-full"
+              style={{
+                bottom: '-20%',
+                right: '-5%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: '100% 0%',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.71 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 9.png"
+                alt="Cloud layer 9"
+                fill
+                className="cloud-image object-cover"
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute w-full"
+              style={{
+                bottom: '-20%',
+                right: '-10%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: '100% 0%',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.66 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 10.png"
+                alt="Cloud layer 10"
+                fill
+                className="cloud-image object-cover"
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute w-full"
+              style={{
+                bottom: '-20%',
+                right: '-15%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: '100% 0%',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 0.74 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 11.png"
+                alt="Cloud layer 11"
+                fill
+                className="cloud-image object-cover"
+              />
+            </div>
+            <div 
+              className="cloud-layer absolute w-full"
+              style={{
+                bottom: '-20%',
+                right: '-25%',
+                height: '50%',
+                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                transformOrigin: '100% 0%',
+                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                opacity: isZoomed ? 1 : 0,
+                mixBlendMode: 'screen'
+              }}
+            >
+              <Image
+                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 12.png"
+                alt="Cloud layer 12"
+                fill
+                className="cloud-image object-cover"
+              />
             </div>
           </div>
-
-          {/* Bottom corner information */}
-          <div className="absolute bottom-12 left-4 md:bottom-0 md:left-30 max-md: pb-3">
-            <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5 animate-fade-in-delay">
-              HIRA/P/HOO/2019/000635
-            </p>
-          </div>
-
-          <div className="absolute bottom-12 right-4 md:bottom-0 md:right-45 max-md: pb-3">
-            <p className="font-satoshi text-[#FFFFFF] font-[400] text-[12px] md:text-[14px] leading-5 animate-fade-in-delay">
-              <Link
-                href="https://www.rera.wb.gov.in"
-                target="_blank"
-                className="text-[#FFFFFF] hover:underline"
-              >
-                www.rera.wb.gov.in
-              </Link>
-            </p>
-          </div>
-          <Suspense fallback={<div />}>
-            <WhyRiversideFloatingButton />
-          </Suspense>
+          <div className="md:hidden hero-section-bg h-[100%] w-[100%] top-0 left-0" />
+          {showContent && (
+            <>
+              <div className="absolute inset-0 flex flex-col md:top-40 top-20">
+                <div className="container mx-auto max-md:px-3">
+                  <SlideUp delay={0.4}>
+                    <h1 className="max-md:text-center font-cormorant text-[#22252E] leading-12 text-[48px] md:text-[71px] font-[400] md:leading-[76px] md:max-w-[641px]">
+                      Affordable riverside luxury by the creators of &apos;
+                      <span className="orange-color">The 42</span>&apos;
+                    </h1>
+                  </SlideUp>
+                    <SlideUp delay={0.6}>
+                  <div className="flex flex-row gap-2 items-center md:mt-10 mt-5 max-md:justify-center">
+                      <p className="font-satoshi text-[#22252E] font-[400] text-[12px] md:text-[23px] leading-[10px]">
+                        HIRA/P/HOO/2019/000635
+                      </p>
+                    {/* </SlideUp> */}
+                    <p className="text-[#E4E4E7] font-[400] text-[12px] md:text-[23px] leading-8">
+                      |
+                    </p>
+                    {/* <SlideUp delay={0.4}> */}
+                      <p className="font-satoshi text-[#22252E] font-[400] text-[12px] md:text-[23px] leading-[10px]">
+                        <Link
+                          href="https://www.rera.wb.gov.in"
+                          target="_blank"
+                          className="text-[#22252E] hover:underline"
+                        >
+                          www.rera.wb.gov.in
+                        </Link>
+                      </p>
+                  </div>
+                    </SlideUp>
+                </div>
+              </div>
+              <div className="max-md:flex max-md:flex-row max-md:items-center max-md:justify-center">
+                <WhyRiversideFloatingButton />
+                </div>
+            </>
+          )}
         </section>
-        
-        <section className="relative">
-          <Suspense fallback={<div />}>
-            <HeroSectionWaves />
-          </Suspense>
-        </section>
+        {/* <section className="relative">
+          <HeroSectionWaves />
+        </section> */}
 
-        {/* Stats Section - Reduced animation delays */}
-        <section className="bg-white">
+        {/*  */}
+        <section className=" bg-white md:mt-20 mt-10">
           <div className="container py-7 px-4 lg:px-10 mx-auto grid grid-cols-2 xl:grid-cols-4 gap-8 md:py-20 bg-white">
             <div className="order-1 flex flex-col items-center animate-slide-up">
               <div className="flex justify-center items-center h-[68px] w-[68px] mb-4">
@@ -322,7 +981,7 @@ export default function Home() {
           </div>
           <AnimatedSection className="md:container  mx-auto relative flex flex-col items-center py-10 max-md:bg-[#DE804B17]">
             <div className="hidden md:block relative px-10 lg:px-17 pt-9 pb-16 mt-4">
-              <div className="absolute -left-[4.5%] top-0 w-[60%] h-[100%] lg:w-[80%] lg:h-[100%] bg-[#DE804B] -skew-x-12"></div>
+              <div className="absolute -left-[4.5%] top-0 w-[60%] h-[100%] lg:w-[50%] lg:h-[100%] bg-[#DE804B] -skew-x-12"></div>
               <div className="absolute left-0 top-0 w-[100%] h-[100%] bg-[#020C22] skew-x-12"></div>
               <p className="relative text-[36px] lg:text-[40px] font-[400] transforming-text !font-satoshi text-center">
                 Take the 1st step to transforming your life
@@ -524,7 +1183,10 @@ export default function Home() {
                       Hear From Few of Our 3500+ Happy Home Buyers
                     </p>
                     <Link href="/testimonials">
-                      <button id="read-all-testimonials" className="mt-5 border border-[#22252E] rounded-md px-8 py-3 font-satoshi font-bold text-[14px] leading-6 transition hover:bg-[#f5f5f5] cursor-pointer">
+                      <button
+                        id="read-all-testimonials"
+                        className="mt-5 border border-[#22252E] rounded-md px-8 py-3 font-satoshi font-bold text-[14px] leading-6 transition hover:bg-[#f5f5f5] cursor-pointer"
+                      >
                         Read All Testimonials
                       </button>
                     </Link>{" "}
@@ -555,7 +1217,10 @@ export default function Home() {
                       </SlideUp>
                       <SlideUp delay={0.15}>
                         <Link href="/location">
-                          <button id="serampore-learn-more" className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary">
+                          <button
+                            id="serampore-learn-more"
+                            className="hidden md:min-h-[4rem] min-h-[3.5rem] mt-10 relative bg-[#144D78] hover:bg-blue-800 transition rounded-sm text-white font-medium md:inline-flex items-center gap-2 overflow-hidden button-primary"
+                          >
                             <div className="px-6 py-3 mr-20">Learn More</div>
                             <span className="px-6 flex items-center justify-center md:min-h-[4rem] min-h-[3.5rem] h-full ml-auto orange-color bg-[#002F52] text-lg">
                               <Image src="/assets/icons/arrow-orange.svg" alt="arrow" width={20} height={20} className="w-5 h-5" />

@@ -1,20 +1,12 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import React, { useState } from "react";
 import ScheduleVisitModal from "./ScheduleVisitModal";
 
-const headerClass = {
-  "/": "home-page-header",
-};
-
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeClass, setActiveClass] = useState("/");
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const pathname = usePathname();
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -23,32 +15,6 @@ const Header = () => {
   const handleScheduleVisit = (e) => {
     e.preventDefault();
     setIsModalOpen(true);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    setActiveClass(headerClass[pathname] || "");
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [pathname]);
-
-  // Determine which logo to use
-  const getLogoSource = () => {
-    // If it's the home page and not scrolled, use regular logo
-    if (pathname === "/" && !isScrolled) {
-      return "/assets/logo.svg";
-    }
-    // For all other cases (scrolled home page or other pages), use logo-l.svg
-    return "/assets/logo-l.svg";
   };
 
   // Determine phone icon styling based on page and scroll state
@@ -74,15 +40,7 @@ const Header = () => {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "shadow-lg" : ""
-        } bg-white ${activeClass} ${
-          activeClass &&
-          isScrolled &&
-          "!bg-white !backdrop-blur-sm has-scrolled"
-        }`}
-      >
+      <header className="fixed top-0 left-0 w-full z-50 bg-white">
         <div className="container mx-auto py-4 md:grid md:grid-cols-3 md:items-center flex justify-between items-center max-md:px-5 max-md:py-2 max-md:gap-3">
           <div className="hidden md:flex items-center justify-start gap-5">
             <Link
@@ -126,7 +84,7 @@ const Header = () => {
             <Link href="/" alt="home">
               <Image
                 className="logo-image"
-                src={getLogoSource()}
+                src="/assets/logo-l.svg"
                 alt="logo"
                 height={48}
                 width={260}
@@ -167,9 +125,7 @@ const Header = () => {
                   height={24}
                   width={24}
                   priority
-                  loading="eager"
-                  className={`${getPhoneIconClass()} filter`}
-                  style={getPhoneIconStyle()}
+                  className="logo-image invert-100"
               />
             </Link>
           </div>
