@@ -1,6 +1,6 @@
 "use client";
 
-import { lazy, Suspense, useState, useEffect, useLayoutEffect } from "react";
+import { lazy, Suspense, useState, useEffect, useLayoutEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Element } from "react-scroll";
@@ -102,6 +102,22 @@ export default function Home() {
   const [animationStarted, setAnimationStarted] = useState(false);
   const [hasScrolledDown, setHasScrolledDown] = useState(false);
 
+  // Start hero intro (used by wheel/touch)
+  const startHeroIntro = useCallback(() => {
+    if (animationStarted || allowScrolling) return;
+    setAnimationStarted(true);
+    setTimeout(() => {
+      setIsZoomed(false);
+    }, 0);
+    setTimeout(() => {
+      setShowContent(true);
+      document.body.setAttribute('data-hero-ready', 'true');
+    }, 3000);
+    setTimeout(() => {
+      setAllowScrolling(true);
+    }, 4000);
+  }, [animationStarted, allowScrolling]);
+
   // Ensure we start at the very top before first paint
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -133,6 +149,14 @@ export default function Home() {
       e.preventDefault();
       window.scrollTo(0, 0);
     };
+    const handleTouchStart = (e) => {
+      // On first touch at top, trigger intro instead of blocking
+      if (window.scrollY === 0 && !animationStarted && !allowScrolling) {
+        e.preventDefault();
+        window.scrollTo(0, 0);
+        startHeroIntro();
+      }
+    };
     const preventKeys = (e) => {
       // Block common scroll keys
       const keys = ['Space', 'ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight', 'PageDown', 'PageUp', 'Home', 'End'];
@@ -142,35 +166,27 @@ export default function Home() {
     };
 
     window.addEventListener('touchmove', prevent, { passive: false });
-    window.addEventListener('touchstart', prevent, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
     window.addEventListener('keydown', preventKeys, { passive: false });
 
     return () => {
       window.removeEventListener('touchmove', prevent);
-      window.removeEventListener('touchstart', prevent);
+      window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('keydown', preventKeys);
       document.body.style.overflow = previousOverflow;
       document.body.style.height = previousHeight;
       document.documentElement.style.overflow = previousHtmlOverflow;
       document.documentElement.style.overscrollBehavior = previousOverscroll;
     };
-  }, [allowScrolling]);
+  }, [allowScrolling, animationStarted, startHeroIntro]);
 
   // Handle reset when scrolled back to top
   useEffect(() => {
     if (!allowScrolling) return;
     
     const handleScrollTop = () => {
-      // Only reset if user was scrolled down and came back to top
-      if (window.scrollY === 0 && hasScrolledDown) {
-        // Reset everything back to initial state
-        setIsZoomed(true);
-        setShowContent(false);
-        setAnimationStarted(false);
-        setAllowScrolling(false);
-        setHasScrolledDown(false);
-        document.body.removeAttribute('data-hero-ready');
-      } else if (window.scrollY > 0) {
+      // Mark that we've scrolled down at least once; do not re-trigger intro on return to top
+      if (window.scrollY > 0) {
         // Mark that we've scrolled down
         setHasScrolledDown(true);
       }
@@ -192,27 +208,7 @@ export default function Home() {
         e.preventDefault();
         // Ensure we stay pinned at the top even with momentum scrolls
         window.scrollTo(0, 0);
-        
-        if (!animationStarted) {
-          setAnimationStarted(true);
-          
-          // Start zoom out animation
-          setTimeout(() => {
-            setIsZoomed(false);
-          }, 0);
-          
-          // After zoom out completes (3 seconds), show content
-          setTimeout(() => {
-            setShowContent(true);
-            // Set data attribute on body to control header visibility
-            document.body.setAttribute('data-hero-ready', 'true');
-          }, 3000);
-          
-          // After content is shown, allow scrolling
-          setTimeout(() => {
-            setAllowScrolling(true);
-          }, 4000);
-        }
+        startHeroIntro();
       }
     };
 
@@ -235,7 +231,7 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(wheelTimeout);
     };
-  }, [animationStarted, allowScrolling]);
+  }, [animationStarted, allowScrolling, startHeroIntro]);
 
   const handleScheduleVisit = (e) => {
     e.preventDefault();
@@ -266,7 +262,7 @@ export default function Home() {
               />
             </div>
             
-            {/* Moving Clouds Layers - On top, bottom 50% of screen */}
+            {/* Moving Clouds Layers - Desktop with smooth fade-in */}
               <div 
                 className="cloud-layer absolute"
                 style={{
@@ -286,8 +282,9 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 1.png"
                   alt="Cloud layer 1"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                   style={{ objectPosition: 'center' }}
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                   priority
                 />
               </div>
@@ -310,8 +307,9 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 2.png"
                   alt="Cloud layer 2"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                   style={{ objectPosition: 'left' }}
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -333,8 +331,9 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 3.png"
                   alt="Cloud layer 3"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                   style={{ objectPosition: 'right' }}
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -356,8 +355,9 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 4.png"
                   alt="Cloud layer 4"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                   style={{ objectPosition: '25% center' }}
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -379,8 +379,9 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 5.png"
                   alt="Cloud layer 5"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                   style={{ objectPosition: '75% center' }}
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -402,8 +403,9 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 6.png"
                   alt="Cloud layer 6"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                   style={{ objectPosition: '15% center' }}
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -424,7 +426,8 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 7.png"
                   alt="Cloud layer 7"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -445,7 +448,8 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 8.png"
                   alt="Cloud layer 8"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -466,7 +470,8 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 9.png"
                   alt="Cloud layer 9"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -487,7 +492,8 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 10.png"
                   alt="Cloud layer 10"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -508,7 +514,8 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 11.png"
                   alt="Cloud layer 11"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -529,7 +536,8 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 12.png"
                   alt="Cloud layer 12"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
               <div 
@@ -551,10 +559,12 @@ export default function Home() {
                   src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 13.png"
                   alt="Cloud layer 13"
                   fill
-                  className="cloud-image object-cover"
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                   style={{ objectPosition: 'center' }}
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
                 />
               </div>
+            
             </div>
           <div className="absolute inset-0 md:hidden bg-white">
             <div
@@ -574,30 +584,31 @@ export default function Home() {
               />
             </div>
             
-            {/* Moving Clouds Layers - Mobile */}
-            <div 
-              className="cloud-layer absolute"
-              style={{
-                bottom: '-10%',
-                left: '-25%',
-                right: 0,
-                width: '100%',
-                height: '50%',
-                transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
-                transformOrigin: 'bottom',
-                transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
-                opacity: isZoomed ? 0.7 : 0,
-                mixBlendMode: 'screen'
-              }}
-            >
-              <Image
-                src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 1.png"
-                alt="Cloud layer 1"
-                fill
-                className="cloud-image object-cover"
-                style={{ objectPosition: 'center' }}
-              />
-            </div>
+            {/* Moving Clouds Layers - Mobile with smooth fade-in */}
+              <div 
+                className="cloud-layer absolute"
+                style={{
+                  bottom: '-10%',
+                  left: '-25%',
+                  right: 0,
+                  width: '100%',
+                  height: '50%',
+                  transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
+                  transformOrigin: 'bottom',
+                  transition: 'transform 3000ms cubic-bezier(0.68, 0, 0.32, 1), opacity 3000ms cubic-bezier(0.68, 0, 0.32, 1)',
+                  opacity: isZoomed ? 0.7 : 0,
+                  mixBlendMode: 'screen'
+                }}
+              >
+                <Image
+                  src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 1.png"
+                  alt="Cloud layer 1"
+                  fill
+                  className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                  style={{ objectPosition: 'center' }}
+                  onLoadingComplete={(img) => { img.style.opacity = '1'; }}
+                />
+              </div>
             <div 
               className="cloud-layer absolute"
               style={{
@@ -617,8 +628,9 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 2.png"
                 alt="Cloud layer 2"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                 style={{ objectPosition: 'left' }}
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
             <div 
@@ -640,8 +652,9 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 3.png"
                 alt="Cloud layer 3"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                 style={{ objectPosition: 'right' }}
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
             <div 
@@ -663,8 +676,9 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 4.png"
                 alt="Cloud layer 4"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                 style={{ objectPosition: '25% center' }}
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
             <div 
@@ -686,8 +700,9 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 5.png"
                 alt="Cloud layer 5"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                 style={{ objectPosition: '75% center' }}
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
             <div 
@@ -709,8 +724,9 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 6.png"
                 alt="Cloud layer 6"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
                 style={{ objectPosition: '15% center' }}
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
             <div 
@@ -731,15 +747,16 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 7.png"
                 alt="Cloud layer 7"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
             <div 
               className="cloud-layer absolute w-full"
               style={{
-                bottom: '0%',
+                bottom: '10%',
                 left: '0',
-                right: '0',
+                right: '10%',
                 height: '50%',
                 transform: isZoomed ? 'scale(1.5)' : 'scale(1)',
                 transformOrigin: '100% 0%',
@@ -752,7 +769,8 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 8.png"
                 alt="Cloud layer 8"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
             <div 
@@ -772,7 +790,8 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 9.png"
                 alt="Cloud layer 9"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
             <div 
@@ -792,7 +811,8 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 10.png"
                 alt="Cloud layer 10"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
             <div 
@@ -812,7 +832,8 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 11.png"
                 alt="Cloud layer 11"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
             <div 
@@ -832,22 +853,24 @@ export default function Home() {
                 src="/assets/black-white-beautiful-sky-with-fluffy-white-clouds-modern-city-background 12.png"
                 alt="Cloud layer 12"
                 fill
-                className="cloud-image object-cover"
+                className="cloud-image object-cover transition-opacity duration-700 ease-out opacity-0"
+                onLoadingComplete={(img) => { img.style.opacity = '1'; }}
               />
             </div>
+            
           </div>
           <div className="md:hidden hero-section-bg h-[100%] w-[100%] top-0 left-0" />
           {showContent && (
             <>
               <div className="absolute inset-0 flex flex-col md:top-40 top-20">
                 <div className="container mx-auto max-md:px-3">
-                  <SlideUp delay={0.4}>
+                  <SlideUp delay={0.2}>
                     <h1 className="max-md:text-center font-cormorant text-[#22252E] leading-12 text-[48px] md:text-[71px] font-[400] md:leading-[76px] md:max-w-[641px]">
                       Affordable riverside luxury by the creators of &apos;
                       <span className="orange-color">The 42</span>&apos;
                     </h1>
                   </SlideUp>
-                    <SlideUp delay={0.6}>
+                    <SlideUp delay={0.4}>
                   <div className="flex flex-row gap-2 items-center md:mt-10 mt-5 max-md:justify-center">
                       <p className="font-satoshi text-[#22252E] font-[400] text-[12px] md:text-[23px] leading-[10px]">
                         HIRA/P/HOO/2019/000635
