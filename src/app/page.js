@@ -1,6 +1,6 @@
 "use client";
 
-import { lazy, Suspense, useState, useEffect } from "react";
+import { lazy, Suspense, useState, useEffect, useLayoutEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Element } from "react-scroll";
@@ -102,12 +102,18 @@ export default function Home() {
   const [animationStarted, setAnimationStarted] = useState(false);
   const [hasScrolledDown, setHasScrolledDown] = useState(false);
 
+  // Ensure we start at the very top before first paint
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Hard lock page scroll until hero intro completes (wheel, touch, keyboard)
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (allowScrolling) {
       // release locks
       document.body.style.overflow = '';
       document.body.style.height = '';
+      document.documentElement.style.overflow = '';
       document.documentElement.style.overscrollBehavior = '';
       return;
     }
@@ -115,9 +121,11 @@ export default function Home() {
     // lock scroll
     const previousOverflow = document.body.style.overflow;
     const previousHeight = document.body.style.height;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
     const previousOverscroll = document.documentElement.style.overscrollBehavior;
     document.body.style.overflow = 'hidden';
     document.body.style.height = '100vh';
+    document.documentElement.style.overflow = 'hidden';
     document.documentElement.style.overscrollBehavior = 'none';
 
     const prevent = (e) => {
@@ -143,6 +151,7 @@ export default function Home() {
       window.removeEventListener('keydown', preventKeys);
       document.body.style.overflow = previousOverflow;
       document.body.style.height = previousHeight;
+      document.documentElement.style.overflow = previousHtmlOverflow;
       document.documentElement.style.overscrollBehavior = previousOverscroll;
     };
   }, [allowScrolling]);
