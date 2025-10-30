@@ -659,7 +659,7 @@ export default function Home() {
             <div 
               className="cloud-layer absolute"
               style={{
-                bottom: '-10%',
+                bottom: '0%',
                 left: '-10%',
                 right: 0,
                 width: '100%',
@@ -683,7 +683,7 @@ export default function Home() {
             <div 
               className="cloud-layer absolute"
               style={{
-                bottom: '-20%',
+                bottom: '0%',
                 left: '-5%',
                 right: 0,
                 width: '100%',
@@ -731,7 +731,7 @@ export default function Home() {
             <div 
               className="cloud-layer absolute w-full"
               style={{
-                bottom: '-10%',
+                bottom: '5%',
                 left: 0,
                 right: 0,
                 width: '100%',
@@ -799,7 +799,7 @@ export default function Home() {
             <div 
               className="cloud-layer absolute w-full"
               style={{
-                bottom: '-10%',
+                bottom: '0%',
                 right: '-10%',
                 width: '100%',
                 height: '50%',
@@ -821,7 +821,7 @@ export default function Home() {
             <div 
               className="cloud-layer absolute w-full"
               style={{
-                bottom: '-10%',
+                bottom: '0%',
                 right: '-15%',
                 width: '100%',
                 height: '50%',
