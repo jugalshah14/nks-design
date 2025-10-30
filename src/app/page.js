@@ -920,7 +920,7 @@ export default function Home() {
                     </SlideUp>
                 </div>
               </div>
-              <div className="max-md:flex max-md:flex-row max-md:items-center max-md:justify-center">
+              <div className="max-md:flex max-md:flex-row max-md:items-center max-md:justify-center max-md:relative">
                 <WhyRiversideFloatingButton />
                 </div>
             </>

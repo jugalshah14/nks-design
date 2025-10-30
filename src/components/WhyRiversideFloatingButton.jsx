@@ -9,13 +9,13 @@ export default function WhyRiversideFloatingButton() {
             activeClass="spy-link-active"
             to="section-Amenities"
             spy={true}
-            className="default-theme-text-color-1 max-md:flex max-md:w-100 max-md:justify-center"
+            className="default-theme-text-color-1 max-md:flex max-md:w-100 max-md:justify-center max-md:relative"
             smooth={true}
             offset={-100}
             duration={500}
             id="amenities"
         >
-            <div className="cursor-pointer absolute bottom-[70px] md:bottom-[30px] z-10 md:right-8 bg-white shadow-lg max-md:px-3 max-md:py-3 md:px-6 md:py-6 flex items-center md:gap-3 gap-2 w-auto">
+            <div className="cursor-pointer absolute bottom-[80px] md:bottom-[30px] z-10 md:right-8 bg-white shadow-lg max-md:px-3 max-md:py-3 md:px-6 md:py-6 flex items-center md:gap-3 gap-2 w-auto">
                 <p className="text-[#22252E] md:text-[16px] text-[14px] font-satoshi font-bold leading-[20px]">
                     Why Riverside Living?
                 </p>
