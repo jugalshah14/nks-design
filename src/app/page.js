@@ -102,6 +102,51 @@ export default function Home() {
   const [animationStarted, setAnimationStarted] = useState(false);
   const [hasScrolledDown, setHasScrolledDown] = useState(false);
 
+  // Hard lock page scroll until hero intro completes (wheel, touch, keyboard)
+  useEffect(() => {
+    if (allowScrolling) {
+      // release locks
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+      document.documentElement.style.overscrollBehavior = '';
+      return;
+    }
+
+    // lock scroll
+    const previousOverflow = document.body.style.overflow;
+    const previousHeight = document.body.style.height;
+    const previousOverscroll = document.documentElement.style.overscrollBehavior;
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+    document.documentElement.style.overscrollBehavior = 'none';
+
+    const prevent = (e) => {
+      // prevent any attempt to scroll while intro not allowed
+      e.preventDefault();
+      window.scrollTo(0, 0);
+    };
+    const preventKeys = (e) => {
+      // Block common scroll keys
+      const keys = ['Space', 'ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight', 'PageDown', 'PageUp', 'Home', 'End'];
+      if (keys.includes(e.code) || keys.includes(e.key)) {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener('touchmove', prevent, { passive: false });
+    window.addEventListener('touchstart', prevent, { passive: false });
+    window.addEventListener('keydown', preventKeys, { passive: false });
+
+    return () => {
+      window.removeEventListener('touchmove', prevent);
+      window.removeEventListener('touchstart', prevent);
+      window.removeEventListener('keydown', preventKeys);
+      document.body.style.overflow = previousOverflow;
+      document.body.style.height = previousHeight;
+      document.documentElement.style.overscrollBehavior = previousOverscroll;
+    };
+  }, [allowScrolling]);
+
   // Handle reset when scrolled back to top
   useEffect(() => {
     if (!allowScrolling) return;
@@ -136,6 +181,8 @@ export default function Home() {
       // If we're at top and animations haven't started, prevent scrolling
       if (window.scrollY === 0 && !animationStarted && !allowScrolling) {
         e.preventDefault();
+        // Ensure we stay pinned at the top even with momentum scrolls
+        window.scrollTo(0, 0);
         
         if (!animationStarted) {
           setAnimationStarted(true);
