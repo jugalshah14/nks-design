@@ -655,55 +655,55 @@ body[data-hero-ready] header {
 }
 
 .cloud-layer:nth-child(1) {
-  animation: cloudMove1 20s ease-in-out infinite;
+  animation: cloudMove1 12s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(2) {
-  animation: cloudMove2 25s ease-in-out infinite;
+  animation: cloudMove2 15s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(3) {
-  animation: cloudMove3 18s ease-in-out infinite;
+  animation: cloudMove3 11s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(4) {
-  animation: cloudMove4 22s ease-in-out infinite;
+  animation: cloudMove4 13s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(5) {
-  animation: cloudMove5 23s ease-in-out infinite;
+  animation: cloudMove5 14s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(6) {
-  animation: cloudMove6 21s ease-in-out infinite;
+  animation: cloudMove6 13s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(7) {
-  animation: cloudMove7 19s ease-in-out infinite;
+  animation: cloudMove7 12s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(8) {
-  animation: cloudMove8 24s ease-in-out infinite;
+  animation: cloudMove8 15s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(9) {
-  animation: cloudMove9 17s ease-in-out infinite;
+  animation: cloudMove9 10s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(10) {
-  animation: cloudMove10 26s ease-in-out infinite;
+  animation: cloudMove10 16s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(11) {
-  animation: cloudMove11 20s ease-in-out infinite;
+  animation: cloudMove11 12s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(12) {
-  animation: cloudMove12 23s ease-in-out infinite;
+  animation: cloudMove12 14s ease-in-out infinite;
 }
 
 .cloud-layer:nth-child(13) {
-  animation: cloudMove13 21s ease-in-out infinite;
+  animation: cloudMove13 13s ease-in-out infinite;
 }
 
 .cloud-image {

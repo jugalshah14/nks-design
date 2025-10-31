@@ -1,6 +1,6 @@
 "use client";
 
-import { lazy, Suspense, useState, useEffect, useLayoutEffect, useCallback } from "react";
+import { lazy, Suspense, useState, useEffect, useLayoutEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Element } from "react-scroll";
@@ -98,140 +98,31 @@ export default function Home() {
   const [isModalOpens, setIsModalOpens] = useState(false);
   const [isZoomed, setIsZoomed] = useState(true);
   const [showContent, setShowContent] = useState(false);
-  const [allowScrolling, setAllowScrolling] = useState(false);
   const [animationStarted, setAnimationStarted] = useState(false);
-  const [hasScrolledDown, setHasScrolledDown] = useState(false);
-
-  // Start hero intro (used by wheel/touch)
-  const startHeroIntro = useCallback(() => {
-    if (animationStarted || allowScrolling) return;
-    setAnimationStarted(true);
-    setTimeout(() => {
-      setIsZoomed(false);
-    }, 0);
-    setTimeout(() => {
-      setShowContent(true);
-      document.body.setAttribute('data-hero-ready', 'true');
-    }, 3000);
-    setTimeout(() => {
-      setAllowScrolling(true);
-    }, 4000);
-  }, [animationStarted, allowScrolling]);
 
   // Ensure we start at the very top before first paint
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Hard lock page scroll until hero intro completes (wheel, touch, keyboard)
-  useLayoutEffect(() => {
-    if (allowScrolling) {
-      // release locks
-      document.body.style.overflow = '';
-      document.body.style.height = '';
-      document.documentElement.style.overflow = '';
-      document.documentElement.style.overscrollBehavior = '';
-      return;
-    }
-
-    // lock scroll
-    const previousOverflow = document.body.style.overflow;
-    const previousHeight = document.body.style.height;
-    const previousHtmlOverflow = document.documentElement.style.overflow;
-    const previousOverscroll = document.documentElement.style.overscrollBehavior;
-    document.body.style.overflow = 'hidden';
-    document.body.style.height = '100vh';
-    document.documentElement.style.overflow = 'hidden';
-    document.documentElement.style.overscrollBehavior = 'none';
-
-    const prevent = (e) => {
-      // prevent any attempt to scroll while intro not allowed
-      e.preventDefault();
-      window.scrollTo(0, 0);
-    };
-    const handleTouchStart = (e) => {
-      // On first touch at top, trigger intro instead of blocking
-      if (window.scrollY === 0 && !animationStarted && !allowScrolling) {
-        e.preventDefault();
-        window.scrollTo(0, 0);
-        startHeroIntro();
-      }
-    };
-    const preventKeys = (e) => {
-      // Block common scroll keys
-      const keys = ['Space', 'ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight', 'PageDown', 'PageUp', 'Home', 'End'];
-      if (keys.includes(e.code) || keys.includes(e.key)) {
-        e.preventDefault();
-      }
-    };
-
-    window.addEventListener('touchmove', prevent, { passive: false });
-    window.addEventListener('touchstart', handleTouchStart, { passive: false });
-    window.addEventListener('keydown', preventKeys, { passive: false });
-
-    return () => {
-      window.removeEventListener('touchmove', prevent);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('keydown', preventKeys);
-      document.body.style.overflow = previousOverflow;
-      document.body.style.height = previousHeight;
-      document.documentElement.style.overflow = previousHtmlOverflow;
-      document.documentElement.style.overscrollBehavior = previousOverscroll;
-    };
-  }, [allowScrolling, animationStarted, startHeroIntro]);
-
-  // Handle reset when scrolled back to top
+  // Automatically start zoom out after 1 second
   useEffect(() => {
-    if (!allowScrolling) return;
+    if (animationStarted) return;
     
-    const handleScrollTop = () => {
-      // Mark that we've scrolled down at least once; do not re-trigger intro on return to top
-      if (window.scrollY > 0) {
-        // Mark that we've scrolled down
-        setHasScrolledDown(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScrollTop);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScrollTop);
-    };
-  }, [allowScrolling, hasScrolledDown]);
-
-  useEffect(() => {
-    let wheelTimeout;
-
-    const handleWheel = (e) => {
-      // If we're at top and animations haven't started, prevent scrolling
-      if (window.scrollY === 0 && !animationStarted && !allowScrolling) {
-        e.preventDefault();
-        // Ensure we stay pinned at the top even with momentum scrolls
-        window.scrollTo(0, 0);
-        startHeroIntro();
-      }
-    };
-
-    const handleScroll = () => {
-      // Allow normal scrolling once animations are complete
-      if (allowScrolling) return;
+    const timer = setTimeout(() => {
+      setAnimationStarted(true);
+      // Start zoom out immediately (after 1 second delay)
+      setIsZoomed(false);
       
-      // If at top and animations haven't started, prevent scroll
-      if (window.scrollY === 0 && !animationStarted) {
-        window.scrollTo(0, 0);
-      }
-    };
+      // Show content after zoom animation completes (3 seconds total from start)
+      setTimeout(() => {
+        setShowContent(true);
+        document.body.setAttribute('data-hero-ready', 'true');
+      }, 3000);
+    }, 1000); // Wait 1 second before starting
 
-    // Use wheel event for better control
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('scroll', handleScroll);
-      clearTimeout(wheelTimeout);
-    };
-  }, [animationStarted, allowScrolling, startHeroIntro]);
+    return () => clearTimeout(timer);
+  }, [animationStarted]);
 
   const handleScheduleVisit = (e) => {
     e.preventDefault();
